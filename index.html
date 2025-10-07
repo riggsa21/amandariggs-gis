@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amanda Riggs | GIS & Remote Sensing Portfolio</title>
+  <meta name="description" content="Portfolio of GIS and remote sensing projects: hydrologically conditioned DEMs, InVEST (NDR/USR/UFRM), and Landsat-based land cover change." />
+  <style>
+    :root { --ink:#111827; --muted:#4b5563; --bg:#f9fafb; --card:#ffffff; --line:#e5e7eb; --accent:#2563eb; }
+    *{box-sizing:border-box}
+    body{font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin:0; background:var(--bg); color:var(--ink);}
+    header{padding:2.25rem 1rem; background:#1f2937; color:#fff; text-align:center}
+    header h1{margin:0; font-size:2rem}
+    header p.sub{margin:.5rem 0 0; color:#d1d5db; font-size:1.05rem}
+    .about{max-width:900px; margin:1rem auto 0; padding:0 1rem; color:#e5e7eb; font-size:1rem}
+    .about .skills{margin-top:.5rem; color:#cbd5e1; font-size:.95rem}
+    main{max-width:1200px; margin:2rem auto; padding:0 1rem}
+    h2{font-size:1.25rem; margin:0 0 .75rem}
+    section.grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(320px,1fr)); gap:1.5rem}
+    figure{background:var(--card); border-radius:1rem; box-shadow:0 2px 6px rgba(0,0,0,.08); padding:1rem}
+    figure img{width:100%; border-radius:.75rem; display:block}
+    figcaption{margin-top:.65rem; font-size:.92rem; color:var(--muted); line-height:1.35}
+    hr{margin:2.5rem 0; border:none; border-top:1px solid var(--line)}
+    ul.links{list-style:disc; padding-left:1.25rem; margin:.25rem 0 0}
+    ul.links li{margin:.4rem 0}
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    footer{text-align:center; padding:1.25rem; font-size:.9rem; color:#6b7280}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Amanda Riggs</h1>
+    <p class="sub">GIS & Remote Sensing Portfolio • East Carolina University</p>
+    <div class="about">
+      I analyze urban hydrology and land-use change using ArcGIS Pro, Python, and remote-sensing workflows. 
+      Recent work includes hydrologically conditioned DEMs, nutrient export modeling (InVEST NDR), 
+      urban stormwater retention (USR), flood-risk mitigation (UFRM), and Landsat-based 
+      land cover change for Greenville, NC and the Savannah, GA region.
+      <div class="skills">Tools: ArcGIS Pro · ArcPy · InVEST (NDR/USR/UFRM) · Landsat/NAIP · Raster analysis · Spatial statistics</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="grid" aria-label="Project gallery">
+
+      <figure>
+        <img src="HydroConditionedDEM_Map.jpg" alt="Hydro-conditioned DEM showing stream enforcement and flow structure">
+        <figcaption>
+          Hydro-conditioned DEM showing stream enforcement and flow structure derived in ArcGIS Pro.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="GreensMillRun_NDR_DrillDown.jpg" alt="Nutrient export map for Greens Mill Run based on InVEST NDR results">
+        <figcaption>
+          Map illustrating nutrient export patterns for the Greens Mill Run subwatershed (Greenville, NC),
+          based on InVEST’s Nutrient Delivery Ratio model results (2001–2021).
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="USR_Retention_Map.jpg" alt="Urban Stormwater Retention model output with retention volumes">
+        <figcaption>
+          Urban Stormwater Retention (USR) model output highlighting runoff retention volumes and
+          impervious surface capture zones.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="UFRM_FloodRisk_Map.jpg" alt="Urban Flood Risk Mitigation results showing retention efficiency and high-risk zones">
+        <figcaption>
+          Urban Flood Risk Mitigation (UFRM) results mapping retention efficiency and high-risk flood zones in Greenville, NC.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="LandCover_Change_2001_2021.jpg" alt="Landsat-based land cover change from 2001 to 2021 in Savannah, Georgia">
+        <figcaption>
+          Land cover change analysis from 2001–2021 for Savannah, Georgia, showing urban expansion and
+          vegetation loss derived from classified Landsat imagery.
+        </figcaption>
+      </figure>
+
+    </section>
+
+    <hr>
+
+    <section aria-label="Reports and documentation">
+      <h2>Reports & Documentation</h2>
+      <ul class="links">
+        <li><a href="GeoProcessing_Batch_Script.pdf" target="_blank" rel="noopener">GeoProcessing Batch Script (Python automation)</a></li>
+        <li><a href="Thematic_Mapping_of_Savannah_Georgia.pdf" target="_blank" rel="noopener">Thematic Mapping of Savannah, Georgia (classification & change detection)</a></li>
+        <li><a href="Resume_ARiggs.pdf" target="_blank" rel="noopener">Download Résumé (PDF)</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Amanda L. Riggs · Portfolio built with HTML/CSS · Hosted on GitHub Pages
+  </footer>
+</body>
+</html>
