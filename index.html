@@ -5,160 +5,161 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amanda Riggs | GIS & Remote Sensing Portfolio</title>
   <meta name="description" content="Portfolio of GIS and remote sensing projects: hydrologically conditioned DEMs, InVEST (NDR/USR/UFRM), and Landsat-based land cover change." />
+
   <style>
   /* Colors */
-:root {
-  --ink:#1f2937;         /* body text */
-  --muted:#5b6b80;       /* secondary text */
-  --brand:#2b65a6;       /* headings/links */
-  --pill-bg:#eaf2ff;     /* badge background */
-  --pill-text:#1d4ed8;   /* badge text */
-  --card:#ffffff;        /* header card */
-  --shadow:0 6px 15px rgba(0,0,0,0.10);
-}
+  :root {
+    --ink:#1f2937;
+    --muted:#5b6b80;
+    --brand:#2b65a6;
+    --pill-bg:#eaf2ff;
+    --pill-text:#1d4ed8;
+    --card:#ffffff;
+    --shadow:0 6px 15px rgba(0,0,0,0.10);
+  }
 
-body{ color:var(--ink); }
+  body{ color:var(--ink); }
 
-/* Header card */
-header{
-  text-align:center;
-  background:var(--card);
-  margin:48px auto;
-  padding:40px 28px;
-  border-radius:20px;
-  max-width:900px;
-  box-shadow:var(--shadow);
-}
-header h1{
-  margin:0 0 6px 0;
-  font-size:2.6rem;
-  color:var(--brand);
-  font-weight:800;
-  letter-spacing:.3px;
-}
-header .sub{
-  margin:0 0 14px 0;
-  color:#7a889b;  /* darker than before so it’s readable */
-  font-size:1.05rem;
-}
+  /* Header card */
+  header {
+    text-align:center;
+    background:var(--card);
+    margin:48px auto;
+    padding:40px 28px;
+    border-radius:20px;
+    max-width:900px;
+    box-shadow:var(--shadow);
+  }
 
-/* Small professional “badge” instead of a heavy duplicate headline */
-.badge{
-  display:inline-block;
-  padding:6px 12px;
-  margin:4px 0 14px 0;
-  background:var(--pill-bg);
-  color:var(--pill-text);
-  border-radius:999px;
-  font-weight:600;
-  font-size:.95rem;
-}
+  /* --- Button styles (matches your brand) --- */
+  .btn {
+    display:inline-block;
+    padding:10px 16px;
+    border-radius:12px;
+    font-weight:700;
+    box-shadow:0 6px 15px rgba(0,0,0,0.10);
+  }
+  .btn.primary { background:#2b65a6; color:#fff; }
+  .btn.primary:hover { filter:brightness(1.05); }
 
-/* About paragraph + skills line */
-.about{ 
-  max-width:820px; 
-  margin:0 auto; 
-  font-size:1.02rem; 
-  line-height:1.65; 
-}
-.skills{
-  margin-top:10px; 
-  color:var(--muted); 
-  font-style:italic;
-}
+  /* Continue with the rest */
+  header h1 {
+    margin:0 0 6px 0;
+    font-size:2.6rem;
+    color:var(--brand);
+    font-weight:800;
+    letter-spacing:.3px;
+  }
 
-/* Remove any stray red dot if it existed as a styled bullet */
-.dot{ display:none; }
+  header .sub {
+    margin:0 0 14px 0;
+    color:#7a889b;
+    font-size:1.05rem;
+  }
+
+  /* Small professional “badge” */
+  .badge {
+    display:inline-block;
+    padding:6px 12px;
+    margin:4px 0 14px 0;
+    background:var(--pill-bg);
+    color:var(--pill-text);
+    border-radius:999px;
+    font-weight:600;
+    font-size:.95rem;
+  }
+
+  /* About paragraph + skills line */
+  .about {
+    max-width:820px;
+    margin:0 auto;
+    font-size:1.02rem;
+    line-height:1.65;
+  }
+  .skills {
+    margin-top:10px;
+    color:var(--muted);
+    font-style:italic;
+  }
+
+  /* Caption spacing */
+  figcaption {
+    margin-bottom:25px;
+    font-size:0.95rem;
+    line-height:1.5;
+    color:#333;
+  }
+
+  /* Navigation bar */
+  nav {
+    text-align:center;
+    margin-top:20px;
+  }
+  nav a {
+    color:var(--brand);
+    text-decoration:none;
+    font-weight:600;
+    margin:0 12px;
+  }
+  nav a:hover { text-decoration:underline; }
   </style>
+
   <style>
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(180deg, #f7f9fb 0%, #dce6f2 100%);
-    color: #222;
-    margin: 0;
-    padding: 0;
-  }
-
-  header {
-  text-align: center;
-  background: #ffffffd0;
-  margin: 50px auto;
-  padding: 40px;
-  border-radius: 20px;
-  max-width: 850px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  color: #24496f;
-}
-
-  h1 {
-  font-size: 2.5em;
-  color: #2b65a6;
-  margin-bottom: 10px;
-}
-
-  .sub {
-    font-size: 1.1em;
-    color: #456;
-    margin-bottom: 20px;
-  }
-
-  .about {
-    font-size: 1em;
-    line-height: 1.6;
-    color: #333;
-  }
-
-  .skills {
-    margin-top: 15px;
-    font-style: italic;
-    color: #567;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:linear-gradient(180deg, #f7f9fb 0%, #dce6f2 100%);
+    color:#222;
+    margin:0;
+    padding:0;
   }
 
   section {
-    max-width: 900px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    max-width:900px;
+    margin:40px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
   }
 
   h2 {
-    color: #24496f;
-    border-bottom: 2px solid #dbe3ef;
-    padding-bottom: 5px;
+    color:#24496f;
+    border-bottom:2px solid #dbe3ef;
+    padding-bottom:5px;
   }
 
   img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    margin-bottom: 10px;
+    width:100%;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+    margin-bottom:10px;
   }
 
-  a {
-    color: #245c9c;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
+  a { color:#245c9c; text-decoration:none; }
+  a:hover { text-decoration:underline; }
 
   footer {
-    text-align: center;
-    margin: 40px 0;
-    color: #567;
-    font-size: 0.9em;
+    text-align:center;
+    margin:40px 0;
+    color:#567;
+    font-size:0.9em;
   }
-</style>
+  </style>
 </head>
 <body>
- <header>
+<header>
   <h1>Amanda Riggs</h1>
   <p class="sub">GIS & Remote Sensing Portfolio • East Carolina University</p>
-
   <div class="badge">Environmental GIS Analyst</div>
+
+  <!-- ✉️ Subtle contact line with copy button -->
+  <p style="margin-top:6px; color:#5b6b80; font-size:0.95rem;">
+    <a id="emailLink" href="mailto:amanda.l.riggs@outlook.com" style="color:#2b65a6; text-decoration:none;">
+      amanda.l.riggs@outlook.com
+    </a>
+    <button id="copyEmail" title="Copy email" style="border:none; background:none; cursor:pointer; margin-left:6px; font-size:1rem; color:#2b65a6;">📋</button>
+    <span id="copyMsg" style="font-size:0.85rem; color:#4caf50; margin-left:4px; display:none;">Copied!</span>
+  </p>
 
   <div class="about">
     I specialize in eco-hydrological modeling and environmental spatial analysis, combining GIS, remote sensing,
@@ -170,7 +171,26 @@ header .sub{
       Tools: ArcGIS Pro · ArcPy · InVEST (NDR/USR/UFRM) · Landsat/NAIP · Raster analysis · Spatial statistics
     </div>
   </div>
+
+  <!-- Navigation with Hire Me button -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a class="btn primary" href="hire.html" style="margin-left:12px;">Hire Me</a>
+  </nav>
 </header>
+
+<!-- 📋 Clipboard script -->
+<script>
+  const copyBtn = document.getElementById('copyEmail');
+  const copyMsg = document.getElementById('copyMsg');
+  copyBtn.addEventListener('click', () => {
+    const email = document.getElementById('emailLink').textContent.trim();
+    navigator.clipboard.writeText(email).then(() => {
+      copyMsg.style.display = 'inline';
+      setTimeout(() => (copyMsg.style.display = 'none'), 1500);
+    });
+  });
+</script>
 
   <main>
     <section class="grid" aria-label="Project gallery">
@@ -220,15 +240,9 @@ header .sub{
   </main>
 
   <footer>
-    © 2025 Amanda L. Riggs · Portfolio built with HTML/CSS · Hosted on GitHub Pages
+    © 2025 Amanda L. Riggs · Portfolio built with HTML/CSS · Hosted on GitHub Pages · 
+    <a href="hire.html" style="color:#2b65a6;">Hire Me</a> · 
+    <a href="mailto:amanda.l.riggs@outlook.com" style="color:#2b65a6;">amanda.l.riggs@outlook.com</a>
   </footer>
 </body>
 </html>
-
-
-
-
-
-
-
-
