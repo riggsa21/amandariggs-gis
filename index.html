@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amanda Riggs | GIS & Remote Sensing Portfolio</title>
-  <meta name="description" content="Portfolio of GIS and remote sensing projects: hydrologically conditioned DEMs, InVEST (NDR/USR/UFRM), and Landsat-based land cover change." />
+  <title>Amanda Riggs | GIS & Environmental Mapping Services</title>
+  <meta name="description" content="Freelance GIS and remote sensing services. I turn land and water data into clear maps, reports, and visuals for planners, nonprofits, and research teams." />
 
   <style>
-  /* Colors */
+  /* Colors & tokens */
   :root {
     --ink:#1f2937;
     --muted:#5b6b80;
@@ -18,9 +18,17 @@
     --shadow:0 6px 15px rgba(0,0,0,0.10);
   }
 
-  body{ color:var(--ink); }
+  /* Base */
+  html, body { margin:0; padding:0; }
+  body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:linear-gradient(180deg, #f7f9fb 0%, #dce6f2 100%);
+    color:var(--ink);
+  }
+  a { color:#245c9c; text-decoration:none; }
+  a:hover { text-decoration:underline; }
 
-  /* Header card */
+  /* Header card (hero) */
   header {
     text-align:center;
     background:var(--card);
@@ -30,8 +38,30 @@
     max-width:900px;
     box-shadow:var(--shadow);
   }
+  header h1 {
+    margin:0 0 6px 0;
+    font-size:2.4rem;
+    color:var(--brand);
+    font-weight:800;
+    letter-spacing:.3px;
+  }
+  header .sub {
+    margin:0 0 14px 0;
+    color:#4a5b70;
+    font-size:1.08rem;
+  }
+  .badge {
+    display:inline-block;
+    padding:6px 12px;
+    margin:6px 0 10px 0;
+    background:var(--pill-bg);
+    color:var(--pill-text);
+    border-radius:999px;
+    font-weight:600;
+    font-size:.95rem;
+  }
 
-  /* --- Button styles (matches your brand) --- */
+  /* Button */
   .btn {
     display:inline-block;
     padding:10px 16px;
@@ -42,37 +72,10 @@
   .btn.primary { background:#2b65a6; color:#fff; }
   .btn.primary:hover { filter:brightness(1.05); }
 
-  /* Continue with the rest */
-  header h1 {
-    margin:0 0 6px 0;
-    font-size:2.6rem;
-    color:var(--brand);
-    font-weight:800;
-    letter-spacing:.3px;
-  }
-
-  header .sub {
-    margin:0 0 14px 0;
-    color:#7a889b;
-    font-size:1.05rem;
-  }
-
-  /* Small professional “badge” */
-  .badge {
-    display:inline-block;
-    padding:6px 12px;
-    margin:4px 0 14px 0;
-    background:var(--pill-bg);
-    color:var(--pill-text);
-    border-radius:999px;
-    font-weight:600;
-    font-size:.95rem;
-  }
-
-  /* About paragraph + skills line */
+  /* Intro copy */
   .about {
     max-width:820px;
-    margin:0 auto;
+    margin:10px auto 0;
     font-size:1.02rem;
     line-height:1.65;
   }
@@ -82,37 +85,7 @@
     font-style:italic;
   }
 
-  /* Caption spacing */
-  figcaption {
-    margin-bottom:25px;
-    font-size:0.95rem;
-    line-height:1.5;
-    color:#333;
-  }
-
-  /* Navigation bar */
-  nav {
-    text-align:center;
-    margin-top:20px;
-  }
-  nav a {
-    color:var(--brand);
-    text-decoration:none;
-    font-weight:600;
-    margin:0 12px;
-  }
-  nav a:hover { text-decoration:underline; }
-  </style>
-
-  <style>
-  body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background:linear-gradient(180deg, #f7f9fb 0%, #dce6f2 100%);
-    color:#222;
-    margin:0;
-    padding:0;
-  }
-
+  /* Sections */
   section {
     max-width:900px;
     margin:40px auto;
@@ -121,38 +94,51 @@
     border-radius:18px;
     box-shadow:0 4px 12px rgba(0,0,0,0.05);
   }
-
   h2 {
     color:#24496f;
     border-bottom:2px solid #dbe3ef;
-    padding-bottom:5px;
+    padding-bottom:6px;
+    margin-top:0;
   }
+  ul.clean { margin:10px 0 0 0; padding-left:18px; }
+  ul.clean li { margin:6px 0; }
 
+  /* Figures */
   img {
     width:100%;
     border-radius:12px;
     box-shadow:0 3px 10px rgba(0,0,0,0.1);
     margin-bottom:10px;
   }
+  figcaption {
+    margin-bottom:25px;
+    font-size:0.95rem;
+    line-height:1.5;
+    color:#333;
+    text-align:center;   /* centered captions */
+  }
 
-  a { color:#245c9c; text-decoration:none; }
-  a:hover { text-decoration:underline; }
-
+  /* Footer */
   footer {
     text-align:center;
     margin:40px 0;
     color:#567;
     font-size:0.9em;
   }
+
+  /* Simple nav under header */
+  nav { text-align:center; margin-top:16px; }
+  nav a { font-weight:600; }
   </style>
 </head>
 <body>
+
 <header>
   <h1>Amanda Riggs</h1>
-  <p class="sub">GIS & Remote Sensing Portfolio • East Carolina University</p>
-  <div class="badge">Environmental GIS Analyst</div>
+  <p class="sub">GIS & Environmental Mapping Services</p>
+  <div class="badge">Clear maps and analysis for land & water projects</div>
 
-  <!-- ✉️ Subtle contact line with copy button -->
+  <!-- Contact line with copy button -->
   <p style="margin-top:6px; color:#5b6b80; font-size:0.95rem;">
     <a id="emailLink" href="mailto:amanda.l.riggs@outlook.com" style="color:#2b65a6; text-decoration:none;">
       amanda.l.riggs@outlook.com
@@ -162,23 +148,20 @@
   </p>
 
   <div class="about">
-    I specialize in eco-hydrological modeling and environmental spatial analysis, combining GIS, remote sensing,
-    and environmental science to map the relationships between land and water. My work focuses on watershed
-    modeling, urban stormwater and nutrient retention, and land-use change analysis using tools like ArcGIS Pro,
-    Python, and InVEST. I aim to help communities and organizations turn spatial data into sustainable,
-    science-based planning decisions.
+    I help planners, nonprofits, and research teams turn spatial data into clear, decision-ready
+    maps and visuals. Whether you need a watershed map, land-use change summary, or a figure for a report,
+    I deliver clean cartography and concise analysis using open-source tools (QGIS, Google Earth Engine, Python).
     <div class="skills">
-      Tools: ArcGIS Pro · ArcPy · InVEST (NDR/USR/UFRM) · Landsat/NAIP · Raster analysis · Spatial statistics
+      Typical needs I support: flood/retention mapping, land cover change, environmental reporting visuals, and map-ready datasets.
     </div>
   </div>
 
-  <!-- Navigation with Hire Me button -->
   <nav>
     <a class="btn primary" href="hire.html" style="margin-left:12px;">Hire Me</a>
   </nav>
 </header>
 
-<!-- 📋 Clipboard script -->
+<!-- Clipboard script -->
 <script>
   const copyBtn = document.getElementById('copyEmail');
   const copyMsg = document.getElementById('copyMsg');
@@ -191,58 +174,84 @@
   });
 </script>
 
-  <main>
-    <section class="grid" aria-label="Project gallery">
+<main>
 
-      <figure>
-        <img src="HydroConditionedDEM_Map.jpg" alt="Hydro-conditioned DEM showing stream enforcement and flow structure">
-        <figcaption>
-          Hydro-conditioned DEM showing stream enforcement and flow structure derived in ArcGIS Pro.
-        </figcaption>
-      </figure>
+  <!-- Services (client-friendly language) -->
+  <section aria-label="Services">
+    <h2>What I Do</h2>
+    <p>I turn raw spatial data into clear maps and takeaways you can share with teams, boards, and the public. Fixed-price micro-projects and custom scopes available.</p>
+    <ul class="clean">
+      <li>📍 <strong>Map creation & data visualization</strong> — publication-ready maps for reports, proposals, and web.</li>
+      <li>💧 <strong>Watershed & stormwater mapping</strong> — retention hotspots, drainage patterns, and risk visuals.</li>
+      <li>🌿 <strong>Land-use & change detection</strong> — simple, before/after stories using satellite imagery.</li>
+      <li>📊 <strong>Report-ready figures</strong> — charts, captions, and short memos that explain the “so what.”</li>
+    </ul>
+  </section>
 
-      <figure>
-        <img src="GreensMillRun_NDR_DrillDown.jpg" alt="Nutrient export map for Greens Mill Run based on InVEST NDR results">
-        <figcaption>
-          Map illustrating nutrient export patterns for the Greens Mill Run subwatershed (Greenville, NC),
-          based on InVEST’s Nutrient Delivery Ratio model results (2001–2021).
-        </figcaption>
-      </figure>
+  <!-- Example visuals, rewritten captions for non-GIS readers -->
+  <section class="grid" aria-label="Example work">
+    <h2>Example Work</h2>
 
-      <figure>
-        <img src="USR_Retention_Map.jpg" alt="Urban Stormwater Retention model output with retention volumes">
-        <figcaption>
-          Urban Stormwater Retention (USR) model output highlighting runoff retention volumes and
-          impervious surface capture zones.
-        </figcaption>
-      </figure>
+    <figure>
+      <img src="HydroConditionedDEM_Map.jpg" loading="lazy" alt="Terrain map with streams aligned to valleys">
+      <figcaption>
+        Terrain map with streams aligned to valleys to better show how water actually flows across the landscape.
+      </figcaption>
+    </figure>
 
-      <figure>
-        <img src="UFRM_FloodRisk_Map.jpg" alt="Urban Flood Risk Mitigation results showing retention efficiency and high-risk zones">
-        <figcaption>
-          Urban Flood Risk Mitigation (UFRM) results mapping retention efficiency and high-risk flood zones in Greenville, NC.
-        </figcaption>
-      </figure>
+    <figure>
+      <img src="GreensMillRun_NDR_DrillDown.jpg" loading="lazy" alt="Map highlighting areas that contribute more nutrients to a local stream">
+      <figcaption>
+        Hotspots map: areas that contribute more nutrients to a local stream — useful for targeting improvements.
+      </figcaption>
+    </figure>
 
-    </section>
+    <figure>
+      <img src="USR_Retention_Map.jpg" loading="lazy" alt="Map of places that naturally retain stormwater">
+      <figcaption>
+        Stormwater retention map: places where the landscape naturally holds runoff and reduces flooding.
+      </figcaption>
+    </figure>
 
-    <hr>
+    <figure>
+      <img src="UFRM_FloodRisk_Map.jpg" loading="lazy" alt="Map showing likely flood-prone zones in town">
+      <figcaption>
+        Flood-prone zones: a clear picture to support planning, outreach, and funding applications.
+      </figcaption>
+    </figure>
+  </section>
 
-    <section aria-label="Reports and documentation">
-      <h2>Reports & Documentation</h2>
-      <ul class="links">
-        <li><a href="GeoProcessing_Batch_Script.pdf" target="_blank" rel="noopener">GeoProcessing Batch Script (Python automation)</a></li>
-        <li><a href="Thematic_Mapping_of_Savannah_Georgia.pdf" target="_blank" rel="noopener">Thematic Mapping of Savannah, Georgia (classification & change detection)</a></li>
-        <li><a href="Resume_ARiggs.pdf" target="_blank" rel="noopener">Download Résumé (PDF)</a></li>
-      </ul>
-    </section>
-  </main>
+  <!-- Light process for clients -->
+  <section aria-label="How it works">
+    <h2>How It Works</h2>
+    <ul class="clean">
+      <li><strong>1) Share your goal</strong> — what decision or story do you need the map to support?</li>
+      <li><strong>2) I propose a scope & quote</strong> — fixed or hourly, with data sources listed.</li>
+      <li><strong>3) Draft & review</strong> — one midpoint check to confirm look and details.</li>
+      <li><strong>4) Final delivery</strong> — files + short memo; optional walkthrough call.</li>
+    </ul>
+    <p style="margin-top:14px;">
+      Ready to start? <a href="hire.html">Request a quote</a> — quick-turn options available.
+    </p>
+  </section>
 
-  <footer>
-    © 2025 Amanda L. Riggs · Portfolio built with HTML/CSS · Hosted on GitHub Pages · 
-    <a href="hire.html" style="color:#2b65a6;">Hire Me</a> · 
-    <a href="mailto:amanda.l.riggs@outlook.com" style="color:#2b65a6;">amanda.l.riggs@outlook.com</a>
-  </footer>
+  <!-- Optional: keep your documents but rename for clarity -->
+  <section aria-label="Downloads">
+    <h2>Downloads</h2>
+    <ul class="clean">
+      <li><a href="GeoProcessing_Batch_Script.pdf" target="_blank" rel="noopener">Python Batch Geoprocessing – Example</a></li>
+      <li><a href="Thematic_Mapping_of_Savannah_Georgia.pdf" target="_blank" rel="noopener">Land Cover Mapping – Savannah, GA</a></li>
+      <li><a href="Resume_ARiggs.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 Amanda L. Riggs · GIS & Environmental Mapping Services ·
+  <a href="hire.html" style="color:#2b65a6;">Hire Me</a> ·
+  <a href="mailto:amanda.l.riggs@outlook.com" style="color:#2b65a6;">amanda.l.riggs@outlook.com</a>
+</footer>
+
 </body>
 </html>
-
