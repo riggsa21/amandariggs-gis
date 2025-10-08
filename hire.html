@@ -3,11 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hire Amanda Riggs — GIS & Remote Sensing Services</title>
-  <meta name="robots" content="noindex">
-  <meta name="description" content="Freelance GIS & Remote Sensing services: mapping, hydrologic modeling, land cover classification, and environmental visualization using open-source tools." />
+  <title>Hire Amanda Riggs | GIS & Environmental Mapping Services</title>
+  <meta name="description" content="Request a quote for GIS and environmental mapping services — clear, decision-ready maps for land, water, and planning projects." />
+  <link rel="canonical" href="https://riggsa21.github.io/amandariggs-gis/hire.html" />
+  
+  <meta property="og:title" content="Hire Amanda Riggs | GIS & Environmental Mapping Services" />
+  <meta property="og:description" content="Freelance GIS mapping and analysis for public, private, and environmental projects." />
+  <meta property="og:image" content="https://riggsa21.github.io/amandariggs-gis/thumbnail.jpg" />
+  <meta property="og:url" content="https://riggsa21.github.io/amandariggs-gis/hire.html" />
+  <meta property="og:type" content="website" />
+
   <style>
-    :root{
+    :root {
       --ink:#1f2937;
       --muted:#5b6b80;
       --brand:#2b65a6;
@@ -19,129 +26,209 @@
       --shadow:0 10px 25px rgba(0,0,0,.08);
       --radius:18px;
     }
+
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);}
-    img{max-width:100%;display:block}
+    html,body{
+      margin:0;padding:0;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color:var(--ink);
+      background:linear-gradient(180deg,#f7f9fb 0%,#dce6f2 100%);
+    }
+
     a{color:var(--brand);text-decoration:none}
     a:hover{opacity:.9}
+
     .wrap{max-width:1100px;margin:0 auto;padding:28px}
 
-    header.hero{background:var(--card);box-shadow:var(--shadow);border-radius:var(--radius);padding:44px 32px;margin:36px auto}
-    .hero h1{margin:0 0 10px 0;font-size:clamp(1.8rem, 2.6vw + 1rem, 3rem);color:var(--brand);}
-    .hero p{margin:0;color:var(--muted);font-size:1.05rem}
-    .badges{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
-    .badge{background:var(--pill-bg);color:var(--pill-text);padding:6px 10px;border-radius:999px;font-weight:600;font-size:.85rem}
-    .cta-row{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:12px 18px;border-radius:12px;font-weight:700;box-shadow:var(--shadow)}
-    .btn.primary{background:var(--accent);color:white}
-    .btn.outline{background:transparent;border:2px solid var(--brand);color:var(--brand)}
+    header.hero{
+      background:var(--card);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+      padding:44px 32px;
+      margin:48px auto;
+      text-align:center;
+    }
+    .hero h1{
+      margin:0 0 10px;
+      font-size:clamp(1.8rem,2.6vw + 1rem,3rem);
+      color:var(--brand);
+      font-weight:800;
+    }
+    .hero p{margin:0;color:var(--muted);font-size:1.05rem;line-height:1.6;}
+    .badges{
+      margin-top:18px;
+      display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+    }
+    .badge{
+      background:var(--pill-bg);
+      color:var(--pill-text);
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:.85rem;
+    }
 
-    .section{margin:46px 0}
-    .section h2{font-size:1.6rem;margin:0 0 14px 0;color:var(--brand)}
-    .section p.lead{color:var(--muted);margin:0 0 18px}
+    .cta-row{
+      margin-top:24px;
+      display:flex;gap:12px;flex-wrap:wrap;justify-content:center;
+    }
+    .btn{
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:700;
+      box-shadow:var(--shadow);
+      transition:filter .2s ease;
+    }
+    .btn.primary{background:#2b65a6;color:#fff;}
+    .btn.outline{border:2px solid var(--brand);color:var(--brand);background:transparent;}
+    .btn:hover{filter:brightness(1.05);}
 
-    .grid{display:grid;gap:18px}
+    .section{margin:46px 0;}
+    .section h2{font-size:1.6rem;margin:0 0 14px 0;color:var(--brand);}
+    .section p.lead{color:var(--muted);margin:0 0 18px;font-size:1.05rem;}
+
+    .grid{display:grid;gap:18px;}
     @media(min-width:720px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
-    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
-    .card h3{margin:0 0 8px 0}
-    .card p{margin:0;color:var(--muted);font-size:.98rem}
-    .chip{display:inline-block;margin-top:10px;background:#eef2f7;color:#516073;padding:6px 10px;border-radius:999px;font-size:.8rem;font-weight:600}
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+    .card h3{margin:0 0 8px 0;}
+    .card p{margin:0;color:var(--muted);font-size:.98rem;}
+    .chip{display:inline-block;margin-top:10px;background:#eef2f7;color:#516073;padding:6px 10px;border-radius:999px;font-size:.8rem;font-weight:600;}
 
-    .pricing{display:grid;gap:18px}
+    .pricing{display:grid;gap:18px;}
     @media(min-width:880px){.pricing{grid-template-columns:repeat(3,1fr)}}
-    .price{font-size:1.8rem;font-weight:800;margin:6px 0}
-    .note{font-size:.9rem;color:var(--muted)}
-    .list{margin:10px 0 0 0;padding:0 0 0 18px;color:var(--ink)}
+    .price{font-size:1.8rem;font-weight:800;margin:6px 0;}
+    .note{font-size:.9rem;color:var(--muted);}
+    .list{margin:10px 0 0 0;padding:0 0 0 18px;color:var(--ink);}
 
-    .steps{display:grid;gap:12px}
+    .steps{display:grid;gap:12px;}
     @media(min-width:720px){.steps{grid-template-columns:repeat(4,1fr)}}
-    .step{background:var(--card);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
-    .step span{display:inline-block;font-weight:800;background:var(--pill-bg);color:var(--pill-text);padding:6px 10px;border-radius:999px;font-size:.8rem;margin-bottom:8px}
+    .step{
+      background:var(--card);
+      border-radius:14px;
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+    .step span{
+      display:inline-block;
+      font-weight:800;
+      background:var(--pill-bg);
+      color:var(--pill-text);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:.8rem;
+      margin-bottom:8px;
+    }
 
-    form{display:grid;gap:12px}
-    input,textarea,select{width:100%;padding:12px 14px;border:1.5px solid #d8e0ea;border-radius:12px;font:inherit;background:#fff}
-    textarea{min-height:120px}
-    .row{display:grid;gap:12px}
+    form{display:grid;gap:12px;}
+    input,textarea,select{
+      width:100%;
+      padding:12px 14px;
+      border:1.5px solid #d8e0ea;
+      border-radius:12px;
+      font:inherit;
+      background:#fff;
+    }
+    textarea{min-height:120px;}
+    .row{display:grid;gap:12px;}
     @media(min-width:640px){.row{grid-template-columns:1fr 1fr}}
-    .small{font-size:.9rem;color:var(--muted)}
+    .small{font-size:.9rem;color:var(--muted);}
 
-    footer{margin:48px 0 16px;color:var(--muted);font-size:.9rem;text-align:center}
+    footer{
+      margin:48px 0 16px;
+      color:var(--muted);
+      font-size:.9rem;
+      text-align:center;
+    }
   </style>
 </head>
 <body>
+
   <nav style="text-align:center; margin-top:10px;">
-    <a href="index.html" style="color:#2b65a6; text-decoration:none; font-weight:600;">← Back to Portfolio</a>
+    <a href="index.html" style="color:#2b65a6; text-decoration:none; font-weight:600;">← Back to Home</a>
   </nav>
 
   <div class="wrap">
     <header class="hero">
-      <h1>Hire Amanda Riggs — GIS & Remote Sensing Services</h1>
-      <p>Quick-turn mapping, raster analysis, hydrologic workflows, and environmental visualization — powered by open-source tools (QGIS, Google Earth Engine, Python). Affordable micro-projects welcome.</p>
+      <h1>Hire Amanda Riggs</h1>
+      <p>GIS & Environmental Mapping • Public & Private Projects</p>
+      <div class="badge">Clear maps and analysis for land & water projects</div>
+
       <div class="badges">
-        <div class="badge">QGIS • GDAL • GeoPandas</div>
-        <div class="badge">Google Earth Engine</div>
+        <div class="badge">QGIS • ArcGIS Pro</div>
         <div class="badge">Hydrologic Modeling</div>
-        <div class="badge">Remote Sensing • Tableau</div>
+        <div class="badge">Remote Sensing & Land Cover</div>
+        <div class="badge">Python • Google Earth Engine</div>
       </div>
+
       <div class="cta-row">
         <a class="btn primary" href="#contact">Request a Quote</a>
-        <a class="btn outline" href="#packages">See Packages</a>
+        <a class="btn outline" href="#packages">View Packages</a>
       </div>
     </header>
 
     <section class="section" id="about">
       <h2>About</h2>
-      <p class="lead">I help local governments, nonprofits, and research teams turn geospatial data into clear, decision-ready maps and figures. I work primarily with open-source platforms to keep projects lightweight and cost-effective.</p>
+      <p class="lead">
+        I help planners, landowners, and environmental teams turn spatial data into
+        clear, decision-ready visuals. Whether it’s a <strong>drainage map, watershed analysis,
+        or site report figure</strong>, I focus on creating accurate and visually clean maps using open-source tools.
+      </p>
     </section>
 
     <section class="section" id="services">
       <h2>Services</h2>
-      <p class="lead">Pick a focused deliverable or combine into a custom scope.</p>
+      <p class="lead">Choose a focused deliverable or request a custom scope for your site or project area.</p>
       <div class="grid cols-3">
-        <div class="card"><h3>Mapping & Cartography</h3><p>Publication-ready maps, symbology, layouts, and export to print or web. Ideal for proposals and reports.</p><span class="chip">Typical: 3–7 days</span></div>
-        <div class="card"><h3>Remote Sensing Analysis</h3><p>NDVI/NDWI, land cover classification, change detection, accuracy assessment, and QA workflows.</p><span class="chip">Typical: 5–10 days</span></div>
-        <div class="card"><h3>Hydrology & Terrain</h3><p>Stream burning/conditioning, flow accumulation, watershed delineation, and slope/curvature metrics.</p><span class="chip">Typical: 5–12 days</span></div>
-        <div class="card"><h3>InVEST Modeling</h3><p>NDR, UFRM, and USR setup, parameterization, and result maps/figures with concise interpretation.</p><span class="chip">Typical: 7–14 days</span></div>
-        <div class="card"><h3>Dashboards & Reports</h3><p>Tableau dashboards, StoryMap structuring, and exportable PDFs with clear figures and captions.</p><span class="chip">Typical: 5–10 days</span></div>
-        <div class="card"><h3>Python Automation</h3><p>Small utilities for raster processing, classification helpers, and reproducible geoprocessing scripts.</p><span class="chip">Typical: 5–10 days</span></div>
+        <div class="card"><h3>Property & Terrain Mapping</h3><p>Lot drainage, slope, and flow direction maps for residential, agricultural, and development sites.</p><span class="chip">Typical: 3–7 days</span></div>
+        <div class="card"><h3>Hydrology & Watersheds</h3><p>Stream burning, watershed delineation, flow accumulation, and slope/curvature metrics for analysis or planning.</p><span class="chip">Typical: 5–12 days</span></div>
+        <div class="card"><h3>Remote Sensing & Land Cover</h3><p>NDVI/NDWI, classification, and land-use change analysis with clear exportable figures.</p><span class="chip">Typical: 5–10 days</span></div>
+        <div class="card"><h3>InVEST Modeling</h3><p>NDR, UFRM, and USR setup with result maps and interpretations for environmental reports.</p><span class="chip">Typical: 7–14 days</span></div>
+        <div class="card"><h3>Report Figures & Dashboards</h3><p>Publication-ready figures, Tableau dashboards, and visual summaries for reports or proposals.</p><span class="chip">Typical: 5–10 days</span></div>
+        <div class="card"><h3>Python Automation</h3><p>Custom geoprocessing scripts for raster analysis, classification, and batch workflows.</p><span class="chip">Typical: 5–10 days</span></div>
       </div>
     </section>
 
     <section class="section" id="packages">
       <h2>Quick Packages</h2>
-      <p class="lead">Flat-rate micro-contracts to get started fast. Custom scopes on request. Pricing reflects open-source workflows (no software licensing fees).</p>
+      <p class="lead">Flat-rate packages for fast turnarounds. Custom quotes available for complex areas or multi-map projects.</p>
       <div class="pricing">
-        <div class="card"><h3>Starter Map</h3><div class="price">$100+</div><p class="note">Single map (print or web), simple symbology & layout, 1 revision.</p><ul class="list"><li>Data cleanup (light)</li><li>Branded layout (PDF/PNG)</li><li>Delivery in 2–5 days</li></ul><div class="cta-row"><a class="btn primary" href="#contact">Request</a></div></div>
-        <div class="card"><h3>Remote Sensing Mini</h3><div class="price">$250+</div><p class="note">NDVI/NDWI or land-use change analysis for a defined AOI, with 2 figures.</p><ul class="list"><li>Inputs documented</li><li>GeoTIFF + figures</li><li>Delivery in 5–8 days</li></ul><div class="cta-row"><a class="btn primary" href="#contact">Request</a></div></div>
-        <div class="card"><h3>Hydrology Snapshot</h3><div class="price">$400+</div><p class="note">Basic stream conditioning & watershed delineation + map & short memo.</p><ul class="list"><li>Method summary</li><li>Shapefile/GeoPackage</li><li>Delivery in 7–12 days</li></ul><div class="cta-row"><a class="btn primary" href="#contact">Request</a></div></div>
+        <div class="card"><h3>Starter Map</h3><div class="price">$100+</div><p class="note">Single property or watershed map — includes cleanup, layout, and one revision.</p><ul class="list"><li>Data organization</li><li>Branded layout (PDF/PNG)</li><li>Delivery in 2–5 days</li></ul><div class="cta-row"><a class="btn primary" href="#contact">Request</a></div></div>
+        <div class="card"><h3>Remote Sensing Mini</h3><div class="price">$250+</div><p class="note">NDVI/NDWI or land-use change analysis with clear visual outputs.</p><ul class="list"><li>Inputs documented</li><li>GeoTIFF + figures</li><li>Delivery in 5–8 days</li></ul><div class="cta-row"><a class="btn primary" href="#contact">Request</a></div></div>
+        <div class="card"><h3>Hydrology Snapshot</h3><div class="price">$400+</div><p class="note">Stream conditioning, flow accumulation, and watershed map + short memo.</p><ul class="list"><li>Method summary</li><li>Shapefile/GeoPackage</li><li>Delivery in 7–12 days</li></ul><div class="cta-row"><a class="btn primary" href="#contact">Request</a></div></div>
       </div>
-      <p class="small">* Final pricing depends on AOI size, data availability, and complexity. Ask for a fixed quote.</p>
+      <p class="small">* Final pricing depends on project size, data quality, and scope.</p>
     </section>
 
     <section class="section" id="process">
-      <h2>How Projects Work</h2>
+      <h2>How It Works</h2>
       <div class="steps">
-        <div class="step"><span>1</span><strong>Scope</strong><br/>You send your goal, AOI, deadlines, and examples (if any).</div>
-        <div class="step"><span>2</span><strong>Quote</strong><br/>I confirm data sources, deliverables, and a fixed or hourly quote.</div>
-        <div class="step"><span>3</span><strong>Build</strong><br/>Draft outputs with one mid-point check for tweaks.</div>
-        <div class="step"><span>4</span><strong>Deliver</strong><br/>Final files + short memo; optional walkthrough call.</div>
+        <div class="step"><span>1</span><strong>Share your goal</strong><br/>Tell me what you need mapped or analyzed, and your project area (AOI).</div>
+        <div class="step"><span>2</span><strong>Quote</strong><br/>You’ll receive a clear, fixed-price or hourly quote with data sources listed.</div>
+        <div class="step"><span>3</span><strong>Review</strong><br/>Mid-project check for layout and content accuracy.</div>
+        <div class="step"><span>4</span><strong>Delivery</strong><br/>Final files, memo, and optional walkthrough call.</div>
       </div>
     </section>
 
     <section class="section" id="contact">
       <h2>Request a Quote</h2>
-      <p class="lead">Tell me a bit about your project and I’ll reply with next steps and a clear estimate.</p>
+      <p class="lead">Describe your project and I’ll follow up within 1–2 business days with next steps and an estimate.</p>
       <form id="quoteForm" action="https://formspree.io/f/xqaydyjj" method="POST">
         <div class="row">
           <div><label for="name">Your name</label><input id="name" name="name" placeholder="Jane Planner" required /></div>
-          <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="jane@example.gov" required /></div>
+          <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="jane@example.com" required /></div>
         </div>
         <div class="row">
           <div><label for="org">Organization (optional)</label><input id="org" name="organization" placeholder="Pitt County Planning" /></div>
           <div><label for="timeline">Timeline</label><select id="timeline" name="timeline"><option>Flexible</option><option>1–2 weeks</option><option>2–4 weeks</option><option>ASAP (rush)</option></select></div>
         </div>
         <label for="msg">Project details</label>
-        <textarea id="msg" name="message" placeholder="Goal, AOI, datasets (if any), deliverables, and dates…" required></textarea>
+        <textarea id="msg" name="message" placeholder="Goal, AOI, datasets, deliverables, and timeline…" required></textarea>
         <div class="row">
           <div><label for="package">Interested package</label><select id="package" name="package"><option>Unsure — please recommend</option><option>Starter Map ($100+)</option><option>Remote Sensing Mini ($250+)</option><option>Hydrology Snapshot ($400+)</option><option>Custom scope</option></select></div>
           <div><label for="files">Links to files (optional)</label><input id="files" name="files" placeholder="Google Drive / ArcGIS Online URLs" /></div>
@@ -155,10 +242,11 @@
     </section>
 
     <footer>
-      © <span id="year"></span> Amanda L. Riggs — GIS & Remote Sensing
-      <div class="small" style="margin-top:6px">Currently accepting projects using open-source tools (QGIS, GEE, Python). Fixed-price quotes available.</div>
+      © <span id="year"></span> Amanda L. Riggs · GIS & Environmental Mapping Services
+      <div class="small" style="margin-top:6px">Supporting public, private, and research mapping projects. Fixed-price quotes available.</div>
     </footer>
   </div>
+
   <script>
   document.getElementById('year').textContent = new Date().getFullYear();
   const form = document.getElementById('quoteForm');
@@ -186,6 +274,6 @@
       }
     });
   }
-</script>
+  </script>
 </body>
 </html>
