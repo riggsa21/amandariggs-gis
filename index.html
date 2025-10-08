@@ -44,14 +44,32 @@
 
   /* Header card (hero) */
   header {
-    text-align:center;
-    background:var(--card);
-    margin:48px auto;
-    padding:40px 28px;
-    border-radius:20px;
-    max-width:900px;
-    box-shadow:var(--shadow);
-  }
+  position: relative;
+  text-align: center;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.93),
+      rgba(255, 255, 255, 0.93)
+    ),
+    url('thumbnail.jpg') center/cover no-repeat;
+  margin: 48px auto;
+  padding: 60px 28px;
+  border-radius: 20px;
+  max-width: 950px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  background-attachment: fixed; /* nice parallax effect on desktop */
+}
+    header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.4)
+  );
+  pointer-events: none;
+}
   header h1 {
     margin:0 0 6px 0;
     font-size:2.4rem;
@@ -282,4 +300,5 @@
 
 </body>
 </html>
+
 
