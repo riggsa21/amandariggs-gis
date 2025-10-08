@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Amanda Riggs | GIS & Environmental Mapping Services</title>
-  <meta name="description" content="Freelance GIS and remote sensing services. I turn land and water data into clear maps, reports, and visuals for planners, nonprofits, and research teams." />
+  <meta name="description" content="Freelance GIS mapping and remote sensing: clear, decision-ready maps and reports for land and water projects." />
+  <link rel="canonical" href="https://riggsa21.github.io/amandariggs-gis/" />
+
+  <!-- Open Graph (for iMessage, WhatsApp, FB, etc.) -->
+  <meta property="og:title" content="Amanda Riggs | GIS & Environmental Mapping Services" />
+  <meta property="og:description" content="Freelance GIS mapping and remote sensing: clear, decision-ready maps and reports for land and water projects." />
+  <meta property="og:image" content="https://riggsa21.github.io/amandariggs-gis/thumbnail.jpg" />
+  <meta property="og:url" content="https://riggsa21.github.io/amandariggs-gis/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Amanda Riggs | GIS & Environmental Mapping Services" />
+  <meta name="twitter:description" content="Clear, actionable maps and analysis for planners, nonprofits, and research." />
+  <meta name="twitter:image" content="https://riggsa21.github.io/amandariggs-gis/thumbnail.jpg" />
 
   <style>
   /* Colors & tokens */
@@ -130,12 +144,6 @@
   nav { text-align:center; margin-top:16px; }
   nav a { font-weight:600; }
   </style>
-  <!-- Open Graph preview for LinkedIn / social -->
-<meta property="og:title" content="Amanda Riggs | GIS & Environmental Mapping Services" />
-<meta property="og:description" content="Freelance GIS and environmental mapping services for land, water, and planning projects." />
-<meta property="og:image" content="thumbnail.jpg" />
-<meta property="og:url" content="https://riggsa21.github.io/amandariggs-gis/" />
-<meta property="og:type" content="website" />
 </head>
 <body>
 
@@ -171,7 +179,7 @@
 <script>
   const copyBtn = document.getElementById('copyEmail');
   const copyMsg = document.getElementById('copyMsg');
-  copyBtn.addEventListener('click', () => {
+  copyBtn?.addEventListener('click', () => {
     const email = document.getElementById('emailLink').textContent.trim();
     navigator.clipboard.writeText(email).then(() => {
       copyMsg.style.display = 'inline';
@@ -261,4 +269,3 @@
 
 </body>
 </html>
-
