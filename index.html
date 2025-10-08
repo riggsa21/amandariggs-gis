@@ -42,22 +42,38 @@
   a { color:#245c9c; text-decoration:none; }
   a:hover { text-decoration:underline; }
 
-  /* Header card (hero) */
-  header {
+header {
   position: relative;
   text-align: center;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.93),
-      rgba(255, 255, 255, 0.93)
-    ),
-    url('thumbnail.jpg') center/cover no-repeat;
+
+  /* Lighter overlay so the image shows through clearly */
+  background:
+    linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)),
+    url('https://riggsa21.github.io/amandariggs-gis/thumbnail.jpg?v=2') center/cover no-repeat;
+
   margin: 48px auto;
   padding: 60px 28px;
   border-radius: 20px;
   max-width: 950px;
   box-shadow: var(--shadow);
   overflow: hidden;
-  background-attachment: fixed; /* nice parallax effect on desktop */
+
+  /* Looks nice on desktop; some mobile browsers ignore it */
+  background-attachment: fixed;
+}
+
+/* Remove the extra overlay you added earlier */
+header::before { content: none; }
+
+/* Give the hero a minimum height so the image has room to show */
+@media (min-width: 700px) {
+  header { min-height: 340px; }
+}
+
+/* iOS Safari often ignores or glitches `background-attachment: fixed`.
+   This disables it on iOS but keeps the image visible. */
+@supports (-webkit-touch-callout: none) {
+  header { background-attachment: scroll; }
 }
     header::before {
   content: "";
@@ -300,5 +316,6 @@
 
 </body>
 </html>
+
 
 
