@@ -17,7 +17,7 @@
     input,textarea,select{width:100%;padding:12px 12px;border:1px solid var(--ring);border-radius:10px;font-size:1rem;background:#fff}
     textarea{min-height:120px}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .btn{display:inline-block;background:var(--brand);color:#fff;padding:12px 16px;border-radius:10px;font-weight:700;text-decoration:none}
+    .btn{display:inline-block;background:var(--brand);color:#fff;padding:12px 16px;border-radius:10px;font-weight:700;text-decoration:none;cursor:pointer}
     .row{margin-top:18px}
     .note{font-size:.95rem;color:var(--muted);margin-top:8px}
     .terms{background:#f2f6ff;border:1px solid var(--ring);padding:12px;border-radius:10px;margin-top:14px}
@@ -29,49 +29,66 @@
     .card p{color:var(--muted);margin:0 0 10px 0}
     .card ul{margin:0 0 14px 18px;color:var(--ink)}
     footer{max-width:900px;margin:18px auto 40px;text-align:center;color:#566}
+    .ok{color:#16a34a} .err{color:#b91c1c}
   </style>
 </head>
 <body>
 
   <main class="wrap">
     <h1>Request an Estimate</h1>
-    <p class="muted">Fill this in and click “Email Estimate Request.” I’ll reply with a scoped estimate and timeline.</p>
+    <p class="muted">Fill this in and click <strong>Send Estimate Request</strong>. You’ll receive an automatic confirmation email right away.</p>
 
-    <div class="grid">
-      <div>
-        <label for="name">Your Name / Organization</label>
-        <input id="name" placeholder="e.g., Taylor Hart — Hart Planning" />
+    <!-- ✅ Formspree form -->
+    <form id="estimateForm" action="https://formspree.io/f/xyznngpw" method="POST" novalidate>
+      <div class="grid">
+        <div>
+          <label for="name">Your Name / Organization</label>
+          <input id="name" name="name" required placeholder="e.g., Taylor Hart — Hart Planning" />
+        </div>
+        <div>
+          <label for="email">Contact Email</label>
+          <input id="email" name="_replyto" type="email" required placeholder="you@example.com" />
+        </div>
       </div>
-      <div>
-        <label for="email">Contact Email</label>
-        <input id="email" type="email" placeholder="you@example.com" />
+
+      <label for="title">Project Title</label>
+      <input id="title" name="title" required placeholder="e.g., Downtown Site Drainage Maps" />
+
+      <label for="scope">What do you need?</label>
+      <textarea id="scope" name="scope" required placeholder="Brief description of deliverables (maps, analysis, transportation routes, web map, etc.)"></textarea>
+
+      <div class="grid">
+        <div>
+          <label for="timeline">Timeline</label>
+          <input id="timeline" name="timeline" placeholder="e.g., Draft in 2 weeks, final by Nov 30" />
+        </div>
+        <div>
+          <label for="budget">Budget Range (optional)</label>
+          <input id="budget" name="budget" placeholder="$1,500–$2,500" />
+        </div>
       </div>
-    </div>
 
-    <label for="title">Project Title</label>
-    <input id="title" placeholder="e.g., Downtown Site Drainage Maps" />
+      <label for="data">Existing Data (optional)</label>
+      <textarea id="data" name="data" placeholder="Links or sources you already have (parcels, surveys, shapefiles, LiDAR, etc.)"></textarea>
 
-    <label for="scope">What do you need?</label>
-    <textarea id="scope" placeholder="Brief description of deliverables (maps, analysis, transportation routes, web map, etc.)"></textarea>
+      <!-- Formspree helpers -->
+      <input type="hidden" name="_subject" value="Estimate Request – GIS Services" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="text" name="_gotcha" style="display:none" />
 
-    <div class="grid">
-      <div>
-        <label for="timeline">Timeline</label>
-        <input id="timeline" placeholder="e.g., Draft in 2 weeks, final by Nov 30" />
+      <div class="row">
+        <button class="btn" type="submit">Send Estimate Request</button>
+        <div class="note">I’ll reply with a scoped estimate and timeline.</div>
       </div>
-      <div>
-        <label for="budget">Budget Range (optional)</label>
-        <input id="budget" placeholder="$1,500–$2,500" />
-      </div>
-    </div>
 
-    <label for="data">Existing Data (optional)</label>
-    <textarea id="data" placeholder="Links or sources you already have (parcels, surveys, shapefiles, LiDAR, etc.)"></textarea>
-
-    <div class="row">
-      <a id="sendBtn" class="btn" href="#">Email Estimate Request</a>
-      <div class="note">This opens your email with the details pre-filled to send to <strong>amanda.l.riggs@outlook.com</strong>.</div>
-    </div>
+      <!-- inline success/error messages -->
+      <p id="thanks" class="note ok" style="display:none;margin-top:10px;">
+        Thanks! Your request was sent. Check your email for a confirmation.
+      </p>
+      <p id="err" class="note err" style="display:none;margin-top:10px;">
+        Hmm—something went wrong. Please try again or email me directly at <strong>amanda.l.riggs@outlook.com</strong>.
+      </p>
+    </form>
 
     <div class="terms">
       <strong>Estimate policy:</strong> Estimates reflect current scope and assumptions; changes or added requests may adjust pricing. Estimates are valid for 30 days. 50% deposit to begin; remaining balance at delivery. Revisions beyond agreed scope billed hourly.
@@ -93,7 +110,7 @@
             <li>Georeferenced layout & labels</li>
             <li>Short metadata summary</li>
           </ul>
-          <a class="btn" href="mailto:amanda.l.riggs@outlook.com?subject=Estimate%20Request%20%E2%80%93%20Basic%20Mapping">Request estimate</a>
+          <button class="btn pkg-btn" data-title="Basic Mapping">Request estimate</button>
         </article>
 
         <!-- Advanced Spatial Analysis -->
@@ -106,7 +123,7 @@
             <li>Zonal/spatial statistics</li>
             <li>ArcGIS Pro package + brief report</li>
           </ul>
-          <a class="btn" href="mailto:amanda.l.riggs@outlook.com?subject=Estimate%20Request%20%E2%80%93%20Advanced%20Spatial%20Analysis">Request estimate</a>
+          <button class="btn pkg-btn" data-title="Advanced Spatial Analysis">Request estimate</button>
         </article>
 
         <!-- Transportation & Infrastructure -->
@@ -119,7 +136,7 @@
             <li>New building footprints</li>
             <li>Editable layers & layouts</li>
           </ul>
-          <a class="btn" href="mailto:amanda.l.riggs@outlook.com?subject=Estimate%20Request%20%E2%80%93%20Transportation%20%26%20Infrastructure">Request estimate</a>
+          <button class="btn pkg-btn" data-title="Transportation & Infrastructure">Request estimate</button>
         </article>
 
         <!-- Hydrological & Environmental -->
@@ -132,7 +149,7 @@
             <li>NDR/USR outputs</li>
             <li>Report + GIS package</li>
           </ul>
-          <a class="btn" href="mailto:amanda.l.riggs@outlook.com?subject=Estimate%20Request%20%E2%80%93%20Hydrological%20%26%20Environmental">Request estimate</a>
+          <button class="btn pkg-btn" data-title="Hydrological & Environmental">Request estimate</button>
         </article>
 
         <!-- Custom Web Map / StoryMap -->
@@ -145,7 +162,7 @@
             <li>Pop-ups, legend, custom styling</li>
             <li>Optional StoryMap integration</li>
           </ul>
-          <a class="btn" href="mailto:amanda.l.riggs@outlook.com?subject=Estimate%20Request%20%E2%80%93%20Custom%20Web%20Map%20%2F%20StoryMap">Request estimate</a>
+          <button class="btn pkg-btn" data-title="Custom Web Map / StoryMap">Request estimate</button>
         </article>
 
         <!-- Website Development & Integration -->
@@ -158,7 +175,7 @@
             <li>Map & dashboard integration</li>
             <li>Hosting setup support</li>
           </ul>
-          <a class="btn" href="mailto:amanda.l.riggs@outlook.com?subject=Estimate%20Request%20%E2%80%93%20Website%20Development%20%26%20Integration">Request estimate</a>
+          <button class="btn pkg-btn" data-title="Website Development & Integration">Request estimate</button>
         </article>
       </div>
     </section>
@@ -170,38 +187,38 @@
   </footer>
 
   <script>
-    // Prefill email with form contents
-    const sendBtn = document.getElementById('sendBtn');
-    const esc = (s) => encodeURIComponent(s || '').replace(/%20/g,'+');
-    sendBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const title = document.getElementById('title').value;
-      const scope = document.getElementById('scope').value;
-      const timeline = document.getElementById('timeline').value;
-      const budget = document.getElementById('budget').value;
-      const data = document.getElementById('data').value;
+    // Smoothly submit to Formspree without leaving the page (shows inline messages)
+    const form = document.getElementById('estimateForm');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        try {
+          const r = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' }});
+          if (r.ok) {
+            form.reset();
+            document.getElementById('thanks').style.display = 'block';
+            document.getElementById('err').style.display = 'none';
+            window.scrollTo({ top: form.offsetTop - 20, behavior: 'smooth' });
+          } else {
+            document.getElementById('thanks').style.display = 'none';
+            document.getElementById('err').style.display = 'block';
+          }
+        } catch {
+          document.getElementById('thanks').style.display = 'none';
+          document.getElementById('err').style.display = 'block';
+        }
+      });
+    }
 
-      const subject = esc(`Estimate Request – ${title || 'GIS Services'}`);
-      const body = esc(
-`Hi Amanda,
-
-Name/Org: ${name}
-Contact Email: ${email}
-
-Project Title: ${title}
-Scope / Deliverables:
-${scope}
-
-Timeline: ${timeline}
-Budget Range: ${budget}
-Existing Data:
-${data}
-
-Thanks!`
-      );
-      window.location.href = `mailto:amanda.l.riggs@outlook.com?subject=${subject}&body=${body}`;
+    // When a package button is clicked, prefill Project Title and scroll to the form
+    document.querySelectorAll('.pkg-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const title = document.getElementById('title');
+        if (title) title.value = btn.getAttribute('data-title') || '';
+        document.getElementById('scope').focus();
+        window.scrollTo({ top: form.offsetTop - 20, behavior: 'smooth' });
+      });
     });
   </script>
 </body>
