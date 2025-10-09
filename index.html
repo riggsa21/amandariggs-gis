@@ -23,12 +23,12 @@
   <style>
   /* Colors & tokens */
   :root{
-    --ink:#0f172a;          /* darker body text */
-    --muted:#334155;        /* darker secondary text */
-    --brand:#2b65a6;        /* brand blue */
-    --pill-bg:#eaf2ff;      /* badge background */
-    --pill-text:#1d4ed8;    /* badge text */
-    --ring:#dbe3ef;         /* light border */
+    --ink:#0f172a;
+    --muted:#334155;
+    --brand:#2b65a6;
+    --pill-bg:#eaf2ff;
+    --pill-text:#1d4ed8;
+    --ring:#dbe3ef;
     --card:#ffffff;
     --shadow:0 6px 15px rgba(0,0,0,0.10);
   }
@@ -90,6 +90,7 @@
   .card ul{padding-left:18px;margin:0 0 12px 0;color:var(--ink);}
   .price{font-weight:800;font-size:1.1rem;margin-top:6px;}
   .card img{width:100%;border-radius:12px;box-shadow:0 3px 10px rgba(0,0,0,.08);margin:0 0 10px 0;}
+  .card .cta{margin-top:10px;}
 
   /* Footer & Nav */
   footer{text-align:center;margin:40px 0;color:#4b5563;font-size:0.95em;}
@@ -159,7 +160,7 @@
     </p>
   </section>
 
-  <!-- Services & Pricing (cards only; Example Work removed) -->
+  <!-- Services & Pricing (cards only) -->
   <section id="services-pricing" class="container" aria-label="Services & Pricing" style="max-width:1100px;margin:72px auto;padding:0 20px;">
     <header style="text-align:center;margin-bottom:28px;">
       <h2 style="font-size:2.2rem;line-height:1.2;margin:0;color:#2b65a6;">Services & Pricing</h2>
@@ -167,7 +168,7 @@
     </header>
 
     <div class="cards">
-      <!-- Basic Mapping (uses your UFRM image) -->
+      <!-- Basic Mapping -->
       <article class="card">
         <img src="UFRM_FloodRisk_Map.jpg" alt="City map highlighting likely flood-prone areas with clear legend and labels" loading="lazy">
         <h3>Basic Mapping</h3>
@@ -178,9 +179,12 @@
           <li>Short metadata summary</li>
         </ul>
         <div class="price">Starting at $450</div>
+        <div class="cta">
+          <a class="btn primary" href="hire.html?package=Basic%20Mapping#estimateForm">Request estimate</a>
+        </div>
       </article>
 
-      <!-- Advanced Spatial Analysis (uses your NDR image) -->
+      <!-- Advanced Spatial Analysis -->
       <article class="card">
         <img src="GreensMillRun_NDR_DrillDown.jpg" alt="Hotspot analysis map showing higher nutrient contribution areas for a watershed" loading="lazy">
         <h3>Advanced Spatial Analysis</h3>
@@ -191,9 +195,12 @@
           <li>ArcGIS Pro package + brief report</li>
         </ul>
         <div class="price">$850–$1,200+</div>
+        <div class="cta">
+          <a class="btn primary" href="hire.html?package=Advanced%20Spatial%20Analysis#estimateForm">Request estimate</a>
+        </div>
       </article>
 
-      <!-- Transportation & Infrastructure (placeholder) -->
+      <!-- Transportation & Infrastructure -->
       <article class="card">
         <div style="height:160px;border:2px dashed var(--ring);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 0 10px 0;color:#667085;">Image coming soon</div>
         <h3>Transportation & Infrastructure</h3>
@@ -204,12 +211,14 @@
           <li>Editable GIS layers & layouts</li>
         </ul>
         <div class="price">$750–$1,500+</div>
+        <div class="cta">
+          <a class="btn primary" href="hire.html?package=Transportation%20%26%20Infrastructure#estimateForm">Request estimate</a>
+        </div>
       </article>
 
-      <!-- Hydrological & Environmental (uses your hydro-conditioned DEM) -->
+      <!-- Hydrological & Environmental -->
       <article class="card">
         <img src="HydroConditionedDEM_Map.jpg" alt="Terrain map with streams aligned to valleys to show real flow paths" loading="lazy">
-        <!-- If you prefer retention look, swap src to USR_Retention_Map.jpg -->
         <h3>Hydrological & Environmental</h3>
         <p>Watershed, flood, ecosystem services.</p>
         <ul>
@@ -218,9 +227,12 @@
           <li>Report + GIS package</li>
         </ul>
         <div class="price">$1,200–$2,000+</div>
+        <div class="cta">
+          <a class="btn primary" href="hire.html?package=Hydrological%20%26%20Environmental#estimateForm">Request estimate</a>
+        </div>
       </article>
 
-      <!-- Custom Web Map / StoryMap (placeholder) -->
+      <!-- Custom Web Map / StoryMap -->
       <article class="card">
         <div style="height:160px;border:2px dashed var(--ring);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 0 10px 0;color:#667085;">Image coming soon</div>
         <h3>Custom Web Map / StoryMap</h3>
@@ -231,9 +243,12 @@
           <li>Optional StoryMap integration</li>
         </ul>
         <div class="price">$1,500–$3,000+</div>
+        <div class="cta">
+          <a class="btn primary" href="hire.html?package=Custom%20Web%20Map%20%2F%20StoryMap#estimateForm">Request estimate</a>
+        </div>
       </article>
 
-      <!-- Website Development & Integration (placeholder) -->
+      <!-- Website Development & Integration -->
       <article class="card">
         <div style="height:160px;border:2px dashed var(--ring);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 0 10px 0;color:#667085;">Image coming soon</div>
         <h3>Website Development & Integration</h3>
@@ -244,6 +259,9 @@
           <li>Hosting setup support</li>
         </ul>
         <div class="price">$2,500–$4,500+</div>
+        <div class="cta">
+          <a class="btn primary" href="hire.html?package=Website%20Development%20%26%20Integration#estimateForm">Request estimate</a>
+        </div>
       </article>
     </div>
 
@@ -262,7 +280,7 @@
       <div style="background:#eaf2ff;border-radius:16px;box-shadow:0 6px 15px rgba(0,0,0,.08);padding:20px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;">
         <h3 style="margin:0 0 8px 0;color:#1d4ed8;font-size:1.05rem;">Request an Estimate</h3>
         <p style="color:#0f172a;margin:0 0 12px 0;">Tell me about your project goals, timeline, and any datasets you already have.</p>
-        <a href="mailto:amanda.l.riggs@outlook.com?subject=Estimate%20Request%20-%20GIS%20Services&body=Hi%20Amanda%2C%0D%0A%0D%0AProject%20name%3A%0D%0AScope%20%2F%20deliverables%3A%0D%0ATimeline%3A%0D%0ABudget%20range%3A%0D%0AExisting%20data%3A%0D%0AOther%20notes%3A%0D%0A" style="display:inline-block;background:#1d4ed8;color:#fff;text-decoration:none;padding:10px 14px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.12);">Email Amanda</a>
+        <a href="hire.html#estimateForm" class="btn primary" style="text-decoration:none;">Open the form</a>
       </div>
     </div>
   </section>
@@ -276,7 +294,7 @@
       <li><strong>3) Draft & review</strong> — one midpoint check to confirm look and details.</li>
       <li><strong>4) Final delivery</strong> — files + short memo; optional walkthrough call.</li>
     </ul>
-    <p style="margin-top:14px;">Ready to start? <a href="hire.html">Request an estimate</a> — quick-turn options available.</p>
+    <p style="margin-top:14px;">Ready to start? <a href="hire.html#estimateForm">Request an estimate</a> — quick-turn options available.</p>
   </section>
 </main>
 
