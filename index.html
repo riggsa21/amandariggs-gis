@@ -307,7 +307,172 @@ header::before { content: none; }
   </section>
 
 </main>
+To integrate the new **Services & Pricing** section into your existing website and remove the downloadable documents, follow these simple steps:
 
+---
+
+### 🧩 1. Add the Services & Pricing Section
+Locate the closing `</main>` tag near the bottom of your HTML file. Right **before** that line, paste the following code:
+
+```html
+<!-- Services & Pricing Section -->
+<section id="services-pricing" class="container" style="max-width:1100px;margin:72px auto;padding:0 20px;">
+  <header style="text-align:center;margin-bottom:28px;">
+    <h2 style="font-size:2.2rem;line-height:1.2;margin:0;color:#2b65a6;">Services & Pricing</h2>
+    <p style="color:#5b6b80;margin-top:10px;">Clear, decision‑ready mapping and analysis for land, water, and infrastructure projects. Custom quotes available.</p>
+  </header>
+
+  <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;">
+    <article style="background:#fff;border-radius:16px;box-shadow:0 6px 15px rgba(0,0,0,.10);padding:20px;">
+      <h3 style="margin:0 0 6px 0;color:#2b65a6;font-size:1.15rem;">Basic Mapping</h3>
+      <p style="color:#5b6b80;margin:0 0 10px 0;">Single‑map or small‑scope projects.</p>
+      <ul style="padding-left:18px;margin:0 0 12px 0;color:#1f2937;">
+        <li>Professional map (PDF + source layer)</li>
+        <li>Georeferenced layout & labels</li>
+        <li>Short metadata summary</li>
+      </ul>
+      <strong>Starting at $450</strong>
+    </article>
+
+    <article style="background:#fff;border-radius:16px;box-shadow:0 6px 15px rgba(0,0,0,.10);padding:20px;">
+      <h3 style="margin:0 0 6px 0;color:#2b65a6;font-size:1.15rem;">Advanced Spatial Analysis</h3>
+      <p style="color:#5b6b80;margin:0 0 10px 0;">Complex modeling and statistics.</p>
+      <ul style="padding-left:18px;margin:0 0 12px 0;color:#1f2937;">
+        <li>Terrain / hydrologic / land‑use modeling</li>
+        <li>Zonal or spatial statistics</li>
+        <li>ArcGIS Pro package + brief report</li>
+      </ul>
+      <strong>$850–$1,200+</strong>
+    </article>
+
+    <article style="background:#fff;border-radius:16px;box-shadow:0 6px 15px rgba(0,0,0,.10);padding:20px;">
+      <h3 style="margin:0 0 6px 0;color:#2b65a6;font-size:1.15rem;">Transportation & Infrastructure</h3>
+      <p style="color:#5b6b80;margin:0 0 10px 0;">Planning & development visualization.</p>
+      <ul style="padding-left:18px;margin:0 0 12px 0;color:#1f2937;">
+        <li>Road networks & service areas</li>
+        <li>New building footprints</li>
+        <li>Editable GIS layers & layouts</li>
+      </ul>
+      <strong>$750–$1,500+</strong>
+    </article>
+
+    <article style="background:#fff;border-radius:16px;box-shadow:0 6px 15px rgba(0,0,0,.10);padding:20px;">
+      <h3 style="margin:0 0 6px 0;color:#2b65a6;font-size:1.15rem;">Hydrological & Environmental</h3>
+      <p style="color:#5b6b80;margin:0 0 10px 0;">Watershed, flood, ecosystem services.</p>
+      <ul style="padding-left:18px;margin:0 0 12px 0;color:#1f2937;">
+        <li>DEM conditioning & stream delineation</li>
+        <li>NDR / USR model outputs</li>
+        <li>Report + GIS package</li>
+      </ul>
+      <strong>$1,200–$2,000+</strong>
+    </article>
+
+    <article style="background:#fff;border-radius:16px;box-shadow:0 6px 15px rgba(0,0,0,.10);padding:20px;">
+      <h3 style="margin:0 0 6px 0;color:#2b65a6;font-size:1.15rem;">Custom Web Map / StoryMap</h3>
+      <p style="color:#5b6b80;margin:0 0 10px 0;">Interactive map visualization.</p>
+      <ul style="padding-left:18px;margin:0 0 12px 0;color:#1f2937;">
+        <li>ArcGIS Online or custom HTML/JS</li>
+        <li>Pop‑ups, legend, custom styling</li>
+        <li>Optional StoryMap integration</li>
+      </ul>
+      <strong>$1,500–$3,000+</strong>
+    </article>
+
+    <article style="background:#fff;border-radius:16px;box-shadow:0 6px 15px rgba(0,0,0,.10);padding:20px;">
+      <h3 style="margin:0 0 6px 0;color:#2b65a6;font-size:1.15rem;">Website Development & Integration</h3>
+      <p style="color:#5b6b80;margin:0 0 10px 0;">Full custom‑coded sites with maps.</p>
+      <ul style="padding-left:18px;margin:0 0 12px 0;color:#1f2937;">
+        <li>Responsive HTML/CSS/JS</li>
+        <li>Map & dashboard integration</li>
+        <li>Hosting setup support</li>
+      </ul>
+      <strong>$2,500–$4,500+</strong>
+    </article>
+  </div>
+
+  <div style="margin-top:28px;background:#fff;border-radius:16px;box-shadow:0 6px 15px rgba(0,0,0,.10);padding:20px;">
+    <h3 style="margin:0 0 10px 0;color:#2b65a6;font-size:1.15rem;">Add‑Ons & Support</h3>
+    <table style="width:100%;border-collapse:collapse;">
+      <thead>
+        <tr>
+          <th style="text-align:left;padding:10px 8px;border-bottom:1px solid #e5e7eb;">Service</th>
+          <th style="text-align:left;padding:10px 8px;border-bottom:1px solid #e5e7eb;">Description</th>
+          <th style="text-align:left;padding:10px 8px;border-bottom:1px solid #e5e7eb;">Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:10px 8px;">Data Collection & Cleaning</td>
+          <td style="padding:10px 8px;">Public data sourcing, formatting, and QA/QC</td>
+          <td style="padding:10px 8px;">+$100–$300</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 8px;">Python Automation Scripts</td>
+          <td style="padding:10px 8px;">Custom ArcPy tools and batch workflows</td>
+          <td style="padding:10px 8px;">+$300–$800</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 8px;">Training & Consulting</td>
+          <td style="padding:10px 8px;">One‑on‑one or team sessions</td>
+          <td style="padding:10px 8px;">$85/hr</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 8px;">Maintenance / Updates</td>
+          <td style="padding:10px 8px;">Periodic data refresh, small fixes</td>
+          <td style="padding:10px 8px;">Custom quote</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.2fr .8fr;gap:18px;margin-top:18px;">
+    <aside style="background:#fff;border-radius:16px;box-shadow:0 6px 15px rgba(0,0,0,.10);padding:20px;">
+      <h3 style="margin:0 0 10px 0;color:#2b65a6;font-size:1.15rem;">Terms</h3>
+      <ul style="padding-left:18px;margin:0;color:#1f2937;">
+        <li>Quotes valid for 30 days</li>
+        <li>50% deposit to begin; balance at delivery</li>
+        <li>Premium datasets or hosting billed as needed</li>
+        <li>Revisions beyond scope billed hourly</li>
+      </ul>
+    </aside>
+
+    <div style="background:#eaf2ff;border-radius:16px;box-shadow:0 6px 15px rgba(0,0,0,.08);padding:20px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;">
+      <h3 style="margin:0 0 8px 0;color:#1d4ed8;font-size:1.1rem;">Request a Custom Quote</h3>
+      <p style="color:#1f2937;margin:0 0 12px 0;">Tell me about your project goals, timeline, and any datasets you already have.</p>
+      <a href="mailto:amanda.l.riggs@outlook.com?subject=Quote%20Request%20-%20GIS%20Services&body=Hi%20Amanda%2C%0D%0A%0D%0AProject%20name%3A%0D%0AScope%20%2F%20deliverables%3A%0D%0ATimeline%3A%0D%0ABudget%20range%3A%0D%0AExisting%20data%3A%0D%0AOther%20notes%3A%0D%0A" style="display:inline-block;background:#1d4ed8;color:#fff;text-decoration:none;padding:10px 14px;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.12);">Email Amanda</a>
+    </div>
+  </div>
+</section>
+```
+
+---
+
+### 🧹 2. Remove the Download Section
+Find this section in your code:
+```html
+<section aria-label="Downloads">
+  <h2>Downloads</h2>
+  <ul class="clean">
+    <li><a href="GeoProcessing_Batch_Script.pdf" ...>...</a></li>
+    <li><a href="Thematic_Mapping_of_Savannah_Georgia.pdf" ...>...</a></li>
+    <li><a href="Resume_ARiggs.pdf" ...>...</a></li>
+  </ul>
+</section>
+```
+You can delete it entirely or comment it out:
+```html
+<!-- <section aria-label="Downloads"> ... </section> -->
+```
+
+---
+
+### 🧭 3. Add a Nav Link (Optional)
+If you want a menu link to this new section, add inside your `<nav>`:
+```html
+<a class="btn primary" href="#services-pricing">View Services</a>
+```
+
+That’s it — when you reload your website, your new **Services & Pricing** section will appear neatly between your main content and the footer, and the document links will be gone.
 <footer>
   © 2025 Amanda L. Riggs · GIS & Environmental Mapping Services ·
   <a href="hire.html" style="color:#2b65a6;">Hire Me</a> ·
@@ -316,6 +481,7 @@ header::before { content: none; }
 
 </body>
 </html>
+
 
 
 
