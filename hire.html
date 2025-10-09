@@ -29,17 +29,16 @@
     .card p{color:var(--muted);margin:0 0 10px 0}
     .card ul{margin:0 0 14px 18px;color:var(--ink)}
     footer{max-width:900px;margin:18px auto 40px;text-align:center;color:#566}
-    .ok{color:#16a34a} .err{color:#b91c1c}
   </style>
 </head>
 <body>
 
   <main class="wrap">
     <h1>Request an Estimate</h1>
-    <p class="muted">Fill this in and click <strong>Send Estimate Request</strong>. You’ll receive an automatic confirmation email right away.</p>
+    <p class="muted">Fill this in and click <strong>Send Estimate Request</strong>. I’ll follow up with a scoped estimate and timeline.</p>
 
-    <!-- ✅ Formspree form -->
-    <form id="estimateForm" action="https://formspree.io/f/xyznngpw" method="POST" novalidate>
+    <!-- ✅ Formspree form (simple POST) -->
+    <form id="estimateForm" action="https://formspree.io/f/xqaydyjj" method="POST">
       <div class="grid">
         <div>
           <label for="name">Your Name / Organization</label>
@@ -78,16 +77,8 @@
 
       <div class="row">
         <button class="btn" type="submit">Send Estimate Request</button>
-        <div class="note">I’ll reply with a scoped estimate and timeline.</div>
+        <div class="note">You’ll see a confirmation page after sending.</div>
       </div>
-
-      <!-- inline success/error messages -->
-      <p id="thanks" class="note ok" style="display:none;margin-top:10px;">
-        Thanks! Your request was sent. Check your email for a confirmation.
-      </p>
-      <p id="err" class="note err" style="display:none;margin-top:10px;">
-        Hmm—something went wrong. Please try again or email me directly at <strong>amanda.l.riggs@outlook.com</strong>.
-      </p>
     </form>
 
     <div class="terms">
@@ -187,37 +178,14 @@
   </footer>
 
   <script>
-    // Smoothly submit to Formspree without leaving the page (shows inline messages)
-    const form = document.getElementById('estimateForm');
-    if (form) {
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const data = new FormData(form);
-        try {
-          const r = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' }});
-          if (r.ok) {
-            form.reset();
-            document.getElementById('thanks').style.display = 'block';
-            document.getElementById('err').style.display = 'none';
-            window.scrollTo({ top: form.offsetTop - 20, behavior: 'smooth' });
-          } else {
-            document.getElementById('thanks').style.display = 'none';
-            document.getElementById('err').style.display = 'block';
-          }
-        } catch {
-          document.getElementById('thanks').style.display = 'none';
-          document.getElementById('err').style.display = 'block';
-        }
-      });
-    }
-
-    // When a package button is clicked, prefill Project Title and scroll to the form
+    // Prefill Project Title and scroll to the form when clicking a package button
     document.querySelectorAll('.pkg-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const title = document.getElementById('title');
         if (title) title.value = btn.getAttribute('data-title') || '';
         document.getElementById('scope').focus();
-        window.scrollTo({ top: form.offsetTop - 20, behavior: 'smooth' });
+        const form = document.getElementById('estimateForm');
+        if (form) window.scrollTo({ top: form.offsetTop - 20, behavior: 'smooth' });
       });
     });
   </script>
