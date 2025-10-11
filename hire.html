@@ -9,26 +9,41 @@
     :root{--ink:#0f172a;--muted:#334155;--brand:#2b65a6;--ring:#dbe3ef}
     html,body{margin:0;padding:0;font-family:Segoe UI,Tahoma,Verdana,sans-serif;background:#f6f9fd;color:var(--ink)}
     a{color:#2b65a6;text-decoration:none} a:hover{text-decoration:underline}
+
     .wrap{max-width:900px;margin:48px auto;background:#fff;padding:28px;border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,.06)}
     h1{margin:0 0 12px 0;color:#1a2a44}
     h2{margin:0 0 8px 0;color:#24496f}
     p.muted{color:var(--muted);margin-top:6px}
+
     label{font-weight:600;display:block;margin:16px 0 6px}
     input,textarea,select{width:100%;padding:12px 12px;border:1px solid var(--ring);border-radius:10px;font-size:1rem;background:#fff}
     textarea{min-height:120px}
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .btn{display:inline-block;background:var(--brand);color:#fff;padding:12px 16px;border-radius:10px;font-weight:700;text-decoration:none;cursor:pointer}
+
+    .btn{display:inline-block;background:var(--brand);color:#fff;padding:12px 16px;border-radius:10px;font-weight:700;text-decoration:none;cursor:pointer;border:0}
     .row{margin-top:18px}
     .note{font-size:.95rem;color:var(--muted);margin-top:8px}
     .terms{background:#f2f6ff;border:1px solid var(--ring);padding:12px;border-radius:10px;margin-top:14px}
+
     /* Cards */
     .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-    .card{background:#fff;border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.10);padding:20px}
+    .card{background:#fff;border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.10);padding:20px;display:flex;flex-direction:column}
     .price{font-weight:800;font-size:1.8rem;margin:0 0 6px 0}
     .card h3{margin:0 0 8px 0;color:var(--brand)}
     .card p{color:var(--muted);margin:0 0 10px 0}
     .card ul{margin:0 0 14px 18px;color:var(--ink)}
+    .card .btn{margin-top:auto;width:100%;text-align:center}
+
     footer{max-width:900px;margin:18px auto 40px;text-align:center;color:#566}
+
+    /* ------ Mobile tweaks ------ */
+    @media (max-width: 760px){
+      .wrap{margin:24px 12px;padding:20px}
+      .grid{grid-template-columns:1fr;gap:12px}
+      .btn{width:100%;text-align:center}
+      .cards{grid-template-columns:1fr;gap:14px}
+      .price{font-size:1.4rem}
+    }
   </style>
 </head>
 <body>
@@ -62,8 +77,8 @@
           <input id="timeline" name="timeline" placeholder="e.g., Draft in 2 weeks, final by Nov 30" />
         </div>
         <div>
-          <label for="budget">Budget Range (optional)</label>
-          <input id="budget" name="budget" placeholder="$1,500–$2,500" />
+          <label for="budget">Budget (optional)</label>
+          <input id="budget" name="budget" placeholder="If you have a target, add it here" />
         </div>
       </div>
 
@@ -94,7 +109,7 @@
         <!-- Basic Mapping -->
         <article class="card">
           <h3>Basic Mapping</h3>
-          <div class="price">$450+</div>
+          <div class="price">Starts at $450+</div>
           <p>Single-map or small-scope projects.</p>
           <ul>
             <li>PDF + source layer</li>
@@ -107,7 +122,7 @@
         <!-- Advanced Spatial Analysis -->
         <article class="card">
           <h3>Advanced Spatial Analysis</h3>
-          <div class="price">$850–$1,200+</div>
+          <div class="price">Starts at $850+</div>
           <p>Complex modeling and statistics.</p>
           <ul>
             <li>Hydrologic/terrain/land-use modeling</li>
@@ -120,12 +135,12 @@
         <!-- Transportation & Infrastructure -->
         <article class="card">
           <h3>Transportation & Infrastructure</h3>
-          <div class="price">$750–$1,500+</div>
+          <div class="price">Starts at $1,800+</div>
           <p>Planning & development visualization.</p>
           <ul>
             <li>Road networks & service areas</li>
-            <li>New building footprints</li>
-            <li>Editable layers & layouts</li>
+            <li>Infrastructure visualization & planning</li>
+            <li>Integrated terrain & waterway analysis</li>
           </ul>
           <button class="btn pkg-btn" data-title="Transportation & Infrastructure">Request estimate</button>
         </article>
@@ -133,7 +148,7 @@
         <!-- Hydrological & Environmental -->
         <article class="card">
           <h3>Hydrological & Environmental</h3>
-          <div class="price">$1,200–$2,000+</div>
+          <div class="price">Starts at $1,200+</div>
           <p>Watershed, flood, ecosystem services.</p>
           <ul>
             <li>DEM conditioning & stream delineation</li>
@@ -146,7 +161,7 @@
         <!-- Custom Web Map / StoryMap -->
         <article class="card">
           <h3>Custom Web Map / StoryMap</h3>
-          <div class="price">$1,500–$3,000+</div>
+          <div class="price">Starts at $1,500+</div>
           <p>Interactive online visualization.</p>
           <ul>
             <li>ArcGIS Online or custom HTML/JS</li>
@@ -159,7 +174,7 @@
         <!-- Website Development & Integration -->
         <article class="card">
           <h3>Website Development & Integration</h3>
-          <div class="price">$2,500–$4,500+</div>
+          <div class="price">Starts at $2,500+</div>
           <p>Full custom-coded site with maps.</p>
           <ul>
             <li>Responsive HTML/CSS/JS</li>
@@ -178,7 +193,7 @@
   </footer>
 
   <script>
-    // Prefill Project Title and scroll to the form when clicking a package button
+    // Prefill from Quick Package buttons
     document.querySelectorAll('.pkg-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const title = document.getElementById('title');
@@ -187,6 +202,20 @@
         const form = document.getElementById('estimateForm');
         if (form) window.scrollTo({ top: form.offsetTop - 20, behavior: 'smooth' });
       });
+    });
+
+    // Prefill from URL (?package=...)
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const pkg = params.get('package');
+      if (pkg) {
+        const title = document.getElementById('title');
+        if (title) title.value = decodeURIComponent(pkg);
+        const form = document.getElementById('estimateForm');
+        if (form) window.scrollTo({ top: form.offsetTop - 20, behavior: 'smooth' });
+        const scope = document.getElementById('scope');
+        if (scope) scope.focus();
+      }
     });
   </script>
 </body>
