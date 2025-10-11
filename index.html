@@ -95,10 +95,10 @@
 
     /* ---------- Services container (wider) ---------- */
     #services-pricing.container{
-      max-width:1400px;         /* wider content area */
+      max-width:1400px;
       margin:72px auto;
       padding:0 24px;
-      background:transparent;   /* header + cards each have their own surfaces */
+      background:transparent;
       box-shadow:none;
     }
     #services-pricing > header{
@@ -110,12 +110,12 @@
     /* ---------- Cards Grid ---------- */
     .cards{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); /* fills width cleanly */
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); /* narrower min for phones */
       gap:24px;
     }
     .card{
       background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:20px;
-      display:flex;flex-direction:column;
+      display:flex;flex-direction:column;min-height:100%;
     }
     .card h3{margin:0 0 6px 0;color:var(--brand);font-size:1.15rem}
     .card p{color:var(--muted);margin:0 0 10px 0}
@@ -135,6 +135,18 @@
 
     /* ---------- Footer ---------- */
     footer{text-align:center;margin:40px 0;color:#4b5563;font-size:.95em}
+
+    /* ---------- Mobile Responsive Tweaks ---------- */
+    @media (max-width: 800px){
+      header{margin:28px 12px;padding:40px 18px;border-radius:16px}
+      header h1{font-size:2.15rem}
+      header .sub{font-size:1rem}
+      section{margin:24px 12px;padding:20px}
+      .cards{gap:16px}
+      .btn{width:100%;text-align:center}
+      /* Stack Terms + CTA row */
+      .terms-grid{grid-template-columns:1fr !important}
+    }
   </style>
 </head>
 <body>
@@ -218,7 +230,7 @@
             <li>Georeferenced layout & labels</li>
             <li>Short metadata summary</li>
           </ul>
-          <div class="price">Starting at $450</div>
+          <div class="price">Starts at $450+</div>
           <div class="cta">
             <a class="btn primary" href="hire.html?package=Basic%20Mapping#estimateForm">Request estimate</a>
           </div>
@@ -234,7 +246,7 @@
             <li>Zonal or spatial statistics</li>
             <li>ArcGIS Pro package + brief report</li>
           </ul>
-          <div class="price">$850–$1,200+</div>
+          <div class="price">Starts at $850+</div>
           <div class="cta">
             <a class="btn primary" href="hire.html?package=Advanced%20Spatial%20Analysis#estimateForm">Request estimate</a>
           </div>
@@ -252,7 +264,7 @@
             <li>Infrastructure visualization and planning</li>
             <li>Integrated terrain and waterway analysis</li>
           </ul>
-          <div class="price">$1,800–$3,500+</div>
+          <div class="price">Starts at $1,800+</div>
           <div class="cta">
             <a class="btn primary" href="hire.html?package=Transportation%20%26%20Infrastructure#estimateForm">Request estimate</a>
           </div>
@@ -268,7 +280,7 @@
             <li>NDR / USR model outputs</li>
             <li>Report + GIS package</li>
           </ul>
-          <div class="price">$1,200–$2,000+</div>
+          <div class="price">Starts at $1,200+</div>
           <div class="cta">
             <a class="btn primary" href="hire.html?package=Hydrological%20%26%20Environmental#estimateForm">Request estimate</a>
           </div>
@@ -285,7 +297,7 @@
             <li>Pop-ups, legend, custom styling</li>
             <li>Optional StoryMap integration</li>
           </ul>
-          <div class="price">$1,500–$3,000+</div>
+          <div class="price">Starts at $1,500+</div>
           <div class="cta">
             <a class="btn primary" href="hire.html?package=Custom%20Web%20Map%20%2F%20StoryMap#estimateForm">Request estimate</a>
           </div>
@@ -302,7 +314,7 @@
             <li>Map & dashboard integration</li>
             <li>Hosting setup and automation support</li>
           </ul>
-          <div class="price">$2,500–$4,500+</div>
+          <div class="price">Starts at $2,500+</div>
           <div class="cta">
             <a class="btn primary" href="hire.html?package=Website%20Development%20%26%20Integration#estimateForm">Request estimate</a>
           </div>
@@ -310,7 +322,7 @@
       </div>
 
       <!-- Terms + CTA Row -->
-      <div style="display:grid;grid-template-columns:1.2fr .8fr;gap:24px;margin-top:24px;">
+      <div class="terms-grid" style="display:grid;grid-template-columns:1.2fr .8fr;gap:24px;margin-top:24px;">
         <aside style="background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:20px;">
           <h3 style="margin:0 0 10px 0;color:var(--brand);font-size:1.05rem;">Terms</h3>
           <ul style="padding-left:18px;margin:0;color:var(--ink);line-height:1.6">
