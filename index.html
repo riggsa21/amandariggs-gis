@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Amanda Riggs | GIS & Environmental Mapping Services</title>
+  <title>GIS & Environmental Mapping Services</title>
   <meta name="description" content="Freelance GIS mapping and remote sensing: clear, decision-ready maps and reports for land, water, buildings, and transportation." />
   <link rel="canonical" href="https://riggsa21.github.io/amandariggs-gis/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Amanda Riggs | GIS & Environmental Mapping Services" />
+  <meta property="og:title" content="GIS & Environmental Mapping Services" />
   <meta property="og:description" content="Freelance GIS mapping and remote sensing: clear, decision-ready maps and reports for land and water projects." />
   <meta property="og:image" content="https://riggsa21.github.io/amandariggs-gis/thumbnail.jpg" />
   <meta property="og:url" content="https://riggsa21.github.io/amandariggs-gis/" />
@@ -16,7 +16,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Amanda Riggs | GIS & Environmental Mapping Services" />
+  <meta name="twitter:title" content="GIS & Environmental Mapping Services" />
   <meta name="twitter:description" content="Clear, actionable maps and analysis for planners, nonprofits, and research." />
   <meta name="twitter:image" content="https://riggsa21.github.io/amandariggs-gis/thumbnail.jpg" />
 
@@ -122,26 +122,29 @@
     .price{font-weight:800;font-size:1.1rem;margin-top:6px;text-align:center}
     .card .cta{margin-top:auto;display:flex;justify-content:center}
 
-/* Unified image style for ALL cards (same as Transportation) */
-.card img{
-  width:100%;
-  aspect-ratio:16/9;     /* consistent height across the grid */
-  display:block;
-  object-fit:cover;      /* fill the frame; no squish */
-  object-position:center;/* default focal point */
-  border-radius:12px;
-  box-shadow:0 3px 10px rgba(0,0,0,.08);
-  margin:0 0 10px 0;
-  background:transparent;
-  padding:0;
-}
+    /* ---------- Card "thumb" media frames (never distort) ---------- */
+    .thumb{
+      width:100%;
+      aspect-ratio:16/9;
+      border-radius:12px;
+      box-shadow:0 3px 10px rgba(0,0,0,.08);
+      margin:0 0 10px 0;
+      background-position:center;
+      background-repeat:no-repeat;
+      background-size:cover; /* default = like Transportation card */
+    }
+    /* Show full map without cropping (subtle letterbox) */
+    .thumb.contain{
+      background-size:contain;
+      background-color:#eef2f7;
+    }
+    /* Optional crop focus utilities */
+    .thumb.focus-top    { background-position:50% 18%; }
+    .thumb.focus-upper  { background-position:50% 35%; }
+    .thumb.focus-lower  { background-position:50% 65%; }
+    .thumb.focus-left   { background-position:20% 50%; }
+    .thumb.focus-right  { background-position:80% 50%; }
 
-/* Optional focal utilities to avoid awkward crops */
-.img-focus-top    { object-position: 50% 20%; }
-.img-focus-upper  { object-position: 50% 35%; }
-.img-focus-lower  { object-position: 50% 65%; }
-.img-focus-left   { object-position: 25% 50%; }
-.img-focus-right  { object-position: 75% 50%; }
     /* ---------- Footer ---------- */
     footer{text-align:center;margin:40px 0;color:#4b5563;font-size:.95em}
 
@@ -160,7 +163,7 @@
 <body>
 
   <header>
-    <h1>Amanda Riggs</h1>
+    <h1>GIS & Environmental Mapping</h1>
     <p class="sub">Geographic Information Systems (GIS) mapping, analysis, and clean cartography for projects of any size.</p>
     <div class="badge">Great looking maps that answer questions.</div>
 
@@ -178,7 +181,6 @@
     </div>
 
     <nav class="hero">
-      <!-- Removed “Hire Me” for redundancy -->
       <a class="btn link" href="#services-pricing">View Services</a>
     </nav>
   </header>
@@ -225,7 +227,7 @@
       <div class="cards">
         <!-- Basic Mapping -->
         <article class="card">
-          <img src="figure_9.png" alt="Area map with clear legend and labels" loading="lazy">
+          <div class="thumb" role="img" aria-label="Area map with clear legend and labels" style="background-image:url('figure_9.png');"></div>
           <h3>Basic Mapping</h3>
           <p>Single-map or small-scope projects.</p>
           <ul>
@@ -239,12 +241,9 @@
           </div>
         </article>
 
-        <!-- Advanced Spatial Analysis -->
+        <!-- Advanced Spatial Analysis (show whole map) -->
         <article class="card">
-         <img class=""
-     src="GreensMillRun_NDR_DrillDown.jpg"
-     alt="Hotspot analysis map showing higher nutrient contribution areas for a watershed"
-     loading="lazy">
+          <div class="thumb contain" role="img" aria-label="Hotspot analysis map showing higher nutrient contribution areas for a watershed" style="background-image:url('GreensMillRun_NDR_DrillDown.jpg');"></div>
           <h3>Advanced Spatial Analysis</h3>
           <p>Complex modeling and statistics.</p>
           <ul>
@@ -258,12 +257,9 @@
           </div>
         </article>
 
-        <!-- Hydrological & Environmental -->
+        <!-- Hydrological & Environmental (show whole map) -->
         <article class="card">
-          <img class=""
-     src="HydroConditionedDEM_Map.jpg"
-     alt="Terrain map with streams aligned to valleys to show real flow paths"
-     loading="lazy">
+          <div class="thumb contain" role="img" aria-label="Terrain map with streams aligned to valleys to show real flow paths" style="background-image:url('HydroConditionedDEM_Map.jpg');"></div>
           <h3>Hydrological & Environmental</h3>
           <p>Watershed, flood, ecosystem services.</p>
           <ul>
@@ -277,12 +273,9 @@
           </div>
         </article>
 
-        <!-- Custom Web Map / StoryMap -->
+        <!-- Custom Web Map / StoryMap (cover + slight upward focus) -->
         <article class="card">
-          <img class="img-focus-upper"
-     src="GPT_GMRStorymap.png"
-     alt="GMR StoryMap-style card with stylized watershed panels"
-     loading="lazy">
+          <div class="thumb focus-upper" role="img" aria-label="GMR StoryMap-style card with stylized watershed panels" style="background-image:url('GPT_GMRStorymap.png');"></div>
           <h3>Custom Web Map / StoryMap</h3>
           <p>Interactive map visualization.</p>
           <ul>
@@ -296,11 +289,9 @@
           </div>
         </article>
 
-        <!-- Transportation & Infrastructure (moved here) -->
+        <!-- Transportation & Infrastructure (between StoryMap and Website Dev) -->
         <article class="card">
-          <img src="GPT_GMRTransport.png"
-               alt="Stylized transportation and infrastructure map of the Greens Mill Run study area with road and network overlays"
-               loading="lazy">
+          <div class="thumb" role="img" aria-label="Transportation and infrastructure map of the Greens Mill Run study area with road and network overlays" style="background-image:url('GPT_GMRTransport.png');"></div>
           <h3>Transportation & Infrastructure</h3>
           <p>Networks and infrastructure mapped and analyzed with land use and terrain.</p>
           <ul>
@@ -316,8 +307,7 @@
 
         <!-- Website Development & Integration -->
         <article class="card">
-          <img src="https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/ChatGPT_WebDesign.png"
-               alt="Website development and AI integration concept showing GIS web map and code editor" loading="lazy">
+          <div class="thumb" role="img" aria-label="Website development and AI integration concept showing GIS web map and code editor" style="background-image:url('https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/ChatGPT_WebDesign.png');"></div>
           <h3>Website Development & Integration</h3>
           <p>Full custom-coded sites with maps, dashboards, and automations.</p>
           <ul>
@@ -373,5 +363,3 @@
 
 </body>
 </html>
-
-
