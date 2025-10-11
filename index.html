@@ -122,31 +122,26 @@
     .price{font-weight:800;font-size:1.1rem;margin-top:6px;text-align:center}
     .card .cta{margin-top:auto;display:flex;justify-content:center}
 
-/* Keep a consistent frame for card art */
+/* Unified image style for ALL cards (same as Transportation) */
 .card img{
   width:100%;
-  aspect-ratio:16/9;  object-fit:cover;            /* default = fill frame like Transportation card */
+  aspect-ratio:16/9;     /* consistent height across the grid */
+  display:block;
+  object-fit:cover;      /* fill the frame; no squish */
+  object-position:center;/* default focal point */
   border-radius:12px;
   box-shadow:0 3px 10px rgba(0,0,0,.08);
   margin:0 0 10px 0;
-}
-
-/* Show full map without cropping (adds subtle letterbox background) */
-.card img.full-map{
-  object-fit:contain;
-  background:#eef2f7;
-  padding:6px;                 /* optional: small inset so legends aren’t tight */
-}
-
-/* Make StoryMap match Transportation look (no “squish”, fills like a hero) */
-.card img.storymap{
-  object-fit:cover;            /* override any old contain rule */
   background:transparent;
   padding:0;
 }
 
-    }
-
+/* Optional focal utilities to avoid awkward crops */
+.img-focus-top    { object-position: 50% 20%; }
+.img-focus-upper  { object-position: 50% 35%; }
+.img-focus-lower  { object-position: 50% 65%; }
+.img-focus-left   { object-position: 25% 50%; }
+.img-focus-right  { object-position: 75% 50%; }
     /* ---------- Footer ---------- */
     footer{text-align:center;margin:40px 0;color:#4b5563;font-size:.95em}
 
@@ -246,7 +241,10 @@
 
         <!-- Advanced Spatial Analysis -->
         <article class="card">
-          <img class="full-map" src="GreensMillRun_NDR_DrillDown.jpg" alt="Hotspot analysis map showing higher nutrient contribution areas for a watershed" loading="lazy">
+         <img class=""
+     src="GreensMillRun_NDR_DrillDown.jpg"
+     alt="Hotspot analysis map showing higher nutrient contribution areas for a watershed"
+     loading="lazy">
           <h3>Advanced Spatial Analysis</h3>
           <p>Complex modeling and statistics.</p>
           <ul>
@@ -262,7 +260,10 @@
 
         <!-- Hydrological & Environmental -->
         <article class="card">
-          <img class="full-map" src="HydroConditionedDEM_Map.jpg" alt="Terrain map with streams aligned to valleys to show real flow paths" loading="lazy">
+          <img class=""
+     src="HydroConditionedDEM_Map.jpg"
+     alt="Terrain map with streams aligned to valleys to show real flow paths"
+     loading="lazy">
           <h3>Hydrological & Environmental</h3>
           <p>Watershed, flood, ecosystem services.</p>
           <ul>
@@ -278,8 +279,10 @@
 
         <!-- Custom Web Map / StoryMap -->
         <article class="card">
-          <img class="storymap" src="GPT_GMRStorymap.png"
-               alt="GMR StoryMap-style card with stylized watershed panels" loading="lazy">
+          <img class="img-focus-upper"
+     src="GPT_GMRStorymap.png"
+     alt="GMR StoryMap-style card with stylized watershed panels"
+     loading="lazy">
           <h3>Custom Web Map / StoryMap</h3>
           <p>Interactive map visualization.</p>
           <ul>
@@ -370,4 +373,5 @@
 
 </body>
 </html>
+
 
