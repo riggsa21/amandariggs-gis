@@ -23,12 +23,10 @@
     section.pkg h2{margin:0 0 6px;color:#2b65a6}
     section.pkg p.lead{margin:0 0 14px;color:#334155}
 
-    /* Simple gallery: images with captions, no cards */
+    /* Simple gallery placeholders */
     .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-    figure{margin:0;border:1px solid var(--ring);border-radius:12px;overflow:hidden;background:#fff}
-    figure img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
-    figcaption{padding:10px 12px;font-size:.95rem;color:#0f172a}
-    figcaption .meta{display:block;color:#566;font-size:.9rem;margin-top:4px}
+    figure{margin:0;border:1px solid var(--ring);border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;height:200px;color:#888;font-style:italic}
+    figcaption{margin-top:10px;font-size:.95rem;color:#0f172a;text-align:center}
 
     .actions{display:flex;gap:10px;justify-content:center;margin:18px 12px}
     .btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:700}
@@ -43,7 +41,7 @@
 <body>
   <header>
     <h1>Portfolio</h1>
-    <p>All examples below are <strong>original work</strong> created by Amanda L. Riggs — <em>no AI‑generated imagery</em>. Shared with client permission where applicable; no proprietary or sensitive data are displayed.</p>
+    <p>All examples below are <strong>original work</strong> created by Amanda L. Riggs — <em>no AI-generated imagery</em>. Shared with client permission where applicable; no proprietary or sensitive data are displayed.</p>
     <div class="actions">
       <a class="btn link" href="index.html">← Back to Home</a>
       <a class="btn primary" href="hire.html#estimateForm">Request an Estimate</a>
@@ -54,31 +52,20 @@
     <!-- Basic Mapping -->
     <section class="pkg" id="basic-mapping">
       <h2>Basic Mapping</h2>
-      <p class="lead">Site and reference maps for proposals, permits, and reports. Clear labels, legends, and export‑ready layouts.</p>
+      <p class="lead">Site and reference maps for proposals, permits, and reports. Clear labels, legends, and export-ready layouts.</p>
       <div class="gallery">
-        <figure>
-          <img src="figure_9.png" alt="Reference map with legend and labeled features" />
-          <figcaption>
-            Reference map – site context
-            <span class="meta">Layout: legend, scale, north arrow; georeferenced for reuse</span>
-          </figcaption>
-        </figure>
-        <!-- ADD MORE IMAGES HERE: duplicate <figure> blocks -->
+        <figure>[ Placeholder for Basic Mapping image 1 ]</figure>
+        <figure>[ Placeholder for Basic Mapping image 2 ]</figure>
       </div>
     </section>
 
     <!-- Advanced Spatial Analysis -->
     <section class="pkg" id="advanced-analysis">
       <h2>Advanced Spatial Analysis</h2>
-      <p class="lead">Hydrologic/terrain/land‑use modeling, zonal and spatial statistics, and decision support plots.</p>
+      <p class="lead">Hydrologic/terrain/land-use modeling, zonal and spatial statistics, and decision support plots.</p>
       <div class="gallery">
-        <figure>
-          <img src="GreensMillRun_NDR_DrillDown.jpg" alt="Watershed nutrient export map with sub‑watershed summaries" />
-          <figcaption>
-            Watershed Nutrient Export (InVEST NDR)
-            <span class="meta">Phosphorus export hotspots with sub‑watershed drill‑downs</span>
-          </figcaption>
-        </figure>
+        <figure>[ Placeholder for Advanced Analysis image 1 ]</figure>
+        <figure>[ Placeholder for Advanced Analysis image 2 ]</figure>
       </div>
     </section>
 
@@ -87,43 +74,28 @@
       <h2>Hydrological & Environmental</h2>
       <p class="lead">DEM conditioning, stream burning, watershed delineation, and flood/terrain visualization.</p>
       <div class="gallery">
-        <figure>
-          <img src="HydroConditionedDEM_Map.jpg" alt="Hydro‑conditioned DEM showing streams aligned with valleys" />
-          <figcaption>
-            Hydro‑Conditioned DEM
-            <span class="meta">Stream burning & terrain conditioning for improved flow routing</span>
-          </figcaption>
-        </figure>
+        <figure>[ Placeholder for Hydrological image 1 ]</figure>
+        <figure>[ Placeholder for Hydrological image 2 ]</figure>
       </div>
     </section>
 
     <!-- Transportation & Infrastructure -->
     <section class="pkg" id="transport-infra">
       <h2>Transportation & Infrastructure</h2>
-      <p class="lead">Road networks, service areas, and infrastructure planning with land‑use and terrain context.</p>
+      <p class="lead">Road networks, service areas, and infrastructure planning with land-use and terrain context.</p>
       <div class="gallery">
-        <figure>
-          <img src="GPT_GMRTransport.png" alt="Transportation network map of Greens Mill Run area" />
-          <figcaption>
-            Networks & Service Areas
-            <span class="meta">Road overlays with watersheds and elevation for planning context</span>
-          </figcaption>
-        </figure>
+        <figure>[ Placeholder for Transportation image 1 ]</figure>
+        <figure>[ Placeholder for Transportation image 2 ]</figure>
       </div>
     </section>
 
     <!-- Custom Web Map / StoryMap -->
     <section class="pkg" id="web-map-storymap">
       <h2>Custom Web Map / StoryMap</h2>
-      <p class="lead">Interactive online maps and StoryMaps for stakeholder‑friendly communication.</p>
+      <p class="lead">Interactive online maps and StoryMaps for stakeholder-friendly communication.</p>
       <div class="gallery">
-        <figure>
-          <img src="GPT_GMRStorymap.png" alt="StoryMap preview with watershed panels" />
-          <figcaption>
-            StoryMap Interface
-            <span class="meta">ArcGIS Online / StoryMaps with custom styling and narrative flow</span>
-          </figcaption>
-        </figure>
+        <figure>[ Placeholder for StoryMap image 1 ]</figure>
+        <figure>[ Placeholder for StoryMap image 2 ]</figure>
       </div>
     </section>
 
@@ -132,13 +104,8 @@
       <h2>Website Development & Integration</h2>
       <p class="lead">Custom HTML/CSS/JS sites with embedded maps and dashboards; hosting and automation support.</p>
       <div class="gallery">
-        <figure>
-          <img src="https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/ChatGPT_WebDesign.png" alt="Website development concept with code editor and map" />
-          <figcaption>
-            Web Integration
-            <span class="meta">Responsive pages with embedded web maps and dashboards</span>
-          </figcaption>
-        </figure>
+        <figure>[ Placeholder for Web Development image 1 ]</figure>
+        <figure>[ Placeholder for Web Development image 2 ]</figure>
       </div>
     </section>
   </main>
@@ -147,4 +114,4 @@
     © 2025 Amanda L. Riggs · GIS & Environmental Mapping · <a href="index.html">Home</a> · <a href="hire.html#estimateForm">Request Estimate</a>
   </footer>
 </body>
-</html>
+</html
