@@ -122,19 +122,29 @@
     .price{font-weight:800;font-size:1.1rem;margin-top:6px;text-align:center}
     .card .cta{margin-top:auto;display:flex;justify-content:center}
 
-    /* Keep all card art consistent without stretching */
-    .card img{
-      width:100%;
-      aspect-ratio:16/9;
-      object-fit:cover;
-      border-radius:12px;
-      box-shadow:0 3px 10px rgba(0,0,0,.08);
-      margin:0 0 10px 0;
-    }
-    /* Fix the StoryMap image “squish”: show full image inside 16:9 without distortion */
-    .card img.storymap{
-      object-fit:contain;
-      background:#f5f7fb;
+/* Keep a consistent frame for card art */
+.card img{
+  width:100%;
+  aspect-ratio:16/9;  object-fit:cover;            /* default = fill frame like Transportation card */
+  border-radius:12px;
+  box-shadow:0 3px 10px rgba(0,0,0,.08);
+  margin:0 0 10px 0;
+}
+
+/* Show full map without cropping (adds subtle letterbox background) */
+.card img.full-map{
+  object-fit:contain;
+  background:#eef2f7;
+  padding:6px;                 /* optional: small inset so legends aren’t tight */
+}
+
+/* Make StoryMap match Transportation look (no “squish”, fills like a hero) */
+.card img.storymap{
+  object-fit:cover;            /* override any old contain rule */
+  background:transparent;
+  padding:0;
+}
+
     }
 
     /* ---------- Footer ---------- */
@@ -156,8 +166,8 @@
 
   <header>
     <h1>Amanda Riggs</h1>
-    <p class="sub">GIS mapping, analysis, and clean cartography for projects of any size.</p>
-    <div class="badge">Maps that look good and answer the question.</div>
+    <p class="sub">Geographic Information Systems (GIS) mapping, analysis, and clean cartography for projects of any size.</p>
+    <div class="badge">Great looking maps that answer questions.</div>
 
     <!-- Contact line with copy button -->
     <p style="margin-top:6px;color:#0f172a;font-size:1rem;font-weight:600;">
@@ -169,7 +179,7 @@
     </p>
 
     <div class="about">
-      I make clear, professional maps and simple analyses you can use right away—property maps, watershed figures, route maps, web maps, and more.
+      Clear, professional maps and simple analyses you can use right away—property maps, watershed figures, route maps, web maps, and more.
     </div>
 
     <nav class="hero">
@@ -236,7 +246,7 @@
 
         <!-- Advanced Spatial Analysis -->
         <article class="card">
-          <img src="GreensMillRun_NDR_DrillDown.jpg" alt="Hotspot analysis map showing higher nutrient contribution areas for a watershed" loading="lazy">
+          <img class="full-map" src="GreensMillRun_NDR_DrillDown.jpg" alt="Hotspot analysis map showing higher nutrient contribution areas for a watershed" loading="lazy">
           <h3>Advanced Spatial Analysis</h3>
           <p>Complex modeling and statistics.</p>
           <ul>
@@ -252,7 +262,7 @@
 
         <!-- Hydrological & Environmental -->
         <article class="card">
-          <img src="HydroConditionedDEM_Map.jpg" alt="Terrain map with streams aligned to valleys to show real flow paths" loading="lazy">
+          <img class="full-map" src="HydroConditionedDEM_Map.jpg" alt="Terrain map with streams aligned to valleys to show real flow paths" loading="lazy">
           <h3>Hydrological & Environmental</h3>
           <p>Watershed, flood, ecosystem services.</p>
           <ul>
@@ -360,3 +370,4 @@
 
 </body>
 </html>
+
