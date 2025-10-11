@@ -4,212 +4,147 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio | Amanda Riggs – GIS & Environmental Mapping</title>
-  <meta name="description" content="Selected GIS and environmental mapping projects by Amanda Riggs: hydrology, land use, transportation, and web maps." />
+  <meta name="description" content="Original GIS and environmental mapping work by Amanda Riggs, organized by service package." />
   <link rel="canonical" href="https://riggsa21.github.io/amandariggs-gis/portfolio.html" />
 
-  <!-- Social -->
-  <meta property="og:title" content="Portfolio | Amanda Riggs – GIS" />
-  <meta property="og:description" content="Examples of GIS mapping, hydrology, transportation, and interactive web maps." />
-  <meta property="og:type" content="website" />
-
   <style>
-    :root{
-      --ink:#0f172a;--muted:#334155;--brand:#2b65a6;--ring:#dbe3ef;--card:#ffffff;
-      --bg1:#f7f9fb;--bg2:#dce6f2;--shadow-sm:0 4px 12px rgba(0,0,0,.06);--shadow:0 6px 15px rgba(0,0,0,.10)
-    }
+    :root{--ink:#0f172a;--muted:#334155;--brand:#2b65a6;--ring:#dbe3ef;--card:#ffffff;--shadow-sm:0 4px 12px rgba(0,0,0,.06)}
     html,body{margin:0;padding:0}
-    body{font-family:Segoe UI,Tahoma,Verdana,sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--bg1),var(--bg2))}
+    body{font-family:Segoe UI,Tahoma,Verdana,sans-serif;color:var(--ink);background:#f6f9fd}
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
 
-    /* Header */
-    header{
-      max-width:1100px;margin:46px auto 22px;background:#fff;padding:28px;border-radius:18px;
-      box-shadow:var(--shadow-sm);text-align:center
-    }
-    header h1{margin:0 0 8px 0;color:#24496f}
-    header p.sub{margin:0;color:var(--muted)}
+    header{max-width:1100px;margin:46px auto 18px;background:#fff;padding:26px;border-radius:16px;box-shadow:var(--shadow-sm);text-align:center}
+    header h1{margin:0 0 8px;color:#24496f}
+    header p{margin:0;color:#334155}
 
-    /* Actions */
-    .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:14px}
-    .btn{display:inline-block;padding:10px 16px;border-radius:12px;font-weight:700;box-shadow:var(--shadow)}
+    main{max-width:1100px;margin:0 auto 60px}
+    section.pkg{background:#fff;margin:22px 12px;padding:20px;border-radius:16px;box-shadow:var(--shadow-sm)}
+    section.pkg h2{margin:0 0 6px;color:#2b65a6}
+    section.pkg p.lead{margin:0 0 14px;color:#334155}
+
+    /* Simple gallery: images with captions, no cards */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    figure{margin:0;border:1px solid var(--ring);border-radius:12px;overflow:hidden;background:#fff}
+    figure img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+    figcaption{padding:10px 12px;font-size:.95rem;color:#0f172a}
+    figcaption .meta{display:block;color:#566;font-size:.9rem;margin-top:4px}
+
+    .actions{display:flex;gap:10px;justify-content:center;margin:18px 12px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:700}
     .btn.primary{background:var(--brand);color:#fff}
-    .btn.link{background:transparent;color:var(--brand);border:2px solid var(--brand);box-shadow:none}
+    .btn.link{border:2px solid var(--brand);color:var(--brand)}
 
-    /* Filter chips */
-    .chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:18px auto 0}
-    .chip{border:1px solid var(--ring);background:#fff;color:#0f172a;padding:6px 10px;border-radius:999px;cursor:pointer;font-weight:600}
-    .chip[aria-pressed="true"]{background:#eaf2ff;border-color:#cfe0ff;color:#1d4ed8}
+    footer{text-align:center;margin:32px 0 44px;color:#4b5563;font-size:.95rem}
 
-    /* Grid */
-    main{max-width:1100px;margin:0 auto 60px;padding:0 0}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin:18px}
-    .card{background:#fff;border-radius:16px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
-    .thumb{width:100%;aspect-ratio:16/9;object-fit:cover;background:#eef2f7}
-    .content{padding:14px 16px}
-    .content h3{margin:2px 0 6px;color:var(--brand);font-size:1.12rem}
-    .content p{margin:0 0 10px;color:var(--muted)}
-    .meta{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 2px}
-    .badge{background:#f2f6ff;border:1px solid var(--ring);color:#1d4ed8;border-radius:999px;padding:4px 8px;font-size:.85rem;font-weight:700}
-    .cta{display:flex;gap:10px;justify-content:flex-start;margin-top:8px}
-
-    footer{text-align:center;margin:28px 0 40px;color:#4b5563;font-size:.95rem}
-
-    /* Mobile tweaks */
-    @media (max-width:800px){header{margin:24px 12px;padding:22px} .grid{margin:12px}}
+    @media (max-width:800px){header{margin:24px 12px} section.pkg{margin:16px 12px}}
   </style>
 </head>
 <body>
   <header>
     <h1>Portfolio</h1>
-    <p class="sub">A selection of GIS & environmental mapping work. Shared with client permission; no proprietary or sensitive data are displayed.</p>
+    <p>All examples below are <strong>original work</strong> created by Amanda L. Riggs — <em>no AI‑generated imagery</em>. Shared with client permission where applicable; no proprietary or sensitive data are displayed.</p>
     <div class="actions">
       <a class="btn link" href="index.html">← Back to Home</a>
       <a class="btn primary" href="hire.html#estimateForm">Request an Estimate</a>
     </div>
-    <div class="chips" role="toolbar" aria-label="Filter projects">
-      <button class="chip" data-filter="all" aria-pressed="true">All</button>
-      <button class="chip" data-filter="hydrology">Hydrology</button>
-      <button class="chip" data-filter="analysis">Spatial Analysis</button>
-      <button class="chip" data-filter="transport">Transportation</button>
-      <button class="chip" data-filter="web">Web Maps</button>
-      <button class="chip" data-filter="cartography">Cartography</button>
-    </div>
   </header>
 
   <main>
-    <section class="grid" id="portfolio-grid">
-      <!-- Card: Hydrological & Environmental -->
-      <article class="card" data-tags="hydrology analysis cartography">
-        <img class="thumb" src="HydroConditionedDEM_Map.jpg" alt="Hydro-conditioned DEM map with streams aligned to valleys" />
-        <div class="content">
-          <h3>Hydro‑Conditioned DEM</h3>
-          <div class="meta">
-            <span class="badge">Hydrology</span>
-            <span class="badge">Terrain</span>
-            <span class="badge">Cartography</span>
-          </div>
-          <p>Stream burning & terrain conditioning to improve flow routing and visualization, aligning channels with valley bottoms.</p>
-          <div class="cta">
-            <a class="btn primary" href="hire.html?package=Hydrological%20%26%20Environmental#estimateForm">Request estimate</a>
-            <a class="btn link" href="HydroConditionedDEM_Map.jpg" target="_blank" rel="noopener">View full</a>
-          </div>
-        </div>
-      </article>
+    <!-- Basic Mapping -->
+    <section class="pkg" id="basic-mapping">
+      <h2>Basic Mapping</h2>
+      <p class="lead">Site and reference maps for proposals, permits, and reports. Clear labels, legends, and export‑ready layouts.</p>
+      <div class="gallery">
+        <figure>
+          <img src="figure_9.png" alt="Reference map with legend and labeled features" />
+          <figcaption>
+            Reference map – site context
+            <span class="meta">Layout: legend, scale, north arrow; georeferenced for reuse</span>
+          </figcaption>
+        </figure>
+        <!-- ADD MORE IMAGES HERE: duplicate <figure> blocks -->
+      </div>
+    </section>
 
-      <!-- Card: Watershed Nutrient Export -->
-      <article class="card" data-tags="analysis hydrology cartography">
-        <img class="thumb" src="GreensMillRun_NDR_DrillDown.jpg" alt="Watershed nutrient export map with hotspots highlighted" />
-        <div class="content">
-          <h3>Watershed Nutrient Export (NDR)</h3>
-          <div class="meta">
-            <span class="badge">Spatial Analysis</span>
-            <span class="badge">Hydrology</span>
-            <span class="badge">InVEST</span>
-          </div>
-          <p>InVEST NDR results highlighting high‑contribution areas and summary stats by sub‑watershed for decision support.</p>
-          <div class="cta">
-            <a class="btn primary" href="hire.html?package=Advanced%20Spatial%20Analysis#estimateForm">Request estimate</a>
-            <a class="btn link" href="GreensMillRun_NDR_DrillDown.jpg" target="_blank" rel="noopener">View full</a>
-          </div>
-        </div>
-      </article>
+    <!-- Advanced Spatial Analysis -->
+    <section class="pkg" id="advanced-analysis">
+      <h2>Advanced Spatial Analysis</h2>
+      <p class="lead">Hydrologic/terrain/land‑use modeling, zonal and spatial statistics, and decision support plots.</p>
+      <div class="gallery">
+        <figure>
+          <img src="GreensMillRun_NDR_DrillDown.jpg" alt="Watershed nutrient export map with sub‑watershed summaries" />
+          <figcaption>
+            Watershed Nutrient Export (InVEST NDR)
+            <span class="meta">Phosphorus export hotspots with sub‑watershed drill‑downs</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
 
-      <!-- Card: StoryMap -->
-      <article class="card" data-tags="web cartography">
-        <img class="thumb" src="GPT_GMRStorymap.png" alt="StoryMap preview with watershed panels" />
-        <div class="content">
-          <h3>Custom StoryMap</h3>
-          <div class="meta">
-            <span class="badge">Web Map</span>
-            <span class="badge">Cartography</span>
-          </div>
-          <p>Interactive visual storytelling with ArcGIS Online / StoryMaps for stakeholder-friendly communication.</p>
-          <div class="cta">
-            <a class="btn primary" href="hire.html?package=Custom%20Web%20Map%20%2F%20StoryMap#estimateForm">Request estimate</a>
-            <a class="btn link" href="GPT_GMRStorymap.png" target="_blank" rel="noopener">View full</a>
-          </div>
-        </div>
-      </article>
+    <!-- Hydrological & Environmental -->
+    <section class="pkg" id="hydrological-environmental">
+      <h2>Hydrological & Environmental</h2>
+      <p class="lead">DEM conditioning, stream burning, watershed delineation, and flood/terrain visualization.</p>
+      <div class="gallery">
+        <figure>
+          <img src="HydroConditionedDEM_Map.jpg" alt="Hydro‑conditioned DEM showing streams aligned with valleys" />
+          <figcaption>
+            Hydro‑Conditioned DEM
+            <span class="meta">Stream burning & terrain conditioning for improved flow routing</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
 
-      <!-- Card: Transportation & Infrastructure -->
-      <article class="card" data-tags="transport analysis cartography">
-        <img class="thumb" src="GPT_GMRTransport.png" alt="Transportation network map of Greens Mill Run area" />
-        <div class="content">
-          <h3>Transportation & Infrastructure</h3>
-          <div class="meta">
-            <span class="badge">Transportation</span>
-            <span class="badge">Networks</span>
-          </div>
-          <p>Roadway & service‑area mapping with land‑use overlays; infrastructure planning with terrain & drainage context.</p>
-          <div class="cta">
-            <a class="btn primary" href="hire.html?package=Transportation%20%26%20Infrastructure#estimateForm">Request estimate</a>
-            <a class="btn link" href="GPT_GMRTransport.png" target="_blank" rel="noopener">View full</a>
-          </div>
-        </div>
-      </article>
+    <!-- Transportation & Infrastructure -->
+    <section class="pkg" id="transport-infra">
+      <h2>Transportation & Infrastructure</h2>
+      <p class="lead">Road networks, service areas, and infrastructure planning with land‑use and terrain context.</p>
+      <div class="gallery">
+        <figure>
+          <img src="GPT_GMRTransport.png" alt="Transportation network map of Greens Mill Run area" />
+          <figcaption>
+            Networks & Service Areas
+            <span class="meta">Road overlays with watersheds and elevation for planning context</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
 
-      <!-- Card: Basic Mapping -->
-      <article class="card" data-tags="cartography">
-        <img class="thumb" src="figure_9.png" alt="Area reference map with legend and labels" />
-        <div class="content">
-          <h3>Reference Map – Site Context</h3>
-          <div class="meta">
-            <span class="badge">Cartography</span>
-            <span class="badge">Layout</span>
-          </div>
-          <p>Clean site‑scale cartography for proposals, permits, and reports with readable labels and clear legend.</p>
-          <div class="cta">
-            <a class="btn primary" href="hire.html?package=Basic%20Mapping#estimateForm">Request estimate</a>
-            <a class="btn link" href="figure_9.png" target="_blank" rel="noopener">View full</a>
-          </div>
-        </div>
-      </article>
+    <!-- Custom Web Map / StoryMap -->
+    <section class="pkg" id="web-map-storymap">
+      <h2>Custom Web Map / StoryMap</h2>
+      <p class="lead">Interactive online maps and StoryMaps for stakeholder‑friendly communication.</p>
+      <div class="gallery">
+        <figure>
+          <img src="GPT_GMRStorymap.png" alt="StoryMap preview with watershed panels" />
+          <figcaption>
+            StoryMap Interface
+            <span class="meta">ArcGIS Online / StoryMaps with custom styling and narrative flow</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
 
-      <!-- Card: Website Development & Integration -->
-      <article class="card" data-tags="web">
-        <img class="thumb" src="https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/ChatGPT_WebDesign.png" alt="Website development with GIS web map and code editor" />
-        <div class="content">
-          <h3>Website Development & Integration</h3>
-          <div class="meta">
-            <span class="badge">Web</span>
-            <span class="badge">Integration</span>
-          </div>
-          <p>Custom HTML/CSS/JS sites with embedded maps and dashboards; hosting and automation support.</p>
-          <div class="cta">
-            <a class="btn primary" href="hire.html?package=Website%20Development%20%26%20Integration#estimateForm">Request estimate</a>
-            <a class="btn link" href="https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/ChatGPT_WebDesign.png" target="_blank" rel="noopener">View full</a>
-          </div>
-        </div>
-      </article>
-
+    <!-- Website Development & Integration -->
+    <section class="pkg" id="web-dev-integration">
+      <h2>Website Development & Integration</h2>
+      <p class="lead">Custom HTML/CSS/JS sites with embedded maps and dashboards; hosting and automation support.</p>
+      <div class="gallery">
+        <figure>
+          <img src="https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/ChatGPT_WebDesign.png" alt="Website development concept with code editor and map" />
+          <figcaption>
+            Web Integration
+            <span class="meta">Responsive pages with embedded web maps and dashboards</span>
+          </figcaption>
+        </figure>
+      </div>
     </section>
   </main>
 
   <footer>
     © 2025 Amanda L. Riggs · GIS & Environmental Mapping · <a href="index.html">Home</a> · <a href="hire.html#estimateForm">Request Estimate</a>
   </footer>
-
-  <script>
-    // Simple client-side filtering for chips
-    const chips = document.querySelectorAll('.chip');
-    const cards = document.querySelectorAll('.card');
-
-    function applyFilter(kind){
-      cards.forEach(c => {
-        if (kind === 'all') { c.style.display = ''; return; }
-        const tags = (c.getAttribute('data-tags') || '').split(/\s+/);
-        c.style.display = tags.includes(kind) ? '' : 'none';
-      });
-    }
-
-    chips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        chips.forEach(c => c.setAttribute('aria-pressed','false'));
-        chip.setAttribute('aria-pressed','true');
-        applyFilter(chip.dataset.filter);
-      });
-    });
-  </script>
 </body>
 </html>
