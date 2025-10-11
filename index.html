@@ -119,8 +119,19 @@
     .card h3{margin:0 0 6px 0;color:var(--brand);font-size:1.15rem}
     .card p{color:var(--muted);margin:0 0 10px 0}
     .card ul{padding-left:18px;margin:0 0 12px 0;color:var(--ink)}
-    .price{font-weight:800;font-size:1.1rem;margin-top:6px;text-align:center}
-    .card .cta{margin-top:auto;display:flex;justify-content:center}
+    /* Price sits at the bottom of the content; button follows closely */
+.price{
+  font-weight:800;
+  font-size:1.1rem;
+  margin-top:auto;
+  margin-bottom:8px;
+  text-align:center;
+}
+.card .cta{
+  margin-top:0;
+  display:flex;
+  justify-content:center;
+}
 
     /* ---------- Card "thumb" media frames (never distort) ---------- */
     .thumb{
@@ -363,3 +374,4 @@
 
 </body>
 </html>
+
