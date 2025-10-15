@@ -6,36 +6,56 @@
   <title>About | GIS & Environmental Mapping</title>
   <meta name="description" content="About Amanda Riggs — GIS & Environmental Mapping Services." />
   <style>
-    :root{
-      --ink:#0f172a; --muted:#334155; --brand:#2b65a6; --ring:#dbe3ef;
-      --card:#ffffff; --bg1:#f7f9fb; --bg2:#dce6f2; --shadow-sm:0 4px 12px rgba(0,0,0,.06);
+    :root {
+      --ink:#0f172a;
+      --muted:#334155;
+      --brand:#2b65a6;
+      --ring:#dbe3ef;
+      --card:#ffffff;
+      --bg1:#f7f9fb;
+      --bg2:#dce6f2;
+      --shadow-sm:0 4px 12px rgba(0,0,0,.06);
     }
-    html{scroll-behavior:smooth} *,*::before,*::after{box-sizing:border-box}
-    body{margin:0;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:var(--ink);
-      background:linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%); padding-top:56px;}
-    a{color:#245c9c;text-decoration:none} a:hover{text-decoration:underline}
+    html{scroll-behavior:smooth}
+    *,*::before,*::after{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color:var(--ink);
+      background:linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+      padding-top:56px;
+    }
+    a{color:#245c9c;text-decoration:none}
+    a:hover{text-decoration:underline}
 
-    .topbar{position:fixed;inset:0 0 auto 0;height:56px;z-index:1000;display:flex;align-items:center;gap:12px;
-      background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid #e5e7eb;padding:0 12px;}
+    .topbar{
+      position:fixed;inset:0 0 auto 0;height:56px;z-index:1000;
+      display:flex;align-items:center;gap:12px;
+      background:rgba(255,255,255,.9);backdrop-filter:blur(8px);
+      border-bottom:1px solid #e5e7eb;padding:0 12px;
+    }
     .brand{font-weight:800;color:var(--brand);letter-spacing:.2px;font-size:1.05rem;}
-    .home-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;border:1.5px solid var(--brand);
-      color:var(--brand);background:#fff;font-weight:700;text-decoration:none}
+    .home-btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:10px;
+      border:1.5px solid var(--brand);color:var(--brand);
+      background:#fff;font-weight:700;text-decoration:none;
+    }
 
     main{max-width:1000px;margin:24px auto;padding:0 16px}
-    .panel{background:#fff;border-radius:18px;box-shadow:var(--shadow-sm);padding:22px;margin-bottom:18px}
+    .panel{
+      background:#fff;border-radius:18px;box-shadow:var(--shadow-sm);
+      padding:22px;margin-bottom:18px;
+    }
     h1{margin:12px 0 8px 0}
     h2{margin:0 0 10px 0;color:#24496f;border-bottom:2px solid var(--ring);padding-bottom:6px}
 
-    .contact-card{display:flex;gap:16px;align-items:center;margin-top:8px}
-    .avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #dbe3ef;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-  background: #f8fafc;
-}
+    .contact-card{display:flex;gap:16px;align-items:center;margin-top:8px;flex-wrap:wrap}
+    .avatar{
+      width:120px;height:120px;border-radius:50%;
+      object-fit:cover;border:3px solid #dbe3ef;
+      box-shadow:0 4px 10px rgba(0,0,0,0.12);background:#f8fafc;
+    }
     .contact-lines{line-height:1.6}
   </style>
 </head>
@@ -50,13 +70,13 @@
     <section class="panel">
       <h1>About</h1>
       <p>
-        <strong>GIS & Environmental Mapping is a startup studio focused on clear, decision-ready cartography
+        <strong>GIS & Environmental Mapping</strong> is a startup studio focused on clear, decision-ready cartography
         and accessible spatial analysis. I’m actively building experience and a portfolio across property, watershed,
         transportation, and web-map projects.
       </p>
       <p>
-        I hold a BS in Multidisciplinary Studies – Environmental Science, an
-        MS in Geography and a GIS Certification. I care about practical,
+        I hold a <strong>BS in Multidisciplinary Studies – Environmental Science</strong>, an
+        <strong>MS in Geography</strong>, and a <strong>GIS Certification</strong>. I care about practical,
         well-designed outputs that builders, planners, homeowners, and researchers can use right away.
       </p>
     </section>
@@ -64,10 +84,7 @@
     <section class="panel" aria-label="Contact">
       <h2>Contact</h2>
       <div class="contact-card">
-        <!-- Drop a headshot at /assets/profile.jpg or replace the src -->
-      <img class="avatar" 
-     src="https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/profile.jpg" 
-     alt="Profile photo of Amanda Riggs">
+        <img class="avatar" src="profile.jpg?v=1" alt="Profile photo of Amanda Riggs">
         <div class="contact-lines">
           <div><strong>Amanda L. Riggs</strong></div>
           <div><a href="mailto:amanda.l.riggs@outlook.com">amanda.l.riggs@outlook.com</a></div>
@@ -79,12 +96,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
