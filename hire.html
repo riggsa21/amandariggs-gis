@@ -1,245 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Request an Estimate | Amanda Riggs – GIS</title>
-  <meta name="description" content="Request an estimate for GIS mapping, hydrology, transportation, and web map services from Amanda Riggs." />
+  <title>Request Estimate | GIS & Environmental Mapping</title>
+  <meta name="description" content="Request a project estimate for GIS mapping, analysis, and web maps." />
+  <link rel="canonical" href="https://riggsa21.github.io/amandariggs-gis/hire.html" />
   <style>
-    :root{--ink:#0f172a;--muted:#334155;--brand:#2b65a6;--ring:#dbe3ef}
-    html,body{margin:0;padding:0;font-family:Segoe UI,Tahoma,Verdana,sans-serif;background:#f6f9fd;color:var(--ink)}
-    a{color:#2b65a6;text-decoration:none} a:hover{text-decoration:underline}
+    :root{
+      --ink:#0f172a; --muted:#334155; --brand:#2b65a6; --ring:#dbe3ef;
+      --card:#ffffff; --bg1:#f7f9fb; --bg2:#dce6f2;
+      --shadow-sm:0 4px 12px rgba(0,0,0,.06); --shadow:0 6px 15px rgba(0,0,0,.10);
+    }
+    html{scroll-behavior:smooth} *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:var(--ink);
+      background:linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%); padding-top:56px;}
+    a{color:#245c9c;text-decoration:none} a:hover{text-decoration:underline}
 
-    .wrap{max-width:900px;margin:48px auto;background:#fff;padding:28px;border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,.06)}
-    h1{margin:0 0 12px 0;color:#1a2a44}
-    h2{margin:0 0 8px 0;color:#24496f}
-    p.muted{color:var(--muted);margin-top:6px}
+    /* Top bar */
+    .topbar{position:fixed;inset:0 0 auto 0;height:56px;z-index:1000;display:flex;align-items:center;gap:12px;
+      background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid #e5e7eb;padding:0 12px;}
+    .brand{font-weight:800;color:var(--brand);letter-spacing:.2px;font-size:1.05rem;}
+    .home-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;border:1.5px solid var(--brand);
+      color:var(--brand);background:#fff;font-weight:700;text-decoration:none}
 
-    label{font-weight:600;display:block;margin:16px 0 6px}
-    input,textarea,select{width:100%;padding:12px 12px;border:1px solid var(--ring);border-radius:10px;font-size:1rem;background:#fff}
+    /* Shell */
+    main{max-width:1000px;margin:24px auto;padding:0 16px}
+    .panel{background:#fff;border-radius:18px;box-shadow:var(--shadow-sm);padding:22px;margin-bottom:18px}
+    h1{margin:12px 0 8px 0}
+    h2{margin:0 0 10px 0;color:#24496f;border-bottom:2px solid var(--ring);padding-bottom:6px}
+
+    /* Form */
+    form label{display:block;font-weight:700;margin-top:12px}
+    input[type="text"], input[type="email"], textarea, select{
+      width:100%;padding:10px 12px;border-radius:10px;border:1px solid #d6dee9;outline:none}
     textarea{min-height:120px}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .btn{display:inline-block;padding:10px 16px;border-radius:12px;font-weight:700;box-shadow:var(--shadow)}
+    .btn.primary{background:var(--brand);color:#fff}
+    .btn.primary:hover{filter:brightness(1.05)}
 
-    .btn{display:inline-block;background:var(--brand);color:#fff;padding:12px 16px;border-radius:10px;font-weight:700;text-decoration:none;cursor:pointer;border:0}
-    .row{margin-top:18px}
-    .note{font-size:.95rem;color:var(--muted);margin-top:8px}
-    .terms{background:#f2f6ff;border:1px solid var(--ring);padding:12px;border-radius:10px;margin-top:14px}
+    /* Payment options */
+    .pay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .pay-card{border:1px solid #e5e7eb;border-radius:14px;padding:14px;background:#fff}
+    .pay-title{margin:0 0 6px 0;color:var(--brand);font-weight:800}
+    .pay-note{margin:6px 0 0 0;color:#475569;font-size:.95rem}
+    .qr{width:128px;height:128px;object-fit:contain;border-radius:8px;border:1px solid #e5e7eb;background:#f8fafc}
 
-    /* Cards */
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-    .card{background:#fff;border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.10);padding:20px;display:flex;flex-direction:column}
-    .price{font-weight:800;font-size:1.8rem;margin:0 0 6px 0}
-    .card h3{margin:0 0 8px 0;color:var(--brand)}
-    .card p{color:var(--muted);margin:0 0 10px 0}
-    .card ul{margin:0 0 14px 18px;color:var(--ink)}
-    .card .btn{margin-top:auto;width:100%;text-align:center}
-
-    section[aria-label="Portfolio Permission"] {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 24px;
-      border-radius: 16px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.06);
-    }
-
-    footer{max-width:900px;margin:18px auto 40px;text-align:center;color:#566}
-
-    /* ------ Mobile tweaks ------ */
-    @media (max-width: 760px){
-      .wrap{margin:24px 12px;padding:20px}
-      .grid{grid-template-columns:1fr;gap:12px}
-      .btn{width:100%;text-align:center}
-      .cards{grid-template-columns:1fr;gap:14px}
-      .price{font-size:1.4rem}
-    }
+    @media(max-width:720px){ .row{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
 
-  <main class="wrap">
-    <h1>Request an Estimate</h1>
-    <p class="muted">Fill this in and click <strong>Send Estimate Request</strong>. I’ll follow up with a scoped estimate and timeline.</p>
+  <div class="topbar">
+    <a class="home-btn" href="index.html" aria-label="Return to Home">← Home</a>
+    <div class="brand">Request Estimate</div>
+  </div>
 
-    <!-- ✅ Formspree form (simple POST) -->
-    <form id="estimateForm" action="https://formspree.io/f/xqaydyjj" method="POST">
-      <div class="grid">
-        <div>
-          <label for="name">Your Name / Organization</label>
-          <input id="name" name="name" required placeholder="e.g., Taylor Hart — Hart Planning" />
-        </div>
-        <div>
-          <label for="email">Contact Email</label>
-          <input id="email" name="_replyto" type="email" required placeholder="you@example.com" />
-         </div>
-         <div> 
-          <label for="phone">Phone Number (optional)</label>
-          <input type="tel" id="phone" name="phone" placeholder="Your phone number" pattern="[0-9+\-\s()]{7,15}" />
-         </div>
-      </div>
-
-      <label for="title">Project Title</label>
-      <input id="title" name="title" required placeholder="e.g., Downtown Site Drainage Maps" />
-
-      <label for="scope">What do you need?</label>
-      <textarea id="scope" name="scope" required placeholder="Brief description of deliverables (maps, analysis, transportation routes, web map, etc.)"></textarea>
-
-      <div class="grid">
-        <div>
-          <label for="timeline">Timeline</label>
-          <input id="timeline" name="timeline" placeholder="e.g., Draft in 2 weeks, final by Nov 30" />
-        </div>
-        <div>
-          <label for="budget">Budget (optional)</label>
-          <input id="budget" name="budget" placeholder="If you have a target, add it here" />
-        </div>
-      </div>
-
-      <label for="data">Existing Data (optional)</label>
-      <textarea id="data" name="data" placeholder="Links or sources you already have (parcels, surveys, shapefiles, LiDAR, etc.)"></textarea>
-
-      <!-- Formspree helpers -->
-      <input type="hidden" name="_subject" value="Estimate Request – GIS Services" />
-      <input type="hidden" name="_template" value="table" />
-      <input type="text" name="_gotcha" style="display:none" />
-
-      <div class="row">
-        <button class="btn" type="submit">Send Estimate Request</button>
-        <div class="note">You’ll see a confirmation page after sending.</div>
-      </div>
-    </form>
-
-    <div class="terms">
-      <strong>Estimate policy:</strong> Estimates reflect current scope and assumptions; changes or added requests may adjust pricing. Estimates are valid for 30 days.
-    </div>
-
-    <!-- Quick Packages (match index) -->
-    <section aria-label="Quick Packages" style="margin:28px 0 0;">
-      <h2>Quick Packages</h2>
-      <p class="muted" style="margin:0 0 16px 0;">Flat-rate starting points. Final pricing provided as an estimate based on scope and timeline.</p>
-
-      <div class="cards">
-        <!-- Basic Mapping -->
-        <article class="card">
-          <h3>Basic Mapping</h3>
-          <div class="price">$450+</div>
-          <p>Single-map or small-scope projects.</p>
-          <ul>
-            <li>PDF + source layer</li>
-            <li>Georeferenced layout & labels</li>
-            <li>Short metadata summary</li>
-          </ul>
-          <button class="btn pkg-btn" data-title="Basic Mapping">Request estimate</button>
-        </article>
-
-        <!-- Advanced Spatial Analysis -->
-        <article class="card">
-          <h3>Advanced Spatial Analysis</h3>
-          <div class="price">$850+</div>
-          <p>Complex modeling and statistics.</p>
-          <ul>
-            <li>Hydrologic/terrain/land-use modeling</li>
-            <li>Zonal/spatial statistics</li>
-            <li>ArcGIS Pro package + brief report</li>
-          </ul>
-          <button class="btn pkg-btn" data-title="Advanced Spatial Analysis">Request estimate</button>
-        </article>
-
-        <!-- Transportation & Infrastructure -->
-        <article class="card">
-          <h3>Transportation & Infrastructure</h3>
-          <div class="price">$1,800+</div>
-          <p>Planning & development visualization.</p>
-          <ul>
-            <li>Road networks & service areas</li>
-            <li>Infrastructure visualization & planning</li>
-            <li>Integrated terrain & waterway analysis</li>
-          </ul>
-          <button class="btn pkg-btn" data-title="Transportation & Infrastructure">Request estimate</button>
-        </article>
-
-        <!-- Hydrological & Environmental -->
-        <article class="card">
-          <h3>Hydrological & Environmental</h3>
-          <div class="price">$1,200+</div>
-          <p>Watershed, flood, ecosystem services.</p>
-          <ul>
-            <li>DEM conditioning & stream delineation</li>
-            <li>NDR/USR outputs</li>
-            <li>Report + GIS package</li>
-          </ul>
-          <button class="btn pkg-btn" data-title="Hydrological & Environmental">Request estimate</button>
-        </article>
-
-        <!-- Custom Web Map / StoryMap -->
-        <article class="card">
-          <h3>Custom Web Map / StoryMap</h3>
-          <div class="price">$1,500+</div>
-          <p>Interactive online visualization.</p>
-          <ul>
-            <li>ArcGIS Online or custom HTML/JS</li>
-            <li>Pop-ups, legend, custom styling</li>
-            <li>Optional StoryMap integration</li>
-          </ul>
-          <button class="btn pkg-btn" data-title="Custom Web Map / StoryMap">Request estimate</button>
-        </article>
-
-        <!-- Website Development & Integration -->
-        <article class="card">
-          <h3>Website Development & Integration</h3>
-          <div class="price">$2,500+</div>
-          <p>Full custom-coded site with maps.</p>
-          <ul>
-            <li>Responsive HTML/CSS/JS</li>
-            <li>Map & dashboard integration</li>
-            <li>Hosting setup support</li>
-          </ul>
-          <button class="btn pkg-btn" data-title="Website Development & Integration">Request estimate</button>
-        </article>
-      </div>
+  <main>
+    <section class="panel">
+      <h1>Request an Estimate</h1>
+      <p>Tell me about your project goals, timeline, area of interest, and any datasets you already have.</p>
     </section>
 
+    <!-- Your form (Formspree or similar). Keep the id for deep-links. -->
+    <section id="estimateForm" class="panel" aria-label="Estimate form">
+      <h2>Project Details</h2>
+      <!-- Replace action with your Formspree endpoint -->
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <div class="row">
+          <div>
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="_replyto" type="email" required />
+          </div>
+        </div>
+
+        <label for="type">Service type</label>
+        <select id="type" name="service">
+          <option>Basic Mapping</option>
+          <option>Advanced Spatial Analysis</option>
+          <option>Hydrological & Environmental</option>
+          <option>Custom Web Map / StoryMap</option>
+          <option>Transportation & Infrastructure</option>
+          <option>Website Development & Integration</option>
+        </select>
+
+        <label for="details">Project details</label>
+        <textarea id="details" name="details" placeholder="AOI, deliverables, deadline, budget, preferred formats…"></textarea>
+
+        <div style="margin-top:14px">
+          <button class="btn primary" type="submit">Send Request</button>
+        </div>
+        <input type="hidden" name="source" value="hire-page" />
+      </form>
+    </section>
+
+    <!-- Payment Options -->
+    <section class="panel" aria-label="Payment options">
+      <h2>Payment Options</h2>
+      <div class="pay-grid">
+        <div class="pay-card">
+          <h3 class="pay-title">PayPal</h3>
+          <!-- Replace with your PayPal.Me link -->
+          <p><a href="https://paypal.me/YOURPAYPALME" target="_blank" rel="noopener">paypal.me/YOURPAYPALME</a></p>
+          <p class="pay-note">Preferred for invoices and card payments.</p>
+        </div>
+
+        <div class="pay-card">
+          <h3 class="pay-title">Cash App</h3>
+          <!-- Replace with your $cashtag -->
+          <p><a href="https://cash.app/$YOURCAshtag" target="_blank" rel="noopener">cash.app/$YOURCAshtag</a></p>
+          <p class="pay-note">Quick transfers using your Cash App.</p>
+        </div>
+
+        <div class="pay-card">
+          <h3 class="pay-title">Bitcoin (via Coinbase)</h3>
+          <!-- Option A: Coinbase Commerce (preferred) – replace with your checkout link -->
+          <p><a href="https://commerce.coinbase.com/checkout/your-checkout-id" target="_blank" rel="noopener">Pay with Bitcoin</a></p>
+          <p class="pay-note">If you prefer direct wallet payments, I can provide a BTC address on request.</p>
+          <!-- Optional QR (drop a PNG into /assets and uncomment)
+          <img class="qr" src="assets/qr-bitcoin.png" alt="Bitcoin payment QR" />
+          -->
+        </div>
+      </div>
+      <p class="pay-note" style="margin-top:10px">
+        Tip: for **fixed-price projects**, I’ll send a formal invoice (usually 50% deposit to begin, balance at delivery).
+      </p>
+    </section>
   </main>
-  
-<!-- ---------- Portfolio Permission & Link ---------- -->
-<section aria-label="Portfolio Permission" style="margin-top:32px;text-align:center;">
-  <p class="muted" style="max-width:700px;margin:0 auto 12px;">
-    <em>Note:</em> With your permission, selected project images or maps may be featured in my online
-    <a href="portfolio.html" style="color:var(--brand);text-decoration:none;">portfolio</a> to highlight GIS and environmental mapping examples.<br>
-    (No proprietary or sensitive data are ever shared.)
-  </p>
-  <a href="portfolio.html" class="btn primary" style="text-decoration:none;">View Portfolio</a>
-</section>
-  
-  <footer>
-    © 2025 Amanda L. Riggs · <a href="mailto:amanda.l.riggs@outlook.com">amanda.l.riggs@outlook.com</a>
-  </footer>
 
-  <script>
-    // Prefill from Quick Package buttons
-    document.querySelectorAll('.pkg-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const title = document.getElementById('title');
-        if (title) title.value = btn.getAttribute('data-title') || '';
-        document.getElementById('scope').focus();
-        const form = document.getElementById('estimateForm');
-        if (form) window.scrollTo({ top: form.offsetTop - 20, behavior: 'smooth' });
-      });
-    });
-
-    // Prefill from URL (?package=...)
-    document.addEventListener('DOMContentLoaded', () => {
-      const params = new URLSearchParams(window.location.search);
-      const pkg = params.get('package');
-      if (pkg) {
-        const title = document.getElementById('title');
-        if (title) title.value = decodeURIComponent(pkg);
-        const form = document.getElementById('estimateForm');
-        if (form) window.scrollTo({ top: form.offsetTop - 20, behavior: 'smooth' });
-        const scope = document.getElementById('scope');
-        if (scope) scope.focus();
-      }
-    });
-  </script>
 </body>
 </html>
