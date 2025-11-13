@@ -1,0 +1,29 @@
+import os
+
+# === EDIT THIS PATH ===
+FOLDER = r"D:\Map Portfolio"  # folder with your maps
+VALID_EXT = {".png", ".jpg", ".jpeg"}
+
+items = []
+
+for root, dirs, files in os.walk(FOLDER):
+    for f in files:
+        ext = os.path.splitext(f)[1].lower()
+        if ext in VALID_EXT:
+            rel_path = os.path.relpath(os.path.join(root, f), FOLDER)
+            web_path = rel_path.replace("\\", "/")
+            caption = os.path.splitext(f)[0].replace("_", " ")
+            items.append((web_path, caption))
+
+output_file = os.path.join(FOLDER, "gallery_snippets.html")
+
+with open(output_file, "w", encoding="utf-8") as out:
+    for web_path, caption in items:
+        out.write(f'''<figure class="gallery-item">
+  <img src="assets/portfolio/{web_path}" alt="{caption}">
+  <figcaption>{caption}</figcaption>
+</figure>
+
+''')
+
+print(f"Saved HTML snippets to: {output_file}")
