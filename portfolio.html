@@ -1,117 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio | Amanda Riggs – GIS & Environmental Mapping</title>
-  <meta name="description" content="Original GIS and environmental mapping work by Amanda Riggs, organized by service package." />
-  <link rel="canonical" href="https://riggsa21.github.io/amandariggs-gis/portfolio.html" />
+<main class="page-content">
+  <section class="portfolio-intro">
+    <h1>GIS & Mapping Portfolio</h1>
+    <p>
+      This portfolio highlights selected GIS, remote sensing, and geospatial analysis projects,
+      including hydrology and watershed modeling, land cover change detection, DEM conditioning,
+      ecosystem services modeling, and Python/ArcPy automation.
+    </p>
+  </section>
 
-  <style>
-    :root{--ink:#0f172a;--muted:#334155;--brand:#2b65a6;--ring:#dbe3ef;--card:#ffffff;--shadow-sm:0 4px 12px rgba(0,0,0,.06)}
-    html,body{margin:0;padding:0}
-    body{font-family:Segoe UI,Tahoma,Verdana,sans-serif;color:var(--ink);background:#f6f9fd}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
+  <!-- FEATURED PROJECTS -->
+  <section class="portfolio-section">
+    <h2>Featured Projects</h2>
+    <div class="portfolio-grid">
 
-    header{max-width:1100px;margin:46px auto 18px;background:#fff;padding:26px;border-radius:16px;box-shadow:var(--shadow-sm);text-align:center}
-    header h1{margin:0 0 8px;color:#24496f}
-    header p{margin:0;color:#334155}
+      <!-- Hydrology / Stream Network -->
+      <article class="portfolio-card">
+        <img src="assets/portfolio/Hydrology_Watershed.png" alt="Hydrology and watershed mapping">
+        <div class="card-body">
+          <h3>Hydrologically Conditioned DEM & Stream Network</h3>
+          <p>
+            Built a hydrologically conditioned DEM and extracted a detailed stream network from
+            LiDAR-derived elevation data. Workflow included DEM preprocessing, stream burning,
+            flow direction and accumulation, threshold testing, and validation using overlap
+            ratio and intersection-over-union metrics.
+          </p>
+          <ul class="tags">
+            <li>ArcGIS Pro</li>
+            <li>Hydrology</li>
+            <li>Raster Analysis</li>
+            <li>Python/ArcPy</li>
+          </ul>
+        </div>
+      </article>
 
-    main{max-width:1100px;margin:0 auto 60px}
-    section.pkg{background:#fff;margin:22px 12px;padding:20px;border-radius:16px;box-shadow:var(--shadow-sm)}
-    section.pkg h2{margin:0 0 6px;color:#2b65a6}
-    section.pkg p.lead{margin:0 0 14px;color:#334155}
+      <!-- Land Cover / Savannah -->
+      <article class="portfolio-card">
+        <img src="assets/portfolio/Savannah_Landcover_Change.png" alt="Savannah land cover maps">
+        <div class="card-body">
+          <h3>Urban Land Cover Classification & Change (1999–2025)</h3>
+          <p>
+            Performed supervised classification of Landsat imagery to map urban, forest, wetland,
+            agriculture, and water classes, followed by accuracy assessment and change detection.
+            Produced maps and statistics highlighting urban expansion and land cover transitions.
+          </p>
+          <ul class="tags">
+            <li>Remote Sensing</li>
+            <li>Landsat</li>
+            <li>Classification</li>
+            <li>Change Detection</li>
+          </ul>
+        </div>
+      </article>
 
-    /* Simple gallery placeholders */
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-    figure{margin:0;border:1px solid var(--ring);border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;height:200px;color:#888;font-style:italic}
-    figcaption{margin-top:10px;font-size:.95rem;color:#0f172a;text-align:center}
+      <!-- InVEST / Ecosystem Services -->
+      <article class="portfolio-card">
+        <img src="assets/portfolio/InVEST_Urban_Services.png" alt="InVEST ecosystem services maps">
+        <div class="card-body">
+          <h3>Urban Ecosystem Services Assessment (InVEST)</h3>
+          <p>
+            Modeled nutrient delivery, stormwater retention, and urban flood mitigation using
+            the InVEST suite. Integrated land use, soils, topography, and infrastructure data
+            to evaluate tradeoffs between development and ecosystem services in Greenville, NC.
+          </p>
+          <ul class="tags">
+            <li>InVEST</li>
+            <li>NDR / USR / UFRM</li>
+            <li>Urban Hydrology</li>
+            <li>Spatial Modeling</li>
+          </ul>
+        </div>
+      </article>
 
-    .actions{display:flex;gap:10px;justify-content:center;margin:18px 12px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;font-weight:700}
-    .btn.primary{background:var(--brand);color:#fff}
-    .btn.link{border:2px solid var(--brand);color:var(--brand)}
+      <!-- Automation / ArcPy -->
+      <article class="portfolio-card">
+        <img src="assets/portfolio/Portfolio_Layouts.png" alt="Automated layout export">
+        <div class="card-body">
+          <h3>Automated Map Export & Layout Builder</h3>
+          <p>
+            Developed ArcPy scripts to scan a geodatabase, build project maps, swap in
+            projected layers, and export consistent PNG layouts for a portfolio. The workflow
+            enforces a common symbology and layout while reducing manual cartographic work.
+          </p>
+          <ul class="tags">
+            <li>Python/ArcPy</li>
+            <li>Automation</li>
+            <li>Cartography</li>
+          </ul>
+        </div>
+      </article>
 
-    footer{text-align:center;margin:32px 0 44px;color:#4b5563;font-size:.95rem}
-
-    @media (max-width:800px){header{margin:24px 12px} section.pkg{margin:16px 12px}}
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Portfolio</h1>
-    <p>All examples below are <strong>original work</strong> created by Amanda L. Riggs — <em>no AI-generated imagery</em>. Shared with client permission where applicable; no proprietary or sensitive data are displayed.</p>
-    <div class="actions">
-      <a class="btn link" href="index.html">← Back to Home</a>
-      <a class="btn primary" href="hire.html#estimateForm">Request an Estimate</a>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <!-- Basic Mapping -->
-    <section class="pkg" id="basic-mapping">
-      <h2>Basic Mapping</h2>
-      <p class="lead">Site and reference maps for proposals, permits, and reports. Clear labels, legends, and export-ready layouts.</p>
-      <div class="gallery">
-        <figure>[ Placeholder for Basic Mapping image 1 ]</figure>
-        <figure>[ Placeholder for Basic Mapping image 2 ]</figure>
-      </div>
-    </section>
+  <!-- MAP GALLERY (ALL THE STUFF) -->
+  <section class="portfolio-section">
+    <h2>Map Gallery</h2>
+    <p>Selected maps exported from the <code>D:\Map Portfolio</code> collection.</p>
 
-    <!-- Advanced Spatial Analysis -->
-    <section class="pkg" id="advanced-analysis">
-      <h2>Advanced Spatial Analysis</h2>
-      <p class="lead">Hydrologic/terrain/land-use modeling, zonal and spatial statistics, and decision support plots.</p>
-      <div class="gallery">
-        <figure>[ Placeholder for Advanced Analysis image 1 ]</figure>
-        <figure>[ Placeholder for Advanced Analysis image 2 ]</figure>
-      </div>
-    </section>
+    <div class="gallery-grid">
+      <!-- Duplicate this block for each map image -->
+      <figure class="gallery-item">
+        <img src="assets/portfolio/Hydrology_Watershed.png" alt="Hydrology watershed map">
+        <figcaption>Hydrology & Watershed Overview</figcaption>
+      </figure>
 
-    <!-- Hydrological & Environmental -->
-    <section class="pkg" id="hydrological-environmental">
-      <h2>Hydrological & Environmental</h2>
-      <p class="lead">DEM conditioning, stream burning, watershed delineation, and flood/terrain visualization.</p>
-      <div class="gallery">
-        <figure>[ Placeholder for Hydrological image 1 ]</figure>
-        <figure>[ Placeholder for Hydrological image 2 ]</figure>
-      </div>
-    </section>
+      <figure class="gallery-item">
+        <img src="assets/portfolio/DEM_Slope.png" alt="DEM slope map">
+        <figcaption>Terrain Slope from LiDAR DEM</figcaption>
+      </figure>
 
-    <!-- Transportation & Infrastructure -->
-    <section class="pkg" id="transport-infra">
-      <h2>Transportation & Infrastructure</h2>
-      <p class="lead">Road networks, service areas, and infrastructure planning with land-use and terrain context.</p>
-      <div class="gallery">
-        <figure>[ Placeholder for Transportation image 1 ]</figure>
-        <figure>[ Placeholder for Transportation image 2 ]</figure>
-      </div>
-    </section>
+      <figure class="gallery-item">
+        <img src="assets/portfolio/Landcover_2021.png" alt="Land cover 2021 map">
+        <figcaption>2021 Land Cover Classification</figcaption>
+      </figure>
 
-    <!-- Custom Web Map / StoryMap -->
-    <section class="pkg" id="web-map-storymap">
-      <h2>Custom Web Map / StoryMap</h2>
-      <p class="lead">Interactive online maps and StoryMaps for stakeholder-friendly communication.</p>
-      <div class="gallery">
-        <figure>[ Placeholder for StoryMap image 1 ]</figure>
-        <figure>[ Placeholder for StoryMap image 2 ]</figure>
-      </div>
-    </section>
+      <figure class="gallery-item">
+        <img src="assets/portfolio/Landcover_Change_1999_2025.png" alt="Land cover change map">
+        <figcaption>Land Cover Change: 1999–2025</figcaption>
+      </figure>
 
-    <!-- Website Development & Integration -->
-    <section class="pkg" id="web-dev-integration">
-      <h2>Website Development & Integration</h2>
-      <p class="lead">Custom HTML/CSS/JS sites with embedded maps and dashboards; hosting and automation support.</p>
-      <div class="gallery">
-        <figure>[ Placeholder for Web Development image 1 ]</figure>
-        <figure>[ Placeholder for Web Development image 2 ]</figure>
-      </div>
-    </section>
-  </main>
+      <figure class="gallery-item">
+        <img src="assets/portfolio/Flood_Risk_Map.png" alt="Urban flood risk map">
+        <figcaption>Urban Flood Risk Mitigation Map</figcaption>
+      </figure>
 
-  <footer>
-    © 2025 Amanda L. Riggs · GIS & Environmental Mapping · <a href="index.html">Home</a> · <a href="hire.html#estimateForm">Request Estimate</a>
-  </footer>
-</body>
-</html
+      <figure class="gallery-item">
+        <img src="assets/portfolio/Burn_Severity.png" alt="Burn severity index map">
+        <figcaption>Burn Severity Analysis (Index Map)</figcaption>
+      </figure>
+
+      <!-- Add more <figure> blocks here for each PNG/JPEG in your Map Portfolio -->
+    </div>
+  </section>
+
+  <!-- WORKFLOWS / METHODS -->
+  <section class="portfolio-section">
+    <h2>Workflows & Methods</h2>
+
+    <article class="workflow">
+      <h3>Hydrology & DEM Conditioning Workflow</h3>
+      <ol>
+        <li>Resample LiDAR-derived DEM and fill sinks.</li>
+        <li>Generate flow direction and flow accumulation rasters.</li>
+        <li>Create a stream raster using threshold-based accumulation.</li>
+        <li>Burn streams into the DEM using conditional expressions.</li>
+        <li>Recalculate flow direction/accumulation and extract stream network.</li>
+        <li>Validate using reference data and overlap/intersection metrics.</li>
+      </ol>
+    </article>
+
+    <article class="workflow">
+      <h3>Land Cover Classification & Change Detection</h3>
+      <ol>
+        <li>Preprocess satellite imagery (stack bands, clip to AOI).</li>
+        <li>Create training samples and run supervised classification.</li>
+        <li>Assess accuracy using a confusion matrix and validation points.</li>
+        <li>Reclassify classes into unified categories for multi-year comparison.</li>
+        <li>Compute land cover change statistics and create change maps.</li>
+      </ol>
+    </article>
+
+    <article class="workflow">
+      <h3>Automated Portfolio Layout Export (ArcPy)</h3>
+      <ol>
+        <li>Scan a file geodatabase for key feature classes (streams, roads, AOIs).</li>
+        <li>Build or update a map in ArcGIS Pro using those layers.</li>
+        <li>Apply a standardized layout template and map frame extent.</li>
+        <l
