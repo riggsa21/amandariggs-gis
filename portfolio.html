@@ -1,10 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GIS & Mapping Portfolio – Amanda Riggs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- If your stylesheet has a different name, change style.css accordingly -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Minimal layout helpers in case style.css is light */
+    .page-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+    .portfolio-intro h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .portfolio-section {
+      margin-top: 2.5rem;
+    }
+    .portfolio-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .portfolio-card {
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .portfolio-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .portfolio-card .card-body {
+      padding: 1rem 1.1rem 1.2rem;
+    }
+    .portfolio-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .portfolio-card p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .tags {
+      list-style: none;
+      padding: 0;
+      margin: 0.6rem 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .tags li {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid #ddd;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .gallery-item {
+      background: #ffffff;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-item figcaption {
+      padding: 0.5rem 0.75rem 0.75rem;
+      font-size: 0.85rem;
+    }
+    .workflow h3 {
+      margin-bottom: 0.4rem;
+    }
+    .workflow ol {
+      margin-top: 0.2rem;
+      padding-left: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="portfolio.html">Portfolio</a> |
+    <a href="hire.html">Hire Me</a> |
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
 <main class="page-content">
   <section class="portfolio-intro">
-    <h1>GIS & Mapping Portfolio</h1>
+    <h1>GIS &amp; Mapping Portfolio</h1>
     <p>
       This portfolio highlights selected GIS, remote sensing, and geospatial analysis projects,
-      including hydrology and watershed modeling, land cover change detection, DEM conditioning,
-      ecosystem services modeling, and Python/ArcPy automation.
+      including hydrology and watershed modeling, DEM conditioning, land cover classification
+      and change detection, ecosystem services modeling, and Python/ArcPy automation.
     </p>
   </section>
 
@@ -13,11 +127,11 @@
     <h2>Featured Projects</h2>
     <div class="portfolio-grid">
 
-      <!-- Hydrology / Stream Network -->
+      <!-- Hydrologically Conditioned DEM -->
       <article class="portfolio-card">
-        <img src="assets/portfolio/Hydrology_Watershed.png" alt="Hydrology and watershed mapping">
+        <img src="HydroConditionedDEM_Map.jpg" alt="Hydrologically conditioned DEM map">
         <div class="card-body">
-          <h3>Hydrologically Conditioned DEM & Stream Network</h3>
+          <h3>Hydrologically Conditioned DEM &amp; Stream Network</h3>
           <p>
             Built a hydrologically conditioned DEM and extracted a detailed stream network from
             LiDAR-derived elevation data. Workflow included DEM preprocessing, stream burning,
@@ -35,13 +149,13 @@
 
       <!-- Land Cover / Savannah -->
       <article class="portfolio-card">
-        <img src="assets/portfolio/Savannah_Landcover_Change.png" alt="Savannah land cover maps">
+        <img src="Savannah_2025_Classification.jpg" alt="Savannah land cover classification">
         <div class="card-body">
-          <h3>Urban Land Cover Classification & Change (1999–2025)</h3>
+          <h3>Urban Land Cover Classification &amp; Change (Savannah)</h3>
           <p>
-            Performed supervised classification of Landsat imagery to map urban, forest, wetland,
-            agriculture, and water classes, followed by accuracy assessment and change detection.
-            Produced maps and statistics highlighting urban expansion and land cover transitions.
+            Performed supervised classification of Landsat imagery for Savannah, GA to map urban,
+            forest, wetland, agriculture, and water classes, followed by accuracy assessment and
+            change detection between 1999 and 2025.
           </p>
           <ul class="tags">
             <li>Remote Sensing</li>
@@ -54,13 +168,14 @@
 
       <!-- InVEST / Ecosystem Services -->
       <article class="portfolio-card">
-        <img src="assets/portfolio/InVEST_Urban_Services.png" alt="InVEST ecosystem services maps">
+        <img src="FINAL_UFRM_HSC_rnf_rt_m3.jpg" alt="InVEST urban flood mitigation output">
         <div class="card-body">
           <h3>Urban Ecosystem Services Assessment (InVEST)</h3>
           <p>
             Modeled nutrient delivery, stormwater retention, and urban flood mitigation using
-            the InVEST suite. Integrated land use, soils, topography, and infrastructure data
-            to evaluate tradeoffs between development and ecosystem services in Greenville, NC.
+            the InVEST suite for Greenville-area watersheds. Integrated land use, soils,
+            topography, and infrastructure data to evaluate tradeoffs between development and
+            ecosystem services.
           </p>
           <ul class="tags">
             <li>InVEST</li>
@@ -71,19 +186,20 @@
         </div>
       </article>
 
-      <!-- Automation / ArcPy -->
+      <!-- Automation / ArcPy Hydrology Workflow -->
       <article class="portfolio-card">
-        <img src="assets/portfolio/Portfolio_Layouts.png" alt="Automated layout export">
+        <img src="FullWorkflow_HydroFlat.JPG" alt="Hydroflattening workflow layout">
         <div class="card-body">
-          <h3>Automated Map Export & Layout Builder</h3>
+          <h3>Automated Hydrology &amp; Layout Workflow</h3>
           <p>
-            Developed ArcPy scripts to scan a geodatabase, build project maps, swap in
-            projected layers, and export consistent PNG layouts for a portfolio. The workflow
-            enforces a common symbology and layout while reducing manual cartographic work.
+            Developed ArcPy-driven workflows to preprocess DEMs, generate hydrologic layers,
+            and export consistent map layouts. This automation reduces repetitive work while
+            enforcing common symbology and layout standards across multiple projects.
           </p>
           <ul class="tags">
             <li>Python/ArcPy</li>
             <li>Automation</li>
+            <li>Hydrology</li>
             <li>Cartography</li>
           </ul>
         </div>
@@ -91,6 +207,11 @@
 
     </div>
   </section>
+
+  <!-- MAP GALLERY -->
+  <section class="portfolio-section">
+    <h2>Map Gallery</h2>
+    <p>Selected maps and layouts from recent GIS and remote sensing projects.</p>
 
     <div class="gallery-grid">
 
@@ -115,58 +236,48 @@
       </figure>
 
       <figure class="gallery-item">
-        <img src="FLYER_StudyArea.jpg" alt="study area overview">
+        <img src="FLYER_StudyArea.jpg" alt="Study area overview">
         <figcaption>Study Area Overview Flyer</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="FSSC_DrillDown_Layout_4_10.jpg" alt="drilldown layout for FSSC watershed">
+        <img src="FSSC_DrillDown_Layout_4_10.jpg" alt="Drilldown layout for FSSC watershed">
         <figcaption>FSSC Drill Down Map</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="FinalFloodRiskMap.jpg" alt="flood risk classification map">
+        <img src="FinalFloodRiskMap.jpg" alt="Flood risk classification map">
         <figcaption>Final Flood Risk Map</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="FinalStudyArea_Layout.jpg" alt="main study area layout">
+        <img src="FinalStudyArea_Layout.jpg" alt="Main study area layout">
         <figcaption>Final Study Area Layout</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Final_HydroFlattening_Layout.jpg" alt="hydroflattening workflow output">
+        <img src="Final_HydroFlattening_Layout.jpg" alt="Hydroflattening workflow output">
         <figcaption>Hydroflattened DEM – Final Output</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Final_Layout_of Stream Extraction.jpg" alt="stream extraction layout">
+        <img src="Final_Layout_of Stream Extraction.jpg" alt="Stream extraction layout">
         <figcaption>Stream Extraction Layout</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="FullWorkflow_HydroFlat.JPG" alt="full hydroflattening workflow diagram">
+        <img src="FullWorkflow_HydroFlat.JPG" alt="Full hydroflattening workflow diagram">
         <figcaption>Hydroflattening Workflow Diagram</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="GEOG_Module 2 Map.tif" alt="GEOG module map">
-        <figcaption>Module 2 Map Output</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <img src="GPT_GMRStorymap.png" alt="storymap example map">
+        <img src="GPT_GMRStorymap.png" alt="StoryMap example map">
         <figcaption>StoryMap Export – GMR</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="GPT_GMRTransport.png" alt="transportation layer map">
+        <img src="GPT_GMRTransport.png" alt="Transportation layer map">
         <figcaption>Transportation Map – GMR</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <img src="GeoProcessing_Batch_Script.pdf" alt="batch processing script thumbnail">
-        <figcaption>Geoprocessing Batch Script (PDF)</figcaption>
       </figure>
 
       <figure class="gallery-item">
@@ -180,22 +291,22 @@
       </figure>
 
       <figure class="gallery-item">
-        <img src="HydroConditionedDEM_Map.jpg" alt="hydrologically conditioned DEM">
+        <img src="HydroConditionedDEM_Map.jpg" alt="Hydrologically conditioned DEM">
         <figcaption>Hydroconditioned DEM Map</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Hydro_Processed_Final_Result.jpg" alt="final hydrology processing output">
+        <img src="Hydro_Processed_Final_Result.jpg" alt="Final hydrology processing output">
         <figcaption>Hydrology Processing – Final Result</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Lab_5_Change_Detection.jpg" alt="land cover change detection lab output">
+        <img src="Lab_5_Change_Detection.jpg" alt="Land cover change detection lab output">
         <figcaption>Change Detection Lab Output</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Layout_StudyArea_3.jpg" alt="study area layout map">
+        <img src="Layout_StudyArea_3.jpg" alt="Study area layout map">
         <figcaption>Study Area – Version 3</figcaption>
       </figure>
 
@@ -205,12 +316,12 @@
       </figure>
 
       <figure class="gallery-item">
-        <img src="OR_IoU_Layout2.jpg" alt="overlap ratio and IoU validation layout">
+        <img src="OR_IoU_Layout2.jpg" alt="Overlap ratio and IoU validation layout">
         <figcaption>OR &amp; IoU Validation Layout</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Prediction Map.jpg" alt="prediction raster map">
+        <img src="Prediction Map.jpg" alt="Prediction raster map">
         <figcaption>Prediction Map Output</figcaption>
       </figure>
 
@@ -220,7 +331,7 @@
       </figure>
 
       <figure class="gallery-item">
-        <img src="Savannah_1999_spectral.png" alt="spectral signatures for Savannah 1999">
+        <img src="Savannah_1999_spectral.png" alt="Spectral signatures for Savannah 1999">
         <figcaption>Savannah 1999 Spectral Signature Plot</figcaption>
       </figure>
 
@@ -230,7 +341,7 @@
       </figure>
 
       <figure class="gallery-item">
-        <img src="Slope_ElevationDifferenceLayout.jpg" alt="slope and elevation difference layout">
+        <img src="Slope_ElevationDifferenceLayout.jpg" alt="Slope and elevation difference layout">
         <figcaption>Slope &amp; Elevation Difference Layout</figcaption>
       </figure>
 
@@ -240,23 +351,24 @@
       </figure>
 
       <figure class="gallery-item">
-        <img src="USR_Retention_Map.jpg" alt="retention map for urban stormwater">
+        <img src="USR_Retention_Map.jpg" alt="Retention map for urban stormwater">
         <figcaption>Stormwater Retention Map</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Z_final_Layout.jpg" alt="final layout z">
+        <img src="Z_final_Layout.jpg" alt="Final layout">
         <figcaption>Final Layout (Z)</figcaption>
       </figure>
 
     </div>
+  </section>
 
   <!-- WORKFLOWS / METHODS -->
   <section class="portfolio-section">
-    <h2>Workflows & Methods</h2>
+    <h2>Workflows &amp; Methods</h2>
 
     <article class="workflow">
-      <h3>Hydrology & DEM Conditioning Workflow</h3>
+      <h3>Hydrology &amp; DEM Conditioning Workflow</h3>
       <ol>
         <li>Resample LiDAR-derived DEM and fill sinks.</li>
         <li>Generate flow direction and flow accumulation rasters.</li>
@@ -268,7 +380,7 @@
     </article>
 
     <article class="workflow">
-      <h3>Land Cover Classification & Change Detection</h3>
+      <h3>Land Cover Classification &amp; Change Detection</h3>
       <ol>
         <li>Preprocess satellite imagery (stack bands, clip to AOI).</li>
         <li>Create training samples and run supervised classification.</li>
@@ -284,5 +396,11 @@
         <li>Scan a file geodatabase for key feature classes (streams, roads, AOIs).</li>
         <li>Build or update a map in ArcGIS Pro using those layers.</li>
         <li>Apply a standardized layout template and map frame extent.</li>
-        <l
+        <li>Export layouts to PNG/JPEG at web and print resolutions.</li>
+      </ol>
+    </article>
+  </section>
+</main>
 
+</body>
+</html>
