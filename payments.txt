@@ -19,7 +19,7 @@
       <p>Use PayPal or a credit/debit card.</p>
 
       <!-- Option 1: PayPal.me (simple + works) -->
-      <a class="btn" href="https://www.paypal.me/ariggs454 target="_blank" rel="noopener">
+      <a class="btn" href="https://www.paypal.me/@ariggs454 target="_blank" rel="noopener">
         Pay with PayPal
       </a>
 
@@ -37,5 +37,6 @@
     Crypto payments: coming soon (USDC and other common options).
   </p>
 </section>
+
 
 
