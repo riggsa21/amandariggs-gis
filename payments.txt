@@ -8,7 +8,7 @@
     <div class="payment-card">
       <h3>Cash App</h3>
       <p>Fastest option.</p>
-      <a class="btn" href="https://cash.app/$YOURCASHAPPTAG" target="_blank" rel="noopener">
+      <a class="btn" href="https://cash.app/$AR3780" target="_blank" rel="noopener">
         Pay with Cash App
       </a>
     </div>
@@ -37,4 +37,5 @@
     Crypto payments: coming soon (USDC and other common options).
   </p>
 </section>
+
 
