@@ -1,137 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Request Estimate | GIS & Environmental Mapping</title>
-  <meta name="description" content="Request a project estimate for GIS mapping, analysis, and web maps." />
-  <link rel="canonical" href="https://riggsa21.github.io/amandariggs-gis/hire.html" />
-  <style>
-    :root{
-      --ink:#0f172a; --muted:#334155; --brand:#2b65a6; --ring:#dbe3ef;
-      --card:#ffffff; --bg1:#f7f9fb; --bg2:#dce6f2;
-      --shadow-sm:0 4px 12px rgba(0,0,0,.06); --shadow:0 6px 15px rgba(0,0,0,.10);
-    }
-    html{scroll-behavior:smooth} *,*::before,*::after{box-sizing:border-box}
-    body{margin:0;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;color:var(--ink);
-      background:linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%); padding-top:56px;}
-    a{color:#245c9c;text-decoration:none} a:hover{text-decoration:underline}
+<!-- Payment Options -->
+<section class="panel" aria-label="Payment options">
+  <h2>Payment Options</h2>
 
-    /* Top bar */
-    .topbar{position:fixed;inset:0 0 auto 0;height:56px;z-index:1000;display:flex;align-items:center;gap:12px;
-      background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid #e5e7eb;padding:0 12px;}
-    .brand{font-weight:800;color:var(--brand);letter-spacing:.2px;font-size:1.05rem;}
-    .home-btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;border:1.5px solid var(--brand);
-      color:var(--brand);background:#fff;font-weight:700;text-decoration:none}
+  <div class="pay-grid">
+    <div class="pay-card">
+      <h3 class="pay-title">PayPal</h3>
+      <p>
+        <a href="https://paypal.me/ariggs454" target="_blank" rel="noopener">
+          Pay with PayPal
+        </a>
+      </p>
+      <p class="pay-note">Preferred for invoices and credit/debit card payments.</p>
+    </div>
 
-    /* Shell */
-    main{max-width:1000px;margin:24px auto;padding:0 16px}
-    .panel{background:#fff;border-radius:18px;box-shadow:var(--shadow-sm);padding:22px;margin-bottom:18px}
-    h1{margin:12px 0 8px 0}
-    h2{margin:0 0 10px 0;color:#24496f;border-bottom:2px solid var(--ring);padding-bottom:6px}
-
-    /* Form */
-    form label{display:block;font-weight:700;margin-top:12px}
-    input[type="text"], input[type="email"], textarea, select{
-      width:100%;padding:10px 12px;border-radius:10px;border:1px solid #d6dee9;outline:none}
-    textarea{min-height:120px}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .btn{display:inline-block;padding:10px 16px;border-radius:12px;font-weight:700;box-shadow:var(--shadow)}
-    .btn.primary{background:var(--brand);color:#fff}
-    .btn.primary:hover{filter:brightness(1.05)}
-
-    /* Payment options */
-    .pay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-    .pay-card{border:1px solid #e5e7eb;border-radius:14px;padding:14px;background:#fff}
-    .pay-title{margin:0 0 6px 0;color:var(--brand);font-weight:800}
-    .pay-note{margin:6px 0 0 0;color:#475569;font-size:.95rem}
-    .qr{width:128px;height:128px;object-fit:contain;border-radius:8px;border:1px solid #e5e7eb;background:#f8fafc}
-
-    @media(max-width:720px){ .row{grid-template-columns:1fr} }
-  </style>
-</head>
-<body>
-
-  <div class="topbar">
-    <a class="home-btn" href="index.html" aria-label="Return to Home">← Home</a>
-    <div class="brand">Request Estimate</div>
+    <div class="pay-card">
+      <h3 class="pay-title">Cash App</h3>
+      <p>
+        <a href="https://cash.app/$AR3780" target="_blank" rel="noopener">
+          Pay with Cash App
+        </a>
+      </p>
+      <p class="pay-note">Quick transfers using Cash App.</p>
+    </div>
   </div>
 
-  <main>
-    <section class="panel">
-      <h1>Request an Estimate</h1>
-      <p>Tell me about your project goals, timeline, area of interest, and any datasets you already have.</p>
-    </section>
-
-    <!-- Your form (Formspree or similar). Keep the id for deep-links. -->
-    <section id="estimateForm" class="panel" aria-label="Estimate form">
-      <h2>Project Details</h2>
-      <!-- Replace action with your Formspree endpoint -->
-      <form action="https://formspree.io/f/your-form-id" method="POST">
-        <div class="row">
-          <div>
-            <label for="name">Your name</label>
-            <input id="name" name="name" type="text" required />
-          </div>
-          <div>
-            <label for="email">Email</label>
-            <input id="email" name="_replyto" type="email" required />
-          </div>
-        </div>
-
-        <label for="type">Service type</label>
-        <select id="type" name="service">
-          <option>Basic Mapping</option>
-          <option>Advanced Spatial Analysis</option>
-          <option>Hydrological & Environmental</option>
-          <option>Custom Web Map / StoryMap</option>
-          <option>Transportation & Infrastructure</option>
-          <option>Website Development & Integration</option>
-        </select>
-
-        <label for="details">Project details</label>
-        <textarea id="details" name="details" placeholder="AOI, deliverables, deadline, budget, preferred formats…"></textarea>
-
-        <div style="margin-top:14px">
-          <button class="btn primary" type="submit">Send Request</button>
-        </div>
-        <input type="hidden" name="source" value="hire-page" />
-      </form>
-    </section>
-
-    <!-- Payment Options -->
-    <section class="panel" aria-label="Payment options">
-      <h2>Payment Options</h2>
-      <div class="pay-grid">
-        <div class="pay-card">
-          <h3 class="pay-title">PayPal</h3>
-          <!-- Replace with your PayPal.Me link -->
-          <p><a href="https://paypal.me/YOURPAYPALME" target="_blank" rel="noopener">paypal.me/YOURPAYPALME</a></p>
-          <p class="pay-note">Preferred for invoices and card payments.</p>
-        </div>
-
-        <div class="pay-card">
-          <h3 class="pay-title">Cash App</h3>
-          <!-- Replace with your $cashtag -->
-          <p><a href="https://cash.app/$YOURCAshtag" target="_blank" rel="noopener">cash.app/$YOURCAshtag</a></p>
-          <p class="pay-note">Quick transfers using your Cash App.</p>
-        </div>
-
-        <div class="pay-card">
-          <h3 class="pay-title">Bitcoin (via Coinbase)</h3>
-          <!-- Option A: Coinbase Commerce (preferred) – replace with your checkout link -->
-          <p><a href="https://commerce.coinbase.com/checkout/your-checkout-id" target="_blank" rel="noopener">Pay with Bitcoin</a></p>
-          <p class="pay-note">If you prefer direct wallet payments, I can provide a BTC address on request.</p>
-          <!-- Optional QR (drop a PNG into /assets and uncomment)
-          <img class="qr" src="assets/qr-bitcoin.png" alt="Bitcoin payment QR" />
-          -->
-        </div>
-      </div>
-      <p class="pay-note" style="margin-top:10px">
-        Tip: for **fixed-price projects**, I’ll send a formal invoice (usually 50% deposit to begin, balance at delivery).
-      </p>
-    </section>
-  </main>
-
-</body>
-</html>
+  <p class="pay-note" style="margin-top:10px">
+    Tip: for fixed-price projects, I typically start with a deposit and invoice the remainder at delivery.
+  </p>
+</section>
