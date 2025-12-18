@@ -1,26 +1,29 @@
-<section id="payments" class="payments">
+<section class="panel" aria-label="Payment options">
   <h2>Payment Options</h2>
-  <p>After we confirm scope, you can pay securely using one of the options below.</p>
 
-  <div class="payment-grid">
-
-    <div class="payment-card">
-      <h3>Cash App</h3>
-      <p>Fastest option.</p>
-      <a class="btn" href="https://cash.app/$AR3780" target="_blank" rel="noopener">
-        Pay with Cash App
-      </a>
+  <div class="pay-grid">
+    <div class="pay-card">
+      <h3 class="pay-title">Card Payment (Invoice)</h3>
+      <p class="pay-note">
+        Secure card payments are handled by invoice after project scope and pricing are confirmed.
+        Clients may pay using a debit or credit card and will receive a receipt for records.
+      </p>
     </div>
 
-    <div class="payment-card">
-      <h3>PayPal</h3>
-      <p>Use PayPal or a credit/debit card.</p>
-
-      <!-- Replace YOURPAYPALME with your exact PayPal.me name (no @) -->
-      <a class="btn" href="https://paypal.me/YOURPAYPALME" target="_blank" rel="noopener">
-        Pay with PayPal
-      </a>
+    <div class="pay-card">
+      <h3 class="pay-title">Cash App</h3>
+      <p>
+        <a class="pay-link" href="https://cash.app/$AR3780" target="_blank" rel="noopener">
+          Pay with Cash App
+        </a>
+      </p>
+      <p class="pay-note">
+        Available for quick deposits or smaller projects.
+      </p>
     </div>
-
   </div>
+
+  <p class="tiny">
+    Fixed-price projects typically begin with a deposit, with the remaining balance due at delivery.
+  </p>
 </section>
