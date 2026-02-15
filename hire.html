@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Request Estimate | GIS & Environmental Mapping</title>
-  <meta name="description" content="Request a project estimate for GIS mapping, analysis, and web maps." />
+  <title>Request Estimate | Site Drainage Risk Screening (V1)</title>
+  <meta name="description" content="Request an estimate for the V1 Site Drainage Risk Screening package or custom GIS + environmental analysis." />
   <link rel="canonical" href="https://riggsa21.github.io/amandariggs-gis/hire.html" />
 
   <style>
@@ -31,7 +31,6 @@
     a{color:#245c9c;text-decoration:none}
     a:hover{text-decoration:underline}
 
-    /* Top bar */
     .topbar{
       position:fixed; inset:0 0 auto 0; height:56px; z-index:1000;
       display:flex; align-items:center; gap:12px;
@@ -40,14 +39,13 @@
       border-bottom:1px solid #e5e7eb;
       padding:0 12px;
     }
-    .brand{font-weight:800;color:var(--brand);letter-spacing:.2px;font-size:1.05rem;}
+    .brand{font-weight:900;color:var(--brand);letter-spacing:.2px;font-size:1.05rem;}
     .home-btn{
       display:inline-flex;align-items:center;gap:8px;
       padding:8px 12px;border-radius:10px;border:1.5px solid var(--brand);
-      color:var(--brand);background:#fff;font-weight:700;text-decoration:none;
+      color:var(--brand);background:#fff;font-weight:800;text-decoration:none;
     }
 
-    /* Layout shell */
     main{max-width:1000px;margin:24px auto;padding:0 16px}
     .panel{
       background:#fff;border-radius:18px;box-shadow:var(--shadow-sm);
@@ -58,37 +56,44 @@
       margin:0 0 10px 0;color:#24496f;
       border-bottom:2px solid var(--ring);padding-bottom:6px
     }
-    .subtext{color:var(--muted);line-height:1.6;margin:0}
+    .subtext{color:var(--muted);line-height:1.7;margin:0}
 
-    /* Form */
-    form label{display:block;font-weight:700;margin-top:12px}
+    form label{display:block;font-weight:900;margin-top:12px}
     input[type="text"], input[type="email"], textarea, select{
       width:100%;padding:10px 12px;border-radius:10px;border:1px solid #d6dee9;outline:none
     }
     textarea{min-height:140px;resize:vertical}
+
     .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     @media(max-width:720px){ .row{grid-template-columns:1fr} }
 
     .btn{
       display:inline-block;padding:10px 16px;border-radius:12px;
-      font-weight:800;box-shadow:var(--shadow);border:none;cursor:pointer;
+      font-weight:950;box-shadow:var(--shadow);border:none;cursor:pointer;
     }
     .btn.primary{background:var(--brand);color:#fff}
     .btn.primary:hover{filter:brightness(1.05)}
 
-    .hint{
-      margin-top:8px;
-      font-size:.95rem;
-      color:#475569;
+    .hint{ margin-top:8px; font-size:.95rem; color:#475569; line-height:1.55; }
+
+    .pill{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#eaf2ff;
+      color:#1d4ed8;
+      font-weight:900;
+      font-size:.92rem;
+      margin-top:10px;
     }
 
-    /* Payment options */
+    .tiny{font-size:.9rem;color:#64748b;margin-top:10px;line-height:1.55}
+
     .pay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
     .pay-card{border:1px solid #e5e7eb;border-radius:14px;padding:14px;background:#fff}
-    .pay-title{margin:0 0 6px 0;color:var(--brand);font-weight:900}
+    .pay-title{margin:0 0 6px 0;color:var(--brand);font-weight:950}
     .pay-note{margin:6px 0 0 0;color:#475569;font-size:.95rem;line-height:1.5}
-    .pay-link{font-weight:800}
-    .tiny{font-size:.9rem;color:#64748b;margin-top:10px;line-height:1.5}
+    .pay-link{font-weight:950}
   </style>
 </head>
 
@@ -102,7 +107,11 @@
     <section class="panel">
       <h1>Request an Estimate</h1>
       <p class="subtext">
-        Tell me about your project goals, timeline, and area of interest. I’ll reply with questions (if needed) and a clear estimate.
+        Share the location + goal and I’ll reply with a short scope and estimate.
+        <span class="pill">V1: Site Drainage Risk Screening</span>
+      </p>
+      <p class="tiny" style="margin-top:10px;">
+        Note: This is a screening product for decisions and risk flagging (not a sealed engineering design).
       </p>
     </section>
 
@@ -123,84 +132,86 @@
           </div>
         </div>
 
-        <label for="type">Service type</label>
+        <label for="type">Request type</label>
         <select id="type" name="service" required>
-          <option value="" selected disabled>Select a service</option>
-          <option>Basic Mapping</option>
-          <option>Advanced Spatial Analysis</option>
-          <option>Hydrological & Environmental</option>
-          <option>Custom Web Map / StoryMap</option>
-          <option>Transportation & Infrastructure</option>
-          <option>Website Development & Integration</option>
+          <option value="" selected disabled>Select an option</option>
+          <option>V1 — Site Drainage Risk Screening</option>
+          <option>Custom — GIS / Environmental Mapping</option>
+          <option>Custom — Hydrology / Terrain Analysis</option>
+          <option>Custom — Web Map / StoryMap</option>
         </select>
 
+        <label for="location">Site location / AOI</label>
+        <input id="location" name="location" type="text" placeholder="Address, parcel ID, subdivision name, or coordinates" />
+
         <label for="timeline">Timeline (optional)</label>
-        <input id="timeline" name="timeline" type="text" placeholder="Example: 2 weeks, by Jan 15, ASAP, flexible…" />
+        <input id="timeline" name="timeline" type="text" placeholder="Example: ASAP, 2 weeks, by March 10…" />
 
-        <label for="details">Project details</label>
-        <textarea id="details" name="details" placeholder="AOI, deliverables, deadline, budget range, preferred formats, datasets you already have…"></textarea>
+        <label for="details">What decision are you trying to make?</label>
+        <textarea id="details" name="details" placeholder="Example: choosing between two lots, wet yard issue, pre-permit drainage concerns, low spot near road, etc. Include anything you’ve noticed."></textarea>
 
-        <!-- Helpful hidden fields -->
+        <label for="files">Optional: links to files</label>
+        <input id="files" name="files" type="text" placeholder="Google Drive/Dropbox link, PDFs, plans, photos, or any dataset links" />
+
         <input type="hidden" name="source" value="hire-page" />
         <input type="hidden" name="page" value="hire.html" />
 
         <div style="margin-top:14px">
           <button class="btn primary" type="submit">Send Request</button>
-          <div class="hint">You’ll get a confirmation after submitting. If you don’t hear back within 1–2 business days, email me directly.</div>
+          <div class="hint">
+            If you don’t hear back within 1–2 business days, email me directly:
+            <a href="mailto:amanda.l.riggs@outlook.com">amanda.l.riggs@outlook.com</a>.
+          </div>
         </div>
       </form>
     </section>
 
-    <!-- PAYMENT OPTIONS (NO BITCOIN) -->
-   <section class="panel" aria-label="Payment options">
-  <h2>Payment Options</h2>
+    <!-- PAYMENT OPTIONS -->
+    <section class="panel" aria-label="Payment options">
+      <h2>Payment Options</h2>
 
-  <div class="pay-grid">
-    <div class="pay-card">
-      <h3 class="pay-title">Card Payment (Invoice)</h3>
-      <p class="pay-note">
-        Secure card payments are handled by invoice after project scope and pricing are confirmed.
-        Clients may pay using a debit or credit card and will receive a receipt for records.
+      <div class="pay-grid">
+        <div class="pay-card">
+          <h3 class="pay-title">Card Payment (Invoice)</h3>
+          <p class="pay-note">
+            Card payments are handled by invoice after scope and pricing are confirmed.
+            You’ll receive a receipt for records.
+          </p>
+        </div>
+
+        <div class="pay-card">
+          <h3 class="pay-title">Cash App</h3>
+          <p>
+            <a class="pay-link" href="https://cash.app/$AR3780" target="_blank" rel="noopener">
+              Pay with Cash App
+            </a>
+          </p>
+          <p class="pay-note">
+            Available for deposits or smaller projects once scope is confirmed.
+          </p>
+        </div>
+      </div>
+
+      <p class="tiny">
+        Most fixed-scope projects begin with a deposit, with the remaining balance due at delivery.
       </p>
-    </div>
+    </section>
 
-    <div class="pay-card">
-      <h3 class="pay-title">Cash App</h3>
-      <p>
-        <a class="pay-link" href="https://cash.app/$AR3780" target="_blank" rel="noopener">
-          Pay with Cash App
-        </a>
-      </p>
-      <p class="pay-note">
-        Available for quick deposits or smaller projects.
-      </p>
-    </div>
-  </div>
+  </main>
 
-  <p class="tiny">
-    Fixed-price projects typically begin with a deposit, with the remaining balance due at delivery.
-  </p>
-</section>
-
-  <!-- Autofill service type from URL: hire.html?package=Basic%20Mapping -->
+  <!-- Autofill request type from URL: hire.html?v=v1 -->
   <script>
     (function () {
       const params = new URLSearchParams(window.location.search);
-      const pkg = params.get("package");
-      if (!pkg) return;
-
+      const v = (params.get("v") || "").toLowerCase();
       const select = document.getElementById("type");
       if (!select) return;
 
-      const target = decodeURIComponent(pkg).trim().toLowerCase();
-      const options = Array.from(select.options);
-
-      const match = options.find(opt =>
-        (opt.textContent || "").trim().toLowerCase() === target
-      );
-
-      if (match) {
-        select.value = match.textContent.trim();
+      if (v === "v1") {
+        const option = Array.from(select.options).find(o =>
+          (o.textContent || "").toLowerCase().includes("v1")
+        );
+        if (option) select.value = option.textContent.trim();
       }
     })();
   </script>
