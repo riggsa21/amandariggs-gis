@@ -3,38 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GIS & Environmental Mapping Services</title>
-  <meta name="description" content="Freelance GIS mapping and remote sensing: clear, decision-ready maps and reports for land, water, buildings, and transportation." />
+  <title>Freelance Geospatial + Environmental Site Intelligence</title>
+  <meta name="description" content="Freelance GIS + environmental site intelligence. Drainage, terrain, and risk screening maps that are clear, decision-ready, and builder-friendly." />
   <link rel="canonical" href="https://riggsa21.github.io/amandariggs-gis/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="GIS & Environmental Mapping Services" />
-  <meta property="og:description" content="Freelance GIS mapping and remote sensing: clear, decision-ready maps and reports for land and water projects." />
+  <meta property="og:title" content="Freelance Geospatial + Environmental Site Intelligence" />
+  <meta property="og:description" content="Drainage, terrain, and risk screening maps that are clear, decision-ready, and builder-friendly." />
   <meta property="og:image" content="https://riggsa21.github.io/amandariggs-gis/thumbnail.jpg" />
   <meta property="og:url" content="https://riggsa21.github.io/amandariggs-gis/" />
   <meta property="og:type" content="website" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="GIS & Environmental Mapping Services" />
-  <meta name="twitter:description" content="Clear, actionable maps and analysis for planners, nonprofits, and research." />
+  <meta name="twitter:title" content="Freelance Geospatial + Environmental Site Intelligence" />
+  <meta name="twitter:description" content="Drainage, terrain, and risk screening maps that are clear, decision-ready, and builder-friendly." />
   <meta name="twitter:image" content="https://riggsa21.github.io/amandariggs-gis/thumbnail.jpg" />
 
   <style>
-    /* ---------- Tokens ---------- */
     :root{
       --ink:#0f172a;
       --muted:#334155;
       --brand:#2b65a6;
+      --brand2:#0b5bb5;
       --ring:#dbe3ef;
       --card:#ffffff;
       --bg1:#f7f9fb;
       --bg2:#dce6f2;
       --shadow-sm:0 4px 12px rgba(0,0,0,.06);
-      --shadow:0 6px 15px rgba(0,0,0,.10);
+      --shadow:0 10px 24px rgba(0,0,0,.10);
+      --radius:18px;
     }
 
-    /* ---------- Base ---------- */
     html{scroll-behavior:smooth}
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0;padding:0}
@@ -42,22 +42,25 @@
       font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color:var(--ink);
       background:linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
-      padding-top:56px; /* room for sticky topbar */
+      padding-top:56px;
     }
-    a{color:#245c9c;text-decoration:none}
+    a{color:var(--brand2);text-decoration:none}
     a:hover{text-decoration:underline}
 
-    /* ---------- Sticky Top Bar + Hamburger ---------- */
+    /* Topbar */
     .topbar{
       position:fixed; inset:0 0 auto 0; height:56px; z-index:1000;
       display:flex; align-items:center; gap:12px;
-      background:rgba(255,255,255,.85); backdrop-filter:blur(8px);
+      background:rgba(255,255,255,.88); backdrop-filter:blur(8px);
       border-bottom:1px solid #e5e7eb;
       padding:0 12px;
     }
     .brand{
-      font-weight:800; color:var(--brand); letter-spacing:.2px;
-      font-size:1.05rem;
+      font-weight:900; color:var(--brand); letter-spacing:.2px;
+      font-size:1.03rem;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
     }
     .hamburger{
       display:inline-flex; align-items:center; justify-content:center;
@@ -76,7 +79,7 @@
     .hamburger .lines::before{ top:0; }
     .hamburger .lines::after{ bottom:0; }
 
-    /* ---------- Drawer + Overlay ---------- */
+    /* Drawer */
     .overlay{
       position:fixed; inset:0; background:rgba(15,23,42,.35);
       opacity:0; pointer-events:none; transition:opacity .2s ease; z-index:999;
@@ -96,114 +99,180 @@
     }
     .drawer nav{ padding:8px; }
     .drawer a{
-      display:block; padding:12px 12px; border-radius:10px; font-weight:600; color:var(--ink);
+      display:block; padding:12px 12px; border-radius:10px; font-weight:700; color:var(--ink);
     }
     .drawer a:hover{ background:#f3f6fb; color:var(--brand); text-decoration:none; }
 
-    /* ---------- Header / Hero ---------- */
+    /* Hero */
     header.hero{
       position:relative;
-      text-align:center;
-      margin:28px auto 48px; /* reduced top margin due to topbar */
-      padding:64px 28px;
-      border-radius:20px;
       max-width:1100px;
+      margin:22px auto 28px;
+      padding:64px 28px 52px;
+      border-radius:24px;
       box-shadow:var(--shadow);
       overflow:hidden;
       background:
-        linear-gradient(rgba(255,255,255,.62), rgba(255,255,255,.62)),
-        url('https://riggsa21.github.io/amandariggs-gis/thumbnail.jpg?v=2') center/cover no-repeat;
+        linear-gradient(rgba(255,255,255,.70), rgba(255,255,255,.70)),
+        url('https://riggsa21.github.io/amandariggs-gis/thumbnail.jpg?v=3') center/cover no-repeat;
       background-attachment:fixed;
+      text-align:left;
     }
-    @media (min-width:700px){ header.hero{min-height:340px} }
+    @media (min-width:820px){ header.hero{min-height:360px} }
     @supports (-webkit-touch-callout:none){ header.hero{background-attachment:scroll} }
 
-    header.hero h1{margin:0 0 6px 0;font-size:2.6rem;color:#0b1220;font-weight:800;letter-spacing:.3px}
-    header.hero .sub{margin:0 0 14px 0;color:#1f2a3a;font-size:1.05rem;font-weight:600}
-    .badge{
-      display:inline-block;padding:6px 12px;margin:6px 0 12px 0;
-      background:#eaf2ff;color:#1d4ed8;border-radius:999px;font-weight:700;font-size:.95rem
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      background:#eaf2ff; color:#1d4ed8;
+      padding:7px 12px; border-radius:999px; font-weight:800; font-size:.95rem;
+      margin-bottom:14px;
+    }
+    header.hero h1{
+      margin:0 0 10px 0;
+      font-size:2.55rem;
+      color:#0b1220;
+      font-weight:950;
+      letter-spacing:.2px;
+      line-height:1.12;
+    }
+    header.hero .sub{
+      margin:0 0 18px 0;
+      color:#1f2a3a;
+      font-size:1.06rem;
+      font-weight:650;
+      max-width:760px;
+      line-height:1.55;
     }
 
-    /* ---------- Buttons (used in cards) ---------- */
-    .btn{display:inline-block;padding:10px 16px;border-radius:12px;font-weight:700;box-shadow:var(--shadow)}
-    .btn.primary{background:var(--brand);color:#fff}
-    .btn.primary:hover{filter:brightness(1.05)}
-    .btn.link{background:transparent;color:var(--brand);border:2px solid var(--brand);box-shadow:none}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:start;
+      margin-top:14px;
+    }
+    @media(max-width:860px){ .hero-grid{grid-template-columns:1fr} }
 
-    /* ---------- Sections ---------- */
+    .hero-card{
+      background:rgba(255,255,255,.92);
+      border:1px solid #e5e7eb;
+      border-radius:18px;
+      padding:16px 16px;
+      box-shadow:0 6px 16px rgba(0,0,0,.06);
+    }
+    .hero-card h3{margin:0 0 8px 0; color:var(--brand); font-size:1.05rem}
+    .hero-card p{margin:0; color:var(--muted); line-height:1.6}
+
+    .btn-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:10px 16px; border-radius:12px; font-weight:850;
+      border:2px solid transparent;
+      box-shadow:0 6px 15px rgba(0,0,0,.10);
+      text-decoration:none;
+    }
+    .btn.primary{background:var(--brand); color:#fff}
+    .btn.primary:hover{filter:brightness(1.05); text-decoration:none}
+    .btn.ghost{background:#fff; color:var(--brand); border-color:var(--brand); box-shadow:none}
+    .btn.ghost:hover{background:#f3f6fb; text-decoration:none}
+
+    /* Sections */
     section{
       max-width:1100px;
-      margin:40px auto;
+      margin:22px auto;
       background:#fff;
-      padding:30px;
-      border-radius:18px;
+      padding:28px;
+      border-radius:var(--radius);
       box-shadow:var(--shadow-sm);
     }
     h2{
       color:#24496f;
       border-bottom:2px solid var(--ring);
-      padding-bottom:6px;
-      margin:0 0 16px;
+      padding-bottom:8px;
+      margin:0 0 16px 0;
     }
+    .lead{color:var(--muted); line-height:1.7; margin:0 0 10px 0}
 
-    .about{
-      max-width:820px; margin:12px auto 0; font-size:1.06rem; line-height:1.7; color:var(--ink);
+    /* Cards */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:18px;
+      margin-top:14px;
     }
-
-    /* ---------- No bullet lists ---------- */
-    ul.no-bullets { list-style-type:none; padding-left:0; margin-left:0; }
-
-    /* ---------- Services container (wider) ---------- */
-    #services-pricing.container{
-      max-width:1400px; margin:72px auto; padding:0 24px; background:transparent; box-shadow:none;
-    }
-    #services-pricing > header{ text-align:center;margin:0 0 28px }
-    #services-pricing > header h2{font-size:2.2rem;line-height:1.2;color:var(--brand);border:0;margin:0}
-    #services-pricing > header p{color:#334155;margin-top:10px}
-
-    /* ---------- Cards Grid ---------- */
-    .cards{ display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px; }
     .card{
-      background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:20px;
-      display:flex;flex-direction:column;min-height:100%;
+      background:#fff;
+      border:1px solid #e5e7eb;
+      border-radius:16px;
+      box-shadow:0 8px 18px rgba(0,0,0,.08);
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
     }
-    .card h3{margin:0 0 6px 0;color:var(--brand);font-size:1.15rem}
-    .card p{color:var(--muted);margin:0 0 10px 0}
-    .card ul{padding-left:18px;margin:0 0 12px 0;color:var(--ink)}
-    .price{ font-weight:800; font-size:1.1rem; margin-top:auto; margin-bottom:8px; text-align:center; }
-    .card .cta{ margin-top:0; display:flex; justify-content:center; }
+    .card h3{margin:0 0 6px 0;color:var(--brand);font-size:1.12rem}
+    .card p{margin:0 0 10px 0;color:var(--muted);line-height:1.55}
+    .card ul{margin:0; padding-left:18px; line-height:1.65}
+    .card .cta{margin-top:auto; padding-top:12px}
 
-    /* ---------- Card Thumbs ---------- */
     .thumb{
-      width:100%; aspect-ratio:16/9; border-radius:12px; box-shadow:0 3px 10px rgba(0,0,0,.08);
-      margin:0 0 10px 0; background-position:center; background-repeat:no-repeat; background-size:cover;
+      width:100%;
+      aspect-ratio:16/9;
+      border-radius:12px;
+      background-position:center;
+      background-repeat:no-repeat;
+      background-size:cover;
+      box-shadow:0 4px 14px rgba(0,0,0,.10);
+      margin-bottom:10px;
     }
-    .thumb.contain{ background-size:contain; background-color:#eef2f7; }
-    .thumb.focus-upper  { background-position:50% 35%; }
+    .thumb.contain{background-size:contain; background-color:#eef2f7}
 
-    /* ---------- Footer ---------- */
-    footer{text-align:center;margin:40px 0;color:#4b5563;font-size:.95em}
+    /* Simple lists */
+    ul.clean{list-style:none; padding-left:0; margin:0}
+    ul.clean li{padding-left:26px; position:relative; margin:8px 0; color:var(--ink); line-height:1.6}
+    ul.clean li::before{
+      content:"✓";
+      position:absolute; left:0; top:0;
+      color:#16a34a; font-weight:900;
+    }
 
-    /* ---------- Mobile ---------- */
+    /* CTA band */
+    .cta-band{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:18px;
+      background:linear-gradient(180deg, #eaf2ff 0%, #ffffff 90%);
+      border:1px solid #dbeafe;
+    }
+    @media(max-width:860px){ .cta-band{grid-template-columns:1fr} }
+
+    footer{
+      text-align:center;
+      margin:28px 0 40px;
+      color:#4b5563;
+      font-size:.95em;
+    }
+
+    /* Mobile tweaks */
     @media (max-width:800px){
-      header.hero{margin:16px 12px 28px;padding:40px 18px;border-radius:16px}
-      header.hero h1{font-size:2.15rem}
-      header.hero .sub{font-size:1rem}
-      section{margin:24px 12px;padding:20px}
-      .cards{gap:16px}
+      header.hero{margin:14px 12px 18px;padding:42px 18px;border-radius:18px}
+      header.hero h1{font-size:2.05rem}
+      section{margin:16px 12px; padding:20px}
+      .btn{width:100%}
+      .btn-row{flex-direction:column}
     }
   </style>
 </head>
+
 <body>
 
-  <!-- STICKY TOP BAR -->
+  <!-- TOP BAR -->
   <div class="topbar">
     <button class="hamburger" id="hamburger"
             aria-label="Open menu" aria-controls="site-drawer" aria-expanded="false">
       <span class="lines"><span class="bar"></span></span>
     </button>
-    <div class="brand">GIS & Environmental Mapping</div>
+    <div class="brand">Geospatial + Environmental Site Intelligence</div>
   </div>
 
   <!-- OVERLAY + DRAWER -->
@@ -213,9 +282,9 @@
       <div class="brand">Menu</div>
     </header>
     <nav>
-      <!-- Update paths if your pages live in folders -->
       <a href="index.html">Home</a>
-      <a href="#services-pricing">View Services</a>
+      <a href="#v1">V1 Package</a>
+      <a href="#how">How it works</a>
       <a href="hire.html#estimateForm">Request Estimate</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="about.html">About</a>
@@ -223,27 +292,50 @@
     </nav>
   </aside>
 
-  <!-- HERO (unchanged content) -->
+  <!-- HERO -->
   <header class="hero">
-    <h1>GIS & Environmental Mapping</h1>
-    <p class="sub">Geographic Information Systems (GIS) mapping, analysis, and clean cartography for projects of any size.</p>
-    <div class="badge">Great looking maps that answer questions.</div>
+    <div class="kicker">Freelance GIS • Environmental • Site / Drainage Screening</div>
 
-    <!-- Contact line with copy button -->
-    <p style="margin-top:6px;color:#0f172a;font-size:1rem;font-weight:600;">
-      <a id="emailLink" href="mailto:amanda.l.riggs@outlook.com" style="color:#0b5bb5;text-decoration:none;">
-        amanda.l.riggs@outlook.com
-      </a>
-      <button id="copyEmail" title="Copy email" style="border:none;background:none;cursor:pointer;margin-left:6px;font-size:1rem;color:#0b5bb5;">📋</button>
-      <span id="copyMsg" style="font-size:0.88rem;color:#16a34a;margin-left:4px;display:none;">Copied!</span>
+    <h1>Decision-ready maps for land, water, and build risk.</h1>
+    <p class="sub">
+      I’m Amanda Riggs — a freelance geospatial analyst with an environmental + engineering-style workflow.
+      I turn LiDAR terrain, drainage, and site constraints into clear visuals you can act on (and share with clients, reviewers, or contractors).
     </p>
 
-    <div class="about">
-      Clear, professional maps and simple analyses you can use right away—property maps, watershed figures, route maps, web maps, and more.
+    <div class="hero-grid">
+      <div class="hero-card">
+        <h3>Best for</h3>
+        <p>
+          Builders, planners, engineers, HOAs, and homeowners who need a fast, clear read on
+          <strong>drainage risk</strong>, <strong>low spots</strong>, <strong>runoff pathways</strong>, and <strong>where problems may show up</strong>.
+        </p>
+
+        <div class="btn-row">
+          <a class="btn primary" href="hire.html?v=v1#estimateForm">Request V1 estimate</a>
+          <a class="btn ghost" href="#v1">See what’s included</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Contact</h3>
+        <p style="margin-bottom:10px;">
+          <a id="emailLink" href="mailto:amanda.l.riggs@outlook.com" style="font-weight:900;color:var(--brand2);">
+            amanda.l.riggs@outlook.com
+          </a>
+          <button id="copyEmail" title="Copy email"
+            style="border:none;background:none;cursor:pointer;margin-left:6px;font-size:1rem;color:var(--brand2);">
+            📋
+          </button>
+          <span id="copyMsg" style="font-size:0.88rem;color:#16a34a;margin-left:4px;display:none;">Copied!</span>
+        </p>
+        <p style="margin:0;color:var(--muted);line-height:1.6">
+          Send an address / parcel, city/county, and what decision you’re trying to make. I’ll reply with a short scope + estimate.
+        </p>
+      </div>
     </div>
   </header>
 
-  <!-- Clipboard script -->
+  <!-- Clipboard -->
   <script>
     const copyBtn = document.getElementById('copyEmail');
     const copyMsg = document.getElementById('copyMsg');
@@ -267,10 +359,8 @@
         drawer.classList.add('open');
         overlay.classList.add('open');
         btn.setAttribute('aria-expanded', 'true');
-        // focus first link for accessibility
         const first = drawer.querySelector('a');
         first && first.focus();
-        // prevent body scroll behind drawer (simple)
         document.documentElement.style.overflow = 'hidden';
       }
       function close() {
@@ -288,7 +378,6 @@
         if (e.key === 'Escape') close();
       });
 
-      // trap keyboard focus inside the drawer when open
       document.addEventListener('keydown', (e) => {
         if (!drawer.classList.contains('open')) return;
         if (e.key !== 'Tab') return;
@@ -302,151 +391,120 @@
   </script>
 
   <main>
-    <!-- Property / site scale mapping -->
-    <section aria-label="Property mapping">
-      <h2>Property & Site Mapping</h2>
-      <p>For homeowners, builders, and small sites: clean maps that help you plan and explain decisions.</p>
-      <ul class="no-bullets" style="margin:10px 0 0 0;">
-        <li>🏡 <strong>Lot drainage & grading</strong> — see slopes and runoff paths before construction.</li>
-        <li>🗺️ <strong>Elevation & slope maps</strong> — contours from high-res LiDAR.</li>
-        <li>💧 <strong>Flow direction & accumulation</strong> — low spots and drainage paths.</li>
-        <li>📈 <strong>Before/after grading</strong> — show terrain changes clearly.</li>
-        <li>📋 <strong>Permit-ready figures</strong> — clean, labeled, and exportable.</li>
-      </ul>
-      <p style="margin-top:14px;">
-        <a href="hire.html">Request an estimate</a> to get started.
-      </p>
-    </section>
 
-    <!-- Services & Pricing -->
-    <section id="services-pricing" class="container" aria-label="Services & Pricing">
-      <header>
-        <h2>Services & Pricing</h2>
-        <p>Pick a starting point—final estimate depends on scope and timeline.</p>
-      </header>
+    <!-- V1 PACKAGE -->
+    <section id="v1" aria-label="V1 package">
+      <h2>V1 Package: Site Drainage Risk Screening</h2>
+      <p class="lead">
+        A builder-friendly, decision-first package designed to flag drainage and flood-risk signals early —
+        before they become expensive surprises.
+      </p>
 
       <div class="cards">
-        <!-- Basic Mapping -->
         <article class="card">
-          <div class="thumb" role="img" aria-label="Area map with clear legend and labels" style="background-image:url('figure_9.png');"></div>
-          <h3>Basic Mapping</h3>
-          <p>Single-map or small-scope projects.</p>
+          <div class="thumb" role="img" aria-label="Terrain visualization map" style="background-image:url('HydroConditionedDEM_Map.jpg');"></div>
+          <h3>What you get</h3>
           <ul>
-            <li>Professional map (PDF + source layer)</li>
-            <li>Georeferenced layout & labels</li>
-            <li>Short metadata summary</li>
+            <li><strong>1-page summary map</strong> (clean + shareable)</li>
+            <li><strong>Terrain + slope read</strong> (where water wants to go)</li>
+            <li><strong>Flow paths + low-spot cues</strong> (problem zones)</li>
+            <li><strong>Conflict flags</strong> near roads / structures / drainage features (when available)</li>
+            <li><strong>Short memo</strong>: what it means + recommended next step</li>
           </ul>
-          <div class="price">$450+</div>
-          <div class="cta"><a class="btn primary" href="hire.html?package=Basic%20Mapping#estimateForm">Request estimate</a></div>
+          <div class="cta">
+            <a class="btn primary" href="hire.html?v=v1#estimateForm">Request V1 estimate</a>
+          </div>
         </article>
 
-        <!-- Advanced Spatial Analysis -->
         <article class="card">
-          <div class="thumb contain" role="img" aria-label="Hotspot analysis map showing higher nutrient contribution areas for a watershed" style="background-image:url('GreensMillRun_NDR_DrillDown.jpg');"></div>
-          <h3>Advanced Spatial Analysis</h3>
-          <p>Complex modeling and statistics.</p>
+          <div class="thumb contain" role="img" aria-label="Risk-style map graphic" style="background-image:url('figure_9.png');"></div>
+          <h3>Best use cases</h3>
           <ul>
-            <li>Terrain / hydrologic / land-use modeling</li>
-            <li>Zonal or spatial statistics</li>
-            <li>ArcGIS Pro package + brief report</li>
+            <li>Pre-permit / feasibility checks</li>
+            <li>“Why is this yard staying wet?” / nuisance flooding</li>
+            <li>Subdivision phases + drainage questions</li>
+            <li>Site selection comparisons (which lot is safer?)</li>
+            <li>Documentation for contractors, HOAs, or review teams</li>
           </ul>
-          <div class="price">$850+</div>
-          <div class="cta"><a class="btn primary" href="hire.html?package=Advanced%20Spatial%20Analysis#estimateForm">Request estimate</a></div>
+          <p style="margin-top:10px;color:var(--muted);line-height:1.6">
+            This is a <strong>screening</strong> product — not a sealed engineering design — built to inform decisions and guide what to investigate next.
+          </p>
         </article>
 
-        <!-- Hydrological & Environmental -->
         <article class="card">
-          <div class="thumb contain" role="img" aria-label="Terrain map with streams aligned to valleys to show real flow paths" style="background-image:url('HydroConditionedDEM_Map.jpg');"></div>
-          <h3>Hydrological & Environmental</h3>
-          <p>Watershed, flood, ecosystem services.</p>
+          <div class="thumb contain" role="img" aria-label="Hydrology / flow accumulation concept map" style="background-image:url('GreensMillRun_NDR_DrillDown.jpg');"></div>
+          <h3>Inputs I typically use</h3>
           <ul>
-            <li>DEM conditioning & stream delineation</li>
-            <li>NDR / USR model outputs</li>
-            <li>Report + GIS package</li>
+            <li>High-resolution <strong>LiDAR DEM</strong> (terrain)</li>
+            <li>Streams / drainage layers (public datasets)</li>
+            <li>Buildings / roads (where available)</li>
+            <li>Optional: your plans, grading concept, or surveyed points</li>
           </ul>
-          <div class="price">$1,200+</div>
-          <div class="cta"><a class="btn primary" href="hire.html?package=Hydrological%20%26%20Environmental#estimateForm">Request estimate</a></div>
+          <p style="margin-top:10px;color:var(--muted);line-height:1.6">
+            If you already have CAD/PDFs or site plans, you can attach them in the estimate request.
+          </p>
         </article>
-
-        <!-- Custom Web Map / StoryMap -->
-        <article class="card">
-          <div class="thumb focus-upper" role="img" aria-label="GMR StoryMap-style card with stylized watershed panels" style="background-image:url('GPT_GMRStorymap.png');"></div>
-          <h3>Custom Web Map / StoryMap</h3>
-          <p>Interactive map visualization.</p>
-          <ul>
-            <li>ArcGIS Online or custom HTML/JS</li>
-            <li>Pop-ups, legend, custom styling</li>
-            <li>Optional StoryMap integration</li>
-          </ul>
-          <div class="price">$1,500+</div>
-          <div class="cta"><a class="btn primary" href="hire.html?package=Custom%20Web%20Map%20%2F%20StoryMap#estimateForm">Request estimate</a></div>
-        </article>
-
-        <!-- Transportation & Infrastructure -->
-        <article class="card">
-          <div class="thumb" role="img" aria-label="Transportation and infrastructure map of the Greens Mill Run study area with road and network overlays" style="background-image:url('GPT_GMRTransport.png');"></div>
-          <h3>Transportation & Infrastructure</h3>
-          <p>Networks and infrastructure mapped and analyzed with land use and terrain.</p>
-          <ul>
-            <li>Roadway, bridge, and network mapping</li>
-            <li>Infrastructure visualization and planning</li>
-            <li>Integrated terrain and waterway analysis</li>
-          </ul>
-          <div class="price">$1,800+</div>
-          <div class="cta"><a class="btn primary" href="hire.html?package=Transportation%20%26%20Infrastructure#estimateForm">Request estimate</a></div>
-        </article>
-
-        <!-- Website Development & Integration -->
-        <article class="card">
-          <div class="thumb" role="img" aria-label="Website development and AI integration concept showing GIS web map and code editor" style="background-image:url('https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/ChatGPT_WebDesign.png');"></div>
-          <h3>Website Development & Integration</h3>
-          <p>Full custom-coded sites with maps, dashboards, and automations.</p>
-          <ul>
-            <li>Responsive HTML/CSS/JS</li>
-            <li>Map & dashboard integration</li>
-            <li>Hosting setup and automation support</li>
-          </ul>
-          <div class="price">$2,500+</div>
-          <div class="cta"><a class="btn primary" href="hire.html?package=Website%20Development%20%26%20Integration#estimateForm">Request estimate</a></div>
-        </article>
-      </div>
-
-      <!-- Terms + CTA Row -->
-      <div class="terms-grid" style="display:grid;grid-template-columns:1.2fr .8fr;gap:24px;margin-top:24px;">
-        <aside style="background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:20px;">
-          <h3 style="margin:0 0 10px 0;color:var(--brand);font-size:1.05rem;">Terms</h3>
-          <ul style="padding-left:18px;margin:0;color:var(--ink);line-height:1.6">
-            <li>Estimates valid for 30 days</li>
-            <li>50% deposit to begin; balance at delivery</li>
-            <li>Premium datasets or hosting billed as needed</li>
-            <li>Revisions beyond scope billed hourly</li>
-          </ul>
-        </aside>
-
-        <div style="background:#eaf2ff;border-radius:16px;box-shadow:var(--shadow);padding:20px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;">
-          <h3 style="margin:0 0 8px 0;color:#1d4ed8;font-size:1.05rem;">Request an Estimate</h3>
-          <p style="color:#0f172a;margin:0 0 12px 0;">Tell me about your project goals, timeline, and any datasets you already have.</p>
-          <a href="hire.html#estimateForm" class="btn primary" style="text-decoration:none;">Open the form</a>
-        </div>
       </div>
     </section>
 
-    <!-- How it works -->
-    <section aria-label="How it works">
-      <h2>How It Works</h2>
-      <ul class="no-bullets" style="margin:10px 0 0 0;padding-left:18px;line-height:1.7">
-        <li><strong>1)</strong> Share your goal — what decision or story does the map need to support?</li>
-        <li><strong>2)</strong> Scope & estimate — fixed-price or hourly, with data sources listed.</li>
-        <li><strong>3)</strong> Draft & review — one midpoint check to confirm look and details.</li>
-        <li><strong>4)</strong> Final delivery — files + short memo; optional walkthrough call.</li>
+    <!-- WHY THIS WORKS -->
+    <section aria-label="Why this works">
+      <h2>Why this is different</h2>
+      <p class="lead">
+        A lot of maps look nice but don’t answer the real question. My focus is:
+        <strong>What will happen to water on this site, and where does risk concentrate?</strong>
+      </p>
+
+      <ul class="clean">
+        <li><strong>Plain-language outputs</strong> that a builder, homeowner, or reviewer can understand quickly.</li>
+        <li><strong>Engineering-style logic</strong> (terrain → flow paths → conflicts → decision).</li>
+        <li><strong>Clean cartography</strong> that’s ready for reports, emails, and meetings.</li>
       </ul>
-      <p style="margin-top:14px;">Ready to start? <a href="hire.html#estimateForm">Request an estimate</a>.</p>
     </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" aria-label="How it works">
+      <h2>How it works</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>1) Quick intake</h3>
+          <p>Send the address / parcel, city/county, and what decision you’re making.</p>
+        </article>
+        <article class="card">
+          <h3>2) Scope + estimate</h3>
+          <p>I reply with a short scope, what data I’ll use, and an estimate based on complexity + timeline.</p>
+        </article>
+        <article class="card">
+          <h3>3) Draft checkpoint</h3>
+          <p>You’ll get one midpoint preview to confirm AOI, labels, and map clarity.</p>
+        </article>
+        <article class="card">
+          <h3>4) Delivery</h3>
+          <p>Final map(s) + memo delivered as PDF/PNG. Optional walkthrough call if helpful.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band" aria-label="Call to action">
+      <div>
+        <h2 style="border:0;margin:0 0 10px 0;padding:0;color:#1d4ed8;">Ready to screen a site?</h2>
+        <p class="lead" style="margin:0;">
+          If you’re deciding between lots, troubleshooting a drainage issue, or want a pre-permit risk read —
+          send the location and I’ll tell you what I can produce for V1.
+        </p>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:10px;">
+        <a class="btn primary" href="hire.html?v=v1#estimateForm">Request estimate</a>
+        <a class="btn ghost" href="mailto:amanda.l.riggs@outlook.com">Email me</a>
+      </div>
+    </section>
+
   </main>
 
   <footer>
-    © 2025 Amanda L. Riggs · GIS & Environmental Mapping Services ·
-    <a href="hire.html" style="color:var(--brand)">Request Estimate</a> ·
+    © 2026 Amanda L. Riggs · Freelance Geospatial + Environmental Site Intelligence ·
+    <a href="hire.html#estimateForm" style="color:var(--brand)">Request Estimate</a> ·
     <a href="mailto:amanda.l.riggs@outlook.com" style="color:var(--brand)">amanda.l.riggs@outlook.com</a>
   </footer>
 
