@@ -1,4 +1,4 @@
-<!-- index.html (Dark/tech, centered layout, SINGLE image usage in hero only) -->
+<!-- index.html (Dark/tech vibe, OLD hero background restored, Case Study image shown in section, 3rd card centers on wrap) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +22,7 @@
   <meta name="twitter:image" content="https://riggsa21.github.io/amandariggs-gis/case-study-01-froglevel-davenport.jpg" />
 
   <style>
+    /* ---------------- Tokens (Dark) ---------------- */
     :root{
       --bg0:#05070f;
       --bg2:#0b1020;
@@ -61,7 +62,9 @@
     a:hover{text-decoration:underline}
     .mono{font-family:var(--mono)}
 
-    /* Topbar */
+    main{max-width:1100px;margin:0 auto;padding:0 14px}
+
+    /* ---------------- Topbar ---------------- */
     .topbar{
       position:fixed; inset:0 0 auto 0; height:56px; z-index:1000;
       display:flex; align-items:center; gap:12px;
@@ -101,7 +104,7 @@
     .hamburger .lines::before{ top:0; }
     .hamburger .lines::after{ bottom:0; }
 
-    /* Drawer */
+    /* ---------------- Drawer ---------------- */
     .overlay{
       position:fixed; inset:0;
       background:rgba(0,0,0,.55);
@@ -110,6 +113,7 @@
       z-index:999;
     }
     .overlay.open{opacity:1;pointer-events:auto}
+
     .drawer{
       position:fixed; inset:0 auto 0 0;
       width:300px; max-width:86vw;
@@ -135,7 +139,7 @@
       font-weight:850;
       color:var(--ink);
       border:1px solid transparent;
-      text-align:left; /* drawer items stay readable */
+      text-align:left;
     }
     .drawer a:hover{
       background:rgba(53,210,255,.08);
@@ -143,10 +147,7 @@
       text-decoration:none;
     }
 
-    /* Layout container */
-    main{max-width:1100px;margin:0 auto;padding:0 14px}
-
-    /* HERO (Centered) — ONLY image usage here */
+    /* ---------------- Hero (OLD background restored) ---------------- */
     header.hero{
       margin:18px auto 18px;
       padding:64px 28px 52px;
@@ -157,7 +158,7 @@
         radial-gradient(900px 300px at 20% 10%, rgba(53,210,255,.18), transparent 55%),
         radial-gradient(900px 380px at 80% 25%, rgba(139,92,246,.16), transparent 58%),
         linear-gradient(rgba(5,7,15,.78), rgba(5,7,15,.88)),
-        url('case-study-01-froglevel-davenport.jpg?v=1') center/cover no-repeat;
+        url('thumbnail.jpg?v=2') center/cover no-repeat; /* ✅ OLD 3D building background */
       position:relative;
       border:1px solid rgba(255,255,255,.08);
       text-align:center;
@@ -187,6 +188,7 @@
       z-index:1;
     }
     .kicker .tag{font-family:var(--mono); color:var(--accent); font-weight:950;}
+
     header.hero h1{
       margin:14px auto 10px auto;
       font-size:2.55rem;
@@ -258,7 +260,7 @@
     }
     .btn.ghost:hover{background:rgba(53,210,255,.08); text-decoration:none}
 
-    /* Sections centered */
+    /* ---------------- Sections ---------------- */
     section{
       margin:18px auto;
       background:var(--panel);
@@ -283,7 +285,28 @@
       max-width:900px;
     }
 
-    /* Cards (no images) */
+    /* Case Study preview (layout image visible here) */
+    .case-preview{
+      width:100%;
+      max-width:980px;
+      margin:16px auto 18px auto;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 18px 50px rgba(0,0,0,.55);
+      overflow:hidden;
+      background:rgba(11,18,34,.65);
+    }
+    .case-preview img{display:block;width:100%;height:auto}
+    .case-preview .cap{
+      padding:10px 14px;
+      color:var(--muted);
+      font-size:.95rem;
+      line-height:1.5;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,.10);
+    }
+
+    /* Cards */
     .cards{
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
@@ -311,7 +334,7 @@
       padding-left:0;
       list-style:none;
       max-width:420px;
-      text-align:left; /* bullet text reads better */
+      text-align:left;
       line-height:1.7;
       color:rgba(230,234,242,.92);
     }
@@ -327,8 +350,27 @@
       font-family:var(--mono);
       font-weight:950;
     }
-
     .card .cta{margin-top:auto; padding-top:12px; display:flex; justify-content:center}
+
+    /* 3-card wrap centering fix */
+    .cards.three{
+      grid-template-columns:repeat(3, minmax(260px, 1fr));
+    }
+    @media (max-width: 980px){
+      .cards.three{ grid-template-columns:repeat(2, minmax(260px, 1fr)); }
+      .cards.three > :nth-child(3){
+        grid-column:1 / -1;
+        max-width:520px;
+        justify-self:center;
+      }
+    }
+    @media (max-width: 620px){
+      .cards.three{ grid-template-columns:1fr; }
+      .cards.three > :nth-child(3){
+        grid-column:auto;
+        max-width:unset;
+      }
+    }
 
     /* CTA band */
     .cta-band{
@@ -387,6 +429,7 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="#case01">Case Study 01</a>
+      <a href="#why">Why this works</a>
       <a href="#how">How it works</a>
       <a href="hire.html#estimateForm">Request Estimate</a>
       <a href="portfolio.html">Portfolio</a>
@@ -415,7 +458,6 @@
           Builders, planners, engineers, HOAs, and homeowners who need a fast read on <strong>runoff pathways</strong>, <strong>low spots</strong>,
           and <strong>where problems may show up</strong>.
         </p>
-
         <div class="btn-row">
           <a class="btn primary" href="hire.html?v=case01#estimateForm">Request estimate</a>
           <a class="btn ghost" href="#case01">View case study</a>
@@ -497,14 +539,19 @@
   </script>
 
   <main>
-    <!-- CASE STUDY 01 -->
+    <!-- CASE STUDY 01 (with visible layout image) -->
     <section id="case01" aria-label="Case Study 01">
       <h2>Case Study 01: Froglevel / Davenport Farm Corridor</h2>
       <p class="lead">
         A corridor-focused screening built to highlight drainage pathways, terrain-driven low spots, and map-ready communication for fast review.
       </p>
 
-      <div class="cards">
+      <div class="case-preview" aria-label="Case Study 01 preview">
+        <img src="case-study-01-froglevel-davenport.jpg?v=1" alt="Case Study 01: Froglevel / Davenport Farm Corridor layout preview">
+        <div class="cap">Case Study 01 — Froglevel / Davenport Farm Corridor (screening layout)</div>
+      </div>
+
+      <div class="cards three">
         <article class="card">
           <h3>What was delivered</h3>
           <ul>
@@ -545,22 +592,22 @@
       </div>
     </section>
 
-    <!-- WHY -->
-    <section aria-label="Why this works">
+    <!-- WHY (keep as 3 cards, now labeled clearly) -->
+    <section id="why" aria-label="Why this works">
       <h2>Why this approach works</h2>
       <p class="lead">
-        Many maps look good but don’t answer the real question. The workflow here is:
+        Many maps look good but don’t answer the real question. This workflow keeps it practical:
         <strong>terrain → flow → risk cues → clear communication</strong>.
       </p>
 
-      <div class="cards">
+      <div class="cards three">
         <article class="card">
           <h3 class="mono">Builder-friendly</h3>
-          <p>Outputs that read fast in the field or in a meeting — without GIS jargon.</p>
+          <p>Outputs that read fast in the field or a meeting — without GIS jargon.</p>
         </article>
         <article class="card">
           <h3 class="mono">Engineering-style logic</h3>
-          <p>Clean, repeatable analysis patterns: terrain first, then flow signals, then risk cues.</p>
+          <p>Repeatable analysis patterns: terrain first, then flow signals, then risk cues.</p>
         </article>
         <article class="card">
           <h3 class="mono">Clean cartography</h3>
