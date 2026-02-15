@@ -1,263 +1,365 @@
+<!-- index.html (Dark / techy rewrite, single case-study image) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Freelance Geospatial + Environmental Site Intelligence</title>
-  <meta name="description" content="Freelance GIS + environmental site intelligence. Drainage, terrain, and risk screening maps that are clear, decision-ready, and builder-friendly." />
+  <title>Geospatial Site Intelligence | Freelance GIS</title>
+  <meta name="description" content="Freelance geospatial + environmental site intelligence. Drainage, terrain, and risk screening maps that are clear, decision-ready, and builder-friendly." />
   <link rel="canonical" href="https://riggsa21.github.io/amandariggs-gis/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Freelance Geospatial + Environmental Site Intelligence" />
+  <meta property="og:title" content="Geospatial Site Intelligence | Freelance GIS" />
   <meta property="og:description" content="Drainage, terrain, and risk screening maps that are clear, decision-ready, and builder-friendly." />
-  <meta property="og:image" content="https://riggsa21.github.io/amandariggs-gis/thumbnail.jpg" />
+  <meta property="og:image" content="https://riggsa21.github.io/amandariggs-gis/case-study-01-froglevel-davenport.jpg" />
   <meta property="og:url" content="https://riggsa21.github.io/amandariggs-gis/" />
   <meta property="og:type" content="website" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Freelance Geospatial + Environmental Site Intelligence" />
+  <meta name="twitter:title" content="Geospatial Site Intelligence | Freelance GIS" />
   <meta name="twitter:description" content="Drainage, terrain, and risk screening maps that are clear, decision-ready, and builder-friendly." />
-  <meta name="twitter:image" content="https://riggsa21.github.io/amandariggs-gis/thumbnail.jpg" />
+  <meta name="twitter:image" content="https://riggsa21.github.io/amandariggs-gis/case-study-01-froglevel-davenport.jpg" />
 
   <style>
+    /* ---------------- Tokens (Dark) ---------------- */
     :root{
-      --ink:#0f172a;
-      --muted:#334155;
-      --brand:#2b65a6;
-      --brand2:#0b5bb5;
-      --ring:#dbe3ef;
-      --card:#ffffff;
-      --bg1:#f7f9fb;
-      --bg2:#dce6f2;
-      --shadow-sm:0 4px 12px rgba(0,0,0,.06);
-      --shadow:0 10px 24px rgba(0,0,0,.10);
-      --radius:18px;
+      --bg0:#05070f;
+      --bg1:#070a14;
+      --bg2:#0b1020;
+      --card:#0c1224;
+      --card2:#0b1222;
+      --ink:#e6eaf2;
+      --muted:#aab3c5;
+      --muted2:#7f8aa3;
+      --ring:rgba(255,255,255,.10);
+      --shadow:0 18px 50px rgba(0,0,0,.55);
+      --shadow-sm:0 10px 28px rgba(0,0,0,.45);
+
+      /* Tech accents */
+      --accent:#35d2ff;   /* cyan */
+      --accent2:#8b5cf6;  /* violet */
+      --accent3:#22c55e;  /* green */
+      --danger:#fb7185;
+
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
     }
 
+    /* ---------------- Base ---------------- */
     html{scroll-behavior:smooth}
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{
-      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family:var(--sans);
       color:var(--ink);
-      background:linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+      background:
+        radial-gradient(1200px 500px at 15% 10%, rgba(53,210,255,.13), transparent 60%),
+        radial-gradient(900px 420px at 85% 25%, rgba(139,92,246,.12), transparent 60%),
+        radial-gradient(900px 420px at 55% 90%, rgba(34,197,94,.08), transparent 60%),
+        linear-gradient(180deg, var(--bg0) 0%, var(--bg2) 100%);
       padding-top:56px;
     }
-    a{color:var(--brand2);text-decoration:none}
+    a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
+    .mono{font-family:var(--mono)}
 
-    /* Topbar */
+    /* ---------------- Topbar ---------------- */
     .topbar{
       position:fixed; inset:0 0 auto 0; height:56px; z-index:1000;
       display:flex; align-items:center; gap:12px;
-      background:rgba(255,255,255,.88); backdrop-filter:blur(8px);
-      border-bottom:1px solid #e5e7eb;
+      background:rgba(5,7,15,.72);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.08);
       padding:0 12px;
     }
     .brand{
-      font-weight:900; color:var(--brand); letter-spacing:.2px;
-      font-size:1.03rem;
+      font-weight:900;
+      letter-spacing:.2px;
+      font-size:1.02rem;
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
+      color:var(--ink);
     }
+    .brand .dot{color:var(--accent)}
     .hamburger{
       display:inline-flex; align-items:center; justify-content:center;
-      width:40px; height:40px; border-radius:10px;
-      border:1.5px solid var(--brand); background:#fff; cursor:pointer;
+      width:40px; height:40px; border-radius:12px;
+      border:1px solid rgba(53,210,255,.55);
+      background:rgba(12,18,36,.6);
+      cursor:pointer;
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
     }
-    .hamburger:focus-visible{ outline:3px solid rgba(43,101,166,.35); outline-offset:2px; }
+    .hamburger:focus-visible{ outline:3px solid rgba(53,210,255,.35); outline-offset:2px; }
     .hamburger .lines{ position:relative; width:18px; height:12px; }
     .hamburger .lines::before,
     .hamburger .lines::after,
     .hamburger .bar{
-      content:""; position:absolute; left:0; right:0; height:2px; background:var(--brand); border-radius:2px;
-      transition:transform .2s ease, opacity .2s ease;
+      content:""; position:absolute; left:0; right:0; height:2px;
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius:2px;
     }
     .hamburger .bar{ top:5px; }
     .hamburger .lines::before{ top:0; }
     .hamburger .lines::after{ bottom:0; }
 
-    /* Drawer */
+    /* ---------------- Drawer ---------------- */
     .overlay{
-      position:fixed; inset:0; background:rgba(15,23,42,.35);
-      opacity:0; pointer-events:none; transition:opacity .2s ease; z-index:999;
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.55);
+      opacity:0; pointer-events:none;
+      transition:opacity .2s ease;
+      z-index:999;
     }
-    .overlay.open{ opacity:1; pointer-events:auto; }
+    .overlay.open{opacity:1;pointer-events:auto}
 
     .drawer{
-      position:fixed; inset:0 auto 0 0; width:290px; max-width:86vw;
-      background:var(--card); border-right:1px solid #e5e7eb;
-      box-shadow:var(--shadow); transform:translateX(-100%);
-      transition:transform .25s ease; z-index:1000; display:flex; flex-direction:column;
+      position:fixed; inset:0 auto 0 0;
+      width:300px; max-width:86vw;
+      background:rgba(10,14,28,.92);
+      border-right:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+      transform:translateX(-100%);
+      transition:transform .25s ease;
+      z-index:1000;
+      display:flex; flex-direction:column;
     }
-    .drawer.open{ transform:translateX(0); }
+    .drawer.open{transform:translateX(0)}
     .drawer header{
-      padding:16px 18px; border-bottom:1px solid #eef2f7; background:#fff;
+      padding:16px 18px;
+      border-bottom:1px solid rgba(255,255,255,.08);
       display:flex; align-items:center; gap:10px;
     }
-    .drawer nav{ padding:8px; }
+    .drawer nav{padding:10px}
     .drawer a{
-      display:block; padding:12px 12px; border-radius:10px; font-weight:700; color:var(--ink);
+      display:block;
+      padding:12px 12px;
+      border-radius:12px;
+      font-weight:800;
+      color:var(--ink);
+      border:1px solid transparent;
     }
-    .drawer a:hover{ background:#f3f6fb; color:var(--brand); text-decoration:none; }
+    .drawer a:hover{
+      background:rgba(53,210,255,.08);
+      border-color:rgba(53,210,255,.25);
+      text-decoration:none;
+    }
 
-    /* Hero */
+    /* ---------------- Hero ---------------- */
     header.hero{
-      position:relative;
       max-width:1100px;
-      margin:22px auto 28px;
+      margin:18px auto 20px;
       padding:64px 28px 52px;
-      border-radius:24px;
+      border-radius:26px;
       box-shadow:var(--shadow);
       overflow:hidden;
       background:
-        linear-gradient(rgba(255,255,255,.70), rgba(255,255,255,.70)),
-        url('https://riggsa21.github.io/amandariggs-gis/thumbnail.jpg?v=3') center/cover no-repeat;
-      background-attachment:fixed;
+        radial-gradient(900px 300px at 20% 10%, rgba(53,210,255,.18), transparent 55%),
+        radial-gradient(900px 380px at 80% 25%, rgba(139,92,246,.16), transparent 58%),
+        linear-gradient(rgba(5,7,15,.72), rgba(5,7,15,.86)),
+        url('case-study-01-froglevel-davenport.jpg?v=1') center/cover no-repeat;
       text-align:left;
+      position:relative;
+      border:1px solid rgba(255,255,255,.08);
+    }
+    header.hero::after{
+      content:"";
+      position:absolute; inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size:40px 40px;
+      opacity:.18;
+      pointer-events:none;
     }
     @media (min-width:820px){ header.hero{min-height:360px} }
-    @supports (-webkit-touch-callout:none){ header.hero{background-attachment:scroll} }
 
     .kicker{
       display:inline-flex; gap:10px; align-items:center;
-      background:#eaf2ff; color:#1d4ed8;
-      padding:7px 12px; border-radius:999px; font-weight:800; font-size:.95rem;
-      margin-bottom:14px;
+      padding:7px 12px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:.92rem;
+      border:1px solid rgba(53,210,255,.30);
+      background:rgba(12,18,36,.65);
+      color:var(--ink);
+      position:relative;
+      z-index:1;
+    }
+    .kicker .tag{
+      font-family:var(--mono);
+      color:var(--accent);
+      font-weight:900;
     }
     header.hero h1{
-      margin:0 0 10px 0;
+      margin:14px 0 10px 0;
       font-size:2.55rem;
-      color:#0b1220;
       font-weight:950;
       letter-spacing:.2px;
       line-height:1.12;
+      position:relative;
+      z-index:1;
     }
     header.hero .sub{
       margin:0 0 18px 0;
-      color:#1f2a3a;
-      font-size:1.06rem;
+      color:rgba(230,234,242,.92);
+      font-size:1.05rem;
       font-weight:650;
-      max-width:760px;
-      line-height:1.55;
+      max-width:800px;
+      line-height:1.6;
+      position:relative;
+      z-index:1;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:18px;
+      grid-template-columns:1.2fr .8fr;
+      gap:16px;
       align-items:start;
-      margin-top:14px;
+      margin-top:10px;
+      position:relative;
+      z-index:1;
     }
     @media(max-width:860px){ .hero-grid{grid-template-columns:1fr} }
 
     .hero-card{
-      background:rgba(255,255,255,.92);
-      border:1px solid #e5e7eb;
+      background:rgba(12,18,36,.72);
+      border:1px solid rgba(255,255,255,.10);
       border-radius:18px;
       padding:16px 16px;
-      box-shadow:0 6px 16px rgba(0,0,0,.06);
+      box-shadow:0 12px 30px rgba(0,0,0,.35);
     }
-    .hero-card h3{margin:0 0 8px 0; color:var(--brand); font-size:1.05rem}
-    .hero-card p{margin:0; color:var(--muted); line-height:1.6}
+    .hero-card h3{
+      margin:0 0 8px 0;
+      font-size:1.02rem;
+      color:var(--ink);
+      letter-spacing:.2px;
+    }
+    .hero-card p{margin:0;color:var(--muted);line-height:1.65}
 
+    /* Buttons */
     .btn-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      padding:10px 16px; border-radius:12px; font-weight:850;
-      border:2px solid transparent;
-      box-shadow:0 6px 15px rgba(0,0,0,.10);
+      padding:10px 16px;
+      border-radius:14px;
+      font-weight:950;
+      border:1px solid transparent;
       text-decoration:none;
+      cursor:pointer;
+      box-shadow:0 14px 40px rgba(0,0,0,.35);
     }
-    .btn.primary{background:var(--brand); color:#fff}
+    .btn.primary{
+      background:linear-gradient(90deg, rgba(53,210,255,.95), rgba(139,92,246,.92));
+      color:#081021;
+    }
     .btn.primary:hover{filter:brightness(1.05); text-decoration:none}
-    .btn.ghost{background:#fff; color:var(--brand); border-color:var(--brand); box-shadow:none}
-    .btn.ghost:hover{background:#f3f6fb; text-decoration:none}
+    .btn.ghost{
+      background:rgba(12,18,36,.50);
+      color:var(--ink);
+      border-color:rgba(53,210,255,.35);
+      box-shadow:none;
+    }
+    .btn.ghost:hover{background:rgba(53,210,255,.08); text-decoration:none}
 
     /* Sections */
     section{
       max-width:1100px;
-      margin:22px auto;
-      background:#fff;
-      padding:28px;
-      border-radius:var(--radius);
+      margin:18px auto;
+      background:rgba(12,18,36,.66);
+      border:1px solid rgba(255,255,255,.10);
+      padding:26px;
+      border-radius:20px;
       box-shadow:var(--shadow-sm);
     }
     h2{
-      color:#24496f;
-      border-bottom:2px solid var(--ring);
-      padding-bottom:8px;
-      margin:0 0 16px 0;
+      margin:0 0 14px 0;
+      padding-bottom:10px;
+      border-bottom:1px solid rgba(255,255,255,.12);
+      color:var(--ink);
+      letter-spacing:.2px;
     }
-    .lead{color:var(--muted); line-height:1.7; margin:0 0 10px 0}
+    .lead{color:var(--muted); line-height:1.75; margin:0 0 10px 0}
 
     /* Cards */
     .cards{
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-      gap:18px;
+      gap:16px;
       margin-top:14px;
     }
     .card{
-      background:#fff;
-      border:1px solid #e5e7eb;
-      border-radius:16px;
-      box-shadow:0 8px 18px rgba(0,0,0,.08);
+      background:rgba(11,18,34,.72);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
       padding:18px;
       display:flex;
       flex-direction:column;
-      min-height:100%;
+      box-shadow:0 16px 40px rgba(0,0,0,.35);
     }
-    .card h3{margin:0 0 6px 0;color:var(--brand);font-size:1.12rem}
-    .card p{margin:0 0 10px 0;color:var(--muted);line-height:1.55}
-    .card ul{margin:0; padding-left:18px; line-height:1.65}
+    .card h3{margin:0 0 6px 0; color:var(--ink); font-size:1.1rem}
+    .card p{margin:0 0 10px 0; color:var(--muted); line-height:1.6}
+    .card ul{margin:0; padding-left:18px; color:rgba(230,234,242,.92); line-height:1.7}
     .card .cta{margin-top:auto; padding-top:12px}
 
     .thumb{
       width:100%;
       aspect-ratio:16/9;
-      border-radius:12px;
+      border-radius:14px;
       background-position:center;
       background-repeat:no-repeat;
       background-size:cover;
-      box-shadow:0 4px 14px rgba(0,0,0,.10);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 14px 36px rgba(0,0,0,.45);
       margin-bottom:10px;
+      filter:saturate(1.05) contrast(1.03);
     }
-    .thumb.contain{background-size:contain; background-color:#eef2f7}
 
-    /* Simple lists */
+    /* Checklist */
     ul.clean{list-style:none; padding-left:0; margin:0}
-    ul.clean li{padding-left:26px; position:relative; margin:8px 0; color:var(--ink); line-height:1.6}
+    ul.clean li{
+      padding-left:28px;
+      position:relative;
+      margin:10px 0;
+      color:rgba(230,234,242,.92);
+      line-height:1.65;
+    }
     ul.clean li::before{
-      content:"✓";
+      content:"▸";
       position:absolute; left:0; top:0;
-      color:#16a34a; font-weight:900;
+      color:var(--accent);
+      font-weight:900;
+      font-family:var(--mono);
     }
 
     /* CTA band */
     .cta-band{
+      background:
+        radial-gradient(900px 320px at 15% 20%, rgba(53,210,255,.14), transparent 55%),
+        radial-gradient(900px 380px at 85% 20%, rgba(139,92,246,.14), transparent 58%),
+        rgba(11,18,34,.66);
+      border:1px solid rgba(53,210,255,.18);
+    }
+    .cta-band-inner{
       display:grid;
       grid-template-columns:1.2fr .8fr;
       gap:18px;
-      background:linear-gradient(180deg, #eaf2ff 0%, #ffffff 90%);
-      border:1px solid #dbeafe;
+      align-items:center;
     }
-    @media(max-width:860px){ .cta-band{grid-template-columns:1fr} }
+    @media(max-width:860px){ .cta-band-inner{grid-template-columns:1fr} }
 
     footer{
       text-align:center;
-      margin:28px 0 40px;
-      color:#4b5563;
+      margin:26px 0 40px;
+      color:var(--muted2);
       font-size:.95em;
     }
 
-    /* Mobile tweaks */
     @media (max-width:800px){
-      header.hero{margin:14px 12px 18px;padding:42px 18px;border-radius:18px}
+      header.hero{margin:14px 12px 16px; padding:42px 18px; border-radius:20px}
       header.hero h1{font-size:2.05rem}
-      section{margin:16px 12px; padding:20px}
+      section{margin:14px 12px; padding:20px}
       .btn{width:100%}
       .btn-row{flex-direction:column}
     }
@@ -265,25 +367,24 @@
 </head>
 
 <body>
-
   <!-- TOP BAR -->
   <div class="topbar">
     <button class="hamburger" id="hamburger"
             aria-label="Open menu" aria-controls="site-drawer" aria-expanded="false">
       <span class="lines"><span class="bar"></span></span>
     </button>
-    <div class="brand">Geospatial + Environmental Site Intelligence</div>
+    <div class="brand"><span class="mono">site</span><span class="dot">.</span><span class="mono">intel</span> <span style="opacity:.85">| Amanda Riggs</span></div>
   </div>
 
   <!-- OVERLAY + DRAWER -->
   <div class="overlay" id="overlay"></div>
   <aside class="drawer" id="site-drawer" aria-label="Site">
     <header>
-      <div class="brand">Menu</div>
+      <div class="brand"><span class="mono">menu</span><span class="dot">.</span></div>
     </header>
     <nav>
       <a href="index.html">Home</a>
-      <a href="#v1">V1 Package</a>
+      <a href="#case01">Case Study 01</a>
       <a href="#how">How it works</a>
       <a href="hire.html#estimateForm">Request Estimate</a>
       <a href="portfolio.html">Portfolio</a>
@@ -294,42 +395,44 @@
 
   <!-- HERO -->
   <header class="hero">
-    <div class="kicker">Freelance GIS • Environmental • Site / Drainage Screening</div>
+    <div class="kicker">
+      <span class="tag">freelance</span> geospatial • environmental • site / drainage screening
+    </div>
 
-    <h1>Decision-ready maps for land, water, and build risk.</h1>
+    <h1>Tech-clean maps that flag where water risk concentrates.</h1>
     <p class="sub">
-      I’m Amanda Riggs — a freelance geospatial analyst with an environmental + engineering-style workflow.
-      I turn LiDAR terrain, drainage, and site constraints into clear visuals you can act on (and share with clients, reviewers, or contractors).
+      I’m Amanda Riggs — a freelance geospatial analyst using an environmental + engineering-style workflow to turn LiDAR terrain and drainage signals into
+      clear visuals you can act on.
     </p>
 
     <div class="hero-grid">
       <div class="hero-card">
-        <h3>Best for</h3>
+        <h3 class="mono">Best for</h3>
         <p>
-          Builders, planners, engineers, HOAs, and homeowners who need a fast, clear read on
-          <strong>drainage risk</strong>, <strong>low spots</strong>, <strong>runoff pathways</strong>, and <strong>where problems may show up</strong>.
+          Builders, planners, engineers, HOAs, and homeowners who need a fast read on <strong>runoff pathways</strong>, <strong>low spots</strong>,
+          and <strong>where problems may show up</strong>.
         </p>
 
         <div class="btn-row">
-          <a class="btn primary" href="hire.html?v=v1#estimateForm">Request V1 estimate</a>
-          <a class="btn ghost" href="#v1">See what’s included</a>
+          <a class="btn primary" href="hire.html?v=case01#estimateForm">Request estimate</a>
+          <a class="btn ghost" href="#case01">View case study</a>
         </div>
       </div>
 
       <div class="hero-card">
-        <h3>Contact</h3>
+        <h3 class="mono">Contact</h3>
         <p style="margin-bottom:10px;">
-          <a id="emailLink" href="mailto:amanda.l.riggs@outlook.com" style="font-weight:900;color:var(--brand2);">
+          <a id="emailLink" href="mailto:amanda.l.riggs@outlook.com" style="font-weight:950;">
             amanda.l.riggs@outlook.com
           </a>
           <button id="copyEmail" title="Copy email"
-            style="border:none;background:none;cursor:pointer;margin-left:6px;font-size:1rem;color:var(--brand2);">
-            📋
+            style="border:none;background:none;cursor:pointer;margin-left:6px;font-size:1rem;color:var(--accent);">
+            ⧉
           </button>
-          <span id="copyMsg" style="font-size:0.88rem;color:#16a34a;margin-left:4px;display:none;">Copied!</span>
+          <span id="copyMsg" style="font-size:0.88rem;color:var(--accent3);margin-left:6px;display:none;">copied</span>
         </p>
-        <p style="margin:0;color:var(--muted);line-height:1.6">
-          Send an address / parcel, city/county, and what decision you’re trying to make. I’ll reply with a short scope + estimate.
+        <p style="margin:0;color:var(--muted);line-height:1.65">
+          Send an address / parcel + what decision you’re making. I’ll reply with scope, data sources, and an estimate.
         </p>
       </div>
     </div>
@@ -392,120 +495,121 @@
 
   <main>
 
-    <!-- V1 PACKAGE -->
-    <section id="v1" aria-label="V1 package">
-      <h2>V1 Package: Site Drainage Risk Screening</h2>
+    <!-- CASE STUDY 01 -->
+    <section id="case01" aria-label="Case Study 01">
+      <h2>Case Study 01: Froglevel / Davenport Farm Corridor</h2>
       <p class="lead">
-        A builder-friendly, decision-first package designed to flag drainage and flood-risk signals early —
-        before they become expensive surprises.
+        A corridor-focused screening built to highlight drainage pathways, terrain-driven low spots, and map-ready communication for fast review.
       </p>
 
       <div class="cards">
         <article class="card">
-          <div class="thumb" role="img" aria-label="Terrain visualization map" style="background-image:url('HydroConditionedDEM_Map.jpg');"></div>
-          <h3>What you get</h3>
+          <div class="thumb" role="img" aria-label="Case Study 01 layout preview"
+               style="background-image:url('case-study-01-froglevel-davenport.jpg');"></div>
+          <h3>What was delivered</h3>
           <ul>
-            <li><strong>1-page summary map</strong> (clean + shareable)</li>
-            <li><strong>Terrain + slope read</strong> (where water wants to go)</li>
-            <li><strong>Flow paths + low-spot cues</strong> (problem zones)</li>
-            <li><strong>Conflict flags</strong> near roads / structures / drainage features (when available)</li>
-            <li><strong>Short memo</strong>: what it means + recommended next step</li>
+            <li><strong>Portfolio-ready layout</strong> (print + shareable)</li>
+            <li><strong>Drainage pathways</strong> and runoff direction cues</li>
+            <li><strong>Low-spot signals</strong> using LiDAR terrain context</li>
+            <li><strong>Corridor framing</strong> for quick stakeholder review</li>
+            <li><strong>Clean labels + legend</strong> for non-technical audiences</li>
           </ul>
           <div class="cta">
-            <a class="btn primary" href="hire.html?v=v1#estimateForm">Request V1 estimate</a>
+            <a class="btn primary" href="hire.html?v=case01#estimateForm">Request something similar</a>
           </div>
         </article>
 
         <article class="card">
-          <div class="thumb contain" role="img" aria-label="Risk-style map graphic" style="background-image:url('figure_9.png');"></div>
-          <h3>Best use cases</h3>
+          <div class="thumb" role="img" aria-label="Case Study 01 layout preview"
+               style="background-image:url('case-study-01-froglevel-davenport.jpg');"></div>
+          <h3>What it helps answer</h3>
           <ul>
-            <li>Pre-permit / feasibility checks</li>
-            <li>“Why is this yard staying wet?” / nuisance flooding</li>
-            <li>Subdivision phases + drainage questions</li>
-            <li>Site selection comparisons (which lot is safer?)</li>
-            <li>Documentation for contractors, HOAs, or review teams</li>
+            <li>Where does water likely concentrate along the corridor?</li>
+            <li>Which segments show the strongest low-spot / pooling cues?</li>
+            <li>Where could road + drainage conflicts appear?</li>
+            <li>What should be field-verified first?</li>
+            <li>How do we communicate risk clearly to stakeholders?</li>
           </ul>
-          <p style="margin-top:10px;color:var(--muted);line-height:1.6">
-            This is a <strong>screening</strong> product — not a sealed engineering design — built to inform decisions and guide what to investigate next.
-          </p>
         </article>
 
         <article class="card">
-          <div class="thumb contain" role="img" aria-label="Hydrology / flow accumulation concept map" style="background-image:url('GreensMillRun_NDR_DrillDown.jpg');"></div>
-          <h3>Inputs I typically use</h3>
+          <div class="thumb" role="img" aria-label="Case Study 01 layout preview"
+               style="background-image:url('case-study-01-froglevel-davenport.jpg');"></div>
+          <h3>Data used</h3>
           <ul>
             <li>High-resolution <strong>LiDAR DEM</strong> (terrain)</li>
-            <li>Streams / drainage layers (public datasets)</li>
-            <li>Buildings / roads (where available)</li>
-            <li>Optional: your plans, grading concept, or surveyed points</li>
+            <li>Hydrology layers (streams/drainage where available)</li>
+            <li>Road + building layers (public sources)</li>
+            <li>Cartographic cleanup for clarity and sharing</li>
           </ul>
           <p style="margin-top:10px;color:var(--muted);line-height:1.6">
-            If you already have CAD/PDFs or site plans, you can attach them in the estimate request.
+            This is a <strong>screening product</strong> to inform decisions and prioritize next steps (not a sealed engineering design).
           </p>
         </article>
       </div>
     </section>
 
-    <!-- WHY THIS WORKS -->
+    <!-- WHY -->
     <section aria-label="Why this works">
-      <h2>Why this is different</h2>
+      <h2>Why this approach works</h2>
       <p class="lead">
-        A lot of maps look nice but don’t answer the real question. My focus is:
-        <strong>What will happen to water on this site, and where does risk concentrate?</strong>
+        Many maps look good but don’t answer the real question. The workflow here is simple:
+        <strong>terrain → flow → risk cues → clear communication</strong>.
       </p>
-
       <ul class="clean">
-        <li><strong>Plain-language outputs</strong> that a builder, homeowner, or reviewer can understand quickly.</li>
-        <li><strong>Engineering-style logic</strong> (terrain → flow paths → conflicts → decision).</li>
-        <li><strong>Clean cartography</strong> that’s ready for reports, emails, and meetings.</li>
+        <li><strong>Builder-friendly outputs</strong> that read fast in the field or in a meeting.</li>
+        <li><strong>Engineering-style logic</strong> without the clutter.</li>
+        <li><strong>Clean cartography</strong> ready for reports, emails, and review teams.</li>
       </ul>
     </section>
 
-    <!-- HOW IT WORKS -->
+    <!-- HOW -->
     <section id="how" aria-label="How it works">
       <h2>How it works</h2>
       <div class="cards">
         <article class="card">
-          <h3>1) Quick intake</h3>
-          <p>Send the address / parcel, city/county, and what decision you’re making.</p>
+          <h3 class="mono">1) Intake</h3>
+          <p>Send the address/parcel, city/county, and what decision you’re making.</p>
         </article>
         <article class="card">
-          <h3>2) Scope + estimate</h3>
-          <p>I reply with a short scope, what data I’ll use, and an estimate based on complexity + timeline.</p>
+          <h3 class="mono">2) Scope + estimate</h3>
+          <p>I reply with scope, datasets, and an estimate based on complexity + timeline.</p>
         </article>
         <article class="card">
-          <h3>3) Draft checkpoint</h3>
-          <p>You’ll get one midpoint preview to confirm AOI, labels, and map clarity.</p>
+          <h3 class="mono">3) Draft checkpoint</h3>
+          <p>You get a midpoint preview to confirm AOI, labels, and map clarity.</p>
         </article>
         <article class="card">
-          <h3>4) Delivery</h3>
-          <p>Final map(s) + memo delivered as PDF/PNG. Optional walkthrough call if helpful.</p>
+          <h3 class="mono">4) Delivery</h3>
+          <p>Final map(s) delivered as PDF/PNG. Optional walkthrough call if helpful.</p>
         </article>
       </div>
     </section>
 
-    <!-- CTA BAND -->
+    <!-- CTA -->
     <section class="cta-band" aria-label="Call to action">
-      <div>
-        <h2 style="border:0;margin:0 0 10px 0;padding:0;color:#1d4ed8;">Ready to screen a site?</h2>
-        <p class="lead" style="margin:0;">
-          If you’re deciding between lots, troubleshooting a drainage issue, or want a pre-permit risk read —
-          send the location and I’ll tell you what I can produce for V1.
-        </p>
-      </div>
-      <div style="display:flex;flex-direction:column;justify-content:center;gap:10px;">
-        <a class="btn primary" href="hire.html?v=v1#estimateForm">Request estimate</a>
-        <a class="btn ghost" href="mailto:amanda.l.riggs@outlook.com">Email me</a>
+      <div class="cta-band-inner">
+        <div>
+          <h2 style="border:0;margin:0 0 10px 0;padding:0;">
+            Ready to screen a site?
+          </h2>
+          <p class="lead" style="margin:0;">
+            If you’re deciding between lots, troubleshooting drainage, or want a pre-permit risk read — send the location and goal.
+          </p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;justify-content:center;">
+          <a class="btn primary" href="hire.html?v=case01#estimateForm">Request estimate</a>
+          <a class="btn ghost" href="mailto:amanda.l.riggs@outlook.com">Email me</a>
+        </div>
       </div>
     </section>
 
   </main>
 
   <footer>
-    © 2026 Amanda L. Riggs · Freelance Geospatial + Environmental Site Intelligence ·
-    <a href="hire.html#estimateForm" style="color:var(--brand)">Request Estimate</a> ·
-    <a href="mailto:amanda.l.riggs@outlook.com" style="color:var(--brand)">amanda.l.riggs@outlook.com</a>
+    © 2026 Amanda L. Riggs · Freelance Geospatial Site Intelligence ·
+    <a href="hire.html#estimateForm">Request Estimate</a> ·
+    <a href="mailto:amanda.l.riggs@outlook.com">amanda.l.riggs@outlook.com</a>
   </footer>
 
 </body>
