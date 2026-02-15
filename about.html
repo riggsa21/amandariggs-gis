@@ -3,94 +3,252 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ✅ Tab title -->
   <title>About | site.intel</title>
-  <meta name="description" content="About Amanda Riggs — GIS & Environmental Mapping Services." />
+
+  <!-- ✅ SEO -->
+  <meta name="description" content="About Amanda Riggs — freelance geospatial site intelligence focused on terrain, drainage screening, hydrology, and clean, decision-ready cartography." />
+
   <style>
-    :root {
-      --ink:#0f172a;
-      --muted:#334155;
-      --brand:#2b65a6;
-      --ring:#dbe3ef;
-      --card:#ffffff;
-      --bg1:#f7f9fb;
-      --bg2:#dce6f2;
-      --shadow-sm:0 4px 12px rgba(0,0,0,.06);
+    /* ---------------- Dark / tech theme (matches your new direction) ---------------- */
+    :root{
+      --bg0:#05070f;
+      --bg2:#0b1020;
+      --panel:rgba(12,18,36,.70);
+      --panel2:rgba(11,18,34,.72);
+      --ink:#e6eaf2;
+      --muted:#aab3c5;
+      --muted2:#7f8aa3;
+      --ring:rgba(255,255,255,.10);
+      --shadow:0 18px 50px rgba(0,0,0,.55);
+      --shadow-sm:0 10px 28px rgba(0,0,0,.45);
+
+      --accent:#35d2ff;   /* cyan */
+      --accent2:#8b5cf6;  /* violet */
+      --accent3:#22c55e;  /* green */
+
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
     }
+
     html{scroll-behavior:smooth}
     *,*::before,*::after{box-sizing:border-box}
     body{
       margin:0;
-      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family:var(--sans);
       color:var(--ink);
-      background:linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+      background:
+        radial-gradient(1200px 520px at 15% 10%, rgba(53,210,255,.12), transparent 60%),
+        radial-gradient(900px 420px at 85% 25%, rgba(139,92,246,.11), transparent 60%),
+        radial-gradient(900px 420px at 55% 90%, rgba(34,197,94,.07), transparent 60%),
+        linear-gradient(180deg, var(--bg0) 0%, var(--bg2) 100%);
       padding-top:56px;
     }
-    a{color:#245c9c;text-decoration:none}
+
+    a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
 
+    /* ---------------- Top bar ---------------- */
     .topbar{
-      position:fixed;inset:0 0 auto 0;height:56px;z-index:1000;
-      display:flex;align-items:center;gap:12px;
-      background:rgba(255,255,255,.9);backdrop-filter:blur(8px);
-      border-bottom:1px solid #e5e7eb;padding:0 12px;
+      position:fixed; inset:0 0 auto 0; height:56px; z-index:1000;
+      display:flex; align-items:center; gap:12px;
+      background:rgba(5,7,15,.72);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      padding:0 12px;
     }
-    .brand{font-weight:800;color:var(--brand);letter-spacing:.2px;font-size:1.05rem;}
+    .brand{
+      font-weight:950;
+      letter-spacing:.2px;
+      font-size:1.02rem;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      color:var(--ink);
+    }
+    .brand .dot{color:var(--accent)}
+    .mono{font-family:var(--mono)}
+
     .home-btn{
       display:inline-flex;align-items:center;gap:8px;
-      padding:8px 12px;border-radius:10px;
-      border:1.5px solid var(--brand);color:var(--brand);
-      background:#fff;font-weight:700;text-decoration:none;
+      padding:8px 12px;border-radius:12px;
+      border:1px solid rgba(53,210,255,.45);
+      color:var(--ink);
+      background:rgba(12,18,36,.55);
+      font-weight:900;
+      text-decoration:none;
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
     }
+    .home-btn:hover{background:rgba(53,210,255,.08);text-decoration:none}
 
-    main{max-width:1000px;margin:24px auto;padding:0 16px}
+    /* ---------------- Layout shell ---------------- */
+    main{max-width:1000px;margin:18px auto;padding:0 14px}
     .panel{
-      background:#fff;border-radius:18px;box-shadow:var(--shadow-sm);
-      padding:22px;margin-bottom:18px;
+      background:var(--panel);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:20px;
+      box-shadow:var(--shadow-sm);
+      padding:22px;
+      margin-bottom:16px;
+      text-align:center;
     }
-    h1{margin:12px 0 8px 0}
-    h2{margin:0 0 10px 0;color:#24496f;border-bottom:2px solid var(--ring);padding-bottom:6px}
 
-    .contact-card{display:flex;gap:16px;align-items:center;margin-top:8px;flex-wrap:wrap}
+    h1{
+      margin:10px 0 10px 0;
+      font-size:2.05rem;
+      font-weight:980;
+      letter-spacing:.2px;
+      line-height:1.2;
+    }
+    h2{
+      margin:0 0 10px 0;
+      padding-bottom:10px;
+      border-bottom:1px solid rgba(255,255,255,.12);
+      font-size:1.25rem;
+      letter-spacing:.2px;
+    }
+
+    .lead{
+      color:rgba(230,234,242,.92);
+      line-height:1.8;
+      margin:0 auto 12px auto;
+      max-width:820px;
+    }
+    .muted{color:var(--muted);line-height:1.7}
+
+    /* ---------------- “What I do” chips ---------------- */
+    .chips{
+      list-style:none;
+      padding:0;
+      margin:14px auto 0;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px;
+      max-width:900px;
+    }
+    .chips li{
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(11,18,34,.70);
+      border:1px solid rgba(255,255,255,.10);
+      color:rgba(230,234,242,.92);
+      font-weight:850;
+      font-size:.92rem;
+    }
+    .chips li span{color:var(--accent);font-family:var(--mono);font-weight:950;margin-right:6px}
+
+    /* ---------------- Contact card ---------------- */
+    .contact-card{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
     .avatar{
       width:120px;height:120px;border-radius:50%;
-      object-fit:cover;border:3px solid #dbe3ef;
-      box-shadow:0 4px 10px rgba(0,0,0,0.12);background:#f8fafc;
+      object-fit:cover;
+      border:2px solid rgba(53,210,255,.30);
+      box-shadow:0 14px 40px rgba(0,0,0,.35);
+      background:rgba(255,255,255,.06);
     }
-    .contact-lines{line-height:1.6}
+    .contact-lines{line-height:1.75;text-align:center}
+    .contact-lines strong{font-size:1.05rem}
+    .contact-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(12,18,36,.55);
+      color:var(--ink);
+      font-weight:900;
+      text-decoration:none;
+    }
+    .pill:hover{background:rgba(53,210,255,.08);text-decoration:none}
+
+    /* ---------------- Footer note ---------------- */
+    .note{
+      margin-top:12px;
+      color:var(--muted2);
+      font-size:.95rem;
+      line-height:1.6;
+      max-width:820px;
+      margin-left:auto;
+      margin-right:auto;
+    }
   </style>
 </head>
+
 <body>
 
   <div class="topbar">
-    <a class="home-btn" href="index.html">← Home</a>
-    <div class="brand">About</div>
+    <a class="home-btn" href="index.html" aria-label="Return to Home">← Home</a>
+    <div class="brand"><span class="mono">site</span><span class="dot">.</span><span class="mono">intel</span> <span style="opacity:.85">| About</span></div>
   </div>
 
   <main>
     <section class="panel">
       <h1>About</h1>
-      <p>
-        <strong>GIS & Environmental Mapping</strong> is a startup studio focused on clear, decision-ready cartography
-        and accessible spatial analysis. I’m actively building experience and a portfolio across property, watershed,
-        transportation, and web-map projects.
+
+      <p class="lead">
+        I’m <strong>Amanda Riggs</strong> — a freelance geospatial analyst focused on <strong>site intelligence</strong>:
+        turning terrain, drainage, and environmental signals into maps that are clean, practical, and decision-ready.
       </p>
-      <p>
-        I hold a <strong>BS in Multidisciplinary Studies – Environmental Science</strong>, an
-        <strong>MS in Geography</strong>, and a <strong>GIS Certification</strong>. I care about practical,
-        well-designed outputs that builders, planners, homeowners, and researchers can use right away.
+
+      <p class="muted">
+        My work sits at the intersection of <strong>geospatial</strong>, <strong>environmental</strong>, and
+        <strong>engineering-style screening</strong>. That means repeatable workflows (LiDAR → terrain → flow cues → risk flags)
+        and deliverables that stakeholders can understand fast.
+      </p>
+
+      <ul class="chips" aria-label="What I do">
+        <li><span>▸</span>Drainage &amp; terrain screening</li>
+        <li><span>▸</span>Hydrology / watershed mapping</li>
+        <li><span>▸</span>LiDAR DEM processing</li>
+        <li><span>▸</span>Land-use change &amp; remote sensing</li>
+        <li><span>▸</span>Spatial modeling &amp; QA-ready layouts</li>
+        <li><span>▸</span>Python/ArcPy automation</li>
+      </ul>
+
+      <p class="note">
+        <strong>Note:</strong> My outputs are designed for planning, screening, communication, and prioritization.
+        They are not a substitute for sealed engineering design documents.
+      </p>
+    </section>
+
+    <section class="panel" aria-label="Background">
+      <h2>Background</h2>
+      <p class="muted" style="max-width:820px;margin-left:auto;margin-right:auto;">
+        I hold a <strong>B.S. in Environmental Studies</strong>, an <strong>M.S. in Geography</strong>, and a
+        <strong>GIS Certificate</strong>. I’m especially interested in hydrology, land-use change, and how urban development
+        shifts runoff, flood risk, and ecosystem services.
+      </p>
+      <p class="muted" style="max-width:820px;margin-left:auto;margin-right:auto;">
+        If you’re deciding between lots, troubleshooting a drainage issue, or preparing for stakeholder conversations,
+        I can help you turn the data into a map that actually answers the question.
       </p>
     </section>
 
     <section class="panel" aria-label="Contact">
       <h2>Contact</h2>
+
       <div class="contact-card">
-       <img class="avatar"
-     src="https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/profile.jpg"
-     alt="Profile photo of Amanda Riggs">
+        <img class="avatar"
+             src="https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/profile.jpg"
+             alt="Profile photo of Amanda Riggs">
+
         <div class="contact-lines">
           <div><strong>Amanda L. Riggs</strong></div>
           <div><a href="mailto:amanda.l.riggs@outlook.com">amanda.l.riggs@outlook.com</a></div>
-          <div><a href="https://www.linkedin.com/in/amanda-riggs-a60a7b9b" target="_blank" rel="noopener">LinkedIn</a></div>
+
+          <div class="contact-links" style="margin-top:10px;">
+            <a class="pill" href="mailto:amanda.l.riggs@outlook.com">Email</a>
+            <a class="pill" href="hire.html#estimateForm">Request Estimate</a>
+            <a class="pill" href="https://www.linkedin.com/in/amanda-riggs-a60a7b9b" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
         </div>
       </div>
     </section>
@@ -98,5 +256,3 @@
 
 </body>
 </html>
-
-
