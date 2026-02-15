@@ -1,4 +1,4 @@
-<!-- index.html (Dark / techy rewrite, single case-study image) -->
+<!-- index.html (Dark/tech, centered layout, SINGLE image usage in hero only) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,13 +22,11 @@
   <meta name="twitter:image" content="https://riggsa21.github.io/amandariggs-gis/case-study-01-froglevel-davenport.jpg" />
 
   <style>
-    /* ---------------- Tokens (Dark) ---------------- */
     :root{
       --bg0:#05070f;
-      --bg1:#070a14;
       --bg2:#0b1020;
-      --card:#0c1224;
-      --card2:#0b1222;
+      --panel:rgba(12,18,36,.68);
+      --panel2:rgba(11,18,34,.72);
       --ink:#e6eaf2;
       --muted:#aab3c5;
       --muted2:#7f8aa3;
@@ -36,35 +34,34 @@
       --shadow:0 18px 50px rgba(0,0,0,.55);
       --shadow-sm:0 10px 28px rgba(0,0,0,.45);
 
-      /* Tech accents */
       --accent:#35d2ff;   /* cyan */
       --accent2:#8b5cf6;  /* violet */
       --accent3:#22c55e;  /* green */
-      --danger:#fb7185;
 
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
       --sans: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
     }
 
-    /* ---------------- Base ---------------- */
     html{scroll-behavior:smooth}
     *,*::before,*::after{box-sizing:border-box}
     html,body{margin:0;padding:0}
+
     body{
       font-family:var(--sans);
       color:var(--ink);
       background:
-        radial-gradient(1200px 500px at 15% 10%, rgba(53,210,255,.13), transparent 60%),
+        radial-gradient(1200px 520px at 15% 10%, rgba(53,210,255,.13), transparent 60%),
         radial-gradient(900px 420px at 85% 25%, rgba(139,92,246,.12), transparent 60%),
         radial-gradient(900px 420px at 55% 90%, rgba(34,197,94,.08), transparent 60%),
         linear-gradient(180deg, var(--bg0) 0%, var(--bg2) 100%);
       padding-top:56px;
     }
+
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
     .mono{font-family:var(--mono)}
 
-    /* ---------------- Topbar ---------------- */
+    /* Topbar */
     .topbar{
       position:fixed; inset:0 0 auto 0; height:56px; z-index:1000;
       display:flex; align-items:center; gap:12px;
@@ -74,7 +71,7 @@
       padding:0 12px;
     }
     .brand{
-      font-weight:900;
+      font-weight:950;
       letter-spacing:.2px;
       font-size:1.02rem;
       white-space:nowrap;
@@ -104,7 +101,7 @@
     .hamburger .lines::before{ top:0; }
     .hamburger .lines::after{ bottom:0; }
 
-    /* ---------------- Drawer ---------------- */
+    /* Drawer */
     .overlay{
       position:fixed; inset:0;
       background:rgba(0,0,0,.55);
@@ -113,7 +110,6 @@
       z-index:999;
     }
     .overlay.open{opacity:1;pointer-events:auto}
-
     .drawer{
       position:fixed; inset:0 auto 0 0;
       width:300px; max-width:86vw;
@@ -136,9 +132,10 @@
       display:block;
       padding:12px 12px;
       border-radius:12px;
-      font-weight:800;
+      font-weight:850;
       color:var(--ink);
       border:1px solid transparent;
+      text-align:left; /* drawer items stay readable */
     }
     .drawer a:hover{
       background:rgba(53,210,255,.08);
@@ -146,10 +143,12 @@
       text-decoration:none;
     }
 
-    /* ---------------- Hero ---------------- */
+    /* Layout container */
+    main{max-width:1100px;margin:0 auto;padding:0 14px}
+
+    /* HERO (Centered) — ONLY image usage here */
     header.hero{
-      max-width:1100px;
-      margin:18px auto 20px;
+      margin:18px auto 18px;
       padding:64px 28px 52px;
       border-radius:26px;
       box-shadow:var(--shadow);
@@ -157,11 +156,11 @@
       background:
         radial-gradient(900px 300px at 20% 10%, rgba(53,210,255,.18), transparent 55%),
         radial-gradient(900px 380px at 80% 25%, rgba(139,92,246,.16), transparent 58%),
-        linear-gradient(rgba(5,7,15,.72), rgba(5,7,15,.86)),
+        linear-gradient(rgba(5,7,15,.78), rgba(5,7,15,.88)),
         url('case-study-01-froglevel-davenport.jpg?v=1') center/cover no-repeat;
-      text-align:left;
       position:relative;
       border:1px solid rgba(255,255,255,.08);
+      text-align:center;
     }
     header.hero::after{
       content:"";
@@ -179,7 +178,7 @@
       display:inline-flex; gap:10px; align-items:center;
       padding:7px 12px;
       border-radius:999px;
-      font-weight:900;
+      font-weight:950;
       font-size:.92rem;
       border:1px solid rgba(53,210,255,.30);
       background:rgba(12,18,36,.65);
@@ -187,68 +186,64 @@
       position:relative;
       z-index:1;
     }
-    .kicker .tag{
-      font-family:var(--mono);
-      color:var(--accent);
-      font-weight:900;
-    }
+    .kicker .tag{font-family:var(--mono); color:var(--accent); font-weight:950;}
     header.hero h1{
-      margin:14px 0 10px 0;
+      margin:14px auto 10px auto;
       font-size:2.55rem;
-      font-weight:950;
-      letter-spacing:.2px;
+      font-weight:980;
       line-height:1.12;
       position:relative;
       z-index:1;
+      max-width:920px;
     }
     header.hero .sub{
-      margin:0 0 18px 0;
+      margin:0 auto 18px auto;
       color:rgba(230,234,242,.92);
       font-size:1.05rem;
       font-weight:650;
-      max-width:800px;
-      line-height:1.6;
+      line-height:1.65;
       position:relative;
       z-index:1;
+      max-width:860px;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.2fr .8fr;
+      grid-template-columns:1fr 1fr;
       gap:16px;
       align-items:start;
       margin-top:10px;
       position:relative;
       z-index:1;
+      justify-items:center;
     }
     @media(max-width:860px){ .hero-grid{grid-template-columns:1fr} }
 
     .hero-card{
+      width:100%;
+      max-width:520px;
       background:rgba(12,18,36,.72);
       border:1px solid rgba(255,255,255,.10);
       border-radius:18px;
       padding:16px 16px;
       box-shadow:0 12px 30px rgba(0,0,0,.35);
+      text-align:center;
     }
-    .hero-card h3{
-      margin:0 0 8px 0;
-      font-size:1.02rem;
-      color:var(--ink);
-      letter-spacing:.2px;
-    }
+    .hero-card h3{margin:0 0 8px 0; font-size:1.02rem; letter-spacing:.2px}
     .hero-card p{margin:0;color:var(--muted);line-height:1.65}
 
     /* Buttons */
-    .btn-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .btn-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; justify-content:center}
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:8px;
       padding:10px 16px;
       border-radius:14px;
-      font-weight:950;
+      font-weight:980;
       border:1px solid transparent;
       text-decoration:none;
       cursor:pointer;
       box-shadow:0 14px 40px rgba(0,0,0,.35);
+      min-width:190px;
     }
     .btn.primary{
       background:linear-gradient(90deg, rgba(53,210,255,.95), rgba(139,92,246,.92));
@@ -263,75 +258,77 @@
     }
     .btn.ghost:hover{background:rgba(53,210,255,.08); text-decoration:none}
 
-    /* Sections */
+    /* Sections centered */
     section{
-      max-width:1100px;
       margin:18px auto;
-      background:rgba(12,18,36,.66);
+      background:var(--panel);
       border:1px solid rgba(255,255,255,.10);
       padding:26px;
       border-radius:20px;
       box-shadow:var(--shadow-sm);
+      text-align:center;
     }
     h2{
-      margin:0 0 14px 0;
+      margin:0 auto 14px auto;
       padding-bottom:10px;
       border-bottom:1px solid rgba(255,255,255,.12);
       color:var(--ink);
       letter-spacing:.2px;
+      max-width:900px;
     }
-    .lead{color:var(--muted); line-height:1.75; margin:0 0 10px 0}
+    .lead{
+      color:var(--muted);
+      line-height:1.8;
+      margin:0 auto 12px auto;
+      max-width:900px;
+    }
 
-    /* Cards */
+    /* Cards (no images) */
     .cards{
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
       gap:16px;
       margin-top:14px;
+      justify-items:center;
     }
     .card{
-      background:rgba(11,18,34,.72);
+      width:100%;
+      max-width:520px;
+      background:var(--panel2);
       border:1px solid rgba(255,255,255,.10);
       border-radius:18px;
       padding:18px;
       display:flex;
       flex-direction:column;
       box-shadow:0 16px 40px rgba(0,0,0,.35);
+      text-align:center;
     }
-    .card h3{margin:0 0 6px 0; color:var(--ink); font-size:1.1rem}
-    .card p{margin:0 0 10px 0; color:var(--muted); line-height:1.6}
-    .card ul{margin:0; padding-left:18px; color:rgba(230,234,242,.92); line-height:1.7}
-    .card .cta{margin-top:auto; padding-top:12px}
+    .card h3{margin:0 0 8px 0; color:var(--ink); font-size:1.1rem}
+    .card p{margin:0 0 10px 0; color:var(--muted); line-height:1.7}
 
-    .thumb{
-      width:100%;
-      aspect-ratio:16/9;
-      border-radius:14px;
-      background-position:center;
-      background-repeat:no-repeat;
-      background-size:cover;
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow:0 14px 36px rgba(0,0,0,.45);
-      margin-bottom:10px;
-      filter:saturate(1.05) contrast(1.03);
-    }
-
-    /* Checklist */
-    ul.clean{list-style:none; padding-left:0; margin:0}
-    ul.clean li{
-      padding-left:28px;
-      position:relative;
-      margin:10px 0;
+    .card ul{
+      margin:0 auto;
+      padding-left:0;
+      list-style:none;
+      max-width:420px;
+      text-align:left; /* bullet text reads better */
+      line-height:1.7;
       color:rgba(230,234,242,.92);
-      line-height:1.65;
     }
-    ul.clean li::before{
+    .card ul li{
+      position:relative;
+      padding-left:26px;
+      margin:10px 0;
+    }
+    .card ul li::before{
       content:"▸";
       position:absolute; left:0; top:0;
       color:var(--accent);
-      font-weight:900;
       font-family:var(--mono);
+      font-weight:950;
     }
+
+    .card .cta{margin-top:auto; padding-top:12px; display:flex; justify-content:center}
 
     /* CTA band */
     .cta-band{
@@ -346,6 +343,8 @@
       grid-template-columns:1.2fr .8fr;
       gap:18px;
       align-items:center;
+      justify-items:center;
+      text-align:center;
     }
     @media(max-width:860px){ .cta-band-inner{grid-template-columns:1fr} }
 
@@ -354,6 +353,7 @@
       margin:26px 0 40px;
       color:var(--muted2);
       font-size:.95em;
+      padding:0 12px;
     }
 
     @media (max-width:800px){
@@ -362,11 +362,13 @@
       section{margin:14px 12px; padding:20px}
       .btn{width:100%}
       .btn-row{flex-direction:column}
+      .hero-card,.card{max-width:100%}
     }
   </style>
 </head>
 
 <body>
+
   <!-- TOP BAR -->
   <div class="topbar">
     <button class="hamburger" id="hamburger"
@@ -400,6 +402,7 @@
     </div>
 
     <h1>Tech-clean maps that flag where water risk concentrates.</h1>
+
     <p class="sub">
       I’m Amanda Riggs — a freelance geospatial analyst using an environmental + engineering-style workflow to turn LiDAR terrain and drainage signals into
       clear visuals you can act on.
@@ -422,7 +425,7 @@
       <div class="hero-card">
         <h3 class="mono">Contact</h3>
         <p style="margin-bottom:10px;">
-          <a id="emailLink" href="mailto:amanda.l.riggs@outlook.com" style="font-weight:950;">
+          <a id="emailLink" href="mailto:amanda.l.riggs@outlook.com" style="font-weight:980;">
             amanda.l.riggs@outlook.com
           </a>
           <button id="copyEmail" title="Copy email"
@@ -494,7 +497,6 @@
   </script>
 
   <main>
-
     <!-- CASE STUDY 01 -->
     <section id="case01" aria-label="Case Study 01">
       <h2>Case Study 01: Froglevel / Davenport Farm Corridor</h2>
@@ -504,8 +506,6 @@
 
       <div class="cards">
         <article class="card">
-          <div class="thumb" role="img" aria-label="Case Study 01 layout preview"
-               style="background-image:url('case-study-01-froglevel-davenport.jpg');"></div>
           <h3>What was delivered</h3>
           <ul>
             <li><strong>Portfolio-ready layout</strong> (print + shareable)</li>
@@ -520,8 +520,6 @@
         </article>
 
         <article class="card">
-          <div class="thumb" role="img" aria-label="Case Study 01 layout preview"
-               style="background-image:url('case-study-01-froglevel-davenport.jpg');"></div>
           <h3>What it helps answer</h3>
           <ul>
             <li>Where does water likely concentrate along the corridor?</li>
@@ -533,8 +531,6 @@
         </article>
 
         <article class="card">
-          <div class="thumb" role="img" aria-label="Case Study 01 layout preview"
-               style="background-image:url('case-study-01-froglevel-davenport.jpg');"></div>
           <h3>Data used</h3>
           <ul>
             <li>High-resolution <strong>LiDAR DEM</strong> (terrain)</li>
@@ -542,7 +538,7 @@
             <li>Road + building layers (public sources)</li>
             <li>Cartographic cleanup for clarity and sharing</li>
           </ul>
-          <p style="margin-top:10px;color:var(--muted);line-height:1.6">
+          <p style="margin-top:10px;color:var(--muted);line-height:1.7;max-width:520px;margin-left:auto;margin-right:auto;">
             This is a <strong>screening product</strong> to inform decisions and prioritize next steps (not a sealed engineering design).
           </p>
         </article>
@@ -553,23 +549,35 @@
     <section aria-label="Why this works">
       <h2>Why this approach works</h2>
       <p class="lead">
-        Many maps look good but don’t answer the real question. The workflow here is simple:
+        Many maps look good but don’t answer the real question. The workflow here is:
         <strong>terrain → flow → risk cues → clear communication</strong>.
       </p>
-      <ul class="clean">
-        <li><strong>Builder-friendly outputs</strong> that read fast in the field or in a meeting.</li>
-        <li><strong>Engineering-style logic</strong> without the clutter.</li>
-        <li><strong>Clean cartography</strong> ready for reports, emails, and review teams.</li>
-      </ul>
+
+      <div class="cards">
+        <article class="card">
+          <h3 class="mono">Builder-friendly</h3>
+          <p>Outputs that read fast in the field or in a meeting — without GIS jargon.</p>
+        </article>
+        <article class="card">
+          <h3 class="mono">Engineering-style logic</h3>
+          <p>Clean, repeatable analysis patterns: terrain first, then flow signals, then risk cues.</p>
+        </article>
+        <article class="card">
+          <h3 class="mono">Clean cartography</h3>
+          <p>Layouts built for sharing: reports, emails, city review, and client updates.</p>
+        </article>
+      </div>
     </section>
 
     <!-- HOW -->
     <section id="how" aria-label="How it works">
       <h2>How it works</h2>
+      <p class="lead">Simple workflow. Clean deliverables. No confusion.</p>
+
       <div class="cards">
         <article class="card">
           <h3 class="mono">1) Intake</h3>
-          <p>Send the address/parcel, city/county, and what decision you’re making.</p>
+          <p>Send the address/parcel + what decision you’re making.</p>
         </article>
         <article class="card">
           <h3 class="mono">2) Scope + estimate</h3>
@@ -577,11 +585,11 @@
         </article>
         <article class="card">
           <h3 class="mono">3) Draft checkpoint</h3>
-          <p>You get a midpoint preview to confirm AOI, labels, and map clarity.</p>
+          <p>You get a midpoint preview to confirm AOI, labels, and clarity.</p>
         </article>
         <article class="card">
           <h3 class="mono">4) Delivery</h3>
-          <p>Final map(s) delivered as PDF/PNG. Optional walkthrough call if helpful.</p>
+          <p>Final map(s) delivered as PDF/PNG. Optional walkthrough if helpful.</p>
         </article>
       </div>
     </section>
@@ -590,14 +598,12 @@
     <section class="cta-band" aria-label="Call to action">
       <div class="cta-band-inner">
         <div>
-          <h2 style="border:0;margin:0 0 10px 0;padding:0;">
-            Ready to screen a site?
-          </h2>
+          <h2 style="border:0;margin:0 0 10px 0;padding:0;">Ready to screen a site?</h2>
           <p class="lead" style="margin:0;">
             If you’re deciding between lots, troubleshooting drainage, or want a pre-permit risk read — send the location and goal.
           </p>
         </div>
-        <div style="display:flex;flex-direction:column;gap:10px;justify-content:center;">
+        <div style="display:flex;flex-direction:column;gap:10px;justify-content:center;align-items:center;">
           <a class="btn primary" href="hire.html?v=case01#estimateForm">Request estimate</a>
           <a class="btn ghost" href="mailto:amanda.l.riggs@outlook.com">Email me</a>
         </div>
