@@ -1,4 +1,4 @@
-<!-- index.html (REWRITE: fixed image filename + consistent links to hire.html#estimateForm) -->
+<!-- index.html (UPDATED: consistent request links + consistent case study image filename) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +9,7 @@
   <meta name="description" content="Freelance geospatial + environmental site intelligence. Drainage, terrain, and risk screening maps that are clear, decision-ready, and builder-friendly." />
   <link rel="canonical" href="https://riggsa21.github.io/amandariggs-gis/" />
 
-  <!-- IMPORTANT: pick ONE filename and keep it consistent everywhere.
-       Recommended: case_study_01_FrogLevel_Davenport.jpg (fix the repo filename to match) -->
+  <!-- IMPORTANT: make sure your repo file matches this EXACT name -->
   <meta property="og:title" content="Geospatial Site Intelligence | Amanda Riggs" />
   <meta property="og:description" content="Drainage, terrain, and risk screening maps that are clear, decision-ready, and builder-friendly." />
   <meta property="og:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg" />
@@ -62,7 +61,6 @@
     .mono{font-family:var(--mono)}
     main{max-width:1100px;margin:0 auto;padding:0 14px}
 
-    /* Topbar */
     .topbar{
       position:fixed; inset:0 0 auto 0; height:56px; z-index:1000;
       display:flex; align-items:center; gap:12px;
@@ -102,7 +100,6 @@
     .hamburger .lines::before{ top:0; }
     .hamburger .lines::after{ bottom:0; }
 
-    /* Drawer */
     .overlay{
       position:fixed; inset:0;
       background:rgba(0,0,0,.55);
@@ -145,7 +142,6 @@
       text-decoration:none;
     }
 
-    /* Hero */
     header.hero{
       margin:18px auto 18px;
       padding:64px 28px 52px;
@@ -257,7 +253,6 @@
     }
     .btn.ghost:hover{background:rgba(53,210,255,.08); text-decoration:none}
 
-    /* Sections */
     section{
       margin:18px auto;
       background:var(--panel);
@@ -398,8 +393,6 @@
 </head>
 
 <body>
-
-  <!-- TOP BAR -->
   <div class="topbar">
     <button class="hamburger" id="hamburger"
             aria-label="Open menu" aria-controls="site-drawer" aria-expanded="false">
@@ -408,7 +401,6 @@
     <div class="brand"><span class="mono">site</span><span class="dot">.</span><span class="mono">intel</span> <span style="opacity:.85">| Amanda Riggs</span></div>
   </div>
 
-  <!-- OVERLAY + DRAWER -->
   <div class="overlay" id="overlay"></div>
   <aside class="drawer" id="site-drawer" aria-label="Site menu">
     <header>
@@ -426,7 +418,6 @@
     </nav>
   </aside>
 
-  <!-- HERO -->
   <header class="hero">
     <div class="kicker">
       <span class="tag">freelance</span> geospatial • environmental • site / drainage screening
@@ -471,7 +462,6 @@
     </div>
   </header>
 
-  <!-- Clipboard -->
   <script>
     const copyBtn = document.getElementById('copyEmail');
     const copyMsg = document.getElementById('copyMsg');
@@ -484,7 +474,6 @@
     });
   </script>
 
-  <!-- Drawer logic -->
   <script>
     (() => {
       const btn = document.getElementById('hamburger');
@@ -527,7 +516,6 @@
   </script>
 
   <main>
-    <!-- CASE STUDY 01 -->
     <section id="case01" aria-label="Case Study 01">
       <h2>Case Study 01: Frog Level / Davenport Farm Corridor</h2>
       <p class="lead">
@@ -535,7 +523,7 @@
       </p>
 
       <div class="case-preview" aria-label="Case Study 01 preview">
-        <img src="case_study_01_FrogLevel_Davenport.jpg?v=2" alt="Case Study 01: Frog Level / Davenport Farm Corridor layout preview">
+        <img src="case_study_01_FrogLevel_Davenport.jpg?v=3" alt="Case Study 01: Frog Level / Davenport Farm Corridor layout preview">
         <div class="cap">Case Study 01 — Frog Level / Davenport Farm Corridor (screening layout)</div>
       </div>
 
@@ -580,7 +568,6 @@
       </div>
     </section>
 
-    <!-- WHY -->
     <section id="why" aria-label="Why this works">
       <h2>Why this approach works</h2>
       <p class="lead">
@@ -604,7 +591,6 @@
       </div>
     </section>
 
-    <!-- HOW -->
     <section id="how" aria-label="How it works">
       <h2>How it works</h2>
       <p class="lead">Simple workflow. Clean deliverables. No confusion.</p>
@@ -629,7 +615,6 @@
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="cta-band" aria-label="Call to action">
       <div class="cta-band-inner">
         <div>
@@ -644,7 +629,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <footer>
@@ -652,6 +636,5 @@
     <a href="hire.html#estimateForm">Request Estimate</a> ·
     <a href="mailto:amanda.l.riggs@outlook.com">amanda.l.riggs@outlook.com</a>
   </footer>
-
 </body>
 </html>
