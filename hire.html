@@ -1,4 +1,4 @@
-<!-- hire.html (REWRITE: form has correct ID + no “missing form” + clearer text + consistent image filename) -->
+<!-- hire.html (UPDATED: real Formspree endpoint + form id matches #estimateForm) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +9,7 @@
   <meta name="description" content="Request an estimate for drainage/terrain site screening or custom GIS + environmental mapping." />
   <link rel="canonical" href="https://riggsa21.github.io/amandariggs-gis/hire.html" />
 
-  <!-- IMPORTANT: keep this filename consistent with index.html + your repo -->
+  <!-- IMPORTANT: make sure your repo file matches this EXACT name -->
   <meta property="og:title" content="Request Estimate | site.intel" />
   <meta property="og:description" content="Send the location + goal. I’ll reply with a short scope, data sources, and an estimate." />
   <meta property="og:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg" />
@@ -108,7 +108,6 @@
     }
     .pill .mono{font-family:var(--mono); color:var(--accent)}
 
-    /* Form */
     form label{display:block;font-weight:950;margin-top:12px;color:rgba(230,234,242,.92)}
     input[type="text"], input[type="email"], textarea, select{
       width:100%;
@@ -147,7 +146,6 @@
     }
     .tiny{font-size:.9rem;color:var(--muted2);margin-top:10px;line-height:1.55}
 
-    /* Payment */
     .pay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
     .pay-card{
       border:1px solid rgba(255,255,255,.10);
@@ -180,12 +178,10 @@
       </p>
     </section>
 
-    <!-- IMPORTANT: the FORM has the id. This is what fixes “missing form” issues and makes #estimateForm reliable. -->
     <section class="panel" aria-label="Estimate form">
       <h2>Project Details</h2>
 
-      <!-- Replace with your real Formspree endpoint -->
-      <form id="estimateForm" action="https://formspree.io/f/your-form-id" method="POST">
+      <form id="estimateForm" action="https://formspree.io/f/xyznngpw" method="POST">
         <div class="row">
           <div>
             <label for="name">Your name</label>
@@ -218,7 +214,6 @@
         <label for="files">Optional: links to files</label>
         <input id="files" name="files" type="text" placeholder="Drive/Dropbox link, PDFs, plans, photos, dataset links" />
 
-        <!-- Helpful hidden fields -->
         <input type="hidden" name="source" value="hire-page" />
         <input type="hidden" name="page" value="hire.html" />
 
@@ -262,7 +257,6 @@
     </section>
   </main>
 
-  <!-- Autofill request type from URL: hire.html?v=case01 -->
   <script>
     (function () {
       const params = new URLSearchParams(window.location.search);
