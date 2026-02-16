@@ -1,4 +1,4 @@
-<!-- hire.html (UPDATED: real Formspree endpoint + form id matches #estimateForm) -->
+<!-- hire.html (FINAL: Formspree endpoint wired + id="estimateForm" on the FORM itself) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +9,14 @@
   <meta name="description" content="Request an estimate for drainage/terrain site screening or custom GIS + environmental mapping." />
   <link rel="canonical" href="https://riggsa21.github.io/amandariggs-gis/hire.html" />
 
-  <!-- IMPORTANT: make sure your repo file matches this EXACT name -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Request Estimate | site.intel" />
   <meta property="og:description" content="Send the location + goal. I’ll reply with a short scope, data sources, and an estimate." />
   <meta property="og:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg" />
   <meta property="og:url" content="https://riggsa21.github.io/amandariggs-gis/hire.html" />
   <meta property="og:type" content="website" />
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Request Estimate | site.intel" />
   <meta name="twitter:description" content="Send the location + goal. I’ll reply with a short scope, data sources, and an estimate." />
@@ -181,6 +182,7 @@
     <section class="panel" aria-label="Estimate form">
       <h2>Project Details</h2>
 
+      <!-- FORM has the id, so #estimateForm works and scripts don’t complain -->
       <form id="estimateForm" action="https://formspree.io/f/xyznngpw" method="POST">
         <div class="row">
           <div>
