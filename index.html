@@ -1,28 +1,28 @@
-<!-- index.html (Dark/tech vibe, OLD hero background restored, Case Study image shown in section, 3rd card centers on wrap) -->
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title><title>site.intel | Amanda Riggs</title>
+  <title>site.intel | Amanda Riggs</title>
+
   <meta name="description" content="Freelance geospatial + environmental site intelligence. Drainage, terrain, and risk screening maps that are clear, decision-ready, and builder-friendly." />
   <link rel="canonical" href="https://riggsa21.github.io/amandariggs-gis/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Geospatial Site Intelligence | Freelance GIS" />
+  <meta property="og:title" content="Geospatial Site Intelligence | Amanda Riggs" />
   <meta property="og:description" content="Drainage, terrain, and risk screening maps that are clear, decision-ready, and builder-friendly." />
-  <meta property="og:image" content="https://riggsa21.github.io/amandariggs-gis/case-study-01-frog level-davenport.jpg" />
+  <meta property="og:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Deavenport.jpg" />
   <meta property="og:url" content="https://riggsa21.github.io/amandariggs-gis/" />
   <meta property="og:type" content="website" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Geospatial Site Intelligence | Freelance GIS" />
+  <meta name="twitter:title" content="Geospatial Site Intelligence | Amanda Riggs" />
   <meta name="twitter:description" content="Drainage, terrain, and risk screening maps that are clear, decision-ready, and builder-friendly." />
-  <meta name="twitter:image" content="https://riggsa21.github.io/amandariggs-gis/case-study-01-froglevel-davenport.jpg" />
+  <meta name="twitter:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Deavenport.jpg" />
 
   <style>
-    /* ---------------- Tokens (Dark) ---------------- */
     :root{
       --bg0:#05070f;
       --bg2:#0b1020;
@@ -31,13 +31,12 @@
       --ink:#e6eaf2;
       --muted:#aab3c5;
       --muted2:#7f8aa3;
-      --ring:rgba(255,255,255,.10);
       --shadow:0 18px 50px rgba(0,0,0,.55);
       --shadow-sm:0 10px 28px rgba(0,0,0,.45);
 
-      --accent:#35d2ff;   /* cyan */
-      --accent2:#8b5cf6;  /* violet */
-      --accent3:#22c55e;  /* green */
+      --accent:#35d2ff;
+      --accent2:#8b5cf6;
+      --accent3:#22c55e;
 
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
       --sans: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
@@ -61,10 +60,9 @@
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
     .mono{font-family:var(--mono)}
-
     main{max-width:1100px;margin:0 auto;padding:0 14px}
 
-    /* ---------------- Topbar ---------------- */
+    /* Topbar */
     .topbar{
       position:fixed; inset:0 0 auto 0; height:56px; z-index:1000;
       display:flex; align-items:center; gap:12px;
@@ -104,7 +102,7 @@
     .hamburger .lines::before{ top:0; }
     .hamburger .lines::after{ bottom:0; }
 
-    /* ---------------- Drawer ---------------- */
+    /* Drawer */
     .overlay{
       position:fixed; inset:0;
       background:rgba(0,0,0,.55);
@@ -147,7 +145,7 @@
       text-decoration:none;
     }
 
-    /* ---------------- Hero (OLD background restored) ---------------- */
+    /* Hero */
     header.hero{
       margin:18px auto 18px;
       padding:64px 28px 52px;
@@ -158,7 +156,7 @@
         radial-gradient(900px 300px at 20% 10%, rgba(53,210,255,.18), transparent 55%),
         radial-gradient(900px 380px at 80% 25%, rgba(139,92,246,.16), transparent 58%),
         linear-gradient(rgba(5,7,15,.78), rgba(5,7,15,.88)),
-        url('thumbnail.jpg?v=2') center/cover no-repeat; /* ✅ OLD 3D building background */
+        url('thumbnail.jpg?v=2') center/cover no-repeat;
       position:relative;
       border:1px solid rgba(255,255,255,.08);
       text-align:center;
@@ -234,7 +232,6 @@
     .hero-card h3{margin:0 0 8px 0; font-size:1.02rem; letter-spacing:.2px}
     .hero-card p{margin:0;color:var(--muted);line-height:1.65}
 
-    /* Buttons */
     .btn-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; justify-content:center}
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:8px;
@@ -260,7 +257,7 @@
     }
     .btn.ghost:hover{background:rgba(53,210,255,.08); text-decoration:none}
 
-    /* ---------------- Sections ---------------- */
+    /* Sections */
     section{
       margin:18px auto;
       background:var(--panel);
@@ -285,7 +282,6 @@
       max-width:900px;
     }
 
-    /* Case Study preview (layout image visible here) */
     .case-preview{
       width:100%;
       max-width:980px;
@@ -306,7 +302,6 @@
       border-top:1px solid rgba(255,255,255,.10);
     }
 
-    /* Cards */
     .cards{
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
@@ -352,10 +347,7 @@
     }
     .card .cta{margin-top:auto; padding-top:12px; display:flex; justify-content:center}
 
-    /* 3-card wrap centering fix */
-    .cards.three{
-      grid-template-columns:repeat(3, minmax(260px, 1fr));
-    }
+    .cards.three{ grid-template-columns:repeat(3, minmax(260px, 1fr)); }
     @media (max-width: 980px){
       .cards.three{ grid-template-columns:repeat(2, minmax(260px, 1fr)); }
       .cards.three > :nth-child(3){
@@ -366,13 +358,9 @@
     }
     @media (max-width: 620px){
       .cards.three{ grid-template-columns:1fr; }
-      .cards.three > :nth-child(3){
-        grid-column:auto;
-        max-width:unset;
-      }
+      .cards.three > :nth-child(3){ grid-column:auto; max-width:unset; }
     }
 
-    /* CTA band */
     .cta-band{
       background:
         radial-gradient(900px 320px at 15% 20%, rgba(53,210,255,.14), transparent 55%),
@@ -422,7 +410,7 @@
 
   <!-- OVERLAY + DRAWER -->
   <div class="overlay" id="overlay"></div>
-  <aside class="drawer" id="site-drawer" aria-label="Site">
+  <aside class="drawer" id="site-drawer" aria-label="Site menu">
     <header>
       <div class="brand"><span class="mono">menu</span><span class="dot">.</span></div>
     </header>
@@ -431,7 +419,7 @@
       <a href="#case01">Case Study 01</a>
       <a href="#why">Why this works</a>
       <a href="#how">How it works</a>
-      <a href="hire.html#estimateForm">Request Estimate</a>
+      <a href="hire.html?v=case01#estimateForm">Request Estimate</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="about.html">About</a>
       <a href="mailto:amanda.l.riggs@outlook.com">Contact</a>
@@ -539,7 +527,7 @@
   </script>
 
   <main>
-    <!-- CASE STUDY 01 (with visible layout image) -->
+    <!-- CASE STUDY 01 -->
     <section id="case01" aria-label="Case Study 01">
       <h2>Case Study 01: Frog Level / Davenport Farm Corridor</h2>
       <p class="lead">
@@ -547,8 +535,8 @@
       </p>
 
       <div class="case-preview" aria-label="Case Study 01 preview">
-        <img src="case-study-01-froglevel-davenport.jpg?v=1" alt="Case Study 01: Froglevel / Davenport Farm Corridor layout preview">
-        <div class="cap">Case Study 01 — Froglevel / Davenport Farm Corridor (screening layout)</div>
+        <img src="case_study_01_FrogLevel_Deavenport.jpg?v=1" alt="Case Study 01: Frog Level / Davenport Farm Corridor layout preview">
+        <div class="cap">Case Study 01 — Frog Level / Davenport Farm Corridor (screening layout)</div>
       </div>
 
       <div class="cards three">
@@ -592,7 +580,7 @@
       </div>
     </section>
 
-    <!-- WHY (keep as 3 cards, now labeled clearly) -->
+    <!-- WHY -->
     <section id="why" aria-label="Why this works">
       <h2>Why this approach works</h2>
       <p class="lead">
@@ -667,5 +655,3 @@
 
 </body>
 </html>
-
-
