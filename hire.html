@@ -1,4 +1,4 @@
-<!-- hire.html -->
+<!-- hire.html (REWRITE: form has correct ID + no “missing form” + clearer text + consistent image filename) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,24 +9,22 @@
   <meta name="description" content="Request an estimate for drainage/terrain site screening or custom GIS + environmental mapping." />
   <link rel="canonical" href="https://riggsa21.github.io/amandariggs-gis/hire.html" />
 
-  <!-- Open Graph -->
+  <!-- IMPORTANT: keep this filename consistent with index.html + your repo -->
   <meta property="og:title" content="Request Estimate | site.intel" />
   <meta property="og:description" content="Send the location + goal. I’ll reply with a short scope, data sources, and an estimate." />
-  <meta property="og:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Deavenport.jpg" />
+  <meta property="og:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg" />
   <meta property="og:url" content="https://riggsa21.github.io/amandariggs-gis/hire.html" />
   <meta property="og:type" content="website" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Request Estimate | site.intel" />
   <meta name="twitter:description" content="Send the location + goal. I’ll reply with a short scope, data sources, and an estimate." />
-  <meta name="twitter:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Deavenport.jpg" />
+  <meta name="twitter:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg" />
 
   <style>
     :root{
       --bg0:#05070f;
       --bg2:#0b1020;
-      --card:#0c1224;
       --ink:#e6eaf2;
       --muted:#aab3c5;
       --muted2:#7f8aa3;
@@ -174,7 +172,7 @@
     <section class="panel">
       <h1>Request an Estimate</h1>
       <p class="subtext">
-        Send the location + goal. I’ll reply with a short scope, data sources, and an estimate.
+        Send the location + what you’re trying to decide. I’ll reply with a short scope, data sources, timeline, and price estimate.
       </p>
       <div class="pill"><span class="mono">caseStudy01</span> • Frog Level / Davenport Farm Corridor style screening</div>
       <p class="tiny" style="margin-top:10px;">
@@ -182,11 +180,12 @@
       </p>
     </section>
 
-    <section id="estimateForm" class="panel" aria-label="Estimate form">
+    <!-- IMPORTANT: the FORM has the id. This is what fixes “missing form” issues and makes #estimateForm reliable. -->
+    <section class="panel" aria-label="Estimate form">
       <h2>Project Details</h2>
 
-      <!-- IMPORTANT: Replace with your real Formspree endpoint -->
-      <form action="https://formspree.io/f/your-form-id" method="POST">
+      <!-- Replace with your real Formspree endpoint -->
+      <form id="estimateForm" action="https://formspree.io/f/your-form-id" method="POST">
         <div class="row">
           <div>
             <label for="name">Your name</label>
@@ -201,10 +200,10 @@
         <label for="type">Request type</label>
         <select id="type" name="service" required>
           <option value="" selected disabled>Select an option</option>
-          <option>Case Study Style — Corridor Drainage Screening</option>
-          <option>Custom — GIS / Environmental Mapping</option>
-          <option>Custom — Hydrology / Terrain Analysis</option>
-          <option>Custom — Web Map / StoryMap</option>
+          <option value="case-study-corridor">Case Study Style — Corridor Drainage Screening</option>
+          <option value="custom-gis-mapping">Custom — GIS / Environmental Mapping</option>
+          <option value="custom-hydro-terrain">Custom — Hydrology / Terrain Analysis</option>
+          <option value="custom-webmap-storymap">Custom — Web Map / StoryMap</option>
         </select>
 
         <label for="location">Site location / AOI</label>
@@ -214,7 +213,7 @@
         <input id="timeline" name="timeline" type="text" placeholder="Example: ASAP, 2 weeks, by March 10…" />
 
         <label for="details">What decision are you trying to make?</label>
-        <textarea id="details" name="details" placeholder="Example: low spots near road, nuisance flooding, pre-permit drainage concerns, lot comparison, etc. Include what you’ve noticed."></textarea>
+        <textarea id="details" name="details" placeholder="Example: nuisance flooding, pre-permit drainage concerns, low spots near road, lot comparison, where to field-check first…"></textarea>
 
         <label for="files">Optional: links to files</label>
         <input id="files" name="files" type="text" placeholder="Drive/Dropbox link, PDFs, plans, photos, dataset links" />
@@ -272,10 +271,7 @@
       if (!select) return;
 
       if (v === "case01") {
-        const option = Array.from(select.options).find(o =>
-          (o.textContent || "").toLowerCase().includes("corridor")
-        );
-        if (option) select.value = option.textContent.trim();
+        select.value = "case-study-corridor";
       }
     })();
   </script>
