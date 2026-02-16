@@ -1,3 +1,4 @@
+<!-- portfolio.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,20 @@
   <title>Portfolio | site.intel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Portfolio of GIS, remote sensing, hydrology, and geospatial site intelligence work by Amanda Riggs." />
-  <link rel="stylesheet" href="style.css">
+  <link rel="canonical" href="https://riggsa21.github.io/amandariggs-gis/portfolio.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Portfolio | Amanda Riggs" />
+  <meta property="og:description" content="Selected GIS, remote sensing, hydrology, and site intelligence work — including Case Study 01 screening layouts." />
+  <meta property="og:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Deavenport.jpg" />
+  <meta property="og:url" content="https://riggsa21.github.io/amandariggs-gis/portfolio.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Portfolio | Amanda Riggs" />
+  <meta name="twitter:description" content="Selected GIS, remote sensing, hydrology, and site intelligence work — including Case Study 01 screening layouts." />
+  <meta name="twitter:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Deavenport.jpg" />
 
   <style>
     :root{
@@ -16,7 +30,6 @@
       --ink:#e6eaf2;
       --muted:#aab3c5;
       --muted2:#7f8aa3;
-      --ring:rgba(255,255,255,.10);
       --shadow:0 18px 50px rgba(0,0,0,.55);
       --shadow-sm:0 10px 28px rgba(0,0,0,.45);
 
@@ -217,9 +230,7 @@
       border-bottom:1px solid rgba(255,255,255,.10);
     }
 
-    .portfolio-card .card-body{
-      padding:1rem 1.1rem 1.2rem;
-    }
+    .portfolio-card .card-body{ padding:1rem 1.1rem 1.2rem; }
     .portfolio-card h3{
       margin:0 0 .5rem 0;
       font-size:1.12rem;
@@ -298,12 +309,11 @@
 </head>
 
 <body>
-
 <header class="site-header">
   <nav>
     <a href="index.html">Home</a> |
     <a href="portfolio.html">Portfolio</a> |
-    <a href="hire.html">Hire Me</a> |
+    <a href="hire.html?v=case01#estimateForm">Hire Me</a> |
     <a href="about.html">About</a>
   </nav>
 </header>
@@ -312,14 +322,13 @@
   <section class="portfolio-intro">
     <h1>GIS &amp; Mapping Portfolio</h1>
     <p>
-      This portfolio highlights selected GIS, remote sensing, and geospatial analysis projects,
-      including hydrology and watershed modeling, DEM conditioning, land cover classification
-      and change detection, ecosystem services modeling, and Python/ArcPy automation.
+      Selected GIS, remote sensing, and geospatial analysis projects — including hydrology workflows,
+      DEM conditioning, land cover classification/change detection, ecosystem services modeling, and Python/ArcPy automation.
     </p>
 
     <section class="case-study-feature" aria-label="Featured case study">
-      <img src="case-study-01-froglevel-davenport.jpg?v=1"
-           alt="Case Study 01: Froglevel / Davenport Farm Corridor layout">
+      <img src="case_study_01_FrogLevel_Deavenport.jpg?v=1"
+           alt="Case Study 01: Frog Level / Davenport Farm Corridor layout">
 
       <div class="case-study-body">
         <div class="case-study-kicker">Featured Case Study</div>
@@ -337,7 +346,7 @@
         </ul>
 
         <div class="case-study-actions">
-          <a class="btn primary" href="hire.html#estimateForm">Request something similar</a>
+          <a class="btn primary" href="hire.html?v=case01#estimateForm">Request something similar</a>
           <a class="btn" href="#featured-projects">Jump to Featured Projects</a>
         </div>
       </div>
@@ -355,8 +364,7 @@
           <p>
             Built a hydrologically conditioned DEM and extracted a detailed stream network from
             LiDAR-derived elevation data. Workflow included DEM preprocessing, stream burning,
-            flow direction and accumulation, threshold testing, and validation using overlap
-            ratio and intersection-over-union metrics.
+            flow direction/accumulation, threshold testing, and validation using overlap ratio and IoU metrics.
           </p>
           <ul class="tags">
             <li>ArcGIS Pro</li>
@@ -372,9 +380,8 @@
         <div class="card-body">
           <h3>Urban Land Cover Classification &amp; Change (Savannah)</h3>
           <p>
-            Performed supervised classification of Landsat imagery for Savannah, GA to map urban,
-            forest, wetland, agriculture, and water classes, followed by accuracy assessment and
-            change detection between 1999 and 2025.
+            Supervised classification of Landsat imagery to map urban, forest, wetland, agriculture, and water classes,
+            followed by accuracy assessment and change detection between 1999 and 2025.
           </p>
           <ul class="tags">
             <li>Remote Sensing</li>
@@ -390,10 +397,8 @@
         <div class="card-body">
           <h3>Urban Ecosystem Services Assessment (InVEST)</h3>
           <p>
-            Modeled nutrient delivery, stormwater retention, and urban flood mitigation using
-            the InVEST suite for Greenville-area watersheds. Integrated land use, soils,
-            topography, and infrastructure data to evaluate tradeoffs between development and
-            ecosystem services.
+            Modeled nutrient delivery, stormwater retention, and urban flood mitigation using the InVEST suite.
+            Integrated land use, soils, topography, and infrastructure to evaluate tradeoffs between development and ecosystem services.
           </p>
           <ul class="tags">
             <li>InVEST</li>
@@ -409,9 +414,8 @@
         <div class="card-body">
           <h3>Automated Hydrology &amp; Layout Workflow</h3>
           <p>
-            Developed ArcPy-driven workflows to preprocess DEMs, generate hydrologic layers,
-            and export consistent map layouts. This automation reduces repetitive work while
-            enforcing common symbology and layout standards across multiple projects.
+            Developed ArcPy-driven workflows to preprocess DEMs, generate hydrologic layers, and export consistent map layouts.
+            Automation reduces repetitive work while enforcing common symbology and layout standards across projects.
           </p>
           <ul class="tags">
             <li>Python/ArcPy</li>
@@ -476,7 +480,7 @@
       </figure>
 
       <figure class="gallery-item">
-        <img src="GPT_GMRStorymap.png" alt="StoryMap example map">
+        <img src="GPT_GMRStorymap.png" alt="StoryMap export example map">
         <figcaption>StoryMap Export – GMR</figcaption>
       </figure>
 
@@ -585,11 +589,11 @@
     <article class="workflow">
       <h3>Land Cover Classification &amp; Change Detection</h3>
       <ol>
-        <li>Preprocess satellite imagery (stack bands, clip to AOI).</li>
+        <li>Preprocess imagery (stack bands, clip to AOI).</li>
         <li>Create training samples and run supervised classification.</li>
         <li>Assess accuracy using a confusion matrix and validation points.</li>
         <li>Reclassify classes into unified categories for multi-year comparison.</li>
-        <li>Compute land cover change statistics and create change maps.</li>
+        <li>Compute change statistics and create change maps.</li>
       </ol>
     </article>
 
@@ -607,4 +611,3 @@
 
 </body>
 </html>
-
