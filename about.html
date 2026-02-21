@@ -119,15 +119,13 @@
       justify-content:center;
       margin:14px 0 6px;
     }
-    .logo{
-      width:min(520px, 92%);
-      height:auto;
-      display:block;
-      border-radius:16px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow:0 16px 40px rgba(0,0,0,.35);
-      padding:10px;
+     .logo {
+      max-width: 260px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px auto;
+}
     }
 
     /* Chips */
@@ -186,8 +184,9 @@
 <body>
   <div class="topbar">
     <a class="home-btn" href="index.html" aria-label="Return to Home">← Home</a>
-    <div class="brand"><span class="mono">GeoSite</span><span class="mono">Intel</span> <span style="opacity:.85">| About</span></div>
-  </div>
+    <div class="brand mono">
+      GeoSite Intel | About
+    </div>
 
   <main>
     <!-- ABOUT -->
@@ -196,7 +195,9 @@
 
       <!-- Use your chosen logo_0 file here (update extension if yours is .png) -->
       <div class="logo-wrap">
-        <img class="logo" src="Logo_0.png" alt="GeoSite Intel logo">
+        <img class="logo"
+         src="https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/Logo_0.jpg"
+         alt="GeoSite Intel Logo">
       </div>
 
       <p class="lead">
@@ -250,4 +251,5 @@
   </main>
 </body>
 </html>
+
 
