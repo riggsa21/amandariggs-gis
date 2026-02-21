@@ -394,16 +394,23 @@
 
 <body>
 
-  <div class="topbar">
-    <button class="hamburger" id="hamburger"
-            aria-label="Open menu" aria-controls="site-drawer" aria-expanded="false">
-      <span class="lines"><span class="bar"></span></span>
-    </button>
-    <div class="brand"><span class="mono">GeoSite</span><span class="mono">Intel</span> <span style="opacity:.85">| Amanda Riggs</span></div>
-  </div>
+<div class="topbar">
+  <button class="hamburger" id="hamburger"
+          aria-label="Open menu" aria-controls="site-drawer" aria-expanded="false">
+    <span class="lines"><span class="bar"></span></span>
+  </button>
 
-  <div class="overlay" id="overlay"></div>
-  <aside class="drawer" id="site-drawer" aria-label="Site menu">
+  <div class="brand mono">GeoSite Intel</div>
+
+  <!-- spacer keeps brand centered -->
+  <div class="topbar-spacer" aria-hidden="true"></div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="drawer" id="site-drawer" aria-label="Site menu">
+  ...
+</aside>
     <header>
       <div class="brand"><span class="mono">menu</span><span class="dot">.</span></div>
     </header>
@@ -642,6 +649,7 @@
 
 </body>
 </html>
+
 
 
 
