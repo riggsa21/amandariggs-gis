@@ -1,21 +1,20 @@
-<!-- index.html (FINAL: uses case_study_01_FrogLevel_Davenport.jpg everywhere + consistent estimate links) -->
+<!-- index.html (FIXED: drawer markup + true centered brand; prevents nav spilling / left shift) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
- <title>GeoSite Intel | Drainage & Terrain Risk Screening for Builders</title>
+  <title>GeoSite Intel | Drainage & Terrain Risk Screening for Builders</title>
 
-<meta name="description" content="Pre-construction drainage and terrain risk screening for builders. Fast, practical maps that flag low spots, runoff pathways, and likely problem zones before permitting or grading." />
+  <meta name="description" content="Pre-construction drainage and terrain risk screening for builders. Fast, practical maps that flag low spots, runoff pathways, and likely problem zones before permitting or grading." />
 
-<!-- Open Graph -->
-<meta property="og:title" content="GeoSite Intel | Pre-Construction Risk Screening for Builders" />
-<meta property="og:description" content="Identify drainage and terrain risk signals before you break ground: low spots, runoff concentration, and areas to field-check first." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="GeoSite Intel | Pre-Construction Risk Screening for Builders" />
+  <meta property="og:description" content="Identify drainage and terrain risk signals before you break ground: low spots, runoff concentration, and areas to field-check first." />
 
-<!-- Twitter Card -->
-<meta name="twitter:title" content="GeoSite Intel | Pre-Construction Risk Screening for Builders" />
-<meta name="twitter:description" content="Identify drainage and terrain risk signals before you break ground: low spots, runoff concentration, and areas to field-check first." />
-  <meta name="twitter:description" content="Drainage, terrain, and risk screening maps that are clear, decision-ready, and builder-friendly." />
+  <!-- Twitter Card -->
+  <meta name="twitter:title" content="GeoSite Intel | Pre-Construction Risk Screening for Builders" />
+  <meta name="twitter:description" content="Identify drainage and terrain risk signals before you break ground: low spots, runoff concentration, and areas to field-check first." />
   <meta name="twitter:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg" />
 
   <style>
@@ -58,25 +57,22 @@
     .mono{font-family:var(--mono)}
     main{max-width:1100px;margin:0 auto;padding:0 14px}
 
-    /* Topbar */
+    /* ---------- TOPBAR (fixed) ---------- */
     .topbar{
       position:fixed; inset:0 0 auto 0; height:56px; z-index:1000;
-      display:flex; align-items:center; gap:12px;
       background:rgba(5,7,15,.72);
       backdrop-filter:blur(10px);
       border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .topbar-inner{
+      position:relative;
+      height:56px;
+      display:flex;
+      align-items:center;
+      gap:12px;
       padding:0 12px;
     }
-    .brand{
-      font-weight:950;
-      letter-spacing:.2px;
-      font-size:1.02rem;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      color:var(--ink);
-    }
-    .brand .dot{color:var(--accent)}
+
     .hamburger{
       display:inline-flex; align-items:center; justify-content:center;
       width:40px; height:40px; border-radius:12px;
@@ -84,6 +80,7 @@
       background:rgba(12,18,36,.6);
       cursor:pointer;
       box-shadow:0 10px 30px rgba(0,0,0,.35);
+      flex:0 0 auto;
     }
     .hamburger:focus-visible{ outline:3px solid rgba(53,210,255,.35); outline-offset:2px; }
     .hamburger .lines{ position:relative; width:18px; height:12px; }
@@ -98,7 +95,25 @@
     .hamburger .lines::before{ top:0; }
     .hamburger .lines::after{ bottom:0; }
 
-    /* Drawer */
+    /* TRUE centered brand (independent of left/right width) */
+    .brand{
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      font-weight:950;
+      letter-spacing:.2px;
+      font-size:1.02rem;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      color:var(--ink);
+      max-width:calc(100% - 120px);
+      text-align:center;
+      pointer-events:none;
+    }
+    .brand .dot{color:var(--accent)}
+
+    /* ---------- DRAWER ---------- */
     .overlay{
       position:fixed; inset:0;
       background:rgba(0,0,0,.55);
@@ -141,7 +156,7 @@
       text-decoration:none;
     }
 
-    /* Hero */
+    /* ---------- HERO ---------- */
     header.hero{
       margin:18px auto 18px;
       padding:64px 28px 52px;
@@ -393,26 +408,24 @@
 </head>
 
 <body>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <button class="hamburger" id="hamburger"
+              aria-label="Open menu" aria-controls="site-drawer" aria-expanded="false">
+        <span class="lines"><span class="bar"></span></span>
+      </button>
 
-<div class="topbar">
-  <button class="hamburger" id="hamburger"
-          aria-label="Open menu" aria-controls="site-drawer" aria-expanded="false">
-    <span class="lines"><span class="bar"></span></span>
-  </button>
+      <div class="brand mono">GeoSite Intel</div>
+    </div>
+  </div>
 
-  <div class="brand mono">GeoSite Intel</div>
+  <!-- OVERLAY + DRAWER (FIXED) -->
+  <div class="overlay" id="overlay"></div>
 
-  <!-- spacer keeps brand centered -->
-  <div class="topbar-spacer" aria-hidden="true"></div>
-</div>
-
-<div class="overlay" id="overlay"></div>
-
-<aside class="drawer" id="site-drawer" aria-label="Site menu">
-  ...
-</aside>
+  <aside class="drawer" id="site-drawer" aria-label="Site menu">
     <header>
-      <div class="brand"><span class="mono">menu</span><span class="dot">.</span></div>
+      <div class="mono" style="font-weight:950;">menu<span style="color:var(--accent)">.</span></div>
     </header>
     <nav>
       <a href="index.html">Home</a>
@@ -426,6 +439,7 @@
     </nav>
   </aside>
 
+  <!-- HERO -->
   <header class="hero">
     <div class="kicker">
       <span class="tag">builders</span> pre-construction • drainage • terrain risk screening
@@ -438,6 +452,7 @@
       I flag likely runoff pathways, low-spot pooling cues, and potential problem zones so you can prioritize field checks,
       reduce surprises, and make cleaner pre-permit decisions.
     </p>
+
     <div class="hero-grid">
       <div class="hero-card">
         <h3 class="mono">Best for</h3>
@@ -471,59 +486,6 @@
       </div>
     </div>
   </header>
-
-  <script>
-    const copyBtn = document.getElementById('copyEmail');
-    const copyMsg = document.getElementById('copyMsg');
-    copyBtn?.addEventListener('click', () => {
-      const email = document.getElementById('emailLink').textContent.trim();
-      navigator.clipboard.writeText(email).then(() => {
-        copyMsg.style.display = 'inline';
-        setTimeout(() => (copyMsg.style.display = 'none'), 1500);
-      });
-    });
-  </script>
-
-  <script>
-    (() => {
-      const btn = document.getElementById('hamburger');
-      const drawer = document.getElementById('site-drawer');
-      const overlay = document.getElementById('overlay');
-
-      function open() {
-        drawer.classList.add('open');
-        overlay.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-        const first = drawer.querySelector('a');
-        first && first.focus();
-        document.documentElement.style.overflow = 'hidden';
-      }
-      function close() {
-        drawer.classList.remove('open');
-        overlay.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-        document.documentElement.style.overflow = '';
-        btn.focus();
-      }
-      function toggle(){ drawer.classList.contains('open') ? close() : open(); }
-
-      btn.addEventListener('click', toggle);
-      overlay.addEventListener('click', close);
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') close();
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (!drawer.classList.contains('open')) return;
-        if (e.key !== 'Tab') return;
-        const focusables = drawer.querySelectorAll('a, button');
-        const first = focusables[0];
-        const last = focusables[focusables.length - 1];
-        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-      });
-    })();
-  </script>
 
   <main>
     <section id="case01" aria-label="Case Study 01">
@@ -627,12 +589,14 @@
 
     <section class="cta-band" aria-label="Call to action">
       <div class="cta-band-inner">
-      <h2 style="border:0;margin:0 0 10px 0;padding:0;">Avoid costly drainage surprises.</h2>
-      <p class="lead" style="margin:0;">
-         Before permitting, grading, or purchase — get a terrain-based screening that flags likely runoff concentration,
-        low-elevation pockets, and areas to field-check first.
-      </p>
+        <div>
+          <h2 style="border:0;margin:0 0 10px 0;padding:0;">Avoid costly drainage surprises.</h2>
+          <p class="lead" style="margin:0;">
+            Before permitting, grading, or purchase — get a terrain-based screening that flags likely runoff concentration,
+            low-elevation pockets, and areas to field-check first.
+          </p>
         </div>
+
         <div style="display:flex;flex-direction:column;gap:10px;justify-content:center;align-items:center;">
           <a class="btn primary" href="hire.html?v=case01#estimateForm">Request estimate</a>
           <a class="btn ghost" href="mailto:geositeintel@outlook.com">Email me</a>
@@ -641,18 +605,62 @@
     </section>
   </main>
 
-<footer>
-  © 2026 Amanda L. Riggs · GeoSite Intel · Pre-Construction Risk Screening for Builders ·
-  <a href="hire.html?v=case01#estimateForm">Request Estimate</a> ·
-  <a href="mailto:geositeintel@outlook.com">geositeintel@outlook.com</a>
-</footer>
+  <footer>
+    © 2026 Amanda L. Riggs · GeoSite Intel · Pre-Construction Risk Screening for Builders ·
+    <a href="hire.html?v=case01#estimateForm">Request Estimate</a> ·
+    <a href="mailto:geositeintel@outlook.com">geositeintel@outlook.com</a>
+  </footer>
 
+  <script>
+    // Copy email
+    const copyBtn = document.getElementById('copyEmail');
+    const copyMsg = document.getElementById('copyMsg');
+    copyBtn?.addEventListener('click', () => {
+      const email = document.getElementById('emailLink').textContent.trim();
+      navigator.clipboard.writeText(email).then(() => {
+        copyMsg.style.display = 'inline';
+        setTimeout(() => (copyMsg.style.display = 'none'), 1500);
+      });
+    });
+
+    // Drawer toggle
+    (() => {
+      const btn = document.getElementById('hamburger');
+      const drawer = document.getElementById('site-drawer');
+      const overlay = document.getElementById('overlay');
+
+      function open() {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        const first = drawer.querySelector('a');
+        first && first.focus();
+        document.documentElement.style.overflow = 'hidden';
+      }
+      function close() {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.documentElement.style.overflow = '';
+        btn.focus();
+      }
+      function toggle(){ drawer.classList.contains('open') ? close() : open(); }
+
+      btn.addEventListener('click', toggle);
+      overlay.addEventListener('click', close);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+
+      // basic focus trap
+      document.addEventListener('keydown', (e) => {
+        if (!drawer.classList.contains('open')) return;
+        if (e.key !== 'Tab') return;
+        const focusables = drawer.querySelectorAll('a, button');
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      });
+    })();
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
