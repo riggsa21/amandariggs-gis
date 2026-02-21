@@ -291,22 +291,23 @@
       flex-direction:column;
     }
 
-    /* ✅ Fixed thumbnail slot (prevents weird “tiny image in tall card”) */
+      /* ✅ Gallery thumbnails: show MORE map (less cropping) */
     .gallery-thumb{
-      aspect-ratio: 16 / 9; /* change to 4/3 if you want taller thumbs */
+      aspect-ratio: 4 / 3;          /* taller window than 16:9 */
       width:100%;
       background:rgba(0,0,0,.22);
       border-bottom:1px solid rgba(255,255,255,.10);
       overflow:hidden;
     }
+
     .gallery-thumb img{
-      width:100%;
+       width:100%;
       height:100%;
       display:block;
-      object-fit:cover; /* use 'contain' if you prefer no cropping */
+      object-fit:contain;           /* ✅ no cropping */
       object-position:center;
+      background:rgba(255,255,255,.06);
     }
-
     .gallery-item figcaption{
       padding:.7rem .85rem .95rem;
       font-size:.92rem;
@@ -642,3 +643,4 @@
 
 </body>
 </html>
+
