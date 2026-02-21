@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>About | GeoSite Intel</title>
 
-  <!-- SEO (keep description short + single paragraph) -->
   <meta name="description" content="GeoSite Intel provides pre-construction drainage and terrain risk screening for builders and development teams, using LiDAR-based terrain analysis to flag runoff pathways, low spots, and potential problem areas before grading and permitting." />
 
   <style>
@@ -47,24 +45,43 @@
     a:hover{text-decoration:underline}
     .mono{font-family:var(--mono)}
 
-    /* Top bar */
+    /* ---------- TOPBAR ---------- */
     .topbar{
       position:fixed; inset:0 0 auto 0; height:56px; z-index:1000;
-      display:flex; align-items:center; gap:12px;
       background:rgba(5,7,15,.72);
       backdrop-filter:blur(10px);
       border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .topbar-inner{
+      position:relative;
+      height:56px;
+      display:flex;
+      align-items:center;
+      gap:10px;
       padding:0 12px;
     }
-    .brand{
-      font-weight:950;
-      letter-spacing:.2px;
-      font-size:1.02rem;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      color:var(--ink);
+
+    .hamburger{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:40px; height:40px; border-radius:12px;
+      border:1px solid rgba(53,210,255,.55);
+      background:rgba(12,18,36,.6);
+      cursor:pointer;
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
+      flex:0 0 auto;
     }
+    .hamburger:focus-visible{ outline:3px solid rgba(53,210,255,.35); outline-offset:2px; }
+    .hamburger .lines{ position:relative; width:18px; height:12px; }
+    .hamburger .lines::before,
+    .hamburger .lines::after,
+    .hamburger .bar{
+      content:""; position:absolute; left:0; right:0; height:2px;
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius:2px;
+    }
+    .hamburger .bar{ top:5px; }
+    .hamburger .lines::before{ top:0; }
+    .hamburger .lines::after{ bottom:0; }
 
     .home-btn{
       display:inline-flex;align-items:center;gap:8px;
@@ -75,10 +92,72 @@
       font-weight:900;
       text-decoration:none;
       box-shadow:0 10px 30px rgba(0,0,0,.35);
+      flex:0 0 auto;
     }
     .home-btn:hover{background:rgba(53,210,255,.08);text-decoration:none}
 
-    /* Layout */
+    /* True centered brand */
+    .brand{
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      font-weight:950;
+      letter-spacing:.2px;
+      font-size:1.02rem;
+      color:var(--ink);
+      white-space:nowrap;
+      max-width:calc(100% - 220px); /* prevents overlap with left controls */
+      overflow:hidden;
+      text-overflow:ellipsis;
+      text-align:center;
+      pointer-events:none;
+    }
+    .brand .sep{opacity:.75;padding:0 8px}
+
+    /* ---------- DRAWER ---------- */
+    .overlay{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.55);
+      opacity:0; pointer-events:none;
+      transition:opacity .2s ease;
+      z-index:999;
+    }
+    .overlay.open{opacity:1;pointer-events:auto}
+
+    .drawer{
+      position:fixed; inset:0 auto 0 0;
+      width:300px; max-width:86vw;
+      background:rgba(10,14,28,.92);
+      border-right:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+      transform:translateX(-100%);
+      transition:transform .25s ease;
+      z-index:1000;
+      display:flex; flex-direction:column;
+    }
+    .drawer.open{transform:translateX(0)}
+    .drawer header{
+      padding:16px 18px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      display:flex; align-items:center; gap:10px;
+    }
+    .drawer nav{padding:10px}
+    .drawer a{
+      display:block;
+      padding:12px 12px;
+      border-radius:12px;
+      font-weight:850;
+      color:var(--ink);
+      border:1px solid transparent;
+      text-align:left;
+    }
+    .drawer a:hover{
+      background:rgba(53,210,255,.08);
+      border-color:rgba(53,210,255,.25);
+      text-decoration:none;
+    }
+
+    /* ---------- PAGE LAYOUT ---------- */
     main{max-width:1000px;margin:18px auto;padding:0 14px}
     .panel{
       background:var(--panel);
@@ -89,7 +168,6 @@
       margin-bottom:16px;
       text-align:center;
     }
-
     h1{
       margin:10px 0 10px 0;
       font-size:2.05rem;
@@ -104,7 +182,6 @@
       font-size:1.25rem;
       letter-spacing:.2px;
     }
-
     .lead{
       color:rgba(230,234,242,.92);
       line-height:1.8;
@@ -113,22 +190,19 @@
     }
     .muted{color:var(--muted);line-height:1.75;max-width:860px;margin:0 auto}
 
-    /* Logo block */
-    .logo-wrap{
-      display:flex;
-      justify-content:center;
-      margin:14px 0 6px;
-    }
-     .logo {
-      max-width: 260px;
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto 20px auto;
-}
+    /* Logo sizing (fixes “too large”) */
+    .logo-wrap{display:flex;justify-content:center;margin:14px 0 6px}
+    .logo{
+      width:min(240px, 70vw);
+      height:auto;
+      display:block;
+      border-radius:14px;
+      box-shadow:0 18px 50px rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.10);
+      background:#fff;
+      padding:10px;
     }
 
-    /* Chips */
     .chips{
       list-style:none;
       padding:0;
@@ -150,13 +224,8 @@
     }
     .chips li span{color:var(--accent);font-family:var(--mono);font-weight:950;margin-right:6px}
 
-    /* Contact pills */
     .contact-links{
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-top:12px;
+      display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:12px;
     }
     .pill{
       display:inline-flex;align-items:center;gap:8px;
@@ -183,21 +252,51 @@
 
 <body>
   <div class="topbar">
-    <a class="home-btn" href="index.html" aria-label="Return to Home">← Home</a>
-    <div class="brand mono">
-      GeoSite Intel | About
+    <div class="topbar-inner">
+      <button class="hamburger" id="hamburger"
+              aria-label="Open menu" aria-controls="site-drawer" aria-expanded="false">
+        <span class="lines"><span class="bar"></span></span>
+      </button>
+
+      <a class="home-btn" href="index.html">← Home</a>
+
+      <div class="brand mono">
+        <span>GeoSite</span> <span>Intel</span><span class="sep">|</span><span>About</span>
+      </div>
     </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="drawer" id="site-drawer" aria-label="Site menu">
+    <header>
+      <div class="brand" style="position:static;transform:none;max-width:none;pointer-events:auto;">
+        <span class="mono">menu</span><span style="color:var(--accent)">.</span>
+      </div>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="hire.html#estimateForm">Request Estimate</a>
+      <a href="about.html">About</a>
+      <a href="mailto:geositeintel@outlook.com">Contact</a>
+    </nav>
+  </aside>
 
   <main>
-    <!-- ABOUT -->
     <section class="panel">
       <h1>About GeoSite Intel</h1>
 
-      <!-- Use your chosen logo_0 file here (update extension if yours is .png) -->
+      <!-- ✅ UPDATE THIS URL to match your exact file name/case -->
+      <!-- Example options:
+           .../logo_0.jpg
+           .../Logo_0.jpg
+           .../logo_0.png
+      -->
       <div class="logo-wrap">
         <img class="logo"
-         src="https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/Logo_0.jpg"
-         alt="GeoSite Intel Logo">
+          src="https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/logo_0.jpg"
+          alt="GeoSite Intel Logo">
       </div>
 
       <p class="lead">
@@ -226,7 +325,6 @@
       </p>
     </section>
 
-    <!-- HOW IT HELPS -->
     <section class="panel" aria-label="How it helps">
       <h2>What this helps prevent</h2>
       <p class="muted">
@@ -235,7 +333,6 @@
       </p>
     </section>
 
-    <!-- CONTACT -->
     <section class="panel" aria-label="Contact">
       <h2>Contact</h2>
       <p class="muted">
@@ -249,7 +346,31 @@
       </div>
     </section>
   </main>
+
+  <script>
+    (() => {
+      const btn = document.getElementById('hamburger');
+      const drawer = document.getElementById('site-drawer');
+      const overlay = document.getElementById('overlay');
+
+      function open() {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        document.documentElement.style.overflow = 'hidden';
+      }
+      function close() {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.documentElement.style.overflow = '';
+      }
+      function toggle(){ drawer.classList.contains('open') ? close() : open(); }
+
+      btn?.addEventListener('click', toggle);
+      overlay?.addEventListener('click', close);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    })();
+  </script>
 </body>
 </html>
-
-
