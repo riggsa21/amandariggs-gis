@@ -240,21 +240,20 @@
       text-align:center;
     }
 
-    /* ✅ Consistent thumbnail window for featured cards */
-    .portfolio-thumb{
-      aspect-ratio: 16 / 9;
-      width:100%;
-      background:rgba(0,0,0,.22);
-      border-bottom:1px solid rgba(255,255,255,.10);
-      overflow:hidden;
-    }
-    .portfolio-thumb img{
-      width:100%;
-      height:100%;
-      display:block;
-      object-fit:cover;
-      object-position:center;
-    }
+  /* FULL LAYOUT – no cropping */
+.portfolio-thumb{
+  width:100%;
+  background:rgba(0,0,0,.22);
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+
+.portfolio-thumb img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:contain;
+  background:rgba(255,255,255,.04);
+}
 
     .portfolio-card .card-body{ padding:1rem 1.1rem 1.2rem; }
     .portfolio-card h3{
@@ -643,5 +642,6 @@
 
 </body>
 </html>
+
 
 
