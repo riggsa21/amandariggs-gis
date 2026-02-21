@@ -1,4 +1,4 @@
-<!-- portfolio.html -->
+<!-- portfolio.html (REWRITE: fixed gallery cards + consistent thumbnails) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,6 +43,7 @@
 
     html{scroll-behavior:smooth}
     *,*::before,*::after{box-sizing:border-box}
+
     body{
       margin:0;
       font-family:var(--sans);
@@ -73,6 +74,7 @@
       font-weight:900;
       letter-spacing:.2px;
       text-align:center;
+      line-height:1.6;
     }
     .site-header nav a{color:var(--ink)}
     .site-header nav a:hover{color:var(--accent);text-decoration:none}
@@ -196,13 +198,33 @@
     }
     .btn:hover{filter:brightness(1.05);text-decoration:none}
 
-    /* Grids */
+    /* Tags */
+    .tags{
+      list-style:none;
+      padding:0;
+      margin:.8rem 0 0;
+      display:flex;
+      flex-wrap:wrap;
+      gap:.45rem;
+      justify-content:center;
+    }
+    .tags li{
+      font-size:.82rem;
+      padding:.22rem .55rem;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      color:rgba(230,234,242,.92);
+      background:rgba(12,18,36,.55);
+    }
+
+    /* Featured Projects grid */
     .portfolio-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
       gap:1rem;
       margin-top:1rem;
       justify-items:center;
+      align-items:stretch;
     }
     .portfolio-card{
       width:100%;
@@ -215,19 +237,23 @@
       display:flex;
       flex-direction:column;
       height:100%;
-      text-align:;center
+      text-align:center;
     }
 
-    /* Images: show fully */
-    .portfolio-card img,
-    .gallery-item img{
+    /* ✅ Consistent thumbnail window for featured cards */
+    .portfolio-thumb{
+      aspect-ratio: 16 / 9;
       width:100%;
-      height:auto !important;
-      max-height:260px;
-      object-fit:contain !important;
-      background:rgba(255,255,255,.06);
-      display:block;
+      background:rgba(0,0,0,.22);
       border-bottom:1px solid rgba(255,255,255,.10);
+      overflow:hidden;
+    }
+    .portfolio-thumb img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      object-position:center;
     }
 
     .portfolio-card .card-body{ padding:1rem 1.1rem 1.2rem; }
@@ -243,47 +269,50 @@
       margin:0;
     }
 
-    /* Tags */
-    .tags{
-      list-style:none;
-      padding:0;
-      margin:.8rem 0 0;
-      display:flex;
-      flex-wrap:wrap;
-      gap:.45rem;
-    }
-    .tags li{
-      font-size:.82rem;
-      padding:.22rem .55rem;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      color:rgba(230,234,242,.92);
-      background:rgba(12,18,36,.55);
-    }
-
-    /* Gallery */
+    /* ✅ Gallery grid (fixed cards) */
     .gallery-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
       gap:1rem;
       margin-top:1rem;
       justify-items:center;
+      align-items:stretch;
     }
     .gallery-item{
       width:100%;
-      max-width:320px;
+      max-width:360px;
       background:var(--panel2);
       border:1px solid rgba(255,255,255,.10);
       border-radius:16px;
       overflow:hidden;
       box-shadow:var(--shadow-sm);
       text-align:center;
+      display:flex;
+      flex-direction:column;
     }
+
+    /* ✅ Fixed thumbnail slot (prevents weird “tiny image in tall card”) */
+    .gallery-thumb{
+      aspect-ratio: 16 / 9; /* change to 4/3 if you want taller thumbs */
+      width:100%;
+      background:rgba(0,0,0,.22);
+      border-bottom:1px solid rgba(255,255,255,.10);
+      overflow:hidden;
+    }
+    .gallery-thumb img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover; /* use 'contain' if you prefer no cropping */
+      object-position:center;
+    }
+
     .gallery-item figcaption{
-      padding:.6rem .75rem .85rem;
-      font-size:.9rem;
+      padding:.7rem .85rem .95rem;
+      font-size:.92rem;
       color:var(--muted);
       line-height:1.4;
+      margin:0;
     }
 
     /* Workflows */
@@ -304,6 +333,14 @@
       padding-left:1.2rem;
       color:var(--muted);
       line-height:1.75;
+      text-align:left;
+      display:inline-block;
+    }
+
+    @media (max-width:720px){
+      .portfolio-intro h1{font-size:1.85rem}
+      .portfolio-section{padding:18px}
+      .page-content{padding:1.5rem 1rem 3rem}
     }
   </style>
 </head>
@@ -354,10 +391,12 @@
 
   <section class="portfolio-section" id="featured-projects">
     <h2>Featured Projects</h2>
-    <div class="portfolio-grid">
 
+    <div class="portfolio-grid">
       <article class="portfolio-card">
-        <img src="HydroConditionedDEM_Map.jpg" alt="Hydrologically conditioned DEM map">
+        <div class="portfolio-thumb">
+          <img src="HydroConditionedDEM_Map.jpg" alt="Hydrologically conditioned DEM map">
+        </div>
         <div class="card-body">
           <h3>Hydrologically Conditioned DEM &amp; Stream Network</h3>
           <p>
@@ -366,16 +405,15 @@
             flow direction/accumulation, threshold testing, and validation using overlap ratio and IoU metrics.
           </p>
           <ul class="tags">
-            <li>ArcGIS Pro</li>
-            <li>Hydrology</li>
-            <li>Raster Analysis</li>
-            <li>Python/ArcPy</li>
+            <li>ArcGIS Pro</li><li>Hydrology</li><li>Raster Analysis</li><li>Python/ArcPy</li>
           </ul>
         </div>
       </article>
 
       <article class="portfolio-card">
-        <img src="Savannah_2025_Classification.jpg" alt="Savannah land cover classification">
+        <div class="portfolio-thumb">
+          <img src="Savannah_2025_Classification.jpg" alt="Savannah land cover classification">
+        </div>
         <div class="card-body">
           <h3>Urban Land Cover Classification &amp; Change (Savannah)</h3>
           <p>
@@ -383,16 +421,15 @@
             followed by accuracy assessment and change detection between 1999 and 2025.
           </p>
           <ul class="tags">
-            <li>Remote Sensing</li>
-            <li>Landsat</li>
-            <li>Classification</li>
-            <li>Change Detection</li>
+            <li>Remote Sensing</li><li>Landsat</li><li>Classification</li><li>Change Detection</li>
           </ul>
         </div>
       </article>
 
       <article class="portfolio-card">
-        <img src="FINAL_UFRM_HSC_rnf_rt_m3.jpg" alt="InVEST urban flood mitigation output">
+        <div class="portfolio-thumb">
+          <img src="FINAL_UFRM_HSC_rnf_rt_m3.jpg" alt="InVEST urban flood mitigation output">
+        </div>
         <div class="card-body">
           <h3>Urban Ecosystem Services Assessment (InVEST)</h3>
           <p>
@@ -400,16 +437,15 @@
             Integrated land use, soils, topography, and infrastructure to evaluate tradeoffs between development and ecosystem services.
           </p>
           <ul class="tags">
-            <li>InVEST</li>
-            <li>NDR / USR / UFRM</li>
-            <li>Urban Hydrology</li>
-            <li>Spatial Modeling</li>
+            <li>InVEST</li><li>NDR / USR / UFRM</li><li>Urban Hydrology</li><li>Spatial Modeling</li>
           </ul>
         </div>
       </article>
 
       <article class="portfolio-card">
-        <img src="FullWorkflow_HydroFlat.JPG" alt="Hydroflattening workflow layout">
+        <div class="portfolio-thumb">
+          <img src="FullWorkflow_HydroFlat.JPG" alt="Hydroflattening workflow layout">
+        </div>
         <div class="card-body">
           <h3>Automated Hydrology &amp; Layout Workflow</h3>
           <p>
@@ -417,14 +453,10 @@
             Automation reduces repetitive work while enforcing common symbology and layout standards across projects.
           </p>
           <ul class="tags">
-            <li>Python/ArcPy</li>
-            <li>Automation</li>
-            <li>Hydrology</li>
-            <li>Cartography</li>
+            <li>Python/ArcPy</li><li>Automation</li><li>Hydrology</li><li>Cartography</li>
           </ul>
         </div>
       </article>
-
     </div>
   </section>
 
@@ -434,137 +466,137 @@
 
     <div class="gallery-grid">
       <figure class="gallery-item">
-        <img src="FINAL_Layout_GMR_NDR_Drill_Down.jpg" alt="NDR drilldown map for GMR watershed">
+        <div class="gallery-thumb"><img src="FINAL_Layout_GMR_NDR_Drill_Down.jpg" alt="NDR drilldown map for GMR watershed"></div>
         <figcaption>NDR Drill Down – GMR Watershed</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="FINAL_UFRM_HSC_rnf_rt_m3.jpg" alt="UFRM runoff retention map">
+        <div class="gallery-thumb"><img src="FINAL_UFRM_HSC_rnf_rt_m3.jpg" alt="UFRM runoff retention map"></div>
         <figcaption>Urban Flood Risk Mitigation – Runoff Retention</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="FLYER_StudyArea.jpg" alt="Study area overview">
+        <div class="gallery-thumb"><img src="FLYER_StudyArea.jpg" alt="Study area overview"></div>
         <figcaption>Study Area Overview Flyer</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="FSSC_DrillDown_Layout_4_10.jpg" alt="Drilldown layout for FSSC watershed">
+        <div class="gallery-thumb"><img src="FSSC_DrillDown_Layout_4_10.jpg" alt="Drilldown layout for FSSC watershed"></div>
         <figcaption>FSSC Drill Down Map</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="FinalFloodRiskMap.jpg" alt="Flood risk classification map">
+        <div class="gallery-thumb"><img src="FinalFloodRiskMap.jpg" alt="Flood risk classification map"></div>
         <figcaption>Final Flood Risk Map</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="FinalStudyArea_Layout.jpg" alt="Main study area layout">
+        <div class="gallery-thumb"><img src="FinalStudyArea_Layout.jpg" alt="Main study area layout"></div>
         <figcaption>Final Study Area Layout</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Final_HydroFlattening_Layout.jpg" alt="Hydroflattening workflow output">
+        <div class="gallery-thumb"><img src="Final_HydroFlattening_Layout.jpg" alt="Hydroflattening workflow output"></div>
         <figcaption>Hydroflattened DEM – Final Output</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Final_Layout_of Stream Extraction.jpg" alt="Stream extraction layout">
+        <div class="gallery-thumb"><img src="Final_Layout_of Stream Extraction.jpg" alt="Stream extraction layout"></div>
         <figcaption>Stream Extraction Layout</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="FullWorkflow_HydroFlat.JPG" alt="Full hydroflattening workflow diagram">
+        <div class="gallery-thumb"><img src="FullWorkflow_HydroFlat.JPG" alt="Full hydroflattening workflow diagram"></div>
         <figcaption>Hydroflattening Workflow Diagram</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="GPT_GMRStorymap.png" alt="StoryMap export example map">
+        <div class="gallery-thumb"><img src="GPT_GMRStorymap.png" alt="StoryMap export example map"></div>
         <figcaption>StoryMap Export – GMR</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="GPT_GMRTransport.png" alt="Transportation layer map">
+        <div class="gallery-thumb"><img src="GPT_GMRTransport.png" alt="Transportation layer map"></div>
         <figcaption>Transportation Map – GMR</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="GreensMillRun_NDR_DrillDown.jpg" alt="Greens Mill Run NDR drilldown">
+        <div class="gallery-thumb"><img src="GreensMillRun_NDR_DrillDown.jpg" alt="Greens Mill Run NDR drilldown"></div>
         <figcaption>NDR Drill Down – Greens Mill Run</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Harkers Island Map.jpg" alt="Harkers Island map">
+        <div class="gallery-thumb"><img src="Harkers Island Map.jpg" alt="Harkers Island map"></div>
         <figcaption>Harkers Island Map</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="HydroConditionedDEM_Map.jpg" alt="Hydrologically conditioned DEM">
+        <div class="gallery-thumb"><img src="HydroConditionedDEM_Map.jpg" alt="Hydrologically conditioned DEM"></div>
         <figcaption>Hydroconditioned DEM Map</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Hydro_Processed_Final_Result.jpg" alt="Final hydrology processing output">
+        <div class="gallery-thumb"><img src="Hydro_Processed_Final_Result.jpg" alt="Final hydrology processing output"></div>
         <figcaption>Hydrology Processing – Final Result</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Lab_5_Change_Detection.jpg" alt="Land cover change detection lab output">
+        <div class="gallery-thumb"><img src="Lab_5_Change_Detection.jpg" alt="Land cover change detection lab output"></div>
         <figcaption>Change Detection Lab Output</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Layout_StudyArea_3.jpg" alt="Study area layout map">
+        <div class="gallery-thumb"><img src="Layout_StudyArea_3.jpg" alt="Study area layout map"></div>
         <figcaption>Study Area – Version 3</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="NewSugar.jpg" alt="New Sugar map output">
+        <div class="gallery-thumb"><img src="NewSugar.jpg" alt="New Sugar map output"></div>
         <figcaption>New Sugar Map Output</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="OR_IoU_Layout2.jpg" alt="Overlap ratio and IoU validation layout">
+        <div class="gallery-thumb"><img src="OR_IoU_Layout2.jpg" alt="Overlap ratio and IoU validation layout"></div>
         <figcaption>OR &amp; IoU Validation Layout</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Prediction Map.jpg" alt="Prediction raster map">
+        <div class="gallery-thumb"><img src="Prediction Map.jpg" alt="Prediction raster map"></div>
         <figcaption>Prediction Map Output</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Savannah_1999_Classification.jpg" alt="1999 Savannah land cover classification">
+        <div class="gallery-thumb"><img src="Savannah_1999_Classification.jpg" alt="1999 Savannah land cover classification"></div>
         <figcaption>Savannah 1999 Land Cover Classification</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Savannah_1999_spectral.png" alt="Spectral signatures for Savannah 1999">
+        <div class="gallery-thumb"><img src="Savannah_1999_spectral.png" alt="Spectral signatures for Savannah 1999"></div>
         <figcaption>Savannah 1999 Spectral Signature Plot</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Savannah_2025_Classification.jpg" alt="2025 Savannah land cover classification">
+        <div class="gallery-thumb"><img src="Savannah_2025_Classification.jpg" alt="2025 Savannah land cover classification"></div>
         <figcaption>Savannah 2025 Land Cover Classification</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Slope_ElevationDifferenceLayout.jpg" alt="Slope and elevation difference layout">
+        <div class="gallery-thumb"><img src="Slope_ElevationDifferenceLayout.jpg" alt="Slope and elevation difference layout"></div>
         <figcaption>Slope &amp; Elevation Difference Layout</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="USR_Drill_Down_4_10.jpg" alt="USR drilldown map">
+        <div class="gallery-thumb"><img src="USR_Drill_Down_4_10.jpg" alt="USR drilldown map"></div>
         <figcaption>USR Drill Down Map</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="USR_Retention_Map.jpg" alt="Retention map for urban stormwater">
+        <div class="gallery-thumb"><img src="USR_Retention_Map.jpg" alt="Retention map for urban stormwater"></div>
         <figcaption>Stormwater Retention Map</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <img src="Z_final_Layout.jpg" alt="Final layout">
+        <div class="gallery-thumb"><img src="Z_final_Layout.jpg" alt="Final layout"></div>
         <figcaption>Final Layout (Z)</figcaption>
       </figure>
     </div>
@@ -610,7 +642,3 @@
 
 </body>
 </html>
-
-
-
-
