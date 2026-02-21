@@ -193,14 +193,15 @@
     /* Logo sizing (fixes “too large”) */
     .logo-wrap{display:flex;justify-content:center;margin:14px 0 6px}
     .logo{
-      width:min(240px, 70vw);
+      width:180px;          /* was 240px */
+      max-width:50vw;
       height:auto;
       display:block;
-      border-radius:14px;
-      box-shadow:0 18px 50px rgba(0,0,0,.35);
-      border:1px solid rgba(255,255,255,.10);
-      background:#fff;
-      padding:10px;
+      border-radius:10px;   /* slightly tighter */
+      box-shadow:0 12px 30px rgba(0,0,0,.35);
+      border:none;          /* remove border */
+      background:none;      /* remove white block */
+      padding:0;            /* remove padding */
     }
 
     .chips{
@@ -374,6 +375,7 @@
   </script>
 </body>
 </html>
+
 
 
 
