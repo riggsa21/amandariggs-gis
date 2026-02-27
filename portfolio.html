@@ -1,4 +1,4 @@
-<!-- portfolio.html (UPDATED: adds Case Study 02 + keeps your gallery + consistent thumbs) -->
+<!-- portfolio.html (UPDATED: moved Automated Workflow to Map Gallery + removed Featured card + removed duplicate gallery item) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -267,7 +267,7 @@
       margin:0;
     }
 
-    /* ✅ Gallery grid (fixed cards) */
+    /* Gallery grid */
     .gallery-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
@@ -289,7 +289,6 @@
       flex-direction:column;
     }
 
-    /* ✅ Gallery thumbnails: show MORE map (less cropping) */
     .gallery-thumb{
       aspect-ratio: 4 / 3;
       width:100%;
@@ -355,6 +354,7 @@
 </header>
 
 <main class="page-content">
+
   <section class="portfolio-intro">
     <h1>Portfolio</h1>
     <p>
@@ -362,10 +362,9 @@
       DEM conditioning, land cover classification/change detection, ecosystem services modeling, and Python/ArcPy automation.
     </p>
 
-    <!-- ===================== FEATURED CASE STUDY 01 ===================== -->
+    <!-- FEATURED CASE STUDY 01 -->
     <section class="case-study-feature" aria-label="Featured case study 01">
       <img src="case_study_01_FrogLevel_Davenport.jpg?v=5" alt="Case Study 01: Frog Level / Davenport Farm Corridor layout">
-
       <div class="case-study-body">
         <div class="case-study-kicker">Featured Case Study</div>
         <h2>Case Study 01: Frog Level / Davenport Farm Corridor</h2>
@@ -373,14 +372,9 @@
           Corridor-level drainage and terrain screening designed to flag likely low spots, runoff pathways,
           and potential road–drainage conflict areas. Built for clear communication and fast review.
         </p>
-
         <ul class="tags">
-          <li>LiDAR DEM</li>
-          <li>Drainage Screening</li>
-          <li>Hydrology</li>
-          <li>Cartography</li>
+          <li>LiDAR DEM</li><li>Drainage Screening</li><li>Hydrology</li><li>Cartography</li>
         </ul>
-
         <div class="case-study-actions">
           <a class="btn primary" href="hire.html?v=case01#estimateForm">Request something similar</a>
           <a class="btn" href="#featured-projects">Jump to Featured Projects</a>
@@ -388,10 +382,9 @@
       </div>
     </section>
 
-    <!-- ===================== FEATURED CASE STUDY 02 ===================== -->
+    <!-- FEATURED CASE STUDY 02 -->
     <section class="case-study-feature" aria-label="Featured case study 02">
       <img src="Case_02_North_Edwards%20Rd.jpg?v=1" alt="Case Study 02: North Edwards Rd roadway ponding and expected cross-drain location">
-
       <div class="case-study-body">
         <div class="case-study-kicker">Featured Case Study</div>
         <h2>Case Study 02: North Edwards Rd — Roadway Drainage Conflict</h2>
@@ -400,27 +393,23 @@
           Contributing area signals support why flow appears to route along the road shoulder instead of reconnecting
           to the adjacent natural flow path — providing a clear target for field verification.
         </p>
-
         <ul class="tags">
-          <li>Contributing Area (acres)</li>
-          <li>Drainage Screening</li>
-          <li>Field Verification Targeting</li>
-          <li>Cartography</li>
+          <li>Contributing Area (acres)</li><li>Drainage Screening</li><li>Field Verification Targeting</li><li>Cartography</li>
         </ul>
-
         <div class="case-study-actions">
           <a class="btn primary" href="hire.html?v=case01#estimateForm">Request something similar</a>
           <a class="btn" href="#map-gallery">Jump to Map Gallery</a>
         </div>
       </div>
     </section>
-
   </section>
 
+  <!-- FEATURED PROJECTS (Automated Workflow card REMOVED) -->
   <section class="portfolio-section" id="featured-projects">
     <h2>Featured Projects</h2>
 
     <div class="portfolio-grid">
+
       <article class="portfolio-card">
         <div class="portfolio-thumb">
           <img src="HydroConditionedDEM_Map.jpg" alt="Hydrologically conditioned DEM map">
@@ -470,32 +459,20 @@
         </div>
       </article>
 
-      <article class="portfolio-card">
-        <div class="portfolio-thumb">
-          <img src="FullWorkflow_HydroFlat.JPG" alt="Hydroflattening workflow layout">
-        </div>
-        <div class="card-body">
-          <h3>Automated Hydrology &amp; Layout Workflow</h3>
-          <p>
-            Developed ArcPy-driven workflows to preprocess DEMs, generate hydrologic layers, and export consistent map layouts.
-            Automation reduces repetitive work while enforcing common symbology and layout standards across projects.
-          </p>
-          <ul class="tags">
-            <li>Python/ArcPy</li><li>Automation</li><li>Hydrology</li><li>Cartography</li>
-          </ul>
-        </div>
-      </article>
     </div>
   </section>
 
+  <!-- MAP GALLERY (Stream Extraction replaced with Automated Workflow) -->
   <section class="portfolio-section" id="map-gallery">
     <h2>Map Gallery</h2>
     <p>Selected maps and layouts from recent GIS and remote sensing projects.</p>
 
     <div class="gallery-grid">
-      <!-- ✅ NEW: Case Study 02 in gallery -->
+
       <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="Case_02_North_Edwards%20Rd.jpg?v=1" alt="Case Study 02: North Edwards Rd drainage screening layout"></div>
+        <div class="gallery-thumb">
+          <img src="Case_02_North_Edwards%20Rd.jpg?v=1" alt="Case Study 02: North Edwards Rd drainage screening layout">
+        </div>
         <figcaption>Case Study 02 — North Edwards Rd (roadway ponding + cross-drain signal)</figcaption>
       </figure>
 
@@ -534,15 +511,15 @@
         <figcaption>Hydroflattened DEM – Final Output</figcaption>
       </figure>
 
+      <!-- ✅ REPLACED: Stream Extraction Layout -> Automated Hydrology & Layout Workflow -->
       <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="Final_Layout_of Stream Extraction.jpg" alt="Stream extraction layout"></div>
-        <figcaption>Stream Extraction Layout</figcaption>
+        <div class="gallery-thumb">
+          <img src="FullWorkflow_HydroFlat.JPG" alt="Automated Hydrology &amp; Layout Workflow diagram">
+        </div>
+        <figcaption>Automated Hydrology &amp; Layout Workflow (ArcPy)</figcaption>
       </figure>
 
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="FullWorkflow_HydroFlat.JPG" alt="Full hydroflattening workflow diagram"></div>
-        <figcaption>Hydroflattening Workflow Diagram</figcaption>
-      </figure>
+      <!-- ✅ REMOVED: duplicate FullWorkflow_HydroFlat.JPG item (so it only appears once) -->
 
       <figure class="gallery-item">
         <div class="gallery-thumb"><img src="GPT_GMRStorymap.png" alt="StoryMap export example map"></div>
@@ -633,6 +610,7 @@
         <div class="gallery-thumb"><img src="Z_final_Layout.jpg" alt="Final layout"></div>
         <figcaption>Final Layout (Z)</figcaption>
       </figure>
+
     </div>
   </section>
 
@@ -672,7 +650,7 @@
       </ol>
     </article>
   </section>
-</main>
 
+</main>
 </body>
 </html>
