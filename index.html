@@ -343,6 +343,13 @@
       line-height:1.7;
       color:rgba(230,234,242,.92);
     }
+    /* Center the "How it works" cards (including Step 4) */
+#how .card{ text-align:center; }
+#how .card h3, 
+#how .card p{ text-align:center; }
+
+/* If any "How" card uses a list, keep it readable but centered as a block */
+#how .card ul{ display:inline-block; text-align:left; margin:0 auto; }
     .card ul li{
       position:relative;
       padding-left:26px;
@@ -725,3 +732,4 @@
   </script>
 </body>
 </html>
+
