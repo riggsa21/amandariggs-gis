@@ -1,4 +1,4 @@
-<!-- index.html (FIXED: drawer markup + true centered brand; prevents nav spilling / left shift) -->
+<!-- index.html (UPDATED: adds Case Study 02 + correct structure + drawer link) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -430,6 +430,7 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="#case01">Case Study 01</a>
+      <a href="#case02">Case Study 02</a>
       <a href="#why">Why this works</a>
       <a href="#how">How it works</a>
       <a href="hire.html?v=case01#estimateForm">Request Estimate</a>
@@ -488,6 +489,7 @@
   </header>
 
   <main>
+    <!-- ===================== CASE STUDY 01 ===================== -->
     <section id="case01" aria-label="Case Study 01">
       <h2>Case Study 01: Frog Level / Davenport Farm Corridor</h2>
       <p class="lead">
@@ -540,6 +542,63 @@
       </div>
     </section>
 
+    <!-- ===================== CASE STUDY 02 ===================== -->
+    <section id="case02" aria-label="Case Study 02">
+      <h2>Case Study 02: North Edwards Rd — Roadway Drainage Conflict</h2>
+
+      <p class="lead">
+        This screening evaluated a recurring roadway ponding location along North Edwards Road.
+        Terrain and contributing area analysis were used to interpret runoff behavior and identify a likely cross-drain deficiency,
+        where flow appears to travel along the shoulder rather than reconnecting to the adjacent natural drainage path.
+      </p>
+
+      <div class="case-preview" aria-label="Case Study 02 preview">
+        <img src="Case_02_North_Edwards%20Rd.jpg?v=1"
+             alt="Case Study 02: North Edwards Rd roadway ponding and expected cross-drain location">
+        <div class="cap">
+          Case Study 02 — North Edwards Rd (surface water screening layout highlighting ponding location, contributing area signals, and an expected cross-drain connection point)
+        </div>
+      </div>
+
+      <div class="cards three">
+        <article class="card">
+          <h3>What was identified</h3>
+          <ul>
+            <li><strong>Observed roadway ponding</strong> along a low segment</li>
+            <li>Runoff routing <strong>parallel to the road shoulder</strong></li>
+            <li>Contributing area signals supporting concentrated flow</li>
+            <li>A probable <strong>missing or undersized cross-drain</strong></li>
+            <li>Expected reconnection point to natural flow path</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Why it matters</h3>
+          <ul>
+            <li>Identifies infrastructure gaps before resurfacing or grading</li>
+            <li>Helps prioritize field verification</li>
+            <li>Supports conversations with county or DOT staff</li>
+            <li>Reduces recurring water-related complaints</li>
+            <li>Provides map-based documentation for decision-making</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Data used</h3>
+          <ul>
+            <li>High-resolution <strong>LiDAR-derived terrain</strong></li>
+            <li>Contributing area (acres) from flow accumulation</li>
+            <li>Road and structure layers (public sources)</li>
+            <li>Cartographic refinement for clear communication</li>
+          </ul>
+          <p style="margin-top:10px;color:var(--muted);line-height:1.7;max-width:520px;margin-left:auto;margin-right:auto;">
+            This is a screening-level product designed to inform site decisions and support next-step investigation — not a sealed engineering design.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== WHY ===================== -->
     <section id="why" aria-label="Why this works">
       <h2>Why this approach works</h2>
       <p class="lead">
@@ -563,6 +622,7 @@
       </div>
     </section>
 
+    <!-- ===================== HOW ===================== -->
     <section id="how" aria-label="How it works">
       <h2>How it works</h2>
       <p class="lead">Simple workflow. Clean deliverables. No confusion.</p>
@@ -587,6 +647,7 @@
       </div>
     </section>
 
+    <!-- ===================== CTA ===================== -->
     <section class="cta-band" aria-label="Call to action">
       <div class="cta-band-inner">
         <div>
