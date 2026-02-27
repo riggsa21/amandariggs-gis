@@ -1,4 +1,4 @@
-<!-- portfolio.html (REWRITE: fixed gallery cards + consistent thumbnails) -->
+<!-- portfolio.html (UPDATED: adds Case Study 02 + keeps your gallery + consistent thumbs) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +10,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Portfolio | Amanda Riggs" />
-  <meta property="og:description" content="Selected GIS, remote sensing, hydrology, and site intelligence work — including Case Study 01 screening layouts." />
+  <meta property="og:description" content="Selected GIS, remote sensing, hydrology, and site intelligence work — including Case Study 01 and Case Study 02 screening layouts." />
   <meta property="og:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg" />
   <meta property="og:url" content="https://riggsa21.github.io/amandariggs-gis/portfolio.html" />
   <meta property="og:type" content="website" />
@@ -18,7 +18,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Portfolio | Amanda Riggs" />
-  <meta name="twitter:description" content="Selected GIS, remote sensing, hydrology, and site intelligence work — including Case Study 01 screening layouts." />
+  <meta name="twitter:description" content="Selected GIS, remote sensing, hydrology, and site intelligence work — including Case Study 01 and Case Study 02 screening layouts." />
   <meta name="twitter:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg" />
 
   <style>
@@ -131,7 +131,7 @@
       line-height:1.75;
     }
 
-    /* Featured case study */
+    /* Featured case studies */
     .case-study-feature{
       margin-top:1.25rem;
       border-radius:20px;
@@ -240,20 +240,19 @@
       text-align:center;
     }
 
-  /* FULL LAYOUT – no cropping */
-.portfolio-thumb{
-  width:100%;
-  background:rgba(0,0,0,.22);
-  border-bottom:1px solid rgba(255,255,255,.10);
-}
-
-.portfolio-thumb img{
-  width:100%;
-  height:auto;
-  display:block;
-  object-fit:contain;
-  background:rgba(255,255,255,.04);
-}
+    /* FULL LAYOUT – no cropping */
+    .portfolio-thumb{
+      width:100%;
+      background:rgba(0,0,0,.22);
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .portfolio-thumb img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:contain;
+      background:rgba(255,255,255,.04);
+    }
 
     .portfolio-card .card-body{ padding:1rem 1.1rem 1.2rem; }
     .portfolio-card h3{
@@ -290,9 +289,9 @@
       flex-direction:column;
     }
 
-      /* ✅ Gallery thumbnails: show MORE map (less cropping) */
+    /* ✅ Gallery thumbnails: show MORE map (less cropping) */
     .gallery-thumb{
-      aspect-ratio: 4 / 3;          /* taller window than 16:9 */
+      aspect-ratio: 4 / 3;
       width:100%;
       background:rgba(0,0,0,.22);
       border-bottom:1px solid rgba(255,255,255,.10);
@@ -300,10 +299,10 @@
     }
 
     .gallery-thumb img{
-       width:100%;
+      width:100%;
       height:100%;
       display:block;
-      object-fit:contain;           /* ✅ no cropping */
+      object-fit:contain;
       object-position:center;
       background:rgba(255,255,255,.06);
     }
@@ -363,7 +362,8 @@
       DEM conditioning, land cover classification/change detection, ecosystem services modeling, and Python/ArcPy automation.
     </p>
 
-    <section class="case-study-feature" aria-label="Featured case study">
+    <!-- ===================== FEATURED CASE STUDY 01 ===================== -->
+    <section class="case-study-feature" aria-label="Featured case study 01">
       <img src="case_study_01_FrogLevel_Davenport.jpg?v=5" alt="Case Study 01: Frog Level / Davenport Farm Corridor layout">
 
       <div class="case-study-body">
@@ -387,6 +387,34 @@
         </div>
       </div>
     </section>
+
+    <!-- ===================== FEATURED CASE STUDY 02 ===================== -->
+    <section class="case-study-feature" aria-label="Featured case study 02">
+      <img src="Case_02_North_Edwards%20Rd.jpg?v=1" alt="Case Study 02: North Edwards Rd roadway ponding and expected cross-drain location">
+
+      <div class="case-study-body">
+        <div class="case-study-kicker">Featured Case Study</div>
+        <h2>Case Study 02: North Edwards Rd — Roadway Drainage Conflict</h2>
+        <p>
+          Site-focused screening highlighting an observed roadway ponding location and a likely cross-drain deficiency.
+          Contributing area signals support why flow appears to route along the road shoulder instead of reconnecting
+          to the adjacent natural flow path — providing a clear target for field verification.
+        </p>
+
+        <ul class="tags">
+          <li>Contributing Area (acres)</li>
+          <li>Drainage Screening</li>
+          <li>Field Verification Targeting</li>
+          <li>Cartography</li>
+        </ul>
+
+        <div class="case-study-actions">
+          <a class="btn primary" href="hire.html?v=case01#estimateForm">Request something similar</a>
+          <a class="btn" href="#map-gallery">Jump to Map Gallery</a>
+        </div>
+      </div>
+    </section>
+
   </section>
 
   <section class="portfolio-section" id="featured-projects">
@@ -460,11 +488,17 @@
     </div>
   </section>
 
-  <section class="portfolio-section">
+  <section class="portfolio-section" id="map-gallery">
     <h2>Map Gallery</h2>
     <p>Selected maps and layouts from recent GIS and remote sensing projects.</p>
 
     <div class="gallery-grid">
+      <!-- ✅ NEW: Case Study 02 in gallery -->
+      <figure class="gallery-item">
+        <div class="gallery-thumb"><img src="Case_02_North_Edwards%20Rd.jpg?v=1" alt="Case Study 02: North Edwards Rd drainage screening layout"></div>
+        <figcaption>Case Study 02 — North Edwards Rd (roadway ponding + cross-drain signal)</figcaption>
+      </figure>
+
       <figure class="gallery-item">
         <div class="gallery-thumb"><img src="FINAL_Layout_GMR_NDR_Drill_Down.jpg" alt="NDR drilldown map for GMR watershed"></div>
         <figcaption>NDR Drill Down – GMR Watershed</figcaption>
@@ -642,6 +676,3 @@
 
 </body>
 </html>
-
-
-
