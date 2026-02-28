@@ -1,4 +1,4 @@
-<!-- index.html (UPDATED: adds Case Study 02 + correct structure + drawer link) -->
+<!-- index.html (UPDATED: hamburger only; removed all Home buttons/links) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,24 +94,6 @@
     .hamburger .bar{ top:5px; }
     .hamburger .lines::before{ top:0; }
     .hamburger .lines::after{ bottom:0; }
-
-    /* TRUE centered brand (independent of left/right width) */
-    .brand{
-      position:absolute;
-      left:50%;
-      transform:translateX(-50%);
-      font-weight:950;
-      letter-spacing:.2px;
-      font-size:1.02rem;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      color:var(--ink);
-      max-width:calc(100% - 120px);
-      text-align:center;
-      pointer-events:none;
-    }
-    .brand .dot{color:var(--accent)}
 
     /* ---------- DRAWER ---------- */
     .overlay{
@@ -343,13 +325,11 @@
       line-height:1.7;
       color:rgba(230,234,242,.92);
     }
-    /* Center the "How it works" cards (including Step 4) */
-#how .card{ text-align:center; }
-#how .card h3, 
-#how .card p{ text-align:center; }
+    #how .card{ text-align:center; }
+    #how .card h3,
+    #how .card p{ text-align:center; }
+    #how .card ul{ display:inline-block; text-align:left; margin:0 auto; }
 
-/* If any "How" card uses a list, keep it readable but centered as a block */
-#how .card ul{ display:inline-block; text-align:left; margin:0 auto; }
     .card ul li{
       position:relative;
       padding-left:26px;
@@ -415,19 +395,18 @@
 </head>
 
 <body>
-  <!-- TOPBAR -->
+  <!-- TOPBAR (hamburger only) -->
   <div class="topbar">
     <div class="topbar-inner">
       <button class="hamburger" id="hamburger"
               aria-label="Open menu" aria-controls="site-drawer" aria-expanded="false">
         <span class="lines"><span class="bar"></span></span>
       </button>
-
-      <div class="brand mono">GeoSite Intel</div>
+      <!-- brand removed to avoid title overlap -->
     </div>
   </div>
 
-  <!-- OVERLAY + DRAWER (FIXED) -->
+  <!-- OVERLAY + DRAWER -->
   <div class="overlay" id="overlay"></div>
 
   <aside class="drawer" id="site-drawer" aria-label="Site menu">
@@ -435,7 +414,7 @@
       <div class="mono" style="font-weight:950;">menu<span style="color:var(--accent)">.</span></div>
     </header>
     <nav>
-      <a href="index.html">Home</a>
+      <!-- Home removed -->
       <a href="#case01">Case Study 01</a>
       <a href="#case02">Case Study 02</a>
       <a href="#why">Why this works</a>
@@ -732,4 +711,3 @@
   </script>
 </body>
 </html>
-
