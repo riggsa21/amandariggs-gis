@@ -182,25 +182,37 @@
       background:rgba(6,10,20,.65);
       color:var(--ink);
       outline:none;
+      
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    select{
+      width:100%;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.22); /* stronger default edge */
+      background:rgba(6,10,20,.75); /* slightly lighter */
+      color:var(--ink);
+      outline:none;
+      transition: all .18s ease;
     }
-    input::placeholder, textarea::placeholder{color:rgba(170,179,197,.65)}
-    textarea{min-height:150px;resize:vertical}
-    select{cursor:pointer}
-
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    @media(max-width:720px){ .row{grid-template-columns:1fr} }
-
-    .btn{
-      display:inline-block;
-      padding:10px 16px;
-      border-radius:14px;
-      font-weight:950;
-      border:1px solid rgba(255,255,255,.10);
-      cursor:pointer;
-      box-shadow:0 14px 40px rgba(0,0,0,.35);
-      background:linear-gradient(90deg, rgba(53,210,255,.95), rgba(139,92,246,.92));
-      color:#081021;
+    
+    /* Hover state (subtle lift) */
+    input:hover,
+    textarea:hover,
+    select:hover{
+      border-color: rgba(53,210,255,.45);
     }
+    
+    /* Focus state (this is the magic) */
+    input:focus,
+    textarea:focus,
+    select:focus{
+      border-color: var(--accent);
+      box-shadow:
+        0 0 0 2px rgba(53,210,255,.18),
+        0 0 14px rgba(53,210,255,.15);
+    }   
     .btn:hover{filter:brightness(1.05)}
 
     .hint{
