@@ -1,4 +1,4 @@
-<!-- hire.html (FINAL: Formspree endpoint wired + id="estimateForm" on the FORM itself) -->
+<!-- hire.html (UPDATED: hamburger-only topbar + drawer, removed Home button; cleaned duplicate Payment Options section) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,32 +50,96 @@
         radial-gradient(1200px 500px at 15% 10%, rgba(53,210,255,.13), transparent 60%),
         radial-gradient(900px 420px at 85% 25%, rgba(139,92,246,.12), transparent 60%),
         linear-gradient(180deg, var(--bg0) 0%, var(--bg2) 100%);
-      padding-top:56px;
+      padding-top:56px; /* space for fixed topbar */
     }
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
+    .mono{font-family:var(--mono)}
 
+    /* ---------- TOPBAR (hamburger only) ---------- */
     .topbar{
-      position:fixed; inset:0 0 auto 0; height:56px; z-index:1000;
-      display:flex; align-items:center; gap:12px;
+      position:fixed;
+      inset:0 0 auto 0;
+      height:56px;
+      z-index:1200;
       background:rgba(5,7,15,.72);
       backdrop-filter:blur(10px);
       border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .topbar-inner{
+      height:56px;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
       padding:0 12px;
     }
-    .brand{font-weight:950;color:var(--ink);letter-spacing:.2px;font-size:1.02rem;}
-    .home-btn{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 12px;border-radius:12px;
-      border:1px solid rgba(53,210,255,.55);
-      color:var(--ink);
-      background:rgba(12,18,36,.6);
-      font-weight:950;
-      text-decoration:none;
-      box-shadow:0 10px 30px rgba(0,0,0,.35);
-    }
-    .home-btn:hover{background:rgba(53,210,255,.08);text-decoration:none}
 
+    .hamburger{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:40px; height:40px; border-radius:12px;
+      border:1px solid rgba(53,210,255,.55);
+      background:rgba(12,18,36,.6);
+      cursor:pointer;
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
+      flex:0 0 auto;
+    }
+    .hamburger:focus-visible{ outline:3px solid rgba(53,210,255,.35); outline-offset:2px; }
+    .hamburger .lines{ position:relative; width:18px; height:12px; }
+    .hamburger .lines::before,
+    .hamburger .lines::after,
+    .hamburger .bar{
+      content:""; position:absolute; left:0; right:0; height:2px;
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius:2px;
+    }
+    .hamburger .bar{ top:5px; }
+    .hamburger .lines::before{ top:0; }
+    .hamburger .lines::after{ bottom:0; }
+
+    /* ---------- DRAWER ---------- */
+    .overlay{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.55);
+      opacity:0; pointer-events:none;
+      transition:opacity .2s ease;
+      z-index:1050;
+    }
+    .overlay.open{opacity:1;pointer-events:auto}
+
+    .drawer{
+      position:fixed; inset:0 auto 0 0;
+      width:300px; max-width:86vw;
+      background:rgba(10,14,28,.92);
+      border-right:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+      transform:translateX(-100%);
+      transition:transform .25s ease;
+      z-index:1100;
+      display:flex; flex-direction:column;
+    }
+    .drawer.open{transform:translateX(0)}
+    .drawer header{
+      padding:16px 18px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      display:flex; align-items:center; gap:10px;
+    }
+    .drawer nav{padding:10px}
+    .drawer a{
+      display:block;
+      padding:12px 12px;
+      border-radius:12px;
+      font-weight:850;
+      color:var(--ink);
+      border:1px solid transparent;
+      text-align:left;
+    }
+    .drawer a:hover{
+      background:rgba(53,210,255,.08);
+      border-color:rgba(53,210,255,.25);
+      text-decoration:none;
+    }
+
+    /* ---------- PAGE ---------- */
     main{max-width:1000px;margin:20px auto;padding:0 16px}
     .panel{
       background:rgba(12,18,36,.70);
@@ -162,10 +226,31 @@
 </head>
 
 <body>
+  <!-- TOPBAR (hamburger only) -->
   <div class="topbar">
-    <a class="home-btn" href="index.html" aria-label="Return to Home">← Home</a>
-    <div class="brand"><span style="font-family:var(--mono); color:var(--accent)">estimate</span><span style="opacity:.9">.request</span></div>
+    <div class="topbar-inner">
+      <button class="hamburger" id="hamburger"
+              aria-label="Open menu" aria-controls="site-drawer" aria-expanded="false">
+        <span class="lines"><span class="bar"></span></span>
+      </button>
+    </div>
   </div>
+
+  <!-- OVERLAY + DRAWER -->
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="drawer" id="site-drawer" aria-label="Site menu">
+    <header>
+      <div class="mono" style="font-weight:950;">menu<span style="color:var(--accent)">.</span></div>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="hire.html?v=case01#estimateForm">Request Estimate</a>
+      <a href="about.html">About</a>
+      <a href="mailto:geositeintel@outlook.com">Contact</a>
+    </nav>
+  </aside>
 
   <main>
     <section class="panel">
@@ -182,7 +267,7 @@
     <section class="panel" aria-label="Estimate form">
       <h2>Project Details</h2>
 
-      <!-- FORM has the id, so #estimateForm works and scripts don’t complain -->
+      <!-- FORM has the id, so #estimateForm works -->
       <form id="estimateForm" action="https://formspree.io/f/xyznngpw" method="POST">
         <div class="row">
           <div>
@@ -232,28 +317,26 @@
     <section class="panel" aria-label="Payment options">
       <h2>Payment Options</h2>
 
-<section class="panel" aria-label="Payment options">
-  <h2>Payment Options</h2>
+      <div class="pay-grid">
+        <div class="pay-card">
+          <h3 class="pay-title">Card Payment (Invoice)</h3>
+          <p class="pay-note">
+            Card payments are handled by invoice after scope and pricing are confirmed. You’ll receive a receipt.
+          </p>
+        </div>
 
-  <div class="pay-grid">
-    <div class="pay-card">
-      <h3 class="pay-title">Card Payment (Invoice)</h3>
-      <p class="pay-note">
-        Card payments are handled by invoice after scope and pricing are confirmed. You’ll receive a receipt.
-      </p>
-    </div>
-
-    <div class="pay-card">
-      <h3 class="pay-title">Project Terms</h3>
-      <p class="pay-note">
-        Most fixed-scope projects begin with a deposit, with the remaining balance due at delivery.
-      </p>
-    </div>
-  </div>
-</section>
+        <div class="pay-card">
+          <h3 class="pay-title">Project Terms</h3>
+          <p class="pay-note">
+            Most fixed-scope projects begin with a deposit, with the remaining balance due at delivery.
+          </p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script>
+    // Preselect service type from URL: hire.html?v=case01
     (function () {
       const params = new URLSearchParams(window.location.search);
       const v = (params.get("v") || "").toLowerCase();
@@ -263,6 +346,37 @@
       if (v === "case01") {
         select.value = "case-study-corridor";
       }
+    })();
+
+    // Drawer toggle + close-on-link (match index behavior)
+    (() => {
+      const btn = document.getElementById('hamburger');
+      const drawer = document.getElementById('site-drawer');
+      const overlay = document.getElementById('overlay');
+
+      function openDrawer() {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        document.documentElement.style.overflow = 'hidden';
+      }
+      function closeDrawer() {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.documentElement.style.overflow = '';
+      }
+      function toggleDrawer(){
+        drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+      }
+
+      btn.addEventListener('click', toggleDrawer);
+      overlay.addEventListener('click', closeDrawer);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+
+      drawer.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => closeDrawer());
+      });
     })();
   </script>
 </body>
