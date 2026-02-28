@@ -1,4 +1,4 @@
-<!-- index.html (UPDATED: topbar = hamburger only) -->
+<!-- index.html (FIXED: hamburger-only topbar + alignment fixes + full page restored) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +11,11 @@
   <!-- Open Graph -->
   <meta property="og:title" content="GeoSite Intel | Pre-Construction Risk Screening for Builders" />
   <meta property="og:description" content="Identify drainage and terrain risk signals before you break ground: low spots, runoff concentration, and areas to field-check first." />
+  <meta property="og:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg" />
+  <meta property="og:type" content="website" />
 
   <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="GeoSite Intel | Pre-Construction Risk Screening for Builders" />
   <meta name="twitter:description" content="Identify drainage and terrain risk signals before you break ground: low spots, runoff concentration, and areas to field-check first." />
   <meta name="twitter:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg" />
@@ -49,17 +52,26 @@
         radial-gradient(900px 420px at 85% 25%, rgba(139,92,246,.12), transparent 60%),
         radial-gradient(900px 420px at 55% 90%, rgba(34,197,94,.08), transparent 60%),
         linear-gradient(180deg, var(--bg0) 0%, var(--bg2) 100%);
-      padding-top:56px;
+      padding-top:56px; /* space for fixed topbar */
     }
 
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
     .mono{font-family:var(--mono)}
-    main{max-width:1100px;margin:0 auto;padding:0 14px}
 
-    /* ---------- TOPBAR (fixed) ---------- */
+    /* Shared width wrapper (fixes alignment across hero + sections) */
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 14px;
+    }
+
+    /* ---------- TOPBAR (hamburger only) ---------- */
     .topbar{
-      position:fixed; inset:0 0 auto 0; height:56px; z-index:1000;
+      position:fixed;
+      inset:0 0 auto 0;
+      height:56px;
+      z-index:1200; /* highest */
       background:rgba(5,7,15,.72);
       backdrop-filter:blur(10px);
       border-bottom:1px solid rgba(255,255,255,.08);
@@ -94,13 +106,16 @@
     .hamburger .lines::before{ top:0; }
     .hamburger .lines::after{ bottom:0; }
 
+    /* Anchor offset so headings don't hide under fixed topbar */
+    section{ scroll-margin-top:78px; }
+
     /* ---------- DRAWER ---------- */
     .overlay{
       position:fixed; inset:0;
       background:rgba(0,0,0,.55);
       opacity:0; pointer-events:none;
       transition:opacity .2s ease;
-      z-index:999;
+      z-index:1050;
     }
     .overlay.open{opacity:1;pointer-events:auto}
 
@@ -112,7 +127,7 @@
       box-shadow:var(--shadow);
       transform:translateX(-100%);
       transition:transform .25s ease;
-      z-index:1000;
+      z-index:1100; /* above overlay, below topbar */
       display:flex; flex-direction:column;
     }
     .drawer.open{transform:translateX(0)}
@@ -137,9 +152,9 @@
       text-decoration:none;
     }
 
-    /* ---------- HERO ---------- */
+    /* ---------- HERO (now aligned with wrap) ---------- */
     header.hero{
-      margin:18px auto 18px;
+      margin:18px 0 18px;
       padding:64px 28px 52px;
       border-radius:26px;
       box-shadow:var(--shadow);
@@ -163,7 +178,6 @@
       opacity:.18;
       pointer-events:none;
     }
-    @media (min-width:820px){ header.hero{min-height:360px} }
 
     .kicker{
       display:inline-flex; gap:10px; align-items:center;
@@ -249,8 +263,9 @@
     }
     .btn.ghost:hover{background:rgba(53,210,255,.08); text-decoration:none}
 
+    /* ---------- SECTIONS ---------- */
     section{
-      margin:18px auto;
+      margin:18px 0;
       background:var(--panel);
       border:1px solid rgba(255,255,255,.10);
       padding:26px;
@@ -273,13 +288,118 @@
       max-width:900px;
     }
 
+    .case-preview{
+      width:100%;
+      max-width:980px;
+      margin:16px auto 18px auto;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 18px 50px rgba(0,0,0,.55);
+      overflow:hidden;
+      background:rgba(11,18,34,.65);
+    }
+    .case-preview img{display:block;width:100%;height:auto}
+    .case-preview .cap{
+      padding:10px 14px;
+      color:var(--muted);
+      font-size:.95rem;
+      line-height:1.5;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,.10);
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:16px;
+      margin-top:14px;
+      justify-items:center;
+      align-items:stretch;
+    }
+    .card{
+      width:100%;
+      max-width:520px;
+      background:var(--panel2);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      box-shadow:0 16px 40px rgba(0,0,0,.35);
+      text-align:center;
+      height:100%;
+    }
+    .card h3{margin:0 0 8px 0; color:var(--ink); font-size:1.1rem}
+    .card p{margin:0 0 10px 0; color:var(--muted); line-height:1.7}
+
+    .card ul{
+      margin:0 auto;
+      padding-left:0;
+      list-style:none;
+      max-width:420px;
+      text-align:left;
+      line-height:1.7;
+      color:rgba(230,234,242,.92);
+    }
+    .card ul li{
+      position:relative;
+      padding-left:26px;
+      margin:10px 0;
+    }
+    .card ul li::before{
+      content:"▸";
+      position:absolute; left:0; top:0;
+      color:var(--accent);
+      font-family:var(--mono);
+      font-weight:950;
+    }
+
+    .cards.three{ grid-template-columns:repeat(3, minmax(260px, 1fr)); }
+    @media (max-width: 980px){
+      .cards.three{ grid-template-columns:repeat(2, minmax(260px, 1fr)); }
+      .cards.three > :nth-child(3){
+        grid-column:1 / -1;
+        max-width:520px;
+        justify-self:center;
+      }
+    }
+    @media (max-width: 620px){
+      .cards.three{ grid-template-columns:1fr; }
+      .cards.three > :nth-child(3){ grid-column:auto; max-width:unset; }
+    }
+
+    .cta-band{
+      background:
+        radial-gradient(900px 320px at 15% 20%, rgba(53,210,255,.14), transparent 55%),
+        radial-gradient(900px 380px at 85% 20%, rgba(139,92,246,.14), transparent 58%),
+        rgba(11,18,34,.66);
+      border:1px solid rgba(53,210,255,.18);
+    }
+    .cta-band-inner{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:18px;
+      align-items:center;
+      justify-items:center;
+      text-align:center;
+    }
+    @media(max-width:860px){ .cta-band-inner{grid-template-columns:1fr} }
+
+    footer{
+      text-align:center;
+      margin:26px 0 40px;
+      color:var(--muted2);
+      font-size:.95em;
+      padding:0 12px;
+    }
+
     @media (max-width:800px){
-      header.hero{margin:14px 12px 16px; padding:42px 18px; border-radius:20px}
+      header.hero{margin:14px 0 16px; padding:42px 18px; border-radius:20px}
       header.hero h1{font-size:2.05rem}
-      section{margin:14px 12px; padding:20px}
+      section{margin:14px 0; padding:20px}
       .btn{width:100%}
       .btn-row{flex-direction:column}
-      .hero-card{max-width:100%}
+      .hero-card,.card{max-width:100%}
     }
   </style>
 </head>
@@ -303,7 +423,6 @@
       <div class="mono" style="font-weight:950;">menu<span style="color:var(--accent)">.</span></div>
     </header>
     <nav>
-      <!-- Keep navigation here (drawer only) -->
       <a href="index.html">Home</a>
       <a href="#case01">Case Study 01</a>
       <a href="#case02">Case Study 02</a>
@@ -316,64 +435,238 @@
     </nav>
   </aside>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="kicker">
-      <span class="tag">builders</span> pre-construction • drainage • terrain risk screening
-    </div>
+  <!-- PAGE CONTENT (aligned wrapper) -->
+  <div class="wrap">
+    <!-- HERO -->
+    <header class="hero">
+      <div class="kicker">
+        <span class="tag">builders</span> pre-construction • drainage • terrain risk screening
+      </div>
 
-    <h1>Identify drainage and terrain risks before you break ground.</h1>
+      <h1>Identify drainage and terrain risks before you break ground.</h1>
 
-    <p class="sub">
-      GeoSite Intel delivers builder-focused site screening using high-resolution LiDAR terrain and practical hydrology signals.
-      I flag likely runoff pathways, low-spot pooling cues, and potential problem zones so you can prioritize field checks,
-      reduce surprises, and make cleaner pre-permit decisions.
-    </p>
+      <p class="sub">
+        GeoSite Intel delivers builder-focused site screening using high-resolution LiDAR terrain and practical hydrology signals.
+        I flag likely runoff pathways, low-spot pooling cues, and potential problem zones so you can prioritize field checks,
+        reduce surprises, and make cleaner pre-permit decisions.
+      </p>
 
-    <div class="hero-grid">
-      <div class="hero-card">
-        <h3 class="mono">Best for</h3>
-        <p>
-          Custom home builders, spec builders, and small developers who want a fast, practical read on
-          <strong>runoff pathways</strong>, <strong>low spots</strong>, and <strong>where drainage problems may show up</strong>
-          before permitting, grading, or purchase.
-        </p>
-        <div class="btn-row">
-          <a class="btn primary" href="hire.html?v=case01#estimateForm">Request estimate</a>
-          <a class="btn ghost" href="#case01">View case study</a>
+      <div class="hero-grid">
+        <div class="hero-card">
+          <h3 class="mono">Best for</h3>
+          <p>
+            Custom home builders, spec builders, and small developers who want a fast, practical read on
+            <strong>runoff pathways</strong>, <strong>low spots</strong>, and <strong>where drainage problems may show up</strong>
+            before permitting, grading, or purchase.
+          </p>
+          <div class="btn-row">
+            <a class="btn primary" href="hire.html?v=case01#estimateForm">Request estimate</a>
+            <a class="btn ghost" href="#case01">View case study</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3 class="mono">Contact</h3>
+          <p style="margin-bottom:10px;">
+            <a id="emailLink" href="mailto:geositeintel@outlook.com" style="font-weight:980;">
+              geositeintel@outlook.com
+            </a>
+            <button id="copyEmail" title="Copy email"
+              style="border:none;background:none;cursor:pointer;margin-left:6px;font-size:1rem;color:var(--accent);">
+              ⧉
+            </button>
+            <span id="copyMsg" style="font-size:0.88rem;color:var(--accent3);margin-left:6px;display:none;">copied</span>
+          </p>
+          <p style="margin:0;color:var(--muted);line-height:1.65">
+            Send an address / parcel and what you’re deciding (lot selection, pre-permit, grading concerns, recurring water issues).
+            I’ll reply with scope, data sources, turnaround, and an estimate.
+          </p>
         </div>
       </div>
+    </header>
 
-      <div class="hero-card">
-        <h3 class="mono">Contact</h3>
-        <p style="margin-bottom:10px;">
-          <a id="emailLink" href="mailto:geositeintel@outlook.com" style="font-weight:980;">
-            geositeintel@outlook.com
-          </a>
-          <button id="copyEmail" title="Copy email"
-            style="border:none;background:none;cursor:pointer;margin-left:6px;font-size:1rem;color:var(--accent);">
-            ⧉
-          </button>
-          <span id="copyMsg" style="font-size:0.88rem;color:var(--accent3);margin-left:6px;display:none;">copied</span>
+    <main>
+      <!-- ===================== CASE STUDY 01 ===================== -->
+      <section id="case01" aria-label="Case Study 01">
+        <h2>Case Study 01: Frog Level / Davenport Farm Corridor</h2>
+        <p class="lead">
+          A corridor-focused screening built to highlight drainage pathways, terrain-driven low spots, and map-ready communication for fast review.
         </p>
-        <p style="margin:0;color:var(--muted);line-height:1.65">
-          Send an address / parcel and what you’re deciding (lot selection, pre-permit, grading concerns, recurring water issues).
-          I’ll reply with scope, data sources, turnaround, and an estimate.
+
+        <div class="case-preview" aria-label="Case Study 01 preview">
+          <img src="case_study_01_FrogLevel_Davenport.jpg?v=5" alt="Case Study 01: Frog Level / Davenport Farm Corridor layout preview">
+          <div class="cap">Case Study 01 — Frog Level / Davenport Farm Corridor (screening layout)</div>
+        </div>
+
+        <div class="cards three">
+          <article class="card">
+            <h3>What was delivered</h3>
+            <ul>
+              <li><strong>Portfolio-ready layout</strong> (print + shareable)</li>
+              <li><strong>Drainage pathways</strong> and runoff direction cues</li>
+              <li><strong>Low-spot signals</strong> using LiDAR terrain context</li>
+              <li><strong>Corridor framing</strong> for quick stakeholder review</li>
+              <li><strong>Clean labels + legend</strong> for non-technical audiences</li>
+            </ul>
+            <div style="margin-top:12px;">
+              <a class="btn primary" href="hire.html?v=case01#estimateForm">Request something similar</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>What it helps answer</h3>
+            <ul>
+              <li>Where does water likely concentrate along the corridor?</li>
+              <li>Which segments show the strongest low-spot / pooling cues?</li>
+              <li>Where could road + drainage conflicts appear?</li>
+              <li>What should be field-verified first?</li>
+              <li>How do we communicate risk clearly to stakeholders?</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Data used</h3>
+            <ul>
+              <li>High-resolution <strong>LiDAR DEM</strong> (terrain)</li>
+              <li>Hydrology layers (streams/drainage where available)</li>
+              <li>Road + building layers (public sources)</li>
+              <li>Cartographic cleanup for clarity and sharing</li>
+            </ul>
+            <p style="margin-top:10px;color:var(--muted);line-height:1.7;max-width:520px;margin-left:auto;margin-right:auto;">
+              This is a <strong>screening product</strong> to inform decisions and prioritize next steps (not a sealed engineering design).
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== CASE STUDY 02 ===================== -->
+      <section id="case02" aria-label="Case Study 02">
+        <h2>Case Study 02: North Edwards Rd — Roadway Drainage Conflict</h2>
+        <p class="lead">
+          This screening evaluated a recurring roadway ponding location along North Edwards Road.
+          Terrain and contributing area analysis were used to interpret runoff behavior and identify a likely cross-drain deficiency.
         </p>
-      </div>
-    </div>
-  </header>
 
-  <main>
-    <!-- CONTENT SECTIONS (unchanged) -->
-    <!-- ... keep the rest of your sections exactly as you already have them ... -->
-  </main>
+        <div class="case-preview" aria-label="Case Study 02 preview">
+          <img src="Case_02_North_Edwards%20Rd.jpg?v=1"
+               alt="Case Study 02: North Edwards Rd roadway ponding and expected cross-drain location">
+          <div class="cap">
+            Case Study 02 — North Edwards Rd (ponding location + contributing area signals + expected cross-drain connection)
+          </div>
+        </div>
 
-  <footer>
-    © 2026 Amanda L. Riggs · GeoSite Intel · Pre-Construction Risk Screening for Builders ·
-    <a href="hire.html?v=case01#estimateForm">Request Estimate</a> ·
-    <a href="mailto:geositeintel@outlook.com">geositeintel@outlook.com</a>
-  </footer>
+        <div class="cards three">
+          <article class="card">
+            <h3>What was identified</h3>
+            <ul>
+              <li><strong>Observed roadway ponding</strong> along a low segment</li>
+              <li>Runoff routing <strong>parallel to the road shoulder</strong></li>
+              <li>Contributing area signals supporting concentrated flow</li>
+              <li>A probable <strong>missing or undersized cross-drain</strong></li>
+              <li>Expected reconnection point to natural flow path</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Why it matters</h3>
+            <ul>
+              <li>Identifies infrastructure gaps before resurfacing or grading</li>
+              <li>Helps prioritize field verification</li>
+              <li>Supports conversations with county or DOT staff</li>
+              <li>Reduces recurring water-related complaints</li>
+              <li>Provides map-based documentation for decision-making</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Data used</h3>
+            <ul>
+              <li>High-resolution <strong>LiDAR-derived terrain</strong></li>
+              <li>Contributing area (acres) from flow accumulation</li>
+              <li>Road and structure layers (public sources)</li>
+              <li>Cartographic refinement for clear communication</li>
+            </ul>
+            <p style="margin-top:10px;color:var(--muted);line-height:1.7;max-width:520px;margin-left:auto;margin-right:auto;">
+              Screening-level product designed to inform decisions and support next-step investigation — not a sealed engineering design.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== WHY ===================== -->
+      <section id="why" aria-label="Why this works">
+        <h2>Why this approach works</h2>
+        <p class="lead">
+          Many maps look good but don’t answer the real question. This workflow keeps it practical:
+          <strong>terrain → flow → risk cues → clear communication</strong>.
+        </p>
+
+        <div class="cards three">
+          <article class="card">
+            <h3 class="mono">Builder-friendly</h3>
+            <p>Outputs that read fast in the field or a meeting — without GIS jargon.</p>
+          </article>
+          <article class="card">
+            <h3 class="mono">Engineering-style logic</h3>
+            <p>Repeatable analysis patterns: terrain first, then flow signals, then risk cues.</p>
+          </article>
+          <article class="card">
+            <h3 class="mono">Clean cartography</h3>
+            <p>Layouts built for sharing: reports, emails, city review, and client updates.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== HOW ===================== -->
+      <section id="how" aria-label="How it works">
+        <h2>How it works</h2>
+        <p class="lead">Simple workflow. Clean deliverables. No confusion.</p>
+
+        <div class="cards">
+          <article class="card">
+            <h3 class="mono">1) Intake</h3>
+            <p>Send the address/parcel + what decision you’re making.</p>
+          </article>
+          <article class="card">
+            <h3 class="mono">2) Scope + estimate</h3>
+            <p>I reply with scope, datasets, and an estimate based on complexity + timeline.</p>
+          </article>
+          <article class="card">
+            <h3 class="mono">3) Draft checkpoint</h3>
+            <p>You get a midpoint preview to confirm AOI, labels, and clarity.</p>
+          </article>
+          <article class="card">
+            <h3 class="mono">4) Delivery</h3>
+            <p>Final map(s) delivered as PDF/PNG. Optional walkthrough if helpful.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== CTA ===================== -->
+      <section class="cta-band" aria-label="Call to action">
+        <div class="cta-band-inner">
+          <div>
+            <h2 style="border:0;margin:0 0 10px 0;padding:0;">Avoid costly drainage surprises.</h2>
+            <p class="lead" style="margin:0;">
+              Before permitting, grading, or purchase — get a terrain-based screening that flags likely runoff concentration,
+              low-elevation pockets, and areas to field-check first.
+            </p>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:10px;justify-content:center;align-items:center;">
+            <a class="btn primary" href="hire.html?v=case01#estimateForm">Request estimate</a>
+            <a class="btn ghost" href="mailto:geositeintel@outlook.com">Email me</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © 2026 Amanda L. Riggs · GeoSite Intel · Pre-Construction Risk Screening for Builders ·
+      <a href="hire.html?v=case01#estimateForm">Request Estimate</a> ·
+      <a href="mailto:geositeintel@outlook.com">geositeintel@outlook.com</a>
+    </footer>
+  </div>
 
   <script>
     // Copy email
@@ -387,42 +680,34 @@
       });
     });
 
-    // Drawer toggle
+    // Drawer toggle + close-on-link
     (() => {
       const btn = document.getElementById('hamburger');
       const drawer = document.getElementById('site-drawer');
       const overlay = document.getElementById('overlay');
 
-      function open() {
+      function openDrawer() {
         drawer.classList.add('open');
         overlay.classList.add('open');
         btn.setAttribute('aria-expanded', 'true');
-        const first = drawer.querySelector('a');
-        first && first.focus();
         document.documentElement.style.overflow = 'hidden';
       }
-      function close() {
+      function closeDrawer() {
         drawer.classList.remove('open');
         overlay.classList.remove('open');
         btn.setAttribute('aria-expanded', 'false');
         document.documentElement.style.overflow = '';
-        btn.focus();
       }
-      function toggle(){ drawer.classList.contains('open') ? close() : open(); }
+      function toggleDrawer(){
+        drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+      }
 
-      btn.addEventListener('click', toggle);
-      overlay.addEventListener('click', close);
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+      btn.addEventListener('click', toggleDrawer);
+      overlay.addEventListener('click', closeDrawer);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
 
-      // basic focus trap
-      document.addEventListener('keydown', (e) => {
-        if (!drawer.classList.contains('open')) return;
-        if (e.key !== 'Tab') return;
-        const focusables = drawer.querySelectorAll('a, button');
-        const first = focusables[0];
-        const last = focusables[focusables.length - 1];
-        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      drawer.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => closeDrawer());
       });
     })();
   </script>
