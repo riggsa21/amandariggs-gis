@@ -295,12 +295,28 @@
         <label for="type">Request type</label>
         <select id="type" name="service" required>
           <option value="" selected disabled>Select an option</option>
-          <option value="case-study-corridor">Case Study Style — Corridor Drainage Screening</option>
-          <option value="custom-gis-mapping">Custom — GIS / Environmental Mapping</option>
-          <option value="custom-hydro-terrain">Custom — Hydrology / Terrain Analysis</option>
-          <option value="custom-webmap-storymap">Custom — Web Map / StoryMap</option>
-        </select>
 
+          <option value="level1-screening">
+            Level 1 — Drainage & Terrain Risk Screening (fast map + flags)
+        </option>
+
+        <option value="level2-parcel">
+          Level 2 — Parcel Scoring + Risk Table (site + parcel-level metrics)
+        </option>
+
+        <option value="road-conflict">
+          Road / Ponding Conflict Review (flow paths + likely issue zones)
+        </option>
+
+        <option value="due-diligence">
+          Pre-Purchase / Due Diligence Screening (go/no-go risk scan)
+        </option>
+
+        <option value="custom">
+          Custom — GIS / Hydrology / Mapping (tell me what you need)
+        </option>
+      </select>       
+        
         <label for="location">Site location / AOI</label>
         <input id="location" name="location" type="text" placeholder="Address, parcel ID, subdivision name, or coordinates" />
 
