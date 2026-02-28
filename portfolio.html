@@ -1,4 +1,4 @@
-<!-- portfolio.html (UPDATED: moved Automated Workflow to Map Gallery + removed Featured card + removed duplicate gallery item) -->
+<!-- portfolio.html (UPDATED: hamburger-only topbar + drawer nav, removed top nav buttons) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,31 +53,95 @@
         radial-gradient(900px 420px at 85% 25%, rgba(139,92,246,.11), transparent 60%),
         radial-gradient(900px 420px at 55% 90%, rgba(34,197,94,.07), transparent 60%),
         linear-gradient(180deg, var(--bg0) 0%, var(--bg2) 100%);
+      padding-top:56px; /* space for fixed topbar */
     }
 
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
+    .mono{font-family:var(--mono)}
 
-    /* Header / nav */
-    .site-header{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      padding:12px 12px;
+    /* ---------- TOPBAR (hamburger only) ---------- */
+    .topbar{
+      position:fixed;
+      inset:0 0 auto 0;
+      height:56px;
+      z-index:1200;
       background:rgba(5,7,15,.72);
       backdrop-filter:blur(10px);
       border-bottom:1px solid rgba(255,255,255,.08);
     }
-    .site-header nav{
-      max-width:1100px;
-      margin:0 auto;
-      font-weight:900;
-      letter-spacing:.2px;
-      text-align:center;
-      line-height:1.6;
+    .topbar-inner{
+      height:56px;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      padding:0 12px;
     }
-    .site-header nav a{color:var(--ink)}
-    .site-header nav a:hover{color:var(--accent);text-decoration:none}
+
+    .hamburger{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:40px; height:40px; border-radius:12px;
+      border:1px solid rgba(53,210,255,.55);
+      background:rgba(12,18,36,.6);
+      cursor:pointer;
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
+      flex:0 0 auto;
+    }
+    .hamburger:focus-visible{ outline:3px solid rgba(53,210,255,.35); outline-offset:2px; }
+    .hamburger .lines{ position:relative; width:18px; height:12px; }
+    .hamburger .lines::before,
+    .hamburger .lines::after,
+    .hamburger .bar{
+      content:""; position:absolute; left:0; right:0; height:2px;
+      background:linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius:2px;
+    }
+    .hamburger .bar{ top:5px; }
+    .hamburger .lines::before{ top:0; }
+    .hamburger .lines::after{ bottom:0; }
+
+    /* ---------- DRAWER ---------- */
+    .overlay{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.55);
+      opacity:0; pointer-events:none;
+      transition:opacity .2s ease;
+      z-index:1050;
+    }
+    .overlay.open{opacity:1;pointer-events:auto}
+
+    .drawer{
+      position:fixed; inset:0 auto 0 0;
+      width:300px; max-width:86vw;
+      background:rgba(10,14,28,.92);
+      border-right:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+      transform:translateX(-100%);
+      transition:transform .25s ease;
+      z-index:1100; /* above overlay, below topbar */
+      display:flex; flex-direction:column;
+    }
+    .drawer.open{transform:translateX(0)}
+    .drawer header{
+      padding:16px 18px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      display:flex; align-items:center; gap:10px;
+    }
+    .drawer nav{padding:10px}
+    .drawer a{
+      display:block;
+      padding:12px 12px;
+      border-radius:12px;
+      font-weight:850;
+      color:var(--ink);
+      border:1px solid transparent;
+      text-align:left;
+    }
+    .drawer a:hover{
+      background:rgba(53,210,255,.08);
+      border-color:rgba(53,210,255,.25);
+      text-decoration:none;
+    }
 
     /* Layout */
     .page-content{
@@ -344,313 +408,358 @@
 </head>
 
 <body>
-<header class="site-header">
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="portfolio.html">Portfolio</a> |
-    <a href="hire.html?v=case01#estimateForm">Hire Me</a> |
-    <a href="about.html">About</a>
-  </nav>
-</header>
+  <!-- TOPBAR (hamburger only) -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <button class="hamburger" id="hamburger"
+              aria-label="Open menu" aria-controls="site-drawer" aria-expanded="false">
+        <span class="lines"><span class="bar"></span></span>
+      </button>
+    </div>
+  </div>
 
-<main class="page-content">
+  <!-- OVERLAY + DRAWER -->
+  <div class="overlay" id="overlay"></div>
 
-  <section class="portfolio-intro">
-    <h1>Portfolio</h1>
-    <p>
-      Selected GIS, remote sensing, and geospatial analysis projects — including hydrology workflows,
-      DEM conditioning, land cover classification/change detection, ecosystem services modeling, and Python/ArcPy automation.
-    </p>
+  <aside class="drawer" id="site-drawer" aria-label="Site menu">
+    <header>
+      <div class="mono" style="font-weight:950;">menu<span style="color:var(--accent)">.</span></div>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="hire.html?v=case01#estimateForm">Request Estimate</a>
+      <a href="about.html">About</a>
+      <a href="mailto:geositeintel@outlook.com">Contact</a>
+    </nav>
+  </aside>
 
-    <!-- FEATURED CASE STUDY 01 -->
-    <section class="case-study-feature" aria-label="Featured case study 01">
-      <img src="case_study_01_FrogLevel_Davenport.jpg?v=5" alt="Case Study 01: Frog Level / Davenport Farm Corridor layout">
-      <div class="case-study-body">
-        <div class="case-study-kicker">Featured Case Study</div>
-        <h2>Case Study 01: Frog Level / Davenport Farm Corridor</h2>
-        <p>
-          Corridor-level drainage and terrain screening designed to flag likely low spots, runoff pathways,
-          and potential road–drainage conflict areas. Built for clear communication and fast review.
-        </p>
-        <ul class="tags">
-          <li>LiDAR DEM</li><li>Drainage Screening</li><li>Hydrology</li><li>Cartography</li>
-        </ul>
-        <div class="case-study-actions">
-          <a class="btn primary" href="hire.html?v=case01#estimateForm">Request something similar</a>
-          <a class="btn" href="#featured-projects">Jump to Featured Projects</a>
+  <main class="page-content">
+
+    <section class="portfolio-intro">
+      <h1>Portfolio</h1>
+      <p>
+        Selected GIS, remote sensing, and geospatial analysis projects — including hydrology workflows,
+        DEM conditioning, land cover classification/change detection, ecosystem services modeling, and Python/ArcPy automation.
+      </p>
+
+      <!-- FEATURED CASE STUDY 01 -->
+      <section class="case-study-feature" aria-label="Featured case study 01">
+        <img src="case_study_01_FrogLevel_Davenport.jpg?v=5" alt="Case Study 01: Frog Level / Davenport Farm Corridor layout">
+        <div class="case-study-body">
+          <div class="case-study-kicker">Featured Case Study</div>
+          <h2>Case Study 01: Frog Level / Davenport Farm Corridor</h2>
+          <p>
+            Corridor-level drainage and terrain screening designed to flag likely low spots, runoff pathways,
+            and potential road–drainage conflict areas. Built for clear communication and fast review.
+          </p>
+          <ul class="tags">
+            <li>LiDAR DEM</li><li>Drainage Screening</li><li>Hydrology</li><li>Cartography</li>
+          </ul>
+          <div class="case-study-actions">
+            <a class="btn primary" href="hire.html?v=case01#estimateForm">Request something similar</a>
+            <a class="btn" href="#featured-projects">Jump to Featured Projects</a>
+          </div>
         </div>
+      </section>
+
+      <!-- FEATURED CASE STUDY 02 -->
+      <section class="case-study-feature" aria-label="Featured case study 02">
+        <img src="Case_02_North_Edwards%20Rd.jpg?v=1" alt="Case Study 02: North Edwards Rd roadway ponding and expected cross-drain location">
+        <div class="case-study-body">
+          <div class="case-study-kicker">Featured Case Study</div>
+          <h2>Case Study 02: North Edwards Rd — Roadway Drainage Conflict</h2>
+          <p>
+            Site-focused screening highlighting an observed roadway ponding location and a likely cross-drain deficiency.
+            Contributing area signals support why flow appears to route along the road shoulder instead of reconnecting
+            to the adjacent natural flow path — providing a clear target for field verification.
+          </p>
+          <ul class="tags">
+            <li>Contributing Area (acres)</li><li>Drainage Screening</li><li>Field Verification Targeting</li><li>Cartography</li>
+          </ul>
+          <div class="case-study-actions">
+            <a class="btn primary" href="hire.html?v=case01#estimateForm">Request something similar</a>
+            <a class="btn" href="#map-gallery">Jump to Map Gallery</a>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section class="portfolio-section" id="featured-projects">
+      <h2>Featured Projects</h2>
+
+      <div class="portfolio-grid">
+
+        <article class="portfolio-card">
+          <div class="portfolio-thumb">
+            <img src="HydroConditionedDEM_Map.jpg" alt="Hydrologically conditioned DEM map">
+          </div>
+          <div class="card-body">
+            <h3>Hydrologically Conditioned DEM &amp; Stream Network</h3>
+            <p>
+              Built a hydrologically conditioned DEM and extracted a detailed stream network from
+              LiDAR-derived elevation data. Workflow included DEM preprocessing, stream burning,
+              flow direction/accumulation, threshold testing, and validation using overlap ratio and IoU metrics.
+            </p>
+            <ul class="tags">
+              <li>ArcGIS Pro</li><li>Hydrology</li><li>Raster Analysis</li><li>Python/ArcPy</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="portfolio-card">
+          <div class="portfolio-thumb">
+            <img src="Savannah_2025_Classification.jpg" alt="Savannah land cover classification">
+          </div>
+          <div class="card-body">
+            <h3>Urban Land Cover Classification &amp; Change (Savannah)</h3>
+            <p>
+              Supervised classification of Landsat imagery to map urban, forest, wetland, agriculture, and water classes,
+              followed by accuracy assessment and change detection between 1999 and 2025.
+            </p>
+            <ul class="tags">
+              <li>Remote Sensing</li><li>Landsat</li><li>Classification</li><li>Change Detection</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="portfolio-card">
+          <div class="portfolio-thumb">
+            <img src="FINAL_UFRM_HSC_rnf_rt_m3.jpg" alt="InVEST urban flood mitigation output">
+          </div>
+          <div class="card-body">
+            <h3>Urban Ecosystem Services Assessment (InVEST)</h3>
+            <p>
+              Modeled nutrient delivery, stormwater retention, and urban flood mitigation using the InVEST suite.
+              Integrated land use, soils, topography, and infrastructure to evaluate tradeoffs between development and ecosystem services.
+            </p>
+            <ul class="tags">
+              <li>InVEST</li><li>NDR / USR / UFRM</li><li>Urban Hydrology</li><li>Spatial Modeling</li>
+            </ul>
+          </div>
+        </article>
+
       </div>
     </section>
 
-    <!-- FEATURED CASE STUDY 02 -->
-    <section class="case-study-feature" aria-label="Featured case study 02">
-      <img src="Case_02_North_Edwards%20Rd.jpg?v=1" alt="Case Study 02: North Edwards Rd roadway ponding and expected cross-drain location">
-      <div class="case-study-body">
-        <div class="case-study-kicker">Featured Case Study</div>
-        <h2>Case Study 02: North Edwards Rd — Roadway Drainage Conflict</h2>
-        <p>
-          Site-focused screening highlighting an observed roadway ponding location and a likely cross-drain deficiency.
-          Contributing area signals support why flow appears to route along the road shoulder instead of reconnecting
-          to the adjacent natural flow path — providing a clear target for field verification.
-        </p>
-        <ul class="tags">
-          <li>Contributing Area (acres)</li><li>Drainage Screening</li><li>Field Verification Targeting</li><li>Cartography</li>
-        </ul>
-        <div class="case-study-actions">
-          <a class="btn primary" href="hire.html?v=case01#estimateForm">Request something similar</a>
-          <a class="btn" href="#map-gallery">Jump to Map Gallery</a>
-        </div>
+    <!-- MAP GALLERY -->
+    <section class="portfolio-section" id="map-gallery">
+      <h2>Map Gallery</h2>
+      <p>Selected maps and layouts from recent GIS and remote sensing projects.</p>
+
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <div class="gallery-thumb">
+            <img src="Case_02_North_Edwards%20Rd.jpg?v=1" alt="Case Study 02: North Edwards Rd drainage screening layout">
+          </div>
+          <figcaption>Case Study 02 — North Edwards Rd (roadway ponding + cross-drain signal)</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="FINAL_Layout_GMR_NDR_Drill_Down.jpg" alt="NDR drilldown map for GMR watershed"></div>
+          <figcaption>NDR Drill Down – GMR Watershed</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="FINAL_UFRM_HSC_rnf_rt_m3.jpg" alt="UFRM runoff retention map"></div>
+          <figcaption>Urban Flood Risk Mitigation – Runoff Retention</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="FLYER_StudyArea.jpg" alt="Study area overview"></div>
+          <figcaption>Study Area Overview Flyer</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="FSSC_DrillDown_Layout_4_10.jpg" alt="Drilldown layout for FSSC watershed"></div>
+          <figcaption>FSSC Drill Down Map</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="FinalFloodRiskMap.jpg" alt="Flood risk classification map"></div>
+          <figcaption>Final Flood Risk Map</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="FinalStudyArea_Layout.jpg" alt="Main study area layout"></div>
+          <figcaption>Final Study Area Layout</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="Final_HydroFlattening_Layout.jpg" alt="Hydroflattening workflow output"></div>
+          <figcaption>Hydroflattened DEM – Final Output</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb">
+            <img src="FullWorkflow_HydroFlat.JPG" alt="Automated Hydrology &amp; Layout Workflow diagram">
+          </div>
+          <figcaption>Automated Hydrology &amp; Layout Workflow (ArcPy)</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="GPT_GMRStorymap.png" alt="StoryMap export example map"></div>
+          <figcaption>StoryMap Export – GMR</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="GPT_GMRTransport.png" alt="Transportation layer map"></div>
+          <figcaption>Transportation Map – GMR</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="GreensMillRun_NDR_DrillDown.jpg" alt="Greens Mill Run NDR drilldown"></div>
+          <figcaption>NDR Drill Down – Greens Mill Run</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="Harkers Island Map.jpg" alt="Harkers Island map"></div>
+          <figcaption>Harkers Island Map</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="HydroConditionedDEM_Map.jpg" alt="Hydrologically conditioned DEM"></div>
+          <figcaption>Hydroconditioned DEM Map</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="Hydro_Processed_Final_Result.jpg" alt="Final hydrology processing output"></div>
+          <figcaption>Hydrology Processing – Final Result</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="Lab_5_Change_Detection.jpg" alt="Land cover change detection lab output"></div>
+          <figcaption>Change Detection Lab Output</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="Layout_StudyArea_3.jpg" alt="Study area layout map"></div>
+          <figcaption>Study Area – Version 3</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="NewSugar.jpg" alt="New Sugar map output"></div>
+          <figcaption>New Sugar Map Output</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="OR_IoU_Layout2.jpg" alt="Overlap ratio and IoU validation layout"></div>
+          <figcaption>OR &amp; IoU Validation Layout</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="Prediction Map.jpg" alt="Prediction raster map"></div>
+          <figcaption>Prediction Map Output</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="Savannah_1999_Classification.jpg" alt="1999 Savannah land cover classification"></div>
+          <figcaption>Savannah 1999 Land Cover Classification</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="Savannah_1999_spectral.png" alt="Spectral signatures for Savannah 1999"></div>
+          <figcaption>Savannah 1999 Spectral Signature Plot</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="Savannah_2025_Classification.jpg" alt="2025 Savannah land cover classification"></div>
+          <figcaption>Savannah 2025 Land Cover Classification</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="Slope_ElevationDifferenceLayout.jpg" alt="Slope and elevation difference layout"></div>
+          <figcaption>Slope &amp; Elevation Difference Layout</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="USR_Drill_Down_4_10.jpg" alt="USR drilldown map"></div>
+          <figcaption>USR Drill Down Map</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="USR_Retention_Map.jpg" alt="Retention map for urban stormwater"></div>
+          <figcaption>Stormwater Retention Map</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-thumb"><img src="Z_final_Layout.jpg" alt="Final layout"></div>
+          <figcaption>Final Layout (Z)</figcaption>
+        </figure>
       </div>
     </section>
-  </section>
 
-  <!-- FEATURED PROJECTS (Automated Workflow card REMOVED) -->
-  <section class="portfolio-section" id="featured-projects">
-    <h2>Featured Projects</h2>
+    <section class="portfolio-section">
+      <h2>Workflows &amp; Methods</h2>
 
-    <div class="portfolio-grid">
-
-      <article class="portfolio-card">
-        <div class="portfolio-thumb">
-          <img src="HydroConditionedDEM_Map.jpg" alt="Hydrologically conditioned DEM map">
-        </div>
-        <div class="card-body">
-          <h3>Hydrologically Conditioned DEM &amp; Stream Network</h3>
-          <p>
-            Built a hydrologically conditioned DEM and extracted a detailed stream network from
-            LiDAR-derived elevation data. Workflow included DEM preprocessing, stream burning,
-            flow direction/accumulation, threshold testing, and validation using overlap ratio and IoU metrics.
-          </p>
-          <ul class="tags">
-            <li>ArcGIS Pro</li><li>Hydrology</li><li>Raster Analysis</li><li>Python/ArcPy</li>
-          </ul>
-        </div>
+      <article class="workflow">
+        <h3>Hydrology &amp; DEM Conditioning Workflow</h3>
+        <ol>
+          <li>Resample LiDAR-derived DEM and fill sinks.</li>
+          <li>Generate flow direction and flow accumulation rasters.</li>
+          <li>Create a stream raster using threshold-based accumulation.</li>
+          <li>Burn streams into the DEM using conditional expressions.</li>
+          <li>Recalculate flow direction/accumulation and extract stream network.</li>
+          <li>Validate using reference data and overlap/intersection metrics.</li>
+        </ol>
       </article>
 
-      <article class="portfolio-card">
-        <div class="portfolio-thumb">
-          <img src="Savannah_2025_Classification.jpg" alt="Savannah land cover classification">
-        </div>
-        <div class="card-body">
-          <h3>Urban Land Cover Classification &amp; Change (Savannah)</h3>
-          <p>
-            Supervised classification of Landsat imagery to map urban, forest, wetland, agriculture, and water classes,
-            followed by accuracy assessment and change detection between 1999 and 2025.
-          </p>
-          <ul class="tags">
-            <li>Remote Sensing</li><li>Landsat</li><li>Classification</li><li>Change Detection</li>
-          </ul>
-        </div>
+      <article class="workflow">
+        <h3>Land Cover Classification &amp; Change Detection</h3>
+        <ol>
+          <li>Preprocess imagery (stack bands, clip to AOI).</li>
+          <li>Create training samples and run supervised classification.</li>
+          <li>Assess accuracy using a confusion matrix and validation points.</li>
+          <li>Reclassify classes into unified categories for multi-year comparison.</li>
+          <li>Compute change statistics and create change maps.</li>
+        </ol>
       </article>
 
-      <article class="portfolio-card">
-        <div class="portfolio-thumb">
-          <img src="FINAL_UFRM_HSC_rnf_rt_m3.jpg" alt="InVEST urban flood mitigation output">
-        </div>
-        <div class="card-body">
-          <h3>Urban Ecosystem Services Assessment (InVEST)</h3>
-          <p>
-            Modeled nutrient delivery, stormwater retention, and urban flood mitigation using the InVEST suite.
-            Integrated land use, soils, topography, and infrastructure to evaluate tradeoffs between development and ecosystem services.
-          </p>
-          <ul class="tags">
-            <li>InVEST</li><li>NDR / USR / UFRM</li><li>Urban Hydrology</li><li>Spatial Modeling</li>
-          </ul>
-        </div>
+      <article class="workflow">
+        <h3>Automated Portfolio Layout Export (ArcPy)</h3>
+        <ol>
+          <li>Scan a file geodatabase for key feature classes (streams, roads, AOIs).</li>
+          <li>Build or update a map in ArcGIS Pro using those layers.</li>
+          <li>Apply a standardized layout template and map frame extent.</li>
+          <li>Export layouts to PNG/JPEG at web and print resolutions.</li>
+        </ol>
       </article>
+    </section>
 
-    </div>
-  </section>
+  </main>
 
-  <!-- MAP GALLERY (Stream Extraction replaced with Automated Workflow) -->
-  <section class="portfolio-section" id="map-gallery">
-    <h2>Map Gallery</h2>
-    <p>Selected maps and layouts from recent GIS and remote sensing projects.</p>
+  <script>
+    // Drawer toggle + close-on-link (match index behavior)
+    (() => {
+      const btn = document.getElementById('hamburger');
+      const drawer = document.getElementById('site-drawer');
+      const overlay = document.getElementById('overlay');
 
-    <div class="gallery-grid">
+      function openDrawer() {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        document.documentElement.style.overflow = 'hidden';
+      }
+      function closeDrawer() {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.documentElement.style.overflow = '';
+      }
+      function toggleDrawer(){
+        drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+      }
 
-      <figure class="gallery-item">
-        <div class="gallery-thumb">
-          <img src="Case_02_North_Edwards%20Rd.jpg?v=1" alt="Case Study 02: North Edwards Rd drainage screening layout">
-        </div>
-        <figcaption>Case Study 02 — North Edwards Rd (roadway ponding + cross-drain signal)</figcaption>
-      </figure>
+      btn.addEventListener('click', toggleDrawer);
+      overlay.addEventListener('click', closeDrawer);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
 
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="FINAL_Layout_GMR_NDR_Drill_Down.jpg" alt="NDR drilldown map for GMR watershed"></div>
-        <figcaption>NDR Drill Down – GMR Watershed</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="FINAL_UFRM_HSC_rnf_rt_m3.jpg" alt="UFRM runoff retention map"></div>
-        <figcaption>Urban Flood Risk Mitigation – Runoff Retention</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="FLYER_StudyArea.jpg" alt="Study area overview"></div>
-        <figcaption>Study Area Overview Flyer</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="FSSC_DrillDown_Layout_4_10.jpg" alt="Drilldown layout for FSSC watershed"></div>
-        <figcaption>FSSC Drill Down Map</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="FinalFloodRiskMap.jpg" alt="Flood risk classification map"></div>
-        <figcaption>Final Flood Risk Map</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="FinalStudyArea_Layout.jpg" alt="Main study area layout"></div>
-        <figcaption>Final Study Area Layout</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="Final_HydroFlattening_Layout.jpg" alt="Hydroflattening workflow output"></div>
-        <figcaption>Hydroflattened DEM – Final Output</figcaption>
-      </figure>
-
-      <!-- ✅ REPLACED: Stream Extraction Layout -> Automated Hydrology & Layout Workflow -->
-      <figure class="gallery-item">
-        <div class="gallery-thumb">
-          <img src="FullWorkflow_HydroFlat.JPG" alt="Automated Hydrology &amp; Layout Workflow diagram">
-        </div>
-        <figcaption>Automated Hydrology &amp; Layout Workflow (ArcPy)</figcaption>
-      </figure>
-
-      <!-- ✅ REMOVED: duplicate FullWorkflow_HydroFlat.JPG item (so it only appears once) -->
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="GPT_GMRStorymap.png" alt="StoryMap export example map"></div>
-        <figcaption>StoryMap Export – GMR</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="GPT_GMRTransport.png" alt="Transportation layer map"></div>
-        <figcaption>Transportation Map – GMR</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="GreensMillRun_NDR_DrillDown.jpg" alt="Greens Mill Run NDR drilldown"></div>
-        <figcaption>NDR Drill Down – Greens Mill Run</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="Harkers Island Map.jpg" alt="Harkers Island map"></div>
-        <figcaption>Harkers Island Map</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="HydroConditionedDEM_Map.jpg" alt="Hydrologically conditioned DEM"></div>
-        <figcaption>Hydroconditioned DEM Map</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="Hydro_Processed_Final_Result.jpg" alt="Final hydrology processing output"></div>
-        <figcaption>Hydrology Processing – Final Result</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="Lab_5_Change_Detection.jpg" alt="Land cover change detection lab output"></div>
-        <figcaption>Change Detection Lab Output</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="Layout_StudyArea_3.jpg" alt="Study area layout map"></div>
-        <figcaption>Study Area – Version 3</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="NewSugar.jpg" alt="New Sugar map output"></div>
-        <figcaption>New Sugar Map Output</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="OR_IoU_Layout2.jpg" alt="Overlap ratio and IoU validation layout"></div>
-        <figcaption>OR &amp; IoU Validation Layout</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="Prediction Map.jpg" alt="Prediction raster map"></div>
-        <figcaption>Prediction Map Output</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="Savannah_1999_Classification.jpg" alt="1999 Savannah land cover classification"></div>
-        <figcaption>Savannah 1999 Land Cover Classification</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="Savannah_1999_spectral.png" alt="Spectral signatures for Savannah 1999"></div>
-        <figcaption>Savannah 1999 Spectral Signature Plot</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="Savannah_2025_Classification.jpg" alt="2025 Savannah land cover classification"></div>
-        <figcaption>Savannah 2025 Land Cover Classification</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="Slope_ElevationDifferenceLayout.jpg" alt="Slope and elevation difference layout"></div>
-        <figcaption>Slope &amp; Elevation Difference Layout</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="USR_Drill_Down_4_10.jpg" alt="USR drilldown map"></div>
-        <figcaption>USR Drill Down Map</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="USR_Retention_Map.jpg" alt="Retention map for urban stormwater"></div>
-        <figcaption>Stormwater Retention Map</figcaption>
-      </figure>
-
-      <figure class="gallery-item">
-        <div class="gallery-thumb"><img src="Z_final_Layout.jpg" alt="Final layout"></div>
-        <figcaption>Final Layout (Z)</figcaption>
-      </figure>
-
-    </div>
-  </section>
-
-  <section class="portfolio-section">
-    <h2>Workflows &amp; Methods</h2>
-
-    <article class="workflow">
-      <h3>Hydrology &amp; DEM Conditioning Workflow</h3>
-      <ol>
-        <li>Resample LiDAR-derived DEM and fill sinks.</li>
-        <li>Generate flow direction and flow accumulation rasters.</li>
-        <li>Create a stream raster using threshold-based accumulation.</li>
-        <li>Burn streams into the DEM using conditional expressions.</li>
-        <li>Recalculate flow direction/accumulation and extract stream network.</li>
-        <li>Validate using reference data and overlap/intersection metrics.</li>
-      </ol>
-    </article>
-
-    <article class="workflow">
-      <h3>Land Cover Classification &amp; Change Detection</h3>
-      <ol>
-        <li>Preprocess imagery (stack bands, clip to AOI).</li>
-        <li>Create training samples and run supervised classification.</li>
-        <li>Assess accuracy using a confusion matrix and validation points.</li>
-        <li>Reclassify classes into unified categories for multi-year comparison.</li>
-        <li>Compute change statistics and create change maps.</li>
-      </ol>
-    </article>
-
-    <article class="workflow">
-      <h3>Automated Portfolio Layout Export (ArcPy)</h3>
-      <ol>
-        <li>Scan a file geodatabase for key feature classes (streams, roads, AOIs).</li>
-        <li>Build or update a map in ArcGIS Pro using those layers.</li>
-        <li>Apply a standardized layout template and map frame extent.</li>
-        <li>Export layouts to PNG/JPEG at web and print resolutions.</li>
-      </ol>
-    </article>
-  </section>
-
-</main>
+      drawer.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => closeDrawer());
+      });
+    })();
+  </script>
 </body>
 </html>
