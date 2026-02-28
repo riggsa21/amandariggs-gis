@@ -38,26 +38,28 @@
         radial-gradient(900px 420px at 85% 25%, rgba(139,92,246,.11), transparent 60%),
         radial-gradient(900px 420px at 55% 90%, rgba(34,197,94,.07), transparent 60%),
         linear-gradient(180deg, var(--bg0) 0%, var(--bg2) 100%);
-      padding-top:56px;
+      padding-top:56px; /* space for fixed topbar */
     }
 
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
     .mono{font-family:var(--mono)}
 
-    /* ---------- TOPBAR ---------- */
+    /* ---------- TOPBAR (hamburger only, like index) ---------- */
     .topbar{
-      position:fixed; inset:0 0 auto 0; height:56px; z-index:1000;
+      position:fixed;
+      inset:0 0 auto 0;
+      height:56px;
+      z-index:1200; /* match index-style layering */
       background:rgba(5,7,15,.72);
       backdrop-filter:blur(10px);
       border-bottom:1px solid rgba(255,255,255,.08);
     }
     .topbar-inner{
-      position:relative;
       height:56px;
       display:flex;
       align-items:center;
-      gap:10px;
+      justify-content:flex-start;
       padding:0 12px;
     }
 
@@ -83,44 +85,13 @@
     .hamburger .lines::before{ top:0; }
     .hamburger .lines::after{ bottom:0; }
 
-    .home-btn{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 12px;border-radius:12px;
-      border:1px solid rgba(53,210,255,.45);
-      color:var(--ink);
-      background:rgba(12,18,36,.55);
-      font-weight:900;
-      text-decoration:none;
-      box-shadow:0 10px 30px rgba(0,0,0,.35);
-      flex:0 0 auto;
-    }
-    .home-btn:hover{background:rgba(53,210,255,.08);text-decoration:none}
-
-    /* True centered brand */
-    .brand{
-      position:absolute;
-      left:50%;
-      transform:translateX(-50%);
-      font-weight:950;
-      letter-spacing:.2px;
-      font-size:1.02rem;
-      color:var(--ink);
-      white-space:nowrap;
-      max-width:calc(100% - 220px); /* prevents overlap with left controls */
-      overflow:hidden;
-      text-overflow:ellipsis;
-      text-align:center;
-      pointer-events:none;
-    }
-    .brand .sep{opacity:.75;padding:0 8px}
-
     /* ---------- DRAWER ---------- */
     .overlay{
       position:fixed; inset:0;
       background:rgba(0,0,0,.55);
       opacity:0; pointer-events:none;
       transition:opacity .2s ease;
-      z-index:999;
+      z-index:1050;
     }
     .overlay.open{opacity:1;pointer-events:auto}
 
@@ -132,7 +103,7 @@
       box-shadow:var(--shadow);
       transform:translateX(-100%);
       transition:transform .25s ease;
-      z-index:1000;
+      z-index:1100; /* above overlay, below topbar */
       display:flex; flex-direction:column;
     }
     .drawer.open{transform:translateX(0)}
@@ -193,15 +164,15 @@
     /* Logo sizing (fixes “too large”) */
     .logo-wrap{display:flex;justify-content:center;margin:14px 0 6px}
     .logo{
-      width:180px;          /* was 240px */
+      width:180px;
       max-width:50vw;
       height:auto;
       display:block;
-      border-radius:10px;   /* slightly tighter */
+      border-radius:10px;
       box-shadow:0 12px 30px rgba(0,0,0,.35);
-      border:none;          /* remove border */
-      background:none;      /* remove white block */
-      padding:0;            /* remove padding */
+      border:none;
+      background:none;
+      padding:0;
     }
 
     .chips{
@@ -252,28 +223,22 @@
 </head>
 
 <body>
+  <!-- TOPBAR (hamburger only) -->
   <div class="topbar">
     <div class="topbar-inner">
       <button class="hamburger" id="hamburger"
               aria-label="Open menu" aria-controls="site-drawer" aria-expanded="false">
         <span class="lines"><span class="bar"></span></span>
       </button>
-
-      <a class="home-btn" href="index.html">← Home</a>
-
-      <div class="brand mono">
-        <span>GeoSite</span> <span>Intel</span><span class="sep">|</span><span>About</span>
-      </div>
     </div>
   </div>
 
+  <!-- OVERLAY + DRAWER -->
   <div class="overlay" id="overlay"></div>
 
   <aside class="drawer" id="site-drawer" aria-label="Site menu">
     <header>
-      <div class="brand" style="position:static;transform:none;max-width:none;pointer-events:auto;">
-        <span class="mono">menu</span><span style="color:var(--accent)">.</span>
-      </div>
+      <div class="mono" style="font-weight:950;">menu<span style="color:var(--accent)">.</span></div>
     </header>
     <nav>
       <a href="index.html">Home</a>
@@ -288,18 +253,12 @@
     <section class="panel">
       <h1>About GeoSite Intel</h1>
 
-      <!-- ✅ UPDATE THIS URL to match your exact file name/case -->
-      <!-- Example options:
-           .../logo_0.jpg
-           .../Logo_0.jpg
-           .../logo_0.png
-      -->
-    <div class="logo-wrap">
-      <img class="logo"
-        src="https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/Logo_black.png"
-        alt="GeoSite Intel Logo">
-    </div>
-      
+      <div class="logo-wrap">
+        <img class="logo"
+          src="https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/Logo_black.png"
+          alt="GeoSite Intel Logo">
+      </div>
+
       <p class="lead">
         <strong>GeoSite Intel</strong> provides <strong>pre-construction drainage and terrain risk screening</strong>
         for builders and development teams.
@@ -349,34 +308,36 @@
   </main>
 
   <script>
+    // Drawer toggle + close-on-link (match index behavior)
     (() => {
       const btn = document.getElementById('hamburger');
       const drawer = document.getElementById('site-drawer');
       const overlay = document.getElementById('overlay');
 
-      function open() {
+      function openDrawer() {
         drawer.classList.add('open');
         overlay.classList.add('open');
         btn.setAttribute('aria-expanded', 'true');
         document.documentElement.style.overflow = 'hidden';
       }
-      function close() {
+      function closeDrawer() {
         drawer.classList.remove('open');
         overlay.classList.remove('open');
         btn.setAttribute('aria-expanded', 'false');
         document.documentElement.style.overflow = '';
       }
-      function toggle(){ drawer.classList.contains('open') ? close() : open(); }
+      function toggleDrawer(){
+        drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+      }
 
-      btn?.addEventListener('click', toggle);
-      overlay?.addEventListener('click', close);
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+      btn.addEventListener('click', toggleDrawer);
+      overlay.addEventListener('click', closeDrawer);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+
+      drawer.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => closeDrawer());
+      });
     })();
   </script>
 </body>
 </html>
-
-
-
-
-
