@@ -401,6 +401,38 @@
       .btn-row{flex-direction:column}
       .hero-card,.card{max-width:100%}
     }
+    /* ✅ FIX: "How it works" layout — center card 4 on its own row */
+    #how .cards{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(260px, 1fr));
+      gap:16px;
+      justify-items:center;
+      align-items:stretch;
+    }
+    
+    /* Card 4 spans full row and is centered */
+    #how .cards > .card:nth-child(4){
+      grid-column:1 / -1;
+      max-width:520px;
+      justify-self:center;
+    }
+    
+    /* Responsive: 2 columns, then 1 column */
+    @media (max-width: 980px){
+      #how .cards{ grid-template-columns:repeat(2, minmax(260px, 1fr)); }
+      #how .cards > .card:nth-child(4){ grid-column:1 / -1; max-width:520px; }
+    }
+    @media (max-width: 620px){
+      #how .cards{ grid-template-columns:1fr; }
+      #how .cards > .card:nth-child(4){ grid-column:auto; max-width:unset; }
+    }
+    
+    /* ✅ Keep text centered inside those cards */
+    #how .card,
+    #how .card h3,
+    #how .card p{
+      text-align:center;
+    }
   </style>
 </head>
 
@@ -713,3 +745,4 @@
   </script>
 </body>
 </html>
+
