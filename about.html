@@ -1,595 +1,195 @@
+<!-- about.html | GeoSite Intel -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>About Amanda Riggs | GeoSite Intel</title>
 
   <meta
     name="description"
-    content="Meet Amanda L. Riggs, the geographer and GIS analyst behind GeoSite Intel. Learn how GeoSite turns parcel, environmental, terrain, and historical data into clear property research for real estate decisions."
-  />
+    content="Meet Amanda L. Riggs, the geographer and GIS analyst behind GeoSite Intel. Learn how GeoSite turns parcel, environmental, terrain, and historical data into clear property research."
+  >
 
-  <!-- Open Graph -->
-  <meta
-    property="og:title"
-    content="About Amanda Riggs | GeoSite Intel"
-  />
+  <meta name="theme-color" content="#0b1724">
+  <link rel="canonical" href="https://geositeintel.com/about.html">
+  <link rel="stylesheet" href="site.css">
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1724'/%3E%3Cpath d='M32 9C21.5 9 13 17.5 13 28c0 13.8 19 28 19 28s19-14.2 19-28C51 17.5 42.5 9 32 9zm0 26a7 7 0 1 1 0-14 7 7 0 0 1 0 14z' fill='%2356b9b4'/%3E%3C/svg%3E"
+  >
+
+  <meta property="og:title" content="About Amanda Riggs | GeoSite Intel">
   <meta
     property="og:description"
-    content="Independent GIS property research and environmental mapping for buyers, landowners, real estate professionals, and investors."
-  />
+    content="Independent GIS-based property research and environmental mapping for informed land and real estate decisions."
+  >
+  <meta property="og:image" content="https://geositeintel.com/Logo_black.png">
+  <meta property="og:url" content="https://geositeintel.com/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GeoSite Intel">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Amanda Riggs | GeoSite Intel">
   <meta
-    property="og:image"
-    content="https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/Logo_black.png"
-  />
-  <meta property="og:type" content="website" />
+    name="twitter:description"
+    content="Meet the geographer and GIS analyst behind GeoSite Intel."
+  >
+  <meta name="twitter:image" content="https://geositeintel.com/Logo_black.png">
 
-  <style>
-    :root {
-      --bg0: #05070f;
-      --bg2: #0b1020;
-      --panel: rgba(12, 18, 36, 0.7);
-      --panel2: rgba(11, 18, 34, 0.72);
-      --ink: #e6eaf2;
-      --muted: #aab3c5;
-      --muted2: #7f8aa3;
-      --shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
-      --shadow-sm: 0 10px 28px rgba(0, 0, 0, 0.45);
-
-      --accent: #35d2ff;
-      --accent2: #8b5cf6;
-      --accent3: #22c55e;
-
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-        "Liberation Mono", "Courier New", monospace;
-      --sans: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--sans);
-      color: var(--ink);
-      background:
-        radial-gradient(
-          1200px 520px at 15% 10%,
-          rgba(53, 210, 255, 0.12),
-          transparent 60%
-        ),
-        radial-gradient(
-          900px 420px at 85% 25%,
-          rgba(139, 92, 246, 0.11),
-          transparent 60%
-        ),
-        radial-gradient(
-          900px 420px at 55% 90%,
-          rgba(34, 197, 94, 0.07),
-          transparent 60%
-        ),
-        linear-gradient(180deg, var(--bg0) 0%, var(--bg2) 100%);
-      padding-top: 56px;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .mono {
-      font-family: var(--mono);
-    }
-
-    /* ---------- TOPBAR ---------- */
-
-    .topbar {
-      position: fixed;
-      inset: 0 0 auto 0;
-      height: 56px;
-      z-index: 1200;
-      background: rgba(5, 7, 15, 0.72);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .topbar-inner {
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 0 12px;
-    }
-
-    .hamburger {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      border: 1px solid rgba(53, 210, 255, 0.55);
-      background: rgba(12, 18, 36, 0.6);
-      cursor: pointer;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-      flex: 0 0 auto;
-    }
-
-    .hamburger:focus-visible {
-      outline: 3px solid rgba(53, 210, 255, 0.35);
-      outline-offset: 2px;
-    }
-
-    .hamburger .lines {
-      position: relative;
-      width: 18px;
-      height: 12px;
-    }
-
-    .hamburger .lines::before,
-    .hamburger .lines::after,
-    .hamburger .bar {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      border-radius: 2px;
-    }
-
-    .hamburger .bar {
-      top: 5px;
-    }
-
-    .hamburger .lines::before {
-      top: 0;
-    }
-
-    .hamburger .lines::after {
-      bottom: 0;
-    }
-
-    /* ---------- DRAWER ---------- */
-
-    .overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.55);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s ease;
-      z-index: 1050;
-    }
-
-    .overlay.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .drawer {
-      position: fixed;
-      inset: 0 auto 0 0;
-      width: 300px;
-      max-width: 86vw;
-      background: rgba(10, 14, 28, 0.92);
-      border-right: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: var(--shadow);
-      transform: translateX(-100%);
-      transition: transform 0.25s ease;
-      z-index: 1100;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .drawer.open {
-      transform: translateX(0);
-    }
-
-    .drawer header {
-      padding: 16px 18px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .drawer nav {
-      padding: 10px;
-    }
-
-    .drawer a {
-      display: block;
-      padding: 12px;
-      border-radius: 12px;
-      font-weight: 850;
-      color: var(--ink);
-      border: 1px solid transparent;
-      text-align: left;
-    }
-
-    .drawer a:hover {
-      background: rgba(53, 210, 255, 0.08);
-      border-color: rgba(53, 210, 255, 0.25);
-      text-decoration: none;
-    }
-
-    /* ---------- PAGE LAYOUT ---------- */
-
-    main {
-      max-width: 1000px;
-      margin: 18px auto;
-      padding: 0 14px;
-    }
-
-    .panel {
-      background: var(--panel);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      box-shadow: var(--shadow-sm);
-      padding: 22px;
-      margin-bottom: 16px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 10px 0;
-      font-size: 2.05rem;
-      font-weight: 980;
-      letter-spacing: 0.2px;
-      line-height: 1.2;
-    }
-
-    h2 {
-      margin: 0 0 10px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      font-size: 1.25rem;
-      letter-spacing: 0.2px;
-    }
-
-    .lead {
-      color: rgba(230, 234, 242, 0.92);
-      line-height: 1.8;
-      margin: 0 auto 12px;
-      max-width: 860px;
-    }
-
-    .muted {
-      color: var(--muted);
-      line-height: 1.75;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    /* ---------- LOGO ---------- */
-
-    .logo-wrap {
-      display: flex;
-      justify-content: center;
-      margin: 14px 0 6px;
-    }
-
-    .logo {
-      width: 180px;
-      max-width: 50vw;
-      height: auto;
-      display: block;
-      border-radius: 10px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-      border: none;
-      background: none;
-      padding: 0;
-    }
-
-    /* ---------- SERVICE CHIPS ---------- */
-
-    .chips {
-      list-style: none;
-      padding: 0;
-      margin: 14px auto 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      max-width: 900px;
-    }
-
-    .chips li {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(11, 18, 34, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: rgba(230, 234, 242, 0.92);
-      font-weight: 850;
-      font-size: 0.92rem;
-    }
-
-    .chips li span {
-      color: var(--accent);
-      font-family: var(--mono);
-      font-weight: 950;
-      margin-right: 6px;
-    }
-
-    /* ---------- CONTACT LINKS ---------- */
-
-    .contact-links {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(12, 18, 36, 0.55);
-      color: var(--ink);
-      font-weight: 900;
-      text-decoration: none;
-    }
-
-    .pill:hover {
-      background: rgba(53, 210, 255, 0.08);
-      text-decoration: none;
-    }
-
-    /* ---------- ADDITIONAL ELEMENTS ---------- */
-
-    .note {
-      margin-top: 12px;
-      color: var(--muted2);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      max-width: 860px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 7px 12px;
-      margin-bottom: 4px;
-      border-radius: 999px;
-      border: 1px solid rgba(53, 210, 255, 0.3);
-      background: rgba(12, 18, 36, 0.65);
-      color: var(--accent);
-      font-family: var(--mono);
-      font-size: 0.9rem;
-      font-weight: 950;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(220px, 1fr));
-      gap: 14px;
-      margin-top: 16px;
-    }
-
-    .info-card {
-      background: var(--panel2);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      padding: 17px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
-      text-align: center;
-    }
-
-    .info-card h3 {
-      margin: 0 0 8px;
-      font-size: 1.02rem;
-      color: var(--ink);
-    }
-
-    .info-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .statement {
-      max-width: 860px;
-      margin: 12px auto 0;
-      padding: 14px 16px;
-      border-left: 3px solid var(--accent);
-      border-radius: 10px;
-      background: rgba(53, 210, 255, 0.06);
-      color: rgba(230, 234, 242, 0.92);
-      line-height: 1.75;
-      text-align: left;
-    }
-
-    /* ---------- RESPONSIVE ---------- */
-
-    @media (max-width: 800px) {
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      main {
-        margin-top: 14px;
-      }
-
-      .panel {
-        padding: 19px;
-      }
-
-      h1 {
-        font-size: 1.8rem;
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About GeoSite Intel",
+      "url": "https://geositeintel.com/about.html",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Amanda L. Riggs",
+        "jobTitle": "Geographer and GIS Analyst",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "GeoSite Intel"
+        }
       }
     }
-  </style>
+  </script>
 </head>
 
 <body>
-  <!-- TOPBAR -->
   <div class="topbar">
     <div class="topbar-inner">
       <button
         class="hamburger"
         id="hamburger"
+        type="button"
         aria-label="Open menu"
         aria-controls="site-drawer"
         aria-expanded="false"
       >
-        <span class="lines">
-          <span class="bar"></span>
-        </span>
+        <span class="lines"><span class="bar"></span></span>
       </button>
+
+      <a class="topbar-brand" href="index.html">
+        GeoSite Intel<span class="brand-dot">.</span>
+      </a>
     </div>
   </div>
 
-  <!-- OVERLAY AND DRAWER -->
   <div class="overlay" id="overlay"></div>
 
   <aside class="drawer" id="site-drawer" aria-label="Site menu">
     <header>
-      <div class="mono" style="font-weight: 950">
-        menu<span style="color: var(--accent)">.</span>
+      <div class="mono drawer-title">
+        GeoSite Intel<span class="brand-dot">.</span>
       </div>
+      <div class="drawer-subtitle">Property research and professional mapping</div>
     </header>
 
-    <nav>
+    <nav aria-label="Main site navigation">
       <a href="index.html">Home</a>
       <a href="index.html#services">Property Services</a>
-      <a href="portfolio.html">Portfolio</a>
+      <a href="portfolio.html">Property Examples</a>
+      <a href="reviews.html">Reviews</a>
       <a href="hire.html#estimateForm">Request Estimate</a>
-      <a href="about.html">About</a>
+      <a href="about.html" aria-current="page">About</a>
       <a href="mailto:geositeintel@outlook.com">Contact</a>
     </nav>
   </aside>
 
-  <main>
-    <!-- ABOUT GEOSITE -->
-    <section class="panel">
+  <main class="page-shell">
+    <section class="panel page-hero" aria-labelledby="about-title">
       <div class="eyebrow">
         independent GIS • property research • environmental mapping
       </div>
 
-      <h1>About GeoSite Intel</h1>
+      <h1 id="about-title">About GeoSite Intel</h1>
 
-      <div class="logo-wrap">
-        <img
-          class="logo"
-          src="https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/Logo_black.png"
-          alt="GeoSite Intel Logo"
-        />
-      </div>
-
-      <p class="lead">
-        <strong>GeoSite Intel</strong> is an independent GIS and environmental
-        mapping service created by <strong>Amanda L. Riggs</strong> to help
-        people understand land and property before making important decisions.
+      <p class="hero-copy">
+        GeoSite Intel is an independent GIS and environmental mapping service
+        created by Amanda L. Riggs to help people understand land and property
+        before making important decisions.
       </p>
 
-      <p class="muted">
+      <div class="logo-plaque">
+        <img src="Logo_black.png" alt="GeoSite Intel logo">
+      </div>
+
+      <p class="hero-copy">
         A listing, tax card, or standard parcel viewer can only tell part of the
         story. I bring together relevant parcel records, terrain, environmental
         data, historical imagery, and surrounding land context to create
-        focused research for buyers, property owners, real estate
-        professionals, and small investors.
+        focused research for buyers, owners, real estate professionals, and
+        small investors.
       </p>
 
-      <ul class="chips" aria-label="What we do">
-        <li>
-          <span>▸</span>Parcel &amp; location research
-        </li>
-
-        <li>
-          <span>▸</span>Environmental &amp; terrain screening
-        </li>
-
-        <li>
-          <span>▸</span>Historical imagery review
-        </li>
-
-        <li>
-          <span>▸</span>Property comparison
-        </li>
-
-        <li>
-          <span>▸</span>Professional custom maps
-        </li>
-
-        <li>
-          <span>▸</span>Flexible GIS project support
-        </li>
+      <ul class="feature-list">
+        <li>Parcel and location research</li>
+        <li>Environmental and terrain screening</li>
+        <li>Historical imagery review</li>
+        <li>Property comparison</li>
+        <li>Professional custom maps</li>
+        <li>Flexible GIS project support</li>
       </ul>
 
-      <p class="note">
-        <strong>Service note:</strong> GeoSite provides GIS-based research and
-        screening—not a boundary survey, title opinion, appraisal, engineering
-        design, legal review, or formal environmental assessment.
-      </p>
+      <div class="notice">
+        <strong>Service note:</strong> GeoSite provides GIS-based research,
+        screening, and mapping—not a boundary survey, title opinion, appraisal,
+        engineering design, legal review, or formal environmental assessment.
+      </div>
     </section>
 
-    <!-- ABOUT AMANDA -->
-    <section class="panel" aria-label="About Amanda Riggs">
-      <h2>Meet Amanda</h2>
+    <section class="panel" aria-labelledby="amanda-title">
+      <div class="section-heading">
+        <h2 id="amanda-title">Meet Amanda</h2>
+      </div>
 
-      <p class="lead">
-        I’m Amanda L. Riggs, a geographer and GIS analyst based in Eastern North
-        Carolina. I hold an <strong>M.S. in Geography</strong> and a
-        <strong>GIS certificate</strong>, with experience in spatial analysis,
-        remote sensing, environmental modeling, LiDAR terrain analysis, and
-        professional cartography.
-      </p>
+      <div class="about-copy">
+        <p>
+          I’m Amanda L. Riggs, a geographer and GIS analyst based in Eastern
+          North Carolina. I hold an <strong>M.S. in Geography</strong> and a
+          <strong>GIS certificate</strong>, with experience in spatial analysis,
+          remote sensing, environmental modeling, LiDAR terrain analysis, and
+          professional cartography.
+        </p>
 
-      <p class="muted">
-        My graduate research examined how urban growth affects environmental
-        conditions using land-cover change, watershed analysis, and
-        ecosystem-service modeling. That work contributed to peer-reviewed
-        research on urban growth, nutrient delivery, and stormwater retention.
-        GeoSite allows me to apply the same careful, evidence-based approach to
-        practical property and land questions.
-      </p>
+        <p>
+          My graduate research examined how urban growth affects environmental
+          conditions using land-cover change, watershed analysis, and
+          ecosystem-service modeling. That work contributed to peer-reviewed
+          research involving urban growth, nutrient delivery, and stormwater
+          retention.
+        </p>
 
-      <p class="statement">
-        I believe useful GIS work should do more than produce an attractive
-        map. It should answer a real question, explain the limits of the
-        available information, and help someone decide what to investigate
-        next.
-      </p>
+        <p>
+          GeoSite allows me to apply the same careful, evidence-based approach
+          to practical property and land questions while presenting the results
+          in a format that is understandable to non-technical clients.
+        </p>
+      </div>
+
+      <div class="statement">
+        Useful GIS work should do more than produce an attractive map. It should
+        answer a real question, explain the limits of the available information,
+        and help someone decide what to investigate next.
+      </div>
     </section>
 
-    <!-- APPROACH -->
-    <section
-      class="panel"
-      aria-label="How GeoSite approaches property research"
-    >
-      <h2>How I approach property research</h2>
+    <section class="panel" aria-labelledby="approach-title">
+      <div class="section-heading">
+        <h2 id="approach-title">How I Approach Property Research</h2>
+        <p>
+          Every project begins with the decision you are trying to make. From
+          there, I identify the most relevant available data and build a focused
+          review rather than delivering a generic stack of maps.
+        </p>
+      </div>
 
-      <p class="muted">
-        Every project begins with the decision you are trying to make. From
-        there, I identify the most relevant available data and build a focused
-        review rather than delivering a generic stack of maps.
-      </p>
-
-      <div class="info-grid">
+      <div class="card-grid">
         <article class="info-card">
-          <h3 class="mono">Decision first</h3>
-
+          <h3>Decision First</h3>
           <p>
             The scope is built around your property question, priorities, and
             intended use.
@@ -597,17 +197,15 @@
         </article>
 
         <article class="info-card">
-          <h3 class="mono">Evidence together</h3>
-
+          <h3>Evidence Together</h3>
           <p>
             Parcel, terrain, environmental, and imagery sources are combined so
-            relationships are easier to see.
+            important relationships are easier to recognize.
           </p>
         </article>
 
         <article class="info-card">
-          <h3 class="mono">Clear next steps</h3>
-
+          <h3>Clear Next Steps</h3>
           <p>
             You receive professional maps, plain-language findings, stated
             limitations, and useful follow-up questions.
@@ -616,74 +214,79 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="panel" aria-label="Contact">
-      <h2>Have a property question?</h2>
+    <section class="panel cta-panel" aria-labelledby="contact-title">
+      <h2 id="contact-title">Have a Property Question?</h2>
 
-      <p class="muted">
-        Send the address or parcel number and tell me what you are trying to
-        understand. I’ll reply with the available data, recommended scope,
-        turnaround, and an estimate.
+      <p>
+        Send the address, parcel number, or listing link and tell me what you
+        are trying to understand. I’ll reply with the available data,
+        recommended scope, turnaround, and an estimate.
       </p>
 
-      <div class="contact-links">
-        <a
-          class="pill"
-          href="mailto:geositeintel@outlook.com"
-        >
-          geositeintel@outlook.com
+      <div class="button-row">
+        <a class="button primary" href="hire.html#estimateForm">
+          Request an Estimate
         </a>
-
-        <a
-          class="pill"
-          href="hire.html#estimateForm"
-        >
-          Request Estimate
+        <a class="button secondary" href="portfolio.html">
+          View Property Examples
         </a>
-
-        <a class="pill" href="portfolio.html">
-          Portfolio
+        <a class="button secondary" href="mailto:geositeintel@outlook.com">
+          Email GeoSite
         </a>
       </div>
     </section>
+
+    <footer class="site-footer">
+      <div>
+        © 2026 Amanda L. Riggs · GeoSite Intel · Property Research &amp;
+        Environmental Mapping
+      </div>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="portfolio.html">Property Examples</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="hire.html#estimateForm">Request Estimate</a>
+        <a href="mailto:geositeintel@outlook.com">Contact</a>
+      </nav>
+    </footer>
   </main>
 
   <script>
-    // Drawer toggle and close-on-link behavior
     (() => {
-      const btn = document.getElementById("hamburger");
+      const button = document.getElementById("hamburger");
       const drawer = document.getElementById("site-drawer");
       const overlay = document.getElementById("overlay");
 
       function openDrawer() {
         drawer.classList.add("open");
         overlay.classList.add("open");
-        btn.setAttribute("aria-expanded", "true");
+        button.setAttribute("aria-expanded", "true");
+        button.setAttribute("aria-label", "Close menu");
         document.documentElement.style.overflow = "hidden";
       }
 
       function closeDrawer() {
         drawer.classList.remove("open");
         overlay.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
+        button.setAttribute("aria-expanded", "false");
+        button.setAttribute("aria-label", "Open menu");
         document.documentElement.style.overflow = "";
       }
 
-      function toggleDrawer() {
+      button.addEventListener("click", () => {
         if (drawer.classList.contains("open")) {
           closeDrawer();
         } else {
           openDrawer();
         }
-      }
+      });
 
-      btn.addEventListener("click", toggleDrawer);
       overlay.addEventListener("click", closeDrawer);
 
       document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-          closeDrawer();
-        }
+        if (event.key === "Escape") closeDrawer();
       });
 
       drawer.querySelectorAll("a").forEach((link) => {
