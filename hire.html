@@ -1,362 +1,800 @@
-<!-- hire.html (UPDATED: hamburger-only topbar + drawer, removed Home button; cleaned duplicate Payment Options section) -->
+<!-- hire.html | GeoSite Intel property research estimate form -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Request Estimate | GeoSite Intel</title>
 
-  <meta name="description" content="Request an estimate for drainage/terrain site screening or custom GIS + environmental mapping." />
-  <link rel="canonical" href="https://riggsa21.github.io/amandariggs-gis/hire.html" />
+  <title>Request a Property Research Estimate | GeoSite Intel</title>
+
+  <meta
+    name="description"
+    content="Request an estimate for GIS-based property research, parcel comparison, environmental and terrain screening, historical imagery review, or custom mapping from GeoSite Intel."
+  />
+
+  <link rel="canonical" href="https://geositeintel.com/hire.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Request Estimate | GeoSite Intel" />
-  <meta property="og:description" content="Send the location + goal. I’ll reply with a short scope, data sources, and an estimate." />
-  <meta property="og:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg" />
-  <meta property="og:url" content="https://riggsa21.github.io/amandariggs-gis/hire.html" />
+  <meta
+    property="og:title"
+    content="Request a Property Research Estimate | GeoSite Intel"
+  />
+  <meta
+    property="og:description"
+    content="Send the property or project location and what you need to understand. I’ll reply with a recommended scope, timeline, and estimate."
+  />
+  <meta
+    property="og:image"
+    content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg"
+  />
+  <meta
+    property="og:url"
+    content="https://geositeintel.com/hire.html"
+  />
   <meta property="og:type" content="website" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Request Estimate | GeoSite Intel" />
-  <meta name="twitter:description" content="Send the location + goal. I’ll reply with a short scope, data sources, and an estimate." />
-  <meta name="twitter:image" content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg" />
+  <meta
+    name="twitter:title"
+    content="Request a Property Research Estimate | GeoSite Intel"
+  />
+  <meta
+    name="twitter:description"
+    content="Tell me which property or project you’re considering and what you need to understand."
+  />
+  <meta
+    name="twitter:image"
+    content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg"
+  />
 
   <style>
-    :root{
-      --bg0:#05070f;
-      --bg2:#0b1020;
-      --ink:#e6eaf2;
-      --muted:#aab3c5;
-      --muted2:#7f8aa3;
-      --shadow:0 18px 50px rgba(0,0,0,.55);
-      --shadow-sm:0 10px 28px rgba(0,0,0,.45);
+    :root {
+      --bg0: #05070f;
+      --bg2: #0b1020;
+      --ink: #e6eaf2;
+      --muted: #aab3c5;
+      --muted2: #7f8aa3;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+      --shadow-sm: 0 10px 28px rgba(0, 0, 0, 0.45);
 
-      --accent:#35d2ff;
-      --accent2:#8b5cf6;
-      --accent3:#22c55e;
+      --accent: #35d2ff;
+      --accent2: #8b5cf6;
+      --accent3: #22c55e;
 
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
       --sans: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
     }
 
-    html{scroll-behavior:smooth}
-    *,*::before,*::after{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:var(--sans);
-      color:var(--ink);
+    html {
+      scroll-behavior: smooth;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--ink);
       background:
-        radial-gradient(1200px 500px at 15% 10%, rgba(53,210,255,.13), transparent 60%),
-        radial-gradient(900px 420px at 85% 25%, rgba(139,92,246,.12), transparent 60%),
+        radial-gradient(
+          1200px 500px at 15% 10%,
+          rgba(53, 210, 255, 0.13),
+          transparent 60%
+        ),
+        radial-gradient(
+          900px 420px at 85% 25%,
+          rgba(139, 92, 246, 0.12),
+          transparent 60%
+        ),
         linear-gradient(180deg, var(--bg0) 0%, var(--bg2) 100%);
-      padding-top:56px; /* space for fixed topbar */
-    }
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .mono{font-family:var(--mono)}
-
-    /* ---------- TOPBAR (hamburger only) ---------- */
-    .topbar{
-      position:fixed;
-      inset:0 0 auto 0;
-      height:56px;
-      z-index:1200;
-      background:rgba(5,7,15,.72);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-    .topbar-inner{
-      height:56px;
-      display:flex;
-      align-items:center;
-      justify-content:flex-start;
-      padding:0 12px;
+      padding-top: 56px;
     }
 
-    .hamburger{
-      display:inline-flex; align-items:center; justify-content:center;
-      width:40px; height:40px; border-radius:12px;
-      border:1px solid rgba(53,210,255,.55);
-      background:rgba(12,18,36,.6);
-      cursor:pointer;
-      box-shadow:0 10px 30px rgba(0,0,0,.35);
-      flex:0 0 auto;
+    a {
+      color: var(--accent);
+      text-decoration: none;
     }
-    .hamburger:focus-visible{ outline:3px solid rgba(53,210,255,.35); outline-offset:2px; }
-    .hamburger .lines{ position:relative; width:18px; height:12px; }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .mono {
+      font-family: var(--mono);
+    }
+
+    /* ---------- TOPBAR ---------- */
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 56px;
+      z-index: 1200;
+      background: rgba(5, 7, 15, 0.72);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .topbar-inner {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 12px;
+    }
+
+    .hamburger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      border: 1px solid rgba(53, 210, 255, 0.55);
+      background: rgba(12, 18, 36, 0.6);
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      flex: 0 0 auto;
+    }
+
+    .hamburger:focus-visible {
+      outline: 3px solid rgba(53, 210, 255, 0.35);
+      outline-offset: 2px;
+    }
+
+    .hamburger .lines {
+      position: relative;
+      width: 18px;
+      height: 12px;
+    }
+
     .hamburger .lines::before,
     .hamburger .lines::after,
-    .hamburger .bar{
-      content:""; position:absolute; left:0; right:0; height:2px;
-      background:linear-gradient(90deg, var(--accent), var(--accent2));
-      border-radius:2px;
+    .hamburger .bar {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 2px;
     }
-    .hamburger .bar{ top:5px; }
-    .hamburger .lines::before{ top:0; }
-    .hamburger .lines::after{ bottom:0; }
+
+    .hamburger .bar {
+      top: 5px;
+    }
+
+    .hamburger .lines::before {
+      top: 0;
+    }
+
+    .hamburger .lines::after {
+      bottom: 0;
+    }
 
     /* ---------- DRAWER ---------- */
-    .overlay{
-      position:fixed; inset:0;
-      background:rgba(0,0,0,.55);
-      opacity:0; pointer-events:none;
-      transition:opacity .2s ease;
-      z-index:1050;
-    }
-    .overlay.open{opacity:1;pointer-events:auto}
 
-    .drawer{
-      position:fixed; inset:0 auto 0 0;
-      width:300px; max-width:86vw;
-      background:rgba(10,14,28,.92);
-      border-right:1px solid rgba(255,255,255,.08);
-      box-shadow:var(--shadow);
-      transform:translateX(-100%);
-      transition:transform .25s ease;
-      z-index:1100;
-      display:flex; flex-direction:column;
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 1050;
     }
-    .drawer.open{transform:translateX(0)}
-    .drawer header{
-      padding:16px 18px;
-      border-bottom:1px solid rgba(255,255,255,.08);
-      display:flex; align-items:center; gap:10px;
+
+    .overlay.open {
+      opacity: 1;
+      pointer-events: auto;
     }
-    .drawer nav{padding:10px}
-    .drawer a{
-      display:block;
-      padding:12px 12px;
-      border-radius:12px;
-      font-weight:850;
-      color:var(--ink);
-      border:1px solid transparent;
-      text-align:left;
+
+    .drawer {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: 300px;
+      max-width: 86vw;
+      background: rgba(10, 14, 28, 0.92);
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow);
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+      z-index: 1100;
+      display: flex;
+      flex-direction: column;
     }
-    .drawer a:hover{
-      background:rgba(53,210,255,.08);
-      border-color:rgba(53,210,255,.25);
-      text-decoration:none;
+
+    .drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer header {
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .drawer nav {
+      padding: 10px;
+    }
+
+    .drawer a {
+      display: block;
+      padding: 12px;
+      border-radius: 12px;
+      font-weight: 850;
+      color: var(--ink);
+      border: 1px solid transparent;
+      text-align: left;
+    }
+
+    .drawer a:hover {
+      background: rgba(53, 210, 255, 0.08);
+      border-color: rgba(53, 210, 255, 0.25);
+      text-decoration: none;
     }
 
     /* ---------- PAGE ---------- */
-    main{max-width:1000px;margin:20px auto;padding:0 16px}
-    .panel{
-      background:rgba(12,18,36,.70);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:20px;
-      box-shadow:var(--shadow-sm);
-      padding:22px;
-      margin-bottom:16px;
-      text-align:left;
-    }
-    h1{margin:10px 0 8px 0; letter-spacing:.2px}
-    h2{
-      margin:0 0 10px 0;
-      color:var(--ink);
-      border-bottom:1px solid rgba(255,255,255,.12);
-      padding-bottom:10px;
-      letter-spacing:.2px;
-    }
-    .subtext{color:var(--muted);line-height:1.75;margin:0}
 
-    .pill{
-      display:inline-block;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(53,210,255,.30);
-      background:rgba(12,18,36,.65);
-      color:var(--ink);
-      font-weight:950;
-      font-size:.92rem;
-      margin-top:10px;
+    main {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 16px;
     }
-    .pill .mono{font-family:var(--mono); color:var(--accent)}
 
-    form label{display:block;font-weight:950;margin-top:12px;color:rgba(230,234,242,.92)}
-    input[type="text"], input[type="email"], textarea, select{
-      width:100%;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(6,10,20,.65);
-      color:var(--ink);
-      outline:none;
-      
+    .panel {
+      background: rgba(12, 18, 36, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+      padding: 22px;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    h1 {
+      margin: 10px 0 8px;
+      letter-spacing: 0.2px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      color: var(--ink);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 10px;
+      letter-spacing: 0.2px;
+    }
+
+    .subtext {
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 7px 11px;
+      margin-bottom: 5px;
+      border-radius: 999px;
+      border: 1px solid rgba(53, 210, 255, 0.3);
+      background: rgba(12, 18, 36, 0.65);
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 0.88rem;
+      font-weight: 950;
+    }
+
+    /* ---------- PROCESS STEPS ---------- */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(210px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .step {
+      padding: 14px;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(11, 18, 34, 0.72);
+      color: var(--muted);
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .step strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    /* ---------- FORM ---------- */
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    form label {
+      display: block;
+      font-weight: 950;
+      margin-top: 14px;
+      color: rgba(230, 234, 242, 0.92);
+    }
+
+    .required {
+      color: var(--accent);
+      margin-left: 3px;
+    }
+
     input[type="text"],
     input[type="email"],
     textarea,
-    select{
-      width:100%;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.22); /* stronger default edge */
-      background:rgba(6,10,20,.75); /* slightly lighter */
-      color:var(--ink);
-      outline:none;
-      transition: all .18s ease;
+    select {
+      width: 100%;
+      padding: 11px 12px;
+      margin-top: 6px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(6, 10, 20, 0.75);
+      color: var(--ink);
+      outline: none;
+      font: inherit;
+      transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
     }
-    
-    /* Hover state (subtle lift) */
+
+    textarea {
+      min-height: 145px;
+      resize: vertical;
+    }
+
+    select option {
+      background: #0b1020;
+      color: var(--ink);
+    }
+
     input:hover,
     textarea:hover,
-    select:hover{
-      border-color: rgba(53,210,255,.45);
+    select:hover {
+      border-color: rgba(53, 210, 255, 0.45);
     }
-    
-    /* Focus state (this is the magic) */
+
     input:focus,
     textarea:focus,
-    select:focus{
+    select:focus {
       border-color: var(--accent);
+      background: rgba(8, 13, 26, 0.9);
       box-shadow:
-        0 0 0 2px rgba(53,210,255,.18),
-        0 0 14px rgba(53,210,255,.15);
-    }   
-    .btn:hover{filter:brightness(1.05)}
-
-    .hint{
-      margin-top:10px;
-      font-size:.95rem;
-      color:var(--muted);
-      line-height:1.6;
+        0 0 0 2px rgba(53, 210, 255, 0.18),
+        0 0 14px rgba(53, 210, 255, 0.15);
     }
-    .tiny{font-size:.9rem;color:var(--muted2);margin-top:10px;line-height:1.55}
 
-    .pay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-    .pay-card{
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:16px;
-      padding:14px;
-      background:rgba(11,18,34,.72);
-      box-shadow:0 16px 40px rgba(0,0,0,.35);
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 190px;
+      padding: 11px 18px;
+      border: 0;
+      border-radius: 14px;
+      background: linear-gradient(
+        90deg,
+        rgba(53, 210, 255, 0.95),
+        rgba(139, 92, 246, 0.92)
+      );
+      color: #081021;
+      font: inherit;
+      font-weight: 980;
+      cursor: pointer;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
     }
-    .pay-title{margin:0 0 6px 0;color:var(--ink);font-weight:950}
-    .pay-note{margin:6px 0 0 0;color:var(--muted);font-size:.95rem;line-height:1.55}
-    .pay-link{font-weight:950}
+
+    .btn:hover {
+      filter: brightness(1.05);
+    }
+
+    .btn:focus-visible {
+      outline: 3px solid rgba(53, 210, 255, 0.35);
+      outline-offset: 3px;
+    }
+
+    .hint {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .tiny {
+      font-size: 0.9rem;
+      color: var(--muted2);
+      margin-top: 10px;
+      line-height: 1.55;
+    }
+
+    /* ---------- PAYMENT ---------- */
+
+    .pay-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
+
+    .pay-card {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 14px;
+      background: rgba(11, 18, 34, 0.72);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .pay-title {
+      margin: 0 0 6px;
+      color: var(--ink);
+      font-weight: 950;
+    }
+
+    .pay-note {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+
+    @media (max-width: 760px) {
+      .row,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        margin-top: 14px;
+        padding: 0 12px;
+      }
+
+      .panel {
+        padding: 19px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <!-- TOPBAR (hamburger only) -->
+  <!-- TOPBAR -->
   <div class="topbar">
     <div class="topbar-inner">
-      <button class="hamburger" id="hamburger"
-              aria-label="Open menu" aria-controls="site-drawer" aria-expanded="false">
-        <span class="lines"><span class="bar"></span></span>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open menu"
+        aria-controls="site-drawer"
+        aria-expanded="false"
+      >
+        <span class="lines">
+          <span class="bar"></span>
+        </span>
       </button>
     </div>
   </div>
 
-  <!-- OVERLAY + DRAWER -->
+  <!-- OVERLAY AND DRAWER -->
   <div class="overlay" id="overlay"></div>
 
   <aside class="drawer" id="site-drawer" aria-label="Site menu">
     <header>
-      <div class="mono" style="font-weight:950;">menu<span style="color:var(--accent)">.</span></div>
+      <div class="mono" style="font-weight: 950">
+        menu<span style="color: var(--accent)">.</span>
+      </div>
     </header>
+
     <nav>
       <a href="index.html">Home</a>
+      <a href="index.html#services">Property Services</a>
       <a href="portfolio.html">Portfolio</a>
-      <a href="hire.html?v=case01#estimateForm">Request Estimate</a>
+      <a href="hire.html#estimateForm">Request Estimate</a>
       <a href="about.html">About</a>
       <a href="mailto:geositeintel@outlook.com">Contact</a>
     </nav>
   </aside>
 
   <main>
+    <!-- INTRODUCTION -->
     <section class="panel">
-      <h1>Request an Estimate</h1>
+      <div class="eyebrow">
+        property research • environmental screening • custom GIS
+      </div>
+
+      <h1>Request a Property Research Estimate</h1>
+
       <p class="subtext">
-        Send the location + what you’re trying to decide. I’ll reply with a short scope, data sources, timeline, and price estimate.
+        Tell me which property or project you are considering and what you need
+        to understand. I’ll review the request and reply with the available
+        data, recommended scope, deliverables, timeline, and price estimate.
       </p>
-      <div class="pill"><span class="mono">caseStudy01</span> • Frog Level / Davenport Farm Corridor style screening</div>
-      <p class="tiny" style="margin-top:10px;">
-        Note: This is a screening product for decisions and risk flagging (not a sealed engineering design).
+
+      <div
+        class="steps"
+        aria-label="What happens after submitting a request"
+      >
+        <div class="step">
+          <strong>1) You describe the question</strong>
+          Share the property, decision, and concerns that matter most.
+        </div>
+
+        <div class="step">
+          <strong>2) I review the data</strong>
+          I confirm what information is available and recommend a focused
+          scope.
+        </div>
+
+        <div class="step">
+          <strong>3) You receive an estimate</strong>
+          No work begins and no payment is due until the scope and price are
+          approved.
+        </div>
+      </div>
+
+      <p class="tiny">
+        <strong>Service note:</strong> GeoSite provides GIS-based research and
+        screening—not a boundary survey, title opinion, appraisal, engineering
+        design, legal review, or formal environmental assessment.
       </p>
     </section>
 
+    <!-- ESTIMATE FORM -->
     <section class="panel" aria-label="Estimate form">
       <h2>Project Details</h2>
 
-      <!-- FORM has the id, so #estimateForm works -->
-      <form id="estimateForm" action="https://formspree.io/f/xyznngpw" method="POST">
+      <p class="subtext">
+        Fields marked with <span class="required">*</span> are required.
+      </p>
+
+      <form
+        id="estimateForm"
+        action="https://formspree.io/f/xyznngpw"
+        method="POST"
+      >
         <div class="row">
           <div>
-            <label for="name">Your name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required />
+            <label for="name">
+              Your name<span class="required">*</span>
+            </label>
+
+            <input
+              id="name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+            />
           </div>
+
           <div>
-            <label for="email">Email</label>
-            <input id="email" name="_replyto" type="email" autocomplete="email" required />
+            <label for="email">
+              Email<span class="required">*</span>
+            </label>
+
+            <input
+              id="email"
+              name="_replyto"
+              type="email"
+              autocomplete="email"
+              required
+            />
           </div>
         </div>
 
-        <label for="type">Request type</label>
+        <div class="row">
+          <div>
+            <label for="role">Which best describes you?</label>
+
+            <select id="role" name="client_role">
+              <option value="" selected>Select an option</option>
+              <option value="buyer">Prospective buyer</option>
+              <option value="owner">Property or land owner</option>
+              <option value="agent">
+                Real estate agent or broker
+              </option>
+              <option value="investor">Investor</option>
+              <option value="organization">
+                Business or organization
+              </option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="stage">
+              Where are you in the process?
+            </label>
+
+            <select id="stage" name="project_stage">
+              <option value="" selected>Select an option</option>
+              <option value="exploring">
+                Early research / exploring options
+              </option>
+              <option value="comparing">
+                Comparing properties
+              </option>
+              <option value="under-contract">
+                Under contract or in due diligence
+              </option>
+              <option value="listing">
+                Preparing to list or market a property
+              </option>
+              <option value="planning">
+                Current owner planning next steps
+              </option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="type">
+          Request type<span class="required">*</span>
+        </label>
+
         <select id="type" name="service" required>
           <option value="" selected disabled>Select an option</option>
 
-          <option value="level1-screening">
-            Level 1 — Drainage & Terrain Risk Screening (fast map + flags)
-        </option>
+          <option value="property-research">
+            Property or parcel research
+          </option>
 
-        <option value="level2-parcel">
-          Level 2 — Parcel Scoring + Risk Table (site + parcel-level metrics)
-        </option>
+          <option value="environmental-terrain">
+            Environmental and terrain screening
+          </option>
 
-        <option value="road-conflict">
-          Road / Ponding Conflict Review (flow paths + likely issue zones)
-        </option>
+          <option value="historical-imagery">
+            Historical imagery review
+          </option>
 
-        <option value="due-diligence">
-          Pre-Purchase / Due Diligence Screening (go/no-go risk scan)
-        </option>
+          <option value="property-comparison">
+            Compare multiple properties
+          </option>
 
-        <option value="custom">
-          Custom — GIS / Hydrology / Mapping (tell me what you need)
-        </option>
-      </select>       
-        
-        <label for="location">Site location / AOI</label>
-        <input id="location" name="location" type="text" placeholder="Address, parcel ID, subdivision name, or coordinates" />
+          <option value="custom-map">
+            Professional custom map
+          </option>
+
+          <option value="gis-support">
+            Custom GIS or project support
+          </option>
+
+          <option value="not-sure">
+            Not sure — help me choose
+          </option>
+        </select>
+
+        <label for="location">Property or project location</label>
+
+        <input
+          id="location"
+          name="location"
+          type="text"
+          placeholder="Address, parcel ID, county, subdivision, or coordinates"
+        />
+
+        <label for="properties">
+          How many properties are involved?
+        </label>
+
+        <input
+          id="properties"
+          name="property_count"
+          type="text"
+          placeholder="Example: One parcel, three properties to compare, or a larger project area"
+        />
 
         <label for="timeline">Timeline (optional)</label>
-        <input id="timeline" name="timeline" type="text" placeholder="Example: ASAP, 2 weeks, by March 10…" />
 
-        <label for="details">What decision are you trying to make?</label>
-        <textarea id="details" name="details" placeholder="Example: nuisance flooding, pre-permit drainage concerns, low spots near road, lot comparison, where to field-check first…"></textarea>
+        <input
+          id="timeline"
+          name="timeline"
+          type="text"
+          placeholder="Example: Under contract until August 20, within two weeks, or no firm deadline"
+        />
+
+        <label for="details">
+          What are you trying to understand or decide?<span
+            class="required"
+          >*</span>
+        </label>
+
+        <textarea
+          id="details"
+          name="details"
+          required
+          placeholder="Describe the property question, concerns, and information that would help. Examples: compare several parcels, understand flood or wetland context, review terrain and drainage, examine historical land change, or create a clear map for a client."
+        ></textarea>
 
         <label for="files">Optional: links to files</label>
-        <input id="files" name="files" type="text" placeholder="Drive/Dropbox link, PDFs, plans, photos, dataset links" />
 
-        <input type="hidden" name="source" value="hire-page" />
-        <input type="hidden" name="page" value="hire.html" />
+        <input
+          id="files"
+          name="files"
+          type="text"
+          placeholder="Listing link, county parcel page, Drive/Dropbox folder, photos, plans, or dataset links"
+        />
 
-        <div style="margin-top:14px">
-          <button class="btn" type="submit">Send Request</button>
+        <input
+          type="hidden"
+          name="source"
+          value="hire-page"
+        />
+
+        <input
+          type="hidden"
+          name="page"
+          value="hire.html"
+        />
+
+        <div style="margin-top: 14px">
+          <button class="btn" type="submit">
+            Send Request
+          </button>
+
           <div class="hint">
             If you don’t hear back within 1–2 business days, email me directly:
-            <a href="mailto:geositeintel@outlook.com">geositeintel@outlook.com</a>.
+            <a href="mailto:geositeintel@outlook.com">
+              geositeintel@outlook.com
+            </a>.
+          </div>
+
+          <div class="tiny">
+            Your contact and project information will be used only to evaluate
+            and respond to this request. Please do not submit Social Security
+            numbers, banking details, or other sensitive personal information.
           </div>
         </div>
       </form>
     </section>
 
-    <section class="panel" aria-label="Payment options">
-      <h2>Payment Options</h2>
+    <!-- SCOPE AND PAYMENT -->
+    <section
+      class="panel"
+      aria-label="Scope and payment information"
+    >
+      <h2>Scope &amp; Payment</h2>
 
       <div class="pay-grid">
         <div class="pay-card">
-          <h3 class="pay-title">Card Payment (Invoice)</h3>
+          <h3 class="pay-title">Clear Scope First</h3>
+
           <p class="pay-note">
-            Card payments are handled by invoice after scope and pricing are confirmed. You’ll receive a receipt.
+            Submitting this form does not create a payment obligation. You will
+            receive a written scope and estimate to approve before work begins.
           </p>
         </div>
 
         <div class="pay-card">
-          <h3 class="pay-title">Project Terms</h3>
+          <h3 class="pay-title">
+            Invoice &amp; Project Terms
+          </h3>
+
           <p class="pay-note">
-            Most fixed-scope projects begin with a deposit, with the remaining balance due at delivery.
+            Card payments are handled by invoice. Most fixed-scope projects
+            begin with a deposit, with the remaining balance due at delivery.
+            A receipt is provided.
           </p>
         </div>
       </div>
@@ -364,46 +802,45 @@
   </main>
 
   <script>
-    // Preselect service type from URL: hire.html?v=case01
-    (function () {
-      const params = new URLSearchParams(window.location.search);
-      const v = (params.get("v") || "").toLowerCase();
-      const select = document.getElementById("type");
-      if (!select) return;
-
-      if (v === "case01") {
-        select.value = "case-study-corridor";
-      }
-    })();
-
-    // Drawer toggle + close-on-link (match index behavior)
+    // Drawer toggle and close-on-link behavior
     (() => {
-      const btn = document.getElementById('hamburger');
-      const drawer = document.getElementById('site-drawer');
-      const overlay = document.getElementById('overlay');
+      const btn = document.getElementById("hamburger");
+      const drawer = document.getElementById("site-drawer");
+      const overlay = document.getElementById("overlay");
 
       function openDrawer() {
-        drawer.classList.add('open');
-        overlay.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-        document.documentElement.style.overflow = 'hidden';
+        drawer.classList.add("open");
+        overlay.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+        document.documentElement.style.overflow = "hidden";
       }
+
       function closeDrawer() {
-        drawer.classList.remove('open');
-        overlay.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-        document.documentElement.style.overflow = '';
-      }
-      function toggleDrawer(){
-        drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+        drawer.classList.remove("open");
+        overlay.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+        document.documentElement.style.overflow = "";
       }
 
-      btn.addEventListener('click', toggleDrawer);
-      overlay.addEventListener('click', closeDrawer);
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+      function toggleDrawer() {
+        if (drawer.classList.contains("open")) {
+          closeDrawer();
+        } else {
+          openDrawer();
+        }
+      }
 
-      drawer.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => closeDrawer());
+      btn.addEventListener("click", toggleDrawer);
+      overlay.addEventListener("click", closeDrawer);
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeDrawer();
+        }
+      });
+
+      drawer.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeDrawer);
       });
     })();
   </script>
