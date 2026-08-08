@@ -1,247 +1,649 @@
+
+Today 8:25 AM
+
+Pasted text(20260808-122520).txt
+Document
+Good morning! We need to update my index for my website to steer toward realistate rather than devlopers/builder: 
+
+Worked for 34s
+The fastest method is GitHub Desktop, and you probably do not need to update every file path.
+
+Your website images should use paths inside the GitHub repository—not paths such as C:\Pictures\.... A visitor cannot access files stored only on your computer.
+
+Fastest setup
+Install/open GitHub Desktop and sign in.
+
+Select File → Clone repository.
+
+Choose your website repository, probably amandariggs-gis.
+
+Save it somewhere easy, such as:
+
+C:\GitHub\amandariggs-gis
+
+Copy the JPG files into that cloned repository folder, beside index.html.
+
+Open GitHub Desktop. The JPGs should appear under Changes.
+
+Enter a message such as Add website images.
+
+Click Commit to main, then Push origin.
+
+GitHub documents the same clone, commit, and push workflow here: Getting started with GitHub Desktop and pushing changes.
+
+For your current homepage
+These images need to be in the same folder as index.html:
+
+thumbnail.jpg
+case_study_01_FrogLevel_Davenport.jpg
+Case_02_North_Edwards Rd.jpg
+Your existing code already uses relative paths:
+
+url("thumbnail.jpg?v=2")
+<img src="case_study_01_FrogLevel_Davenport.jpg?v=5">
+<img src="Case_02_North_Edwards%20Rd.jpg?v=1">
+So the location on your new computer does not matter once the files are inside the repository. Relative image paths are the correct approach for GitHub-hosted files. GitHub’s relative-path guidance.
+
+Important: filenames on GitHub are case-sensitive. Case_02...jpg and case_02...jpg are treated as different names.
+
+If the JPGs were already uploaded to GitHub, cloning the repository should download them automatically—you would not need to copy or update anything.
+
+
+Today 11:58 AM
+Ok, Got it! So is there anything else we should do to make the website more professional?
+
+Worked for 1m 23s
+Yes. The homepage is heading in the right direction, but the next priority is making the rest of the website agree with it.
+
+Update the About page
+
+It still describes GeoSite as “pre-construction drainage and terrain risk screening for builders and development teams.” That will confuse real-estate visitors. Current About page
+
+The revised page should:
+
+Introduce you as Amanda Riggs, a geographer and GIS analyst
+
+Mention your M.S. in Geography, GIS certificate, and published environmental research
+
+Explain that you help people understand land and property through maps and spatial data
+
+List buyers, landowners, agents, and investors as your audience
+
+Include a professional photo or your GeoSite logo
+
+Link to your LinkedIn profile
+
+Update the Request Estimate page
+
+The form still references the “Frog Level / Davenport Farm Corridor style screening” and only warns that the service is not engineering design. Current estimate page
+
+The “Request type” choices should become:
+
+Property or parcel research
+Environmental and terrain screening
+Historical imagery review
+Compare multiple properties
+Custom map or GIS support
+Not sure — help me choose
+The disclaimer should cover all service boundaries:
+
+GeoSite provides GIS-based research and screening. Services do not replace a boundary survey, title opinion, appraisal, engineering design, legal review, or formal environmental assessment.
+Simplify and reorganize the portfolio
+
+Your portfolio proves that you have strong technical skills, but it currently feels more like a graduate GIS archive than a client-focused business portfolio. It contains numerous images with names such as “Final Layout (Z),” “Prediction Map Output,” and “Study Area – Version 3.” Current portfolio
+
+I would organize it into four categories:
+
+Property & Parcel Research
+
+Environmental & Terrain Screening
+
+Historical & Land-Cover Change
+
+Advanced GIS & Spatial Analysis
+
+Feature only your strongest 6–10 projects on the main page. The larger technical gallery can remain below them under “Additional GIS Work.”
+
+Each featured project should briefly explain:
+
+The client-style question
+
+What you analyzed
+
+What the map revealed
+
+How the information supports a decision
+
+Improve the top navigation
+
+The hamburger-only navigation works well on phones, but it makes the desktop site feel more like an app than a professional consulting website.
+
+On desktop, I recommend displaying:
+
+GeoSite Intel | Services | Portfolio | About | Request Estimate
+Keep the hamburger menu for smaller screens. Also place the GeoSite name or logo in the top bar so the business identity remains visible while scrolling.
+
+Add stronger trust signals
+
+Add a short credibility strip below the homepage hero:
+
+M.S. Geography  •  GIS Certificate  •  Environmental & Spatial Analysis  •  Based in Eastern North Carolina
+Also consider adding:
+
+Typical turnaround range
+
+Geographic service area
+
+A sample deliverables list
+
+“Independent GIS research” wording
+
+Testimonials once you have genuine client feedback
+
+A LinkedIn link
+
+A privacy statement for information submitted through the estimate form
+
+I would not invent testimonials or pretend the case studies were paid client projects. Label them honestly as “Independent Case Study” or “Sample Property Analysis” where appropriate.
+
+Create three easy-to-understand service options
+
+These do not need prices yet:
+
+Property Snapshot: One parcel with basic environmental and location context
+
+Property Comparison: Side-by-side analysis of multiple properties
+
+Custom Property Research: A deeper question involving historical imagery, terrain, environmental conditions, or custom mapping
+
+This will help visitors understand what they can actually hire you to do.
+
+My recommended order is: About page → Estimate page → Portfolio cleanup → desktop navigation → service packages. The About and Estimate pages are the most urgent because they still lead visitors back toward the old builder-focused identity.
+
+
+
+Pasted text(20260808-161017).txt
+Document
+Here is the About html:
+
+Worked for 2m 26s
+Replace your current about.html with this complete code:
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | GeoSite Intel</title>
 
-  <meta name="description" content="GeoSite Intel provides pre-construction drainage and terrain risk screening for builders and development teams, using LiDAR-based terrain analysis to flag runoff pathways, low spots, and potential problem areas before grading and permitting." />
+  <title>About Amanda Riggs | GeoSite Intel</title>
+
+  <meta
+    name="description"
+    content="Meet Amanda L. Riggs, the geographer and GIS analyst behind GeoSite Intel. Learn how GeoSite turns parcel, environmental, terrain, and historical data into clear property research for real estate decisions."
+  />
+
+  <!-- Open Graph -->
+  <meta
+    property="og:title"
+    content="About Amanda Riggs | GeoSite Intel"
+  />
+  <meta
+    property="og:description"
+    content="Independent GIS property research and environmental mapping for buyers, landowners, real estate professionals, and investors."
+  />
+  <meta
+    property="og:image"
+    content="https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/Logo_black.png"
+  />
+  <meta property="og:type" content="website" />
 
   <style>
-    :root{
-      --bg0:#05070f;
-      --bg2:#0b1020;
-      --panel:rgba(12,18,36,.70);
-      --panel2:rgba(11,18,34,.72);
-      --ink:#e6eaf2;
-      --muted:#aab3c5;
-      --muted2:#7f8aa3;
-      --shadow:0 18px 50px rgba(0,0,0,.55);
-      --shadow-sm:0 10px 28px rgba(0,0,0,.45);
+    :root {
+      --bg0: #05070f;
+      --bg2: #0b1020;
+      --panel: rgba(12, 18, 36, 0.7);
+      --panel2: rgba(11, 18, 34, 0.72);
+      --ink: #e6eaf2;
+      --muted: #aab3c5;
+      --muted2: #7f8aa3;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+      --shadow-sm: 0 10px 28px rgba(0, 0, 0, 0.45);
 
-      --accent:#35d2ff;
-      --accent2:#8b5cf6;
-      --accent3:#22c55e;
+      --accent: #35d2ff;
+      --accent2: #8b5cf6;
+      --accent3: #22c55e;
 
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
       --sans: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
     }
 
-    html{scroll-behavior:smooth}
-    *,*::before,*::after{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:var(--sans);
-      color:var(--ink);
+    html {
+      scroll-behavior: smooth;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--ink);
       background:
-        radial-gradient(1200px 520px at 15% 10%, rgba(53,210,255,.12), transparent 60%),
-        radial-gradient(900px 420px at 85% 25%, rgba(139,92,246,.11), transparent 60%),
-        radial-gradient(900px 420px at 55% 90%, rgba(34,197,94,.07), transparent 60%),
+        radial-gradient(
+          1200px 520px at 15% 10%,
+          rgba(53, 210, 255, 0.12),
+          transparent 60%
+        ),
+        radial-gradient(
+          900px 420px at 85% 25%,
+          rgba(139, 92, 246, 0.11),
+          transparent 60%
+        ),
+        radial-gradient(
+          900px 420px at 55% 90%,
+          rgba(34, 197, 94, 0.07),
+          transparent 60%
+        ),
         linear-gradient(180deg, var(--bg0) 0%, var(--bg2) 100%);
-      padding-top:56px; /* space for fixed topbar */
+      padding-top: 56px;
     }
 
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .mono{font-family:var(--mono)}
-
-    /* ---------- TOPBAR (hamburger only, like index) ---------- */
-    .topbar{
-      position:fixed;
-      inset:0 0 auto 0;
-      height:56px;
-      z-index:1200; /* match index-style layering */
-      background:rgba(5,7,15,.72);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
-    .topbar-inner{
-      height:56px;
-      display:flex;
-      align-items:center;
-      justify-content:flex-start;
-      padding:0 12px;
+    a {
+      color: var(--accent);
+      text-decoration: none;
     }
 
-    .hamburger{
-      display:inline-flex; align-items:center; justify-content:center;
-      width:40px; height:40px; border-radius:12px;
-      border:1px solid rgba(53,210,255,.55);
-      background:rgba(12,18,36,.6);
-      cursor:pointer;
-      box-shadow:0 10px 30px rgba(0,0,0,.35);
-      flex:0 0 auto;
+    a:hover {
+      text-decoration: underline;
     }
-    .hamburger:focus-visible{ outline:3px solid rgba(53,210,255,.35); outline-offset:2px; }
-    .hamburger .lines{ position:relative; width:18px; height:12px; }
+
+    .mono {
+      font-family: var(--mono);
+    }
+
+    /* ---------- TOPBAR ---------- */
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 56px;
+      z-index: 1200;
+      background: rgba(5, 7, 15, 0.72);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .topbar-inner {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 12px;
+    }
+
+    .hamburger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      border: 1px solid rgba(53, 210, 255, 0.55);
+      background: rgba(12, 18, 36, 0.6);
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      flex: 0 0 auto;
+    }
+
+    .hamburger:focus-visible {
+      outline: 3px solid rgba(53, 210, 255, 0.35);
+      outline-offset: 2px;
+    }
+
+    .hamburger .lines {
+      position: relative;
+      width: 18px;
+      height: 12px;
+    }
+
     .hamburger .lines::before,
     .hamburger .lines::after,
-    .hamburger .bar{
-      content:""; position:absolute; left:0; right:0; height:2px;
-      background:linear-gradient(90deg, var(--accent), var(--accent2));
-      border-radius:2px;
+    .hamburger .bar {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 2px;
     }
-    .hamburger .bar{ top:5px; }
-    .hamburger .lines::before{ top:0; }
-    .hamburger .lines::after{ bottom:0; }
+
+    .hamburger .bar {
+      top: 5px;
+    }
+
+    .hamburger .lines::before {
+      top: 0;
+    }
+
+    .hamburger .lines::after {
+      bottom: 0;
+    }
 
     /* ---------- DRAWER ---------- */
-    .overlay{
-      position:fixed; inset:0;
-      background:rgba(0,0,0,.55);
-      opacity:0; pointer-events:none;
-      transition:opacity .2s ease;
-      z-index:1050;
-    }
-    .overlay.open{opacity:1;pointer-events:auto}
 
-    .drawer{
-      position:fixed; inset:0 auto 0 0;
-      width:300px; max-width:86vw;
-      background:rgba(10,14,28,.92);
-      border-right:1px solid rgba(255,255,255,.08);
-      box-shadow:var(--shadow);
-      transform:translateX(-100%);
-      transition:transform .25s ease;
-      z-index:1100; /* above overlay, below topbar */
-      display:flex; flex-direction:column;
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 1050;
     }
-    .drawer.open{transform:translateX(0)}
-    .drawer header{
-      padding:16px 18px;
-      border-bottom:1px solid rgba(255,255,255,.08);
-      display:flex; align-items:center; gap:10px;
+
+    .overlay.open {
+      opacity: 1;
+      pointer-events: auto;
     }
-    .drawer nav{padding:10px}
-    .drawer a{
-      display:block;
-      padding:12px 12px;
-      border-radius:12px;
-      font-weight:850;
-      color:var(--ink);
-      border:1px solid transparent;
-      text-align:left;
+
+    .drawer {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: 300px;
+      max-width: 86vw;
+      background: rgba(10, 14, 28, 0.92);
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow);
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+      z-index: 1100;
+      display: flex;
+      flex-direction: column;
     }
-    .drawer a:hover{
-      background:rgba(53,210,255,.08);
-      border-color:rgba(53,210,255,.25);
-      text-decoration:none;
+
+    .drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer header {
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .drawer nav {
+      padding: 10px;
+    }
+
+    .drawer a {
+      display: block;
+      padding: 12px;
+      border-radius: 12px;
+      font-weight: 850;
+      color: var(--ink);
+      border: 1px solid transparent;
+      text-align: left;
+    }
+
+    .drawer a:hover {
+      background: rgba(53, 210, 255, 0.08);
+      border-color: rgba(53, 210, 255, 0.25);
+      text-decoration: none;
     }
 
     /* ---------- PAGE LAYOUT ---------- */
-    main{max-width:1000px;margin:18px auto;padding:0 14px}
-    .panel{
-      background:var(--panel);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:20px;
-      box-shadow:var(--shadow-sm);
-      padding:22px;
-      margin-bottom:16px;
-      text-align:center;
-    }
-    h1{
-      margin:10px 0 10px 0;
-      font-size:2.05rem;
-      font-weight:980;
-      letter-spacing:.2px;
-      line-height:1.2;
-    }
-    h2{
-      margin:0 0 10px 0;
-      padding-bottom:10px;
-      border-bottom:1px solid rgba(255,255,255,.12);
-      font-size:1.25rem;
-      letter-spacing:.2px;
-    }
-    .lead{
-      color:rgba(230,234,242,.92);
-      line-height:1.8;
-      margin:0 auto 12px auto;
-      max-width:860px;
-    }
-    .muted{color:var(--muted);line-height:1.75;max-width:860px;margin:0 auto}
 
-    /* Logo sizing (fixes “too large”) */
-    .logo-wrap{display:flex;justify-content:center;margin:14px 0 6px}
-    .logo{
-      width:180px;
-      max-width:50vw;
-      height:auto;
-      display:block;
-      border-radius:10px;
-      box-shadow:0 12px 30px rgba(0,0,0,.35);
-      border:none;
-      background:none;
-      padding:0;
+    main {
+      max-width: 1000px;
+      margin: 18px auto;
+      padding: 0 14px;
     }
 
-    .chips{
-      list-style:none;
-      padding:0;
-      margin:14px auto 0;
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:10px;
-      max-width:900px;
+    .panel {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+      padding: 22px;
+      margin-bottom: 16px;
+      text-align: center;
     }
-    .chips li{
-      padding:8px 12px;
-      border-radius:999px;
-      background:rgba(11,18,34,.70);
-      border:1px solid rgba(255,255,255,.10);
-      color:rgba(230,234,242,.92);
-      font-weight:850;
-      font-size:.92rem;
-    }
-    .chips li span{color:var(--accent);font-family:var(--mono);font-weight:950;margin-right:6px}
 
-    .contact-links{
-      display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:12px;
+    h1 {
+      margin: 10px 0;
+      font-size: 2.05rem;
+      font-weight: 980;
+      letter-spacing: 0.2px;
+      line-height: 1.2;
     }
-    .pill{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 12px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(12,18,36,.55);
-      color:var(--ink);
-      font-weight:900;
-      text-decoration:none;
-    }
-    .pill:hover{background:rgba(53,210,255,.08);text-decoration:none}
 
-    .note{
-      margin-top:12px;
-      color:var(--muted2);
-      font-size:.95rem;
-      line-height:1.6;
-      max-width:860px;
-      margin-left:auto;
-      margin-right:auto;
+    h2 {
+      margin: 0 0 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 1.25rem;
+      letter-spacing: 0.2px;
+    }
+
+    .lead {
+      color: rgba(230, 234, 242, 0.92);
+      line-height: 1.8;
+      margin: 0 auto 12px;
+      max-width: 860px;
+    }
+
+    .muted {
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* ---------- LOGO ---------- */
+
+    .logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 14px 0 6px;
+    }
+
+    .logo {
+      width: 180px;
+      max-width: 50vw;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      border: none;
+      background: none;
+      padding: 0;
+    }
+
+    /* ---------- SERVICE CHIPS ---------- */
+
+    .chips {
+      list-style: none;
+      padding: 0;
+      margin: 14px auto 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 900px;
+    }
+
+    .chips li {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(11, 18, 34, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(230, 234, 242, 0.92);
+      font-weight: 850;
+      font-size: 0.92rem;
+    }
+
+    .chips li span {
+      color: var(--accent);
+      font-family: var(--mono);
+      font-weight: 950;
+      margin-right: 6px;
+    }
+
+    /* ---------- CONTACT LINKS ---------- */
+
+    .contact-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(12, 18, 36, 0.55);
+      color: var(--ink);
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .pill:hover {
+      background: rgba(53, 210, 255, 0.08);
+      text-decoration: none;
+    }
+
+    /* ---------- ADDITIONAL ELEMENTS ---------- */
+
+    .note {
+      margin-top: 12px;
+      color: var(--muted2);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px 12px;
+      margin-bottom: 4px;
+      border-radius: 999px;
+      border: 1px solid rgba(53, 210, 255, 0.3);
+      background: rgba(12, 18, 36, 0.65);
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      font-weight: 950;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .info-card {
+      background: var(--panel2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 17px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+      text-align: center;
+    }
+
+    .info-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+      color: var(--ink);
+    }
+
+    .info-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .statement {
+      max-width: 860px;
+      margin: 12px auto 0;
+      padding: 14px 16px;
+      border-left: 3px solid var(--accent);
+      border-radius: 10px;
+      background: rgba(53, 210, 255, 0.06);
+      color: rgba(230, 234, 242, 0.92);
+      line-height: 1.75;
+      text-align: left;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+
+    @media (max-width: 800px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        margin-top: 14px;
+      }
+
+      .panel {
+        padding: 19px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- TOPBAR (hamburger only) -->
+  <!-- TOPBAR -->
   <div class="topbar">
     <div class="topbar-inner">
-      <button class="hamburger" id="hamburger"
-              aria-label="Open menu" aria-controls="site-drawer" aria-expanded="false">
-        <span class="lines"><span class="bar"></span></span>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open menu"
+        aria-controls="site-drawer"
+        aria-expanded="false"
+      >
+        <span class="lines">
+          <span class="bar"></span>
+        </span>
       </button>
     </div>
   </div>
 
-  <!-- OVERLAY + DRAWER -->
+  <!-- OVERLAY AND DRAWER -->
   <div class="overlay" id="overlay"></div>
 
   <aside class="drawer" id="site-drawer" aria-label="Site menu">
     <header>
-      <div class="mono" style="font-weight:950;">menu<span style="color:var(--accent)">.</span></div>
+      <div class="mono" style="font-weight: 950">
+        menu<span style="color: var(--accent)">.</span>
+      </div>
     </header>
+
     <nav>
       <a href="index.html">Home</a>
+      <a href="index.html#services">Property Services</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="hire.html#estimateForm">Request Estimate</a>
       <a href="about.html">About</a>
@@ -250,94 +652,216 @@
   </aside>
 
   <main>
+    <!-- ABOUT GEOSITE -->
     <section class="panel">
+      <div class="eyebrow">
+        independent GIS • property research • environmental mapping
+      </div>
+
       <h1>About GeoSite Intel</h1>
 
       <div class="logo-wrap">
-        <img class="logo"
+        <img
+          class="logo"
           src="https://raw.githubusercontent.com/riggsa21/amandariggs-gis/main/Logo_black.png"
-          alt="GeoSite Intel Logo">
+          alt="GeoSite Intel Logo"
+        />
       </div>
 
       <p class="lead">
-        <strong>GeoSite Intel</strong> provides <strong>pre-construction drainage and terrain risk screening</strong>
-        for builders and development teams.
+        <strong>GeoSite Intel</strong> is an independent GIS and environmental
+        mapping service created by <strong>Amanda L. Riggs</strong> to help
+        people understand land and property before making important decisions.
       </p>
 
       <p class="muted">
-        Before grading begins and before permits are submitted, terrain already contains signals.
-        Low-elevation pockets, runoff pathways, slope transitions, and road-to-flow conflicts can indicate
-        where drainage issues may show up later. GeoSite Intel identifies those signals early and turns them into
-        clear, decision-ready screening maps.
+        A listing, tax card, or standard parcel viewer can only tell part of the
+        story. I bring together relevant parcel records, terrain, environmental
+        data, historical imagery, and surrounding land context to create
+        focused research for buyers, property owners, real estate
+        professionals, and small investors.
       </p>
 
       <ul class="chips" aria-label="What we do">
-        <li><span>▸</span>Drainage &amp; terrain screening</li>
-        <li><span>▸</span>Runoff pathways &amp; low-spot cues</li>
-        <li><span>▸</span>LiDAR DEM analysis</li>
-        <li><span>▸</span>Road / drainage conflict flags</li>
-        <li><span>▸</span>Clear layouts for fast review</li>
-        <li><span>▸</span>Optional GIS + mapping support</li>
+        <li>
+          <span>▸</span>Parcel &amp; location research
+        </li>
+
+        <li>
+          <span>▸</span>Environmental &amp; terrain screening
+        </li>
+
+        <li>
+          <span>▸</span>Historical imagery review
+        </li>
+
+        <li>
+          <span>▸</span>Property comparison
+        </li>
+
+        <li>
+          <span>▸</span>Professional custom maps
+        </li>
+
+        <li>
+          <span>▸</span>Flexible GIS project support
+        </li>
       </ul>
 
       <p class="note">
-        <strong>Note:</strong> Deliverables are for screening, communication, and prioritization — not sealed engineering design.
+        <strong>Service note:</strong> GeoSite provides GIS-based research and
+        screening—not a boundary survey, title opinion, appraisal, engineering
+        design, legal review, or formal environmental assessment.
       </p>
     </section>
 
-    <section class="panel" aria-label="How it helps">
-      <h2>What this helps prevent</h2>
+    <!-- ABOUT AMANDA -->
+    <section class="panel" aria-label="About Amanda Riggs">
+      <h2>Meet Amanda</h2>
+
+      <p class="lead">
+        I’m Amanda L. Riggs, a geographer and GIS analyst based in Eastern North
+        Carolina. I hold an <strong>M.S. in Geography</strong> and a
+        <strong>GIS certificate</strong>, with experience in spatial analysis,
+        remote sensing, environmental modeling, LiDAR terrain analysis, and
+        professional cartography.
+      </p>
+
       <p class="muted">
-        Surprises cost money. Screening early helps reduce rework, delays, grading revisions, and water-related complaints by
-        flagging likely problem zones before a project is too far along to pivot easily.
+        My graduate research examined how urban growth affects environmental
+        conditions using land-cover change, watershed analysis, and
+        ecosystem-service modeling. That work contributed to peer-reviewed
+        research on urban growth, nutrient delivery, and stormwater retention.
+        GeoSite allows me to apply the same careful, evidence-based approach to
+        practical property and land questions.
+      </p>
+
+      <p class="statement">
+        I believe useful GIS work should do more than produce an attractive
+        map. It should answer a real question, explain the limits of the
+        available information, and help someone decide what to investigate
+        next.
       </p>
     </section>
 
+    <!-- APPROACH -->
+    <section
+      class="panel"
+      aria-label="How GeoSite approaches property research"
+    >
+      <h2>How I approach property research</h2>
+
+      <p class="muted">
+        Every project begins with the decision you are trying to make. From
+        there, I identify the most relevant available data and build a focused
+        review rather than delivering a generic stack of maps.
+      </p>
+
+      <div class="info-grid">
+        <article class="info-card">
+          <h3 class="mono">Decision first</h3>
+
+          <p>
+            The scope is built around your property question, priorities, and
+            intended use.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3 class="mono">Evidence together</h3>
+
+          <p>
+            Parcel, terrain, environmental, and imagery sources are combined so
+            relationships are easier to see.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <h3 class="mono">Clear next steps</h3>
+
+          <p>
+            You receive professional maps, plain-language findings, stated
+            limitations, and useful follow-up questions.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section class="panel" aria-label="Contact">
-      <h2>Contact</h2>
+      <h2>Have a property question?</h2>
+
       <p class="muted">
-        Send an address / parcel and what decision you’re trying to make. We’ll reply with a short scope, data sources, and an estimate.
+        Send the address or parcel number and tell me what you are trying to
+        understand. I’ll reply with the available data, recommended scope,
+        turnaround, and an estimate.
       </p>
 
       <div class="contact-links">
-        <a class="pill" href="mailto:geositeintel@outlook.com">geositeintel@outlook.com</a>
-        <a class="pill" href="hire.html#estimateForm">Request Estimate</a>
-        <a class="pill" href="portfolio.html">Portfolio</a>
+        <a
+          class="pill"
+          href="mailto:geositeintel@outlook.com"
+        >
+          geositeintel@outlook.com
+        </a>
+
+        <a
+          class="pill"
+          href="hire.html#estimateForm"
+        >
+          Request Estimate
+        </a>
+
+        <a class="pill" href="portfolio.html">
+          Portfolio
+        </a>
       </div>
     </section>
   </main>
 
   <script>
-    // Drawer toggle + close-on-link (match index behavior)
+    // Drawer toggle and close-on-link behavior
     (() => {
-      const btn = document.getElementById('hamburger');
-      const drawer = document.getElementById('site-drawer');
-      const overlay = document.getElementById('overlay');
+      const btn = document.getElementById("hamburger");
+      const drawer = document.getElementById("site-drawer");
+      const overlay = document.getElementById("overlay");
 
       function openDrawer() {
-        drawer.classList.add('open');
-        overlay.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-        document.documentElement.style.overflow = 'hidden';
+        drawer.classList.add("open");
+        overlay.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+        document.documentElement.style.overflow = "hidden";
       }
+
       function closeDrawer() {
-        drawer.classList.remove('open');
-        overlay.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-        document.documentElement.style.overflow = '';
-      }
-      function toggleDrawer(){
-        drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+        drawer.classList.remove("open");
+        overlay.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+        document.documentElement.style.overflow = "";
       }
 
-      btn.addEventListener('click', toggleDrawer);
-      overlay.addEventListener('click', closeDrawer);
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+      function toggleDrawer() {
+        if (drawer.classList.contains("open")) {
+          closeDrawer();
+        } else {
+          openDrawer();
+        }
+      }
 
-      drawer.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => closeDrawer());
+      btn.addEventListener("click", toggleDrawer);
+      overlay.addEventListener("click", closeDrawer);
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeDrawer();
+        }
+      });
+
+      drawer.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeDrawer);
       });
     })();
   </script>
 </body>
 </html>
+
