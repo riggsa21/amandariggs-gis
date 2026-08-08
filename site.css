@@ -707,6 +707,13 @@ textarea::placeholder {
   color: #81929b;
 }
 
+.field-help {
+  margin: 7px 0 0;
+  color: var(--muted2);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
 input[type="checkbox"] {
   width: auto;
   min-height: auto;

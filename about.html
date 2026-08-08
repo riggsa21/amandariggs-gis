@@ -14,7 +14,25 @@
 
   <meta name="theme-color" content="#0b1724">
   <link rel="canonical" href="https://geositeintel.com/about.html">
-  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site.css?v=4">
+
+  <!-- Critical logo sizing remains in the page if an older stylesheet is cached. -->
+  <style>
+    .topbar-brand img { display: block; width: auto; height: 42px; }
+    .drawer-logo { display: block; width: min(230px, 100%); height: auto; }
+    .logo-plaque {
+      width: min(100%, 680px);
+      margin: 20px auto;
+      padding: 24px;
+      border: 1px solid rgba(86, 185, 180, 0.32);
+      border-radius: 16px;
+      background: linear-gradient(145deg, #0f1d2c, #07111c);
+    }
+    .logo-plaque img { display: block; width: 100%; height: auto; }
+    @media (max-width: 620px) {
+      .topbar-brand img { height: 38px; }
+    }
+  </style>
 
   <link rel="icon" type="image/png" href="GeoSite_Intel_Favicon.png">
   <link rel="apple-touch-icon" href="GeoSite_Intel_Favicon.png">

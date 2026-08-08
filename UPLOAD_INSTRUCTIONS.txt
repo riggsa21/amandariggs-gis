@@ -5,7 +5,9 @@ GEOSITE INTEL BRAND UPDATE
 3. Allow GitHub to replace the existing HTML and CSS files with these versions.
 4. Keep all of your existing JPG case-study images in the repository.
 5. Commit the changes.
-6. Open geositeintel.com and press Ctrl+F5 to load the new files.
+6. Open geositeintel.com. The pages use a versioned stylesheet link so the
+   corrected logo sizing should appear immediately.
+7. If an already-open tab still shows the older version, press Ctrl+F5 once.
 
 FILES REPLACED
 - index.html
@@ -22,3 +24,10 @@ NEW BRAND FILES
 
 The full logo is used in the header, menu, and About page. The square icon is
 used in the browser tab, and the 1200 x 630 image is used for social sharing.
+
+Version 3 adds a cache-busting stylesheet link and critical in-page logo sizing
+to prevent the oversized header shown when a browser retains the older CSS.
+
+Version 4 clarifies that the estimate form accepts view-only links to photos,
+plans, and documents rather than direct file attachments. This avoids promising
+an upload feature that is not available on the current form plan.

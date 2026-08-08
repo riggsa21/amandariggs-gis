@@ -14,7 +14,16 @@
 
   <meta name="theme-color" content="#0b1724">
   <link rel="canonical" href="https://geositeintel.com/hire.html">
-  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="site.css?v=4">
+
+  <!-- Critical logo sizing remains in the page if an older stylesheet is cached. -->
+  <style>
+    .topbar-brand img { display: block; width: auto; height: 42px; }
+    .drawer-logo { display: block; width: min(230px, 100%); height: auto; }
+    @media (max-width: 620px) {
+      .topbar-brand img { height: 38px; }
+    }
+  </style>
 
   <link rel="icon" type="image/png" href="GeoSite_Intel_Favicon.png">
   <link rel="apple-touch-icon" href="GeoSite_Intel_Favicon.png">
@@ -282,13 +291,19 @@
         </div>
 
         <div class="field">
-          <label for="files">Optional links</label>
+          <label for="files">Optional links to supporting materials</label>
           <input
             id="files"
             name="files"
             type="text"
-            placeholder="Listing link, county parcel page, photos, plans, or dataset links"
+            placeholder="Paste listing, parcel-page, Google Drive, OneDrive, Dropbox, or photo-folder links"
           >
+          <p class="field-help">
+            Files cannot be attached to this initial form. To share photos,
+            plans, or documents, paste a view-only cloud link above or mention
+            the files in your description. GeoSite can arrange a secure file
+            transfer after reviewing your request.
+          </p>
         </div>
 
         <div class="submit-row">
