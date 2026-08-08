@@ -1,63 +1,86 @@
-<!-- index.html | GeoSite Intel real-estate-focused homepage -->
+<!-- index.html | GeoSite Intel property and land research homepage -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>GeoSite Intel | Property & Land Research for Real Estate Decisions</title>
+  <title>GeoSite Intel | Property &amp; Land Research for Real Estate Decisions</title>
 
   <meta
     name="description"
-    content="GIS-based property and land research for buyers, landowners, real estate agents, and investors. Understand parcel context, terrain, flood and environmental conditions, historical change, and other factors before making a decision."
-  />
+    content="GIS-based property and land research for buyers, landowners, real estate professionals, and investors. Understand parcel context, terrain, drainage, environmental conditions, historical change, and other factors before making a decision."
+  >
 
-  <!-- Open Graph -->
-  <meta
-    property="og:title"
-    content="GeoSite Intel | Property & Land Research"
-  />
+  <meta name="theme-color" content="#0b1724">
+  <link rel="canonical" href="https://geositeintel.com/">
+
+  <!-- Self-contained GeoSite favicon -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1724'/%3E%3Cpath d='M32 9C21.5 9 13 17.5 13 28c0 13.8 19 28 19 28s19-14.2 19-28C51 17.5 42.5 9 32 9zm0 26a7 7 0 1 1 0-14 7 7 0 0 1 0 14z' fill='%2356b9b4'/%3E%3C/svg%3E"
+  >
+
+  <!-- Social sharing -->
+  <meta property="og:title" content="GeoSite Intel | Property &amp; Land Research">
   <meta
     property="og:description"
-    content="Turn parcel records, terrain, environmental data, and historical imagery into clear answers for smarter real estate decisions."
-  />
+    content="Turn parcel records, terrain, environmental data, and historical imagery into clear context for smarter property decisions."
+  >
   <meta
     property="og:image"
-    content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg"
-  />
-  <meta property="og:type" content="website" />
+    content="https://geositeintel.com/case_study_01_FrogLevel_Davenport.jpg"
+  >
+  <meta property="og:url" content="https://geositeintel.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GeoSite Intel">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta
-    name="twitter:title"
-    content="GeoSite Intel | Property & Land Research"
-  />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GeoSite Intel | Property &amp; Land Research">
   <meta
     name="twitter:description"
-    content="Turn parcel records, terrain, environmental data, and historical imagery into clear answers for smarter real estate decisions."
-  />
+    content="GIS-based property research and clear maps for buyers, owners, real estate professionals, and investors."
+  >
   <meta
     name="twitter:image"
-    content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg"
-  />
+    content="https://geositeintel.com/case_study_01_FrogLevel_Davenport.jpg"
+  >
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "GeoSite Intel",
+      "url": "https://geositeintel.com/",
+      "email": "geositeintel@outlook.com",
+      "description": "GIS-based property research, environmental screening, historical imagery review, and professional mapping.",
+      "founder": {
+        "@type": "Person",
+        "name": "Amanda L. Riggs"
+      }
+    }
+  </script>
 
   <style>
     :root {
-      --bg0: #05070f;
-      --bg2: #0b1020;
-      --panel: rgba(12, 18, 36, 0.68);
-      --panel2: rgba(11, 18, 34, 0.72);
-      --ink: #e6eaf2;
-      --muted: #aab3c5;
-      --muted2: #7f8aa3;
-      --shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
-      --shadow-sm: 0 10px 28px rgba(0, 0, 0, 0.45);
-
-      --accent: #35d2ff;
-      --accent2: #8b5cf6;
-      --accent3: #22c55e;
-
+      --bg0: #07111c;
+      --bg1: #0b1724;
+      --bg2: #0f1d2c;
+      --panel: rgba(16, 31, 48, 0.82);
+      --panel-strong: rgba(19, 38, 58, 0.94);
+      --panel-soft: rgba(22, 42, 62, 0.72);
+      --ink: #eef3f4;
+      --muted: #b3c0c6;
+      --muted2: #82939c;
+      --line: rgba(255, 255, 255, 0.11);
+      --line-strong: rgba(86, 185, 180, 0.32);
+      --accent: #56b9b4;
+      --accent-light: #75cbc6;
+      --accent-dark: #2d7f7c;
+      --sand: #c8ad77;
+      --success: #72b78b;
+      --shadow: 0 20px 55px rgba(0, 0, 0, 0.46);
+      --shadow-sm: 0 12px 32px rgba(0, 0, 0, 0.32);
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
         "Liberation Mono", "Courier New", monospace;
       --sans: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
@@ -73,37 +96,28 @@
       box-sizing: border-box;
     }
 
-    html,
     body {
       margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: var(--sans);
+      padding-top: 60px;
+      min-height: 100vh;
       color: var(--ink);
+      font-family: var(--sans);
       background:
         radial-gradient(
-          1200px 520px at 15% 10%,
-          rgba(53, 210, 255, 0.13),
-          transparent 60%
+          1050px 500px at 12% 4%,
+          rgba(86, 185, 180, 0.12),
+          transparent 62%
         ),
         radial-gradient(
-          900px 420px at 85% 25%,
-          rgba(139, 92, 246, 0.12),
-          transparent 60%
+          850px 430px at 88% 22%,
+          rgba(200, 173, 119, 0.075),
+          transparent 62%
         ),
-        radial-gradient(
-          900px 420px at 55% 90%,
-          rgba(34, 197, 94, 0.08),
-          transparent 60%
-        ),
-        linear-gradient(180deg, var(--bg0) 0%, var(--bg2) 100%);
-      padding-top: 56px;
+        linear-gradient(180deg, var(--bg0), var(--bg1) 48%, var(--bg2));
     }
 
     a {
-      color: var(--accent);
+      color: var(--accent-light);
       text-decoration: none;
     }
 
@@ -111,53 +125,87 @@
       text-decoration: underline;
     }
 
+    img {
+      max-width: 100%;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    section {
+      scroll-margin-top: 82px;
+    }
+
     .mono {
       font-family: var(--mono);
     }
 
     .wrap {
-      max-width: 1100px;
+      width: min(1100px, calc(100% - 28px));
       margin: 0 auto;
-      padding: 0 14px;
     }
 
-    /* ---------- TOPBAR ---------- */
+    /* TOP BAR */
 
     .topbar {
       position: fixed;
-      inset: 0 0 auto 0;
-      height: 56px;
+      inset: 0 0 auto;
       z-index: 1200;
-      background: rgba(5, 7, 15, 0.72);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      height: 60px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(7, 17, 28, 0.9);
+      backdrop-filter: blur(12px);
     }
 
     .topbar-inner {
-      height: 56px;
+      width: min(1160px, calc(100% - 24px));
+      height: 60px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      padding: 0 12px;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .topbar-brand {
+      color: var(--ink);
+      font-family: var(--mono);
+      font-size: 0.96rem;
+      font-weight: 950;
+      letter-spacing: 0.2px;
+    }
+
+    .topbar-brand:hover {
+      text-decoration: none;
+    }
+
+    .brand-dot {
+      color: var(--accent);
     }
 
     .hamburger {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      border: 1px solid rgba(53, 210, 255, 0.55);
-      background: rgba(12, 18, 36, 0.6);
+      width: 42px;
+      height: 42px;
+      padding: 0;
+      border: 1px solid var(--line-strong);
+      border-radius: 11px;
+      background: rgba(16, 31, 48, 0.9);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
       cursor: pointer;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-      flex: 0 0 auto;
     }
 
-    .hamburger:focus-visible {
-      outline: 3px solid rgba(53, 210, 255, 0.35);
-      outline-offset: 2px;
+    .hamburger:focus-visible,
+    .copy-button:focus-visible,
+    .button:focus-visible {
+      outline: 3px solid rgba(86, 185, 180, 0.38);
+      outline-offset: 3px;
     }
 
     .hamburger .lines {
@@ -171,39 +219,35 @@
     .hamburger .bar {
       content: "";
       position: absolute;
-      left: 0;
       right: 0;
+      left: 0;
       height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
       border-radius: 2px;
-    }
-
-    .hamburger .bar {
-      top: 5px;
+      background: var(--accent-light);
     }
 
     .hamburger .lines::before {
       top: 0;
     }
 
+    .hamburger .bar {
+      top: 5px;
+    }
+
     .hamburger .lines::after {
       bottom: 0;
     }
 
-    section {
-      scroll-margin-top: 78px;
-    }
-
-    /* ---------- DRAWER ---------- */
+    /* NAVIGATION DRAWER */
 
     .overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.55);
+      z-index: 1050;
+      background: rgba(2, 8, 14, 0.62);
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.2s ease;
-      z-index: 1050;
     }
 
     .overlay.open {
@@ -214,16 +258,16 @@
     .drawer {
       position: fixed;
       inset: 0 auto 0 0;
-      width: 300px;
-      max-width: 86vw;
-      background: rgba(10, 14, 28, 0.92);
-      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 1100;
+      width: 305px;
+      max-width: 87vw;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid var(--line);
+      background: rgba(9, 22, 35, 0.98);
       box-shadow: var(--shadow);
       transform: translateX(-100%);
       transition: transform 0.25s ease;
-      z-index: 1100;
-      display: flex;
-      flex-direction: column;
     }
 
     .drawer.open {
@@ -231,146 +275,208 @@
     }
 
     .drawer header {
-      padding: 16px 18px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      padding: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .drawer-title {
+      font-weight: 950;
+    }
+
+    .drawer-subtitle {
+      margin-top: 4px;
+      color: var(--muted2);
+      font-size: 0.82rem;
     }
 
     .drawer nav {
       padding: 10px;
     }
 
-    .drawer a {
+    .drawer nav a {
       display: block;
       padding: 12px;
-      border-radius: 12px;
-      font-weight: 850;
-      color: var(--ink);
       border: 1px solid transparent;
-      text-align: left;
+      border-radius: 10px;
+      color: var(--ink);
+      font-weight: 800;
     }
 
-    .drawer a:hover {
-      background: rgba(53, 210, 255, 0.08);
-      border-color: rgba(53, 210, 255, 0.25);
+    .drawer nav a:hover,
+    .drawer nav a[aria-current="page"] {
+      border-color: rgba(86, 185, 180, 0.25);
+      background: rgba(86, 185, 180, 0.09);
       text-decoration: none;
     }
 
-    /* ---------- HERO ---------- */
+    /* BUTTONS */
 
-    header.hero {
-      margin: 18px 0;
-      padding: 64px 28px 52px;
-      border-radius: 26px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      background:
-        radial-gradient(
-          900px 300px at 20% 10%,
-          rgba(53, 210, 255, 0.18),
-          transparent 55%
-        ),
-        radial-gradient(
-          900px 380px at 80% 25%,
-          rgba(139, 92, 246, 0.16),
-          transparent 58%
-        ),
-        linear-gradient(rgba(5, 7, 15, 0.78), rgba(5, 7, 15, 0.88)),
-        url("thumbnail.jpg?v=2") center / cover no-repeat;
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 184px;
+      padding: 11px 16px;
+      border: 1px solid transparent;
+      border-radius: 11px;
+      color: var(--ink);
+      font-weight: 900;
+      text-decoration: none;
+      cursor: pointer;
+      transition:
+        transform 0.18s ease,
+        background 0.18s ease,
+        border-color 0.18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .button.primary {
+      color: #071719;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      box-shadow: 0 12px 28px rgba(45, 127, 124, 0.24);
+    }
+
+    .button.primary:hover {
+      background: linear-gradient(90deg, var(--accent-light), #8bd8d3);
+    }
+
+    .button.secondary {
+      border-color: var(--line-strong);
+      background: rgba(16, 31, 48, 0.74);
+    }
+
+    .button.secondary:hover {
+      border-color: rgba(86, 185, 180, 0.52);
+      background: rgba(86, 185, 180, 0.1);
+    }
+
+    /* HERO */
+
+    .hero {
       position: relative;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      margin: 20px 0;
+      padding: 66px 30px 48px;
+      border: 1px solid var(--line);
+      border-radius: 23px;
+      background:
+        linear-gradient(
+          120deg,
+          rgba(7, 17, 28, 0.92),
+          rgba(11, 27, 42, 0.86)
+        ),
+        url("thumbnail.jpg?v=2") center / cover no-repeat;
+      box-shadow: var(--shadow);
       text-align: center;
     }
 
-    header.hero::after {
+    .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background-image:
-        linear-gradient(
-          rgba(255, 255, 255, 0.06) 1px,
-          transparent 1px
+      background:
+        radial-gradient(
+          680px 240px at 16% 8%,
+          rgba(86, 185, 180, 0.15),
+          transparent 66%
         ),
-        linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.05) 1px,
-          transparent 1px
+        radial-gradient(
+          600px 220px at 84% 12%,
+          rgba(200, 173, 119, 0.1),
+          transparent 68%
         );
-      background-size: 40px 40px;
-      opacity: 0.18;
       pointer-events: none;
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 1;
     }
 
     .kicker {
       display: inline-flex;
-      gap: 10px;
       align-items: center;
-      padding: 7px 12px;
+      gap: 8px;
+      padding: 7px 11px;
+      border: 1px solid rgba(86, 185, 180, 0.3);
       border-radius: 999px;
-      font-weight: 950;
-      font-size: 0.92rem;
-      border: 1px solid rgba(53, 210, 255, 0.3);
-      background: rgba(12, 18, 36, 0.65);
-      color: var(--ink);
-      position: relative;
-      z-index: 1;
+      background: rgba(7, 17, 28, 0.66);
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 800;
     }
 
-    .kicker .tag {
+    .kicker strong {
+      color: var(--accent-light);
       font-family: var(--mono);
-      color: var(--accent);
-      font-weight: 950;
     }
 
-    header.hero h1 {
-      margin: 14px auto 10px;
-      font-size: 2.55rem;
-      font-weight: 980;
-      line-height: 1.12;
-      position: relative;
-      z-index: 1;
+    .hero h1 {
       max-width: 920px;
+      margin: 16px auto 12px;
+      font-size: clamp(2.3rem, 5.4vw, 4rem);
+      line-height: 1.06;
+      letter-spacing: -0.04em;
     }
 
-    header.hero .sub {
-      margin: 0 auto 18px;
-      color: rgba(230, 234, 242, 0.92);
-      font-size: 1.05rem;
-      font-weight: 650;
-      line-height: 1.65;
-      position: relative;
-      z-index: 1;
-      max-width: 860px;
+    .hero-subtitle {
+      max-width: 850px;
+      margin: 0 auto;
+      color: rgba(238, 243, 244, 0.91);
+      font-size: clamp(1.02rem, 2vw, 1.17rem);
+      line-height: 1.72;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 22px auto 0;
+    }
+
+    .trust-item {
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(7, 17, 28, 0.52);
+      color: var(--muted);
+      font-size: 0.83rem;
+      font-weight: 760;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      align-items: start;
-      margin-top: 10px;
-      position: relative;
-      z-index: 1;
-      justify-items: center;
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 24px;
     }
 
     .hero-card {
-      width: 100%;
-      max-width: 520px;
-      background: rgba(12, 18, 36, 0.72);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 18px;
-      padding: 16px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-      text-align: center;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(16, 31, 48, 0.87);
+      box-shadow: var(--shadow-sm);
     }
 
-    .hero-card h3 {
+    .hero-card h2 {
       margin: 0 0 8px;
-      font-size: 1.02rem;
-      letter-spacing: 0.2px;
+      padding: 0;
+      border: 0;
+      font-size: 1.05rem;
     }
 
     .hero-card p {
@@ -379,474 +485,489 @@
       line-height: 1.65;
     }
 
-    .btn-row {
+    .email-line {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-      justify-content: center;
-    }
-
-    .btn {
-      display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 10px 16px;
-      border-radius: 14px;
-      font-weight: 980;
-      border: 1px solid transparent;
-      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    .email-link {
+      font-weight: 900;
+    }
+
+    .copy-button {
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      border: 1px solid var(--line-strong);
+      border-radius: 9px;
+      background: rgba(7, 17, 28, 0.52);
+      color: var(--accent-light);
       cursor: pointer;
-      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
-      min-width: 190px;
     }
 
-    .btn.primary {
-      background: linear-gradient(
-        90deg,
-        rgba(53, 210, 255, 0.95),
-        rgba(139, 92, 246, 0.92)
-      );
-      color: #081021;
+    .copy-message {
+      color: var(--success);
+      font-size: 0.84rem;
+      font-weight: 800;
     }
 
-    .btn.primary:hover {
-      filter: brightness(1.05);
-      text-decoration: none;
-    }
+    /* MAIN SECTIONS */
 
-    .btn.ghost {
-      background: rgba(12, 18, 36, 0.5);
-      color: var(--ink);
-      border-color: rgba(53, 210, 255, 0.35);
-      box-shadow: none;
-    }
-
-    .btn.ghost:hover {
-      background: rgba(53, 210, 255, 0.08);
-      text-decoration: none;
-    }
-
-    /* ---------- SECTIONS ---------- */
-
-    section {
-      margin: 18px 0;
-      background: var(--panel);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 26px;
+    .content-section {
+      margin: 20px 0;
+      padding: 27px;
+      border: 1px solid var(--line);
       border-radius: 20px;
+      background: var(--panel);
       box-shadow: var(--shadow-sm);
       text-align: center;
     }
 
-    h2 {
-      margin: 0 auto 14px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      color: var(--ink);
-      letter-spacing: 0.2px;
+    .section-heading {
       max-width: 900px;
+      margin: 0 auto 18px;
     }
 
-    .lead {
+    .section-heading h2 {
+      margin: 0 0 9px;
+      font-size: clamp(1.55rem, 3vw, 2.1rem);
+      letter-spacing: -0.015em;
+    }
+
+    .section-heading p {
+      margin: 0;
       color: var(--muted);
-      line-height: 1.8;
-      margin: 0 auto 12px;
-      max-width: 900px;
-    }
-
-    .case-preview {
-      width: 100%;
-      max-width: 980px;
-      margin: 16px auto 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
-      overflow: hidden;
-      background: rgba(11, 18, 34, 0.65);
-    }
-
-    .case-preview img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .case-preview .cap {
-      padding: 10px 14px;
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.5;
-      text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      line-height: 1.76;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-      margin-top: 14px;
-      justify-items: center;
-      align-items: stretch;
+      grid-template-columns: repeat(3, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
     }
 
     .card {
-      width: 100%;
-      max-width: 520px;
-      background: var(--panel2);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 18px;
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-      text-align: center;
       height: 100%;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--panel-strong);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
+      text-align: left;
     }
 
     .card h3 {
       margin: 0 0 8px;
-      color: var(--ink);
-      font-size: 1.1rem;
+      font-size: 1.08rem;
     }
 
     .card p {
-      margin: 0 0 10px;
+      margin: 0;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.67;
     }
 
     .card ul {
-      margin: 0 auto;
-      padding-left: 0;
+      margin: 0;
+      padding: 0;
       list-style: none;
-      max-width: 420px;
-      text-align: left;
-      line-height: 1.7;
-      color: rgba(230, 234, 242, 0.92);
+      color: rgba(238, 243, 244, 0.9);
+      line-height: 1.65;
     }
 
-    .card ul li {
+    .card li {
       position: relative;
-      padding-left: 26px;
-      margin: 10px 0;
+      margin: 9px 0;
+      padding-left: 22px;
     }
 
-    .card ul li::before {
-      content: "▸";
+    .card li::before {
+      content: "•";
       position: absolute;
-      left: 0;
-      top: 0;
+      left: 3px;
       color: var(--accent);
+      font-weight: 950;
+    }
+
+    .service-note,
+    .scope-note {
+      max-width: 900px;
+      margin: 18px auto 0;
+      padding: 13px 15px;
+      border: 1px solid rgba(86, 185, 180, 0.2);
+      border-radius: 12px;
+      background: rgba(86, 185, 180, 0.055);
+      color: var(--muted);
+      font-size: 0.91rem;
+      line-height: 1.66;
+    }
+
+    .service-note strong,
+    .scope-note strong {
+      color: var(--ink);
+    }
+
+    /* CASE STUDIES */
+
+    .case-preview {
+      overflow: hidden;
+      width: 100%;
+      max-width: 980px;
+      margin: 16px auto 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel-strong);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .case-preview img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .case-caption {
+      padding: 10px 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .case-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 17px;
+    }
+
+    /* WHY AND PROCESS */
+
+    .centered-card {
+      text-align: center;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(190px, 1fr));
+      gap: 13px;
+      margin-top: 16px;
+      counter-reset: step;
+    }
+
+    .process-card {
+      counter-increment: step;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--panel-strong);
+      text-align: left;
+    }
+
+    .process-card::before {
+      content: "0" counter(step);
+      display: block;
+      margin-bottom: 8px;
+      color: var(--sand);
       font-family: var(--mono);
       font-weight: 950;
     }
 
-    .cards.three {
-      grid-template-columns: repeat(3, minmax(260px, 1fr));
+    .process-card h3 {
+      margin: 0 0 7px;
+      font-size: 1.03rem;
     }
 
-    .cta-band {
+    .process-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* CTA AND FOOTER */
+
+    .cta-section {
       background:
         radial-gradient(
-          900px 320px at 15% 20%,
-          rgba(53, 210, 255, 0.14),
-          transparent 55%
+          700px 250px at 12% 10%,
+          rgba(86, 185, 180, 0.14),
+          transparent 65%
         ),
         radial-gradient(
-          900px 380px at 85% 20%,
-          rgba(139, 92, 246, 0.14),
-          transparent 58%
+          600px 240px at 88% 15%,
+          rgba(200, 173, 119, 0.09),
+          transparent 66%
         ),
-        rgba(11, 18, 34, 0.66);
-      border: 1px solid rgba(53, 210, 255, 0.18);
+        var(--panel);
     }
 
-    .cta-band-inner {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 18px;
-      align-items: center;
-      justify-items: center;
-      text-align: center;
+    .cta-section h2 {
+      margin: 0 0 9px;
+      font-size: clamp(1.7rem, 3.5vw, 2.35rem);
+    }
+
+    .cta-section p {
+      max-width: 770px;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.72;
     }
 
     footer {
-      text-align: center;
-      margin: 26px 0 40px;
+      padding: 8px 12px 38px;
       color: var(--muted2);
-      font-size: 0.95em;
-      padding: 0 12px;
-    }
-
-    /* ---------- HOW IT WORKS ---------- */
-
-    #how .cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(260px, 1fr));
-      gap: 16px;
-      justify-items: center;
-      align-items: stretch;
-    }
-
-    #how .cards > .card:nth-child(4) {
-      grid-column: 1 / -1;
-      max-width: 520px;
-      justify-self: center;
-    }
-
-    #how .card,
-    #how .card h3,
-    #how .card p {
+      font-size: 0.9rem;
+      line-height: 1.65;
       text-align: center;
     }
 
-    /* ---------- RESPONSIVE ---------- */
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px 14px;
+      margin-top: 7px;
+    }
 
-    @media (max-width: 980px) {
-      .cards.three {
-        grid-template-columns: repeat(2, minmax(260px, 1fr));
+    /* RESPONSIVE */
+
+    @media (max-width: 940px) {
+      .cards {
+        grid-template-columns: repeat(2, minmax(240px, 1fr));
       }
 
-      .cards.three > :nth-child(3) {
+      .cards .card:last-child:nth-child(odd) {
         grid-column: 1 / -1;
-        max-width: 520px;
+        width: min(100%, 520px);
         justify-self: center;
       }
 
-      #how .cards {
-        grid-template-columns: repeat(2, minmax(260px, 1fr));
-      }
-
-      #how .cards > .card:nth-child(4) {
-        grid-column: 1 / -1;
-        max-width: 520px;
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
       }
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 760px) {
       .hero-grid {
         grid-template-columns: 1fr;
       }
 
-      .cta-band-inner {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 800px) {
-      header.hero {
-        margin: 14px 0 16px;
-        padding: 42px 18px;
-        border-radius: 20px;
-      }
-
-      header.hero h1 {
-        font-size: 2.05rem;
-      }
-
-      section {
-        margin: 14px 0;
-        padding: 20px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .btn-row {
-        flex-direction: column;
-      }
-
-      .hero-card,
-      .card {
-        max-width: 100%;
+      .hero {
+        padding: 48px 20px 34px;
       }
     }
 
     @media (max-width: 620px) {
-      .cards.three {
+      body {
+        padding-top: 56px;
+      }
+
+      .topbar,
+      .topbar-inner {
+        height: 56px;
+      }
+
+      .wrap {
+        width: min(100% - 20px, 1100px);
+      }
+
+      .hero {
+        margin-top: 14px;
+        border-radius: 18px;
+      }
+
+      .content-section {
+        margin: 14px 0;
+        padding: 19px;
+        border-radius: 17px;
+      }
+
+      .cards,
+      .process-grid {
         grid-template-columns: 1fr;
       }
 
-      .cards.three > :nth-child(3) {
+      .cards .card:last-child:nth-child(odd) {
         grid-column: auto;
-        max-width: unset;
+        width: 100%;
       }
 
-      #how .cards {
-        grid-template-columns: 1fr;
+      .button,
+      .case-actions .button {
+        width: 100%;
       }
 
-      #how .cards > .card:nth-child(4) {
-        grid-column: auto;
-        max-width: unset;
+      .topbar-brand {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- TOPBAR -->
   <div class="topbar">
     <div class="topbar-inner">
       <button
         class="hamburger"
         id="hamburger"
+        type="button"
         aria-label="Open menu"
         aria-controls="site-drawer"
         aria-expanded="false"
       >
-        <span class="lines">
-          <span class="bar"></span>
-        </span>
+        <span class="lines"><span class="bar"></span></span>
       </button>
+
+      <a class="topbar-brand" href="index.html" aria-current="page">
+        GeoSite Intel<span class="brand-dot">.</span>
+      </a>
     </div>
   </div>
 
-  <!-- OVERLAY AND DRAWER -->
   <div class="overlay" id="overlay"></div>
 
   <aside class="drawer" id="site-drawer" aria-label="Site menu">
     <header>
-      <div class="mono" style="font-weight: 950">
-        menu<span style="color: var(--accent)">.</span>
+      <div class="mono drawer-title">
+        GeoSite Intel<span class="brand-dot">.</span>
+      </div>
+
+      <div class="drawer-subtitle">
+        Property research and professional mapping
       </div>
     </header>
 
-    <nav>
-      <a href="index.html">Home</a>
+    <nav aria-label="Main site navigation">
+      <a href="index.html" aria-current="page">Home</a>
       <a href="#services">Property Services</a>
-      <a href="#case01">Case Study 01</a>
-      <a href="#case02">Case Study 02</a>
+      <a href="#case01">Example 01</a>
+      <a href="#case02">Example 02</a>
       <a href="#why">Why GeoSite</a>
-      <a href="#how">How it works</a>
+      <a href="#process">How It Works</a>
+      <a href="portfolio.html">Property Examples</a>
       <a href="hire.html#estimateForm">Request Estimate</a>
-      <a href="portfolio.html">Portfolio</a>
       <a href="about.html">About</a>
       <a href="mailto:geositeintel@outlook.com">Contact</a>
     </nav>
   </aside>
 
-  <!-- PAGE CONTENT -->
   <div class="wrap">
-    <!-- HERO -->
     <header class="hero">
       <div class="kicker">
-        <span class="tag">real estate</span>
-        parcel research • environmental screening • custom maps
+        <strong>property intelligence</strong>
+        <span>research • screening • clear maps</span>
       </div>
 
       <h1>Understand the land before you buy, sell, or plan.</h1>
 
-      <p class="sub">
+      <p class="hero-subtitle">
         GeoSite Intel turns parcel records, terrain, environmental data, and
-        historical imagery into clear property intelligence. Whether you are
-        evaluating one parcel or comparing several, I help uncover the
-        conditions worth understanding early—so you can ask better questions
-        and make a more informed real estate decision.
+        historical imagery into clear property context. Whether you are
+        evaluating one parcel or comparing several, I help identify the
+        conditions worth understanding early so you can ask better questions
+        and make a more informed decision.
       </p>
 
+      <div class="button-row">
+        <a class="button primary" href="hire.html#estimateForm">
+          Request an Estimate
+        </a>
+
+        <a class="button secondary" href="#services">Explore Services</a>
+      </div>
+
+      <div class="trust-row">
+        <span class="trust-item">Independent research</span>
+        <span class="trust-item">Public and authoritative data</span>
+        <span class="trust-item">Plain-language findings</span>
+        <span class="trust-item">Clear scope and limitations</span>
+      </div>
+
       <div class="hero-grid">
-        <div class="hero-card">
-          <h3 class="mono">Best for</h3>
+        <section class="hero-card" aria-labelledby="best-for-title">
+          <h2 class="mono" id="best-for-title">Best for</h2>
 
           <p>
-            <strong>Land and home buyers</strong>,
-            <strong>property owners</strong>,
-            <strong>real estate agents</strong>, and
-            <strong>small investors</strong> who need more context than a
-            listing, tax card, or standard aerial image can provide.
+            Land and home buyers, property owners, real estate professionals,
+            and small investors who need more context than a listing, tax card,
+            or standard aerial image can provide.
           </p>
+        </section>
 
-          <div class="btn-row">
+        <section class="hero-card" aria-labelledby="contact-title">
+          <h2 class="mono" id="contact-title">Start with a property</h2>
+
+          <div class="email-line">
             <a
-              class="btn primary"
-              href="hire.html#estimateForm"
-            >
-              Request estimate
-            </a>
-
-            <a class="btn ghost" href="#services">
-              Explore services
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <h3 class="mono">Contact</h3>
-
-          <p style="margin-bottom: 10px">
-            <a
+              class="email-link"
               id="emailLink"
               href="mailto:geositeintel@outlook.com"
-              style="font-weight: 980"
             >
               geositeintel@outlook.com
             </a>
 
             <button
+              class="copy-button"
               id="copyEmail"
-              title="Copy email"
-              style="
-                border: none;
-                background: none;
-                cursor: pointer;
-                margin-left: 6px;
-                font-size: 1rem;
-                color: var(--accent);
-              "
+              type="button"
+              title="Copy email address"
+              aria-label="Copy email address"
             >
               ⧉
             </button>
 
-            <span
-              id="copyMsg"
-              style="
-                font-size: 0.88rem;
-                color: var(--accent3);
-                margin-left: 6px;
-                display: none;
-              "
-            >
-              copied
-            </span>
-          </p>
+            <span class="copy-message" id="copyMessage" hidden>Copied</span>
+          </div>
 
-          <p
-            style="
-              margin: 0;
-              color: var(--muted);
-              line-height: 1.65;
-            "
-          >
-            Send an address or parcel number and tell me what you are trying to
-            understand—before a purchase, sale, listing, land-use decision, or
-            next project step. I’ll reply with the available data, recommended
-            scope, turnaround, and estimate.
+          <p>
+            Send an address, parcel number, or listing link and explain what you
+            are trying to understand. I’ll reply with a recommended scope,
+            turnaround, and estimate.
           </p>
-        </div>
+        </section>
       </div>
     </header>
 
     <main>
-      <!-- SERVICES -->
       <section
+        class="content-section"
         id="services"
-        aria-label="Property research services"
+        aria-labelledby="services-title"
       >
-        <h2>Property research that goes beyond the listing</h2>
+        <div class="section-heading">
+          <h2 id="services-title">
+            Property research that goes beyond the listing
+          </h2>
 
-        <p class="lead">
-          Every property question is different. I combine relevant public
-          records and spatial data into a focused review—then explain what the
-          maps show, what they do not show, and what may deserve a closer look.
-        </p>
+          <p>
+            Every property question is different. I combine relevant public
+            records and spatial data into a focused review, then explain what
+            the evidence shows, what it cannot prove, and what may deserve a
+            closer look.
+          </p>
+        </div>
 
-        <div class="cards three">
+        <div class="cards">
           <article class="card">
-            <h3>Parcel &amp; location research</h3>
+            <h3>Parcel &amp; Location Research</h3>
 
             <ul>
               <li>Parcel boundaries and surrounding property context</li>
@@ -857,222 +978,152 @@
           </article>
 
           <article class="card">
-            <h3>Environmental &amp; terrain screening</h3>
+            <h3>Environmental &amp; Terrain Screening</h3>
 
             <ul>
-              <li>
-                Flood-zone, wetland, soil, and water-resource context
-              </li>
-              <li>
-                Elevation, slope, drainage pathways, and low areas
-              </li>
-              <li>
-                Land cover and other property-specific constraints
-              </li>
-              <li>
-                Clear flags for questions or field checks to pursue next
-              </li>
+              <li>Flood-zone, wetland, soil, and water-resource context</li>
+              <li>Elevation, slope, drainage pathways, and low areas</li>
+              <li>Land cover and other property-specific conditions</li>
+              <li>Clear flags for questions or field checks to pursue next</li>
             </ul>
           </article>
 
           <article class="card">
-            <h3>Historical imagery &amp; custom maps</h3>
+            <h3>Historical Imagery &amp; Custom Maps</h3>
 
             <ul>
               <li>Visual review of how a property changed over time</li>
-              <li>
-                Past land-use and landscape patterns visible in imagery
-              </li>
-              <li>
-                Professional maps for clients, planning, or discussion
-              </li>
-              <li>
-                Flexible GIS support for unique property questions
-              </li>
+              <li>Past land-use and landscape patterns visible in imagery</li>
+              <li>Professional maps for clients, planning, or discussion</li>
+              <li>Flexible GIS support for unique property questions</li>
             </ul>
           </article>
         </div>
 
-        <p class="lead" style="margin-top: 18px">
-          GeoSite provides research and screening—not a boundary survey, title
-          opinion, appraisal, engineering design, or formal environmental
-          assessment. When the data points to a concern, the findings can help
-          you identify the right next professional.
-        </p>
+        <div class="service-note">
+          <strong>Important:</strong> GeoSite provides GIS-based research,
+          screening, and mapping—not a boundary survey, title opinion,
+          appraisal, engineering design, legal review, or formal environmental
+          assessment. Findings can help identify the appropriate next question
+          or professional review.
+        </div>
       </section>
 
-      <!-- CASE STUDY 01 -->
-      <section id="case01" aria-label="Case Study 01">
-        <h2>
-          Case Study 01: Property Terrain Context — Frog Level / Davenport
-          Farm Corridor
-        </h2>
+      <section
+        class="content-section"
+        id="case01"
+        aria-labelledby="case01-title"
+      >
+        <div class="section-heading">
+          <h2 id="case01-title">
+            Example 01: Terrain &amp; Drainage Context
+          </h2>
 
-        <p class="lead">
-          This corridor review shows how terrain and drainage data can add
-          useful context around a property—highlighting low areas, runoff
-          patterns, nearby roads, and conditions that may not be obvious from a
-          listing photo or standard parcel map.
-        </p>
-
-        <div
-          class="case-preview"
-          aria-label="Case Study 01 preview"
-        >
-          <img
-            src="case_study_01_FrogLevel_Davenport.jpg?v=5"
-            alt="Case Study 01: Frog Level / Davenport Farm Corridor layout preview"
-          />
-
-          <div class="cap">
-            Case Study 01 — Frog Level / Davenport Farm Corridor
-            (property terrain and drainage context)
-          </div>
+          <p>
+            This Frog Level / Davenport Farm corridor review demonstrates how
+            terrain and drainage data can reveal low areas, runoff patterns,
+            nearby roads, and conditions that may not be obvious from a listing
+            photograph or standard parcel map.
+          </p>
         </div>
 
-        <div class="cards three">
+        <figure class="case-preview">
+          <img
+            src="case_study_01_FrogLevel_Davenport.jpg?v=5"
+            alt="Terrain and drainage context map for the Frog Level and Davenport Farm corridor"
+          >
+
+          <figcaption class="case-caption">
+            Independent demonstration project — Frog Level / Davenport Farm
+            corridor property terrain and drainage context
+          </figcaption>
+        </figure>
+
+        <div class="cards">
           <article class="card">
-            <h3>What was delivered</h3>
+            <h3>What was reviewed</h3>
 
             <ul>
-              <li>
-                <strong>Property-area overview</strong>
-                (print + shareable)
-              </li>
-              <li>
-                <strong>Drainage pathways</strong>
-                and runoff direction cues
-              </li>
-              <li>
-                <strong>Low-spot signals</strong>
-                using LiDAR terrain context
-              </li>
-              <li>
-                <strong>Road and surrounding-area context</strong>
-              </li>
-              <li>
-                <strong>Clear labels + legend</strong>
-                for non-technical review
-              </li>
+              <li>High-resolution LiDAR-derived terrain</li>
+              <li>Modeled drainage pathways and runoff direction</li>
+              <li>Low-area signals within the surrounding landscape</li>
+              <li>Road, building, and nearby land context</li>
             </ul>
-
-            <div style="margin-top: 12px">
-              <a
-                class="btn primary"
-                href="hire.html#estimateForm"
-              >
-                Research a property
-              </a>
-            </div>
           </article>
 
           <article class="card">
             <h3>What it helps answer</h3>
 
             <ul>
-              <li>
-                How does water likely move through the surrounding area?
-              </li>
-              <li>
-                Are low-lying or pooling-prone areas visible in the terrain?
-              </li>
-              <li>
-                Could nearby roads or drainage patterns affect the property?
-              </li>
-              <li>
-                Which conditions are worth checking in person?
-              </li>
-              <li>
-                What questions should a buyer or owner ask next?
-              </li>
+              <li>How might water move through the surrounding area?</li>
+              <li>Where do terrain patterns suggest closer inspection?</li>
+              <li>Could nearby roads or drainage affect the property?</li>
+              <li>What questions should a buyer or owner ask next?</li>
             </ul>
           </article>
 
           <article class="card">
-            <h3>Data used</h3>
+            <h3>Decision value</h3>
 
-            <ul>
-              <li>
-                High-resolution <strong>LiDAR DEM</strong> (terrain)
-              </li>
-              <li>
-                Hydrology layers (streams/drainage where available)
-              </li>
-              <li>
-                Road + building layers (public sources)
-              </li>
-              <li>
-                Cartographic cleanup for clarity and sharing
-              </li>
-            </ul>
-
-            <p
-              style="
-                margin-top: 10px;
-                color: var(--muted);
-                line-height: 1.7;
-                max-width: 520px;
-                margin-left: auto;
-                margin-right: auto;
-              "
-            >
-              This is a <strong>property screening product</strong> designed
-              to add context and guide next steps—not a survey or sealed
-              engineering design.
+            <p>
+              The map turns several technical datasets into one readable view,
+              helping a buyer or owner focus a property walk-through and decide
+              whether more specialized review is appropriate.
             </p>
           </article>
         </div>
+
+        <div class="case-actions">
+          <a class="button primary" href="hire.html#estimateForm">
+            Research a Property
+          </a>
+
+          <a class="button secondary" href="portfolio.html">
+            View Property Examples
+          </a>
+        </div>
       </section>
 
-      <!-- CASE STUDY 02 -->
-      <section id="case02" aria-label="Case Study 02">
-        <h2>
-          Case Study 02: Access &amp; Drainage Context — North Edwards Road
-        </h2>
+      <section
+        class="content-section"
+        id="case02"
+        aria-labelledby="case02-title"
+      >
+        <div class="section-heading">
+          <h2 id="case02-title">
+            Example 02: Road Access &amp; Drainage Context
+          </h2>
 
-        <p class="lead">
-          This screening examined a recurring roadway ponding location along
-          North Edwards Road. It demonstrates how terrain and contributing-area
-          analysis can reveal access and drainage conditions near a property
-          and identify a likely bottleneck for closer field review.
-        </p>
-
-        <div
-          class="case-preview"
-          aria-label="Case Study 02 preview"
-        >
-          <img
-            src="Case_02_North_Edwards%20Rd.jpg?v=1"
-            alt="Case Study 02: North Edwards Road access and drainage context"
-          />
-
-          <div class="cap">
-            Case Study 02 — North Edwards Road (ponding location,
-            contributing-area signals, and likely drainage bottleneck)
-          </div>
+          <p>
+            This North Edwards Road review examines a low roadway segment where
+            water has been observed collecting. Terrain and contributing-area
+            analysis add context to the access concern and identify a possible
+            drainage bottleneck for field verification.
+          </p>
         </div>
 
-        <div class="cards three">
+        <figure class="case-preview">
+          <img
+            loading="lazy"
+            src="Case_02_North_Edwards%20Rd.jpg?v=1"
+            alt="Road access and drainage context map for North Edwards Road"
+          >
+
+          <figcaption class="case-caption">
+            Independent demonstration project — North Edwards Road access,
+            ponding, contributing-area signals, and drainage context
+          </figcaption>
+        </figure>
+
+        <div class="cards">
           <article class="card">
-            <h3>What was identified</h3>
+            <h3>What was reviewed</h3>
 
             <ul>
-              <li>
-                <strong>Observed roadway ponding</strong> along a low segment
-              </li>
-              <li>
-                Runoff routing <strong>parallel to the road shoulder</strong>
-              </li>
-              <li>
-                Contributing-area signals supporting concentrated flow
-              </li>
-              <li>
-                A possible <strong>cross-drain bottleneck</strong> to
-                investigate
-              </li>
-              <li>
-                Expected reconnection point to the natural flow path
-              </li>
+              <li>High-resolution LiDAR-derived elevation</li>
+              <li>Modeled flow accumulation and contributing area</li>
+              <li>Road position and the surrounding drainage pattern</li>
+              <li>Expected connection to the natural flow path</li>
             </ul>
           </article>
 
@@ -1080,242 +1131,210 @@
             <h3>Why it matters</h3>
 
             <ul>
-              <li>Adds context to year-round property access</li>
-              <li>
-                Highlights conditions to verify before a purchase
-              </li>
-              <li>
-                Supports informed questions for the owner or agent
-              </li>
-              <li>
-                Provides useful documentation for follow-up conversations
-              </li>
-              <li>
-                Helps identify the right agency or professional to contact next
-              </li>
+              <li>Adds context to possible property-access concerns</li>
+              <li>Highlights conditions to verify before a purchase</li>
+              <li>Supports informed questions for an owner or agent</li>
+              <li>Helps identify the right agency or professional to contact</li>
             </ul>
           </article>
 
           <article class="card">
-            <h3>Data used</h3>
+            <h3>Decision value</h3>
 
-            <ul>
-              <li>
-                High-resolution
-                <strong>LiDAR-derived terrain</strong>
-              </li>
-              <li>
-                Contributing area (acres) from flow accumulation
-              </li>
-              <li>
-                Road and structure layers (public sources)
-              </li>
-              <li>
-                Cartographic refinement for clear communication
-              </li>
-            </ul>
-
-            <p
-              style="
-                margin-top: 10px;
-                color: var(--muted);
-                line-height: 1.7;
-                max-width: 520px;
-                margin-left: auto;
-                margin-right: auto;
-              "
-            >
-              Screening-level property research designed to inform decisions
-              and support next-step investigation—not a sealed engineering
-              design.
+            <p>
+              Screening does not diagnose an engineering problem, but it can
+              show how the observed location relates to the surrounding terrain
+              and help focus the next field or professional review.
             </p>
           </article>
         </div>
+
+        <div class="case-actions">
+          <a class="button primary" href="hire.html#estimateForm">
+            Ask About an Access Concern
+          </a>
+
+          <a class="button secondary" href="portfolio.html">
+            Read the Full Examples
+          </a>
+        </div>
       </section>
 
-      <!-- WHY GEOSITE -->
-      <section id="why" aria-label="Why GeoSite adds value">
-        <h2>Why GeoSite adds value</h2>
+      <section
+        class="content-section"
+        id="why"
+        aria-labelledby="why-title"
+      >
+        <div class="section-heading">
+          <h2 id="why-title">Why GeoSite Adds Value</h2>
 
-        <p class="lead">
-          A property can look simple until you start layering the information.
-          GeoSite brings scattered public data together, focuses it on your
-          actual decision, and translates the result into something you can use.
-        </p>
+          <p>
+            A property can look simple until the information is layered
+            together. GeoSite organizes scattered public data around the
+            decision you are actually trying to make.
+          </p>
+        </div>
 
-        <div class="cards three">
-          <article class="card">
-            <h3 class="mono">Decision-focused</h3>
+        <div class="cards">
+          <article class="card centered-card">
+            <h3>Decision-Focused</h3>
 
             <p>
-              The research starts with your property question—not a generic
-              stack of maps.
+              Research begins with your property question instead of producing
+              a generic stack of maps.
             </p>
           </article>
 
-          <article class="card">
-            <h3 class="mono">Multiple sources, one view</h3>
+          <article class="card centered-card">
+            <h3>Multiple Sources, One View</h3>
 
             <p>
               Parcel, environmental, terrain, and imagery data are combined so
-              patterns are easier to recognize.
+              relationships are easier to recognize.
             </p>
           </article>
 
-          <article class="card">
-            <h3 class="mono">Clear communication</h3>
+          <article class="card centered-card">
+            <h3>Clear Communication</h3>
 
             <p>
-              You receive professional maps and plain-language findings,
-              including limits and practical next questions.
+              You receive professional maps and plain-language findings that
+              include limitations and practical next questions.
             </p>
           </article>
         </div>
       </section>
 
-      <!-- HOW IT WORKS -->
-      <section id="how" aria-label="How it works">
-        <h2>How it works</h2>
+      <section
+        class="content-section"
+        id="process"
+        aria-labelledby="process-title"
+      >
+        <div class="section-heading">
+          <h2 id="process-title">How It Works</h2>
+          <p>One property question. A focused scope. Clear deliverables.</p>
+        </div>
 
-        <p class="lead">
-          One property question. A focused scope. Clear deliverables.
+        <div class="process-grid">
+          <article class="process-card">
+            <h3>Share the property</h3>
+
+            <p>
+              Send the address, parcel number, listing link, coordinates, or a
+              map showing the land you want researched.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <h3>Confirm the scope</h3>
+
+            <p>
+              I review the available data and confirm the questions,
+              deliverables, turnaround, and estimate before work begins.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <h3>Review the evidence</h3>
+
+            <p>
+              Relevant parcel, terrain, environmental, and imagery information
+              is researched and organized around your decision.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <h3>Receive clear findings</h3>
+
+            <p>
+              Final maps are delivered with a plain-language summary, data
+              sources, limitations, and suggested next questions.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="content-section cta-section"
+        aria-labelledby="cta-title"
+      >
+        <h2 id="cta-title">
+          Make the property make sense before you decide.
+        </h2>
+
+        <p>
+          Get a focused GIS review that brings the parcel, surrounding land,
+          terrain, environmental conditions, and historical context into one
+          clear picture.
         </p>
 
-        <div class="cards">
-          <article class="card">
-            <h3 class="mono">1) Intake</h3>
+        <div class="button-row">
+          <a class="button primary" href="hire.html#estimateForm">
+            Request an Estimate
+          </a>
 
-            <p>
-              Send the address or parcel number and explain what you are
-              deciding or trying to understand.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="mono">2) Scope + estimate</h3>
-
-            <p>
-              I confirm the research questions, available datasets,
-              deliverables, timeline, and estimate.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="mono">3) Draft checkpoint</h3>
-
-            <p>
-              You receive a preview when needed to confirm the property, map
-              extent, labels, and focus.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3 class="mono">4) Delivery</h3>
-
-            <p>
-              Final maps are delivered as PDF/PNG with a plain-language
-              findings summary and optional walkthrough.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- CALL TO ACTION -->
-      <section class="cta-band" aria-label="Call to action">
-        <div class="cta-band-inner">
-          <div>
-            <h2
-              style="
-                border: 0;
-                margin: 0 0 10px;
-                padding: 0;
-              "
-            >
-              Make the property make sense before you decide.
-            </h2>
-
-            <p class="lead" style="margin: 0">
-              Get a focused GIS review that brings the parcel, surrounding
-              land, terrain, environmental conditions, and historical context
-              into one clear picture.
-            </p>
-          </div>
-
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              gap: 10px;
-              justify-content: center;
-              align-items: center;
-            "
-          >
-            <a
-              class="btn primary"
-              href="hire.html#estimateForm"
-            >
-              Request estimate
-            </a>
-
-            <a
-              class="btn ghost"
-              href="mailto:geositeintel@outlook.com"
-            >
-              Email me
-            </a>
-          </div>
+          <a class="button secondary" href="mailto:geositeintel@outlook.com">
+            Email GeoSite
+          </a>
         </div>
       </section>
     </main>
 
     <footer>
-      © 2026 Amanda L. Riggs · GeoSite Intel · Property Research &amp;
-      Environmental Screening ·
-      <a href="hire.html#estimateForm">Request Estimate</a>
-      ·
-      <a href="mailto:geositeintel@outlook.com">
-        geositeintel@outlook.com
-      </a>
+      <div>
+        © 2026 Amanda L. Riggs · GeoSite Intel · Property Research &amp;
+        Environmental Mapping
+      </div>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="#services">Services</a>
+        <a href="portfolio.html">Property Examples</a>
+        <a href="hire.html#estimateForm">Request Estimate</a>
+        <a href="about.html">About</a>
+        <a href="mailto:geositeintel@outlook.com">Contact</a>
+      </nav>
     </footer>
   </div>
 
   <script>
-    // Copy email address
-    const copyBtn = document.getElementById("copyEmail");
-    const copyMsg = document.getElementById("copyMsg");
-
-    copyBtn?.addEventListener("click", () => {
-      const email = document
-        .getElementById("emailLink")
-        .textContent
-        .trim();
-
-      navigator.clipboard.writeText(email).then(() => {
-        copyMsg.style.display = "inline";
-
-        setTimeout(() => {
-          copyMsg.style.display = "none";
-        }, 1500);
-      });
-    });
-
-    // Drawer menu controls
     (() => {
-      const btn = document.getElementById("hamburger");
+      const copyButton = document.getElementById("copyEmail");
+      const copyMessage = document.getElementById("copyMessage");
+      const emailLink = document.getElementById("emailLink");
+
+      copyButton.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(emailLink.textContent.trim());
+          copyMessage.hidden = false;
+
+          window.setTimeout(() => {
+            copyMessage.hidden = true;
+          }, 1600);
+        } catch {
+          window.location.href = emailLink.href;
+        }
+      });
+    })();
+
+    (() => {
+      const button = document.getElementById("hamburger");
       const drawer = document.getElementById("site-drawer");
       const overlay = document.getElementById("overlay");
 
       function openDrawer() {
         drawer.classList.add("open");
         overlay.classList.add("open");
-        btn.setAttribute("aria-expanded", "true");
+        button.setAttribute("aria-expanded", "true");
+        button.setAttribute("aria-label", "Close menu");
         document.documentElement.style.overflow = "hidden";
       }
 
       function closeDrawer() {
         drawer.classList.remove("open");
         overlay.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
+        button.setAttribute("aria-expanded", "false");
+        button.setAttribute("aria-label", "Open menu");
         document.documentElement.style.overflow = "";
       }
 
@@ -1327,7 +1346,7 @@
         }
       }
 
-      btn.addEventListener("click", toggleDrawer);
+      button.addEventListener("click", toggleDrawer);
       overlay.addEventListener("click", closeDrawer);
 
       document.addEventListener("keydown", (event) => {
