@@ -1,77 +1,57 @@
-<!-- portfolio.html | GeoSite Intel client-focused GIS portfolio -->
+<!-- portfolio.html | GeoSite Intel property research examples -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <title>Property Research &amp; GIS Portfolio | GeoSite Intel</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Property Research Examples | GeoSite Intel</title>
 
   <meta
     name="description"
-    content="Explore property research, environmental screening, terrain analysis, historical land-cover change, remote sensing, and custom mapping work by Amanda Riggs of GeoSite Intel."
+    content="See how GeoSite Intel uses parcel context, terrain, drainage, environmental data, historical imagery, and professional mapping to support informed property and land decisions."
   >
 
   <link rel="canonical" href="https://geositeintel.com/portfolio.html">
 
-  <!-- Open Graph -->
-  <meta
-    property="og:title"
-    content="Property Research &amp; GIS Portfolio | GeoSite Intel"
-  >
-
+  <meta property="og:title" content="Property Research Examples | GeoSite Intel">
   <meta
     property="og:description"
-    content="Selected property, terrain, environmental, historical imagery, and spatial-analysis work by Amanda Riggs."
+    content="Practical GIS-based property research for buyers, landowners, real estate professionals, and investors."
   >
-
   <meta
     property="og:image"
-    content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg"
+    content="https://geositeintel.com/case_study_01_FrogLevel_Davenport.jpg"
   >
-
-  <meta
-    property="og:url"
-    content="https://geositeintel.com/portfolio.html"
-  >
-
+  <meta property="og:url" content="https://geositeintel.com/portfolio.html">
   <meta property="og:type" content="website">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-
-  <meta
-    name="twitter:title"
-    content="Property Research &amp; GIS Portfolio | GeoSite Intel"
-  >
-
+  <meta name="twitter:title" content="Property Research Examples | GeoSite Intel">
   <meta
     name="twitter:description"
-    content="Selected property, terrain, environmental, historical imagery, and spatial-analysis work by Amanda Riggs."
+    content="See how spatial data can add useful context before a property decision."
   >
-
   <meta
     name="twitter:image"
-    content="https://riggsa21.github.io/amandariggs-gis/case_study_01_FrogLevel_Davenport.jpg"
+    content="https://geositeintel.com/case_study_01_FrogLevel_Davenport.jpg"
   >
 
   <style>
     :root {
       --bg0: #05070f;
-      --bg2: #0b1020;
-      --panel: rgba(12, 18, 36, 0.7);
-      --panel2: rgba(11, 18, 34, 0.72);
+      --bg1: #0b1020;
+      --panel: rgba(12, 18, 36, 0.72);
+      --panel-strong: rgba(11, 18, 34, 0.88);
       --ink: #e6eaf2;
       --muted: #aab3c5;
       --muted2: #7f8aa3;
-      --shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
-      --shadow-sm: 0 10px 28px rgba(0, 0, 0, 0.45);
-
+      --line: rgba(255, 255, 255, 0.1);
       --accent: #35d2ff;
       --accent2: #8b5cf6;
       --accent3: #22c55e;
-
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+      --shadow-sm: 0 10px 28px rgba(0, 0, 0, 0.42);
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
         "Liberation Mono", "Courier New", monospace;
       --sans: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
@@ -89,8 +69,10 @@
 
     body {
       margin: 0;
-      font-family: var(--sans);
+      padding-top: 56px;
+      min-height: 100vh;
       color: var(--ink);
+      font-family: var(--sans);
       background:
         radial-gradient(
           1200px 520px at 15% 10%,
@@ -107,8 +89,7 @@
           rgba(34, 197, 94, 0.07),
           transparent 60%
         ),
-        linear-gradient(180deg, var(--bg0) 0%, var(--bg2) 100%);
-      padding-top: 56px;
+        linear-gradient(180deg, var(--bg0), var(--bg1));
     }
 
     a {
@@ -120,28 +101,57 @@
       text-decoration: underline;
     }
 
+    img {
+      max-width: 100%;
+    }
+
+    section {
+      scroll-margin-top: 76px;
+    }
+
     .mono {
       font-family: var(--mono);
     }
 
-    /* ---------- TOPBAR ---------- */
+    .page-content {
+      width: min(1100px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 22px 0 42px;
+    }
+
+    /* TOP BAR */
 
     .topbar {
       position: fixed;
-      inset: 0 0 auto 0;
-      height: 56px;
+      inset: 0 0 auto;
       z-index: 1200;
-      background: rgba(5, 7, 15, 0.72);
-      backdrop-filter: blur(10px);
+      height: 56px;
+      background: rgba(5, 7, 15, 0.76);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
     }
 
     .topbar-inner {
       height: 56px;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: space-between;
       padding: 0 12px;
+    }
+
+    .topbar-brand {
+      color: var(--ink);
+      font-family: var(--mono);
+      font-size: 0.93rem;
+      font-weight: 950;
+    }
+
+    .topbar-brand:hover {
+      text-decoration: none;
+    }
+
+    .brand-dot {
+      color: var(--accent);
     }
 
     .hamburger {
@@ -150,12 +160,11 @@
       justify-content: center;
       width: 40px;
       height: 40px;
-      border-radius: 12px;
       border: 1px solid rgba(53, 210, 255, 0.55);
-      background: rgba(12, 18, 36, 0.6);
-      cursor: pointer;
+      border-radius: 12px;
+      background: rgba(12, 18, 36, 0.65);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-      flex: 0 0 auto;
+      cursor: pointer;
     }
 
     .hamburger:focus-visible {
@@ -174,35 +183,35 @@
     .hamburger .bar {
       content: "";
       position: absolute;
-      left: 0;
       right: 0;
+      left: 0;
       height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
       border-radius: 2px;
-    }
-
-    .hamburger .bar {
-      top: 5px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
     }
 
     .hamburger .lines::before {
       top: 0;
     }
 
+    .hamburger .bar {
+      top: 5px;
+    }
+
     .hamburger .lines::after {
       bottom: 0;
     }
 
-    /* ---------- DRAWER ---------- */
+    /* NAVIGATION DRAWER */
 
     .overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.55);
+      z-index: 1050;
+      background: rgba(0, 0, 0, 0.56);
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.2s ease;
-      z-index: 1050;
     }
 
     .overlay.open {
@@ -213,16 +222,16 @@
     .drawer {
       position: fixed;
       inset: 0 auto 0 0;
+      z-index: 1100;
       width: 300px;
       max-width: 86vw;
-      background: rgba(10, 14, 28, 0.92);
+      display: flex;
+      flex-direction: column;
       border-right: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(10, 14, 28, 0.96);
       box-shadow: var(--shadow);
       transform: translateX(-100%);
       transition: transform 0.25s ease;
-      z-index: 1100;
-      display: flex;
-      flex-direction: column;
     }
 
     .drawer.open {
@@ -230,508 +239,422 @@
     }
 
     .drawer header {
-      padding: 16px 18px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
       align-items: center;
       gap: 10px;
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .drawer-title {
       font-weight: 950;
     }
 
-    .drawer-dot {
-      color: var(--accent);
-    }
-
     .drawer nav {
       padding: 10px;
     }
 
-    .drawer a {
+    .drawer nav a {
       display: block;
       padding: 12px;
-      border-radius: 12px;
-      font-weight: 850;
-      color: var(--ink);
       border: 1px solid transparent;
-      text-align: left;
+      border-radius: 12px;
+      color: var(--ink);
+      font-weight: 850;
     }
 
-    .drawer a:hover {
-      background: rgba(53, 210, 255, 0.08);
+    .drawer nav a:hover,
+    .drawer nav a[aria-current="page"] {
       border-color: rgba(53, 210, 255, 0.25);
+      background: rgba(53, 210, 255, 0.08);
       text-decoration: none;
     }
 
-    /* ---------- PAGE LAYOUT ---------- */
+    /* REUSABLE ELEMENTS */
 
-    .page-content {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 1rem 4rem;
-    }
-
-    /* ---------- INTRO ---------- */
-
-    .portfolio-intro {
-      text-align: center;
+    .panel {
+      margin-bottom: 22px;
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 21px;
       background: var(--panel);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
       box-shadow: var(--shadow-sm);
-      padding: 22px;
-    }
-
-    .portfolio-intro h1 {
-      font-size: 2.1rem;
-      margin: 0 0 0.6rem;
-      font-weight: 980;
-      letter-spacing: 0.2px;
-    }
-
-    .portfolio-intro p {
-      margin: 0 auto;
-      max-width: 900px;
-      color: var(--muted);
-      line-height: 1.75;
     }
 
     .eyebrow {
       display: inline-flex;
       padding: 7px 11px;
-      margin-bottom: 8px;
-      border-radius: 999px;
       border: 1px solid rgba(53, 210, 255, 0.3);
-      background: rgba(12, 18, 36, 0.65);
+      border-radius: 999px;
+      background: rgba(12, 18, 36, 0.68);
       color: var(--accent);
       font-family: var(--mono);
-      font-size: 0.88rem;
-      font-weight: 950;
-    }
-
-    .section-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 15px;
-    }
-
-    .portfolio-note {
-      max-width: 900px;
-      margin: 14px auto 0;
-      color: var(--muted2);
-      font-size: 0.92rem;
-      line-height: 1.6;
-    }
-
-    /* ---------- SECTIONS ---------- */
-
-    .portfolio-section {
-      margin-top: 2rem;
-      background: var(--panel);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      box-shadow: var(--shadow-sm);
-      padding: 22px;
-      text-align: center;
-    }
-
-    .portfolio-section h2 {
-      font-size: 1.55rem;
-      margin: 0 0 1rem;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .portfolio-section > p {
-      margin: 0 auto 12px;
-      max-width: 900px;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    /* ---------- FEATURED CASE STUDIES ---------- */
-
-    .case-study-feature {
-      margin-top: 1.25rem;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      background: var(--panel2);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      text-align: center;
-    }
-
-    .case-study-feature img {
-      width: 100%;
-      height: auto;
-      display: block;
-      background: rgba(255, 255, 255, 0.06);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .case-study-body {
-      padding: 1.1rem 1.25rem 1.25rem;
-    }
-
-    .case-study-kicker {
       font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
       font-weight: 950;
-      margin: 0 0 0.35rem;
-      font-family: var(--mono);
     }
 
-    .case-study-body h2 {
-      margin: 0 0 0.5rem;
-      font-size: 1.5rem;
-      border: 0;
-      padding: 0;
-    }
-
-    .case-study-body p {
-      margin: 0.25rem auto 0.9rem;
-      max-width: 900px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .case-insights {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(210px, 1fr));
-      gap: 12px;
-      max-width: 980px;
-      margin: 15px auto 0;
-    }
-
-    .case-insight {
-      padding: 14px;
-      border-radius: 15px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(6, 10, 20, 0.42);
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .case-insight strong {
-      display: block;
-      margin-bottom: 4px;
-      color: var(--ink);
-      font-family: var(--mono);
-    }
-
-    /* ---------- BUTTONS ---------- */
-
-    .case-study-actions {
+    .button-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
       justify-content: center;
-      margin-top: 0.8rem;
+      gap: 10px;
+      margin-top: 20px;
     }
 
-    .btn {
+    .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.65rem 0.95rem;
-      border-radius: 14px;
-      font-weight: 980;
+      min-width: 180px;
+      padding: 11px 16px;
       border: 1px solid rgba(255, 255, 255, 0.14);
-      background: rgba(12, 18, 36, 0.55);
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    .btn.primary {
-      background: linear-gradient(
-        90deg,
-        rgba(53, 210, 255, 0.95),
-        rgba(139, 92, 246, 0.92)
-      );
-      color: #081021;
-      border: 0;
-    }
-
-    .btn:hover {
-      filter: brightness(1.05);
-      text-decoration: none;
-    }
-
-    /* ---------- TAGS ---------- */
-
-    .tags {
-      list-style: none;
-      padding: 0;
-      margin: 0.8rem 0 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      justify-content: center;
-    }
-
-    .tags li {
-      font-size: 0.82rem;
-      padding: 0.22rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      color: rgba(230, 234, 242, 0.92);
-      background: rgba(12, 18, 36, 0.55);
-    }
-
-    /* ---------- FEATURED PROJECTS ---------- */
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-      justify-items: center;
-      align-items: stretch;
-    }
-
-    .portfolio-card {
-      width: 100%;
-      max-width: 520px;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      background: var(--panel2);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      text-align: center;
-    }
-
-    .portfolio-thumb {
-      width: 100%;
-      background: rgba(0, 0, 0, 0.22);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .portfolio-thumb img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: contain;
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .portfolio-card .card-body {
-      padding: 1rem 1.1rem 1.2rem;
-    }
-
-    .portfolio-card h3 {
-      margin: 0 0 0.5rem;
-      font-size: 1.12rem;
-      color: var(--ink);
-    }
-
-    .portfolio-card p {
-      font-size: 0.96rem;
-      line-height: 1.55;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .value-line {
-      margin-top: 12px !important;
-      padding: 10px 12px;
-      border-left: 3px solid var(--accent);
-      border-radius: 9px;
-      background: rgba(53, 210, 255, 0.06);
-      color: rgba(230, 234, 242, 0.92) !important;
-      text-align: left;
-    }
-
-    /* ---------- GALLERY ---------- */
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-      justify-items: center;
-      align-items: stretch;
-    }
-
-    .gallery-item {
-      width: 100%;
-      max-width: 360px;
-      background: var(--panel2);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .gallery-thumb {
-      aspect-ratio: 4 / 3;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.22);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      overflow: hidden;
-    }
-
-    .gallery-thumb img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: contain;
-      object-position: center;
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .gallery-item figcaption {
-      padding: 0.7rem 0.85rem 0.95rem;
-      font-size: 0.92rem;
-      color: var(--muted);
-      line-height: 1.4;
-      margin: 0;
-    }
-
-    /* ---------- EXPANDABLE ARCHIVES ---------- */
-
-    .archive {
-      max-width: 1000px;
-      margin: 16px auto 0;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 16px;
-      background: rgba(6, 10, 20, 0.38);
-      overflow: hidden;
-    }
-
-    .archive summary {
-      padding: 14px 16px;
-      cursor: pointer;
+      border-radius: 13px;
+      background: rgba(12, 18, 36, 0.65);
       color: var(--ink);
       font-weight: 950;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    .button:hover {
+      filter: brightness(1.06);
+      text-decoration: none;
+    }
+
+    .button.primary {
+      border: 0;
+      color: #07101e;
+      background: linear-gradient(
+        90deg,
+        rgba(53, 210, 255, 0.97),
+        rgba(139, 92, 246, 0.94)
+      );
+    }
+
+    .section-heading {
+      max-width: 850px;
+      margin: 0 auto 20px;
       text-align: center;
-      list-style-position: inside;
     }
 
-    .archive summary:hover {
-      background: rgba(53, 210, 255, 0.06);
+    .section-heading h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.55rem, 3vw, 2rem);
     }
 
-    .archive-content {
-      padding: 0 14px 16px;
-    }
-
-    /* ---------- CAPABILITIES ---------- */
-
-    .capability-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(250px, 1fr));
-      gap: 14px;
-      margin-top: 14px;
-    }
-
-    .capability {
-      padding: 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: var(--panel2);
-      text-align: left;
-    }
-
-    .capability h3 {
-      margin: 0 0 7px;
-      color: var(--ink);
-    }
-
-    .capability p {
+    .section-heading p {
       margin: 0;
       color: var(--muted);
-      line-height: 1.65;
+      line-height: 1.72;
     }
 
-    /* ---------- WORKFLOWS ---------- */
+    /* HERO */
 
-    .workflow {
-      max-width: 920px;
-      margin: 0 auto;
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 58px 30px;
       text-align: center;
-      background: var(--panel2);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 18px;
-      padding: 16px 16px 14px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .workflow + .workflow {
-      margin-top: 12px;
-    }
-
-    .workflow h3 {
-      margin: 0 0 0.4rem;
-      color: var(--ink);
-    }
-
-    .workflow ol {
-      margin: 0.2rem 0 0;
-      padding-left: 1.2rem;
-      color: var(--muted);
-      line-height: 1.75;
-      text-align: left;
-      display: inline-block;
-    }
-
-    /* ---------- CTA AND FOOTER ---------- */
-
-    .cta-panel {
       background:
         radial-gradient(
-          800px 260px at 15% 20%,
-          rgba(53, 210, 255, 0.13),
-          transparent 55%
+          850px 320px at 18% 12%,
+          rgba(53, 210, 255, 0.17),
+          transparent 58%
         ),
         radial-gradient(
-          800px 300px at 85% 20%,
-          rgba(139, 92, 246, 0.13),
+          850px 340px at 82% 15%,
+          rgba(139, 92, 246, 0.15),
           transparent 58%
         ),
         var(--panel);
     }
 
-    footer {
-      margin-top: 24px;
-      color: var(--muted2);
-      text-align: center;
-      font-size: 0.92rem;
-      line-height: 1.6;
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.16;
+      pointer-events: none;
     }
 
-    /* ---------- RESPONSIVE ---------- */
+    .hero > * {
+      position: relative;
+      z-index: 1;
+    }
 
-    @media (max-width: 720px) {
-      .portfolio-intro h1 {
-        font-size: 1.85rem;
+    .hero h1 {
+      max-width: 900px;
+      margin: 15px auto 12px;
+      font-size: clamp(2.15rem, 5vw, 3.65rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .hero-copy {
+      max-width: 820px;
+      margin: 0 auto;
+      color: rgba(230, 234, 242, 0.92);
+      font-size: 1.08rem;
+      line-height: 1.72;
+    }
+
+    .example-note {
+      max-width: 850px;
+      margin: 22px auto 0;
+      padding: 12px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 13px;
+      background: rgba(5, 9, 18, 0.34);
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    /* CASE STUDIES */
+
+    .case-study {
+      overflow: hidden;
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      border-radius: 19px;
+      background: var(--panel-strong);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .case-study img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .case-body {
+      padding: 22px;
+    }
+
+    .case-kicker {
+      margin-bottom: 6px;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      font-weight: 950;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .case-body h3 {
+      margin: 0 0 9px;
+      font-size: clamp(1.35rem, 3vw, 1.8rem);
+    }
+
+    .case-intro {
+      max-width: 900px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .case-details {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 17px;
+    }
+
+    .case-detail {
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(5, 9, 18, 0.32);
+    }
+
+    .case-detail h4 {
+      margin: 0 0 6px;
+      color: var(--ink);
+      font-size: 0.96rem;
+    }
+
+    .case-detail p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.58;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      padding: 0;
+      margin: 16px 0 0;
+      list-style: none;
+    }
+
+    .tags li {
+      padding: 5px 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(5, 9, 18, 0.35);
+      color: rgba(230, 234, 242, 0.88);
+      font-size: 0.8rem;
+      font-weight: 780;
+    }
+
+    .case-action {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 17px;
+    }
+
+    /* DELIVERABLES */
+
+    .deliverable-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 13px;
+    }
+
+    .deliverable {
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--panel-strong);
+    }
+
+    .deliverable h3 {
+      margin: 0 0 7px;
+      font-size: 1.02rem;
+    }
+
+    .deliverable p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.62;
+    }
+
+    /* PROCESS */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 13px;
+      counter-reset: process;
+    }
+
+    .process-step {
+      counter-increment: process;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--panel-strong);
+    }
+
+    .process-step::before {
+      content: "0" counter(process);
+      display: block;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-weight: 950;
+    }
+
+    .process-step h3 {
+      margin: 0 0 7px;
+      font-size: 1.05rem;
+    }
+
+    .process-step p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.62;
+    }
+
+    /* SCOPE AND CTA */
+
+    .scope-box {
+      padding: 17px;
+      border: 1px solid rgba(53, 210, 255, 0.22);
+      border-radius: 15px;
+      background: rgba(53, 210, 255, 0.055);
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .scope-box strong {
+      color: var(--ink);
+    }
+
+    .cta-panel {
+      text-align: center;
+      background:
+        radial-gradient(
+          800px 280px at 18% 15%,
+          rgba(53, 210, 255, 0.14),
+          transparent 60%
+        ),
+        radial-gradient(
+          800px 300px at 82% 15%,
+          rgba(139, 92, 246, 0.14),
+          transparent 60%
+        ),
+        var(--panel);
+    }
+
+    .cta-panel h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.65rem, 3vw, 2.1rem);
+    }
+
+    .cta-panel p {
+      max-width: 740px;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    footer {
+      padding: 4px 10px 12px;
+      color: var(--muted2);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+      .case-details,
+      .deliverable-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-content {
+        width: min(100% - 20px, 1100px);
+        padding-top: 14px;
       }
 
-      .portfolio-section {
+      .panel {
         padding: 18px;
       }
 
-      .page-content {
-        padding: 1.5rem 1rem 3rem;
+      .hero {
+        padding: 42px 18px;
       }
 
-      .case-insights,
-      .capability-grid {
-        grid-template-columns: 1fr;
+      .case-body {
+        padding: 17px;
       }
 
-      .btn {
+      .button,
+      .case-action .button {
         width: 100%;
       }
     }
@@ -739,7 +662,6 @@
 </head>
 
 <body>
-  <!-- TOPBAR -->
   <div class="topbar">
     <div class="topbar-inner">
       <button
@@ -750,27 +672,28 @@
         aria-controls="site-drawer"
         aria-expanded="false"
       >
-        <span class="lines">
-          <span class="bar"></span>
-        </span>
+        <span class="lines"><span class="bar"></span></span>
       </button>
+
+      <a class="topbar-brand" href="index.html">
+        GeoSite Intel<span class="brand-dot">.</span>
+      </a>
     </div>
   </div>
 
-  <!-- OVERLAY AND DRAWER -->
   <div class="overlay" id="overlay"></div>
 
   <aside class="drawer" id="site-drawer" aria-label="Site menu">
     <header>
       <div class="mono drawer-title">
-        menu<span class="drawer-dot">.</span>
+        menu<span class="brand-dot">.</span>
       </div>
     </header>
 
     <nav aria-label="Main site navigation">
       <a href="index.html">Home</a>
       <a href="index.html#services">Property Services</a>
-      <a href="portfolio.html">Portfolio</a>
+      <a href="portfolio.html" aria-current="page">Property Examples</a>
       <a href="hire.html#estimateForm">Request Estimate</a>
       <a href="about.html">About</a>
       <a href="mailto:geositeintel@outlook.com">Contact</a>
@@ -778,871 +701,319 @@
   </aside>
 
   <main class="page-content">
-    <!-- PORTFOLIO INTRODUCTION -->
-    <section class="portfolio-intro">
+    <section class="panel hero">
       <div class="eyebrow">
-        property research • environmental analysis • professional mapping
+        property research • spatial context • clear maps
       </div>
 
-      <h1>Selected GeoSite Work</h1>
+      <h1>Property questions deserve more than a parcel outline.</h1>
 
-      <p>
-        These projects demonstrate how I combine parcel context, terrain,
-        environmental data, historical imagery, remote sensing, and clear
-        cartography to answer practical questions about land and place.
+      <p class="hero-copy">
+        See how GeoSite Intel combines public records, terrain, drainage,
+        environmental data, surrounding land context, and professional mapping
+        to help buyers, landowners, real estate professionals, and investors
+        ask better questions before making a decision.
       </p>
 
-      <nav class="section-links" aria-label="Portfolio sections">
-        <a class="btn" href="#property-examples">
-          Property Examples
+      <div class="button-row">
+        <a class="button primary" href="hire.html#estimateForm">
+          Request Property Research
         </a>
 
-        <a class="btn" href="#featured-projects">
-          Environmental &amp; Spatial Analysis
-        </a>
+        <a class="button" href="index.html#services">View Services</a>
+      </div>
 
-        <a class="btn" href="#map-gallery">
-          Additional GIS Work
-        </a>
-      </nav>
-
-      <p class="portfolio-note">
-        The two property examples below are independent case studies created to
-        demonstrate GeoSite’s methods and deliverables. Other projects include
-        graduate research, academic analysis, and professional portfolio work.
+      <p class="example-note">
+        These are independent demonstration projects created to show GeoSite’s
+        research methods and map deliverables. They are not commissioned client
+        reports or substitutes for an on-site inspection.
       </p>
     </section>
 
-    <!-- PROPERTY EXAMPLES -->
-    <section class="portfolio-section" id="property-examples">
-      <h2>Property &amp; Land Research Examples</h2>
+    <section class="panel" id="examples">
+      <div class="section-heading">
+        <h2>Property Research Examples</h2>
 
-      <p>
-        Each example begins with a real-world question, combines relevant
-        spatial evidence, and communicates what deserves closer review.
-      </p>
+        <p>
+          Each example starts with a practical property question, brings the
+          relevant spatial evidence together, and identifies what deserves
+          closer review.
+        </p>
+      </div>
 
-      <!-- CASE STUDY 01 -->
-      <article
-        class="case-study-feature"
-        aria-label="Independent property research example 01"
-      >
+      <article class="case-study">
         <img
-          loading="lazy"
           src="case_study_01_FrogLevel_Davenport.jpg?v=5"
           alt="Terrain and drainage context map for the Frog Level and Davenport Farm corridor"
         >
 
-        <div class="case-study-body">
-          <div class="case-study-kicker">
-            Independent Property Research Example
-          </div>
+        <div class="case-body">
+          <div class="case-kicker">Independent Demonstration Project 01</div>
 
-          <h2>
-            Terrain &amp; Drainage Context — Frog Level / Davenport Farm
-            Corridor
-          </h2>
+          <h3>Terrain &amp; Drainage Context — Frog Level / Davenport Farm</h3>
 
-          <p>
-            A corridor-level review showing how LiDAR terrain, runoff patterns,
-            roads, and surrounding land context can reveal conditions that may
-            not be obvious from a listing photo or standard parcel viewer.
+          <p class="case-intro">
+            This corridor-level review demonstrates how high-resolution terrain,
+            modeled runoff patterns, roads, buildings, and surrounding land
+            context can reveal conditions that may not be obvious in listing
+            photographs or a standard parcel viewer.
           </p>
 
-          <div class="case-insights">
-            <div class="case-insight">
-              <strong>Question</strong>
-              Where are the strongest low-area and concentrated-flow signals
-              around the corridor?
-            </div>
+          <div class="case-details">
+            <section class="case-detail">
+              <h4>The property question</h4>
 
-            <div class="case-insight">
-              <strong>Analysis</strong>
-              Combined high-resolution terrain, hydrology, roads, and building
-              context in one readable layout.
-            </div>
+              <p>
+                Where are the strongest low-area and concentrated-flow signals,
+                and which locations deserve a closer walk-through?
+              </p>
+            </section>
 
-            <div class="case-insight">
-              <strong>Decision value</strong>
-              Helps a buyer or owner identify where to walk the property and
-              what drainage questions to ask next.
-            </div>
+            <section class="case-detail">
+              <h4>What was reviewed</h4>
+
+              <p>
+                LiDAR-derived elevation, terrain patterns, modeled water flow,
+                roads, buildings, and the surrounding landscape.
+              </p>
+            </section>
+
+            <section class="case-detail">
+              <h4>How it helps</h4>
+
+              <p>
+                Gives a buyer or owner focused locations to inspect and better
+                drainage questions to ask before moving forward.
+              </p>
+            </section>
           </div>
 
           <ul class="tags">
             <li>LiDAR Terrain</li>
             <li>Drainage Context</li>
+            <li>Surrounding Land</li>
             <li>Property Research</li>
-            <li>Cartography</li>
           </ul>
 
-          <div class="case-study-actions">
-            <a
-              class="btn primary"
-              href="hire.html#estimateForm"
-            >
-              Discuss a Property Question
+          <div class="case-action">
+            <a class="button primary" href="hire.html#estimateForm">
+              Research a Similar Property
             </a>
           </div>
         </div>
       </article>
 
-      <!-- CASE STUDY 02 -->
-      <article
-        class="case-study-feature"
-        aria-label="Independent property research example 02"
-      >
+      <article class="case-study">
         <img
           loading="lazy"
           src="Case_02_North_Edwards%20Rd.jpg?v=1"
           alt="Road access and drainage context map for North Edwards Road"
         >
 
-        <div class="case-study-body">
-          <div class="case-study-kicker">
-            Independent Property Research Example
-          </div>
+        <div class="case-body">
+          <div class="case-kicker">Independent Demonstration Project 02</div>
 
-          <h2>
-            Access &amp; Drainage Context — North Edwards Road
-          </h2>
+          <h3>Road Access &amp; Drainage Context — North Edwards Road</h3>
 
-          <p>
-            A focused review of recurring roadway ponding that demonstrates how
-            terrain and contributing-area data can add context to property
-            access and identify a possible drainage bottleneck for field
-            verification.
+          <p class="case-intro">
+            This focused review examines a low roadway segment where water has
+            been observed collecting. It shows how terrain and contributing-area
+            data can add context to an access concern and identify a possible
+            drainage bottleneck for field verification.
           </p>
 
-          <div class="case-insights">
-            <div class="case-insight">
-              <strong>Question</strong>
-              Why does water appear to collect along this low road segment, and
-              where does the surrounding terrain direct flow?
-            </div>
+          <div class="case-details">
+            <section class="case-detail">
+              <h4>The property question</h4>
 
-            <div class="case-insight">
-              <strong>Analysis</strong>
-              Evaluated elevation, flow accumulation, road position, and the
-              expected connection to the natural flow path.
-            </div>
+              <p>
+                Why might water collect along this road segment, and how does
+                the surrounding terrain direct water toward it?
+              </p>
+            </section>
 
-            <div class="case-insight">
-              <strong>Decision value</strong>
-              Adds useful context for access concerns and supports better
-              questions for the owner, agent, agency, or next professional.
-            </div>
+            <section class="case-detail">
+              <h4>What was reviewed</h4>
+
+              <p>
+                Elevation, modeled flow accumulation, road position, surrounding
+                drainage, and the expected connection to a natural flow path.
+              </p>
+            </section>
+
+            <section class="case-detail">
+              <h4>How it helps</h4>
+
+              <p>
+                Adds context to possible access concerns and supports better
+                questions for an owner, agent, road authority, or drainage
+                professional.
+              </p>
+            </section>
           </div>
 
           <ul class="tags">
             <li>Road Access</li>
             <li>Terrain Analysis</li>
-            <li>Contributing Area</li>
-            <li>Field Review</li>
+            <li>Flow Accumulation</li>
+            <li>Field Verification</li>
           </ul>
 
-          <div class="case-study-actions">
-            <a
-              class="btn primary"
-              href="hire.html#estimateForm"
-            >
-              Request Similar Research
+          <div class="case-action">
+            <a class="button primary" href="hire.html#estimateForm">
+              Ask About an Access Concern
             </a>
           </div>
         </div>
       </article>
     </section>
 
-    <!-- ENVIRONMENTAL AND SPATIAL ANALYSIS -->
-    <section class="portfolio-section" id="featured-projects">
-      <h2>Environmental &amp; Spatial Analysis</h2>
+    <section class="panel" id="deliverables">
+      <div class="section-heading">
+        <h2>What Your Property Review May Include</h2>
 
-      <p>
-        Selected projects showing the broader analysis capabilities behind
-        GeoSite’s property research and custom GIS support.
-      </p>
+        <p>
+          Every project is scoped around your actual question. Depending on the
+          property and available data, a review may include the following.
+        </p>
+      </div>
 
-      <div class="portfolio-grid">
-        <!-- HISTORICAL LAND-COVER CHANGE -->
-        <article class="portfolio-card">
-          <div class="portfolio-thumb">
-            <img
-              loading="lazy"
-              src="Savannah_2025_Classification.jpg"
-              alt="Savannah land-cover classification created from satellite imagery"
-            >
-          </div>
+      <div class="deliverable-grid">
+        <article class="deliverable">
+          <h3>Parcel &amp; Surrounding Context</h3>
 
-          <div class="card-body">
-            <h3>Historical Land-Cover Change — Savannah</h3>
-
-            <p>
-              Classified Landsat imagery into urban, forest, wetland,
-              agriculture, and water categories, then compared 1999 and 2025
-              conditions to measure how the landscape changed over time.
-            </p>
-
-            <p class="value-line">
-              <strong>Useful for:</strong> understanding development patterns,
-              land-cover history, and broader change around a property or study
-              area.
-            </p>
-
-            <ul class="tags">
-              <li>Historical Imagery</li>
-              <li>Remote Sensing</li>
-              <li>Change Detection</li>
-              <li>Landsat</li>
-            </ul>
-          </div>
+          <p>
+            Public parcel information, nearby land uses, roads, water features,
+            development patterns, and other relevant surroundings.
+          </p>
         </article>
 
-        <!-- RUNOFF RETENTION -->
-        <article class="portfolio-card">
-          <div class="portfolio-thumb">
-            <img
-              loading="lazy"
-              src="FINAL_UFRM_HSC_rnf_rt_m3.jpg"
-              alt="Urban runoff-retention and flood-mitigation analysis"
-            >
-          </div>
+        <article class="deliverable">
+          <h3>Terrain &amp; Drainage Screening</h3>
 
-          <div class="card-body">
-            <h3>Urban Runoff Retention &amp; Flood Mitigation</h3>
-
-            <p>
-              Modeled how land cover, soils, rainfall, and developed surfaces
-              influence runoff retention and the spatial distribution of urban
-              flood-mitigation benefits.
-            </p>
-
-            <p class="value-line">
-              <strong>Useful for:</strong> environmental context, watershed
-              planning, and communicating where landscape conditions influence
-              runoff.
-            </p>
-
-            <ul class="tags">
-              <li>InVEST</li>
-              <li>Runoff Retention</li>
-              <li>Soils</li>
-              <li>Spatial Modeling</li>
-            </ul>
-          </div>
+          <p>
+            Elevation, slope, low areas, modeled flow paths, contributing area,
+            and terrain conditions that deserve closer field review.
+          </p>
         </article>
 
-        <!-- FLOOD RISK -->
-        <article class="portfolio-card">
-          <div class="portfolio-thumb">
-            <img
-              loading="lazy"
-              src="FinalFloodRiskMap.jpg"
-              alt="Flood-risk classification map"
-            >
-          </div>
+        <article class="deliverable">
+          <h3>Flood, Wetland &amp; Soil Context</h3>
 
-          <div class="card-body">
-            <h3>Flood-Risk Classification &amp; Communication</h3>
-
-            <p>
-              Combined multiple spatial indicators into a clear flood-risk
-              classification and map layout designed to help a non-technical
-              audience recognize patterns and priority areas.
-            </p>
-
-            <p class="value-line">
-              <strong>Useful for:</strong> screening, comparison, communication,
-              and identifying areas that deserve more detailed professional
-              review.
-            </p>
-
-            <ul class="tags">
-              <li>Flood Context</li>
-              <li>Multi-Criteria Analysis</li>
-              <li>Risk Communication</li>
-              <li>Cartography</li>
-            </ul>
-          </div>
+          <p>
+            Publicly available flood, wetland, soil, watershed, and
+            water-resource information organized around the property question.
+          </p>
         </article>
 
-        <!-- LIDAR TERRAIN -->
-        <article class="portfolio-card">
-          <div class="portfolio-thumb">
-            <img
-              loading="lazy"
-              src="HydroConditionedDEM_Map.jpg"
-              alt="Hydrologically conditioned elevation model and stream network"
-            >
-          </div>
+        <article class="deliverable">
+          <h3>Historical Change</h3>
 
-          <div class="card-body">
-            <h3>LiDAR Terrain &amp; Stream-Network Analysis</h3>
+          <p>
+            Historical aerial photographs, satellite imagery, land-cover
+            change, and visible changes to access, drainage, or nearby
+            development.
+          </p>
+        </article>
 
-            <p>
-              Processed LiDAR-derived elevation data to improve drainage
-              representation, calculate flow direction and accumulation,
-              extract a stream network, and validate the results against
-              reference information.
-            </p>
+        <article class="deliverable">
+          <h3>Clear Maps &amp; Written Findings</h3>
 
-            <p class="value-line">
-              <strong>Useful for:</strong> terrain context, drainage screening,
-              low-area review, and understanding how water may move across land.
-            </p>
+          <p>
+            A readable map and concise explanation of the relevant evidence,
+            data sources, limitations, and suggested next questions.
+          </p>
+        </article>
 
-            <ul class="tags">
-              <li>LiDAR DEM</li>
-              <li>Hydrology</li>
-              <li>Terrain Analysis</li>
-              <li>Python/ArcPy</li>
-            </ul>
-          </div>
+        <article class="deliverable">
+          <h3>Custom Comparison</h3>
+
+          <p>
+            Side-by-side research for multiple parcels when you need to compare
+            terrain, environmental context, access, or surrounding conditions.
+          </p>
         </article>
       </div>
     </section>
 
-    <!-- ADDITIONAL GIS WORK -->
-    <section class="portfolio-section" id="map-gallery">
-      <h2>Additional GIS &amp; Technical Work</h2>
+    <section class="panel" id="process">
+      <div class="section-heading">
+        <h2>How It Works</h2>
 
-      <p>
-        This optional archive shows additional depth in watershed analysis,
-        remote sensing, validation, transportation mapping, GIS automation,
-        and technical cartography.
-      </p>
+        <p>
+          A simple process designed around the decision you are trying to make.
+        </p>
+      </div>
 
-      <details class="archive">
-        <summary>
-          View the additional technical map archive
-        </summary>
-
-        <div class="archive-content">
-          <div class="gallery-grid">
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="Case_02_North_Edwards%20Rd.jpg?v=1"
-                  alt="North Edwards Road drainage screening layout"
-                >
-              </div>
-
-              <figcaption>
-                Road Access &amp; Drainage Context — North Edwards Road
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="FINAL_Layout_GMR_NDR_Drill_Down.jpg"
-                  alt="Nutrient-delivery analysis for the Greens Mill Run watershed"
-                >
-              </div>
-
-              <figcaption>
-                Nutrient Delivery &amp; Watershed Context — Greens Mill Run
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="FINAL_UFRM_HSC_rnf_rt_m3.jpg"
-                  alt="Urban runoff-retention analysis"
-                >
-              </div>
-
-              <figcaption>
-                Runoff Retention &amp; Urban Flood Mitigation
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="FLYER_StudyArea.jpg"
-                  alt="Watershed study-area overview"
-                >
-              </div>
-
-              <figcaption>
-                Watershed Study Area &amp; Community Context
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="FSSC_DrillDown_Layout_4_10.jpg"
-                  alt="Nutrient-delivery analysis for the FSSC watershed"
-                >
-              </div>
-
-              <figcaption>
-                Nutrient Delivery Patterns — FSSC Watershed
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="FinalFloodRiskMap.jpg"
-                  alt="Multi-factor flood-risk classification"
-                >
-              </div>
-
-              <figcaption>
-                Multi-Factor Flood-Risk Classification
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="FinalStudyArea_Layout.jpg"
-                  alt="Environmental study area and watershed context"
-                >
-              </div>
-
-              <figcaption>
-                Environmental Study Area &amp; Watershed Context
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="Final_HydroFlattening_Layout.jpg"
-                  alt="LiDAR hydroflattening and water-surface correction"
-                >
-              </div>
-
-              <figcaption>
-                LiDAR Hydroflattening &amp; Water-Surface Correction
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="FullWorkflow_HydroFlat.JPG"
-                  alt="Automated terrain-processing workflow"
-                >
-              </div>
-
-              <figcaption>
-                Terrain-Processing Automation Workflow (Python/ArcPy)
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="GPT_GMRStorymap.png"
-                  alt="Environmental story map for Greens Mill Run"
-                >
-              </div>
-
-              <figcaption>
-                Environmental Story Map — Greens Mill Run
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="GPT_GMRTransport.png"
-                  alt="Transportation context map for Greens Mill Run"
-                >
-              </div>
-
-              <figcaption>
-                Roads &amp; Transportation Context — Greens Mill Run
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="GreensMillRun_NDR_DrillDown.jpg"
-                  alt="Nutrient-delivery patterns for Greens Mill Run"
-                >
-              </div>
-
-              <figcaption>
-                Nutrient Delivery Patterns — Greens Mill Run
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="Harkers Island Map.jpg"
-                  alt="Coastal community and land context for Harkers Island"
-                >
-              </div>
-
-              <figcaption>
-                Coastal Community &amp; Land Context — Harkers Island
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="HydroConditionedDEM_Map.jpg"
-                  alt="Hydrologically conditioned terrain and stream network"
-                >
-              </div>
-
-              <figcaption>
-                Hydrologically Conditioned Terrain &amp; Stream Network
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="Hydro_Processed_Final_Result.jpg"
-                  alt="LiDAR terrain processing and drainage network"
-                >
-              </div>
-
-              <figcaption>
-                LiDAR Terrain Processing &amp; Drainage Network
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="Lab_5_Change_Detection.jpg"
-                  alt="Historical land-cover change detection"
-                >
-              </div>
-
-              <figcaption>
-                Historical Land-Cover Change Detection
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="Layout_StudyArea_3.jpg"
-                  alt="Watershed study area and reference features"
-                >
-              </div>
-
-              <figcaption>
-                Watershed Study Area &amp; Reference Features
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="NewSugar.jpg"
-                  alt="Local terrain and land context for New Sugar"
-                >
-              </div>
-
-              <figcaption>
-                Local Terrain &amp; Land Context — New Sugar
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="OR_IoU_Layout2.jpg"
-                  alt="Stream-network validation using overlap and IoU"
-                >
-              </div>
-
-              <figcaption>
-                Stream-Network Validation — Overlap &amp; IoU
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="Prediction Map.jpg"
-                  alt="Spatial prediction and pattern mapping"
-                >
-              </div>
-
-              <figcaption>
-                Spatial Prediction &amp; Pattern Mapping
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="Savannah_1999_Classification.jpg"
-                  alt="Savannah 1999 land-cover classification"
-                >
-              </div>
-
-              <figcaption>
-                Savannah 1999 Land-Cover Classification
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="Savannah_1999_spectral.png"
-                  alt="Land-cover spectral signatures for Savannah"
-                >
-              </div>
-
-              <figcaption>
-                Land-Cover Spectral Signatures — Savannah
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="Savannah_2025_Classification.jpg"
-                  alt="Savannah 2025 land-cover classification"
-                >
-              </div>
-
-              <figcaption>
-                Savannah 2025 Land-Cover Classification
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="Slope_ElevationDifferenceLayout.jpg"
-                  alt="Slope and elevation-difference analysis"
-                >
-              </div>
-
-              <figcaption>
-                Slope &amp; Elevation Difference Analysis
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="USR_Drill_Down_4_10.jpg"
-                  alt="Urban stormwater-retention drilldown"
-                >
-              </div>
-
-              <figcaption>
-                Urban Stormwater Retention — Local Drilldown
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="USR_Retention_Map.jpg"
-                  alt="Stormwater retention and runoff-reduction map"
-                >
-              </div>
-
-              <figcaption>
-                Stormwater Retention &amp; Runoff Reduction
-              </figcaption>
-            </figure>
-
-            <figure class="gallery-item">
-              <div class="gallery-thumb">
-                <img
-                  loading="lazy"
-                  src="Z_final_Layout.jpg"
-                  alt="Environmental analysis and cartographic synthesis"
-                >
-              </div>
-
-              <figcaption>
-                Environmental Analysis &amp; Cartographic Synthesis
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </details>
-    </section>
-
-    <!-- CAPABILITIES -->
-    <section class="portfolio-section" id="capabilities">
-      <h2>Capabilities Behind the Work</h2>
-
-      <p>
-        GeoSite combines research, analysis, and communication so the final
-        deliverable is technically grounded and understandable.
-      </p>
-
-      <div class="capability-grid">
-        <article class="capability">
-          <h3>Parcel, Terrain &amp; Drainage</h3>
+      <div class="process-grid">
+        <article class="process-step">
+          <h3>Share the property</h3>
 
           <p>
-            Parcel context, elevation, slope, low areas, flow direction,
-            contributing area, roads, and surrounding land features.
+            Send the address, parcel number, listing link, coordinates, or a map
+            showing the land you want researched.
           </p>
         </article>
 
-        <article class="capability">
-          <h3>Environmental Screening</h3>
+        <article class="process-step">
+          <h3>Explain your question</h3>
 
           <p>
-            Flood, wetland, soil, water-resource, land-cover, watershed, and
-            other publicly available environmental context.
+            Tell me what you are considering and what concerns you—such as
+            drainage, access, historical change, or comparing several parcels.
           </p>
         </article>
 
-        <article class="capability">
-          <h3>Historical &amp; Remote-Sensing Analysis</h3>
+        <article class="process-step">
+          <h3>Receive focused findings</h3>
 
           <p>
-            Historical imagery review, satellite-image classification,
-            landscape change detection, and spatial pattern analysis.
-          </p>
-        </article>
-
-        <article class="capability">
-          <h3>Custom Mapping &amp; GIS Support</h3>
-
-          <p>
-            Professional map layouts, spatial-data preparation, Python/ArcPy
-            automation, validation, and project-specific GIS assistance.
+            I review the available information, explain what it can and cannot
+            show, and provide the agreed-upon maps or research summary.
           </p>
         </article>
       </div>
-
-      <details class="archive">
-        <summary>
-          View technical workflow examples
-        </summary>
-
-        <div class="archive-content">
-          <article class="workflow">
-            <h3>Hydrology &amp; DEM Conditioning Workflow</h3>
-
-            <ol>
-              <li>Resample LiDAR-derived DEM and fill sinks.</li>
-              <li>Generate flow direction and flow accumulation rasters.</li>
-              <li>
-                Create a stream raster using threshold-based accumulation.
-              </li>
-              <li>
-                Burn streams into the DEM using conditional expressions.
-              </li>
-              <li>
-                Recalculate flow direction/accumulation and extract the stream
-                network.
-              </li>
-              <li>
-                Validate using reference data and overlap/intersection metrics.
-              </li>
-            </ol>
-          </article>
-
-          <article class="workflow">
-            <h3>Land-Cover Classification &amp; Change Detection</h3>
-
-            <ol>
-              <li>Preprocess imagery by stacking bands and clipping the AOI.</li>
-              <li>
-                Create training samples and run supervised classification.
-              </li>
-              <li>
-                Assess accuracy using a confusion matrix and validation points.
-              </li>
-              <li>
-                Reclassify classes into unified categories for multi-year
-                comparison.
-              </li>
-              <li>
-                Compute change statistics and create change maps.
-              </li>
-            </ol>
-          </article>
-
-          <article class="workflow">
-            <h3>Automated GIS Layout Export (ArcPy)</h3>
-
-            <ol>
-              <li>
-                Scan a file geodatabase for key feature classes such as streams,
-                roads, and areas of interest.
-              </li>
-              <li>
-                Build or update a map in ArcGIS Pro using those layers.
-              </li>
-              <li>
-                Apply a standardized layout template and map-frame extent.
-              </li>
-              <li>
-                Export layouts to PNG/JPEG at web and print resolutions.
-              </li>
-            </ol>
-          </article>
-        </div>
-      </details>
     </section>
 
-    <!-- CALL TO ACTION -->
-    <section
-      class="portfolio-section cta-panel"
-      aria-label="Request property research"
-    >
-      <h2>Have a property or mapping question?</h2>
+    <section class="panel" aria-labelledby="scope-title">
+      <div class="section-heading">
+        <h2 id="scope-title">Clear Scope, Clear Limitations</h2>
+
+        <p>
+          Good property research should help you ask better questions without
+          overstating what public data can prove.
+        </p>
+      </div>
+
+      <div class="scope-box">
+        <strong>
+          GeoSite Intel provides GIS-based research, screening, and mapping.
+        </strong>
+
+        Services do not replace a boundary survey, title search, appraisal,
+        environmental site assessment, engineering evaluation, legal advice,
+        official flood determination, permitting review, or on-site inspection.
+        When the evidence points to an issue outside GeoSite’s scope, the report
+        will identify the appropriate next question or type of professional
+        review.
+      </div>
+    </section>
+
+    <section class="panel cta-panel">
+      <h2>Have a property question?</h2>
 
       <p>
         Send the location and tell me what you are trying to understand. I’ll
-        review the available data and recommend a focused scope.
+        review the request and recommend a focused scope based on the available
+        data.
       </p>
 
-      <div class="case-study-actions">
-        <a
-          class="btn primary"
-          href="hire.html#estimateForm"
-        >
+      <div class="button-row">
+        <a class="button primary" href="hire.html#estimateForm">
           Request an Estimate
         </a>
 
-        <a
-          class="btn"
-          href="mailto:geositeintel@outlook.com"
-        >
+        <a class="button" href="mailto:geositeintel@outlook.com">
           Email GeoSite
         </a>
       </div>
@@ -1655,23 +1026,24 @@
   </main>
 
   <script>
-    // Drawer toggle and close-on-link behavior
     (() => {
-      const btn = document.getElementById("hamburger");
+      const button = document.getElementById("hamburger");
       const drawer = document.getElementById("site-drawer");
       const overlay = document.getElementById("overlay");
 
       function openDrawer() {
         drawer.classList.add("open");
         overlay.classList.add("open");
-        btn.setAttribute("aria-expanded", "true");
+        button.setAttribute("aria-expanded", "true");
+        button.setAttribute("aria-label", "Close menu");
         document.documentElement.style.overflow = "hidden";
       }
 
       function closeDrawer() {
         drawer.classList.remove("open");
         overlay.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
+        button.setAttribute("aria-expanded", "false");
+        button.setAttribute("aria-label", "Open menu");
         document.documentElement.style.overflow = "";
       }
 
@@ -1683,7 +1055,7 @@
         }
       }
 
-      btn.addEventListener("click", toggleDrawer);
+      button.addEventListener("click", toggleDrawer);
       overlay.addEventListener("click", closeDrawer);
 
       document.addEventListener("keydown", (event) => {
