@@ -109,15 +109,20 @@ section {
 }
 
 .topbar-brand {
-  color: var(--ink);
-  font-family: var(--mono);
-  font-size: 0.96rem;
-  font-weight: 950;
-  letter-spacing: 0.2px;
+  display: inline-flex;
+  align-items: center;
+  height: 52px;
+  line-height: 0;
 }
 
 .topbar-brand:hover {
   text-decoration: none;
+}
+
+.topbar-brand img {
+  display: block;
+  width: auto;
+  height: 42px;
 }
 
 .brand-dot {
@@ -219,7 +224,13 @@ textarea:focus-visible {
 }
 
 .drawer-title {
-  font-weight: 950;
+  line-height: 0;
+}
+
+.drawer-logo {
+  display: block;
+  width: min(230px, 100%);
+  height: auto;
 }
 
 .drawer-subtitle {
@@ -415,18 +426,21 @@ textarea:focus-visible {
 /* About page */
 
 .logo-plaque {
-  width: min(100%, 470px);
+  width: min(100%, 680px);
   margin: 20px auto;
-  padding: 18px;
+  padding: 24px;
+  border: 1px solid var(--line-strong);
   border-radius: 16px;
-  background: #f2f4f2;
+  background:
+    radial-gradient(circle at 18% 15%, rgba(86, 185, 180, 0.14), transparent 38%),
+    linear-gradient(145deg, #0f1d2c, #07111c);
   box-shadow: var(--shadow-sm);
 }
 
 .logo-plaque img {
   width: 100%;
-  max-height: 190px;
   display: block;
+  height: auto;
   object-fit: contain;
 }
 
@@ -878,8 +892,8 @@ select option {
     width: 100%;
   }
 
-  .topbar-brand {
-    font-size: 0.9rem;
+  .topbar-brand img {
+    height: 38px;
   }
 }
 

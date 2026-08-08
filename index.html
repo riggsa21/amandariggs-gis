@@ -15,11 +15,8 @@
   <meta name="theme-color" content="#0b1724">
   <link rel="canonical" href="https://geositeintel.com/">
 
-  <!-- Self-contained GeoSite favicon -->
-  <link
-    rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1724'/%3E%3Cpath d='M32 9C21.5 9 13 17.5 13 28c0 13.8 19 28 19 28s19-14.2 19-28C51 17.5 42.5 9 32 9zm0 26a7 7 0 1 1 0-14 7 7 0 0 1 0 14z' fill='%2356b9b4'/%3E%3C/svg%3E"
-  >
+  <link rel="icon" type="image/png" href="GeoSite_Intel_Favicon.png">
+  <link rel="apple-touch-icon" href="GeoSite_Intel_Favicon.png">
 
   <!-- Social sharing -->
   <meta property="og:title" content="GeoSite Intel | Property &amp; Land Research">
@@ -29,7 +26,7 @@
   >
   <meta
     property="og:image"
-    content="https://geositeintel.com/case_study_01_FrogLevel_Davenport.jpg"
+    content="https://geositeintel.com/GeoSite_Intel_Social.png"
   >
   <meta property="og:url" content="https://geositeintel.com/">
   <meta property="og:type" content="website">
@@ -43,7 +40,7 @@
   >
   <meta
     name="twitter:image"
-    content="https://geositeintel.com/case_study_01_FrogLevel_Davenport.jpg"
+    content="https://geositeintel.com/GeoSite_Intel_Social.png"
   >
 
   <script type="application/ld+json">
@@ -172,15 +169,20 @@
     }
 
     .topbar-brand {
-      color: var(--ink);
-      font-family: var(--mono);
-      font-size: 0.96rem;
-      font-weight: 950;
-      letter-spacing: 0.2px;
+      display: inline-flex;
+      align-items: center;
+      height: 52px;
+      line-height: 0;
     }
 
     .topbar-brand:hover {
       text-decoration: none;
+    }
+
+    .topbar-brand img {
+      display: block;
+      width: auto;
+      height: 42px;
     }
 
     .brand-dot {
@@ -280,7 +282,13 @@
     }
 
     .drawer-title {
-      font-weight: 950;
+      line-height: 0;
+    }
+
+    .drawer-logo {
+      display: block;
+      width: min(230px, 100%);
+      height: auto;
     }
 
     .drawer-subtitle {
@@ -799,8 +807,8 @@
         width: 100%;
       }
 
-      .topbar-brand {
-        font-size: 0.9rem;
+      .topbar-brand img {
+        height: 38px;
       }
     }
 
@@ -832,8 +840,8 @@
         <span class="lines"><span class="bar"></span></span>
       </button>
 
-      <a class="topbar-brand" href="index.html" aria-current="page">
-        GeoSite Intel<span class="brand-dot">.</span>
+      <a class="topbar-brand" href="index.html" aria-current="page" aria-label="GeoSite Intel home">
+        <img src="GeoSite_Intel_Logo_Transparent.png" alt="GeoSite Intel">
       </a>
     </div>
   </div>
@@ -842,8 +850,8 @@
 
   <aside class="drawer" id="site-drawer" aria-label="Site menu">
     <header>
-      <div class="mono drawer-title">
-        GeoSite Intel<span class="brand-dot">.</span>
+      <div class="drawer-title">
+        <img class="drawer-logo" src="GeoSite_Intel_Logo_Transparent.png" alt="GeoSite Intel">
       </div>
       <div class="drawer-subtitle">Property research and professional mapping</div>
     </header>

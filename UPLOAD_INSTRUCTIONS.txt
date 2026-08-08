@@ -1,30 +1,24 @@
-GEOSITE INTEL WEBSITE UPDATE
+GEOSITE INTEL BRAND UPDATE
 
-1. Extract the files from geosite-intel-website-update.zip.
+1. Open the main/root folder of the GeoSite Intel GitHub repository.
+2. Upload every file contained in this package.
+3. Allow GitHub to replace the existing HTML and CSS files with these versions.
+4. Keep all of your existing JPG case-study images in the repository.
+5. Commit the changes.
+6. Open geositeintel.com and press Ctrl+F5 to load the new files.
 
-2. In your GeoSite Intel GitHub repository, select:
-   Add file > Upload files
+FILES REPLACED
+- index.html
+- about.html
+- portfolio.html
+- reviews.html
+- hire.html
+- site.css
 
-3. Upload these six files into the main/root folder of the repository:
-   - index.html
-   - site.css
-   - portfolio.html
-   - hire.html
-   - about.html
-   - reviews.html
+NEW BRAND FILES
+- GeoSite_Intel_Logo_Transparent.png
+- GeoSite_Intel_Favicon.png
+- GeoSite_Intel_Social.png
 
-4. If GitHub warns that files with the same names already exist, confirm that
-   you want the newly uploaded versions to replace them.
-
-5. At the bottom of the GitHub page, enter a message such as:
-   Update GeoSite website design and add reviews page
-
-6. Select Commit changes.
-
-7. Keep your existing map images in the repository. Also confirm that this file
-   exists in the same main/root folder:
-   Logo_black.png
-
-The HTML pages load their shared colors and styling from site.css. Do not place
-site.css inside a separate folder unless you also change the stylesheet links
-inside the HTML pages.
+The full logo is used in the header, menu, and About page. The square icon is
+used in the browser tab, and the 1200 x 630 image is used for social sharing.
