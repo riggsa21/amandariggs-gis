@@ -1,0 +1,817 @@
+<!-- land-property-intelligence.html | GeoSite Intel nationwide land & property intelligence -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Land Due Diligence &amp; Property Intelligence | GeoSite Intel</title>
+
+  <meta
+    name="description"
+    content="GIS-based land due diligence and property intelligence for buyers and investors: terrain, flood, environmental, historical imagery, mapping, and field visits."
+  >
+
+  <meta name="theme-color" content="#0b1724">
+  <link rel="canonical" href="https://geositeintel.com/land-property-intelligence.html">
+  <link rel="stylesheet" href="site.css">
+
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1724'/%3E%3Cpath d='M32 9C21.5 9 13 17.5 13 28c0 13.8 19 28 19 28s19-14.2 19-28C51 17.5 42.5 9 32 9zm0 26a7 7 0 1 1 0-14 7 7 0 0 1 0 14z' fill='%2356b9b4'/%3E%3C/svg%3E"
+  >
+
+  <meta property="og:title" content="Land &amp; Property Intelligence | GeoSite Intel">
+  <meta
+    property="og:description"
+    content="Know the land before you buy it. Remote GIS-based property research, environmental screening, custom maps, and optional field visits."
+  >
+  <meta property="og:image" content="https://geositeintel.com/Logo_black.png">
+  <meta property="og:url" content="https://geositeintel.com/land-property-intelligence.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GeoSite Intel">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Land &amp; Property Intelligence | GeoSite Intel">
+  <meta
+    name="twitter:description"
+    content="Pre-purchase land and property screening using GIS, environmental data, terrain, historical imagery, and custom mapping."
+  >
+  <meta name="twitter:image" content="https://geositeintel.com/Logo_black.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Land & Property Intelligence",
+    "serviceType": "GIS-based land and property research",
+    "provider": {
+      "@type": "Organization",
+      "name": "GeoSite Intel",
+      "url": "https://geositeintel.com/"
+    },
+    "areaServed": "Worldwide",
+    "description": "Remote GIS-based property research and preliminary due diligence screening for land buyers, investors, owners, and real estate professionals, including parcel context, terrain, drainage, environmental data, historical imagery, custom mapping, and optional field visits.",
+    "url": "https://geositeintel.com/land-property-intelligence.html"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can GeoSite research property outside the local area?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Most GeoSite property research is completed remotely using available public, geospatial, environmental, imagery, terrain, and client-provided information. Projects can be considered across locations, with the exact scope depending on data availability and the property question."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can GeoSite determine whether land is buildable?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GeoSite can identify mapped conditions, potential constraints, and questions that deserve verification, but it does not issue legal buildability determinations, permits, engineering opinions, surveys, or formal environmental determinations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What information should be sent for a property review?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Send an address, parcel number, listing link, coordinates, or a map of the property, along with what you hope to do with the land and any concerns you want investigated."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are field visits available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. When a project would benefit from on-site observations, photography, GPS data collection, or ground-truthing, a field visit can be scoped separately based on location, access, travel, and project needs."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Page-specific additions; shared GeoSite styling remains in site.css. */
+    .intel-hero .hero-copy {
+      max-width: 880px;
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 20px auto 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-proof li {
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(7, 17, 28, 0.38);
+      color: var(--muted);
+      font-size: 0.84rem;
+      font-weight: 760;
+    }
+
+    .decision-strip {
+      max-width: 880px;
+      margin: 21px auto 0;
+      padding: 17px 18px;
+      border: 1px solid rgba(200, 173, 119, 0.25);
+      border-radius: 14px;
+      background: rgba(200, 173, 119, 0.065);
+      color: var(--muted);
+      line-height: 1.68;
+      text-align: left;
+    }
+
+    .decision-strip strong {
+      color: var(--ink);
+    }
+
+    .intel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 13px;
+    }
+
+    .intel-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--panel-strong);
+    }
+
+    .intel-card .card-label {
+      margin-bottom: 7px;
+      color: var(--sand);
+      font-family: var(--mono);
+      font-size: 0.77rem;
+      font-weight: 950;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .intel-card h3 {
+      margin: 0 0 7px;
+      font-size: 1.06rem;
+    }
+
+    .intel-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    .audience-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(7, 17, 28, 0.34);
+      text-align: center;
+    }
+
+    .audience-card h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .audience-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.58;
+    }
+
+    .nationwide-panel {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .nationwide-copy,
+    .field-visit-box {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--panel-strong);
+    }
+
+    .nationwide-copy h3,
+    .field-visit-box h3 {
+      margin: 0 0 9px;
+    }
+
+    .nationwide-copy p,
+    .field-visit-box p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .field-visit-box {
+      border-color: rgba(86, 185, 180, 0.24);
+      background: rgba(86, 185, 180, 0.055);
+    }
+
+    .field-visit-box .field-kicker {
+      margin-bottom: 7px;
+      color: var(--accent-light);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .deliverables-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(240px, 1fr));
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .deliverables-list li {
+      position: relative;
+      padding: 14px 14px 14px 39px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: rgba(7, 17, 28, 0.33);
+      color: var(--muted);
+      line-height: 1.58;
+    }
+
+    .deliverables-list li::before {
+      content: "✓";
+      position: absolute;
+      top: 14px;
+      left: 15px;
+      color: var(--accent-light);
+      font-weight: 950;
+    }
+
+    .deliverables-list strong {
+      color: var(--ink);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 10px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: rgba(7, 17, 28, 0.32);
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 15px 17px;
+      color: var(--ink);
+      font-weight: 850;
+      cursor: pointer;
+    }
+
+    .faq-item p {
+      margin: 0;
+      padding: 0 17px 16px;
+      color: var(--muted);
+      line-height: 1.68;
+    }
+
+    .send-property-box {
+      max-width: 820px;
+      margin: 18px auto 0;
+      padding: 16px;
+      border: 1px dashed rgba(86, 185, 180, 0.35);
+      border-radius: 14px;
+      background: rgba(7, 17, 28, 0.3);
+      color: var(--muted);
+      line-height: 1.68;
+      text-align: center;
+    }
+
+    .send-property-box strong {
+      color: var(--ink);
+    }
+
+    @media (max-width: 900px) {
+      .audience-grid {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+      }
+    }
+
+    @media (max-width: 850px) {
+      .intel-grid,
+      .nationwide-panel {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .audience-grid,
+      .deliverables-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <button
+        class="hamburger"
+        id="hamburger"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="site-drawer"
+        aria-expanded="false"
+      >
+        <span class="lines"><span class="bar"></span></span>
+      </button>
+
+      <a class="topbar-brand" href="index.html">
+        GeoSite Intel<span class="brand-dot">.</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="drawer" id="site-drawer" aria-label="Site menu">
+    <header>
+      <div class="mono drawer-title">
+        GeoSite Intel<span class="brand-dot">.</span>
+      </div>
+      <div class="drawer-subtitle">Land intelligence, property research, and professional mapping</div>
+    </header>
+
+    <nav aria-label="Main site navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Property Services</a>
+      <a href="land-property-intelligence.html" aria-current="page">Land Intelligence</a>
+      <a href="portfolio.html">Property Examples</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="hire.html#estimateForm">Request Estimate</a>
+      <a href="about.html">About</a>
+      <a href="mailto:geositeintel@outlook.com">Contact</a>
+    </nav>
+  </aside>
+
+  <main class="page-shell">
+    <section class="panel page-hero intel-hero" aria-labelledby="intel-title">
+      <div class="eyebrow">
+        remote property research • GIS screening • optional field visits
+      </div>
+
+      <h1 id="intel-title">Know the land before you buy it.</h1>
+
+      <p class="hero-copy">
+        A real estate listing shows the property. GeoSite Intel investigates the
+        landscape around it by combining parcel information, terrain, drainage,
+        environmental data, historical imagery, surrounding land context, and
+        professional mapping. The goal is to help buyers and investors spot
+        potential constraints, compare opportunities, and know what questions to
+        ask before making a major land decision.
+      </p>
+
+      <div class="button-row">
+        <a class="button primary" href="hire.html#estimateForm">
+          Send a Property
+        </a>
+        <a class="button secondary" href="portfolio.html">
+          See Property Examples
+        </a>
+      </div>
+
+      <ul class="hero-proof" aria-label="GeoSite service highlights">
+        <li>Remote research across locations</li>
+        <li>Custom GIS analysis</li>
+        <li>Plain-language findings</li>
+        <li>Professional maps</li>
+        <li>Field visits available</li>
+      </ul>
+
+      <div class="decision-strip">
+        <strong>Considering a parcel?</strong> Send an address, parcel number,
+        listing link, coordinates, or map along with the intended use and any
+        concerns worth investigating. The research is built around the actual
+        decision—not a generic stack of maps.
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="why-title">
+      <div class="section-heading">
+        <h2 id="why-title">A parcel can look simple until you start asking questions.</h2>
+        <p>
+          Property intelligence brings multiple sources together so important
+          relationships are easier to see before you commit time or money.
+        </p>
+      </div>
+
+      <div class="intel-grid">
+        <article class="intel-card">
+          <div class="card-label">Water</div>
+          <h3>Flood &amp; Drainage Context</h3>
+          <p>
+            Review mapped flood information, terrain, low areas, runoff patterns,
+            drainage context, nearby water features, and other available evidence
+            that may affect how a property behaves during wet conditions.
+          </p>
+        </article>
+
+        <article class="intel-card">
+          <div class="card-label">Environment</div>
+          <h3>Wetlands &amp; Environmental Screening</h3>
+          <p>
+            Screen available wetlands, soils, land cover, protected or sensitive
+            environmental features, and other mapped conditions that may warrant
+            closer professional or agency review.
+          </p>
+        </article>
+
+        <article class="intel-card">
+          <div class="card-label">Terrain</div>
+          <h3>Slope, Elevation &amp; Site Form</h3>
+          <p>
+            Examine elevation, slope, terrain breaks, drainage pathways, and site
+            shape to better understand where conditions may support or complicate
+            an intended use.
+          </p>
+        </article>
+
+        <article class="intel-card">
+          <div class="card-label">Access</div>
+          <h3>Road &amp; Surrounding Context</h3>
+          <p>
+            Investigate visible access patterns, road context, nearby development,
+            neighboring land uses, infrastructure, and spatial relationships that
+            may not be obvious from listing photos alone.
+          </p>
+        </article>
+
+        <article class="intel-card">
+          <div class="card-label">History</div>
+          <h3>Historical Imagery Review</h3>
+          <p>
+            Compare available imagery through time to look for past clearing,
+            development, drainage changes, former uses, landscape disturbance,
+            or other changes relevant to the property question.
+          </p>
+        </article>
+
+        <article class="intel-card">
+          <div class="card-label">Land Use</div>
+          <h3>Zoning &amp; Use Questions</h3>
+          <p>
+            Organize available zoning and land-use information alongside the
+            physical site context so you know which use, permitting, access, or
+            development questions should be verified with the appropriate local authority.
+          </p>
+        </article>
+
+        <article class="intel-card">
+          <div class="card-label">Comparison</div>
+          <h3>Multiple-Parcel Screening</h3>
+          <p>
+            Compare candidate properties using consistent criteria so an investor,
+            buyer, or agent can identify which parcels deserve deeper attention.
+          </p>
+        </article>
+
+        <article class="intel-card">
+          <div class="card-label">Mapping</div>
+          <h3>Custom Property Maps</h3>
+          <p>
+            Turn scattered records and spatial data into clear maps designed to
+            answer the property question and communicate the findings efficiently.
+          </p>
+        </article>
+
+        <article class="intel-card">
+          <div class="card-label">Custom Research</div>
+          <h3>Questions That Do Not Fit a Template</h3>
+          <p>
+            If the concern is spatial, environmental, historical, geographic, or
+            location-based, send it. Many useful property questions require a
+            custom research approach rather than a standard checklist.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="audience-title">
+      <div class="section-heading">
+        <h2 id="audience-title">Built for people making decisions about land.</h2>
+        <p>
+          You do not need to know GIS terminology. Start with the property and
+          the decision you are trying to make.
+        </p>
+      </div>
+
+      <div class="audience-grid">
+        <article class="audience-card">
+          <h3>Land Buyers</h3>
+          <p>Understand what deserves a closer look before making an offer.</p>
+        </article>
+        <article class="audience-card">
+          <h3>Real Estate Investors</h3>
+          <p>Screen parcels, compare opportunities, and investigate location-based risk.</p>
+        </article>
+        <article class="audience-card">
+          <h3>Agents &amp; Brokers</h3>
+          <p>Add spatial context when a client has questions beyond the listing sheet.</p>
+        </article>
+        <article class="audience-card">
+          <h3>Owners &amp; Small Developers</h3>
+          <p>Research a site before investing in deeper design, permitting, or professional review.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="nationwide-title">
+      <div class="section-heading">
+        <h2 id="nationwide-title">The property does not have to be nearby.</h2>
+        <p>
+          GeoSite is remote-first, so projects are not limited to a local service area.
+          Research can be considered across the United States and internationally
+          where suitable data are available. When the project needs eyes on the ground,
+          field work can be added to the scope.
+        </p>
+      </div>
+
+      <div class="nationwide-panel">
+        <article class="nationwide-copy">
+          <h3>Remote Property Intelligence</h3>
+          <p>
+            Most projects begin remotely. GeoSite gathers the best available public and
+            client-provided information for the property, assesses which datasets are
+            useful, analyzes the location in GIS, and organizes the findings around
+            the intended use or concern. Data quality and availability vary by
+            jurisdiction, so each scope is tailored to what can actually be supported.
+          </p>
+        </article>
+
+        <article class="field-visit-box">
+          <div class="field-kicker">Available by request</div>
+          <h3>On-Site Field Visits</h3>
+          <p>
+            Projects that benefit from field observations can include site
+            photography, GPS data collection, visible-condition documentation,
+            ground-truthing, and targeted review of locations identified during
+            the desktop analysis. Travel and field scope are quoted separately.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="process-title">
+      <div class="section-heading">
+        <h2 id="process-title">How Property Intelligence Works</h2>
+        <p>A focused process built around your intended use and the decision in front of you.</p>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-step">
+          <h3>Send the Property</h3>
+          <p>
+            Share an address, parcel number, listing link, coordinates, or a map.
+            Include the intended use, the decision being considered, and any questions
+            or concerns that should be investigated before moving forward.
+          </p>
+        </article>
+
+        <article class="process-step">
+          <h3>Investigate the Evidence</h3>
+          <p>
+            GeoSite identifies useful data, researches the property in GIS, compares
+            relevant physical and environmental conditions, and flags areas where
+            the evidence suggests a closer look or additional verification.
+          </p>
+        </article>
+
+        <article class="process-step">
+          <h3>Use the Findings</h3>
+          <p>
+            Receive the agreed-upon maps and research summary, including key
+            observations, data limitations, and practical next questions. If field
+            verification would add value, it can be scoped from there.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="deliverables-title">
+      <div class="section-heading">
+        <h2 id="deliverables-title">What you can receive</h2>
+        <p>
+          Deliverables are scaled to the property and question rather than forced
+          into a one-size-fits-all package.
+        </p>
+      </div>
+
+      <ul class="deliverables-list">
+        <li><strong>Property research summary</strong> with focused findings in plain language.</li>
+        <li><strong>Professional GIS maps</strong> showing the conditions most relevant to the decision.</li>
+        <li><strong>Environmental and terrain screening</strong> using appropriate available datasets.</li>
+        <li><strong>Historical imagery observations</strong> when past landscape change is relevant.</li>
+        <li><strong>Parcel comparison</strong> for buyers or investors choosing among multiple properties.</li>
+        <li><strong>Data sources and limitations</strong> so you know what the evidence can and cannot establish.</li>
+        <li><strong>Recommended next questions</strong> for agencies, surveyors, engineers, environmental professionals, or other specialists when needed.</li>
+        <li><strong>Optional field documentation</strong> when on-site observations would strengthen the project.</li>
+      </ul>
+    </section>
+
+    <section class="panel" aria-labelledby="scope-title">
+      <div class="section-heading">
+        <h2 id="scope-title">Useful screening without pretending the map is the final authority.</h2>
+        <p>
+          Good land due diligence should help you identify what deserves deeper
+          verification—not overstate what public data can prove.
+        </p>
+      </div>
+
+      <div class="scope-box">
+        <strong>GeoSite Intel provides GIS-based research, preliminary screening,
+        field observations when specifically scoped, and professional mapping.</strong>
+        GeoSite does not provide a boundary survey, title opinion, appraisal,
+        engineering design or opinion, legal advice, permit approval, official
+        flood determination, jurisdictional wetland delineation, Phase I
+        Environmental Site Assessment, geotechnical evaluation, or guarantee that
+        a property is buildable or suitable for a particular use. When research
+        identifies a question outside GeoSite’s scope, the findings can help you
+        determine what type of official verification or licensed professional to
+        contact next.
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="faq-title">
+      <div class="section-heading">
+        <h2 id="faq-title">Land &amp; Property Intelligence FAQ</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Can GeoSite research property outside the local area?</summary>
+          <p>
+            Yes. Most GeoSite property research can be completed remotely using
+            available public, geospatial, environmental, imagery, terrain, and
+            client-provided information. Projects can be considered across the
+            United States and internationally where suitable data are available.
+            The exact datasets and level of detail vary by location.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can GeoSite determine whether land is buildable?</summary>
+          <p>
+            GeoSite can identify mapped conditions, potential constraints, and
+            land-use questions that deserve verification. A legal buildability
+            determination can depend on zoning interpretation, permits, utilities,
+            access rights, surveys, engineering, soils, septic requirements,
+            wetlands determinations, and other local or site-specific factors that
+            must be confirmed by the appropriate authority or professional.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What information should be sent?</summary>
+          <p>
+            An address, parcel number, listing link, coordinates, or a map is
+            enough to start. The most useful additional information is the intended
+            use of the property and any concerns already identified.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Is this only for vacant land?</summary>
+          <p>
+            No. Property intelligence can also support questions involving homes,
+            commercial parcels, agricultural land, investment property, access,
+            drainage, surrounding development, historical change, and other
+            location-based concerns.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Are site visits available?</summary>
+          <p>
+            Yes. When a project would benefit from on-site observations,
+            photography, GPS data collection, or ground-truthing, a field visit
+            can be scoped separately based on location, access, travel, and the
+            specific information needed.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <section class="panel cta-panel" aria-labelledby="cta-title">
+      <h2 id="cta-title">Found a property? Start with the location.</h2>
+
+      <p>
+        Send the parcel or listing along with the intended use or property question.
+        GeoSite will review the request, determine what useful information is
+        available, and recommend a focused research scope.
+      </p>
+
+      <div class="send-property-box">
+        <strong>You can send:</strong> a Zillow, Realtor, LandWatch, Land.com, or
+        other listing link; a street address; parcel ID; coordinates; county GIS
+        link; or even a screenshot or map showing the property.
+      </div>
+
+      <div class="button-row">
+        <a class="button primary" href="hire.html#estimateForm">
+          Send a Property
+        </a>
+        <a class="button secondary" href="mailto:geositeintel@outlook.com">
+          Email GeoSite
+        </a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div>
+        © 2026 Amanda L. Riggs · GeoSite Intel · Property Research &amp;
+        Environmental Mapping
+      </div>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="land-property-intelligence.html">Land Intelligence</a>
+        <a href="portfolio.html">Property Examples</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="hire.html#estimateForm">Request Estimate</a>
+        <a href="about.html">About</a>
+        <a href="mailto:geositeintel@outlook.com">Contact</a>
+      </nav>
+    </footer>
+  </main>
+
+  <script>
+    (() => {
+      const button = document.getElementById("hamburger");
+      const drawer = document.getElementById("site-drawer");
+      const overlay = document.getElementById("overlay");
+
+      function openDrawer() {
+        drawer.classList.add("open");
+        overlay.classList.add("open");
+        button.setAttribute("aria-expanded", "true");
+        button.setAttribute("aria-label", "Close menu");
+        document.documentElement.style.overflow = "hidden";
+      }
+
+      function closeDrawer() {
+        drawer.classList.remove("open");
+        overlay.classList.remove("open");
+        button.setAttribute("aria-expanded", "false");
+        button.setAttribute("aria-label", "Open menu");
+        document.documentElement.style.overflow = "";
+      }
+
+      button.addEventListener("click", () => {
+        if (drawer.classList.contains("open")) {
+          closeDrawer();
+        } else {
+          openDrawer();
+        }
+      });
+
+      overlay.addEventListener("click", closeDrawer);
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeDrawer();
+      });
+
+      drawer.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeDrawer);
+      });
+    })();
+  </script>
+</body>
+</html>
