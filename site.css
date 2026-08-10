@@ -39,16 +39,13 @@ body {
   color: var(--ink);
   font-family: var(--sans);
   background:
-    radial-gradient(
-      1050px 500px at 12% 4%,
-      rgba(86, 185, 180, 0.12),
-      transparent 62%
+    linear-gradient(
+      180deg,
+      rgba(7, 17, 28, 0.78),
+      rgba(7, 17, 28, 0.91) 620px,
+      rgba(11, 23, 36, 0.97)
     ),
-    radial-gradient(
-      850px 430px at 88% 22%,
-      rgba(200, 173, 119, 0.075),
-      transparent 62%
-    ),
+    url("./GeoSite_Intel_Social.png?v=20260810-5") center 72px / cover fixed no-repeat,
     linear-gradient(180deg, var(--bg0), var(--bg1) 48%, var(--bg2));
 }
 
@@ -140,7 +137,12 @@ section {
 .topbar-brand {
   display: inline-flex;
   align-items: center;
+  padding: 5px 7px;
+  border: 1px solid rgba(117, 203, 198, 0.32);
+  border-radius: 10px;
   max-width: min(52vw, 170px);
+  background: linear-gradient(145deg, #f7f8f5, #dce8e5);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.22);
 }
 
 .topbar-brand:hover {
@@ -231,7 +233,7 @@ textarea:focus-visible {
 
 .drawer {
   position: fixed;
-  inset: 0 auto 0 0;
+  inset: 72px auto 0 0;
   z-index: 1100;
   width: 305px;
   max-width: 87vw;
@@ -256,6 +258,10 @@ textarea:focus-visible {
 .drawer-brand {
   display: block;
   width: min(100%, 235px);
+  padding: 8px 10px;
+  border: 1px solid rgba(117, 203, 198, 0.32);
+  border-radius: 12px;
+  background: linear-gradient(145deg, #f7f8f5, #dce8e5);
 }
 
 .drawer-brand:hover {
@@ -614,7 +620,7 @@ textarea:focus-visible {
   padding: 18px;
   border: 1px solid var(--line-strong);
   border-radius: 16px;
-  background: linear-gradient(145deg, #07111c, #10263a);
+  background: linear-gradient(145deg, #f7f8f5, #dce8e5);
   box-shadow: var(--shadow-sm);
 }
 
@@ -1049,6 +1055,8 @@ select option {
 @media (max-width: 620px) {
   body {
     padding-top: 64px;
+    background-attachment: scroll, scroll, scroll;
+    background-position: center 64px, center 64px, center top;
   }
 
   body::before {
@@ -1058,6 +1066,10 @@ select option {
   .topbar,
   .topbar-inner {
     height: 64px;
+  }
+
+  .drawer {
+    inset: 64px auto 0 0;
   }
 
   .page-shell {

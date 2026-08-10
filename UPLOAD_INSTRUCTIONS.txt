@@ -1,7 +1,7 @@
 GEOSITE INTEL FLAT WEBSITE UPLOAD — AUGUST 10, 2026
 
-This package contains the complete company-voice, corrected-logo, fixed
-header-sizing, and high-contrast logo update.
+This package contains the complete company-voice, thumbnail-background,
+revised-wordmark, fixed-header-sizing, and logo-contrast update.
 
 IMPORTANT: Do not upload the ZIP file itself. Extract the ZIP first. The files
 inside are already arranged for direct upload to the repository root.
@@ -24,7 +24,8 @@ Upload the 10 files listed above directly into that folder. Replace the existing
 HTML and CSS files when GitHub asks. Do not upload a containing folder.
 
 The three GeoSite image files must be in that same location. The attached
-GeoSite_Intel_Logo_Transparent.png is the exact approved logo. Do not rename it.
+GeoSite_Intel_Logo_Transparent.png contains the revised dark-teal wordmark and
+bold geometric font. Do not rename it.
 
 Before committing, confirm the filenames are exactly index.html, about.html,
 hire.html, portfolio.html, reviews.html, and land-property-intelligence.html.
@@ -34,12 +35,14 @@ Keep the existing property-example and map images in the repository. This
 update does not replace or delete them.
 
 Suggested commit message:
-Fix GeoSite header logo sizing across site
+Update GeoSite logo font and add branded page background
 
 After committing the files, wait a few minutes, open geositeintel.com, and
 perform a hard refresh (Ctrl+F5 on Windows). The updated pages include new
 cache-safe links so the browser loads the corrected logo and styling. The
 header logo is also limited directly inside every HTML page, so it cannot expand
-to the image's full size if an older stylesheet is briefly cached. The large
-About-page logo now sits on a dark panel so the white GeoSite Intel lettering
-remains readable on laptops and mobile devices.
+to the image's full size if an older stylesheet is briefly cached. The menu
+drawer starts below the fixed top bar so its full logo remains visible on mobile.
+The header, drawer, and About-page logo use light panels for clear contrast with
+the new dark-teal wording. GeoSite_Intel_Social.png is used as the branded page
+background with a dark overlay for readable page text.
