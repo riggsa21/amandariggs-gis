@@ -1,13 +1,35 @@
-GEOSITE INTEL DEPLOYMENT BUILD 20260810-10 — AUGUST 10, 2026
+GEOSITE INTEL DEPLOYMENT BUILD 20260810-13 — AUGUST 10, 2026
 
 This is a newly named build so an older downloaded ZIP cannot be reused by
-mistake. The HTML and CSS files contain the marker 20260810-10. If GitHub reports
+mistake. The HTML and CSS files contain the marker 20260810-13. If GitHub reports
 "0 files changed," stop: the extracted files were not the files from this ZIP.
 
 This package contains the professional site-structure update plus all earlier
 company-voice, single-logo background, header-logo, and search-indexing fixes.
 
-BUILD 20260810-10 CHANGES:
+BUILD 20260810-13 CHANGES:
+- Replaces the old public Outlook address with info@geositeintel.com throughout
+  the website.
+- Removes the old content and metadata from the hidden Portfolio and Reviews
+  files, leaving only noindex redirects to current pages.
+- Confirms there are no personal LinkedIn, portfolio, GitHub-profile, or
+  alternate-email links in the website package.
+- IMPORTANT: Set up and test info@geositeintel.com before uploading this build.
+  Changing the website address does not create the mailbox or forwarding rule.
+- After the new address works, update the Formspree notification destination
+  separately inside Formspree.
+- Removes the paid file-upload field and the form's file-upload setting.
+- Keeps a field for helpful public property links.
+- Explains that photographs, maps, and documents will be requested by email
+  after the first consultation when needed.
+- Updates the Privacy page so it no longer says files are collected through the
+  website form.
+- Removes the homepage glossary and GIS definition sections.
+- Removes all links to the deleted definition section.
+- Cuts repeated homepage and Services-page sections.
+- Rewrites technical wording in everyday language.
+- Shortens the homepage from about 990 visible words to under 500.
+- Shortens the Services page from about 1,490 visible words to about 735.
 - Removes Portfolio/Property Examples and Reviews from public navigation.
 - Redirects the unfinished portfolio page to Services and the unfinished reviews
   page to About. Both legacy pages are marked noindex.
@@ -20,6 +42,23 @@ BUILD 20260810-10 CHANGES:
 
 IMPORTANT: Do not upload the ZIP file itself. Extract the ZIP first. The files
 inside are already arranged for direct upload to the repository root.
+
+BEFORE UPLOADING — ACTIVATE THE BUSINESS EMAIL:
+1. In the account where geositeintel.com is managed, create
+   info@geositeintel.com as either a mailbox or a forwarding address.
+2. Send a test message to info@geositeintel.com from a different email account
+   and confirm that it arrives.
+3. Reply to the test and check the From address. A forwarding-only setup may
+   still send replies from the private destination account. A hosted mailbox is
+   needed if every reply must show info@geositeintel.com.
+4. In Formspree, add info@geositeintel.com as a linked email and complete its
+   verification message. Then open the website form, edit its Email action or
+   target address, and select info@geositeintel.com.
+5. Submit one complete test through the GeoSite request form and confirm that
+   the notification arrives before publishing or requesting a Google recrawl.
+
+Keep the current Outlook account active but private until all five checks pass.
+It is no longer displayed or linked anywhere in this website package.
 
 UPLOAD THESE FILES TO THE GITHUB REPOSITORY'S MAIN/ROOT FOLDER:
 
@@ -54,13 +93,13 @@ Files ending in (1), (2), -copy, or similar text will not replace the live pages
 On GitHub's final review screen, index.html and site.css MUST appear in the list
 of changed files. The commit must not say "0 files changed." After the commit,
 open index.html in the repository and confirm its first line says:
-<!-- DEPLOYMENT BUILD: 20260810-10 -->
+<!-- DEPLOYMENT BUILD: 20260810-13 -->
 
 Keep the existing property-example and map images in the repository. This
 update does not replace or delete them.
 
 Suggested commit message:
-Simplify site navigation and add privacy and confirmation pages
+Update business email and remove legacy page copy
 
 After committing the files, wait a few minutes, open geositeintel.com, and
 perform a hard refresh (Ctrl+F5 on Windows). The updated pages include new
@@ -82,13 +121,14 @@ for https://geositeintel.com/ and select Request Indexing. Google controls the
 timing, so the old drainage-focused search title and description may remain
 visible until the homepage is crawled again.
 
-ONE-TIME FORM CONFIRMATION SETTING:
+OPTIONAL FUTURE FORM CONFIRMATION SETTING:
 The new thank-you.html page is included in the upload. In the Formspree settings
 for the form used by the website, set the Thank You redirect to:
 https://geositeintel.com/thank-you.html
 
 Until that setting is changed, Formspree may continue showing its standard
-confirmation screen after a submission. The form will still submit normally.
+confirmation screen after a submission. The form will still submit normally,
+and no paid upgrade is required for the website itself.
 
 COOKIE NOTE:
 No analytics, advertising pixels, or site-added cookie code is included in this

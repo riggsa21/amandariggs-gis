@@ -1,4 +1,4 @@
-<!-- DEPLOYMENT BUILD: 20260810-10 -->
+<!-- DEPLOYMENT BUILD: 20260810-13 -->
 <!-- hire.html | GeoSite Intel property research request -->
 <!DOCTYPE html>
 <html lang="en">
@@ -10,12 +10,12 @@
 
   <meta
     name="description"
-    content="Send GeoSite Intel a property, land, or listing question for focused research, early environmental review, custom mapping, property comparison, or an optional field visit."
+    content="Send GeoSite Intel a property or listing question for focused research, clear maps, property comparison, or an optional field visit."
   >
 
   <meta name="theme-color" content="#0b1724">
   <link rel="canonical" href="https://geositeintel.com/hire.html">
-  <link rel="stylesheet" href="./site.css?v=20260810-10">
+  <link rel="stylesheet" href="./site.css?v=20260810-13">
 
   <link rel="icon" type="image/png" href="./GeoSite_Intel_Favicon.png?v=20260810-4">
 
@@ -33,7 +33,7 @@
   <meta name="twitter:title" content="Send a Property | GeoSite Intel">
   <meta
     name="twitter:description"
-    content="Request property and land research, early environmental review, mapping, or field support from GeoSite Intel."
+    content="Request property and land research, clear maps, or field support from GeoSite Intel."
   >
   <meta name="twitter:image" content="https://geositeintel.com/GeoSite_Intel_Social.png?v=20260810-4">
 
@@ -133,13 +133,6 @@
       color: var(--ink);
     }
 
-    .file-note {
-      margin-top: 7px;
-      color: var(--muted2);
-      font-size: 0.83rem;
-      line-height: 1.5;
-    }
-
     .form-submit-copy {
       max-width: 720px;
       margin: 10px auto 0;
@@ -178,7 +171,7 @@
       z-index: 0;
       pointer-events: none;
       opacity: 0.12;
-      background: url("./GeoSite_Intel_Logo_Transparent.png?v=20260810-10")
+      background: url("./GeoSite_Intel_Logo_Transparent.png?v=20260810-13")
         center 115px / min(1050px, 88vw) auto no-repeat !important;
     }
 
@@ -221,7 +214,7 @@
       <a class="topbar-brand" href="index.html">
         <img
           class="topbar-logo"
-          src="./GeoSite_Intel_Logo_Transparent.png?v=20260810-10"
+          src="./GeoSite_Intel_Logo_Transparent.png?v=20260810-13"
           alt="GeoSite Intel — Property and Land Research"
           width="124"
           height="38"
@@ -238,7 +231,7 @@
       <a class="drawer-brand" href="index.html">
         <img
           class="drawer-logo"
-          src="./GeoSite_Intel_Logo_Transparent.png?v=20260810-10"
+          src="./GeoSite_Intel_Logo_Transparent.png?v=20260810-13"
           alt="GeoSite Intel — Property and Land Research"
           width="235"
           height="72"
@@ -254,7 +247,7 @@
       <a href="land-property-intelligence.html#process">How It Works</a>
       <a href="about.html">About</a>
       <a href="hire.html#estimateForm" aria-current="page">Start a Project</a>
-      <a href="mailto:geositeintel@outlook.com">Contact</a>
+      <a href="mailto:info@geositeintel.com">Contact</a>
     </nav>
   </aside>
 
@@ -267,36 +260,29 @@
       <h1 id="request-title">Send a property. Start with the question.</h1>
 
       <p class="hero-copy">
-        A full research plan is not needed to get started. Share the property,
-        intended use, and the questions behind the decision. GeoSite Intel can
-        review the request, identify useful available data, and recommend a focused
-        plan of work before the project begins.
+        Share the property, planned use, and main questions. GeoSite can review
+        the request and recommend a focused plan before work begins.
       </p>
 
       <div class="request-intro" aria-label="What to send">
         <article>
           <h3>1. Share the Location</h3>
-          <p>An address, property number, listing link, map location, county property-map link, or image can identify the property.</p>
+          <p>Send an address, property number, listing link, map, or screenshot.</p>
         </article>
         <article>
           <h3>2. Explain the Goal</h3>
-          <p>Describe the intended use, purchase decision, development idea, concern, or comparison that needs research.</p>
+          <p>Describe the planned use, decision, or concern.</p>
         </article>
         <article>
           <h3>3. Add What Is Known</h3>
-          <p>Include useful links, documents, maps, photographs, deadlines, or previous findings when available.</p>
+          <p>Add useful links or deadlines when available.</p>
         </article>
       </div>
 
       <div class="notice">
-        <strong>Projects are not limited to a local service area.</strong>
-        Remote research can be considered across locations where suitable data are available.
-        Field visits may be added when on-site observations would strengthen the project.
+        <strong>Remote research is available where useful information can be found.</strong>
+        Field visits may be added when seeing the property would help.
       </div>
-
-      <p class="plain-guide-link">
-        <a href="index.html#plain-language-guide">Not sure what a term means? Open the plain-English guide →</a>
-      </p>
     </section>
 
     <section class="panel" id="estimateForm" aria-labelledby="form-title">
@@ -313,7 +299,6 @@
       <form
         action="https://formspree.io/f/xyznngpw"
         method="POST"
-        enctype="multipart/form-data"
       >
         <input type="hidden" name="_subject" value="New GeoSite Intel property or project request">
         <input type="hidden" name="source" value="property-request-page">
@@ -382,7 +367,7 @@
 
         <div class="form-grid field">
           <div class="field">
-            <label for="parcelId">Parcel number (sometimes called APN or PIN)</label>
+            <label for="parcelId">Property or parcel number</label>
             <input id="parcelId" name="parcel_id" type="text" placeholder="If known">
           </div>
 
@@ -398,7 +383,7 @@
         </div>
 
         <div class="field">
-          <label for="listingLink">Listing, county GIS, or property link</label>
+          <label for="listingLink">Listing or county property-map link</label>
           <input
             id="listingLink"
             name="property_link"
@@ -416,7 +401,7 @@
             id="intendedUse"
             name="intended_use"
             required
-            placeholder="Example: Considering buying this parcel for a home, small subdivision, investment, agricultural use, commercial project, recreation, or another purpose."
+            placeholder="Example: Considering buying this property for a home, investment, farm, business, recreation, or another use."
           ></textarea>
         </div>
 
@@ -430,7 +415,7 @@
 
             <div class="checkbox-field">
               <input id="interestFlood" name="interest_flood_drainage" type="checkbox" value="yes">
-              <label for="interestFlood">Flood, drainage, water, or terrain context</label>
+              <label for="interestFlood">Flooding, water, slopes, or low areas</label>
             </div>
 
             <div class="checkbox-field">
@@ -507,37 +492,29 @@
           </select>
         </div>
 
-        <div class="form-section-label">Supporting Information</div>
-        <h3 class="form-section-title">Add links, maps, photos, or documents</h3>
+        <div class="form-section-label">Helpful Links</div>
+        <h3 class="form-section-title">Add any useful property links</h3>
 
         <div class="field">
-          <label for="supportingLinks">Supporting links</label>
+          <label for="supportingLinks">Helpful property links</label>
           <textarea
             id="supportingLinks"
             name="supporting_links"
-            placeholder="Paste any additional listing pages, county records, shared Drive/Dropbox/OneDrive links, maps, permit pages, or other useful URLs here."
+            placeholder="Paste any additional listing, county property-map, permit, planning, or other useful public links here."
           ></textarea>
         </div>
 
-        <div class="field">
-          <label for="attachments">Supporting files</label>
-          <input
-            id="attachments"
-            name="attachments"
-            type="file"
-            multiple
-            accept="image/png,image/jpeg,image/webp,application/pdf"
-          >
-          <div class="file-note">
-            Optional: attach photographs, screenshots, maps, or PDF documents. For other file types or very large files, a shared link can be added above or files can be emailed directly.
-          </div>
+        <div class="helper-box">
+          <strong>Files can be shared later.</strong>
+          If photographs, maps, or documents are needed, GeoSite will request
+          them by email after the first consultation.
         </div>
 
         <div class="helper-box">
           <strong>No perfect project description is required.</strong>
-          If the question is geographic, environmental, property-related, historical,
-          or location-based, send what is available. GeoSite can determine whether the
-          request fits the service and what research approach makes sense.
+          If the question involves a property, map, past land change, or nearby
+          activity, send what is available. GeoSite can determine whether the
+          request fits the service.
         </div>
 
         <div class="checkbox-field">
@@ -552,7 +529,7 @@
           <p class="form-submit-copy">
             Submitting this form does not create a contract or authorize paid work.
             GeoSite will first review the request and determine an appropriate plan of work, availability,
-            expected turnaround, and estimate. Submitted contact, property, and file
+            expected turnaround, and estimate. Submitted contact and property
             information is handled as described in the
             <a href="privacy.html">Privacy &amp; Data Use notice</a>.
           </p>
@@ -566,10 +543,11 @@
       </div>
       <p>
         Send the property location or listing link, the intended use, and the main
-        question. Supporting maps, photographs, or documents can also be included.
+        question. If files are needed, GeoSite can request them by email after the
+        first consultation.
       </p>
       <div class="button-row">
-        <a class="button primary" href="mailto:geositeintel@outlook.com?subject=GeoSite%20Property%20Research%20Request">Email GeoSite</a>
+        <a class="button primary" href="mailto:info@geositeintel.com?subject=GeoSite%20Property%20Research%20Request">Email GeoSite</a>
         <a class="button secondary" href="land-property-intelligence.html">Review Land Research Services</a>
       </div>
     </section>
@@ -587,7 +565,7 @@
         <a href="about.html">About</a>
         <a href="hire.html#estimateForm">Start a Project</a>
         <a href="privacy.html">Privacy</a>
-        <a href="mailto:geositeintel@outlook.com">Contact</a>
+        <a href="mailto:info@geositeintel.com">Contact</a>
       </nav>
     </footer>
   </main>

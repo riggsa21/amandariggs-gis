@@ -1,4 +1,4 @@
-/* DEPLOYMENT BUILD: 20260810-10 */
+/* DEPLOYMENT BUILD: 20260810-13 */
 
 :root {
   --bg0: #07111c;
@@ -50,7 +50,7 @@ body::before {
   z-index: 0;
   pointer-events: none;
   opacity: 0.12;
-  background: url("./GeoSite_Intel_Logo_Transparent.png?v=20260810-10")
+  background: url("./GeoSite_Intel_Logo_Transparent.png?v=20260810-13")
     center 115px / min(1050px, 88vw) auto no-repeat;
 }
 
