@@ -1,57 +1,54 @@
-<!-- land-property-intelligence.html | GeoSite Intel nationwide land & property intelligence -->
+<!-- land-property-intelligence.html | GeoSite Intel property and land research -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Land Due Diligence &amp; Property Intelligence | GeoSite Intel</title>
+  <title>Property &amp; Land Research | GeoSite Intel</title>
 
   <meta
     name="description"
-    content="GIS-based land due diligence and property intelligence for buyers and investors: terrain, flood, environmental, historical imagery, mapping, and field visits."
+    content="Pre-purchase property and land research for buyers and investors, including flood, drainage, environmental information, past imagery, mapping, and optional field visits."
   >
 
   <meta name="theme-color" content="#0b1724">
   <link rel="canonical" href="https://geositeintel.com/land-property-intelligence.html">
   <link rel="stylesheet" href="site.css">
 
-  <link
-    rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1724'/%3E%3Cpath d='M32 9C21.5 9 13 17.5 13 28c0 13.8 19 28 19 28s19-14.2 19-28C51 17.5 42.5 9 32 9zm0 26a7 7 0 1 1 0-14 7 7 0 0 1 0 14z' fill='%2356b9b4'/%3E%3C/svg%3E"
-  >
+  <link rel="icon" type="image/png" href="GeoSite_Intel_Favicon.png">
 
-  <meta property="og:title" content="Land &amp; Property Intelligence | GeoSite Intel">
+  <meta property="og:title" content="Property &amp; Land Research | GeoSite Intel">
   <meta
     property="og:description"
-    content="Know the land before you buy it. Remote GIS-based property research, environmental screening, custom maps, and optional field visits."
+    content="Know the land before buying it. Remote property research, early environmental review, custom maps, and optional field visits."
   >
-  <meta property="og:image" content="https://geositeintel.com/Logo_black.png">
+  <meta property="og:image" content="https://geositeintel.com/GeoSite_Intel_Social.png">
   <meta property="og:url" content="https://geositeintel.com/land-property-intelligence.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GeoSite Intel">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Land &amp; Property Intelligence | GeoSite Intel">
+  <meta name="twitter:title" content="Property &amp; Land Research | GeoSite Intel">
   <meta
     name="twitter:description"
-    content="Pre-purchase land and property screening using GIS, environmental data, terrain, historical imagery, and custom mapping."
+    content="Pre-purchase property and land research using maps, environmental information, land conditions, past imagery, and custom mapping."
   >
-  <meta name="twitter:image" content="https://geositeintel.com/Logo_black.png">
+  <meta name="twitter:image" content="https://geositeintel.com/GeoSite_Intel_Social.png">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Land & Property Intelligence",
-    "serviceType": "GIS-based land and property research",
+    "name": "Property & Land Research",
+    "serviceType": "Pre-purchase property and land research",
     "provider": {
       "@type": "Organization",
       "name": "GeoSite Intel",
       "url": "https://geositeintel.com/"
     },
     "areaServed": "Worldwide",
-    "description": "Remote GIS-based property research and preliminary due diligence screening for land buyers, investors, owners, and real estate professionals, including parcel context, terrain, drainage, environmental data, historical imagery, custom mapping, and optional field visits.",
+    "description": "Remote property research for land buyers, investors, owners, and real estate professionals, including property records, land shape, drainage, environmental information, past imagery, custom mapping, and optional field visits.",
     "url": "https://geositeintel.com/land-property-intelligence.html"
   }
   </script>
@@ -66,7 +63,7 @@
         "name": "Can GeoSite research property outside the local area?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Most GeoSite property research is completed remotely using available public, geospatial, environmental, imagery, terrain, and client-provided information. Projects can be considered across locations, with the exact scope depending on data availability and the property question."
+          "text": "Yes. Most GeoSite property research is completed remotely using available public records, maps, environmental information, imagery, land data, and client-provided information. Projects can be considered across locations, with the exact research plan depending on data availability and the property question."
         }
       },
       {
@@ -74,7 +71,7 @@
         "name": "Can GeoSite determine whether land is buildable?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "GeoSite can identify mapped conditions, potential constraints, and questions that deserve verification, but it does not issue legal buildability determinations, permits, engineering opinions, surveys, or formal environmental determinations."
+          "text": "GeoSite can identify mapped conditions, possible concerns, and questions that deserve verification, but it does not issue legal decisions about whether land can be built on, permits, engineering opinions, surveys, or formal environmental decisions."
         }
       },
       {
@@ -90,7 +87,7 @@
         "name": "Are field visits available?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. When a project would benefit from on-site observations, photography, GPS data collection, or ground-truthing, a field visit can be scoped separately based on location, access, travel, and project needs."
+          "text": "Yes. When a project would benefit from on-site observations, photography, GPS data collection, or other on-site checks, a field visit can be planned separately based on location, access, travel, and project needs."
         }
       }
     ]
@@ -339,7 +336,7 @@
   </style>
 </head>
 
-<body>
+<body class="page-property">
   <div class="topbar">
     <div class="topbar-inner">
       <button
@@ -354,7 +351,11 @@
       </button>
 
       <a class="topbar-brand" href="index.html">
-        GeoSite Intel<span class="brand-dot">.</span>
+        <img
+          class="topbar-logo"
+          src="GeoSite_Intel_Logo_Transparent.png"
+          alt="GeoSite Intel — Property and Land Research"
+        >
       </a>
     </div>
   </div>
@@ -363,16 +364,20 @@
 
   <aside class="drawer" id="site-drawer" aria-label="Site menu">
     <header>
-      <div class="mono drawer-title">
-        GeoSite Intel<span class="brand-dot">.</span>
-      </div>
-      <div class="drawer-subtitle">Land intelligence, property research, and professional mapping</div>
+      <a class="drawer-brand" href="index.html">
+        <img
+          class="drawer-logo"
+          src="GeoSite_Intel_Logo_Transparent.png"
+          alt="GeoSite Intel — Property and Land Research"
+        >
+      </a>
+      <div class="drawer-subtitle">Property and land research with professional mapping</div>
     </header>
 
     <nav aria-label="Main site navigation">
       <a href="index.html">Home</a>
       <a href="index.html#services">Property Services</a>
-      <a href="land-property-intelligence.html" aria-current="page">Land Intelligence</a>
+      <a href="land-property-intelligence.html" aria-current="page">Land Research</a>
       <a href="portfolio.html">Property Examples</a>
       <a href="reviews.html">Reviews</a>
       <a href="hire.html#estimateForm">Request Estimate</a>
@@ -384,17 +389,17 @@
   <main class="page-shell">
     <section class="panel page-hero intel-hero" aria-labelledby="intel-title">
       <div class="eyebrow">
-        remote property research • GIS screening • optional field visits
+        remote property research • map-based review • optional field visits
       </div>
 
       <h1 id="intel-title">Know the land before you buy it.</h1>
 
       <p class="hero-copy">
         A real estate listing shows the property. GeoSite Intel investigates the
-        landscape around it by combining parcel information, terrain, drainage,
-        environmental data, historical imagery, surrounding land context, and
+        landscape around it by combining property records, land shape, drainage,
+        environmental information, past aerial images, nearby land activity, and
         professional mapping. The goal is to help buyers and investors spot
-        potential constraints, compare opportunities, and know what questions to
+        possible concerns, compare opportunities, and know what questions to
         ask before making a major land decision.
       </p>
 
@@ -407,9 +412,13 @@
         </a>
       </div>
 
+      <p class="plain-guide-link">
+        <a href="index.html#plain-language-guide">New to these terms? Open the plain-English guide →</a>
+      </p>
+
       <ul class="hero-proof" aria-label="GeoSite service highlights">
         <li>Remote research across locations</li>
-        <li>Custom GIS analysis</li>
+        <li>Custom map analysis</li>
         <li>Plain-language findings</li>
         <li>Professional maps</li>
         <li>Field visits available</li>
@@ -423,12 +432,38 @@
       </div>
     </section>
 
+    <section class="panel visual-story" aria-labelledby="visual-story-title">
+      <div class="visual-media">
+        <img
+          src="Case_02_North_Edwards%20Rd.jpg?v=1"
+          alt="GeoSite map showing terrain, drainage, and road access context"
+          loading="lazy"
+        >
+        <span class="visual-caption">GeoSite demonstration map</span>
+      </div>
+
+      <div class="visual-story-copy">
+        <div class="service-label">See the bigger property picture</div>
+        <h2 id="visual-story-title">A map can connect clues that a listing keeps separate.</h2>
+        <p>
+          Roads, low areas, water movement, nearby development, and parcel
+          boundaries become easier to understand when they are viewed together.
+        </p>
+        <ul class="visual-checklist">
+          <li>See where water may collect or move</li>
+          <li>Compare access with the surrounding terrain</li>
+          <li>Identify questions worth checking before purchase</li>
+        </ul>
+        <a class="service-link" href="portfolio.html">View full property examples →</a>
+      </div>
+    </section>
+
     <section class="panel" aria-labelledby="why-title">
       <div class="section-heading">
         <h2 id="why-title">A parcel can look simple until you start asking questions.</h2>
         <p>
-          Property intelligence brings multiple sources together so important
-          relationships are easier to see before you commit time or money.
+          Property research brings multiple sources together so important
+          connections are easier to see before you commit time or money.
         </p>
       </div>
 
@@ -445,9 +480,9 @@
 
         <article class="intel-card">
           <div class="card-label">Environment</div>
-          <h3>Wetlands &amp; Environmental Screening</h3>
+          <h3>Wetlands &amp; Early Environmental Review</h3>
           <p>
-            Screen available wetlands, soils, land cover, protected or sensitive
+            Review available wetlands, soils, vegetation and development, protected or sensitive
             environmental features, and other mapped conditions that may warrant
             closer professional or agency review.
           </p>
@@ -468,8 +503,8 @@
           <h3>Road &amp; Surrounding Context</h3>
           <p>
             Investigate visible access patterns, road context, nearby development,
-            neighboring land uses, infrastructure, and spatial relationships that
-            may not be obvious from listing photos alone.
+            neighboring land uses, infrastructure, and how the property relates
+            to nearby features that may not be obvious from listing photos alone.
           </p>
         </article>
 
@@ -477,7 +512,7 @@
           <div class="card-label">History</div>
           <h3>Historical Imagery Review</h3>
           <p>
-            Compare available imagery through time to look for past clearing,
+            Compare available images through time to look for past clearing,
             development, drainage changes, former uses, landscape disturbance,
             or other changes relevant to the property question.
           </p>
@@ -495,10 +530,11 @@
 
         <article class="intel-card">
           <div class="card-label">Comparison</div>
-          <h3>Multiple-Parcel Screening</h3>
+          <h3>Compare Multiple Properties</h3>
           <p>
-            Compare candidate properties using consistent criteria so an investor,
-            buyer, or agent can identify which parcels deserve deeper attention.
+            Compare properties you are seriously considering using the same
+            criteria, so a buyer, investor, or agent can see which ones deserve
+            deeper attention.
           </p>
         </article>
 
@@ -506,7 +542,7 @@
           <div class="card-label">Mapping</div>
           <h3>Custom Property Maps</h3>
           <p>
-            Turn scattered records and spatial data into clear maps designed to
+            Turn scattered records and location-based data into clear maps designed to
             answer the property question and communicate the findings efficiently.
           </p>
         </article>
@@ -515,8 +551,8 @@
           <div class="card-label">Custom Research</div>
           <h3>Questions That Do Not Fit a Template</h3>
           <p>
-            If the concern is spatial, environmental, historical, geographic, or
-            location-based, send it. Many useful property questions require a
+            If the concern depends on location, environmental conditions, history,
+            or the surrounding landscape, send it. Many useful property questions require a
             custom research approach rather than a standard checklist.
           </p>
         </article>
@@ -527,7 +563,7 @@
       <div class="section-heading">
         <h2 id="audience-title">Built for people making decisions about land.</h2>
         <p>
-          You do not need to know GIS terminology. Start with the property and
+          You do not need to know mapping terms. Start with the property and
           the decision you are trying to make.
         </p>
       </div>
@@ -543,7 +579,7 @@
         </article>
         <article class="audience-card">
           <h3>Agents &amp; Brokers</h3>
-          <p>Add spatial context when a client has questions beyond the listing sheet.</p>
+          <p>Add map-based context when a client has questions beyond the listing sheet.</p>
         </article>
         <article class="audience-card">
           <h3>Owners &amp; Small Developers</h3>
@@ -559,19 +595,19 @@
           GeoSite is remote-first, so projects are not limited to a local service area.
           Research can be considered across the United States and internationally
           where suitable data are available. When the project needs eyes on the ground,
-          field work can be added to the scope.
+          field work can be added to the project.
         </p>
       </div>
 
       <div class="nationwide-panel">
         <article class="nationwide-copy">
-          <h3>Remote Property Intelligence</h3>
+          <h3>Remote Property Research</h3>
           <p>
             Most projects begin remotely. GeoSite gathers the best available public and
-            client-provided information for the property, assesses which datasets are
-            useful, analyzes the location in GIS, and organizes the findings around
+            client-provided information for the property, identifies which sources are
+            useful, studies the location with mapping tools, and organizes the findings around
             the intended use or concern. Data quality and availability vary by
-            jurisdiction, so each scope is tailored to what can actually be supported.
+            location, so each research plan is tailored to what can actually be supported.
           </p>
         </article>
 
@@ -581,8 +617,8 @@
           <p>
             Projects that benefit from field observations can include site
             photography, GPS data collection, visible-condition documentation,
-            ground-truthing, and targeted review of locations identified during
-            the desktop analysis. Travel and field scope are quoted separately.
+            on-site checks, and focused review of locations identified during
+            the map and records review. Travel and field work are quoted separately.
           </p>
         </article>
       </div>
@@ -590,7 +626,7 @@
 
     <section class="panel" aria-labelledby="process-title">
       <div class="section-heading">
-        <h2 id="process-title">How Property Intelligence Works</h2>
+        <h2 id="process-title">How Property Research Works</h2>
         <p>A focused process built around your intended use and the decision in front of you.</p>
       </div>
 
@@ -607,7 +643,7 @@
         <article class="process-step">
           <h3>Investigate the Evidence</h3>
           <p>
-            GeoSite identifies useful data, researches the property in GIS, compares
+            GeoSite identifies useful information, researches the property with mapping tools, compares
             relevant physical and environmental conditions, and flags areas where
             the evidence suggests a closer look or additional verification.
           </p>
@@ -618,7 +654,7 @@
           <p>
             Receive the agreed-upon maps and research summary, including key
             observations, data limitations, and practical next questions. If field
-            verification would add value, it can be scoped from there.
+            verification would add value, it can be planned from there.
           </p>
         </article>
       </div>
@@ -635,9 +671,9 @@
 
       <ul class="deliverables-list">
         <li><strong>Property research summary</strong> with focused findings in plain language.</li>
-        <li><strong>Professional GIS maps</strong> showing the conditions most relevant to the decision.</li>
-        <li><strong>Environmental and terrain screening</strong> using appropriate available datasets.</li>
-        <li><strong>Historical imagery observations</strong> when past landscape change is relevant.</li>
+        <li><strong>Professional maps</strong> showing the conditions most relevant to the decision.</li>
+        <li><strong>Early environmental and land review</strong> using appropriate available information.</li>
+        <li><strong>Past-image observations</strong> when earlier landscape change is relevant.</li>
         <li><strong>Parcel comparison</strong> for buyers or investors choosing among multiple properties.</li>
         <li><strong>Data sources and limitations</strong> so you know what the evidence can and cannot establish.</li>
         <li><strong>Recommended next questions</strong> for agencies, surveyors, engineers, environmental professionals, or other specialists when needed.</li>
@@ -647,22 +683,22 @@
 
     <section class="panel" aria-labelledby="scope-title">
       <div class="section-heading">
-        <h2 id="scope-title">Useful screening without pretending the map is the final authority.</h2>
+        <h2 id="scope-title">Useful early research without pretending the map is the final authority.</h2>
         <p>
-          Good land due diligence should help you identify what deserves deeper
+          Good pre-purchase research should help you identify what deserves deeper
           verification—not overstate what public data can prove.
         </p>
       </div>
 
       <div class="scope-box">
-        <strong>GeoSite Intel provides GIS-based research, preliminary screening,
-        field observations when specifically scoped, and professional mapping.</strong>
+        <strong>GeoSite Intel provides map-based research, early review,
+        field observations when included in the project, and professional mapping.</strong>
         GeoSite does not provide a boundary survey, title opinion, appraisal,
         engineering design or opinion, legal advice, permit approval, official
         flood determination, jurisdictional wetland delineation, Phase I
         Environmental Site Assessment, geotechnical evaluation, or guarantee that
         a property is buildable or suitable for a particular use. When research
-        identifies a question outside GeoSite’s scope, the findings can help you
+        identifies a question outside GeoSite’s services, the findings can help you
         determine what type of official verification or licensed professional to
         contact next.
       </div>
@@ -670,7 +706,7 @@
 
     <section class="panel" aria-labelledby="faq-title">
       <div class="section-heading">
-        <h2 id="faq-title">Land &amp; Property Intelligence FAQ</h2>
+        <h2 id="faq-title">Property &amp; Land Research FAQ</h2>
       </div>
 
       <div class="faq-list">
@@ -678,7 +714,7 @@
           <summary>Can GeoSite research property outside the local area?</summary>
           <p>
             Yes. Most GeoSite property research can be completed remotely using
-            available public, geospatial, environmental, imagery, terrain, and
+            available public records, maps, environmental data, imagery, terrain, and
             client-provided information. Projects can be considered across the
             United States and internationally where suitable data are available.
             The exact datasets and level of detail vary by location.
@@ -688,9 +724,9 @@
         <details class="faq-item">
           <summary>Can GeoSite determine whether land is buildable?</summary>
           <p>
-            GeoSite can identify mapped conditions, potential constraints, and
-            land-use questions that deserve verification. A legal buildability
-            determination can depend on zoning interpretation, permits, utilities,
+            GeoSite can identify mapped conditions, possible concerns, and
+            land-use questions that deserve verification. A legal decision about
+            whether land can be built on can depend on zoning rules, permits, utilities,
             access rights, surveys, engineering, soils, septic requirements,
             wetlands determinations, and other local or site-specific factors that
             must be confirmed by the appropriate authority or professional.
@@ -709,7 +745,7 @@
         <details class="faq-item">
           <summary>Is this only for vacant land?</summary>
           <p>
-            No. Property intelligence can also support questions involving homes,
+            No. Property research can also support questions involving homes,
             commercial parcels, agricultural land, investment property, access,
             drainage, surrounding development, historical change, and other
             location-based concerns.
@@ -720,8 +756,8 @@
           <summary>Are site visits available?</summary>
           <p>
             Yes. When a project would benefit from on-site observations,
-            photography, GPS data collection, or ground-truthing, a field visit
-            can be scoped separately based on location, access, travel, and the
+            photography, GPS data collection, or on-site checks, a field visit
+            can be planned separately based on location, access, travel, and the
             specific information needed.
           </p>
         </details>
@@ -734,13 +770,13 @@
       <p>
         Send the parcel or listing along with the intended use or property question.
         GeoSite will review the request, determine what useful information is
-        available, and recommend a focused research scope.
+        available, and recommend a focused research plan.
       </p>
 
       <div class="send-property-box">
         <strong>You can send:</strong> a Zillow, Realtor, LandWatch, Land.com, or
-        other listing link; a street address; parcel ID; coordinates; county GIS
-        link; or even a screenshot or map showing the property.
+        other listing link; a street address; property ID; a map location; county
+        property-map link; or even a screenshot or map showing the property.
       </div>
 
       <div class="button-row">
@@ -755,14 +791,13 @@
 
     <footer class="site-footer">
       <div>
-        © 2026 Amanda L. Riggs · GeoSite Intel · Property Research &amp;
-        Environmental Mapping
+        © 2026 GeoSite Intel · Property &amp; Land Research · Environmental Mapping
       </div>
 
       <nav class="footer-links" aria-label="Footer navigation">
         <a href="index.html">Home</a>
         <a href="index.html#services">Services</a>
-        <a href="land-property-intelligence.html">Land Intelligence</a>
+        <a href="land-property-intelligence.html">Land Research</a>
         <a href="portfolio.html">Property Examples</a>
         <a href="reviews.html">Reviews</a>
         <a href="hire.html#estimateForm">Request Estimate</a>

@@ -1,19 +1,29 @@
-GEOSITE INTEL — LAND INTELLIGENCE WEBSITE UPDATE
+GEOSITE INTEL WEBSITE UPDATE — AUGUST 10, 2026
 
-Upload these files to the main/root folder of the GeoSite Intel website repository:
-- index.html
-- land-property-intelligence.html
-- hire.html
-- site.css
+This package contains the complete company-voice and logo update.
 
-If GitHub says a file already exists, replace it with this updated version.
+UPLOAD THESE FILES TO THE GITHUB REPOSITORY'S MAIN/ROOT FOLDER:
 
-Keep your existing supporting files and pages in place, including:
-- portfolio.html
-- reviews.html
-- about.html
-- Logo_black.png
-- existing property/example images
+1. index.html
+2. about.html
+3. portfolio.html
+4. reviews.html
+5. hire.html
+6. land-property-intelligence.html
+7. site.css
+8. GeoSite_Intel_Logo_Transparent.png
+9. GeoSite_Intel_Favicon.png
+10. GeoSite_Intel_Social.png
+
+Replace the existing HTML and CSS files when GitHub asks. The three GeoSite
+image files must also be uploaded to the same root folder. The visible header
+logo will not appear if GeoSite_Intel_Logo_Transparent.png is missing or renamed.
+
+Keep the existing property-example and map images in the repository. This
+update does not replace or delete them.
 
 Suggested commit message:
-Update GeoSite land intelligence homepage and property request flow
+Update company copy and add new GeoSite logo across site
+
+After committing the files, open geositeintel.com and perform a hard refresh
+(Ctrl+F5 on Windows) so the browser loads the new logo and styling.
