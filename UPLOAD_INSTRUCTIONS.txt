@@ -1,7 +1,11 @@
-GEOSITE INTEL FLAT WEBSITE UPLOAD — AUGUST 10, 2026
+GEOSITE INTEL DEPLOYMENT BUILD 20260810-9 — AUGUST 10, 2026
 
-This package contains the complete company-voice, thumbnail-background,
-revised-wordmark, fixed-header-sizing, and logo-contrast update.
+This is a newly named build so an older downloaded ZIP cannot be reused by
+mistake. The HTML and CSS files contain the marker 20260810-9. If GitHub reports
+"0 files changed," stop: the extracted files were not the files from this ZIP.
+
+This package contains the complete company-voice, enforced single-logo
+background, corrected header-logo sizing, and search-indexing update.
 
 IMPORTANT: Do not upload the ZIP file itself. Extract the ZIP first. The files
 inside are already arranged for direct upload to the repository root.
@@ -18,9 +22,11 @@ UPLOAD THESE FILES TO THE GITHUB REPOSITORY'S MAIN/ROOT FOLDER:
 8. GeoSite_Intel_Logo_Transparent.png
 9. GeoSite_Intel_Favicon.png
 10. GeoSite_Intel_Social.png
+11. robots.txt
+12. sitemap.xml
 
 Open the same repository folder that already contains the live index.html file.
-Upload the 10 files listed above directly into that folder. Replace the existing
+Upload the 12 files listed above directly into that folder. Replace the existing
 HTML and CSS files when GitHub asks. Do not upload a containing folder.
 
 The three GeoSite image files must be in that same location. The attached
@@ -31,11 +37,16 @@ Before committing, confirm the filenames are exactly index.html, about.html,
 hire.html, portfolio.html, reviews.html, and land-property-intelligence.html.
 Files ending in (1), (2), -copy, or similar text will not replace the live pages.
 
+On GitHub's final review screen, index.html and site.css MUST appear in the list
+of changed files. The commit must not say "0 files changed." After the commit,
+open index.html in the repository and confirm its first line says:
+<!-- DEPLOYMENT BUILD: 20260810-9 -->
+
 Keep the existing property-example and map images in the repository. This
 update does not replace or delete them.
 
 Suggested commit message:
-Update GeoSite logo font and add branded page background
+Remove map backgrounds, align header logo, and update search metadata
 
 After committing the files, wait a few minutes, open geositeintel.com, and
 perform a hard refresh (Ctrl+F5 on Windows). The updated pages include new
@@ -44,5 +55,15 @@ header logo is also limited directly inside every HTML page, so it cannot expand
 to the image's full size if an older stylesheet is briefly cached. The menu
 drawer starts below the fixed top bar so its full logo remains visible on mobile.
 The header, drawer, and About-page logo use light panels for clear contrast with
-the new dark-teal wording. GeoSite_Intel_Social.png is used as the branded page
-background with a dark overlay for readable page text.
+the new dark-teal wording. All thumbnail and case-study background images have
+been removed. Every HTML page now includes a direct safety rule that prevents an
+older stylesheet from restoring a map behind the page heading. The transparent
+GeoSite logo is the only background artwork. The top-right logo also has compact
+dimensions directly inside every page so it cannot spill outside its container.
+
+The package includes robots.txt and sitemap.xml to help search engines discover
+the updated pages. After the files are live, submit
+https://geositeintel.com/sitemap.xml in Google Search Console. Use URL Inspection
+for https://geositeintel.com/ and select Request Indexing. Google controls the
+timing, so the old drainage-focused search title and description may remain
+visible until the homepage is crawled again.

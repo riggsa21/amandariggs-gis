@@ -1,3 +1,4 @@
+<!-- DEPLOYMENT BUILD: 20260810-9 -->
 <!-- reviews.html | GeoSite Intel client feedback -->
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +15,7 @@
 
   <meta name="theme-color" content="#0b1724">
   <link rel="canonical" href="https://geositeintel.com/reviews.html">
-  <link rel="stylesheet" href="./site.css?v=20260810-5">
+  <link rel="stylesheet" href="./site.css?v=20260810-9">
 
   <link rel="icon" type="image/png" href="./GeoSite_Intel_Favicon.png?v=20260810-4">
 
@@ -35,6 +36,42 @@
     content="Read verified client feedback or share your experience with GeoSite Intel."
   >
   <meta name="twitter:image" content="https://geositeintel.com/GeoSite_Intel_Social.png?v=20260810-4">
+  <style id="geosite-background-safety">
+    html body {
+      background: linear-gradient(180deg, #07111c, #0b1724 48%, #0f1d2c) !important;
+    }
+
+    html body::before {
+      content: "";
+      position: fixed;
+      inset: 72px 0 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.12;
+      background: url("./GeoSite_Intel_Logo_Transparent.png?v=20260810-9")
+        center 115px / min(1050px, 88vw) auto no-repeat !important;
+    }
+
+    html body .page-hero {
+      background: rgba(16, 31, 48, 0.82) !important;
+      background-image: none !important;
+    }
+
+    html body .page-hero::before,
+    html body .page-hero::after {
+      content: none !important;
+      background: none !important;
+    }
+
+    @media (max-width: 620px) {
+      html body::before {
+        inset: 64px 0 0;
+        background-position: center 80px !important;
+        background-size: 92vw auto !important;
+      }
+    }
+  </style>
+
 </head>
 
 <body class="page-reviews">
@@ -54,11 +91,11 @@
       <a class="topbar-brand" href="index.html">
         <img
           class="topbar-logo"
-          src="./GeoSite_Intel_Logo_Transparent.png?v=20260810-5"
+          src="./GeoSite_Intel_Logo_Transparent.png?v=20260810-9"
           alt="GeoSite Intel — Property and Land Research"
-          width="170"
-          height="52"
-          style="display:block;width:170px;max-width:52vw;height:auto;object-fit:contain"
+          width="124"
+          height="38"
+          style="display:block;width:124px;max-width:100%;max-height:38px;height:auto;object-fit:contain"
         >
       </a>
     </div>
@@ -71,7 +108,7 @@
       <a class="drawer-brand" href="index.html">
         <img
           class="drawer-logo"
-          src="./GeoSite_Intel_Logo_Transparent.png?v=20260810-5"
+          src="./GeoSite_Intel_Logo_Transparent.png?v=20260810-9"
           alt="GeoSite Intel — Property and Land Research"
           width="235"
           height="72"
