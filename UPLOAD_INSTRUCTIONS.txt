@@ -1,6 +1,7 @@
 GEOSITE INTEL FLAT WEBSITE UPLOAD — AUGUST 10, 2026
 
-This package contains the complete company-voice and corrected-logo update.
+This package contains the complete company-voice, corrected-logo, fixed
+header-sizing, and high-contrast logo update.
 
 IMPORTANT: Do not upload the ZIP file itself. Extract the ZIP first. The files
 inside are already arranged for direct upload to the repository root.
@@ -33,8 +34,12 @@ Keep the existing property-example and map images in the repository. This
 update does not replace or delete them.
 
 Suggested commit message:
-Update company copy and add new GeoSite logo across site
+Fix GeoSite header logo sizing across site
 
 After committing the files, wait a few minutes, open geositeintel.com, and
 perform a hard refresh (Ctrl+F5 on Windows). The updated pages include new
-cache-safe links so the browser loads the corrected logo and styling.
+cache-safe links so the browser loads the corrected logo and styling. The
+header logo is also limited directly inside every HTML page, so it cannot expand
+to the image's full size if an older stylesheet is briefly cached. The large
+About-page logo now sits on a dark panel so the white GeoSite Intel lettering
+remains readable on laptops and mobile devices.
