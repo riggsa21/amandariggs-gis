@@ -1,6 +1,9 @@
-GEOSITE INTEL WEBSITE UPDATE — AUGUST 10, 2026
+GEOSITE INTEL FLAT WEBSITE UPLOAD — AUGUST 10, 2026
 
-This package contains the complete company-voice and logo update.
+This package contains the complete company-voice and corrected-logo update.
+
+IMPORTANT: Do not upload the ZIP file itself. Extract the ZIP first. The files
+inside are already arranged for direct upload to the repository root.
 
 UPLOAD THESE FILES TO THE GITHUB REPOSITORY'S MAIN/ROOT FOLDER:
 
@@ -15,9 +18,16 @@ UPLOAD THESE FILES TO THE GITHUB REPOSITORY'S MAIN/ROOT FOLDER:
 9. GeoSite_Intel_Favicon.png
 10. GeoSite_Intel_Social.png
 
-Replace the existing HTML and CSS files when GitHub asks. The three GeoSite
-image files must also be uploaded to the same root folder. The visible header
-logo will not appear if GeoSite_Intel_Logo_Transparent.png is missing or renamed.
+Open the same repository folder that already contains the live index.html file.
+Upload the 10 files listed above directly into that folder. Replace the existing
+HTML and CSS files when GitHub asks. Do not upload a containing folder.
+
+The three GeoSite image files must be in that same location. The attached
+GeoSite_Intel_Logo_Transparent.png is the exact approved logo. Do not rename it.
+
+Before committing, confirm the filenames are exactly index.html, about.html,
+hire.html, portfolio.html, reviews.html, and land-property-intelligence.html.
+Files ending in (1), (2), -copy, or similar text will not replace the live pages.
 
 Keep the existing property-example and map images in the repository. This
 update does not replace or delete them.
@@ -25,5 +35,6 @@ update does not replace or delete them.
 Suggested commit message:
 Update company copy and add new GeoSite logo across site
 
-After committing the files, open geositeintel.com and perform a hard refresh
-(Ctrl+F5 on Windows) so the browser loads the new logo and styling.
+After committing the files, wait a few minutes, open geositeintel.com, and
+perform a hard refresh (Ctrl+F5 on Windows). The updated pages include new
+cache-safe links so the browser loads the corrected logo and styling.
