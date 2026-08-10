@@ -1,11 +1,22 @@
-GEOSITE INTEL DEPLOYMENT BUILD 20260810-9 — AUGUST 10, 2026
+GEOSITE INTEL DEPLOYMENT BUILD 20260810-10 — AUGUST 10, 2026
 
 This is a newly named build so an older downloaded ZIP cannot be reused by
-mistake. The HTML and CSS files contain the marker 20260810-9. If GitHub reports
+mistake. The HTML and CSS files contain the marker 20260810-10. If GitHub reports
 "0 files changed," stop: the extracted files were not the files from this ZIP.
 
-This package contains the complete company-voice, enforced single-logo
-background, corrected header-logo sizing, and search-indexing update.
+This package contains the professional site-structure update plus all earlier
+company-voice, single-logo background, header-logo, and search-indexing fixes.
+
+BUILD 20260810-10 CHANGES:
+- Removes Portfolio/Property Examples and Reviews from public navigation.
+- Redirects the unfinished portfolio page to Services and the unfinished reviews
+  page to About. Both legacy pages are marked noindex.
+- Simplifies navigation to Home, Services, How It Works, About, Start a Project,
+  and Contact.
+- Adds a Privacy & Data Use page and form privacy notice.
+- Adds a branded request-confirmation page.
+- Adds three clear service starting points without publishing fixed prices.
+- Removes drainage demonstration sections and portfolio calls to action.
 
 IMPORTANT: Do not upload the ZIP file itself. Extract the ZIP first. The files
 inside are already arranged for direct upload to the repository root.
@@ -14,19 +25,21 @@ UPLOAD THESE FILES TO THE GITHUB REPOSITORY'S MAIN/ROOT FOLDER:
 
 1. index.html
 2. about.html
-3. portfolio.html
-4. reviews.html
-5. hire.html
-6. land-property-intelligence.html
-7. site.css
-8. GeoSite_Intel_Logo_Transparent.png
-9. GeoSite_Intel_Favicon.png
-10. GeoSite_Intel_Social.png
-11. robots.txt
-12. sitemap.xml
+3. hire.html
+4. land-property-intelligence.html
+5. privacy.html
+6. thank-you.html
+7. portfolio.html
+8. reviews.html
+9. site.css
+10. GeoSite_Intel_Logo_Transparent.png
+11. GeoSite_Intel_Favicon.png
+12. GeoSite_Intel_Social.png
+13. robots.txt
+14. sitemap.xml
 
 Open the same repository folder that already contains the live index.html file.
-Upload the 12 files listed above directly into that folder. Replace the existing
+Upload the 14 files listed above directly into that folder. Replace the existing
 HTML and CSS files when GitHub asks. Do not upload a containing folder.
 
 The three GeoSite image files must be in that same location. The attached
@@ -34,19 +47,20 @@ GeoSite_Intel_Logo_Transparent.png contains the revised dark-teal wordmark and
 bold geometric font. Do not rename it.
 
 Before committing, confirm the filenames are exactly index.html, about.html,
-hire.html, portfolio.html, reviews.html, and land-property-intelligence.html.
+hire.html, land-property-intelligence.html, privacy.html, thank-you.html,
+portfolio.html, and reviews.html.
 Files ending in (1), (2), -copy, or similar text will not replace the live pages.
 
 On GitHub's final review screen, index.html and site.css MUST appear in the list
 of changed files. The commit must not say "0 files changed." After the commit,
 open index.html in the repository and confirm its first line says:
-<!-- DEPLOYMENT BUILD: 20260810-9 -->
+<!-- DEPLOYMENT BUILD: 20260810-10 -->
 
 Keep the existing property-example and map images in the repository. This
 update does not replace or delete them.
 
 Suggested commit message:
-Remove map backgrounds, align header logo, and update search metadata
+Simplify site navigation and add privacy and confirmation pages
 
 After committing the files, wait a few minutes, open geositeintel.com, and
 perform a hard refresh (Ctrl+F5 on Windows). The updated pages include new
@@ -67,3 +81,17 @@ https://geositeintel.com/sitemap.xml in Google Search Console. Use URL Inspectio
 for https://geositeintel.com/ and select Request Indexing. Google controls the
 timing, so the old drainage-focused search title and description may remain
 visible until the homepage is crawled again.
+
+ONE-TIME FORM CONFIRMATION SETTING:
+The new thank-you.html page is included in the upload. In the Formspree settings
+for the form used by the website, set the Thank You redirect to:
+https://geositeintel.com/thank-you.html
+
+Until that setting is changed, Formspree may continue showing its standard
+confirmation screen after a submission. The form will still submit normally.
+
+COOKIE NOTE:
+No analytics, advertising pixels, or site-added cookie code is included in this
+build, so no cookie banner has been added. The new privacy page explains that
+GitHub Pages hosts the site and Formspree processes form submissions. Revisit
+cookie consent if analytics, advertising, payment, or scheduling tools are added.

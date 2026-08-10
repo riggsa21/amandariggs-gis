@@ -1,4 +1,4 @@
-/* DEPLOYMENT BUILD: 20260810-9 */
+/* DEPLOYMENT BUILD: 20260810-10 */
 
 :root {
   --bg0: #07111c;
@@ -50,7 +50,7 @@ body::before {
   z-index: 0;
   pointer-events: none;
   opacity: 0.12;
-  background: url("./GeoSite_Intel_Logo_Transparent.png?v=20260810-9")
+  background: url("./GeoSite_Intel_Logo_Transparent.png?v=20260810-10")
     center 115px / min(1050px, 88vw) auto no-repeat;
 }
 
@@ -642,6 +642,13 @@ textarea:focus-visible {
   color: var(--ink);
   font-size: 1.02rem;
   line-height: 1.72;
+}
+
+.fine-print {
+  margin: 18px 0 0;
+  color: var(--muted2);
+  font-size: 0.84rem;
+  line-height: 1.55;
 }
 
 /* Property examples page */
