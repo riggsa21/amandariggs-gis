@@ -1,40 +1,74 @@
-GEOSITE INTEL — 0 MILLS RD DEMO WEBSITE UPDATE
-Date: August 20, 2026
+GEOSITE INTEL - FINAL WEBSITE UPDATE
+August 20, 2026
 
-WHAT WE'RE DOING
-This update uses BOTH approaches:
-1. A new dedicated case-study page for the complete demonstration.
-2. Small featured-demo sections on the homepage and Land Research page that link to it.
+This package combines the 0 Mills Rd demo update with the form recovery fixes and the new GeoSite logo.
 
-UPLOAD THESE 7 FILES TO THE ROOT OF YOUR GITHUB WEBSITE REPOSITORY:
+IMPORTANT FORM FIXES INCLUDED
+- Keeps the existing Formspree form endpoint: https://formspree.io/f/xyznngpw
+- Removes multipart/form-data from the form.
+- Removes the unsupported direct file-upload control.
+- Changes the visitor email field from _replyto to email.
+- Keeps supporting-link submission for Drive/Dropbox/OneDrive files.
+- Restores direct website email links to geositeintel@outlook.com for reliability.
+- Does not add a paid/custom Formspree redirect.
 
-REPLACE EXISTING FILES
+ONE FORMSPREE DASHBOARD STEP IS STILL REQUIRED
+The website files cannot change the recipient in the Formspree dashboard.
+In Formspree:
+HireMe > Workflow > Email
+Change the recipient from info@geositeintel.com to:
+geositeintel@outlook.com
+Then click Save.
+
+The form endpoint is already receiving submissions correctly.
+
+BRANDING / COPY FIXES INCLUDED
+- Replaces the website logo with the newer GeoSite Intel wordmark.
+- Replaces the favicon with the newer compact pin mark.
+- Uses the standard keyboard hyphen (-) instead of em dashes/en dashes in all HTML files included in this package.
+
+0 MILLS RD DEMO INCLUDED
+- property-intelligence-demo.html
+- Full 13-page PDF report
+- Environmental screening map
+- Flood and terrain map
+- Featured demo sections on the homepage and Land Research page
+
+UPLOAD TO THE ROOT OF THE GITHUB WEBSITE REPOSITORY
+
+REPLACE EXISTING:
 - index.html
 - land-property-intelligence.html
+- hire.html
+- about.html
+- portfolio.html
 - sitemap.xml
+- GeoSite_Intel_Logo_Transparent.png
+- GeoSite_Intel_Favicon.png
 
-ADD NEW FILES
+ADD NEW:
 - property-intelligence-demo.html
 - GeoSite_0_Mills_Rd_Property_Intelligence_Report.pdf
 - 0-mills-rd-environmental-screening.png
 - 0-mills-rd-flood-terrain.png
 
-IMPORTANT
-- Upload the files themselves, not the ZIP.
-- Keep the filenames exactly as shown.
-- The PDF and both PNG files are referenced directly by the new HTML.
-- site.css does NOT need to be changed for this update.
-- If GitHub asks whether to replace index.html, land-property-intelligence.html,
-  or sitemap.xml, choose to replace/overwrite the existing versions.
+DO NOT delete your existing:
+- site.css
+- reviews.html
+- GeoSite_Intel_Social.png
+- existing portfolio/map images
+- robots.txt
+
+The LinkedIn company-page link is NOT included yet because the exact company-page URL has not been supplied.
 
 SUGGESTED COMMIT MESSAGE
-Add 0 Mills Rd property intelligence demo and report
+Add property demo, update branding, and repair request form
 
-AFTER COMMITTING
-1. Wait a minute or two for GitHub Pages to rebuild.
-2. Hard refresh geositeintel.com with Ctrl+F5.
-3. Check:
-   https://geositeintel.com/
-   https://geositeintel.com/land-property-intelligence.html
-   https://geositeintel.com/property-intelligence-demo.html
-4. Click the PDF buttons to confirm the report opens.
+AFTER UPLOAD
+1. Wait for GitHub Pages to rebuild.
+2. Hard refresh with Ctrl+F5.
+3. Test hire.html using a simple request with NO attachments.
+4. Confirm the new submission appears in Formspree.
+5. Confirm the Formspree Workflow Email recipient is geositeintel@outlook.com.
+6. Confirm the email notification arrives.
+7. Test the Email GeoSite button separately.

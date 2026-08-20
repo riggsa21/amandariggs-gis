@@ -2,832 +2,832 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>0 Mills Rd Property Intelligence Demo | GeoSite Intel</title>
-
-  <meta name="description" content="Explore a completed GeoSite Intel property intelligence demo combining parcel records, imagery, wetlands, soils, FEMA flood data, terrain, drainage, access, and nearby-site screening.">
-
-  <meta name="theme-color" content="#0b1724">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-  <link rel="canonical" href="https://geositeintel.com/property-intelligence-demo.html">
-  <link rel="stylesheet" href="./site.css?v=20260810-8">
-  <link rel="sitemap" type="application/xml" href="https://geositeintel.com/sitemap.xml">
-
-  <link rel="icon" type="image/png" href="./GeoSite_Intel_Favicon.png?v=20260810-4">
-
-  <meta property="og:title" content="0 Mills Rd Property Intelligence Demo | GeoSite Intel">
-  <meta property="og:description" content="A completed property intelligence demonstration using parcel records, imagery, environmental data, terrain, drainage, access, and careful nearby-site investigation.">
-  <meta property="og:image" content="https://geositeintel.com/0-mills-rd-environmental-screening.png">
-  <meta property="og:url" content="https://geositeintel.com/property-intelligence-demo.html">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="GeoSite Intel">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="0 Mills Rd Property Intelligence Demo | GeoSite Intel">
-  <meta name="twitter:description" content="See how GeoSite combines parcel records, imagery, environmental data, terrain, drainage, access, and nearby-site investigation into one property report.">
-  <meta name="twitter:image" content="https://geositeintel.com/0-mills-rd-environmental-screening.png">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "GeoSite Intel",
-    "url": "https://geositeintel.com/",
-    "logo": "https://geositeintel.com/GeoSite_Intel_Logo_Transparent.png?v=20260810-8",
-    "description": "Independent property and land research, environmental information review, historical imagery, and professional mapping services.",
-    "knowsAbout": [
-      "Geographic Information Systems",
-      "Property Research",
-      "Pre-purchase Land Research",
-      "Environmental Mapping",
-      "Terrain Analysis",
-      "Drainage Analysis",
-      "Remote Sensing",
-      "Historical Imagery",
-      "Cartography"
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "GeoSite Intel",
-    "alternateName": "GeoSite Intel Property and Land Research",
-    "url": "https://geositeintel.com/",
-    "description": "Independent property and land research and professional mapping for clearer property decisions."
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Property and Land Research",
-    "provider": {
-      "@type": "Organization",
-      "name": "GeoSite Intel",
-      "url": "https://geositeintel.com/"
-    },
-    "serviceType": "Property and land research and mapping",
-    "description": "Remote property research combining property records, land conditions, environmental information, past aerial images, land-use information, and professional mapping. Field visits may be added when on-site observations would be useful.",
-    "url": "https://geositeintel.com/land-property-intelligence.html"
-  }
-  </script>
-
-  <style>
-    /* Homepage-specific additions. Shared GeoSite styles remain in site.css. */
-
-    .home-hero .hero-copy {
-      max-width: 900px;
-      font-size: 1.04rem;
-    }
-
-    .hero-mark {
-      color: var(--accent-light);
-    }
-
-    .hero-proof {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-      margin: 21px auto 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .hero-proof li {
-      padding: 7px 10px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(7, 17, 28, 0.38);
-      color: var(--muted);
-      font-size: 0.84rem;
-      font-weight: 760;
-    }
-
-    .decision-callout {
-      max-width: 900px;
-      margin: 22px auto 0;
-      padding: 16px 18px;
-      border: 1px solid rgba(200, 173, 119, 0.25);
-      border-radius: 14px;
-      background: rgba(200, 173, 119, 0.065);
-      color: var(--muted);
-      line-height: 1.68;
-    }
-
-    .decision-callout strong {
-      color: var(--ink);
-    }
-
-    .service-card {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(86, 185, 180, 0.58), transparent);
-    }
-
-    .service-label {
-      margin-bottom: 7px;
-      color: var(--sand);
-      font-family: var(--mono);
-      font-size: 0.76rem;
-      font-weight: 950;
-      letter-spacing: 0.065em;
-      text-transform: uppercase;
-    }
-
-    .service-link {
-      display: inline-block;
-      margin-top: 12px;
-      font-weight: 850;
-    }
-
-    .gis-explainer {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .gis-question,
-    .gis-answer {
-      padding: 21px;
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      background: var(--panel-strong);
-    }
-
-    .gis-question {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      border-color: rgba(200, 173, 119, 0.23);
-      background: rgba(200, 173, 119, 0.055);
-    }
-
-    .gis-kicker {
-      margin-bottom: 7px;
-      color: var(--sand);
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      font-weight: 950;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .gis-question h2 {
-      margin: 0;
-      font-size: clamp(1.45rem, 3vw, 2rem);
-    }
-
-    .gis-answer p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .gis-answer strong {
-      color: var(--ink);
-    }
-
-    .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(180px, 1fr));
-      gap: 12px;
-    }
-
-    .audience-card {
-      padding: 17px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(7, 17, 28, 0.34);
-      text-align: center;
-    }
-
-    .audience-card h3 {
-      margin: 0 0 6px;
-      font-size: 1rem;
-    }
-
-    .audience-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.58;
-    }
-
-    .work-anywhere {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 16px;
-    }
-
-    .location-card {
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      background: var(--panel-strong);
-    }
-
-    .location-card.field {
-      border-color: rgba(86, 185, 180, 0.25);
-      background: rgba(86, 185, 180, 0.055);
-    }
-
-    .location-card h3 {
-      margin: 0 0 8px;
-    }
-
-    .location-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .featured-example {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
-      gap: 0;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 17px;
-      background: var(--panel-strong);
-    }
-
-    .featured-example img {
-      width: 100%;
-      height: 100%;
-      min-height: 310px;
-      display: block;
-      object-fit: cover;
-      border-right: 1px solid var(--line);
-    }
-
-    .featured-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .featured-copy h3 {
-      margin: 0 0 9px;
-      font-size: clamp(1.3rem, 3vw, 1.7rem);
-    }
-
-    .featured-copy p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.72;
-    }
-
-    .featured-copy .button-row {
-      justify-content: flex-start;
-    }
-
-    .broader-support {
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(7, 17, 28, 0.34);
-      color: var(--muted);
-      line-height: 1.7;
-      text-align: center;
-    }
-
-    .broader-support strong {
-      color: var(--ink);
-    }
-
-    @media (max-width: 900px) {
-      .audience-grid {
-        grid-template-columns: repeat(2, minmax(200px, 1fr));
-      }
-
-      .featured-example {
-        grid-template-columns: 1fr;
-      }
-
-      .featured-example img {
-        min-height: 0;
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-    }
-
-    @media (max-width: 760px) {
-      .gis-explainer,
-      .work-anywhere {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .audience-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  
-    .case-hero .hero-copy {
-      max-width: 900px;
-    }
-
-    .case-badge {
-      display: inline-flex;
-      margin: 0 auto 12px;
-      padding: 7px 11px;
-      border: 1px solid rgba(200, 173, 119, 0.28);
-      border-radius: 999px;
-      color: var(--sand);
-      background: rgba(200, 173, 119, 0.07);
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      font-weight: 900;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    .case-feature-image {
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--panel-strong);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .case-feature-image img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .case-intro {
-      max-width: 900px;
-      margin: 18px auto 0;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .finding-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(240px, 1fr));
-      gap: 14px;
-    }
-
-    .finding-card {
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      background: var(--panel-strong);
-    }
-
-    .finding-card .finding-label {
-      margin-bottom: 7px;
-      color: var(--sand);
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      font-weight: 950;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .finding-card h3 {
-      margin: 0 0 8px;
-      font-size: 1.06rem;
-    }
-
-    .finding-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.66;
-    }
-
-    .map-pair {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(280px, 1fr));
-      gap: 16px;
-    }
-
-    .map-card {
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--panel-strong);
-    }
-
-    .map-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .map-card-copy {
-      padding: 15px 16px 17px;
-    }
-
-    .map-card-copy h3 {
-      margin: 0 0 7px;
-    }
-
-    .map-card-copy p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.62;
-    }
-
-    .evidence-box {
-      padding: 18px;
-      border: 1px solid rgba(86, 185, 180, 0.28);
-      border-radius: 15px;
-      background: rgba(86, 185, 180, 0.06);
-      color: var(--muted);
-      line-height: 1.72;
-    }
-
-    .evidence-box strong {
-      color: var(--ink);
-    }
-
-    .report-cta {
-      text-align: center;
-    }
-
-    .report-cta p {
-      max-width: 760px;
-      margin: 10px auto 18px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    @media (max-width: 820px) {
-      .finding-grid,
-      .map-pair {
-        grid-template-columns: 1fr;
-      }
-    }
-
-  </style>
-  <style id="geosite-background-safety">
-    html body {
-      background: linear-gradient(180deg, #07111c, #0b1724 48%, #0f1d2c) !important;
-    }
-
-    html body::before {
-      content: "";
-      position: fixed;
-      inset: 72px 0 0;
-      z-index: 0;
-      pointer-events: none;
-      opacity: 0.12;
-      background: url("./GeoSite_Intel_Logo_Transparent.png?v=20260810-8")
-        center 115px / min(1050px, 88vw) auto no-repeat !important;
-    }
-
-    html body .page-hero {
-      background: rgba(16, 31, 48, 0.82) !important;
-      background-image: none !important;
-    }
-
-    html body .page-hero::before,
-    html body .page-hero::after {
-      content: none !important;
-      background: none !important;
-    }
-
-    @media (max-width: 620px) {
-      html body::before {
-        inset: 64px 0 0;
-        background-position: center 80px !important;
-        background-size: 92vw auto !important;
-      }
-    }
-  </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <title>0 Mills Rd Property Intelligence Demo | GeoSite Intel</title>
+
+ <meta name="description" content="Explore a completed GeoSite Intel property intelligence demo combining parcel records, imagery, wetlands, soils, FEMA flood data, terrain, drainage, access, and nearby-site screening.">
+
+ <meta name="theme-color" content="#0b1724">
+ <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+ <link rel="canonical" href="https://geositeintel.com/property-intelligence-demo.html">
+ <link rel="stylesheet" href="./site.css?v=20260810-8">
+ <link rel="sitemap" type="application/xml" href="https://geositeintel.com/sitemap.xml">
+
+ <link rel="icon" type="image/png" href="./GeoSite_Intel_Favicon.png?v=20260820-1">
+
+ <meta property="og:title" content="0 Mills Rd Property Intelligence Demo | GeoSite Intel">
+ <meta property="og:description" content="A completed property intelligence demonstration using parcel records, imagery, environmental data, terrain, drainage, access, and careful nearby-site investigation.">
+ <meta property="og:image" content="https://geositeintel.com/0-mills-rd-environmental-screening.png">
+ <meta property="og:url" content="https://geositeintel.com/property-intelligence-demo.html">
+ <meta property="og:type" content="website">
+ <meta property="og:site_name" content="GeoSite Intel">
+
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="0 Mills Rd Property Intelligence Demo | GeoSite Intel">
+ <meta name="twitter:description" content="See how GeoSite combines parcel records, imagery, environmental data, terrain, drainage, access, and nearby-site investigation into one property report.">
+ <meta name="twitter:image" content="https://geositeintel.com/0-mills-rd-environmental-screening.png">
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "GeoSite Intel",
+ "url": "https://geositeintel.com/",
+ "logo": "https://geositeintel.com/GeoSite_Intel_Logo_Transparent.png?v=20260820-1",
+ "description": "Independent property and land research, environmental information review, historical imagery, and professional mapping services.",
+ "knowsAbout": [
+ "Geographic Information Systems",
+ "Property Research",
+ "Pre-purchase Land Research",
+ "Environmental Mapping",
+ "Terrain Analysis",
+ "Drainage Analysis",
+ "Remote Sensing",
+ "Historical Imagery",
+ "Cartography"
+ ]
+ }
+ </script>
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "WebSite",
+ "name": "GeoSite Intel",
+ "alternateName": "GeoSite Intel Property and Land Research",
+ "url": "https://geositeintel.com/",
+ "description": "Independent property and land research and professional mapping for clearer property decisions."
+ }
+ </script>
+
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "Service",
+ "name": "Property and Land Research",
+ "provider": {
+ "@type": "Organization",
+ "name": "GeoSite Intel",
+ "url": "https://geositeintel.com/"
+ },
+ "serviceType": "Property and land research and mapping",
+ "description": "Remote property research combining property records, land conditions, environmental information, past aerial images, land-use information, and professional mapping. Field visits may be added when on-site observations would be useful.",
+ "url": "https://geositeintel.com/land-property-intelligence.html"
+ }
+ </script>
+
+ <style>
+ /* Homepage-specific additions. Shared GeoSite styles remain in site.css. */
+
+ .home-hero .hero-copy {
+ max-width: 900px;
+ font-size: 1.04rem;
+ }
+
+ .hero-mark {
+ color: var(--accent-light);
+ }
+
+ .hero-proof {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 8px;
+ margin: 21px auto 0;
+ padding: 0;
+ list-style: none;
+ }
+
+ .hero-proof li {
+ padding: 7px 10px;
+ border: 1px solid var(--line);
+ border-radius: 999px;
+ background: rgba(7, 17, 28, 0.38);
+ color: var(--muted);
+ font-size: 0.84rem;
+ font-weight: 760;
+ }
+
+ .decision-callout {
+ max-width: 900px;
+ margin: 22px auto 0;
+ padding: 16px 18px;
+ border: 1px solid rgba(200, 173, 119, 0.25);
+ border-radius: 14px;
+ background: rgba(200, 173, 119, 0.065);
+ color: var(--muted);
+ line-height: 1.68;
+ }
+
+ .decision-callout strong {
+ color: var(--ink);
+ }
+
+ .service-card {
+ position: relative;
+ overflow: hidden;
+ }
+
+ .service-card::after {
+ content: "";
+ position: absolute;
+ inset: auto 0 0;
+ height: 2px;
+ background: linear-gradient(90deg, transparent, rgba(86, 185, 180, 0.58), transparent);
+ }
+
+ .service-label {
+ margin-bottom: 7px;
+ color: var(--sand);
+ font-family: var(--mono);
+ font-size: 0.76rem;
+ font-weight: 950;
+ letter-spacing: 0.065em;
+ text-transform: uppercase;
+ }
+
+ .service-link {
+ display: inline-block;
+ margin-top: 12px;
+ font-weight: 850;
+ }
+
+ .gis-explainer {
+ display: grid;
+ grid-template-columns: 0.8fr 1.2fr;
+ gap: 18px;
+ align-items: stretch;
+ }
+
+ .gis-question,
+ .gis-answer {
+ padding: 21px;
+ border: 1px solid var(--line);
+ border-radius: 15px;
+ background: var(--panel-strong);
+ }
+
+ .gis-question {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ border-color: rgba(200, 173, 119, 0.23);
+ background: rgba(200, 173, 119, 0.055);
+ }
+
+ .gis-kicker {
+ margin-bottom: 7px;
+ color: var(--sand);
+ font-family: var(--mono);
+ font-size: 0.78rem;
+ font-weight: 950;
+ letter-spacing: 0.06em;
+ text-transform: uppercase;
+ }
+
+ .gis-question h2 {
+ margin: 0;
+ font-size: clamp(1.45rem, 3vw, 2rem);
+ }
+
+ .gis-answer p {
+ margin: 0;
+ color: var(--muted);
+ line-height: 1.75;
+ }
+
+ .gis-answer strong {
+ color: var(--ink);
+ }
+
+ .audience-grid {
+ display: grid;
+ grid-template-columns: repeat(4, minmax(180px, 1fr));
+ gap: 12px;
+ }
+
+ .audience-card {
+ padding: 17px;
+ border: 1px solid var(--line);
+ border-radius: 14px;
+ background: rgba(7, 17, 28, 0.34);
+ text-align: center;
+ }
+
+ .audience-card h3 {
+ margin: 0 0 6px;
+ font-size: 1rem;
+ }
+
+ .audience-card p {
+ margin: 0;
+ color: var(--muted);
+ font-size: 0.92rem;
+ line-height: 1.58;
+ }
+
+ .work-anywhere {
+ display: grid;
+ grid-template-columns: 1.1fr 0.9fr;
+ gap: 16px;
+ }
+
+ .location-card {
+ padding: 20px;
+ border: 1px solid var(--line);
+ border-radius: 15px;
+ background: var(--panel-strong);
+ }
+
+ .location-card.field {
+ border-color: rgba(86, 185, 180, 0.25);
+ background: rgba(86, 185, 180, 0.055);
+ }
+
+ .location-card h3 {
+ margin: 0 0 8px;
+ }
+
+ .location-card p {
+ margin: 0;
+ color: var(--muted);
+ line-height: 1.7;
+ }
+
+ .featured-example {
+ display: grid;
+ grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+ gap: 0;
+ overflow: hidden;
+ border: 1px solid var(--line);
+ border-radius: 17px;
+ background: var(--panel-strong);
+ }
+
+ .featured-example img {
+ width: 100%;
+ height: 100%;
+ min-height: 310px;
+ display: block;
+ object-fit: cover;
+ border-right: 1px solid var(--line);
+ }
+
+ .featured-copy {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ padding: 24px;
+ }
+
+ .featured-copy h3 {
+ margin: 0 0 9px;
+ font-size: clamp(1.3rem, 3vw, 1.7rem);
+ }
+
+ .featured-copy p {
+ margin: 0;
+ color: var(--muted);
+ line-height: 1.72;
+ }
+
+ .featured-copy .button-row {
+ justify-content: flex-start;
+ }
+
+ .broader-support {
+ max-width: 920px;
+ margin: 0 auto;
+ padding: 18px;
+ border: 1px solid var(--line);
+ border-radius: 14px;
+ background: rgba(7, 17, 28, 0.34);
+ color: var(--muted);
+ line-height: 1.7;
+ text-align: center;
+ }
+
+ .broader-support strong {
+ color: var(--ink);
+ }
+
+ @media (max-width: 900px) {
+ .audience-grid {
+ grid-template-columns: repeat(2, minmax(200px, 1fr));
+ }
+
+ .featured-example {
+ grid-template-columns: 1fr;
+ }
+
+ .featured-example img {
+ min-height: 0;
+ border-right: 0;
+ border-bottom: 1px solid var(--line);
+ }
+ }
+
+ @media (max-width: 760px) {
+ .gis-explainer,
+ .work-anywhere {
+ grid-template-columns: 1fr;
+ }
+ }
+
+ @media (max-width: 620px) {
+ .audience-grid {
+ grid-template-columns: 1fr;
+ }
+ }
+ 
+ .case-hero .hero-copy {
+ max-width: 900px;
+ }
+
+ .case-badge {
+ display: inline-flex;
+ margin: 0 auto 12px;
+ padding: 7px 11px;
+ border: 1px solid rgba(200, 173, 119, 0.28);
+ border-radius: 999px;
+ color: var(--sand);
+ background: rgba(200, 173, 119, 0.07);
+ font-family: var(--mono);
+ font-size: 0.78rem;
+ font-weight: 900;
+ letter-spacing: 0.05em;
+ text-transform: uppercase;
+ }
+
+ .case-feature-image {
+ overflow: hidden;
+ border: 1px solid var(--line);
+ border-radius: 16px;
+ background: var(--panel-strong);
+ box-shadow: var(--shadow-sm);
+ }
+
+ .case-feature-image img {
+ display: block;
+ width: 100%;
+ height: auto;
+ }
+
+ .case-intro {
+ max-width: 900px;
+ margin: 18px auto 0;
+ color: var(--muted);
+ line-height: 1.75;
+ }
+
+ .finding-grid {
+ display: grid;
+ grid-template-columns: repeat(2, minmax(240px, 1fr));
+ gap: 14px;
+ }
+
+ .finding-card {
+ padding: 18px;
+ border: 1px solid var(--line);
+ border-radius: 15px;
+ background: var(--panel-strong);
+ }
+
+ .finding-card .finding-label {
+ margin-bottom: 7px;
+ color: var(--sand);
+ font-family: var(--mono);
+ font-size: 0.75rem;
+ font-weight: 950;
+ letter-spacing: 0.06em;
+ text-transform: uppercase;
+ }
+
+ .finding-card h3 {
+ margin: 0 0 8px;
+ font-size: 1.06rem;
+ }
+
+ .finding-card p {
+ margin: 0;
+ color: var(--muted);
+ line-height: 1.66;
+ }
+
+ .map-pair {
+ display: grid;
+ grid-template-columns: repeat(2, minmax(280px, 1fr));
+ gap: 16px;
+ }
+
+ .map-card {
+ overflow: hidden;
+ border: 1px solid var(--line);
+ border-radius: 16px;
+ background: var(--panel-strong);
+ }
+
+ .map-card img {
+ display: block;
+ width: 100%;
+ height: auto;
+ }
+
+ .map-card-copy {
+ padding: 15px 16px 17px;
+ }
+
+ .map-card-copy h3 {
+ margin: 0 0 7px;
+ }
+
+ .map-card-copy p {
+ margin: 0;
+ color: var(--muted);
+ line-height: 1.62;
+ }
+
+ .evidence-box {
+ padding: 18px;
+ border: 1px solid rgba(86, 185, 180, 0.28);
+ border-radius: 15px;
+ background: rgba(86, 185, 180, 0.06);
+ color: var(--muted);
+ line-height: 1.72;
+ }
+
+ .evidence-box strong {
+ color: var(--ink);
+ }
+
+ .report-cta {
+ text-align: center;
+ }
+
+ .report-cta p {
+ max-width: 760px;
+ margin: 10px auto 18px;
+ color: var(--muted);
+ line-height: 1.7;
+ }
+
+ @media (max-width: 820px) {
+ .finding-grid,
+ .map-pair {
+ grid-template-columns: 1fr;
+ }
+ }
+
+ </style>
+ <style id="geosite-background-safety">
+ html body {
+ background: linear-gradient(180deg, #07111c, #0b1724 48%, #0f1d2c) !important;
+ }
+
+ html body::before {
+ content: "";
+ position: fixed;
+ inset: 72px 0 0;
+ z-index: 0;
+ pointer-events: none;
+ opacity: 0.12;
+ background: url("./GeoSite_Intel_Logo_Transparent.png?v=20260820-1")
+ center 115px / min(1050px, 88vw) auto no-repeat !important;
+ }
+
+ html body .page-hero {
+ background: rgba(16, 31, 48, 0.82) !important;
+ background-image: none !important;
+ }
+
+ html body .page-hero::before,
+ html body .page-hero::after {
+ content: none !important;
+ background: none !important;
+ }
+
+ @media (max-width: 620px) {
+ html body::before {
+ inset: 64px 0 0;
+ background-position: center 80px !important;
+ background-size: 92vw auto !important;
+ }
+ }
+ </style>
 
 </head>
 
 <body class="page-home">
-  <div class="topbar">
-    <div class="topbar-inner">
-      <button
-        class="hamburger"
-        id="hamburger"
-        type="button"
-        aria-label="Open menu"
-        aria-controls="site-drawer"
-        aria-expanded="false"
-      >
-        <span class="lines"><span class="bar"></span></span>
-      </button>
+ <div class="topbar">
+ <div class="topbar-inner">
+ <button
+ class="hamburger"
+ id="hamburger"
+ type="button"
+ aria-label="Open menu"
+ aria-controls="site-drawer"
+ aria-expanded="false"
+ >
+ <span class="lines"><span class="bar"></span></span>
+ </button>
 
-      <a class="topbar-brand" href="index.html">
-        <img
-          class="topbar-logo"
-          src="./GeoSite_Intel_Logo_Transparent.png?v=20260810-8"
-          alt="GeoSite Intel — Property and Land Research"
-          width="124"
-          height="38"
-          style="display:block;width:124px;max-width:100%;max-height:38px;height:auto;object-fit:contain"
-        >
-      </a>
-    </div>
-  </div>
+ <a class="topbar-brand" href="index.html">
+ <img
+ class="topbar-logo"
+ src="./GeoSite_Intel_Logo_Transparent.png?v=20260820-1"
+ alt="GeoSite Intel - Property and Land Research"
+ width="124"
+ height="38"
+ style="display:block;width:124px;max-width:100%;max-height:38px;height:auto;object-fit:contain"
+ >
+ </a>
+ </div>
+ </div>
 
-  <div class="overlay" id="overlay"></div>
+ <div class="overlay" id="overlay"></div>
 
-  <aside class="drawer" id="site-drawer" aria-label="Site menu">
-    <header>
-      <a class="drawer-brand" href="index.html">
-        <img
-          class="drawer-logo"
-          src="./GeoSite_Intel_Logo_Transparent.png?v=20260810-8"
-          alt="GeoSite Intel — Property and Land Research"
-          width="235"
-          height="72"
-          style="display:block;width:235px;max-width:100%;height:auto;object-fit:contain"
-        >
-      </a>
-      <div class="drawer-subtitle">Property and land research with professional mapping</div>
-    </header>
+ <aside class="drawer" id="site-drawer" aria-label="Site menu">
+ <header>
+ <a class="drawer-brand" href="index.html">
+ <img
+ class="drawer-logo"
+ src="./GeoSite_Intel_Logo_Transparent.png?v=20260820-1"
+ alt="GeoSite Intel - Property and Land Research"
+ width="235"
+ height="72"
+ style="display:block;width:235px;max-width:100%;height:auto;object-fit:contain"
+ >
+ </a>
+ <div class="drawer-subtitle">Property and land research with professional mapping</div>
+ </header>
 
-    <nav aria-label="Main site navigation">
-      <a href="index.html">Home</a>
-      <a href="#services">Property Services</a>
-      <a href="land-property-intelligence.html">Land Research</a>
-      <a href="portfolio.html">Property Examples</a>
-      <a href="property-intelligence-demo.html" aria-current="page">Demo Report</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="hire.html#estimateForm">Send a Property</a>
-      <a href="about.html">About</a>
-      <a href="mailto:geositeintel@outlook.com">Contact</a>
-    </nav>
-  </aside>
+ <nav aria-label="Main site navigation">
+ <a href="index.html">Home</a>
+ <a href="#services">Property Services</a>
+ <a href="land-property-intelligence.html">Land Research</a>
+ <a href="portfolio.html">Property Examples</a>
+ <a href="property-intelligence-demo.html" aria-current="page">Demo Report</a>
+ <a href="reviews.html">Reviews</a>
+ <a href="hire.html#estimateForm">Send a Property</a>
+ <a href="about.html">About</a>
+ <a href="mailto:geositeintel@outlook.com">Contact</a>
+ </nav>
+ </aside>
 
-  <main class="page-shell">
-    <section class="panel page-hero case-hero" aria-labelledby="case-title">
-      <div class="case-badge">Completed Property Intelligence Demonstration</div>
+ <main class="page-shell">
+ <section class="panel page-hero case-hero" aria-labelledby="case-title">
+ <div class="case-badge">Completed Property Intelligence Demonstration</div>
 
-      <h1 id="case-title">0 Mills Rd — Property Intelligence Demo</h1>
+ <h1 id="case-title">0 Mills Rd - Property Intelligence Demo</h1>
 
-      <p class="hero-copy">
-        This demonstration shows how GeoSite Intel can move from scattered public
-        records and map layers to a focused property research report. The review
-        combines parcel context, current and historical imagery, mapped environmental
-        conditions, terrain, drainage, access, surrounding land activity, and
-        evidence-based follow-up questions.
-      </p>
+ <p class="hero-copy">
+ This demonstration shows how GeoSite Intel can move from scattered public
+ records and map layers to a focused property research report. The review
+ combines parcel context, current and historical imagery, mapped environmental
+ conditions, terrain, drainage, access, surrounding land activity, and
+ evidence-based follow-up questions.
+ </p>
 
-      <div class="button-row">
-        <a class="button primary" href="GeoSite_0_Mills_Rd_Property_Intelligence_Report.pdf" target="_blank" rel="noopener">
-          View the 13-Page PDF Report
-        </a>
-        <a class="button secondary" href="hire.html#estimateForm">Send a Property</a>
-      </div>
-    </section>
+ <div class="button-row">
+ <a class="button primary" href="GeoSite_0_Mills_Rd_Property_Intelligence_Report.pdf" target="_blank" rel="noopener">
+ View the 13-Page PDF Report
+ </a>
+ <a class="button secondary" href="hire.html#estimateForm">Send a Property</a>
+ </div>
+ </section>
 
-    <section class="panel" aria-labelledby="demo-overview-title">
-      <div class="section-heading">
-        <h2 id="demo-overview-title">What the review covered</h2>
-        <p>
-          The goal was not to create a generic stack of maps. Each dataset was used
-          to answer a property question or identify something that deserved a closer look.
-        </p>
-      </div>
+ <section class="panel" aria-labelledby="demo-overview-title">
+ <div class="section-heading">
+ <h2 id="demo-overview-title">What the review covered</h2>
+ <p>
+ The goal was not to create a generic stack of maps. Each dataset was used
+ to answer a property question or identify something that deserved a closer look.
+ </p>
+ </div>
 
-      <div class="finding-grid">
-        <article class="finding-card">
-          <div class="finding-label">Property</div>
-          <h3>Parcel &amp; Existing Development</h3>
-          <p>
-            Parcel boundaries, road context, mapped structures, current imagery, and
-            surrounding parcels were reviewed within a one-mile study area.
-          </p>
-        </article>
+ <div class="finding-grid">
+ <article class="finding-card">
+ <div class="finding-label">Property</div>
+ <h3>Parcel &amp; Existing Development</h3>
+ <p>
+ Parcel boundaries, road context, mapped structures, current imagery, and
+ surrounding parcels were reviewed within a one-mile study area.
+ </p>
+ </article>
 
-        <article class="finding-card">
-          <div class="finding-label">Environment</div>
-          <h3>Wetlands, Flood &amp; Soils</h3>
-          <p>
-            NWI wetlands, FEMA flood information, NRCS soil map units, and mapped
-            drainage were compared with the subject parcel and nearby landscape.
-          </p>
-        </article>
+ <article class="finding-card">
+ <div class="finding-label">Environment</div>
+ <h3>Wetlands, Flood &amp; Soils</h3>
+ <p>
+ NWI wetlands, FEMA flood information, NRCS soil map units, and mapped
+ drainage were compared with the subject parcel and nearby landscape.
+ </p>
+ </article>
 
-        <article class="finding-card">
-          <div class="finding-label">Terrain</div>
-          <h3>Elevation &amp; Drainage Context</h3>
-          <p>
-            Hillshade, contours, and available drainage mapping were used to understand
-            the low-relief landscape and identify where the data could—and could not—
-            support a flow-direction conclusion.
-          </p>
-        </article>
+ <article class="finding-card">
+ <div class="finding-label">Terrain</div>
+ <h3>Elevation &amp; Drainage Context</h3>
+ <p>
+ Hillshade, contours, and available drainage mapping were used to understand
+ the low-relief landscape and identify where the data could - and could not - 
+ support a flow-direction conclusion.
+ </p>
+ </article>
 
-        <article class="finding-card">
-          <div class="finding-label">History</div>
-          <h3>Current &amp; Historical Imagery</h3>
-          <p>
-            Available aerial imagery was reviewed across time to compare site conditions
-            and provide context that parcel records alone do not show.
-          </p>
-        </article>
-      </div>
-    </section>
+ <article class="finding-card">
+ <div class="finding-label">History</div>
+ <h3>Current &amp; Historical Imagery</h3>
+ <p>
+ Available aerial imagery was reviewed across time to compare site conditions
+ and provide context that parcel records alone do not show.
+ </p>
+ </article>
+ </div>
+ </section>
 
-    <section class="panel" aria-labelledby="investigation-title">
-      <div class="section-heading">
-        <h2 id="investigation-title">A nearby feature prompted a deeper look</h2>
-        <p>
-          During the surrounding-property review, aerial imagery showed an apparent
-          agricultural/livestock facility and an elongated pond or lagoon on a nearby site.
-          The parcel-use information reviewed for that site did not fully describe what
-          was visible in the imagery.
-        </p>
-      </div>
+ <section class="panel" aria-labelledby="investigation-title">
+ <div class="section-heading">
+ <h2 id="investigation-title">A nearby feature prompted a deeper look</h2>
+ <p>
+ During the surrounding-property review, aerial imagery showed an apparent
+ agricultural/livestock facility and an elongated pond or lagoon on a nearby site.
+ The parcel-use information reviewed for that site did not fully describe what
+ was visible in the imagery.
+ </p>
+ </div>
 
-      <div class="map-pair">
-        <article class="map-card">
-          <img
-            src="0-mills-rd-environmental-screening.png"
-            alt="Aerial imagery map showing the subject parcel, nearby farm structures, apparent lagoon, and a measured shortest distance"
-            loading="lazy"
-          >
-          <div class="map-card-copy">
-            <h3>Imagery &amp; measured distance</h3>
-            <p>
-              The apparent lagoon was digitized separately and measured at
-              <strong>2,186.56 feet (about 0.414 mile)</strong> from the nearest edge
-              of the subject parcel.
-            </p>
-          </div>
-        </article>
+ <div class="map-pair">
+ <article class="map-card">
+ <img
+ src="0-mills-rd-environmental-screening.png"
+ alt="Aerial imagery map showing the subject parcel, nearby farm structures, apparent lagoon, and a measured shortest distance"
+ loading="lazy"
+ >
+ <div class="map-card-copy">
+ <h3>Imagery &amp; measured distance</h3>
+ <p>
+ The apparent lagoon was digitized separately and measured at
+ <strong>2,186.56 feet (about 0.414 mile)</strong> from the nearest edge
+ of the subject parcel.
+ </p>
+ </div>
+ </article>
 
-        <article class="map-card">
-          <img
-            src="0-mills-rd-flood-terrain.png"
-            alt="Flood and terrain map showing FEMA flood zones, drainage, contours, the subject parcel, and a nearby apparent lagoon"
-            loading="lazy"
-          >
-          <div class="map-card-copy">
-            <h3>Flood &amp; terrain context</h3>
-            <p>
-              The mapped lagoon area falls within FEMA Zone X, an Area of Minimal
-              Flood Hazard. The terrain is very low relief, and a direct drainage
-              connection to the subject parcel was <strong>not confirmed</strong>.
-            </p>
-          </div>
-        </article>
-      </div>
+ <article class="map-card">
+ <img
+ src="0-mills-rd-flood-terrain.png"
+ alt="Flood and terrain map showing FEMA flood zones, drainage, contours, the subject parcel, and a nearby apparent lagoon"
+ loading="lazy"
+ >
+ <div class="map-card-copy">
+ <h3>Flood &amp; terrain context</h3>
+ <p>
+ The mapped lagoon area falls within FEMA Zone X, an Area of Minimal
+ Flood Hazard. The terrain is very low relief, and a direct drainage
+ connection to the subject parcel was <strong>not confirmed</strong>.
+ </p>
+ </div>
+ </article>
+ </div>
 
-      <div class="evidence-box" style="margin-top:16px;">
-        <strong>Why the distinction matters:</strong> the investigation identified a
-        nearby feature worth noting, but it did not establish contamination, a release,
-        environmental noncompliance, or impact to the subject property. The report
-        separates observed conditions from conclusions the available data cannot support.
-      </div>
-    </section>
+ <div class="evidence-box" style="margin-top:16px;">
+ <strong>Why the distinction matters:</strong> the investigation identified a
+ nearby feature worth noting, but it did not establish contamination, a release,
+ environmental noncompliance, or impact to the subject property. The report
+ separates observed conditions from conclusions the available data cannot support.
+ </div>
+ </section>
 
-    <section class="panel" aria-labelledby="report-value-title">
-      <div class="section-heading">
-        <h2 id="report-value-title">The maps show where. The report explains what it means.</h2>
-        <p>
-          The finished deliverable combines the map package with plain-language
-          interpretation, limitations, and recommended next questions so the work can
-          support an actual property decision.
-        </p>
-      </div>
+ <section class="panel" aria-labelledby="report-value-title">
+ <div class="section-heading">
+ <h2 id="report-value-title">The maps show where. The report explains what it means.</h2>
+ <p>
+ The finished deliverable combines the map package with plain-language
+ interpretation, limitations, and recommended next questions so the work can
+ support an actual property decision.
+ </p>
+ </div>
 
-      <div class="finding-grid">
-        <article class="finding-card">
-          <div class="finding-label">Deliverable</div>
-          <h3>13-page screening report</h3>
-          <p>
-            Executive summary, parcel context, current and historical imagery,
-            environmental and terrain findings, nearby-site investigation, conclusions,
-            sources, limitations, and follow-up considerations.
-          </p>
-        </article>
+ <div class="finding-grid">
+ <article class="finding-card">
+ <div class="finding-label">Deliverable</div>
+ <h3>13-page screening report</h3>
+ <p>
+ Executive summary, parcel context, current and historical imagery,
+ environmental and terrain findings, nearby-site investigation, conclusions,
+ sources, limitations, and follow-up considerations.
+ </p>
+ </article>
 
-        <article class="finding-card">
-          <div class="finding-label">Approach</div>
-          <h3>Evidence first</h3>
-          <p>
-            Findings are written to distinguish mapped or imagery-observed conditions
-            from official determinations, field verification, engineering conclusions,
-            or formal environmental assessments.
-          </p>
-        </article>
-      </div>
-    </section>
+ <article class="finding-card">
+ <div class="finding-label">Approach</div>
+ <h3>Evidence first</h3>
+ <p>
+ Findings are written to distinguish mapped or imagery-observed conditions
+ from official determinations, field verification, engineering conclusions,
+ or formal environmental assessments.
+ </p>
+ </article>
+ </div>
+ </section>
 
-    <section class="panel report-cta" aria-labelledby="report-cta-title">
-      <div class="service-label">Open the complete deliverable</div>
-      <h2 id="report-cta-title">View the full property intelligence report</h2>
-      <p>
-        The PDF includes the complete map package, the investigative maps, written
-        findings, sources, limitations, and recommended follow-up.
-      </p>
+ <section class="panel report-cta" aria-labelledby="report-cta-title">
+ <div class="service-label">Open the complete deliverable</div>
+ <h2 id="report-cta-title">View the full property intelligence report</h2>
+ <p>
+ The PDF includes the complete map package, the investigative maps, written
+ findings, sources, limitations, and recommended follow-up.
+ </p>
 
-      <div class="button-row">
-        <a class="button primary" href="GeoSite_0_Mills_Rd_Property_Intelligence_Report.pdf" target="_blank" rel="noopener">
-          Open Full PDF Report
-        </a>
-        <a class="button secondary" href="land-property-intelligence.html">
-          Explore Property Research
-        </a>
-        <a class="button secondary" href="hire.html#estimateForm">
-          Request a Property Review
-        </a>
-      </div>
-    </section>
+ <div class="button-row">
+ <a class="button primary" href="GeoSite_0_Mills_Rd_Property_Intelligence_Report.pdf" target="_blank" rel="noopener">
+ Open Full PDF Report
+ </a>
+ <a class="button secondary" href="land-property-intelligence.html">
+ Explore Property Research
+ </a>
+ <a class="button secondary" href="hire.html#estimateForm">
+ Request a Property Review
+ </a>
+ </div>
+ </section>
 
-    <section class="panel" aria-labelledby="demo-limitations-title">
-      <div class="section-heading">
-        <h2 id="demo-limitations-title">Screening-level context, not a substitute for official review</h2>
-      </div>
+ <section class="panel" aria-labelledby="demo-limitations-title">
+ <div class="section-heading">
+ <h2 id="demo-limitations-title">Screening-level context, not a substitute for official review</h2>
+ </div>
 
-      <div class="evidence-box">
-        GeoSite Intel provides GIS-based research, preliminary screening, and
-        professional mapping. This demonstration is not a boundary survey, title
-        opinion, appraisal, engineering opinion, permit approval, official FEMA flood
-        determination, jurisdictional wetland delineation, Phase I Environmental Site
-        Assessment, geotechnical evaluation, or guarantee that a property is buildable
-        or suitable for a particular use.
-      </div>
-    </section>
+ <div class="evidence-box">
+ GeoSite Intel provides GIS-based research, preliminary screening, and
+ professional mapping. This demonstration is not a boundary survey, title
+ opinion, appraisal, engineering opinion, permit approval, official FEMA flood
+ determination, jurisdictional wetland delineation, Phase I Environmental Site
+ Assessment, geotechnical evaluation, or guarantee that a property is buildable
+ or suitable for a particular use.
+ </div>
+ </section>
 
-    <footer class="site-footer">
-      <div>
-        © 2026 GeoSite Intel · Property &amp; Land Research · Environmental Mapping
-      </div>
+ <footer class="site-footer">
+ <div>
+ © 2026 GeoSite Intel · Property &amp; Land Research · Environmental Mapping
+ </div>
 
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="index.html">Home</a>
-        <a href="index.html#services">Services</a>
-        <a href="land-property-intelligence.html">Land Research</a>
-        <a href="portfolio.html">Property Examples</a>
-        <a href="property-intelligence-demo.html" aria-current="page">Demo Report</a>
-        <a href="reviews.html">Reviews</a>
-        <a href="hire.html#estimateForm">Send a Property</a>
-        <a href="about.html">About</a>
-        <a href="mailto:geositeintel@outlook.com">Contact</a>
-      </nav>
-    </footer>
-  </main>
+ <nav class="footer-links" aria-label="Footer navigation">
+ <a href="index.html">Home</a>
+ <a href="index.html#services">Services</a>
+ <a href="land-property-intelligence.html">Land Research</a>
+ <a href="portfolio.html">Property Examples</a>
+ <a href="property-intelligence-demo.html" aria-current="page">Demo Report</a>
+ <a href="reviews.html">Reviews</a>
+ <a href="hire.html#estimateForm">Send a Property</a>
+ <a href="about.html">About</a>
+ <a href="mailto:geositeintel@outlook.com">Contact</a>
+ </nav>
+ </footer>
+ </main>
 
-  <script>
-    (() => {
-      const button = document.getElementById("hamburger");
-      const drawer = document.getElementById("site-drawer");
-      const overlay = document.getElementById("overlay");
+ <script>
+ (() => {
+ const button = document.getElementById("hamburger");
+ const drawer = document.getElementById("site-drawer");
+ const overlay = document.getElementById("overlay");
 
-      function openDrawer() {
-        drawer.classList.add("open");
-        overlay.classList.add("open");
-        button.setAttribute("aria-expanded", "true");
-        button.setAttribute("aria-label", "Close menu");
-        document.documentElement.style.overflow = "hidden";
-      }
+ function openDrawer() {
+ drawer.classList.add("open");
+ overlay.classList.add("open");
+ button.setAttribute("aria-expanded", "true");
+ button.setAttribute("aria-label", "Close menu");
+ document.documentElement.style.overflow = "hidden";
+ }
 
-      function closeDrawer() {
-        drawer.classList.remove("open");
-        overlay.classList.remove("open");
-        button.setAttribute("aria-expanded", "false");
-        button.setAttribute("aria-label", "Open menu");
-        document.documentElement.style.overflow = "";
-      }
+ function closeDrawer() {
+ drawer.classList.remove("open");
+ overlay.classList.remove("open");
+ button.setAttribute("aria-expanded", "false");
+ button.setAttribute("aria-label", "Open menu");
+ document.documentElement.style.overflow = "";
+ }
 
-      button.addEventListener("click", () => {
-        if (drawer.classList.contains("open")) {
-          closeDrawer();
-        } else {
-          openDrawer();
-        }
-      });
+ button.addEventListener("click", () => {
+ if (drawer.classList.contains("open")) {
+ closeDrawer();
+ } else {
+ openDrawer();
+ }
+ });
 
-      overlay.addEventListener("click", closeDrawer);
+ overlay.addEventListener("click", closeDrawer);
 
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") closeDrawer();
-      });
+ document.addEventListener("keydown", (event) => {
+ if (event.key === "Escape") closeDrawer();
+ });
 
-      drawer.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", closeDrawer);
-      });
-    })();
-  </script>
+ drawer.querySelectorAll("a").forEach((link) => {
+ link.addEventListener("click", closeDrawer);
+ });
+ })();
+ </script>
 </body>
 </html>
