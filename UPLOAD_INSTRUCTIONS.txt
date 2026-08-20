@@ -1,137 +1,40 @@
-GEOSITE INTEL DEPLOYMENT BUILD 20260810-13 — AUGUST 10, 2026
+GEOSITE INTEL — 0 MILLS RD DEMO WEBSITE UPDATE
+Date: August 20, 2026
 
-This is a newly named build so an older downloaded ZIP cannot be reused by
-mistake. The HTML and CSS files contain the marker 20260810-13. If GitHub reports
-"0 files changed," stop: the extracted files were not the files from this ZIP.
+WHAT WE'RE DOING
+This update uses BOTH approaches:
+1. A new dedicated case-study page for the complete demonstration.
+2. Small featured-demo sections on the homepage and Land Research page that link to it.
 
-This package contains the professional site-structure update plus all earlier
-company-voice, single-logo background, header-logo, and search-indexing fixes.
+UPLOAD THESE 7 FILES TO THE ROOT OF YOUR GITHUB WEBSITE REPOSITORY:
 
-BUILD 20260810-13 CHANGES:
-- Replaces the old public Outlook address with info@geositeintel.com throughout
-  the website.
-- Removes the old content and metadata from the hidden Portfolio and Reviews
-  files, leaving only noindex redirects to current pages.
-- Confirms there are no personal LinkedIn, portfolio, GitHub-profile, or
-  alternate-email links in the website package.
-- IMPORTANT: Set up and test info@geositeintel.com before uploading this build.
-  Changing the website address does not create the mailbox or forwarding rule.
-- After the new address works, update the Formspree notification destination
-  separately inside Formspree.
-- Removes the paid file-upload field and the form's file-upload setting.
-- Keeps a field for helpful public property links.
-- Explains that photographs, maps, and documents will be requested by email
-  after the first consultation when needed.
-- Updates the Privacy page so it no longer says files are collected through the
-  website form.
-- Removes the homepage glossary and GIS definition sections.
-- Removes all links to the deleted definition section.
-- Cuts repeated homepage and Services-page sections.
-- Rewrites technical wording in everyday language.
-- Shortens the homepage from about 990 visible words to under 500.
-- Shortens the Services page from about 1,490 visible words to about 735.
-- Removes Portfolio/Property Examples and Reviews from public navigation.
-- Redirects the unfinished portfolio page to Services and the unfinished reviews
-  page to About. Both legacy pages are marked noindex.
-- Simplifies navigation to Home, Services, How It Works, About, Start a Project,
-  and Contact.
-- Adds a Privacy & Data Use page and form privacy notice.
-- Adds a branded request-confirmation page.
-- Adds three clear service starting points without publishing fixed prices.
-- Removes drainage demonstration sections and portfolio calls to action.
+REPLACE EXISTING FILES
+- index.html
+- land-property-intelligence.html
+- sitemap.xml
 
-IMPORTANT: Do not upload the ZIP file itself. Extract the ZIP first. The files
-inside are already arranged for direct upload to the repository root.
+ADD NEW FILES
+- property-intelligence-demo.html
+- GeoSite_0_Mills_Rd_Property_Intelligence_Report.pdf
+- 0-mills-rd-environmental-screening.png
+- 0-mills-rd-flood-terrain.png
 
-BEFORE UPLOADING — ACTIVATE THE BUSINESS EMAIL:
-1. In the account where geositeintel.com is managed, create
-   info@geositeintel.com as either a mailbox or a forwarding address.
-2. Send a test message to info@geositeintel.com from a different email account
-   and confirm that it arrives.
-3. Reply to the test and check the From address. A forwarding-only setup may
-   still send replies from the private destination account. A hosted mailbox is
-   needed if every reply must show info@geositeintel.com.
-4. In Formspree, add info@geositeintel.com as a linked email and complete its
-   verification message. Then open the website form, edit its Email action or
-   target address, and select info@geositeintel.com.
-5. Submit one complete test through the GeoSite request form and confirm that
-   the notification arrives before publishing or requesting a Google recrawl.
+IMPORTANT
+- Upload the files themselves, not the ZIP.
+- Keep the filenames exactly as shown.
+- The PDF and both PNG files are referenced directly by the new HTML.
+- site.css does NOT need to be changed for this update.
+- If GitHub asks whether to replace index.html, land-property-intelligence.html,
+  or sitemap.xml, choose to replace/overwrite the existing versions.
 
-Keep the current Outlook account active but private until all five checks pass.
-It is no longer displayed or linked anywhere in this website package.
+SUGGESTED COMMIT MESSAGE
+Add 0 Mills Rd property intelligence demo and report
 
-UPLOAD THESE FILES TO THE GITHUB REPOSITORY'S MAIN/ROOT FOLDER:
-
-1. index.html
-2. about.html
-3. hire.html
-4. land-property-intelligence.html
-5. privacy.html
-6. thank-you.html
-7. portfolio.html
-8. reviews.html
-9. site.css
-10. GeoSite_Intel_Logo_Transparent.png
-11. GeoSite_Intel_Favicon.png
-12. GeoSite_Intel_Social.png
-13. robots.txt
-14. sitemap.xml
-
-Open the same repository folder that already contains the live index.html file.
-Upload the 14 files listed above directly into that folder. Replace the existing
-HTML and CSS files when GitHub asks. Do not upload a containing folder.
-
-The three GeoSite image files must be in that same location. The attached
-GeoSite_Intel_Logo_Transparent.png contains the revised dark-teal wordmark and
-bold geometric font. Do not rename it.
-
-Before committing, confirm the filenames are exactly index.html, about.html,
-hire.html, land-property-intelligence.html, privacy.html, thank-you.html,
-portfolio.html, and reviews.html.
-Files ending in (1), (2), -copy, or similar text will not replace the live pages.
-
-On GitHub's final review screen, index.html and site.css MUST appear in the list
-of changed files. The commit must not say "0 files changed." After the commit,
-open index.html in the repository and confirm its first line says:
-<!-- DEPLOYMENT BUILD: 20260810-13 -->
-
-Keep the existing property-example and map images in the repository. This
-update does not replace or delete them.
-
-Suggested commit message:
-Update business email and remove legacy page copy
-
-After committing the files, wait a few minutes, open geositeintel.com, and
-perform a hard refresh (Ctrl+F5 on Windows). The updated pages include new
-cache-safe links so the browser loads the corrected logo and styling. The
-header logo is also limited directly inside every HTML page, so it cannot expand
-to the image's full size if an older stylesheet is briefly cached. The menu
-drawer starts below the fixed top bar so its full logo remains visible on mobile.
-The header, drawer, and About-page logo use light panels for clear contrast with
-the new dark-teal wording. All thumbnail and case-study background images have
-been removed. Every HTML page now includes a direct safety rule that prevents an
-older stylesheet from restoring a map behind the page heading. The transparent
-GeoSite logo is the only background artwork. The top-right logo also has compact
-dimensions directly inside every page so it cannot spill outside its container.
-
-The package includes robots.txt and sitemap.xml to help search engines discover
-the updated pages. After the files are live, submit
-https://geositeintel.com/sitemap.xml in Google Search Console. Use URL Inspection
-for https://geositeintel.com/ and select Request Indexing. Google controls the
-timing, so the old drainage-focused search title and description may remain
-visible until the homepage is crawled again.
-
-OPTIONAL FUTURE FORM CONFIRMATION SETTING:
-The new thank-you.html page is included in the upload. In the Formspree settings
-for the form used by the website, set the Thank You redirect to:
-https://geositeintel.com/thank-you.html
-
-Until that setting is changed, Formspree may continue showing its standard
-confirmation screen after a submission. The form will still submit normally,
-and no paid upgrade is required for the website itself.
-
-COOKIE NOTE:
-No analytics, advertising pixels, or site-added cookie code is included in this
-build, so no cookie banner has been added. The new privacy page explains that
-GitHub Pages hosts the site and Formspree processes form submissions. Revisit
-cookie consent if analytics, advertising, payment, or scheduling tools are added.
+AFTER COMMITTING
+1. Wait a minute or two for GitHub Pages to rebuild.
+2. Hard refresh geositeintel.com with Ctrl+F5.
+3. Check:
+   https://geositeintel.com/
+   https://geositeintel.com/land-property-intelligence.html
+   https://geositeintel.com/property-intelligence-demo.html
+4. Click the PDF buttons to confirm the report opens.
