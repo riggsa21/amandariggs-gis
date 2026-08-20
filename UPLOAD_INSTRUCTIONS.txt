@@ -1,40 +1,24 @@
-GEOSITE INTEL - FINAL WEBSITE UPDATE
+GEOSITE INTEL - CONTOUR G BRAND + HOSTED EMAIL WEBSITE UPDATE
 August 20, 2026
 
-This package combines the 0 Mills Rd demo update with the form recovery fixes and the new GeoSite logo.
+THIS UPDATE INCLUDES
+- Replaces the old location-pin brand mark with the new integrated contour-G GeoSite Intel logo.
+- The contour G is now the actual G in GeoSite rather than a separate icon beside the name.
+- Replaces the favicon with the new contour-G mark.
+- Updates the website social/share image to use the new branding.
+- Slightly widens the header and drawer logo display so the new wordmark stays readable.
+- Keeps all direct website email links set to info@geositeintel.com.
+- Keeps the repaired Formspree form setup.
+- Keeps the 0 Mills Rd property-intelligence demo and report.
 
-IMPORTANT FORM FIXES INCLUDED
-- Keeps the existing Formspree form endpoint: https://formspree.io/f/xyznngpw
-- Removes multipart/form-data from the form.
-- Removes the unsupported direct file-upload control.
-- Changes the visitor email field from _replyto to email.
-- Keeps supporting-link submission for Drive/Dropbox/OneDrive files.
-- Restores direct website email links to geositeintel@outlook.com for reliability.
-- Does not add a paid/custom Formspree redirect.
+FORMSPREE
+The website form still posts to the existing HireMe endpoint:
+https://formspree.io/f/xyznngpw
 
-ONE FORMSPREE DASHBOARD STEP IS STILL REQUIRED
-The website files cannot change the recipient in the Formspree dashboard.
-In Formspree:
-HireMe > Workflow > Email
-Change the recipient from info@geositeintel.com to:
-geositeintel@outlook.com
-Then click Save.
+In Formspree, keep:
+HireMe > Workflow > Email > info@geositeintel.com
 
-The form endpoint is already receiving submissions correctly.
-
-BRANDING / COPY FIXES INCLUDED
-- Replaces the website logo with the newer GeoSite Intel wordmark.
-- Replaces the favicon with the newer compact pin mark.
-- Uses the standard keyboard hyphen (-) instead of em dashes/en dashes in all HTML files included in this package.
-
-0 MILLS RD DEMO INCLUDED
-- property-intelligence-demo.html
-- Full 13-page PDF report
-- Environmental screening map
-- Flood and terrain map
-- Featured demo sections on the homepage and Land Research page
-
-UPLOAD TO THE ROOT OF THE GITHUB WEBSITE REPOSITORY
+UPLOAD THESE FILES TO THE ROOT OF THE GITHUB WEBSITE REPOSITORY
 
 REPLACE EXISTING:
 - index.html
@@ -45,30 +29,32 @@ REPLACE EXISTING:
 - sitemap.xml
 - GeoSite_Intel_Logo_Transparent.png
 - GeoSite_Intel_Favicon.png
+- GeoSite_Intel_Social.png
 
-ADD NEW:
+ADD/REPLACE AS NEEDED:
 - property-intelligence-demo.html
 - GeoSite_0_Mills_Rd_Property_Intelligence_Report.pdf
 - 0-mills-rd-environmental-screening.png
 - 0-mills-rd-flood-terrain.png
 
-DO NOT delete your existing:
+DO NOT DELETE YOUR EXISTING:
 - site.css
 - reviews.html
-- GeoSite_Intel_Social.png
 - existing portfolio/map images
 - robots.txt
 
-The LinkedIn company-page link is NOT included yet because the exact company-page URL has not been supplied.
+IMPORTANT
+The local marketing copy can continue to be stored as:
+C:\GeoSite_Intel\Marketing\Updated_Logo
+The website itself intentionally keeps the filename GeoSite_Intel_Logo_Transparent.png so every page can use the same stable asset path.
 
 SUGGESTED COMMIT MESSAGE
-Add property demo, update branding, and repair request form
+Update GeoSite branding to contour G and hosted email
 
 AFTER UPLOAD
 1. Wait for GitHub Pages to rebuild.
 2. Hard refresh with Ctrl+F5.
-3. Test hire.html using a simple request with NO attachments.
-4. Confirm the new submission appears in Formspree.
-5. Confirm the Formspree Workflow Email recipient is geositeintel@outlook.com.
-6. Confirm the email notification arrives.
-7. Test the Email GeoSite button separately.
+3. Confirm the new contour-G wordmark appears in the top-right header and menu drawer.
+4. Confirm the About-page logo is the new version.
+5. Click Email GeoSite and confirm it opens info@geositeintel.com.
+6. Submit one website form test and confirm the notification arrives in the Porkbun-hosted inbox.
