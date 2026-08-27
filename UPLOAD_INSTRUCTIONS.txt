@@ -1,60 +1,63 @@
-GEOSITE INTEL - CONTOUR G BRAND + HOSTED EMAIL WEBSITE UPDATE
-August 20, 2026
+GEOSITE INTEL WEBSITE UPDATE — PROPERTY INTELLIGENCE + ADVANCED LAND ANALYTICS
+Date: August 27, 2026
 
-THIS UPDATE INCLUDES
-- Replaces the old location-pin brand mark with the new integrated contour-G GeoSite Intel logo.
-- The contour G is now the actual G in GeoSite rather than a separate icon beside the name.
-- Replaces the favicon with the new contour-G mark.
-- Updates the website social/share image to use the new branding.
-- Slightly widens the header and drawer logo display so the new wordmark stays readable.
-- Keeps all direct website email links set to info@geositeintel.com.
-- Keeps the repaired Formspree form setup.
-- Keeps the 0 Mills Rd property-intelligence demo and report.
+PURPOSE
+This update moves the public website away from drainage-first positioning and makes the primary business identity:
+  Property Intelligence + Environmental Screening + Advanced Land Analytics
 
-FORMSPREE
-The website form still posts to the existing HireMe endpoint:
-https://formspree.io/f/xyznngpw
+It also adds the two completed advanced-analysis packages:
+  1. Modeled Drainage & Watershed Analysis
+  2. Land Cover & Development Change Analysis
 
-In Formspree, keep:
-HireMe > Workflow > Email > info@geositeintel.com
+UPLOAD TO THE ROOT OF THE GITHUB PAGES REPOSITORY
 
-UPLOAD THESE FILES TO THE ROOT OF THE GITHUB WEBSITE REPOSITORY
-
-REPLACE EXISTING:
+REPLACE EXISTING FILES
 - index.html
 - land-property-intelligence.html
-- hire.html
-- about.html
 - portfolio.html
-- sitemap.xml
-- GeoSite_Intel_Logo_Transparent.png
-- GeoSite_Intel_Favicon.png
-- GeoSite_Intel_Social.png
-
-ADD/REPLACE AS NEEDED:
-- property-intelligence-demo.html
-- GeoSite_0_Mills_Rd_Property_Intelligence_Report.pdf
-- 0-mills-rd-environmental-screening.png
-- 0-mills-rd-flood-terrain.png
-
-DO NOT DELETE YOUR EXISTING:
 - site.css
-- reviews.html
-- existing portfolio/map images
-- robots.txt
+- sitemap.xml
 
-IMPORTANT
-The local marketing copy can continue to be stored as:
-C:\GeoSite_Intel\Marketing\Updated_Logo
-The website itself intentionally keeps the filename GeoSite_Intel_Logo_Transparent.png so every page can use the same stable asset path.
+ADD NEW PAGES
+- drainage-watershed-analysis.html
+- land-cover-development-change-analysis.html
+
+ADD NEW MAP ASSETS
+- gsi-hydro-parcel-drainage.png
+- gsi-hydro-property-watershed.png
+- gsi-hydro-watershed-context.png
+- gsi-landcover-2001.png
+- gsi-landcover-2024.png
+- gsi-landcover-change.png
+- gsi-development-expansion.png
+
+KEEP THESE EXISTING SITE FILES
+Do not delete the current About, Reviews, Hire/Request, logos, favicon, existing case-study images, property-intelligence-demo.html, or the 0 Mills Rd property intelligence PDF/assets.
+
+WHAT CHANGED
+- Homepage title is now: GeoSite Intel | Property Intelligence & Advanced Land Analytics
+- Homepage H1 is now: Know the land before you invest.
+- Real estate/property intelligence is now explicit in visible copy and search metadata.
+- Services now distinguish core Property Intelligence Screening from advanced analysis.
+- Hydro and Land Cover each have their own dedicated package page.
+- Portfolio now features the two new advanced-analysis demonstrations.
+- Sitemap includes the new pages and the existing 0 Mills Rd demo page.
+- New CSS supports the package cards, analysis galleries, metrics, and responsive layouts.
+
+REPORT NOTE
+The new pages intentionally do not link to the Hydro or Land Cover PDF reports yet. We are rebuilding those PDFs with the final white + charcoal subject-parcel styling. Once the final PDFs are ready, we can add report buttons without changing the page structure.
 
 SUGGESTED COMMIT MESSAGE
-Update GeoSite branding to contour G and hosted email
+Reposition GeoSite Intel and add advanced land analysis packages
 
-AFTER UPLOAD
+AFTER COMMITTING
 1. Wait for GitHub Pages to rebuild.
-2. Hard refresh with Ctrl+F5.
-3. Confirm the new contour-G wordmark appears in the top-right header and menu drawer.
-4. Confirm the About-page logo is the new version.
-5. Click Email GeoSite and confirm it opens info@geositeintel.com.
-6. Submit one website form test and confirm the notification arrives in the Porkbun-hosted inbox.
+2. Hard refresh the site (Ctrl+F5 on Windows).
+3. Check these URLs:
+   https://geositeintel.com/
+   https://geositeintel.com/land-property-intelligence.html
+   https://geositeintel.com/drainage-watershed-analysis.html
+   https://geositeintel.com/land-cover-development-change-analysis.html
+   https://geositeintel.com/portfolio.html
+4. Check mobile/menu behavior and make sure all seven new map images load.
+5. Do NOT request Google re-indexing yet if you want to follow the planned order. We will draft/publish the LinkedIn post next, then handle Google Search Console and the old drainage search result.
