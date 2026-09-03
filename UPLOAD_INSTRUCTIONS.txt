@@ -1,4 +1,4 @@
-GEOSITE INTEL WEBSITE UPDATE — PROPERTY INTELLIGENCE + ADVANCED LAND ANALYTICS
+GEOSITE INTEL WEBSITE UPDATE  -  PROPERTY INTELLIGENCE + ADVANCED LAND ANALYTICS
 Date: September 3, 2026
 
 PURPOSE
@@ -45,17 +45,18 @@ WHAT CHANGED
 - Sitemap includes the new pages and the existing 0 Mills Rd demo page.
 - New CSS supports the package cards, analysis galleries, metrics, and responsive layouts.
 
-SEPTEMBER 3 ADDITION
-- Homepage now includes a new "Why property screening matters" section directly after the main service cards.
-- Added the educational due-diligence comparison graphic used in the September 3 LinkedIn post.
-- The section emphasizes that due diligence can reveal opportunity as well as constraints.
-- Copy stays screening-level and makes clear that actual zoning, costs, conditions, and development potential vary.
+SEPTEMBER 3 CLEANUP
+- Moved the due-diligence comparison graphic into a dedicated Property Education section.
+- Removed the duplicate/misplaced due-diligence block from the middle of the Services flow.
+- Matched the Remote Property Research and Field Visits cards to the same width, height, color, and visual treatment.
+- Removed the conflicting generic "field" class from the Field Visits card.
+- Replaced long dash characters in the update package with standard hyphens or rewritten punctuation.
 
 REPORT NOTE
 The new pages intentionally do not link to the Hydro or Land Cover PDF reports yet. We are rebuilding those PDFs with the final white + charcoal subject-parcel styling. Once the final PDFs are ready, we can add report buttons without changing the page structure.
 
 SUGGESTED COMMIT MESSAGE
-Add property screening explainer to GeoSite homepage
+Clean up education section and homepage cards
 
 AFTER COMMITTING
 1. Wait for GitHub Pages to rebuild.

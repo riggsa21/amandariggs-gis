@@ -1,21 +1,15 @@
 VALIDATION
 ==========
-No blocking issues found.
+September 3, 2026 cleanup pass
 
-Generated files:
-UPLOAD_INSTRUCTIONS.txt
-drainage-watershed-analysis.html
-gsi-development-expansion.png
-gsi-hydro-parcel-drainage.png
-gsi-hydro-property-watershed.png
-gsi-hydro-watershed-context.png
-gsi-landcover-2001.png
-gsi-landcover-2024.png
-gsi-landcover-change.png
-geosite-due-diligence-opportunity.png
-index.html
-land-cover-development-change-analysis.html
-land-property-intelligence.html
-portfolio.html
-site.css
-sitemap.xml
+PASS - Due diligence graphic moved to the Property Education section.
+PASS - Old due diligence block removed from the middle of the Services flow.
+PASS - Remote Property Research and Field Visits cards use equal-width columns.
+PASS - Both location cards now use the same background, border, and card styling.
+PASS - Conflicting generic "field" CSS class removed from the Field Visits card.
+PASS - Long dash characters (em dash / en dash) removed from HTML, CSS, XML, and instruction text in this update package.
+PASS - Homepage HTML parsed successfully.
+PASS - Due diligence image asset is included in the package.
+
+Suggested commit message:
+Clean up education section and homepage cards
