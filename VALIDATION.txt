@@ -12,6 +12,7 @@ gsi-hydro-watershed-context.png
 gsi-landcover-2001.png
 gsi-landcover-2024.png
 gsi-landcover-change.png
+geosite-due-diligence-opportunity.png
 index.html
 land-cover-development-change-analysis.html
 land-property-intelligence.html

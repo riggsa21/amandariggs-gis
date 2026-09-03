@@ -1,5 +1,5 @@
 GEOSITE INTEL WEBSITE UPDATE — PROPERTY INTELLIGENCE + ADVANCED LAND ANALYTICS
-Date: August 27, 2026
+Date: September 3, 2026
 
 PURPOSE
 This update moves the public website away from drainage-first positioning and makes the primary business identity:
@@ -22,7 +22,7 @@ ADD NEW PAGES
 - drainage-watershed-analysis.html
 - land-cover-development-change-analysis.html
 
-ADD NEW MAP ASSETS
+ADD NEW MAP / EDUCATIONAL ASSETS
 - gsi-hydro-parcel-drainage.png
 - gsi-hydro-property-watershed.png
 - gsi-hydro-watershed-context.png
@@ -30,6 +30,7 @@ ADD NEW MAP ASSETS
 - gsi-landcover-2024.png
 - gsi-landcover-change.png
 - gsi-development-expansion.png
+- geosite-due-diligence-opportunity.png
 
 KEEP THESE EXISTING SITE FILES
 Do not delete the current About, Reviews, Hire/Request, logos, favicon, existing case-study images, property-intelligence-demo.html, or the 0 Mills Rd property intelligence PDF/assets.
@@ -44,11 +45,17 @@ WHAT CHANGED
 - Sitemap includes the new pages and the existing 0 Mills Rd demo page.
 - New CSS supports the package cards, analysis galleries, metrics, and responsive layouts.
 
+SEPTEMBER 3 ADDITION
+- Homepage now includes a new "Why property screening matters" section directly after the main service cards.
+- Added the educational due-diligence comparison graphic used in the September 3 LinkedIn post.
+- The section emphasizes that due diligence can reveal opportunity as well as constraints.
+- Copy stays screening-level and makes clear that actual zoning, costs, conditions, and development potential vary.
+
 REPORT NOTE
 The new pages intentionally do not link to the Hydro or Land Cover PDF reports yet. We are rebuilding those PDFs with the final white + charcoal subject-parcel styling. Once the final PDFs are ready, we can add report buttons without changing the page structure.
 
 SUGGESTED COMMIT MESSAGE
-Reposition GeoSite Intel and add advanced land analysis packages
+Add property screening explainer to GeoSite homepage
 
 AFTER COMMITTING
 1. Wait for GitHub Pages to rebuild.
@@ -59,5 +66,5 @@ AFTER COMMITTING
    https://geositeintel.com/drainage-watershed-analysis.html
    https://geositeintel.com/land-cover-development-change-analysis.html
    https://geositeintel.com/portfolio.html
-4. Check mobile/menu behavior and make sure all seven new map images load.
+4. Check mobile/menu behavior and make sure the new map images and due-diligence graphic load.
 5. Do NOT request Google re-indexing yet if you want to follow the planned order. We will draft/publish the LinkedIn post next, then handle Google Search Console and the old drainage search result.
