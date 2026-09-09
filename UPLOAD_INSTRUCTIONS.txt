@@ -1,71 +1,26 @@
-GEOSITE INTEL WEBSITE UPDATE  -  PROPERTY INTELLIGENCE + ADVANCED LAND ANALYTICS
-Date: September 3, 2026
+GEOSITE INTEL, LLC WEBSITE GIT UPDATE - SEPTEMBER 9, 2026
 
-PURPOSE
-This update moves the public website away from drainage-first positioning and makes the primary business identity:
-  Property Intelligence + Environmental Screening + Advanced Land Analytics
+Upload the CONTENTS of this folder/ZIP directly to the GitHub repository root. Replace existing files with the same names. Do not upload the containing folder itself.
 
-It also adds the two completed advanced-analysis packages:
-  1. Modeled Drainage & Watershed Analysis
-  2. Land Cover & Development Change Analysis
+NEW FILES:
+- environmental-due-diligence.html
+- Due_Diligence_Reveals_Opportunity.png
 
-UPLOAD TO THE ROOT OF THE GITHUB PAGES REPOSITORY
-
-REPLACE EXISTING FILES
+UPDATED FILES:
 - index.html
+- about.html
+- hire.html
 - land-property-intelligence.html
 - portfolio.html
+- reviews.html
+- drainage-watershed-analysis.html
+- land-cover-development-change-analysis.html
 - site.css
 - sitemap.xml
 
-ADD NEW PAGES
-- drainage-watershed-analysis.html
-- land-cover-development-change-analysis.html
+Keep all existing repository images, PDFs, demo pages, favicon/social graphics, and other assets. This package does not intentionally delete them.
 
-ADD NEW MAP / EDUCATIONAL ASSETS
-- gsi-hydro-parcel-drainage.png
-- gsi-hydro-property-watershed.png
-- gsi-hydro-watershed-context.png
-- gsi-landcover-2001.png
-- gsi-landcover-2024.png
-- gsi-landcover-change.png
-- gsi-development-expansion.png
-- geosite-due-diligence-opportunity.png
+Suggested commit message:
+Add Quick Screen, development feasibility, and due diligence support
 
-KEEP THESE EXISTING SITE FILES
-Do not delete the current About, Reviews, Hire/Request, logos, favicon, existing case-study images, property-intelligence-demo.html, or the 0 Mills Rd property intelligence PDF/assets.
-
-WHAT CHANGED
-- Homepage title is now: GeoSite Intel | Property Intelligence & Advanced Land Analytics
-- Homepage H1 is now: Know the land before you invest.
-- Real estate/property intelligence is now explicit in visible copy and search metadata.
-- Services now distinguish core Property Intelligence Screening from advanced analysis.
-- Hydro and Land Cover each have their own dedicated package page.
-- Portfolio now features the two new advanced-analysis demonstrations.
-- Sitemap includes the new pages and the existing 0 Mills Rd demo page.
-- New CSS supports the package cards, analysis galleries, metrics, and responsive layouts.
-
-SEPTEMBER 3 CLEANUP
-- Moved the due-diligence comparison graphic into a dedicated Property Education section.
-- Removed the duplicate/misplaced due-diligence block from the middle of the Services flow.
-- Matched the Remote Property Research and Field Visits cards to the same width, height, color, and visual treatment.
-- Removed the conflicting generic "field" class from the Field Visits card.
-- Replaced long dash characters in the update package with standard hyphens or rewritten punctuation.
-
-REPORT NOTE
-The new pages intentionally do not link to the Hydro or Land Cover PDF reports yet. We are rebuilding those PDFs with the final white + charcoal subject-parcel styling. Once the final PDFs are ready, we can add report buttons without changing the page structure.
-
-SUGGESTED COMMIT MESSAGE
-Clean up education section and homepage cards
-
-AFTER COMMITTING
-1. Wait for GitHub Pages to rebuild.
-2. Hard refresh the site (Ctrl+F5 on Windows).
-3. Check these URLs:
-   https://geositeintel.com/
-   https://geositeintel.com/land-property-intelligence.html
-   https://geositeintel.com/drainage-watershed-analysis.html
-   https://geositeintel.com/land-cover-development-change-analysis.html
-   https://geositeintel.com/portfolio.html
-4. Check mobile/menu behavior and make sure the new map images and due-diligence graphic load.
-5. Do NOT request Google re-indexing yet if you want to follow the planned order. We will draft/publish the LinkedIn post next, then handle Google Search Console and the old drainage search result.
+After committing, hard refresh the website (Ctrl+F5 on Windows). Check the homepage, Send a Property form, Land Research page, and the new Due Diligence Support page on desktop and mobile.

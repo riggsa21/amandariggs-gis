@@ -1,0 +1,16 @@
+GEOSITE INTEL, LLC WEBSITE UPDATE - SEPTEMBER 9, 2026
+
+Added:
+- $125 Parcel Quick Screen with 7-day upgrade credit
+- Development & Site Feasibility positioning
+- Environmental Due Diligence & Compliance Support service pillar
+- New environmental-due-diligence.html service page
+- Phase I ESA GIS/spatial support wording without claiming formal Phase I ESA services
+- Automated GIS & report QA/QC service
+- Updated property request form with new service choices
+- Due Diligence Reveals Opportunity infographic on homepage
+- Responsive infographic CSS so the educational graphic preserves its natural aspect ratio
+- Updated metadata, navigation, sitemap, and scope/disclaimer language
+
+Not added:
+- V9 social ad/video. Keep the website focused on services for now; the ad can be embedded later if it performs well or if a dedicated media section is added.
