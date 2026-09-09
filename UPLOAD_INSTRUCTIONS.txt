@@ -7,6 +7,7 @@ NEW FILES:
 - Due_Diligence_Reveals_Opportunity.png
 
 UPDATED FILES:
+- GeoSite_Intel_Logo_Transparent.png (approved contour-line "G" logo with no location symbol)
 - index.html
 - about.html
 - hire.html
@@ -21,6 +22,6 @@ UPDATED FILES:
 Keep all existing repository images, PDFs, demo pages, favicon/social graphics, and other assets. This package does not intentionally delete them.
 
 Suggested commit message:
-Add Quick Screen, development feasibility, and due diligence support
+Update GeoSite logo and September website content
 
 After committing, hard refresh the website (Ctrl+F5 on Windows). Check the homepage, Send a Property form, Land Research page, and the new Due Diligence Support page on desktop and mobile.

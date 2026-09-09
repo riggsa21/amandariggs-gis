@@ -1,5 +1,10 @@
 GEOSITE INTEL, LLC WEBSITE UPDATE - SEPTEMBER 9, 2026
 
+Corrected branding:
+- Replaced the older map-pin logo with the approved contour-line "G" wordmark
+- Updated logo sizing for desktop and mobile navigation
+- Refreshed logo references used by page backgrounds and organization metadata
+
 Added:
 - $125 Parcel Quick Screen with 7-day upgrade credit
 - Development & Site Feasibility positioning
