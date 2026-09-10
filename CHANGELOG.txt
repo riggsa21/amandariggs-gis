@@ -1,21 +1,19 @@
-GEOSITE INTEL, LLC WEBSITE UPDATE - SEPTEMBER 9, 2026
+GEOSITE INTEL, LLC WEBSITE UPDATE - SEPTEMBER 10, 2026
 
-Corrected branding:
-- Replaced the older map-pin logo with the approved contour-line "G" wordmark
-- Updated logo sizing for desktop and mobile navigation
-- Refreshed logo references used by page backgrounds and organization metadata
+POSITIONING UPDATE
+- Reframed GeoSite as Real Estate Mapping & Risk Intelligence rather than a generic mapping service.
+- Moved property risk screening and decision support to the front of the homepage.
+- Added the outcome-focused message: know what the land is telling you before you commit money.
+- Updated the core service language to Property Intelligence & Risk Screening.
+- Reframed the educational section around: Start With the Risk, Not Just the Acreage.
+- Updated the Land Intelligence page around property risk, site feasibility, and what should be verified before capital is committed.
+- Updated About and request-page language to match the same positioning.
+- Preserved the $125 Parcel Quick Screen, development feasibility, environmental due diligence support, Phase I ESA GIS support limitations, hydrology, land-cover change, and GIS/report QA-QC offerings.
+- Preserved the approved September 9 contour-line G logo and info@geositeintel.com contact routing.
 
-Added:
-- $125 Parcel Quick Screen with 7-day upgrade credit
-- Development & Site Feasibility positioning
-- Environmental Due Diligence & Compliance Support service pillar
-- New environmental-due-diligence.html service page
-- Phase I ESA GIS/spatial support wording without claiming formal Phase I ESA services
-- Automated GIS & report QA/QC service
-- Updated property request form with new service choices
-- Due Diligence Reveals Opportunity infographic on homepage
-- Responsive infographic CSS so the educational graphic preserves its natural aspect ratio
-- Updated metadata, navigation, sitemap, and scope/disclaimer language
+TECHNICAL CLEANUP
+- Removed duplicate DOCTYPE declarations from HTML pages.
+- Bumped the website asset cache version to 20260910-1.
 
-Not added:
-- V9 social ad/video. Keep the website focused on services for now; the ad can be embedded later if it performs well or if a dedicated media section is added.
+MARKETING PRINCIPLE
+GeoSite should lead with the decision and the risk question, while GIS and mapping are presented as the methods used to reach the answer.

@@ -1,27 +1,37 @@
-GEOSITE INTEL, LLC WEBSITE GIT UPDATE - SEPTEMBER 9, 2026
+GEOSITE INTEL, LLC - GITHUB WEBSITE UPDATE - SEPTEMBER 10, 2026
 
-Upload the CONTENTS of this folder/ZIP directly to the GitHub repository root. Replace existing files with the same names. Do not upload the containing folder itself.
+1. EXTRACT THIS ZIP FIRST. Do not upload the ZIP itself to the website root.
+2. Open the GitHub repository that currently hosts geositeintel.com.
+3. Upload the CONTENTS of the extracted folder directly to the repository root.
+4. Replace files with the same names when GitHub prompts you.
+5. DO NOT delete other existing repository images, PDFs, demo pages, or assets that are not included in this update.
 
-NEW FILES:
-- environmental-due-diligence.html
-- Due_Diligence_Reveals_Opportunity.png
-
-UPDATED FILES:
-- GeoSite_Intel_Logo_Transparent.png (approved contour-line "G" logo with no location symbol)
+THIS PACKAGE CONTAINS
 - index.html
 - about.html
 - hire.html
 - land-property-intelligence.html
-- portfolio.html
-- reviews.html
+- environmental-due-diligence.html
 - drainage-watershed-analysis.html
 - land-cover-development-change-analysis.html
+- portfolio.html
+- reviews.html
 - site.css
 - sitemap.xml
+- robots.txt
+- GeoSite_Intel_Logo_Transparent.png
+- Due_Diligence_Reveals_Opportunity.png
+- CHANGELOG.txt
 
-Keep all existing repository images, PDFs, demo pages, favicon/social graphics, and other assets. This package does not intentionally delete them.
+IMPORTANT
+Keep the existing property-example images, PDFs, demo pages, favicon, social image, and other assets already in the repository. This update does not intentionally remove them.
 
-Suggested commit message:
-Update GeoSite logo and September website content
+Suggested GitHub commit message:
+Refine GeoSite risk screening and real estate intelligence positioning
 
-After committing, hard refresh the website (Ctrl+F5 on Windows). Check the homepage, Send a Property form, Land Research page, and the new Due Diligence Support page on desktop and mobile.
+AFTER COMMITTING
+- Open geositeintel.com and hard refresh (Ctrl+F5 on Windows).
+- Check Home, Land Research, Due Diligence Support, About, and Send a Property on desktop and mobile.
+- Confirm the logo displays correctly.
+- Confirm the Contact links open info@geositeintel.com.
+- Confirm the $125 Parcel Quick Screen and 7-day upgrade credit remain visible.
