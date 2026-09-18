@@ -74,6 +74,10 @@
     .division-image{height:178px;margin:-28px -28px 22px;border-bottom:1px solid var(--line);overflow:hidden;background:#0b1724}
     .division-image img{width:100%;height:100%;object-fit:cover;transition:transform .28s ease}
     .division:hover .division-image img{transform:scale(1.025)}
+    .automation-art{display:flex;align-items:center;justify-content:center;padding:28px 22px;background:radial-gradient(circle at 80% 20%,rgba(84,187,180,.17),transparent 30%),linear-gradient(145deg,#0b1724,#10283b)}
+    .flow-mini{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:nowrap}
+    .flow-mini span{display:grid;place-items:center;min-width:70px;min-height:70px;padding:9px;border:1px solid rgba(121,209,203,.48);border-radius:15px;background:rgba(7,17,28,.72);box-shadow:inset 0 0 0 1px rgba(255,255,255,.035);color:#eef7f7;font-size:.68rem;font-weight:900;letter-spacing:.06em;text-align:center}
+    .flow-mini b{color:var(--teal2);font-size:1.25rem}
 
     .intro{padding:22px 0 26px}.intro-box{padding:28px 30px;border:1px solid rgba(201,174,120,.22);border-radius:18px;background:rgba(201,174,120,.055);color:var(--muted);font-size:1.03rem}.intro-box strong{color:var(--ink)}
 
@@ -150,7 +154,7 @@
           <div class="eyebrow">Information services for real-world work</div>
           <h1>Turn information into <span>something useful.</span></h1>
           <p class="hero-copy">
-            GSI helps businesses and individuals organize, understand, and use complex information - from land and planning intelligence to documents, spreadsheets, and the workflows that keep everyday work moving.
+            GSI helps businesses and organizations understand and use complex information - from land and planning intelligence to messy datasets, reporting inputs, and the workflows that keep data-heavy work moving.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#services">Choose a service</a>
@@ -159,7 +163,7 @@
         </div>
 
         <aside class="hero-visual" aria-label="GSI information services">
-          <img src="home-information-visual.jpg?v=20260918-4" alt="Laptop showing mapping and information analysis in a professional workspace">
+          <img src="home-information-visual.jpg?v=20260918-5" alt="Laptop showing mapping and information analysis in a professional workspace">
           <div class="hero-visual-note">Land · Data · Workflows</div>
         </aside>
       </div>
@@ -168,7 +172,7 @@
     <section class="intro">
       <div class="shell">
         <div class="intro-box">
-          <strong>One company. Different information problems.</strong> Some projects start with a parcel, a development question, or environmental data. Others start with a stack of receipts, inconsistent spreadsheets, scanned documents, or a repetitive process that takes too much time. GSI applies the right information workflow to the problem in front of you.
+          <strong>One company. Different information problems.</strong> Some projects start with a parcel, a development question, or environmental data. Others start with inconsistent spreadsheets, mismatched exports, duplicate records, unclear fields, or a repetitive data process that takes too much time. GSI applies the right information workflow to the problem in front of you.
         </div>
       </div>
     </section>
@@ -183,7 +187,7 @@
 
         <div class="division-grid">
           <article class="division">
-            <div class="division-image"><img src="geosite-intelligence-visual.jpg?v=20260918-4" alt="Aerial land imagery with contour and parcel analysis"></div>
+            <div class="division-image"><img src="geosite-intelligence-visual.jpg?v=20260918-5" alt="Aerial land imagery with contour and parcel analysis"></div>
             <div class="division-label">Land & planning</div>
             <h3>GeoSite Intelligence</h3>
             <div class="sub">See beyond the property line.</div>
@@ -195,20 +199,22 @@
           </article>
 
           <article class="division">
-            <div class="division-image"><img src="data-intelligence-visual.jpg?v=20260918-4" alt="Organized business records, spreadsheets, invoices, and receipts"></div>
-            <div class="division-label">Documents & data</div>
+            <div class="division-image"><img src="data-intelligence-visual.jpg?v=20260918-5" alt="Structured spreadsheet and tabular data prepared for analysis"></div>
+            <div class="division-label">Data cleanup & preparation</div>
             <span class="status-pill new">New service</span>
             <h3>Data Intelligence</h3>
-            <div class="sub">Organize it. Structure it. Use it.</div>
-            <p>Practical support for small businesses and individuals who need scattered documents, spreadsheets, receipts, files, or records turned into organized, usable information.</p>
+            <div class="sub">Clean it. Structure it. Use it.</div>
+            <p>Focused data cleanup and preparation for businesses, researchers, consultants, and organizations that need inconsistent or hard-to-use datasets turned into reliable, analysis-ready information.</p>
             <ul class="feature-list">
-              <li>PDF & scan conversion</li><li>Receipt & invoice extraction</li><li>Spreadsheet cleanup</li><li>Data entry & organization</li><li>Digital file cleanup</li><li>Custom trackers & templates</li>
+              <li>Spreadsheet & CSV cleanup</li><li>Dataset consolidation</li><li>Field & format standardization</li><li>Duplicate & quality checks</li><li>Metadata & data dictionaries</li><li>Analysis-ready data preparation</li>
             </ul>
             <a class="division-link" href="data-intelligence.html">Explore Data Intelligence →</a>
           </article>
 
           <article class="division coming">
-            <div class="division-image"><img src="business-automation-visual.svg?v=20260918-4" alt="Digital workflow showing files and data moving through automated processing"></div>
+            <div class="division-image automation-art" role="img" aria-label="Workflow showing input data moving through processing, validation, and output">
+              <div class="flow-mini"><span>INPUT</span><b>→</b><span>PROCESS</span><b>→</b><span>VALIDATE</span><b>→</b><span>OUTPUT</span></div>
+            </div>
             <div class="division-label">Workflows & systems</div>
             <span class="status-pill">Coming next</span>
             <h3>Business Automation</h3>
