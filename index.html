@@ -101,7 +101,29 @@
     @media (max-width:860px){.hero{padding-top:50px}.hero-grid{grid-template-columns:1fr}.hero-grid{gap:30px}.hero-visual{max-width:620px}nav{display:none;position:absolute;top:72px;left:16px;right:16px;padding:16px;flex-direction:column;align-items:stretch;border:1px solid var(--line);border-radius:14px;background:#0a1825;box-shadow:var(--shadow)}nav.open{display:flex}.menu-button{display:block}.why-grid{grid-template-columns:1fr}}
     @media (max-width:680px){.division-grid{grid-template-columns:1fr}.division:last-child{grid-column:auto}.division{min-height:auto}}
     @media (max-width:560px){.shell{width:min(100% - 22px,var(--max))}.brand-text span{display:none}.hero{padding-top:38px}h1{font-size:clamp(2.65rem,15vw,4rem)}.hero-visual{min-height:300px}.hero-visual img{min-height:300px}.division{padding:24px}.intro-box{padding:22px}.cta{padding:28px 20px}}
-  </style>
+  
+    /* 2026-09-18 v4: full-image and navigation fixes */
+    .menu-button{display:none!important}
+    .hero-visual{min-height:0;aspect-ratio:543/438}
+    .hero-visual img{height:100%;min-height:0;object-fit:contain;object-position:center}
+    .division-image{height:auto;aspect-ratio:2.13/1}
+    .division-image img{width:100%;height:100%;object-fit:contain;object-position:center}
+    @media (max-width:860px){
+      .topbar-inner{min-height:auto;padding:9px 0;flex-wrap:wrap}
+      nav#mainNav{
+        display:flex!important;position:static!important;order:3;width:100%;
+        padding:6px 0 2px!important;flex-direction:row!important;align-items:center!important;
+        gap:16px!important;border:0!important;border-radius:0!important;background:transparent!important;
+        box-shadow:none!important;overflow-x:auto;white-space:nowrap;scrollbar-width:thin
+      }
+      nav#mainNav a{flex:0 0 auto}
+    }
+    @media (max-width:560px){
+      .hero-visual{min-height:0}
+      .hero-visual img{min-height:0}
+    }
+
+</style>
 </head>
 <body>
   <header class="topbar">
@@ -110,8 +132,7 @@
         <span class="brand-logo"><img src="GSI_Contour_G.jpg" alt="GSI contour G logo"></span>
         <span class="brand-text"><strong>GSI</strong><span>GeoSite Intel LLC</span></span>
       </a>
-      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button>
-      <nav id="mainNav" aria-label="Main navigation">
+<nav id="mainNav" aria-label="Main navigation">
         <a href="index.html" aria-current="page">Home</a>
         <a href="land-property-intelligence.html">GeoSite Intelligence</a>
         <a href="data-intelligence.html">Data Intelligence</a>
@@ -138,7 +159,7 @@
         </div>
 
         <aside class="hero-visual" aria-label="GSI information services">
-          <img src="home-information-visual.jpg" alt="Laptop showing mapping and information analysis in a professional workspace">
+          <img src="home-information-visual.jpg?v=20260918-4" alt="Laptop showing mapping and information analysis in a professional workspace">
           <div class="hero-visual-note">Land · Data · Workflows</div>
         </aside>
       </div>
@@ -162,7 +183,7 @@
 
         <div class="division-grid">
           <article class="division">
-            <div class="division-image"><img src="geosite-intelligence-visual.jpg" alt="Aerial land imagery with contour and parcel analysis"></div>
+            <div class="division-image"><img src="geosite-intelligence-visual.jpg?v=20260918-4" alt="Aerial land imagery with contour and parcel analysis"></div>
             <div class="division-label">Land & planning</div>
             <h3>GeoSite Intelligence</h3>
             <div class="sub">See beyond the property line.</div>
@@ -174,7 +195,7 @@
           </article>
 
           <article class="division">
-            <div class="division-image"><img src="data-intelligence-visual.jpg" alt="Organized business records, spreadsheets, invoices, and receipts"></div>
+            <div class="division-image"><img src="data-intelligence-visual.jpg?v=20260918-4" alt="Organized business records, spreadsheets, invoices, and receipts"></div>
             <div class="division-label">Documents & data</div>
             <span class="status-pill new">New service</span>
             <h3>Data Intelligence</h3>
@@ -187,7 +208,7 @@
           </article>
 
           <article class="division coming">
-            <div class="division-image"><img src="business-automation-visual.jpg" alt="Digital workflow showing files and data moving through automated processing"></div>
+            <div class="division-image"><img src="business-automation-visual.svg?v=20260918-4" alt="Digital workflow showing files and data moving through automated processing"></div>
             <div class="division-label">Workflows & systems</div>
             <span class="status-pill">Coming next</span>
             <h3>Business Automation</h3>

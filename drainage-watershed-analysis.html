@@ -1,149 +1,238 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Drainage &amp; Watershed Analysis for Property Decisions | GeoSite Intel, LLC</title>
-<meta content="Terrain-derived drainage and watershed analysis for property decisions, connecting parcel-scale flow paths with surrounding drainage and broader watershed context." name="description"/>
-<meta content="#0b1724" name="theme-color"/>
-<meta content="index, follow, max-snippet:-1, max-image-preview:large" name="robots"/>
-<link href="https://geositeintel.com/drainage-watershed-analysis.html" rel="canonical"/>
-<link href="./site.css?v=20260910-1" rel="stylesheet"/>
-<link href="./GeoSite_Intel_Favicon.png?v=20260810-4" rel="icon" type="image/png"/>
-<meta content="Modeled Drainage &amp; Watershed Analysis | GeoSite Intel, LLC" property="og:title"/>
-<meta content="See how terrain-derived drainage relates to a property beyond the parcel line, from local flow paths to the larger watershed." property="og:description"/>
-<meta content="https://geositeintel.com/GeoSite_Intel_Social.png?v=20260810-4" property="og:image"/>
-<meta content="https://geositeintel.com/drainage-watershed-analysis.html" property="og:url"/>
-<meta content="website" property="og:type"/>
-<meta content="GeoSite Intel, LLC" property="og:site_name"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Drainage &amp; Watershed Analysis | GeoSite Intel, LLC" name="twitter:title"/>
-<meta content="Terrain-derived drainage and watershed context for early property and land decisions." name="twitter:description"/>
-<meta content="https://geositeintel.com/GeoSite_Intel_Social.png?v=20260810-4" name="twitter:image"/>
-<script type="application/ld+json">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drainage & Watershed Analysis for Property Decisions | GeoSite Intel</title>
+  <meta name="description" content="Terrain-derived drainage and watershed analysis for property decisions, connecting parcel-scale flow paths with surrounding drainage and broader watershed context.">
+  <meta name="theme-color" content="#0b1724">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="canonical" href="https://geositeintel.com/drainage-watershed-analysis.html">
+  <link rel="stylesheet" href="./site.css?v=20260918-4">
+  <link rel="icon" type="image/png" href="./GeoSite_Intel_Favicon.png?v=20260810-4">
+
+  <meta property="og:title" content="Modeled Drainage & Watershed Analysis | GeoSite Intel">
+  <meta property="og:description" content="See how terrain-derived drainage relates to a property beyond the parcel line, from local flow paths to the larger watershed.">
+  <meta property="og:image" content="https://geositeintel.com/GeoSite_Intel_Social.png?v=20260810-4">
+  <meta property="og:url" content="https://geositeintel.com/drainage-watershed-analysis.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GeoSite Intel">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Drainage & Watershed Analysis | GeoSite Intel">
+  <meta name="twitter:description" content="Terrain-derived drainage and watershed context for early property and land decisions.">
+  <meta name="twitter:image" content="https://geositeintel.com/GeoSite_Intel_Social.png?v=20260810-4">
+
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Modeled Drainage & Watershed Analysis",
     "serviceType": "Terrain-derived drainage and watershed screening for property decisions",
-    "provider": {"@type": "Organization", "name": "GeoSite Intel, LLC", "url": "https://geositeintel.com/"},
+    "provider": {"@type": "Organization", "name": "GeoSite Intel", "url": "https://geositeintel.com/"},
     "areaServed": "Worldwide",
     "description": "Screening-level drainage and watershed analysis using terrain-derived flow paths to connect parcel-scale conditions with surrounding drainage and watershed context.",
     "url": "https://geositeintel.com/drainage-watershed-analysis.html"
   }
   </script>
+
+  <style id="gsi-umbrella-header-v4">
+    /* GSI umbrella header - keeps global navigation visible while preserving the GeoSite-specific drawer */
+    .topbar-inner{
+      width:min(1220px,calc(100% - 24px))!important;
+      justify-content:flex-start!important;
+      gap:14px!important;
+    }
+    .gsi-top-start{display:flex;align-items:center;gap:11px;flex:0 0 auto}
+    .gsi-global-brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;min-width:0}
+    .gsi-global-brand:hover{text-decoration:none}
+    .gsi-global-mark{
+      display:block;width:44px;height:44px;overflow:hidden;flex:0 0 44px;
+      border:1px solid rgba(255,255,255,.15);border-radius:12px;background:#f4f7f5
+    }
+    .gsi-global-mark img{width:100%;height:100%;object-fit:cover}
+    .gsi-global-copy{display:flex;flex-direction:column;line-height:1.02}
+    .gsi-global-copy strong{color:var(--ink);font-size:1.17rem;letter-spacing:.055em}
+    .gsi-global-copy span{margin-top:4px;color:var(--muted2);font-size:.67rem;letter-spacing:.07em;text-transform:uppercase}
+    .gsi-global-nav{
+      display:flex;align-items:center;gap:15px;margin-left:auto;min-width:0;
+      color:var(--muted);font-size:.82rem
+    }
+    .gsi-global-nav a{flex:0 0 auto;padding:7px 0;color:inherit;text-decoration:none}
+    .gsi-global-nav a:hover,.gsi-global-nav a[aria-current="page"]{color:var(--ink);text-decoration:none}
+    .gsi-global-nav .gsi-contact{
+      padding:8px 12px;border:1px solid rgba(86,185,180,.38);
+      border-radius:999px;color:var(--accent)
+    }
+    @media(max-width:1000px){
+      .gsi-global-nav{gap:10px;font-size:.75rem}
+      .gsi-global-copy span{display:none}
+    }
+    @media(max-width:760px){
+      body{padding-top:116px!important}
+      .topbar{height:116px!important}
+      .topbar-inner{
+        height:116px!important;flex-wrap:wrap!important;align-content:center!important;
+        gap:7px 11px!important;padding:6px 0!important
+      }
+      .gsi-global-nav{
+        order:3;width:100%;margin-left:0;overflow-x:auto;white-space:nowrap;
+        gap:16px;padding:0 2px 3px;scrollbar-width:thin
+      }
+      .drawer{inset:116px auto 0 0!important}
+    }
+  </style>
+
 </head>
 <body>
-<div class="topbar">
-<div class="topbar-inner">
-<button aria-controls="site-drawer" aria-expanded="false" aria-label="Open menu" class="hamburger" id="hamburger" type="button">
-<span class="lines"><span class="bar"></span></span>
-</button>
-<a class="topbar-brand" href="index.html">
-<img alt="GeoSite Intel, LLC  -  Property Intelligence and Land Analytics" class="topbar-logo" height="48" src="./GeoSite_Intel_Logo_Transparent.png?v=20260910-1" style="display:block;width:126px;max-width:100%;max-height:48px;height:auto;object-fit:contain" width="126"/>
-</a>
-</div>
-</div>
-<div class="overlay" id="overlay"></div>
-<aside aria-label="Site menu" class="drawer" id="site-drawer">
-<header>
-<a class="drawer-brand" href="index.html">
-<img alt="GeoSite Intel, LLC  -  Property Intelligence and Land Analytics" class="drawer-logo" height="90" src="./GeoSite_Intel_Logo_Transparent.png?v=20260910-1" style="display:block;width:235px;max-width:100%;height:auto;object-fit:contain" width="235"/>
-</a>
-<div class="drawer-subtitle">Property intelligence and advanced land analytics</div>
-</header>
-<nav aria-label="Main site navigation">
-<a href="index.html">Home</a>
-<a href="index.html#services">Property Services</a><a href="environmental-due-diligence.html">Due Diligence Support</a>
-<a aria-current="page" href="land-property-intelligence.html">Land Intelligence</a>
-<a href="portfolio.html">Property Examples</a>
-<a href="reviews.html">Reviews</a>
-<a href="hire.html#estimateForm">Send a Property</a>
-<a href="about.html">About</a>
-<a href="mailto:info@geositeintel.com">Contact</a>
-</nav>
-</aside>
-<main class="page-shell">
-<section aria-labelledby="hydro-title" class="panel page-hero">
-<div class="eyebrow">advanced land analytics • terrain-modeled drainage • watershed context</div>
-<h1 id="hydro-title">Modeled Drainage &amp; Watershed Analysis</h1>
-<p class="hero-copy">
+  
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="gsi-top-start">
+        <button
+          class="hamburger"
+          id="hamburger"
+          type="button"
+          aria-label="Open GeoSite Intelligence menu"
+          aria-controls="site-drawer"
+          aria-expanded="false"
+        >
+          <span class="lines"><span class="bar"></span></span>
+        </button>
+
+        <a class="gsi-global-brand" href="index.html" aria-label="GSI home">
+          <span class="gsi-global-mark">
+            <img src="./GSI_Contour_G.jpg" alt="GSI contour G logo">
+          </span>
+          <span class="gsi-global-copy">
+            <strong>GSI</strong>
+            <span>GeoSite Intel LLC</span>
+          </span>
+        </a>
+      </div>
+
+      <nav class="gsi-global-nav" aria-label="GSI main navigation">
+        <a href="index.html">Home</a>
+        <a href="land-property-intelligence.html" aria-current="page">GeoSite Intelligence</a>
+        <a href="data-intelligence.html">Data Intelligence</a>
+        <a href="business-automation.html">Business Automation</a>
+        <a href="about.html">About</a>
+        <a class="gsi-contact" href="mailto:info@geositeintel.com">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="drawer" id="site-drawer" aria-label="GeoSite Intelligence menu">
+    <header>
+      <a class="drawer-brand" href="land-property-intelligence.html">
+        <img class="drawer-logo" src="./GeoSite_Intel_Logo_Transparent.png?v=20260810-8"
+             alt="GeoSite Intel — Property Intelligence and Land Analytics"
+             width="235" height="72"
+             style="display:block;width:235px;max-width:100%;height:auto;object-fit:contain">
+      </a>
+      <div class="drawer-subtitle">GeoSite Intelligence - property, land, and planning services</div>
+    </header>
+    <nav aria-label="GeoSite Intelligence navigation">
+      <a href="land-property-intelligence.html">GeoSite Overview</a>
+      <a href="land-property-intelligence.html#advanced-analysis">Advanced Land Analysis</a>
+      <a href="drainage-watershed-analysis.html" aria-current="page">Drainage &amp; Watershed</a>
+      <a href="land-cover-development-change-analysis.html">Land Cover &amp; Change</a>
+      <a href="portfolio.html">Property Examples</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="hire.html#estimateForm">Request Estimate</a>
+    </nav>
+  </aside>
+
+  <main class="page-shell">
+    <section class="panel page-hero" aria-labelledby="hydro-title">
+      <div class="eyebrow">advanced land analytics • terrain-modeled drainage • watershed context</div>
+      <h1 id="hydro-title">Modeled Drainage &amp; Watershed Analysis</h1>
+      <p class="hero-copy">
         See how terrain-favored drainage relates to a property at three useful scales:
         the parcel edge, the surrounding drainage landscape, and the larger watershed.
         This package is designed for early decision support when water movement may matter
         before acquisition, site planning, field review, or engineering work.
       </p>
-<div class="button-row">
-<a class="button primary" href="hire.html#estimateForm">Analyze a Property</a>
-<a class="button secondary" href="land-property-intelligence.html">Back to Property Intelligence</a>
-</div>
-</section>
-<section aria-labelledby="hydro-example-title" class="panel">
-<div class="section-heading">
-<div class="gis-kicker">0 Mills Rd demonstration</div>
-<h2 id="hydro-example-title">Follow the drainage relationship from the parcel to the watershed.</h2>
-<p>
+      <div class="button-row">
+        <a class="button primary" href="hire.html#estimateForm">Analyze a Property</a>
+        <a class="button secondary" href="land-property-intelligence.html">Back to Property Intelligence</a>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="hydro-example-title">
+      <div class="section-heading">
+        <div class="gis-kicker">0 Mills Rd demonstration</div>
+        <h2 id="hydro-example-title">Follow the drainage relationship from the parcel to the watershed.</h2>
+        <p>
           In this demonstration, a terrain-derived drainage corridor approaches and adjoins the
           wooded southern/western edge of Parcel 14908. The analysis then follows that local
           relationship outward into the surrounding drainage network and Outlet Chicod Creek HUC-12.
         </p>
-</div>
-<div class="package-proof">
-<article><strong>10 m terrain model</strong><span>DEM-derived topographic screening</span></article>
-<article><strong>20-acre threshold</strong><span>Primary modeled drainage network used for client maps</span></article>
-<article><strong>3 analysis scales</strong><span>Parcel, surrounding landscape, and full watershed</span></article>
-</div>
-<div class="analysis-gallery">
-<figure class="analysis-figure wide">
-<img alt="Parcel drainage detail showing modeled drainage adjacent to Parcel 14908" src="gsi-hydro-parcel-drainage.png?v=20260827-1"/>
-<figcaption><strong>Parcel Drainage Detail</strong>Close-up view showing where modeled drainage approaches or adjoins the subject parcel.</figcaption>
-</figure>
-<figure class="analysis-figure">
-<img alt="Property-to-watershed drainage context on aerial imagery" src="gsi-hydro-property-watershed.png?v=20260827-1"/>
-<figcaption><strong>Property-to-Watershed Context</strong>Connects the parcel to nearby terrain-derived drainage beyond the property boundary.</figcaption>
-</figure>
-<figure class="analysis-figure">
-<img alt="Outlet Chicod Creek watershed with modeled drainage network and subject parcel" src="gsi-hydro-watershed-context.png?v=20260827-1"/>
-<figcaption><strong>Watershed Context</strong>Shows how the property sits within the larger connected drainage system.</figcaption>
-</figure>
-</div>
-</section>
-<section aria-labelledby="hydro-use-title" class="panel">
-<div class="section-heading">
-<h2 id="hydro-use-title">What this package can help answer</h2>
-<p>Use the model to identify relationships worth verifying - not to substitute for engineering.</p>
-</div>
-<div class="decision-output-grid">
-<article><h3>Where does terrain favor concentrated flow?</h3><p>Identify modeled drainage pathways and where they approach, cross, or adjoin the parcel.</p></article>
-<article><h3>What happens beyond the property line?</h3><p>See how off-site terrain and drainage connect the property to the surrounding landscape.</p></article>
-<article><h3>Where should follow-up focus?</h3><p>Use the mapped relationships to target field checks, culvert/ditch review, survey, or engineering questions.</p></article>
-</div>
-<div class="package-note">
-<strong>Important:</strong> Modeled drainage represents topographically favored flow paths at the selected terrain resolution and threshold. It does not establish a surveyed stream, ditch, culvert, legal drainage boundary, flood depth, stormwater capacity, wetland jurisdiction, permitting requirement, or engineering design condition.
       </div>
-</section>
-<section aria-labelledby="hydro-cta-title" class="panel cta-panel">
-<h2 id="hydro-cta-title">Have a drainage question before you commit to the property?</h2>
-<p>Send the parcel or listing and describe the decision you are trying to make. GeoSite can determine whether a modeled drainage and watershed review is appropriate for the available data.</p>
-<div class="button-row"><a class="button primary" href="hire.html#estimateForm">Send a Property</a><a class="button secondary" href="portfolio.html">See More Examples</a></div>
-</section>
-<footer class="site-footer">
-<div>© 2026 GeoSite Intel, LLC · Real Estate Mapping &amp; Risk Intelligence</div>
-<nav aria-label="Footer navigation" class="footer-links">
-<a href="index.html">Home</a>
-<a href="index.html#services">Services</a><a href="environmental-due-diligence.html">Due Diligence Support</a>
-<a href="land-property-intelligence.html">Land Intelligence</a>
-<a href="portfolio.html">Property Examples</a>
-<a href="property-intelligence-demo.html">Demo Report</a>
-<a href="reviews.html">Reviews</a>
-<a href="hire.html#estimateForm">Send a Property</a>
-<a href="about.html">About</a>
-<a href="mailto:info@geositeintel.com">Contact</a>
-</nav>
-</footer>
-</main>
-<script>
+
+      <div class="package-proof">
+        <article><strong>10 m terrain model</strong><span>DEM-derived topographic screening</span></article>
+        <article><strong>20-acre threshold</strong><span>Primary modeled drainage network used for client maps</span></article>
+        <article><strong>3 analysis scales</strong><span>Parcel, surrounding landscape, and full watershed</span></article>
+      </div>
+
+      <div class="analysis-gallery">
+        <figure class="analysis-figure wide">
+          <img src="gsi-hydro-parcel-drainage.png?v=20260827-1" alt="Parcel drainage detail showing modeled drainage adjacent to Parcel 14908">
+          <figcaption><strong>Parcel Drainage Detail</strong>Close-up view showing where modeled drainage approaches or adjoins the subject parcel.</figcaption>
+        </figure>
+        <figure class="analysis-figure">
+          <img src="gsi-hydro-property-watershed.png?v=20260827-1" alt="Property-to-watershed drainage context on aerial imagery">
+          <figcaption><strong>Property-to-Watershed Context</strong>Connects the parcel to nearby terrain-derived drainage beyond the property boundary.</figcaption>
+        </figure>
+        <figure class="analysis-figure">
+          <img src="gsi-hydro-watershed-context.png?v=20260827-1" alt="Outlet Chicod Creek watershed with modeled drainage network and subject parcel">
+          <figcaption><strong>Watershed Context</strong>Shows how the property sits within the larger connected drainage system.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="hydro-use-title">
+      <div class="section-heading">
+        <h2 id="hydro-use-title">What this package can help answer</h2>
+        <p>Use the model to identify relationships worth verifying—not to substitute for engineering.</p>
+      </div>
+      <div class="decision-output-grid">
+        <article><h3>Where does terrain favor concentrated flow?</h3><p>Identify modeled drainage pathways and where they approach, cross, or adjoin the parcel.</p></article>
+        <article><h3>What happens beyond the property line?</h3><p>See how off-site terrain and drainage connect the property to the surrounding landscape.</p></article>
+        <article><h3>Where should follow-up focus?</h3><p>Use the mapped relationships to target field checks, culvert/ditch review, survey, or engineering questions.</p></article>
+      </div>
+      <div class="package-note">
+        <strong>Important:</strong> Modeled drainage represents topographically favored flow paths at the selected terrain resolution and threshold. It does not establish a surveyed stream, ditch, culvert, legal drainage boundary, flood depth, stormwater capacity, wetland jurisdiction, permitting requirement, or engineering design condition.
+      </div>
+    </section>
+
+    <section class="panel cta-panel" aria-labelledby="hydro-cta-title">
+      <h2 id="hydro-cta-title">Have a drainage question before you commit to the property?</h2>
+      <p>Send the parcel or listing and describe the decision you are trying to make. GeoSite can determine whether a modeled drainage and watershed review is appropriate for the available data.</p>
+      <div class="button-row"><a class="button primary" href="hire.html#estimateForm">Send a Property</a><a class="button secondary" href="portfolio.html">See More Examples</a></div>
+    </section>
+
+    <footer class="site-footer">
+      <div>© 2026 GeoSite Intel · Property Intelligence · Environmental Screening · Advanced Land Analytics</div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="land-property-intelligence.html">Land Intelligence</a>
+        <a href="portfolio.html">Property Examples</a>
+        <a href="property-intelligence-demo.html">Demo Report</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="hire.html#estimateForm">Send a Property</a>
+        <a href="about.html">About</a>
+        <a href="mailto:info@geositeintel.com">Contact</a>
+      </nav>
+    </footer>
+  </main>
+
+  <script>
     (() => {
       const button = document.getElementById("hamburger");
       const drawer = document.getElementById("site-drawer");

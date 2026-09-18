@@ -1,271 +1,113 @@
 <!DOCTYPE html>
-<!-- about.html | GeoSite Intel, LLC -->
-
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>About GeoSite Intel, LLC | Real Estate Risk Intelligence</title>
-<meta content="Learn how GeoSite Intel, LLC combines property records, environmental information, terrain, drainage, historical imagery, and GIS analysis for real estate risk screening and decision support." name="description"/>
-<meta content="#0b1724" name="theme-color"/>
-<link href="https://geositeintel.com/about.html" rel="canonical"/>
-<link href="./site.css?v=20260910-1" rel="stylesheet"/>
-<link href="./GeoSite_Intel_Favicon.png?v=20260810-4" rel="icon" type="image/png"/>
-<meta content="About GeoSite Intel, LLC | Real Estate Risk Intelligence" property="og:title"/>
-<meta content="Property-focused risk screening and spatial intelligence for clearer land, development, and real estate decisions." property="og:description"/>
-<meta content="https://geositeintel.com/GeoSite_Intel_Social.png?v=20260810-4" property="og:image"/>
-<meta content="https://geositeintel.com/about.html" property="og:url"/>
-<meta content="website" property="og:type"/>
-<meta content="GeoSite Intel, LLC" property="og:site_name"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="About GeoSite Intel, LLC | Real Estate Risk Intelligence" name="twitter:title"/>
-<meta content="Learn why GeoSite Intel, LLC brings property records, maps, environmental information, and past imagery together in one clear review." name="twitter:description"/>
-<meta content="https://geositeintel.com/GeoSite_Intel_Social.png?v=20260810-4" name="twitter:image"/>
-<script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "AboutPage",
-      "name": "About GeoSite Intel, LLC",
-      "url": "https://geositeintel.com/about.html",
-      "mainEntity": {
-        "@type": "Organization",
-        "name": "GeoSite Intel, LLC",
-        "url": "https://geositeintel.com/",
-        "logo": "https://geositeintel.com/GeoSite_Intel_Logo_Transparent.png?v=20260910-1",
-        "description": "Independent real estate mapping and risk intelligence that combines GIS, property records, environmental information, terrain, drainage, and historical imagery for decision support."
-      }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About GSI and GeoSite Intel LLC - information services spanning GeoSite Intelligence, Data Intelligence, and Business Automation.">
+  <title>About | GSI - GeoSite Intel LLC</title>
+  <style>
+    :root{
+      --navy:#07111c;--navy2:#0b1724;--panel:#102033;--panel2:#14283d;
+      --ink:#f1f6f6;--muted:#b8c6cb;--muted2:#8fa2aa;--teal:#54bbb4;
+      --teal2:#79d1cb;--green:#4c9e72;--sand:#c9ae78;--line:rgba(255,255,255,.12);
+      --shadow:0 20px 55px rgba(0,0,0,.32);--max:1120px;
+      --sans:"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif
     }
-  </script>
-<style id="geosite-background-safety">
-    html body {
-      background: linear-gradient(180deg, #07111c, #0b1724 48%, #0f1d2c) !important;
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);font-family:var(--sans);background:radial-gradient(circle at 88% 12%,rgba(84,187,180,.12),transparent 30%),linear-gradient(180deg,var(--navy),var(--navy2) 50%,#0e1d2b);line-height:1.65}
+    a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
+    .shell{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+    .topbar{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(7,17,28,.92);backdrop-filter:blur(14px)}
+    .topbar-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand-logo{width:46px;height:46px;border-radius:12px;overflow:hidden;background:#f4f7f5;border:1px solid rgba(255,255,255,.15)}
+    .brand-logo img{width:100%;height:100%;object-fit:cover}
+    .brand-text{display:flex;flex-direction:column;line-height:1.1}
+    .brand-text strong{font-size:1.3rem;letter-spacing:.05em}
+    .brand-text span{font-size:.73rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
+    nav{display:flex;align-items:center;gap:18px;font-size:.88rem;color:var(--muted)}
+    nav a:hover,nav a[aria-current="page"]{color:var(--ink)}
+    .nav-contact{padding:9px 13px;border:1px solid rgba(84,187,180,.42);border-radius:999px;color:var(--teal2)}
+    .hero{padding:82px 0 46px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--teal2);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:28px;height:2px;background:linear-gradient(90deg,var(--teal),var(--green))}
+    h1{font-size:clamp(2.8rem,7vw,5.4rem);line-height:.98;letter-spacing:-.05em;margin:18px 0 22px;max-width:900px}
+    h1 span{color:var(--teal2)}
+    .lead{max-width:860px;color:var(--muted);font-size:clamp(1.06rem,1.8vw,1.22rem)}
+    .section{padding:42px 0}
+    .intro-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:start}
+    .panel{padding:28px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(160deg,rgba(20,40,61,.92),rgba(12,28,43,.94));box-shadow:0 14px 38px rgba(0,0,0,.18)}
+    h2{font-size:clamp(1.9rem,4vw,3rem);line-height:1.08;letter-spacing:-.035em;margin:0 0 16px}
+    h3{margin:0 0 9px;font-size:1.25rem} p{color:var(--muted)}
+    .statement{font-size:1.15rem;color:var(--ink);font-weight:700}
+    .service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
+    .service-card{padding:24px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.025)}
+    .service-card .label{color:var(--teal2);font-size:.74rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
+    .service-card p{margin-bottom:0}
+    .mission{margin:26px 0 0;padding:30px;border:1px solid rgba(201,174,120,.22);border-radius:18px;background:rgba(201,174,120,.055);text-align:center}
+    .mission strong{display:block;font-size:clamp(1.8rem,4vw,3rem);line-height:1.08;margin-bottom:10px}
+    .tagline{color:var(--sand);font-weight:800}
+    .cta{margin:42px 0 72px;padding:30px;border:1px solid rgba(84,187,180,.26);border-radius:18px;background:rgba(84,187,180,.07);display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .cta h2{margin-bottom:8px;font-size:1.8rem}.cta p{margin:0}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border-radius:12px;background:linear-gradient(135deg,var(--teal),var(--green));color:#061219;font-weight:850;white-space:nowrap}
+    footer{border-top:1px solid var(--line);padding:28px 0 36px;color:var(--muted2);font-size:.88rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-links{display:flex;gap:16px;flex-wrap:wrap}
+    @media(max-width:860px){
+      .topbar-inner{min-height:auto;padding:9px 0;flex-wrap:wrap}
+      nav{order:3;width:100%;overflow-x:auto;white-space:nowrap;gap:16px;padding:6px 0 2px;scrollbar-width:thin}
+      nav a{flex:0 0 auto}
+      .intro-grid,.service-grid{grid-template-columns:1fr}
     }
-
-    html body::before {
-      content: "";
-      position: fixed;
-      inset: 72px 0 0;
-      z-index: 0;
-      pointer-events: none;
-      opacity: 0.12;
-      background: url("./GeoSite_Intel_Logo_Transparent.png?v=20260910-1")
-        center 115px / min(1050px, 88vw) auto no-repeat !important;
-    }
-
-    html body .page-hero {
-      background: rgba(16, 31, 48, 0.82) !important;
-      background-image: none !important;
-    }
-
-    html body .page-hero::before,
-    html body .page-hero::after {
-      content: none !important;
-      background: none !important;
-    }
-
-    @media (max-width: 620px) {
-      html body::before {
-        inset: 64px 0 0;
-        background-position: center 80px !important;
-        background-size: 92vw auto !important;
-      }
-    }
+    @media(max-width:560px){.shell{width:min(100% - 22px,var(--max))}.brand-text span{display:none}.hero{padding-top:46px}.cta{align-items:flex-start;flex-direction:column}}
   </style>
 </head>
-<body class="page-about">
-<div class="topbar">
-<div class="topbar-inner">
-<button aria-controls="site-drawer" aria-expanded="false" aria-label="Open menu" class="hamburger" id="hamburger" type="button">
-<span class="lines"><span class="bar"></span></span>
-</button>
-<a class="topbar-brand" href="index.html">
-<img alt="GeoSite Intel, LLC  -  Property and Land Research" class="topbar-logo" height="48" src="./GeoSite_Intel_Logo_Transparent.png?v=20260910-1" style="display:block;width:126px;max-width:100%;max-height:48px;height:auto;object-fit:contain" width="126"/>
-</a>
-</div>
-</div>
-<div class="overlay" id="overlay"></div>
-<aside aria-label="Site menu" class="drawer" id="site-drawer">
-<header>
-<a class="drawer-brand" href="index.html">
-<img alt="GeoSite Intel, LLC  -  Property and Land Research" class="drawer-logo" height="90" src="./GeoSite_Intel_Logo_Transparent.png?v=20260910-1" style="display:block;width:235px;max-width:100%;height:auto;object-fit:contain" width="235"/>
-</a>
-<div class="drawer-subtitle">Real Estate Mapping &amp; Risk Intelligence</div>
-</header>
-<nav aria-label="Main site navigation">
-<a href="index.html">Home</a>
-<a href="index.html#services">Property Services</a><a href="environmental-due-diligence.html">Due Diligence Support</a>
-<a href="land-property-intelligence.html">Land Research</a>
-<a href="portfolio.html">Property Examples</a>
-<a href="reviews.html">Reviews</a>
-<a href="hire.html#estimateForm">Request Estimate</a>
-<a aria-current="page" href="about.html">About</a>
-<a href="mailto:info@geositeintel.com">Contact</a>
-</nav>
-</aside>
-<main class="page-shell">
-<section aria-labelledby="about-title" class="panel page-hero">
-<div class="eyebrow">
-        real estate mapping • risk screening • spatial intelligence
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="index.html" aria-label="GSI home">
+        <span class="brand-logo"><img src="GSI_Contour_G.jpg" alt="GSI contour G logo"></span>
+        <span class="brand-text"><strong>GSI</strong><span>GeoSite Intel LLC</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="land-property-intelligence.html">GeoSite Intelligence</a>
+        <a href="data-intelligence.html">Data Intelligence</a>
+        <a href="business-automation.html">Business Automation</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a class="nav-contact" href="mailto:info@geositeintel.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero"><div class="shell">
+      <div class="eyebrow">About GSI</div>
+      <h1>Complex information.<br><span>Made more useful.</span></h1>
+      <p class="lead">GeoSite Intel LLC began with geospatial analysis, environmental research, planning, and data. GSI now applies that same intelligence-driven approach to a broader range of information problems.</p>
+    </div></section>
+    <section class="section"><div class="shell intro-grid">
+      <div>
+        <h2>Intelligence starts with understanding the information.</h2>
+        <p class="statement">GSI helps turn complicated, scattered, or difficult-to-use information into something structured, understandable, and actionable.</p>
+        <p>The work combines spatial intelligence, data organization, research, visualization, and technical problem-solving. The goal is not simply to produce another map, spreadsheet, or report. It is to help clients understand what they have, identify what matters, and use information more effectively.</p>
+        <p>That may mean evaluating a parcel of land, organizing years of files and records, cleaning and structuring a dataset, building a clearer workflow, or developing tools that reduce repetitive work.</p>
       </div>
-<h1 id="about-title">About GeoSite Intel, LLC</h1>
-<p class="hero-copy">
-        GeoSite Intel, LLC is an independent real estate mapping and risk intelligence company. It helps clients understand mapped property conditions, potential constraints, and questions worth investigating before an important decision.
-      </p>
-<div class="logo-plaque">
-<img alt="GeoSite Intel, LLC  -  Property and Land Research" src="./GeoSite_Intel_Logo_Transparent.png?v=20260910-1"/>
-</div>
-<p class="hero-copy">
-        A listing, tax card, or online property map only tells part of the story. GeoSite Intel, LLC brings together parcel records, terrain, drainage, flood and wetland context, environmental information, historical imagery, and surrounding land activity. The result is decision-focused analysis for buyers, owners, investors, developers, brokers, and other property professionals.
-      </p>
-<ul class="feature-list">
-<li>Property intelligence and risk screening</li>
-<li>Early checks for environmental and land concerns</li>
-<li>Review of past aerial images and maps</li>
-<li>Side-by-side property comparisons</li>
-<li>Clear maps made for each question</li>
-<li>Flexible research and mapping help</li>
-<li>Development and site-feasibility screening</li><li>Environmental due diligence &amp; compliance support</li><li>Automated GIS and report QA/QC</li></ul>
-<div class="notice"><strong>Service note:</strong> GeoSite provides screening-level research, mapping, due diligence support, and QA/QC. This work does not replace a boundary survey, engineering opinion, legal advice, jurisdictional wetland delineation, formal Phase I Environmental Site Assessment, permit decision, or other licensed/regulatory determination when one is required.</div>
-</section>
-<section aria-labelledby="purpose-title" class="panel">
-<div class="section-heading">
-<h2 id="purpose-title">Why GeoSite Intel, LLC Exists</h2>
-</div>
-<div class="about-copy">
-<p>
-          Property information is often scattered across tax records, online
-          maps, environmental databases, aerial images, and local planning
-          sources. Looking at only one source can leave important questions
-          unanswered.
-        </p>
-<p>
-          GeoSite Intel, LLC brings the most useful available information together
-          in one focused review. Maps, property records, land shape and
-          elevation, drainage, environmental information, past aerial images,
-          and nearby land activity can be compared as parts of the same story.
-        </p>
-<p>
-          Each project is built around a real property question. Findings are
-          explained in everyday language, important limits are stated clearly,
-          and the final maps are designed to support the next decision.
-        </p>
-</div>
-<div class="statement">
-        Useful property intelligence should do more than produce an attractive map.
-        It should answer a real question, explain what the available information
-        can and cannot confirm, and show what deserves a closer look next.
+      <aside class="panel">
+        <h3>What connects the work?</h3>
+        <p><strong>How can this information be made more useful?</strong></p>
+        <p>From geographic data to business records, GSI looks for structure, relationships, risks, patterns, and opportunities that may be difficult to see at first glance.</p>
+      </aside>
+    </div></section>
+    <section class="section"><div class="shell">
+      <h2>Three service areas. One information-focused approach.</h2>
+      <div class="service-grid">
+        <article class="service-card"><div class="label">GeoSite Intelligence</div><h3>Land, Mapping &amp; Site Analysis</h3><p>Property research, professional mapping, environmental screening, planning context, terrain and drainage analysis, land-use review, and decision-focused site intelligence.</p></article>
+        <article class="service-card"><div class="label">Data Intelligence</div><h3>Organization &amp; Data Clarity</h3><p>Cleaning, organizing, structuring, documenting, and improving complex or scattered data so information is easier to find, understand, manage, and use.</p></article>
+        <article class="service-card"><div class="label">Business Automation</div><h3>Workflows &amp; Repeatable Tools</h3><p>Practical automation and repeatable workflows designed to reduce manual steps, improve consistency, and make information-heavy work more efficient.</p></article>
       </div>
-</section>
-<section aria-labelledby="approach-title" class="panel">
-<div class="section-heading">
-<h2 id="approach-title">How GeoSite Research Works</h2>
-<p>
-          Every project begins with the decision that needs to be made. GeoSite
-          then identifies the most useful available information and builds a
-          focused review instead of delivering a generic stack of maps.
-        </p>
-</div>
-<div class="card-grid">
-<article class="info-card">
-<h3>Start With the Question</h3>
-<p>
-            The research plan is built around the property question, the most
-            important concerns, and how the property may be used.
-          </p>
-</article>
-<article class="info-card">
-<h3>Look at the Full Picture</h3>
-<p>
-            Property records, land conditions, environmental information, and
-            aerial images are compared to reveal useful connections.
-          </p>
-</article>
-<article class="info-card">
-<h3>Explain the Next Steps</h3>
-<p>
-            Each project includes professional maps, plain-language findings,
-            a clear explanation of what the data cannot confirm, and useful
-            follow-up questions.
-          </p>
-</article>
-</div>
-</section>
-<section aria-labelledby="contact-title" class="panel cta-panel">
-<h2 id="contact-title">Have a Property Question?</h2>
-<p>
-        Send the address, property identification number, or listing link and
-        describe the question. GeoSite will explain what information is
-        available, what work would be most useful, the expected delivery time,
-        and the estimated price.
-      </p>
-<div class="button-row">
-<a class="button primary" href="hire.html#estimateForm">
-          Request an Estimate
-        </a>
-<a class="button secondary" href="portfolio.html">
-          View Property Examples
-        </a>
-<a class="button secondary" href="mailto:info@geositeintel.com">
-          Email GeoSite
-        </a>
-</div>
-</section>
-<footer class="site-footer">
-<div>
-        © 2026 GeoSite Intel, LLC · Real Estate Mapping &amp; Risk Intelligence
-      </div>
-<nav aria-label="Footer navigation" class="footer-links">
-<a href="index.html">Home</a>
-<a href="index.html#services">Services</a><a href="environmental-due-diligence.html">Due Diligence Support</a>
-<a href="land-property-intelligence.html">Land Research</a>
-<a href="portfolio.html">Property Examples</a>
-<a href="reviews.html">Reviews</a>
-<a href="hire.html#estimateForm">Request Estimate</a>
-<a href="mailto:info@geositeintel.com">Contact</a>
-</nav>
-</footer>
-</main>
-<script>
-    (() => {
-      const button = document.getElementById("hamburger");
-      const drawer = document.getElementById("site-drawer");
-      const overlay = document.getElementById("overlay");
-
-      function openDrawer() {
-        drawer.classList.add("open");
-        overlay.classList.add("open");
-        button.setAttribute("aria-expanded", "true");
-        button.setAttribute("aria-label", "Close menu");
-        document.documentElement.style.overflow = "hidden";
-      }
-
-      function closeDrawer() {
-        drawer.classList.remove("open");
-        overlay.classList.remove("open");
-        button.setAttribute("aria-expanded", "false");
-        button.setAttribute("aria-label", "Open menu");
-        document.documentElement.style.overflow = "";
-      }
-
-      button.addEventListener("click", () => {
-        if (drawer.classList.contains("open")) {
-          closeDrawer();
-        } else {
-          openDrawer();
-        }
-      });
-
-      overlay.addEventListener("click", closeDrawer);
-
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") closeDrawer();
-      });
-
-      drawer.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", closeDrawer);
-      });
-    })();
-  </script>
+      <div class="mission"><strong>Find the signal in the noise.</strong><p>Whether the question involves land, documents, a dataset, or an inefficient workflow, the goal is to turn information into something that supports better decisions.</p><div class="tagline">See beyond the property line.</div></div>
+      <div class="cta"><div><h2>Have information that needs to make more sense?</h2><p>Tell GSI what you are working with and what you need to understand, organize, or improve.</p></div><a class="button" href="mailto:info@geositeintel.com">Email GSI</a></div>
+    </div></section>
+  </main>
+  <footer><div class="shell footer-inner"><div>© 2026 GeoSite Intel LLC · GSI</div><div class="footer-links"><a href="index.html">Home</a><a href="land-property-intelligence.html">GeoSite Intelligence</a><a href="data-intelligence.html">Data Intelligence</a><a href="business-automation.html">Business Automation</a><a href="mailto:info@geositeintel.com">Contact</a></div></div></footer>
 </body>
 </html>

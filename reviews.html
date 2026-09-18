@@ -1,28 +1,41 @@
+<!-- reviews.html | GeoSite Intel client feedback -->
 <!DOCTYPE html>
-<!-- reviews.html | GeoSite Intel, LLC client feedback -->
-
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Client Reviews &amp; Feedback | GeoSite Intel, LLC</title>
-<meta content="Read verified GeoSite Intel, LLC client feedback or share an experience with property research, early environmental review, and professional mapping services." name="description"/>
-<meta content="#0b1724" name="theme-color"/>
-<link href="https://geositeintel.com/reviews.html" rel="canonical"/>
-<link href="./site.css?v=20260910-1" rel="stylesheet"/>
-<link href="./GeoSite_Intel_Favicon.png?v=20260810-4" rel="icon" type="image/png"/>
-<meta content="Client Reviews &amp; Feedback | GeoSite Intel, LLC" property="og:title"/>
-<meta content="Verified feedback about GeoSite Intel, LLC property research and professional mapping services." property="og:description"/>
-<meta content="https://geositeintel.com/GeoSite_Intel_Social.png?v=20260810-4" property="og:image"/>
-<meta content="https://geositeintel.com/reviews.html" property="og:url"/>
-<meta content="website" property="og:type"/>
-<meta content="GeoSite Intel, LLC" property="og:site_name"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Client Reviews &amp; Feedback | GeoSite Intel, LLC" name="twitter:title"/>
-<meta content="Read verified client feedback or share your experience with GeoSite Intel, LLC." name="twitter:description"/>
-<meta content="https://geositeintel.com/GeoSite_Intel_Social.png?v=20260810-4" name="twitter:image"/>
-<style id="geosite-background-safety">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Client Reviews &amp; Feedback | GeoSite Intel</title>
+
+  <meta
+    name="description"
+    content="Read verified GeoSite Intel client feedback or share an experience with property research, early environmental review, and professional mapping services."
+  >
+
+  <meta name="theme-color" content="#0b1724">
+  <link rel="canonical" href="https://geositeintel.com/reviews.html">
+  <link rel="stylesheet" href="./site.css?v=20260918-4">
+
+  <link rel="icon" type="image/png" href="./GeoSite_Intel_Favicon.png?v=20260810-4">
+
+  <meta property="og:title" content="Client Reviews &amp; Feedback | GeoSite Intel">
+  <meta
+    property="og:description"
+    content="Verified feedback about GeoSite Intel property research and professional mapping services."
+  >
+  <meta property="og:image" content="https://geositeintel.com/GeoSite_Intel_Social.png?v=20260810-4">
+  <meta property="og:url" content="https://geositeintel.com/reviews.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GeoSite Intel">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Client Reviews &amp; Feedback | GeoSite Intel">
+  <meta
+    name="twitter:description"
+    content="Read verified client feedback or share your experience with GeoSite Intel."
+  >
+  <meta name="twitter:image" content="https://geositeintel.com/GeoSite_Intel_Social.png?v=20260810-4">
+  <style id="geosite-background-safety">
     html body {
       background: linear-gradient(180deg, #07111c, #0b1724 48%, #0f1d2c) !important;
     }
@@ -34,7 +47,7 @@
       z-index: 0;
       pointer-events: none;
       opacity: 0.12;
-      background: url("./GeoSite_Intel_Logo_Transparent.png?v=20260910-1")
+      background: url("./GeoSite_Intel_Logo_Transparent.png?v=20260810-8")
         center 115px / min(1050px, 88vw) auto no-repeat !important;
     }
 
@@ -57,227 +70,372 @@
       }
     }
   </style>
+
+
+  <style id="gsi-umbrella-header-v4">
+    /* GSI umbrella header - keeps global navigation visible while preserving the GeoSite-specific drawer */
+    .topbar-inner{
+      width:min(1220px,calc(100% - 24px))!important;
+      justify-content:flex-start!important;
+      gap:14px!important;
+    }
+    .gsi-top-start{display:flex;align-items:center;gap:11px;flex:0 0 auto}
+    .gsi-global-brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;min-width:0}
+    .gsi-global-brand:hover{text-decoration:none}
+    .gsi-global-mark{
+      display:block;width:44px;height:44px;overflow:hidden;flex:0 0 44px;
+      border:1px solid rgba(255,255,255,.15);border-radius:12px;background:#f4f7f5
+    }
+    .gsi-global-mark img{width:100%;height:100%;object-fit:cover}
+    .gsi-global-copy{display:flex;flex-direction:column;line-height:1.02}
+    .gsi-global-copy strong{color:var(--ink);font-size:1.17rem;letter-spacing:.055em}
+    .gsi-global-copy span{margin-top:4px;color:var(--muted2);font-size:.67rem;letter-spacing:.07em;text-transform:uppercase}
+    .gsi-global-nav{
+      display:flex;align-items:center;gap:15px;margin-left:auto;min-width:0;
+      color:var(--muted);font-size:.82rem
+    }
+    .gsi-global-nav a{flex:0 0 auto;padding:7px 0;color:inherit;text-decoration:none}
+    .gsi-global-nav a:hover,.gsi-global-nav a[aria-current="page"]{color:var(--ink);text-decoration:none}
+    .gsi-global-nav .gsi-contact{
+      padding:8px 12px;border:1px solid rgba(86,185,180,.38);
+      border-radius:999px;color:var(--accent)
+    }
+    @media(max-width:1000px){
+      .gsi-global-nav{gap:10px;font-size:.75rem}
+      .gsi-global-copy span{display:none}
+    }
+    @media(max-width:760px){
+      body{padding-top:116px!important}
+      .topbar{height:116px!important}
+      .topbar-inner{
+        height:116px!important;flex-wrap:wrap!important;align-content:center!important;
+        gap:7px 11px!important;padding:6px 0!important
+      }
+      .gsi-global-nav{
+        order:3;width:100%;margin-left:0;overflow-x:auto;white-space:nowrap;
+        gap:16px;padding:0 2px 3px;scrollbar-width:thin
+      }
+      .drawer{inset:116px auto 0 0!important}
+    }
+  </style>
+
 </head>
+
 <body class="page-reviews">
-<div class="topbar">
-<div class="topbar-inner">
-<button aria-controls="site-drawer" aria-expanded="false" aria-label="Open menu" class="hamburger" id="hamburger" type="button">
-<span class="lines"><span class="bar"></span></span>
-</button>
-<a class="topbar-brand" href="index.html">
-<img alt="GeoSite Intel, LLC  -  Property and Land Research" class="topbar-logo" height="48" src="./GeoSite_Intel_Logo_Transparent.png?v=20260910-1" style="display:block;width:126px;max-width:100%;max-height:48px;height:auto;object-fit:contain" width="126"/>
-</a>
-</div>
-</div>
-<div class="overlay" id="overlay"></div>
-<aside aria-label="Site menu" class="drawer" id="site-drawer">
-<header>
-<a class="drawer-brand" href="index.html">
-<img alt="GeoSite Intel, LLC  -  Property and Land Research" class="drawer-logo" height="90" src="./GeoSite_Intel_Logo_Transparent.png?v=20260910-1" style="display:block;width:235px;max-width:100%;height:auto;object-fit:contain" width="235"/>
-</a>
-<div class="drawer-subtitle">Real Estate Mapping &amp; Risk Intelligence</div>
-</header>
-<nav aria-label="Main site navigation">
-<a href="index.html">Home</a>
-<a href="index.html#services">Property Services</a><a href="environmental-due-diligence.html">Due Diligence Support</a>
-<a href="land-property-intelligence.html">Land Research</a>
-<a href="portfolio.html">Property Examples</a>
-<a aria-current="page" href="reviews.html">Reviews</a>
-<a href="hire.html#estimateForm">Request Estimate</a>
-<a href="about.html">About</a>
-<a href="mailto:info@geositeintel.com">Contact</a>
-</nav>
-</aside>
-<main class="page-shell">
-<section aria-labelledby="reviews-title" class="panel page-hero">
-<div class="eyebrow">
+  
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="gsi-top-start">
+        <button
+          class="hamburger"
+          id="hamburger"
+          type="button"
+          aria-label="Open GeoSite Intelligence menu"
+          aria-controls="site-drawer"
+          aria-expanded="false"
+        >
+          <span class="lines"><span class="bar"></span></span>
+        </button>
+
+        <a class="gsi-global-brand" href="index.html" aria-label="GSI home">
+          <span class="gsi-global-mark">
+            <img src="./GSI_Contour_G.jpg" alt="GSI contour G logo">
+          </span>
+          <span class="gsi-global-copy">
+            <strong>GSI</strong>
+            <span>GeoSite Intel LLC</span>
+          </span>
+        </a>
+      </div>
+
+      <nav class="gsi-global-nav" aria-label="GSI main navigation">
+        <a href="index.html">Home</a>
+        <a href="land-property-intelligence.html" aria-current="page">GeoSite Intelligence</a>
+        <a href="data-intelligence.html">Data Intelligence</a>
+        <a href="business-automation.html">Business Automation</a>
+        <a href="about.html">About</a>
+        <a class="gsi-contact" href="mailto:info@geositeintel.com">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="drawer" id="site-drawer" aria-label="GeoSite Intelligence menu">
+    <header>
+      <a class="drawer-brand" href="land-property-intelligence.html">
+        <img
+          class="drawer-logo"
+          src="./GeoSite_Intel_Logo_Transparent.png?v=20260810-8"
+          alt="GeoSite Intel — Property and Land Research"
+          width="235"
+          height="72"
+          style="display:block;width:235px;max-width:100%;height:auto;object-fit:contain"
+        >
+      </a>
+      <div class="drawer-subtitle">GeoSite Intelligence - property, land, and planning services</div>
+    </header>
+
+    <nav aria-label="GeoSite Intelligence navigation">
+      <a href="land-property-intelligence.html">GeoSite Overview</a>
+      <a href="land-property-intelligence.html#advanced-analysis">Advanced Land Analysis</a>
+      <a href="drainage-watershed-analysis.html">Drainage &amp; Watershed</a>
+      <a href="land-cover-development-change-analysis.html">Land Cover &amp; Change</a>
+      <a href="portfolio.html">Property Examples</a>
+      <a href="reviews.html" aria-current="page">Reviews</a>
+      <a href="hire.html#estimateForm">Request Estimate</a>
+    </nav>
+  </aside>
+
+  <main class="page-shell">
+    <section class="panel page-hero" aria-labelledby="reviews-title">
+      <div class="eyebrow">
         verified feedback • client permission • honest experiences
       </div>
-<h1 id="reviews-title">Client Reviews &amp; Feedback</h1>
-<p class="hero-copy">
+
+      <h1 id="reviews-title">Client Reviews &amp; Feedback</h1>
+
+      <p class="hero-copy">
         Helpful property research depends on trust, clear communication, and
         honest expectations. This page is designed to share verified client
         experiences and give completed-project clients a simple way to provide
         feedback.
       </p>
-<div class="review-promise">
-<article class="info-card">
-<h3>Verified Clients</h3>
-<p>
+
+      <div class="review-promise">
+        <article class="info-card">
+          <h3>Verified Clients</h3>
+          <p>
             Public reviews are connected to completed GeoSite work rather than
             anonymous or purchased testimonials.
           </p>
-</article>
-<article class="info-card">
-<h3>Permission First</h3>
-<p>
+        </article>
+
+        <article class="info-card">
+          <h3>Permission First</h3>
+          <p>
             Feedback is published only when the client gives permission and
             chooses how their name should appear.
           </p>
-</article>
-<article class="info-card">
-<h3>Honest Presentation</h3>
-<p>
+        </article>
+
+        <article class="info-card">
+          <h3>Honest Presentation</h3>
+          <p>
             Reviews will not be invented or changed to make claims beyond the
             client’s actual experience.
           </p>
-</article>
-</div>
-</section>
-<section aria-labelledby="published-title" class="panel">
-<div class="section-heading">
-<h2 id="published-title">Published Client Reviews</h2>
-<p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="published-title">
+      <div class="section-heading">
+        <h2 id="published-title">Published Client Reviews</h2>
+        <p>
           Approved feedback from completed GeoSite projects will be added here.
         </p>
-</div>
-<div class="review-placeholder">
-        GeoSite Intel, LLC is building its verified client-review archive. No
+      </div>
+
+      <div class="review-placeholder">
+        GeoSite Intel is building its verified client-review archive. No
         placeholder names, fabricated ratings, or invented testimonials will be
         displayed. Completed-project feedback will be added here only after the
         client approves publication.
       </div>
-</section>
-<section aria-labelledby="feedback-title" class="panel">
-<div class="section-heading">
-<h2 id="feedback-title">Share Your Experience</h2>
-<p>
+    </section>
+
+    <section class="panel" aria-labelledby="feedback-title">
+      <div class="section-heading">
+        <h2 id="feedback-title">Share Your Experience</h2>
+        <p>
           If GeoSite completed work for you, use this form to submit a review or
           private feedback. Your email is used only to verify the project and
           contact you if clarification is needed.
         </p>
-</div>
-<form action="https://formspree.io/f/xyznngpw" method="POST">
-<input name="_subject" type="hidden" value="New GeoSite Intel, LLC client review"/>
-<input name="source" type="hidden" value="reviews-page"/>
-<input name="page" type="hidden" value="reviews.html"/>
-<div aria-hidden="true" class="hp-field">
-<label for="reviewWebsite">Leave this field blank</label>
-<input autocomplete="off" id="reviewWebsite" name="_gotcha" tabindex="-1" type="text"/>
-</div>
-<div class="form-grid">
-<div class="field">
-<label for="reviewName">
+      </div>
+
+      <form action="https://formspree.io/f/xyznngpw" method="POST">
+        <input
+          type="hidden"
+          name="_subject"
+          value="New GeoSite Intel client review"
+        >
+        <input type="hidden" name="source" value="reviews-page">
+        <input type="hidden" name="page" value="reviews.html">
+
+        <div class="hp-field" aria-hidden="true">
+          <label for="reviewWebsite">Leave this field blank</label>
+          <input
+            id="reviewWebsite"
+            name="_gotcha"
+            type="text"
+            tabindex="-1"
+            autocomplete="off"
+          >
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="reviewName">
               Your name<span class="required">*</span>
-</label>
-<input autocomplete="name" id="reviewName" name="name" required="" type="text"/>
-</div>
-<div class="field">
-<label for="reviewEmail">
+            </label>
+            <input
+              id="reviewName"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="reviewEmail">
               Email<span class="required">*</span>
-</label>
-<input autocomplete="email" id="reviewEmail" name="_replyto" required="" type="email"/>
-</div>
-</div>
-<div class="form-grid field">
-<div class="field">
-<label for="reviewRole">Your role</label>
-<select id="reviewRole" name="client_role">
-<option selected="" value="">Select an option</option>
-<option value="buyer">Buyer</option>
-<option value="owner">Property or land owner</option>
-<option value="agent">Real estate professional</option>
-<option value="investor">Investor</option>
-<option value="organization">Business or organization</option>
-<option value="other">Other</option>
-</select>
-</div>
-<div class="field">
-<label for="reviewService">Service received</label>
-<select id="reviewService" name="service">
-<option selected="" value="">Select an option</option>
-<option value="property-research">Property or parcel research</option>
-<option value="environmental-terrain">
+            </label>
+            <input
+              id="reviewEmail"
+              name="_replyto"
+              type="email"
+              autocomplete="email"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="form-grid field">
+          <div class="field">
+            <label for="reviewRole">Your role</label>
+            <select id="reviewRole" name="client_role">
+              <option value="" selected>Select an option</option>
+              <option value="buyer">Buyer</option>
+              <option value="owner">Property or land owner</option>
+              <option value="agent">Real estate professional</option>
+              <option value="investor">Investor</option>
+              <option value="organization">Business or organization</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="reviewService">Service received</label>
+            <select id="reviewService" name="service">
+              <option value="" selected>Select an option</option>
+              <option value="property-research">Property or parcel research</option>
+              <option value="environmental-terrain">
                 Early environmental and terrain review
               </option>
-<option value="historical-imagery">Historical imagery review</option>
-<option value="property-comparison">Property comparison</option>
-<option value="custom-map">Professional custom map</option>
-<option value="gis-support">Custom GIS or project support</option>
-</select>
-</div>
-</div>
-<div class="form-grid field">
-<div class="field">
-<label for="rating">
+              <option value="historical-imagery">Historical imagery review</option>
+              <option value="property-comparison">Property comparison</option>
+              <option value="custom-map">Professional custom map</option>
+              <option value="gis-support">Custom GIS or project support</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid field">
+          <div class="field">
+            <label for="rating">
               Overall rating<span class="required">*</span>
-</label>
-<select id="rating" name="rating" required="">
-<option disabled="" selected="" value="">Select a rating</option>
-<option value="5">5  -  Excellent</option>
-<option value="4">4  -  Very good</option>
-<option value="3">3  -  Good</option>
-<option value="2">2  -  Needs improvement</option>
-<option value="1">1  -  Poor</option>
-</select>
-</div>
-<div class="field">
-<label for="displayName">Preferred published display name</label>
-<select id="displayName" name="display_preference">
-<option value="full-name">Full name</option>
-<option selected="" value="first-last-initial">
+            </label>
+            <select id="rating" name="rating" required>
+              <option value="" selected disabled>Select a rating</option>
+              <option value="5">5 — Excellent</option>
+              <option value="4">4 — Very good</option>
+              <option value="3">3 — Good</option>
+              <option value="2">2 — Needs improvement</option>
+              <option value="1">1 — Poor</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="displayName">Preferred published display name</label>
+            <select id="displayName" name="display_preference">
+              <option value="full-name">Full name</option>
+              <option value="first-last-initial" selected>
                 First name and last initial
               </option>
-<option value="first-name">First name only</option>
-<option value="anonymous">Anonymous client</option>
-</select>
-</div>
-</div>
-<div class="field">
-<label for="reviewText">
+              <option value="first-name">First name only</option>
+              <option value="anonymous">Anonymous client</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="reviewText">
             Your review or feedback<span class="required">*</span>
-</label>
-<textarea id="reviewText" name="review" placeholder="What did GeoSite help you understand? How was the communication, map, report, or overall experience?" required=""></textarea>
-</div>
-<div class="checkbox-field">
-<input id="publishPermission" name="permission_to_publish" type="checkbox" value="yes"/>
-<label for="publishPermission">
-            Allow GeoSite Intel, LLC to publish this feedback using the display-name
+          </label>
+          <textarea
+            id="reviewText"
+            name="review"
+            required
+            placeholder="What did GeoSite help you understand? How was the communication, map, report, or overall experience?"
+          ></textarea>
+        </div>
+
+        <div class="checkbox-field">
+          <input
+            id="publishPermission"
+            name="permission_to_publish"
+            type="checkbox"
+            value="yes"
+          >
+          <label for="publishPermission">
+            Allow GeoSite Intel to publish this feedback using the display-name
             preference selected above. Feedback submitted without permission
             will remain private.
           </label>
-</div>
-<div class="submit-row">
-<button class="button primary" type="submit">Submit Feedback</button>
-<p class="privacy-note">
+        </div>
+
+        <div class="submit-row">
+          <button class="button primary" type="submit">Submit Feedback</button>
+
+          <p class="privacy-note">
             GeoSite may contact you to verify the project or confirm wording
             before publication. Sensitive property details will not be included
             in a public review without specific permission.
           </p>
-</div>
-</form>
-</section>
-<section aria-labelledby="review-cta-title" class="panel cta-panel">
-<h2 id="review-cta-title">Considering GeoSite for a Property Question?</h2>
-<p>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel cta-panel" aria-labelledby="review-cta-title">
+      <h2 id="review-cta-title">Considering GeoSite for a Property Question?</h2>
+
+      <p>
         Review the property examples to see how location-based evidence is organized,
         or send your location and question to request a focused estimate.
       </p>
-<div class="button-row">
-<a class="button primary" href="hire.html#estimateForm">
+
+      <div class="button-row">
+        <a class="button primary" href="hire.html#estimateForm">
           Request an Estimate
         </a>
-<a class="button secondary" href="portfolio.html">
+        <a class="button secondary" href="portfolio.html">
           View Property Examples
         </a>
-</div>
-</section>
-<footer class="site-footer">
-<div>
-        © 2026 GeoSite Intel, LLC · Real Estate Mapping &amp; Risk Intelligence
       </div>
-<nav aria-label="Footer navigation" class="footer-links">
-<a href="index.html">Home</a>
-<a href="index.html#services">Services</a><a href="environmental-due-diligence.html">Due Diligence Support</a>
-<a href="land-property-intelligence.html">Land Research</a>
-<a href="portfolio.html">Property Examples</a>
-<a href="hire.html#estimateForm">Request Estimate</a>
-<a href="about.html">About</a>
-<a href="mailto:info@geositeintel.com">Contact</a>
-</nav>
-</footer>
-</main>
-<script>
+    </section>
+
+    <footer class="site-footer">
+      <div>
+        © 2026 GeoSite Intel · Property &amp; Land Research · Environmental Mapping
+      </div>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="land-property-intelligence.html">Land Research</a>
+        <a href="portfolio.html">Property Examples</a>
+        <a href="hire.html#estimateForm">Request Estimate</a>
+        <a href="about.html">About</a>
+        <a href="mailto:info@geositeintel.com">Contact</a>
+      </nav>
+    </footer>
+  </main>
+
+  <script>
     (() => {
       const button = document.getElementById("hamburger");
       const drawer = document.getElementById("site-drawer");

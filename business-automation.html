@@ -25,14 +25,27 @@
     @media(max-width:940px){nav{gap:12px;font-size:.82rem}}
     @media(max-width:860px){.hero-grid,.fit-grid{grid-template-columns:1fr}.service-grid,.process{grid-template-columns:1fr 1fr}nav{display:none;position:absolute;top:72px;left:16px;right:16px;padding:16px;flex-direction:column;align-items:stretch;border:1px solid var(--line);border-radius:14px;background:#0a1825;box-shadow:var(--shadow)}nav.open{display:flex}.menu-button{display:block}.service-visual{max-width:620px}}
     @media(max-width:580px){.shell{width:min(100% - 22px,var(--max))}.brand-text span{display:none}.hero{padding-top:38px}.service-grid,.process{grid-template-columns:1fr}.service-visual{min-height:300px}.service-visual img{min-height:300px}.cta{padding:27px 20px}}
+
+    /* 2026-09-18 v4: keep umbrella navigation visible and service artwork uncropped */
+    .menu-button{display:none!important}
+    .service-visual{display:flex;align-items:center;justify-content:center}.service-visual img{height:auto!important;max-height:100%!important;object-fit:contain!important;object-position:center!important;min-height:0!important}
+    @media(max-width:860px){
+      .topbar-inner{min-height:auto;padding:9px 0;flex-wrap:wrap}
+      nav#mainNav{
+        display:flex!important;position:static!important;order:3;width:100%;
+        padding:6px 0 2px!important;flex-direction:row!important;align-items:center!important;
+        gap:16px!important;border:0!important;border-radius:0!important;background:transparent!important;
+        box-shadow:none!important;overflow-x:auto;white-space:nowrap;scrollbar-width:thin
+      }
+      nav#mainNav a{flex:0 0 auto}
+    }
+
 </style>
 </head>
 <body>
   <header class="topbar"><div class="shell topbar-inner">
     <a class="brand" href="index.html" aria-label="GSI home"><span class="brand-logo"><img src="GSI_Contour_G.jpg" alt="GSI contour G logo"></span><span class="brand-text"><strong>GSI</strong><span>GeoSite Intel LLC</span></span></a>
-    <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button>
-    
-      <nav id="mainNav" aria-label="Main navigation">
+<nav id="mainNav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="land-property-intelligence.html">GeoSite Intelligence</a>
         <a href="data-intelligence.html">Data Intelligence</a>
@@ -48,7 +61,7 @@
         <p>GSI Business Automation is being built for small businesses and professionals who spend too much time repeating the same digital steps. The focus is practical, lightweight automation - not oversized software - so recurring document, spreadsheet, file, and data tasks can move more efficiently.</p>
         <div class="button-row"><a class="button primary" href="mailto:info@geositeintel.com?subject=GSI%20Business%20Automation%20Early%20Inquiry">Ask about a workflow</a><a class="button secondary" href="#services">Preview services</a></div>
       </div>
-      <aside class="service-visual" aria-label="Workflows · Processing · Efficiency"><img src="business-automation-visual.jpg" alt="Digital workflow linking files, documents, data, processing, and organized output"><div class="visual-caption">Workflows · Processing · Efficiency</div></aside>
+      <aside class="service-visual" aria-label="Workflows · Processing · Efficiency"><img src="business-automation-visual.svg?v=20260918-4" alt="Digital workflow linking files, documents, data, processing, and organized output"><div class="visual-caption">Workflows · Processing · Efficiency</div></aside>
     </div></section>
 
     <section class="content" id="services"><div class="shell"><div class="section-heading"><div class="kicker">Service preview</div><h2>Automation for the work that keeps repeating.</h2><p>Business Automation will focus on well-defined digital processes where reducing manual steps can save time, improve consistency, or make recurring work easier to manage.</p></div>

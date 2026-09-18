@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+<title id="title">Business automation workflow</title>
+<desc id="desc">A four-step workflow moving from Input Data to Process to Organize to Output.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#162531"/>
+    <stop offset="0.55" stop-color="#0d1d2a"/>
+    <stop offset="1" stop-color="#142d3c"/>
+  </linearGradient>
+  <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#182b36"/>
+    <stop offset="1" stop-color="#0a1721"/>
+  </linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#54bbb4"/>
+    <stop offset="1" stop-color="#79d1cb"/>
+  </linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="9" stdDeviation="10" flood-color="#000" flood-opacity=".28"/>
+  </filter>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+    <path d="M0,0 L10,5 L0,10 Z" fill="#65c9c1"/>
+  </marker>
+</defs>
+
+<rect width="1200" height="560" rx="28" fill="url(#bg)"/>
+<circle cx="1040" cy="110" r="170" fill="#5bc2ba" opacity=".05"/>
+<circle cx="250" cy="80" r="210" fill="#ffffff" opacity=".025"/>
+
+<!-- arrows -->
+<path d="M280 245 H348" stroke="#65c9c1" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M560 245 H628" stroke="#65c9c1" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M840 245 H908" stroke="#65c9c1" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+<!-- step cards -->
+<g filter="url(#shadow)">
+  <rect x="72" y="86" width="208" height="318" rx="28" fill="url(#panel)" stroke="#55bdb5" stroke-width="3"/>
+  <rect x="352" y="86" width="208" height="318" rx="28" fill="url(#panel)" stroke="#55bdb5" stroke-width="3"/>
+  <rect x="632" y="86" width="208" height="318" rx="28" fill="url(#panel)" stroke="#55bdb5" stroke-width="3"/>
+  <rect x="912" y="86" width="208" height="318" rx="28" fill="url(#panel)" stroke="#55bdb5" stroke-width="3"/>
+</g>
+
+<!-- small top accents -->
+<path d="M160 112 l16 18 16-18" fill="none" stroke="#54bbb4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="456" cy="120" r="7" fill="#54bbb4"/>
+<path d="M720 112 l16 18 16-18" fill="none" stroke="#54bbb4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="1016" cy="120" r="7" fill="#54bbb4"/>
+
+<!-- document icon -->
+<g stroke="#f3f7f7" fill="none" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M130 160 h70 l24 24 v78 h-94 z"/>
+  <path d="M200 160 v30 h28"/>
+  <path d="M149 210 h54 M149 234 h54"/>
+</g>
+
+<!-- gear icon -->
+<g transform="translate(456 212)" stroke="#f3f7f7" fill="none" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+  <circle r="41"/>
+  <circle r="13"/>
+  <path d="M0-62 v18 M0 44 v18 M-62 0 h18 M44 0 h18 M-44-44 l13 13 M31 31 l13 13 M44-44 l-13 13 M-31 31 l-13 13"/>
+</g>
+
+<!-- folder icon -->
+<g stroke="#f3f7f7" fill="none" stroke-width="8" stroke-linejoin="round">
+  <path d="M684 176 h46 l18 18 h70 v74 h-134 z"/>
+  <path d="M690 202 h122"/>
+</g>
+<rect x="725" y="214" width="50" height="26" rx="8" fill="#54bbb4"/>
+<path d="M736 227 h28" stroke="#0a1721" stroke-width="6" stroke-linecap="round"/>
+
+<!-- output target / locator icon -->
+<g stroke="#f3f7f7" fill="none" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="1016" cy="210" r="53"/>
+  <path d="M1016 170 c-22 0-34 15-34 31 0 23 34 56 34 56s34-33 34-56c0-16-12-31-34-31z"/>
+  <circle cx="1016" cy="201" r="9"/>
+</g>
+
+<!-- labels -->
+<g fill="#f3f7f7" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="700">
+  <text x="176" y="330" font-size="33">Input</text>
+  <text x="176" y="369" font-size="33">Data</text>
+  <text x="456" y="350" font-size="33">Process</text>
+  <text x="736" y="350" font-size="33">Organize</text>
+  <text x="1016" y="350" font-size="33">Output</text>
+</g>
+
+<!-- lower dark band -->
+<path d="M0 440 H1200 V560 H0 Z" fill="#0b2230"/>
+<path d="M0 440 H1200" stroke="#355769" stroke-width="2" opacity=".7"/>
+
+<!-- gear badge -->
+<g transform="translate(120 468)">
+  <circle cx="0" cy="0" r="82" fill="#0d4050" stroke="#5dc7bf" stroke-width="4"/>
+  <g stroke="#7ad4cc" fill="none" stroke-width="12" stroke-linecap="round">
+    <circle r="31"/>
+    <path d="M0-54 v15 M0 39 v15 M-54 0 h15 M39 0 h15 M-38-38 l11 11 M27 27 l11 11 M38-38 l-11 11 M-27 27 l-11 11"/>
+  </g>
+</g>
+</svg>

@@ -1,30 +1,39 @@
-GSI WEBSITE UPDATE - SERVICE-SPECIFIC VISUALS
+GSI WEBSITE UPDATE - V4 NAVIGATION + IMAGE FIXES
 Updated: September 18, 2026
 
-WHAT THIS PACKAGE DOES
-- Keeps GSI as the umbrella brand.
-- Replaces the repeated large G logo on the Home, Data Intelligence, and Business Automation hero areas with service-specific visuals.
-- Adds a related image to each service card on the Home page.
-- Keeps the small GSI logo in the header only.
-- Keeps Data Intelligence pricing and the 100% remote / digital-files-only language.
-- Keeps Business Automation marked as Coming Next.
-- Uses normal hyphens only in website copy. No em dashes or en dashes are used.
+THIS VERSION FIXES THE ISSUES SHOWN IN THE SCREENSHOTS
+- Home hero photo now shows the full "See beyond the property line." wording instead of cropping it.
+- GeoSite Intelligence and Data Intelligence card images now show the complete circular icons.
+- Business Automation now uses a clean vector SVG workflow graphic, so it stays sharp instead of becoming blurry when enlarged.
+- The GSI umbrella navigation stays visible across Home, GeoSite Intelligence, Data Intelligence, Business Automation, and About.
+- GeoSite pages keep a hamburger menu, but that drawer is now specifically for GeoSite Intelligence services and property/land pages.
+- GeoSite subpages included here also receive the umbrella navigation so visitors do not fall back into the old hamburger-only header.
+- About is updated to reflect the broader GSI structure.
 
-FILES TO UPLOAD TO GITHUB
+UPLOAD / REPLACE THESE FILES
 1. GSI_Contour_G.jpg
-2. home-information-visual.jpg
-3. geosite-intelligence-visual.jpg
-4. data-intelligence-visual.jpg
-5. business-automation-visual.jpg
-6. data-intelligence.html
-7. business-automation.html
-8. index.html (upload/replace LAST)
+2. GeoSite_Intel_Logo_Transparent.png
+3. home-information-visual.jpg
+4. geosite-intelligence-visual.jpg
+5. data-intelligence-visual.jpg
+6. business-automation-visual.svg
+7. land-property-intelligence.html
+8. portfolio.html
+9. reviews.html
+10. hire.html
+11. drainage-watershed-analysis.html
+12. land-cover-development-change-analysis.html
+13. data-intelligence.html
+14. business-automation.html
+15. about.html
+16. index.html - REPLACE THIS LAST
 
-OPTIONAL / REFERENCE
-- Topographic GeoSite Intel Logo.png is included so the approved full GeoSite logo remains available for the existing GeoSite/About pages. If that file already exists in your repository under the same or another name, you do not need to replace it.
+DO NOT REPLACE
+- site.css is intentionally NOT included. The GeoSite pages carry the new umbrella-header styling directly in their HTML, which avoids overwriting the existing shared stylesheet.
 
 IMPORTANT
-- Do NOT delete your existing GeoSite Intelligence pages, maps, About page, Services pages, or other existing website assets.
-- The navigation assumes the existing GeoSite landing page is named land-property-intelligence.html and the existing About page is about.html.
-- If those filenames differ in your live repository, update those links before publishing.
-- All new service work is presented as remote. Data Intelligence states that GSI accepts digital files only.
+- Keep your existing maps, reports, demo PDFs, property-example images, favicon, social image, and other site assets already in the repository.
+- Existing GeoSite Intelligence URLs are preserved so old links continue working.
+- Contact links use info@geositeintel.com.
+- The top navigation is the GSI umbrella navigation.
+- The hamburger on GeoSite pages is the page-family menu for GeoSite Intelligence services and examples.
