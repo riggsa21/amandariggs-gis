@@ -1,815 +1,253 @@
-<!DOCTYPE html>
-<!-- index.html | GeoSite Intel, LLC | property intelligence and advanced land analytics -->
-
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>GeoSite Intel, LLC | Real Estate Mapping &amp; Risk Intelligence</title>
-<meta content="Property risk screening and real estate intelligence for buyers, investors, developers, landowners, brokers, and property professionals. Identify mapped constraints, site opportunities, and questions to verify before committing capital." name="description"/>
-<meta content="#0b1724" name="theme-color"/>
-<meta content="index, follow, max-snippet:-1, max-image-preview:large" name="robots"/>
-<link href="https://geositeintel.com/" rel="canonical"/>
-<link href="./site.css?v=20260910-1" rel="stylesheet"/>
-<link href="https://geositeintel.com/sitemap.xml" rel="sitemap" type="application/xml"/>
-<link href="./GeoSite_Intel_Favicon.png?v=20260810-4" rel="icon" type="image/png"/>
-<meta content="GeoSite Intel, LLC | Real Estate Mapping &amp; Risk Intelligence" property="og:title"/>
-<meta content="Property risk screening, site feasibility, environmental context, terrain, drainage, and advanced land analysis for better-informed real estate decisions." property="og:description"/>
-<meta content="https://geositeintel.com/GeoSite_Intel_Social.png?v=20260810-4" property="og:image"/>
-<meta content="https://geositeintel.com/" property="og:url"/>
-<meta content="website" property="og:type"/>
-<meta content="GeoSite Intel, LLC" property="og:site_name"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="GeoSite Intel, LLC | Real Estate Mapping &amp; Risk Intelligence" name="twitter:title"/>
-<meta content="Property risk screening, site feasibility, environmental context, terrain, drainage, and advanced land analysis for better-informed real estate decisions." name="twitter:description"/>
-<meta content="https://geositeintel.com/GeoSite_Intel_Social.png?v=20260810-4" name="twitter:image"/>
-<script type="application/ld+json">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GSI | GeoSite Intelligence, Data Intelligence & Business Automation</title>
+  <meta name="description" content="GSI helps businesses and individuals turn complex information into usable results through GeoSite Intelligence, Data Intelligence, and Business Automation services.">
+  <meta name="theme-color" content="#0b1724">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="canonical" href="https://geositeintel.com/">
+
+  <meta property="og:title" content="GSI | Information Services for Land, Data & Workflows">
+  <meta property="og:description" content="GeoSite Intelligence, Data Intelligence, and Business Automation through GeoSite Intel LLC.">
+  <meta property="og:url" content="https://geositeintel.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GSI | GeoSite Intel LLC">
+
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "GeoSite Intel, LLC",
+    "name": "GeoSite Intel LLC",
+    "alternateName": "GSI",
     "url": "https://geositeintel.com/",
-    "logo": "https://geositeintel.com/GeoSite_Intel_Logo_Transparent.png?v=20260910-1",
-    "description": "Property intelligence, development/site feasibility, environmental due diligence support, GIS QA/QC, and advanced land analytics for real estate and land decisions.",
-    "knowsAbout": [
-      "Real Estate Property Intelligence",
-      "Land Due Diligence",
-      "Geographic Information Systems",
-      "Environmental Screening",
-      "Environmental Due Diligence Support",
-      "Development Site Feasibility",
-      "GIS Quality Assurance and Quality Control",
-      "Terrain and Watershed Analysis",
-      "Drainage Modeling",
-      "Land Cover Change Detection",
-      "Spatial Analysis",
-      "Remote Sensing",
-      "Cartography"
-    ]
+    "email": "info@geositeintel.com",
+    "description": "Information services company providing GeoSite Intelligence, Data Intelligence, and Business Automation services."
   }
   </script>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "GeoSite Intel, LLC",
-    "alternateName": "GeoSite Intel, LLC Property Intelligence",
-    "url": "https://geositeintel.com/",
-    "description": "Property intelligence and advanced land analytics for clearer real estate and land decisions."
-  }
-  </script>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Real Estate Mapping and Risk Intelligence",
-    "provider": {
-      "@type": "Organization",
-      "name": "GeoSite Intel, LLC",
-      "url": "https://geositeintel.com/"
-    },
-    "serviceType": "Real estate property intelligence, development feasibility, environmental due diligence support, GIS QA/QC, and advanced land analysis",
-    "description": "Property-focused risk screening and spatial analysis combining parcel records, environmental constraints, terrain, drainage and watershed modeling, land-cover change, imagery, and spatial measurements to support better-informed real estate and land decisions.",
-    "url": "https://geositeintel.com/land-property-intelligence.html"
-  }
-  </script>
-<style>
-    /* Homepage-specific additions. Shared GeoSite styles remain in site.css. */
 
-    .home-hero .hero-copy {
-      max-width: 900px;
-      font-size: 1.04rem;
+  <style>
+    :root {
+      --navy:#07111c; --navy2:#0b1724; --panel:#102033; --panel2:#14283d;
+      --ink:#f1f6f6; --muted:#b8c6cb; --muted2:#8fa2aa;
+      --teal:#54bbb4; --teal2:#79d1cb; --green:#4c9e72; --sand:#c9ae78;
+      --line:rgba(255,255,255,.12); --shadow:0 20px 55px rgba(0,0,0,.32);
+      --max:1180px; --radius:22px;
+      --sans:"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
     }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);font-family:var(--sans);background:
+      radial-gradient(circle at 85% 12%,rgba(84,187,180,.12),transparent 30%),
+      linear-gradient(180deg,var(--navy),var(--navy2) 48%,#0e1d2b);line-height:1.6}
+    a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
+    .shell{width:min(var(--max),calc(100% - 32px));margin:0 auto}
 
-    .hero-mark {
-      color: var(--accent-light);
-    }
+    .topbar{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(7,17,28,.92);backdrop-filter:blur(14px)}
+    .topbar-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand-logo{width:46px;height:46px;border-radius:12px;overflow:hidden;background:#f4f7f5;border:1px solid rgba(255,255,255,.15)}
+    .brand-logo img{width:100%;height:100%;object-fit:cover}
+    .brand-text{display:flex;flex-direction:column;line-height:1.1}.brand-text strong{font-size:1.3rem;letter-spacing:.05em}
+    .brand-text span{font-size:.73rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:4px}
+    nav{display:flex;align-items:center;gap:18px;font-size:.88rem;color:var(--muted)} nav a:hover{color:var(--ink)}
+    .nav-contact{padding:9px 13px;border:1px solid rgba(84,187,180,.42);border-radius:999px;color:var(--teal2)}
+    .menu-button{display:none;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);padding:8px 11px;font-size:1rem}
 
-    .hero-proof {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-      margin: 21px auto 0;
-      padding: 0;
-      list-style: none;
-    }
+    .hero{padding:78px 0 46px}.hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:54px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--teal2);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:28px;height:2px;background:linear-gradient(90deg,var(--teal),var(--green))}
+    h1{font-size:clamp(2.8rem,7vw,5.7rem);line-height:.95;letter-spacing:-.055em;margin:18px 0 22px}
+    h1 span{display:block;color:var(--teal2)}
+    .hero-copy{max-width:790px;color:var(--muted);font-size:clamp(1.05rem,1.8vw,1.25rem);line-height:1.72}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border-radius:12px;border:1px solid var(--line);font-weight:800;transition:.18s ease}
+    .button.primary{background:linear-gradient(135deg,var(--teal),var(--green));color:#061219;border-color:transparent}
+    .button.secondary{background:rgba(255,255,255,.035);color:var(--ink)}
+    .button:hover{transform:translateY(-1px);box-shadow:0 9px 24px rgba(0,0,0,.23)}
 
-    .hero-proof li {
-      padding: 7px 10px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(7, 17, 28, 0.38);
-      color: var(--muted);
-      font-size: 0.84rem;
-      font-weight: 760;
-    }
+    .brand-card{position:relative;padding:30px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,rgba(20,40,61,.96),rgba(10,25,38,.92));box-shadow:var(--shadow);overflow:hidden}
+    .brand-card:before{content:"";position:absolute;inset:auto -100px -110px auto;width:330px;height:330px;border-radius:50%;background:radial-gradient(circle,rgba(84,187,180,.18),transparent 68%)}
+    .big-mark{width:145px;height:145px;margin:0 auto 24px;border-radius:28px;overflow:hidden;background:#f4f7f5;box-shadow:0 12px 34px rgba(0,0,0,.25)}
+    .big-mark img{width:100%;height:100%;object-fit:cover}.brand-card h2{text-align:center;font-size:2.2rem;letter-spacing:.08em;margin:0}
+    .legal{text-align:center;color:var(--muted);margin:2px 0 24px;font-size:.91rem}
+    .brand-pill-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}.brand-pill{padding:7px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.8rem;background:rgba(255,255,255,.025)}
 
-    .decision-callout {
-      max-width: 900px;
-      margin: 22px auto 0;
-      padding: 16px 18px;
-      border: 1px solid rgba(200, 173, 119, 0.25);
-      border-radius: 14px;
-      background: rgba(200, 173, 119, 0.065);
-      color: var(--muted);
-      line-height: 1.68;
-    }
+    .intro{padding:22px 0 26px}.intro-box{padding:28px 30px;border:1px solid rgba(201,174,120,.22);border-radius:18px;background:rgba(201,174,120,.055);color:var(--muted);font-size:1.03rem}.intro-box strong{color:var(--ink)}
 
-    .decision-callout strong {
-      color: var(--ink);
-    }
+    .services{padding:54px 0}.section-heading{max-width:820px;margin-bottom:26px}.kicker{color:var(--sand);font-size:.76rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+    h2{font-size:clamp(2rem,4vw,3.15rem);line-height:1.06;letter-spacing:-.035em;margin:8px 0 12px}.section-heading p{color:var(--muted);margin:0;font-size:1.05rem}
+    .division-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .division{position:relative;display:flex;flex-direction:column;min-height:470px;padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(160deg,rgba(20,40,61,.94),rgba(12,28,43,.94));overflow:hidden;box-shadow:0 14px 38px rgba(0,0,0,.18)}
+    .division:before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--teal),var(--green))}
+    .division.coming:before{background:linear-gradient(90deg,var(--sand),var(--teal))}
+    .division-label{color:var(--teal2);font-size:.76rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+    .status-pill{display:inline-flex;align-self:flex-start;margin:12px 0 1px;padding:5px 9px;border:1px solid rgba(201,174,120,.35);border-radius:999px;color:#ead8b1;background:rgba(201,174,120,.07);font-size:.7rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
+    .status-pill.new{border-color:rgba(84,187,180,.38);color:var(--teal2);background:rgba(84,187,180,.07)}
+    .division h3{font-size:clamp(1.55rem,2.5vw,2.2rem);line-height:1.08;margin:10px 0 12px}.division .sub{color:var(--sand);font-weight:700;margin-bottom:16px}
+    .division p{color:var(--muted);font-size:.97rem}.feature-list{display:grid;grid-template-columns:1fr;gap:8px;margin:20px 0 26px;padding:0;list-style:none}
+    .feature-list li{position:relative;padding-left:18px;color:#d9e5e7;font-size:.91rem}.feature-list li:before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--teal)}
+    .division-link{display:inline-flex;align-items:center;gap:7px;color:var(--teal2);font-weight:850;margin-top:auto}.coming .division-link{color:#e2c99b}
 
-    .service-card {
-      position: relative;
-      overflow: hidden;
-    }
+    .why{padding:20px 0 62px}.why-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.why-card{padding:22px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025)}
+    .why-card strong{display:block;margin-bottom:6px;font-size:1.02rem}.why-card span{color:var(--muted);font-size:.94rem}
 
-    .service-card::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, rgba(86, 185, 180, 0.58), transparent);
-    }
+    .cta{margin:18px 0 66px;padding:34px;border:1px solid rgba(84,187,180,.27);border-radius:22px;background:linear-gradient(135deg,rgba(84,187,180,.09),rgba(76,158,114,.06));text-align:center}.cta h2{margin-top:0}.cta p{max-width:720px;margin:0 auto 22px;color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:28px 0 36px;color:var(--muted2);font-size:.88rem}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footer-links{display:flex;gap:16px;flex-wrap:wrap}.footer-links a:hover{color:var(--ink)}
 
-    .service-label {
-      margin-bottom: 7px;
-      color: var(--sand);
-      font-family: var(--mono);
-      font-size: 0.76rem;
-      font-weight: 950;
-      letter-spacing: 0.065em;
-      text-transform: uppercase;
-    }
-
-    .service-link {
-      display: inline-block;
-      margin-top: 12px;
-      font-weight: 850;
-    }
-
-    .gis-explainer {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .gis-question,
-    .gis-answer {
-      padding: 21px;
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      background: var(--panel-strong);
-    }
-
-    .gis-question {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      border-color: rgba(200, 173, 119, 0.23);
-      background: rgba(200, 173, 119, 0.055);
-    }
-
-    .gis-kicker {
-      margin-bottom: 7px;
-      color: var(--sand);
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      font-weight: 950;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .gis-question h2 {
-      margin: 0;
-      font-size: clamp(1.45rem, 3vw, 2rem);
-    }
-
-    .gis-answer p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .gis-answer strong {
-      color: var(--ink);
-    }
-
-    .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(180px, 1fr));
-      gap: 12px;
-    }
-
-    .audience-card {
-      padding: 17px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(7, 17, 28, 0.34);
-      text-align: center;
-    }
-
-    .audience-card h3 {
-      margin: 0 0 6px;
-      font-size: 1rem;
-    }
-
-    .audience-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.58;
-    }
-
-    .work-anywhere {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 16px;
-    }
-
-    .location-card {
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      background: var(--panel-strong);
-    }
-
-    .location-card.field {
-      border-color: rgba(86, 185, 180, 0.25);
-      background: rgba(86, 185, 180, 0.055);
-    }
-
-    .location-card h3 {
-      margin: 0 0 8px;
-    }
-
-    .location-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .featured-example {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
-      gap: 0;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 17px;
-      background: var(--panel-strong);
-    }
-
-    .featured-example img {
-      width: 100%;
-      height: 100%;
-      min-height: 310px;
-      display: block;
-      object-fit: cover;
-      border-right: 1px solid var(--line);
-    }
-
-    .featured-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .featured-copy h3 {
-      margin: 0 0 9px;
-      font-size: clamp(1.3rem, 3vw, 1.7rem);
-    }
-
-    .featured-copy p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.72;
-    }
-
-    .featured-copy .button-row {
-      justify-content: flex-start;
-    }
-
-    .broader-support {
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(7, 17, 28, 0.34);
-      color: var(--muted);
-      line-height: 1.7;
-      text-align: center;
-    }
-
-    .broader-support strong {
-      color: var(--ink);
-    }
-
-    @media (max-width: 900px) {
-      .audience-grid {
-        grid-template-columns: repeat(2, minmax(200px, 1fr));
-      }
-
-      .featured-example {
-        grid-template-columns: 1fr;
-      }
-
-      .featured-example img {
-        min-height: 0;
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-    }
-
-    @media (max-width: 760px) {
-      .gis-explainer,
-      .work-anywhere {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .audience-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-<style id="geosite-background-safety">
-    html body {
-      background: linear-gradient(180deg, #07111c, #0b1724 48%, #0f1d2c) !important;
-    }
-
-    html body::before {
-      content: "";
-      position: fixed;
-      inset: 72px 0 0;
-      z-index: 0;
-      pointer-events: none;
-      opacity: 0.12;
-      background: url("./GeoSite_Intel_Logo_Transparent.png?v=20260910-1")
-        center 115px / min(1050px, 88vw) auto no-repeat !important;
-    }
-
-    html body .page-hero {
-      background: rgba(16, 31, 48, 0.82) !important;
-      background-image: none !important;
-    }
-
-    html body .page-hero::before,
-    html body .page-hero::after {
-      content: none !important;
-      background: none !important;
-    }
-
-    @media (max-width: 620px) {
-      html body::before {
-        inset: 64px 0 0;
-        background-position: center 80px !important;
-        background-size: 92vw auto !important;
-      }
-    }
+    @media (max-width:980px){.division-grid{grid-template-columns:1fr 1fr}.division:last-child{grid-column:1/-1;min-height:auto}}
+    @media (max-width:860px){.hero{padding-top:50px}.hero-grid{grid-template-columns:1fr}.hero-grid{gap:30px}.brand-card{max-width:520px}nav{display:none;position:absolute;top:72px;left:16px;right:16px;padding:16px;flex-direction:column;align-items:stretch;border:1px solid var(--line);border-radius:14px;background:#0a1825;box-shadow:var(--shadow)}nav.open{display:flex}.menu-button{display:block}.why-grid{grid-template-columns:1fr}}
+    @media (max-width:680px){.division-grid{grid-template-columns:1fr}.division:last-child{grid-column:auto}.division{min-height:auto}}
+    @media (max-width:560px){.shell{width:min(100% - 22px,var(--max))}.brand-text span{display:none}.hero{padding-top:38px}h1{font-size:clamp(2.65rem,15vw,4rem)}.brand-card{padding:24px 18px}.division{padding:24px}.intro-box{padding:22px}.cta{padding:28px 20px}}
   </style>
 </head>
-<body class="page-home">
-<div class="topbar">
-<div class="topbar-inner">
-<button aria-controls="site-drawer" aria-expanded="false" aria-label="Open menu" class="hamburger" id="hamburger" type="button">
-<span class="lines"><span class="bar"></span></span>
-</button>
-<a class="topbar-brand" href="index.html">
-<img alt="GeoSite Intel, LLC  -  Property and Land Research" class="topbar-logo" height="48" src="./GeoSite_Intel_Logo_Transparent.png?v=20260910-1" style="display:block;width:126px;max-width:100%;max-height:48px;height:auto;object-fit:contain" width="126"/>
-</a>
-</div>
-</div>
-<div class="overlay" id="overlay"></div>
-<aside aria-label="Site menu" class="drawer" id="site-drawer">
-<header>
-<a class="drawer-brand" href="index.html">
-<img alt="GeoSite Intel, LLC  -  Property and Land Research" class="drawer-logo" height="90" src="./GeoSite_Intel_Logo_Transparent.png?v=20260910-1" style="display:block;width:235px;max-width:100%;height:auto;object-fit:contain" width="235"/>
-</a>
-<div class="drawer-subtitle">Real Estate Mapping &amp; Risk Intelligence</div>
-</header>
-<nav aria-label="Main site navigation">
-<a aria-current="page" href="index.html">Home</a>
-<a href="#services">Property Services</a><a href="environmental-due-diligence.html">Due Diligence Support</a>
-<a href="land-property-intelligence.html">Land Research</a>
-<a href="portfolio.html">Property Examples</a>
-<a href="reviews.html">Reviews</a>
-<a href="hire.html#estimateForm">Send a Property</a>
-<a href="about.html">About</a>
-<a href="mailto:info@geositeintel.com">Contact</a>
-</nav>
-</aside>
-<main class="page-shell">
-<section aria-labelledby="home-title" class="panel page-hero home-hero">
-<div class="eyebrow">real estate mapping • risk screening • advanced land intelligence</div>
-<h1 id="home-title">
-        Know what the land is telling you <span class="hero-mark">before</span> you commit money.
-      </h1>
-<p class="hero-copy">GeoSite Intel, LLC provides property-focused GIS analysis, risk screening, and spatial intelligence for buyers, investors, developers, landowners, brokers, real estate professionals, and environmental teams. We combine parcel data, terrain, drainage, flood and wetland information, land cover, environmental context, historical imagery, and other location-based evidence to identify what could affect a property before serious time or money is committed.</p>
-<div class="button-row">
-<a class="button primary" href="hire.html#estimateForm">Send a Property</a>
-<a class="button secondary" href="land-property-intelligence.html">Explore Property Intelligence</a>
-<a class="button secondary" href="portfolio.html">View Analysis Examples</a>
-</div>
-<ul aria-label="GeoSite service highlights" class="hero-proof"><li>Property risk screening</li><li>Development &amp; site feasibility</li><li>Environmental due diligence support</li><li>Hydrology &amp; land-change analysis</li></ul>
-<div class="decision-callout">
-<strong>Considering a property?</strong> Start with an address, parcel number,
-        listing link, coordinates, or map. GeoSite builds the review around the actual
-        decision and the evidence available for that location - not a generic stack of layers.
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="index.html" aria-label="GSI home">
+        <span class="brand-logo"><img src="GSI_Contour_G.jpg" alt="GSI contour G logo"></span>
+        <span class="brand-text"><strong>GSI</strong><span>GeoSite Intel LLC</span></span>
+      </a>
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button>
+      <nav id="mainNav" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="land-property-intelligence.html">GeoSite Intelligence</a>
+        <a href="data-intelligence.html">Data Intelligence</a>
+        <a href="business-automation.html">Business Automation</a>
+        <a href="about.html">About</a>
+        <a class="nav-contact" href="mailto:info@geositeintel.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow">Information services for real-world work</div>
+          <h1>Turn information into <span>something useful.</span></h1>
+          <p class="hero-copy">
+            GSI helps businesses and individuals organize, understand, and use complex information — from land and planning intelligence to documents, spreadsheets, and the workflows that keep everyday work moving.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#services">Choose a service</a>
+            <a class="button secondary" href="mailto:info@geositeintel.com">Email GSI</a>
+          </div>
+        </div>
+
+        <aside class="brand-card" aria-label="GSI brand">
+          <div class="big-mark"><img src="GSI_Contour_G.jpg" alt="GSI contour G logo"></div>
+          <h2>GSI</h2>
+          <div class="legal">GeoSite Intel LLC</div>
+          <div class="brand-pill-row">
+            <span class="brand-pill">Land</span><span class="brand-pill">Planning</span><span class="brand-pill">Data</span><span class="brand-pill">Documents</span><span class="brand-pill">Workflows</span><span class="brand-pill">Automation</span>
+          </div>
+        </aside>
       </div>
-</section>
-<section aria-labelledby="quick-screen-title" class="panel quick-screen-panel">
-<div class="quick-screen-copy">
-<div class="gis-kicker">Low-friction first step</div>
-<h2 id="quick-screen-title">Parcel Quick Screen - $125</h2>
-<p>A focused first-pass screen for one property when the question is: <strong>is there anything here that deserves a closer look before I spend more?</strong></p>
-<ul class="quick-screen-list">
-<li>Mapped flood and wetland context</li>
-<li>Terrain, elevation, and drainage context</li>
-<li>Road/access and surrounding land-use context</li>
-<li>Soils, land cover, and other available property constraints</li>
-<li>Clear flags, limitations, and recommended next questions</li>
-</ul>
-<p class="quick-credit"><strong>Upgrade credit:</strong> if a deeper GeoSite report is approved within 7 days, the $125 Quick Screen fee is credited toward that project.</p>
-</div>
-<div aria-label="Parcel Quick Screen price" class="quick-screen-price">
-<span class="price-kicker">One parcel</span>
-<strong class="price-value">$125</strong>
-<span class="price-copy">screening-level review</span>
-<a class="button primary" href="hire.html#estimateForm">Send a Property</a>
-</div>
-</section>
-<section aria-labelledby="services-title" class="panel" id="services">
-<div class="section-heading">
-<h2 id="services-title">From property data to property decisions</h2>
-<p>Online maps can show where property features are located. GeoSite focuses on what those features may mean for the decision - what appears favorable, what may create risk or limitations, and what should be investigated or professionally verified next.</p>
-</div>
-<div class="card-grid"><article class="info-card service-card"><div class="service-label">Core Review</div><h3>Property Intelligence &amp; Risk Screening</h3><p>Bring parcel context, wetlands, flood information, soils, terrain, access, imagery, surrounding development, and other relevant evidence into one focused review of property opportunities, constraints, and next questions.</p><a class="service-link" href="land-property-intelligence.html">Explore property intelligence →</a></article><article class="info-card service-card"><div class="service-label">Development</div><h3>Development &amp; Site Feasibility</h3><p>Screen usable acreage, terrain, access, zoning/land-use context, utilities, drainage, environmental constraints, and other factors that may affect what a site can realistically become.</p><a class="service-link" href="land-property-intelligence.html#development-feasibility">Explore site feasibility →</a></article><article class="info-card service-card"><div class="service-label">Due Diligence</div><h3>Environmental Due Diligence &amp; Compliance Support</h3><p>Support environmental and property teams with regulatory/environmental screening, historical site intelligence, spatial research, Phase I ESA GIS support, and clearly documented limitations.</p><a class="service-link" href="environmental-due-diligence.html">Explore due diligence support →</a></article><article class="info-card service-card"><div class="service-label">QA / Automation</div><h3>Automated GIS &amp; Report QA-QC</h3><p>Pressure-test automated property outputs for wrong parcels, bad joins, questionable distances, missing records, inconsistent maps, source gaps, and other issues that polished automation can hide.</p><a class="service-link" href="environmental-due-diligence.html#qa-qc">See GIS / report QA-QC →</a></article><article class="info-card service-card"><div class="service-label">Hydrology</div><h3>Modeled Drainage &amp; Watershed Analysis</h3><p>Use terrain-derived drainage modeling to examine how a property relates to nearby flow paths, drainage corridors, and the larger watershed system.</p><a class="service-link" href="drainage-watershed-analysis.html">See the drainage package →</a></article><article class="info-card service-card"><div class="service-label">Change</div><h3>Land Cover &amp; Development Change</h3><p>Compare consistent land-cover data through time to quantify development expansion and broader landscape change around a property or watershed.</p><a class="service-link" href="land-cover-development-change-analysis.html">See the change package →</a></article></div>
-</section>
+    </section>
 
-<section aria-labelledby="due-diligence-education-title" class="panel education-split">
-<div class="education-copy">
-<div class="gis-kicker">Risk screening before the next commitment</div>
-<h2 id="due-diligence-education-title">Start With the Risk, Not Just the Acreage.</h2>
-<p>A listing can tell you how many acres are for sale. It may not tell you how much of the property appears usable, where water may concentrate, whether mapped flood or wetland conditions affect the site, or which environmental and development questions deserve verification. GeoSite brings those factors together before deeper professional due diligence begins.</p>
-<p>For commercial and development sites, the question becomes more useful than “how many acres are listed?” It becomes: <strong>what can this property realistically support, and what needs to be verified before committing capital?</strong></p>
-<a class="service-link" href="land-property-intelligence.html#development-feasibility">Explore development feasibility →</a>
-</div>
-<figure class="education-poster">
-<img alt="GeoSite due diligence infographic comparing larger rural acreage with a smaller parcel in a growing area" loading="lazy" src="./Due_Diligence_Reveals_Opportunity.png?v=20260909-1"/>
-<figcaption>Illustrative educational example - actual property conditions, zoning, costs, and development potential vary.</figcaption>
-</figure>
-</section><section aria-labelledby="advanced-analysis-title" class="panel" id="advanced-analysis">
-<div class="section-heading">
-<div class="gis-kicker">Advanced analysis packages</div>
-<h2 id="advanced-analysis-title">Go beyond the parcel outline.</h2>
-<p>
-          When a property question needs more than a standard screening, GeoSite can extend
-          the analysis into terrain-modeled drainage, watershed context, and measurable
-          landscape change.
-        </p>
-</div>
-<div class="analysis-package-grid">
-<article class="analysis-package-card">
-<img alt="Modeled drainage paths surrounding a subject parcel on aerial imagery" loading="lazy" src="gsi-hydro-parcel-drainage.png?v=20260827-1"/>
-<div class="analysis-package-body">
-<div class="service-label">Hydrology</div>
-<h3>Modeled Drainage &amp; Watershed Analysis</h3>
-<p>
-              Connect parcel-scale drainage relationships to the surrounding terrain and full
-              watershed so off-site water context is easier to see before deeper engineering work.
-            </p>
-<a class="service-link" href="drainage-watershed-analysis.html">Explore drainage &amp; watershed analysis →</a>
-</div>
-</article>
-<article class="analysis-package-card">
-<img alt="Land-cover map showing mapped development expansion around a subject parcel" loading="lazy" src="gsi-development-expansion.png?v=20260827-1"/>
-<div class="analysis-package-body">
-<div class="service-label">Landscape Change</div>
-<h3>Land Cover &amp; Development Change Analysis</h3>
-<p>
-              Compare land-cover conditions through time and quantify mapped development expansion
-              around a property while keeping the broader watershed context visible.
-            </p>
-<a class="service-link" href="land-cover-development-change-analysis.html">Explore land-cover change analysis →</a>
-</div>
-</article>
-</div>
-</section>
-<section aria-labelledby="demo-title" class="panel">
-<div class="completed-demo">
-<div class="completed-demo-copy">
-<div class="gis-kicker">Completed demonstration</div>
-<h2 id="demo-title">See what a full property intelligence review looks like.</h2>
-<p>
-            The 0 Mills Rd demonstration brings parcel records, current and historical imagery,
-            wetlands, soils, FEMA flood data, terrain, drainage, access, and surrounding land
-            context into one screening-level report. It also shows how an imagery-observed nearby
-            agricultural feature was investigated without claiming more than the evidence could support.
-          </p>
-<div class="button-row">
-<a class="button primary" href="property-intelligence-demo.html">Explore the Demo</a>
-<a class="button secondary" href="GeoSite_0_Mills_Rd_Property_Intelligence_Report.pdf">View Full PDF Report</a>
-</div>
-</div>
-<div>
-<div class="package-proof">
-<article><strong>13 pages</strong><span>Map-based property intelligence report</span></article>
-<article><strong>Multiple sources</strong><span>Environmental, terrain, imagery, parcel, and access context</span></article>
-<article><strong>Evidence first</strong><span>Findings, limitations, and practical next questions</span></article>
-</div>
-</div>
-</div>
-</section>
-<section aria-labelledby="gis-title" class="panel">
-<div class="gis-explainer">
-<div class="gis-question">
-<div class="gis-kicker">No GIS knowledge required</div>
-<h2 id="gis-title">What does GIS actually mean here?</h2>
-</div>
-<div class="gis-answer">
-<p>
-<strong>GIS stands for Geographic Information Systems.</strong> In practical
-            terms, it is a way to combine maps with layers of location-based information - such
-            as parcel boundaries, flood areas, wetlands, elevation, soils, roads, land cover,
-            and historical imagery - so patterns and relationships become easier to see.
-            GeoSite uses GIS as an investigative tool for land, then translates the findings
-            into clear maps and plain-language context.
-          </p>
-</div>
-</div>
-</section>
-<section aria-labelledby="language-title" class="panel language-guide" id="plain-language-guide">
-<div class="section-heading">
-<div class="gis-kicker">Plain-English guide</div>
-<h2 id="language-title">A few useful land-research terms</h2>
-<p>
-          No technical vocabulary is required to request help. These short
-          definitions explain the terms that may appear in a GeoSite review.
-        </p>
-</div>
-<div class="definition-grid">
-<article class="term-card">
-<div aria-hidden="true" class="term-symbol">□</div>
-<h3>Parcel</h3>
-<p>A legally recorded piece of land. A parcel number identifies it in local property and tax records.</p>
-</article>
-<article class="term-card">
-<div aria-hidden="true" class="term-symbol">⊞</div>
-<h3>GIS</h3>
-<p>A digital mapping system used to compare information connected to the same location.</p>
-</article>
-<article class="term-card">
-<div aria-hidden="true" class="term-symbol">◎</div>
-<h3>Early Review</h3>
-<p>A first review of available maps and records to flag questions that may need closer professional follow-up.</p>
-</article>
-<article class="term-card">
-<div aria-hidden="true" class="term-symbol">≋</div>
-<h3>Terrain &amp; Drainage</h3>
-<p>The shape and slope of the land and the likely direction water may move across it.</p>
-</article>
-<article class="term-card">
-<div aria-hidden="true" class="term-symbol">∴</div>
-<h3>LiDAR</h3>
-<p>Detailed elevation data created with laser measurements, often collected from an aircraft.</p>
-</article>
-<article class="term-card">
-<div aria-hidden="true" class="term-symbol">⌖</div>
-<h3>Field Check</h3>
-<p>An on-site visit used to compare mapped information with visible conditions on the ground.</p>
-</article>
-</div>
-</section>
-<section aria-labelledby="watershed-guide-title" class="panel watershed-guide" id="watershed-guide">
-<div class="watershed-guide-grid">
-<div class="watershed-guide-copy">
-<div class="gis-kicker">Watershed education</div>
-<h2 id="watershed-guide-title">What is a watershed - and why does HUC matter?</h2>
-<p>
-            A property sits inside a larger drainage system. Water moving across nearby ridges,
-            channels, and low areas can connect the parcel to conditions well beyond the property line.
-          </p>
-<p>
-            Hydrology datasets commonly organize watersheds by <strong>Hydrologic Unit Codes (HUCs)</strong>.
-            Those data names can look cryptic, but they help identify the correct watershed boundary and
-            connect property-scale questions to the larger system.
-          </p>
-<a class="service-link" href="drainage-watershed-analysis.html">Explore drainage &amp; watershed analysis →</a>
-</div>
-<figure class="watershed-guide-figure">
-<img alt="GeoSite Intel, LLC educational guide explaining watersheds and Hydrologic Unit Codes" loading="lazy" src="geosite-huc-watershed-explainer.png?v=20260905-1"/>
-<figcaption>Watershed Explained: From Ridge to River</figcaption>
-</figure>
-</div>
-</section>
-<section aria-labelledby="audience-title" class="panel">
-<div class="section-heading">
-<h2 id="audience-title">Built for people making decisions about land</h2>
-<p>
-          The starting point is the property question - not technical terminology.
-        </p>
-</div>
-<div class="audience-grid">
-<article class="audience-card">
-<h3>Land Buyers</h3>
-<p>Identify what deserves a closer look before making an offer or closing.</p>
-</article>
-<article class="audience-card">
-<h3>Investors</h3>
-<p>Screen opportunities, compare parcels, and investigate location-specific risk.</p>
-</article>
-<article class="audience-card">
-<h3>Real Estate Professionals</h3>
-<p>Add map-based and environmental context when a property raises unusual questions.</p>
-</article>
-<article class="audience-card">
-<h3>Developers &amp; Landowners</h3>
-<p>Organize site conditions and research questions before deeper professional review.</p>
-</article>
-</div>
-</section>
-<section aria-labelledby="location-title" class="panel">
-<div class="section-heading">
-<h2 id="location-title">The property does not need to be nearby</h2>
-<p>
-          Many projects can be completed remotely. When the work benefits from seeing
-          conditions on the ground, field documentation can be added to the project.
-        </p>
-</div>
-<div class="work-anywhere">
-<article class="location-card">
-<h3>Remote Property Research</h3>
-<p>
-            GeoSite can evaluate projects across locations when suitable parcel,
-            environmental, terrain, imagery, and other relevant data are available.
-            The research plan is adjusted to the question and the quality of the available information.
-          </p>
-</article>
-<article class="location-card field">
-<h3>Field Visits When They Add Value</h3>
-<p>
-            On-site photography, GPS data collection, visible-condition documentation,
-            and on-site checks may be added when remote research identifies features
-            that deserve a closer look or when a project specifically requires field context.
-          </p>
-</article>
-</div>
-</section>
-<section aria-labelledby="process-title" class="panel">
-<div class="section-heading">
-<h2 id="process-title">How property research works</h2>
-<p>A simple process centered on the decision the property needs to support.</p>
-</div>
-<div class="process-grid">
-<article class="process-step">
-<h3>Share the Property</h3>
-<p>
-            Send an address, parcel number, listing link, coordinates, or map along
-            with the intended use and the questions that need investigation.
-          </p>
-</article>
-<article class="process-step">
-<h3>Investigate the Evidence</h3>
-<p>
-            Relevant map, environmental, terrain, imagery, and record sources are
-            reviewed together to identify useful context, patterns, and potential concerns.
-          </p>
-</article>
-<article class="process-step">
-<h3>Use the Findings</h3>
-<p>
-            Receive the agreed-upon maps and research summary with clear observations,
-            data limitations, and practical questions for any next level of verification.
-          </p>
-</article>
-</div>
-</section>
-<section aria-labelledby="example-title" class="panel">
-<div class="section-heading">
-<h2 id="example-title">See what map-based research can reveal</h2>
-<p>
-          GeoSite demonstration projects show how terrain, drainage, imagery, and
-          surrounding context can be organized around practical property questions.
-        </p>
-</div>
-<article class="featured-example">
-<img alt="GeoSite Intel, LLC terrain and drainage property research example" loading="lazy" src="case_study_01_FrogLevel_Davenport.jpg?v=5"/>
-<div class="featured-copy">
-<div class="service-label">Property Research Example</div>
-<h3>Terrain &amp; Drainage Context</h3>
-<p>
-            High-resolution terrain, modeled runoff patterns, roads, buildings, and
-            surrounding land context can highlight low areas and concentrated-flow
-            signals that may not be obvious in listing photographs or a standard parcel viewer.
-          </p>
-<div class="button-row">
-<a class="button secondary" href="portfolio.html">View Property Examples</a>
-</div>
-</div>
-</article>
-</section>
-<section aria-labelledby="broader-title" class="panel">
-<div class="section-heading">
-<h2 id="broader-title">Property intelligence is the starting point - not the limit</h2>
-</div>
-<div class="broader-support">
-<strong>GeoSite also supports custom GIS, environmental, and location-analysis projects.</strong>
-        Advanced spatial analysis, aerial and satellite imagery, terrain and watershed
-        research, land-cover change, quantitative geoprocessing, data visualization,
-        and professional map design remain available when a project extends beyond a
-        standard property screening.
+    <section class="intro">
+      <div class="shell">
+        <div class="intro-box">
+          <strong>One company. Different information problems.</strong> Some projects start with a parcel, a development question, or environmental data. Others start with a stack of receipts, inconsistent spreadsheets, scanned documents, or a repetitive process that takes too much time. GSI applies the right information workflow to the problem in front of you.
+        </div>
       </div>
-</section>
-<section aria-labelledby="scope-title" class="panel">
-<div class="section-heading">
-<h2 id="scope-title">Useful early research without overstating what a map can prove</h2>
-<p>GeoSite provides screening-level GIS research, mapping, environmental due diligence support, and QA/QC. It does not itself provide a boundary survey, engineering opinion, legal opinion, jurisdictional wetland delineation, formal Phase I Environmental Site Assessment, regulatory approval, permit determination, or guarantee of buildability unless that service is separately provided by an appropriately qualified professional.</p>
-</div>
-<div class="scope-box">
-<strong>GeoSite Intel, LLC provides map-based research, early review,
-        professional mapping, and field observations when included in the project.</strong>
-        Services do not replace a boundary survey, title opinion, appraisal, engineering
-        evaluation, legal advice, permit approval, official flood determination,
-        jurisdictional wetland delineation, Phase I Environmental Site Assessment,
-        geotechnical evaluation, or other licensed or regulatory determination. GeoSite
-        does not guarantee that a property is buildable or suitable for a particular use.
+    </section>
+
+    <section class="services" id="services">
+      <div class="shell">
+        <div class="section-heading">
+          <div class="kicker">GSI service areas</div>
+          <h2>What do you need help with?</h2>
+          <p>Each service area has a distinct focus while operating through GeoSite Intel LLC under the GSI umbrella.</p>
+        </div>
+
+        <div class="division-grid">
+          <article class="division">
+            <div class="division-label">Land & planning</div>
+            <h3>GeoSite Intelligence</h3>
+            <div class="sub">See beyond the property line.</div>
+            <p>Property, planning, environmental, and spatial intelligence for buyers, landowners, real estate professionals, investors, and development decisions.</p>
+            <ul class="feature-list">
+              <li>Property intelligence</li><li>Planning & zoning context</li><li>Environmental screening</li><li>Terrain & drainage analysis</li><li>Land-cover change</li><li>Professional GIS mapping</li>
+            </ul>
+            <a class="division-link" href="land-property-intelligence.html">Explore GeoSite Intelligence →</a>
+          </article>
+
+          <article class="division">
+            <div class="division-label">Documents & data</div>
+            <span class="status-pill new">New service</span>
+            <h3>Data Intelligence</h3>
+            <div class="sub">Organize it. Structure it. Use it.</div>
+            <p>Practical support for small businesses and individuals who need scattered documents, spreadsheets, receipts, files, or records turned into organized, usable information.</p>
+            <ul class="feature-list">
+              <li>PDF & scan conversion</li><li>Receipt & invoice extraction</li><li>Spreadsheet cleanup</li><li>Data entry & organization</li><li>Digital file cleanup</li><li>Custom trackers & templates</li>
+            </ul>
+            <a class="division-link" href="data-intelligence.html">Explore Data Intelligence →</a>
+          </article>
+
+          <article class="division coming">
+            <div class="division-label">Workflows & systems</div>
+            <span class="status-pill">Coming next</span>
+            <h3>Business Automation</h3>
+            <div class="sub">Make repetitive work easier to repeat.</div>
+            <p>Lightweight automation for recurring digital tasks — designed to reduce manual steps, organize repeatable workflows, and make routine information processing more efficient.</p>
+            <ul class="feature-list">
+              <li>Spreadsheet workflows</li><li>Document & OCR processing</li><li>File processing & organization</li><li>Data transformation</li><li>Recurring reporting workflows</li><li>Custom lightweight tools</li>
+            </ul>
+            <a class="division-link" href="business-automation.html">Preview Business Automation →</a>
+          </article>
+        </div>
       </div>
-</section>
-<section aria-labelledby="cta-title" class="panel cta-panel">
-<h2 id="cta-title">Found a property worth investigating?</h2>
-<p>
-        Send the property location and the intended use. GeoSite can review the request,
-        identify an appropriate research plan, and determine which available information can
-        help answer the questions behind the decision.
-      </p>
-<div class="button-row">
-<a class="button primary" href="hire.html#estimateForm">Send a Property</a>
-<a class="button secondary" href="land-property-intelligence.html">See Land Research Services</a>
-<a class="button secondary" href="mailto:info@geositeintel.com">Email GeoSite</a>
-</div>
-</section>
-<footer class="site-footer">
-<div>
-        © 2026 GeoSite Intel, LLC · Real Estate Mapping &amp; Risk Intelligence
+    </section>
+
+    <section class="why">
+      <div class="shell">
+        <div class="section-heading">
+          <div class="kicker">The common thread</div>
+          <h2>Better structure. Clearer information. More useful next steps.</h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-card"><strong>Organize</strong><span>Bring scattered information into a usable structure.</span></div>
+          <div class="why-card"><strong>Analyze</strong><span>Identify patterns, relationships, gaps, and information that matters.</span></div>
+          <div class="why-card"><strong>Improve the workflow</strong><span>Build repeatable processes around work you need to do again.</span></div>
+        </div>
       </div>
-<nav aria-label="Footer navigation" class="footer-links">
-<a href="index.html">Home</a>
-<a href="#services">Services</a><a href="environmental-due-diligence.html">Due Diligence Support</a>
-<a href="land-property-intelligence.html">Land Research</a>
-<a href="portfolio.html">Property Examples</a>
-<a href="reviews.html">Reviews</a>
-<a href="hire.html#estimateForm">Send a Property</a>
-<a href="about.html">About</a>
-<a href="mailto:info@geositeintel.com">Contact</a>
-</nav>
-</footer>
-</main>
-<script>
-    (() => {
-      const button = document.getElementById("hamburger");
-      const drawer = document.getElementById("site-drawer");
-      const overlay = document.getElementById("overlay");
+    </section>
 
-      function openDrawer() {
-        drawer.classList.add("open");
-        overlay.classList.add("open");
-        button.setAttribute("aria-expanded", "true");
-        button.setAttribute("aria-label", "Close menu");
-        document.documentElement.style.overflow = "hidden";
-      }
+    <section class="shell cta" aria-labelledby="cta-title">
+      <h2 id="cta-title">Not sure which service fits?</h2>
+      <p>Send a short description of what you have and what you need it to become. If it fits GSI's current or upcoming services, we'll help define the next step.</p>
+      <div class="hero-actions" style="justify-content:center;margin-top:0">
+        <a class="button primary" href="mailto:info@geositeintel.com?subject=GSI%20Project%20Inquiry">Email info@geositeintel.com</a>
+      </div>
+    </section>
+  </main>
 
-      function closeDrawer() {
-        drawer.classList.remove("open");
-        overlay.classList.remove("open");
-        button.setAttribute("aria-expanded", "false");
-        button.setAttribute("aria-label", "Open menu");
-        document.documentElement.style.overflow = "";
-      }
+  <footer>
+    <div class="shell footer-inner">
+      <div>© 2026 GeoSite Intel LLC · GSI</div>
+      <div class="footer-links">
+        <a href="land-property-intelligence.html">GeoSite Intelligence</a>
+        <a href="data-intelligence.html">Data Intelligence</a>
+        <a href="business-automation.html">Business Automation</a>
+        <a href="about.html">About</a>
+        <a href="mailto:info@geositeintel.com">Contact</a>
+      </div>
+    </div>
+  </footer>
 
-      button.addEventListener("click", () => {
-        if (drawer.classList.contains("open")) {
-          closeDrawer();
-        } else {
-          openDrawer();
-        }
-      });
-
-      overlay.addEventListener("click", closeDrawer);
-
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") closeDrawer();
-      });
-
-      drawer.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", closeDrawer);
-      });
-    })();
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const mainNav = document.getElementById('mainNav');
+    menuButton?.addEventListener('click', () => {
+      const open = mainNav.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+    });
+    mainNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      menuButton?.setAttribute('aria-expanded','false');
+    }));
   </script>
 </body>
 </html>
