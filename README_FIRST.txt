@@ -1,4 +1,4 @@
-GSI WEBSITE — THREE-SERVICE UMBRELLA UPDATE
+GSI WEBSITE - THREE-SERVICE UMBRELLA UPDATE
 September 18, 2026
 
 PURPOSE
@@ -56,7 +56,12 @@ TAGLINE USE
 "See beyond the property line." stays with GeoSite Intelligence only.
 The GSI umbrella uses broader information-focused language.
 
-AFTER DEPLOYMENT — QUICK TEST
+
+DATA INTELLIGENCE PRICING
+-------------------------
+The Data Intelligence page now includes starting prices and clearly states that GSI is a remote-only service that accepts digital files only.
+
+AFTER DEPLOYMENT - QUICK TEST
 1. Open https://geositeintel.com/
 2. Check all three service cards.
 3. Open GeoSite Intelligence and confirm the existing land page still loads.
