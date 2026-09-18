@@ -66,12 +66,14 @@
     .button.secondary{background:rgba(255,255,255,.035);color:var(--ink)}
     .button:hover{transform:translateY(-1px);box-shadow:0 9px 24px rgba(0,0,0,.23)}
 
-    .brand-card{position:relative;padding:30px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,rgba(20,40,61,.96),rgba(10,25,38,.92));box-shadow:var(--shadow);overflow:hidden}
-    .brand-card:before{content:"";position:absolute;inset:auto -100px -110px auto;width:330px;height:330px;border-radius:50%;background:radial-gradient(circle,rgba(84,187,180,.18),transparent 68%)}
-    .big-mark{width:145px;height:145px;margin:0 auto 24px;border-radius:28px;overflow:hidden;background:#f4f7f5;box-shadow:0 12px 34px rgba(0,0,0,.25)}
-    .big-mark img{width:100%;height:100%;object-fit:cover}.brand-card h2{text-align:center;font-size:2.2rem;letter-spacing:.08em;margin:0}
-    .legal{text-align:center;color:var(--muted);margin:2px 0 24px;font-size:.91rem}
-    .brand-pill-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}.brand-pill{padding:7px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.8rem;background:rgba(255,255,255,.025)}
+    .hero-visual{position:relative;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,rgba(20,40,61,.96),rgba(10,25,38,.92));box-shadow:var(--shadow);overflow:hidden;min-height:430px}
+    .hero-visual img{width:100%;height:100%;min-height:430px;object-fit:cover;object-position:center}
+    .hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,17,28,.54));pointer-events:none}
+    .hero-visual-note{position:absolute;z-index:2;left:20px;bottom:18px;padding:9px 12px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(7,17,28,.76);backdrop-filter:blur(8px);color:#dce9ea;font-size:.78rem;font-weight:750;letter-spacing:.04em}
+
+    .division-image{height:178px;margin:-28px -28px 22px;border-bottom:1px solid var(--line);overflow:hidden;background:#0b1724}
+    .division-image img{width:100%;height:100%;object-fit:cover;transition:transform .28s ease}
+    .division:hover .division-image img{transform:scale(1.025)}
 
     .intro{padding:22px 0 26px}.intro-box{padding:28px 30px;border:1px solid rgba(201,174,120,.22);border-radius:18px;background:rgba(201,174,120,.055);color:var(--muted);font-size:1.03rem}.intro-box strong{color:var(--ink)}
 
@@ -96,9 +98,9 @@
     footer{border-top:1px solid var(--line);padding:28px 0 36px;color:var(--muted2);font-size:.88rem}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footer-links{display:flex;gap:16px;flex-wrap:wrap}.footer-links a:hover{color:var(--ink)}
 
     @media (max-width:980px){.division-grid{grid-template-columns:1fr 1fr}.division:last-child{grid-column:1/-1;min-height:auto}}
-    @media (max-width:860px){.hero{padding-top:50px}.hero-grid{grid-template-columns:1fr}.hero-grid{gap:30px}.brand-card{max-width:520px}nav{display:none;position:absolute;top:72px;left:16px;right:16px;padding:16px;flex-direction:column;align-items:stretch;border:1px solid var(--line);border-radius:14px;background:#0a1825;box-shadow:var(--shadow)}nav.open{display:flex}.menu-button{display:block}.why-grid{grid-template-columns:1fr}}
+    @media (max-width:860px){.hero{padding-top:50px}.hero-grid{grid-template-columns:1fr}.hero-grid{gap:30px}.hero-visual{max-width:620px}nav{display:none;position:absolute;top:72px;left:16px;right:16px;padding:16px;flex-direction:column;align-items:stretch;border:1px solid var(--line);border-radius:14px;background:#0a1825;box-shadow:var(--shadow)}nav.open{display:flex}.menu-button{display:block}.why-grid{grid-template-columns:1fr}}
     @media (max-width:680px){.division-grid{grid-template-columns:1fr}.division:last-child{grid-column:auto}.division{min-height:auto}}
-    @media (max-width:560px){.shell{width:min(100% - 22px,var(--max))}.brand-text span{display:none}.hero{padding-top:38px}h1{font-size:clamp(2.65rem,15vw,4rem)}.brand-card{padding:24px 18px}.division{padding:24px}.intro-box{padding:22px}.cta{padding:28px 20px}}
+    @media (max-width:560px){.shell{width:min(100% - 22px,var(--max))}.brand-text span{display:none}.hero{padding-top:38px}h1{font-size:clamp(2.65rem,15vw,4rem)}.hero-visual{min-height:300px}.hero-visual img{min-height:300px}.division{padding:24px}.intro-box{padding:22px}.cta{padding:28px 20px}}
   </style>
 </head>
 <body>
@@ -135,13 +137,9 @@
           </div>
         </div>
 
-        <aside class="brand-card" aria-label="GSI brand">
-          <div class="big-mark"><img src="GSI_Contour_G.jpg" alt="GSI contour G logo"></div>
-          <h2>GSI</h2>
-          <div class="legal">GeoSite Intel LLC</div>
-          <div class="brand-pill-row">
-            <span class="brand-pill">Land</span><span class="brand-pill">Planning</span><span class="brand-pill">Data</span><span class="brand-pill">Documents</span><span class="brand-pill">Workflows</span><span class="brand-pill">Automation</span>
-          </div>
+        <aside class="hero-visual" aria-label="GSI information services">
+          <img src="home-information-visual.jpg" alt="Laptop showing mapping and information analysis in a professional workspace">
+          <div class="hero-visual-note">Land · Data · Workflows</div>
         </aside>
       </div>
     </section>
@@ -164,6 +162,7 @@
 
         <div class="division-grid">
           <article class="division">
+            <div class="division-image"><img src="geosite-intelligence-visual.jpg" alt="Aerial land imagery with contour and parcel analysis"></div>
             <div class="division-label">Land & planning</div>
             <h3>GeoSite Intelligence</h3>
             <div class="sub">See beyond the property line.</div>
@@ -175,6 +174,7 @@
           </article>
 
           <article class="division">
+            <div class="division-image"><img src="data-intelligence-visual.jpg" alt="Organized business records, spreadsheets, invoices, and receipts"></div>
             <div class="division-label">Documents & data</div>
             <span class="status-pill new">New service</span>
             <h3>Data Intelligence</h3>
@@ -187,6 +187,7 @@
           </article>
 
           <article class="division coming">
+            <div class="division-image"><img src="business-automation-visual.jpg" alt="Digital workflow showing files and data moving through automated processing"></div>
             <div class="division-label">Workflows & systems</div>
             <span class="status-pill">Coming next</span>
             <h3>Business Automation</h3>
