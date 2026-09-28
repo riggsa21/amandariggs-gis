@@ -77,3 +77,18 @@ Secondary: metadata, validation, analysis-ready data
 - Keep titles specific and page-specific.
 - Use internal links between Research and Retention pages.
 - Add new case-study pages when real pilot projects exist; avoid thin pages created only for keyword capture.
+
+## Site Intelligence & Feasibility
+Primary target phrases:
+- site feasibility analysis
+- development site screening
+- GIS site suitability analysis
+- terrain and drainage analysis
+- soils and development feasibility
+- pre-development site analysis
+- development scenario modeling
+- site constraints analysis
+- usable area analysis
+- downstream drainage screening
+
+Role in site architecture: active GSI service and real-world test bed feeding the flagship retention-loss platform. It should remain visible but subordinate to the Retention & Development mission on the homepage.

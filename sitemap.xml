@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://geositeintel.com/</loc><lastmod>2026-09-28</lastmod><priority>1.0</priority></url>
-  <url><loc>https://geositeintel.com/land-property-intelligence.html</loc><lastmod>2026-09-28</lastmod><priority>0.95</priority></url>
-  <url><loc>https://geositeintel.com/research.html</loc><lastmod>2026-09-28</lastmod><priority>0.90</priority></url>
-  <url><loc>https://geositeintel.com/business-automation.html</loc><lastmod>2026-09-28</lastmod><priority>0.70</priority></url>
-  <url><loc>https://geositeintel.com/data-intelligence.html</loc><lastmod>2026-09-28</lastmod><priority>0.55</priority></url>
-  <url><loc>https://geositeintel.com/about.html</loc><lastmod>2026-09-28</lastmod><priority>0.70</priority></url>
-  <url><loc>https://geositeintel.com/portfolio.html</loc><priority>0.45</priority></url>
-  <url><loc>https://geositeintel.com/reviews.html</loc><priority>0.35</priority></url>
+  <url><loc>https://geositeintel.com/</loc></url>
+  <url><loc>https://geositeintel.com/land-property-intelligence.html</loc></url>
+  <url><loc>https://geositeintel.com/site-intelligence.html</loc></url>
+  <url><loc>https://geositeintel.com/research.html</loc></url>
+  <url><loc>https://geositeintel.com/business-automation.html</loc></url>
+  <url><loc>https://geositeintel.com/data-intelligence.html</loc></url>
+  <url><loc>https://geositeintel.com/about.html</loc></url>
 </urlset>
