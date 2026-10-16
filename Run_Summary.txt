@@ -1,0 +1,6 @@
+GSI WORKFLOW DEMO | FICTIONAL SAMPLE DATA
+Input rows:       48
+Clean orders:     41
+Flagged for QA:   7
+Summary groups:   7
+Source preserved: Yes

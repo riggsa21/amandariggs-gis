@@ -1,0 +1,49 @@
+Order ID,Order Date,Customer,Amount,Status
+ORD-1001,2026-10-02,Northline Studio,148.59,PAID
+ORD-1002,10-03-2026,Maple Creek Goods, $ 344.58 , Paid 
+ORD-1003,"Oct 04, 2026",Bluewater Retail,$344.04,complete
+ORD-1004,10/05/2026,Pine Hill Services,$420.02,paid
+ORD-1005,2026-10-06,Riverbend Outfitters,114.90,PAID
+ORD-1006,10-07-2026,Cedar Bay Supply, $ 135.51 , Paid 
+ORD-1007,"Oct 08, 2026",Northline Studio,$97.16,complete
+ORD-1008,10/09/2026,Maple Creek Goods,$133.03,paid
+ORD-1009,2026-10-10,Bluewater Retail,367.00,PAID
+ORD-1010,10-11-2026,Pine Hill Services, $ 89.37 , Paid 
+ORD-1011,"Oct 12, 2026",Riverbend Outfitters,$273.80,complete
+ORD-1012,10/13/2026,Cedar Bay Supply,$127.85,paid
+ORD-1013,2026-10-14,Northline Studio,164.98,PAID
+ORD-1014,10-15-2026,Maple Creek Goods, $ 227.94 , Paid 
+ORD-1015,"Oct 01, 2026",Bluewater Retail,$414.65,complete
+ORD-1016,10/02/2026,Pine Hill Services,$309.24,paid
+ORD-1017,2026-10-03,Riverbend Outfitters,36.14,PAID
+ORD-1018,10-04-2026,Cedar Bay Supply, $ 156.33 , Paid 
+ORD-1019,"Oct 05, 2026",Northline Studio,$96.96,complete
+ORD-1020,10/06/2026,Maple Creek Goods,$430.12,paid
+ORD-1021,2026-10-07,Bluewater Retail,401.82,PAID
+ORD-1022,10-08-2026,Pine Hill Services, $ 400.12 , Paid 
+ORD-1023,"Oct 09, 2026",Riverbend Outfitters,$409.46,complete
+ORD-1024,10/10/2026,Cedar Bay Supply,$371.94,paid
+ORD-1025,2026-10-11,Northline Studio,466.00,PAID
+ORD-1026,10-12-2026,Maple Creek Goods, $ 394.48 , Paid 
+ORD-1027,"Oct 13, 2026",Bluewater Retail,$147.53,complete
+ORD-1028,10/14/2026,Pine Hill Services,$420.30,paid
+ORD-1029,2026-10-15,Riverbend Outfitters,253.32,PAID
+ORD-1030,10-01-2026,Cedar Bay Supply, $ 376.65 , Paid 
+ORD-1031,"Oct 02, 2026",Northline Studio,$288.89,complete
+ORD-1032,10/03/2026,Maple Creek Goods,$227.02,paid
+ORD-1033,2026-10-04,Bluewater Retail,196.96,PAID
+ORD-1034,10-05-2026,Pine Hill Services, $ 227.13 , Paid 
+ORD-1035,"Oct 06, 2026",Riverbend Outfitters,$173.77,complete
+ORD-1036,10/07/2026,Cedar Bay Supply,$83.46,paid
+ORD-1037,2026-10-08,Northline Studio,406.37,PAID
+ORD-1038,10-09-2026,Maple Creek Goods, $ 396.54 , Paid 
+ORD-1039,"Oct 10, 2026",Bluewater Retail,$482.72,complete
+ORD-1040,10/11/2026,Pine Hill Services,$347.19,paid
+ORD-1004,10/05/2026,Pine Hill Services,$420.02,paid
+ORD-1009,2026-10-10,Bluewater Retail,367.00,PAID
+ORD-1017,2026-10-03,Riverbend Outfitters,36.14,PAID
+ORD-1025,2026-10-11,Northline Studio,466.00,PAID
+ORD-1033,2026-10-04,Bluewater Retail,196.96,PAID
+ORD-4000,not a date,Demo Customer,$80.00,paid
+ORD-4001,10/15/2026,Demo Customer,N/A,paid
+ORD-4002,10/15/2026,Demo Customer,$80.00,paid
