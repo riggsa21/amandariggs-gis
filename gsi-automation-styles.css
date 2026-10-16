@@ -47,3 +47,47 @@
 .sample-code-explanation h2{font-size:clamp(2rem,3vw,2.9rem)}
 @media(max-width:880px){.story-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.showcase .showcase-grid,.sample-code-explanation,.visual-guide-grid{grid-template-columns:1fr}.showcase-visual-stack{max-width:540px;margin:0 auto}.visual-guide-grid>img{max-height:320px}}
 @media(max-width:600px){.story-grid{grid-template-columns:1fr;gap:15px}.story-card img{height:186px}.story-card>div{padding:19px 19px 22px}.showcase .showcase-grid{gap:29px}.compact-demo-visual,.tiny-code-card{max-width:100%}.story-disclaimer{font-size:.72rem}.sample-code-explanation{margin-top:38px;gap:15px}}
+
+
+/* Oct 16 2026: lively office character modules and verified GIS map gallery */
+.office-comedy{background:linear-gradient(120deg,#f7f5ee 0%,#fff 52%,#eaf4f0 100%)}
+.office-comedy .section-intro{max-width:850px}
+.office-comedy .section-intro em{font-style:normal;color:#168074}
+.office-comedy-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:30px}
+.fun-card{margin:0;border:1px solid #dae6e2;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 14px 36px rgba(12,50,40,.07)}
+.fun-card img{display:block;width:100%;aspect-ratio:1.35;object-fit:cover;object-position:center;max-height:410px}
+.fun-card figcaption{display:flex;flex-direction:column;gap:9px;padding:23px 25px 26px;line-height:1.4}
+.fun-card .fun-eyebrow{font-size:.77rem;letter-spacing:.09em;text-transform:uppercase;color:#168074;font-weight:800}
+.fun-card strong{font-size:clamp(1.25rem,2.1vw,1.7rem);color:#19382f}
+.fun-card small{color:#52665f;font-size:.97rem}
+.office-comedy .small-muted{margin-top:18px}
+.comic-banner{background:linear-gradient(135deg,#f5f8f3 0%,#f8f1ea 100%)}
+.comic-banner-inner{display:grid;grid-template-columns:minmax(260px,.85fr) minmax(0,1.1fr);align-items:center;gap:clamp(30px,5vw,80px)}
+.comic-banner img{width:100%;max-height:400px;aspect-ratio:1.35;object-fit:cover;border-radius:24px;border:1px solid #dbe5dd;box-shadow:0 18px 42px rgba(10,42,30,.08)}
+.comic-banner-inner h2{margin:12px 0 14px;max-width:670px}
+.comic-banner-inner p{max-width:600px}
+.map-gallery{background:#f6faf7}
+.map-portfolio-intro{gap:32px;align-items:center;margin-bottom:25px}
+.map-portfolio-intro p{max-width:760px}
+.map-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.map-card{min-width:0;background:#fff;border:1px solid #dbe7e0;border-radius:20px;overflow:hidden;box-shadow:0 9px 25px rgba(22,56,39,.06)}
+.map-card > a{display:block;overflow:hidden;background:#eef1ea}
+.map-card > a > img{display:block;width:100%;height:240px;object-fit:cover;object-position:top center;transition:transform .2s ease}
+.map-card > a:hover > img{transform:scale(1.015)}
+.map-card-text{padding:23px 24px 26px}
+.map-card-text > span{font-weight:750;letter-spacing:.09em;font-size:.73rem;text-transform:uppercase;color:#178578}
+.map-card-text h3{margin:10px 0}
+.map-card-text p{margin:0 0 18px}
+.report-graphic{height:240px;display:flex;flex-direction:column;justify-content:center;align-items:center;background:radial-gradient(circle at 20% 20%,#d9eee5,#1b6a68);color:white}
+.report-graphic .report-label{font-weight:800;letter-spacing:.2em;font-size:.82rem}
+.report-graphic strong{font-size:5.8rem;line-height:1.12}
+.report-graphic small{font-size:1rem}
+.report-graphic .report-lines{letter-spacing:1em;font-size:.75rem;margin-top:12px}
+.map-gallery-note{margin-top:20px}
+@media(max-width:760px){
+.office-comedy-grid,.map-grid,.comic-banner-inner{grid-template-columns:1fr}
+.fun-card img{max-height:460px}
+.map-card > a > img,.report-graphic{height:220px}
+.map-portfolio-intro{align-items:start}
+.comic-banner-inner img{max-height:480px}
+}
