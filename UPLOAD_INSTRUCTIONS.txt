@@ -1,37 +1,9 @@
-GEOSITE INTEL - FOCUSED DEVELOPMENT GIS WEBSITE
+GEOSITE INTEL - TASK AUTOMATION UPDATE
 
-PURPOSE
-This package narrows the site to one paid specialty: development GIS project support for land developers and civil, environmental, and planning teams.
+Back up the current website before uploading. Extract this archive and upload its contents into the folder containing the live index.html, replacing matching files. Keep existing images and PDFs, including GSI_Contour_G.jpg and GeoSite_0_Mills_Rd_Property_Intelligence_Report.pdf; these existing assets are not bundled here. Keep any manuscript files and other portfolio assets.
 
-BEFORE UPLOADING
-1. Back up the current repository.
-2. Confirm these existing files remain in the repository:
-   - GSI_Contour_G.jpg
-   - GeoSite_0_Mills_Rd_Property_Intelligence_Report.pdf
+Changes: automation-focused Home, Services, About, and new Contact page; updated Research and Selected Work framing; legacy redirects retained. No hosting or domain changes are required.
 
-UPLOAD
-1. Extract this ZIP.
-2. Upload every extracted file to the same repository folder as the live index.html.
-3. Replace matching files when prompted.
-4. Keep other image and PDF assets unless intentionally cleaning the repository later.
+After upload: check mobile navigation, the logo, email links, research links, the Mills Road PDF, and legacy service redirects. Use a hard refresh if older styles remain.
 
-WHAT THIS PACKAGE CHANGES
-- Replaces the home page with development GIS project support as the sole commercial focus.
-- Adds focused Services, Selected Work, Research, and About pages.
-- Replaces old service pages with small redirect pages so existing links do not break.
-- Keeps research visible as evidence of rigor, not the primary paid offer.
-- Uses only completed GeoSite demonstrations on the Selected Work page.
-- Removes Business Automation, Data Intelligence, Retention & Development, and general property research from the main navigation.
-
-CHECK AFTER DEPLOYMENT
-- Desktop and mobile navigation
-- Logo display
-- All Email GSI buttons open info@geositeintel.com
-- Full 0 Mills Road PDF report link opens correctly
-- Old page links redirect to the intended new page
-- Home, Services, Selected Work, Research, About, and the 404 page
-
-Suggested commit:
-Focus website on development GIS project support
-
-No prices, client claims, testimonials, or turnaround guarantees are included.
+Suggested commit: Focus GSI website on custom scripts and task automation
