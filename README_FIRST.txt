@@ -1,39 +1,19 @@
-GSI WEBSITE UPDATE - V4 NAVIGATION + IMAGE FIXES
-Updated: September 18, 2026
+GeoSite Intel — automation-positioning web patch | October 16, 2026
 
-THIS VERSION FIXES THE ISSUES SHOWN IN THE SCREENSHOTS
-- Home hero photo now shows the full "See beyond the property line." wording instead of cropping it.
-- GeoSite Intelligence and Data Intelligence card images now show the complete circular icons.
-- Business Automation now uses a clean vector SVG workflow graphic, so it stays sharp instead of becoming blurry when enlarged.
-- The GSI umbrella navigation stays visible across Home, GeoSite Intelligence, Data Intelligence, Business Automation, and About.
-- GeoSite pages keep a hamburger menu, but that drawer is now specifically for GeoSite Intelligence services and property/land pages.
-- GeoSite subpages included here also receive the umbrella navigation so visitors do not fall back into the old hamburger-only header.
-- About is updated to reflect the broader GSI structure.
+CONTENTS
+automation-tools.html — finished standalone landing page with responsive layout, SEO metadata and actionable contact links
+assets/automation.css — styles for that landing page
+assets/office-before-after.svg — original illustrated office worker before/after comparison
+assets/workflow-illustration.svg — illustrated 3-step workflow
+seo/ — Google indexing checklist and sitemap XML fragment
+social/ — LinkedIn, Facebook, Google Business Profile copy and Friday reel script
 
-UPLOAD / REPLACE THESE FILES
-1. GSI_Contour_G.jpg
-2. GeoSite_Intel_Logo_Transparent.png
-3. home-information-visual.jpg
-4. geosite-intelligence-visual.jpg
-5. data-intelligence-visual.jpg
-6. business-automation-visual.svg
-7. land-property-intelligence.html
-8. portfolio.html
-9. reviews.html
-10. hire.html
-11. drainage-watershed-analysis.html
-12. land-cover-development-change-analysis.html
-13. data-intelligence.html
-14. business-automation.html
-15. about.html
-16. index.html - REPLACE THIS LAST
+IMPORTANT: The live site has ALREADY changed its homepage and services page to automation as of Oct 16. This package ADDS a targeted landing page and visual assets; it is NOT intended to replace existing index.html or services.html blindly. Merge into your GitHub website repository only after existing pending checks clear. Test links, images and mobile view in preview. The email CTAs use info@geositeintel.com.
 
-DO NOT REPLACE
-- site.css is intentionally NOT included. The GeoSite pages carry the new umbrella-header styling directly in their HTML, which avoids overwriting the existing shared stylesheet.
+DEPLOY:
+1. Copy automation-tools.html to web root and contents of assets/ to site's assets/ folder (merge, don't replace the directory).
+2. Link 'Custom Automation' from homepage and services.html to /automation-tools.html.
+3. In existing sitemap.xml, add seo/sitemap_addition.xml fragment without its comment.
+4. Run the checks in seo/README_SEO.txt.
 
-IMPORTANT
-- Keep your existing maps, reports, demo PDFs, property-example images, favicon, social image, and other site assets already in the repository.
-- Existing GeoSite Intelligence URLs are preserved so old links continue working.
-- Contact links use info@geositeintel.com.
-- The top navigation is the GSI umbrella navigation.
-- The hamburger on GeoSite pages is the page-family menu for GeoSite Intelligence services and examples.
+ART NOTE: SVG artwork can be used on-site, but social previews favor a raster 1200x630 image. Consider showcasing actual workflow screenshots after this illustration for credibility.

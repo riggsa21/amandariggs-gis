@@ -1,0 +1,30 @@
+LINKEDIN COMPANY TAGLINE:
+Custom Python Scripts | Business Workflow Automation | GIS Automation
+
+LINKEDIN / FACEBOOK ABOUT:
+GeoSite Intel LLC builds practical custom scripts and workflow tools for small businesses and consulting teams. Services include Excel/CSV automation, recurring reports, file processing, data checks, and QGIS/Python workflows. We start with one repetitive process, define the rules and expected output, and deliver a documented tool with human review where needed. Email info@geositeintel.com with the task you would like to simplify. https://geositeintel.com/automation-tools.html
+
+GOOGLE BUSINESS PROFILE DESCRIPTION (use only if eligible, avoid implying public storefront):
+GeoSite Intel LLC develops task-specific scripts and automation tools for recurring business workflows, including spreadsheet processing, reporting, file organization, data validation, and GIS processing. Projects begin with a defined task, representative sample inputs, documented requirements, and a scoped quote. Email inquiries welcome.
+
+SHORT BIO (platforms):
+Custom scripts and task automation for spreadsheets, reports, files, and GIS. Start with one repetitive task. geositeintel.com
+
+FRIDAY REEL CAPTION:
+Same spreadsheet. Same files. Same steps. Every week.
+
+What if a simple custom tool handled the repetitive part instead?
+
+GeoSite Intel builds task-focused scripts for spreadsheets, reports, file processing, and GIS workflows—with validation and human review built in.
+
+Got one task you'd love to stop repeating? Tell us about it: geositeintel.com
+
+#WorkflowAutomation #SmallBusinessTools #PythonAutomation #BusinessEfficiency #GeoSiteIntel
+
+REEL STORYBOARD (30-35 seconds):
+0-5: Real desktop footage: a messy folder of repeat CSV exports. Overlay: 'Doing this again?'
+5-11: Real desktop: manual copy/paste and rename. Overlay: 'Every. Single. Week.'
+11-19: Screen recording of YOUR OWN sample incoming_orders.csv script processing. Overlay: 'One repeatable workflow.'
+19-27: Screen recording: results and exception/QA list side by side. Overlay: 'Consistent output. Errors flagged for review.'
+27-34: GSI website / contact screen. Overlay: 'What task should we automate for you?'
+Use natural keyboard/mouse sounds or understated music, not synthetic stock AI visuals; label sample data and avoid unsupported time-saved claims.
