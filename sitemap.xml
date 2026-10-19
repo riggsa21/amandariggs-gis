@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://geositeintel.com/</loc><lastmod>2026-10-16</lastmod></url>
-<url><loc>https://geositeintel.com/services.html</loc><lastmod>2026-10-16</lastmod></url>
-<url><loc>https://geositeintel.com/examples.html</loc><lastmod>2026-10-16</lastmod></url>
-<url><loc>https://geositeintel.com/work.html</loc><lastmod>2026-10-16</lastmod></url>
-<url><loc>https://geositeintel.com/research.html</loc><lastmod>2026-10-16</lastmod></url>
-<url><loc>https://geositeintel.com/about.html</loc><lastmod>2026-10-16</lastmod></url>
-<url><loc>https://geositeintel.com/business-automation.html</loc><lastmod>2026-10-16</lastmod></url>
+  <url><loc>https://geositeintel.com/</loc></url>
+  <url><loc>https://geositeintel.com/land.html</loc></url>
+  <url><loc>https://geositeintel.com/services.html</loc></url>
+  <url><loc>https://geositeintel.com/portfolio.html</loc></url>
+  <url><loc>https://geositeintel.com/about.html</loc></url>
+  <url><loc>https://geositeintel.com/social.html</loc></url>
+  <url><loc>https://geositeintel.com/data-access.html</loc></url>
+  <url><loc>https://geositeintel.com/work.html</loc></url>
+  <url><loc>https://geositeintel.com/examples.html</loc></url>
+  <url><loc>https://geositeintel.com/drainage-watershed-analysis.html</loc></url>
+  <url><loc>https://geositeintel.com/property-intelligence-demo.html</loc></url>
+  <url><loc>https://geositeintel.com/land-property-intelligence.html</loc></url>
 </urlset>
