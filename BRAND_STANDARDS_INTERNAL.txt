@@ -1,0 +1,23 @@
+GEOSITE INTEL - INTERNAL WEB/CONTENT BRAND RULES
+
+Identity
+1. Always use the approved contour G (geosite-contour-g.png) in headers, footers, favicon, downloadable marketing, and branded video graphics. Never substitute a plain letter G.
+2. Brand name is GeoSite Intel, LLC. GSI Workflow Studio is one service line within the company.
+3. Retain the company tagline: See beyond the property line.
+4. Maintain a recognizable teal/evergreen palette and a professional, geography-driven visual style.
+5. Use normal short hyphens (-) in visible copy, not long em or en dashes.
+
+Site hierarchy
+6. Present GeoSite Intelligence (land/property) and GSI Workflow Studio (custom automation) as distinct services with comparable prominence.
+7. About contains founder background, degrees, research, and manuscript citations. Do not add a primary Research navigation tab.
+8. Portfolio contains separate sections for property research and automation. Every link goes to its actual case study or named section, not an unrelated generic page.
+9. Social is the home for Rowan & Pixel, social channels, and marketing shorts. No primary Rowan & Pixel tab.
+10. Do not add a public explanation of why the contour G logo is used. Brand repetition is intentional and implicit.
+
+Accuracy
+11. Label independent demos, fictional data, and research concepts clearly.
+12. No unverified results, client relationships, permission claims, or download links.
+13. Verify reuse rights for any new GIS imagery, maps, research manuscript files, or third-party photographs before public release.
+14. All primary and project-detail pages must use the same navigation, header, footer, CSS, and footer contact information.
+
+This file is for internal maintenance only. It is not a webpage.

@@ -1,56 +1,54 @@
-GEOSITE INTEL - BALANCED BRAND WEBSITE UPDATE
+GEOSITE INTEL - UNIFIED WEBSITE REFRESH
 October 19, 2026
 
-CORE PRINCIPLE
-One company: GeoSite Intel LLC.
-Two equal, separate service lines: Land & Property Intelligence and GSI Workflow Studio.
-The exact approved contour G is the identity symbol on the header, footer, favicon, and brand artwork.
+WHAT THIS IS
+A full website source update prepared by comparing the older land-intelligence site,
+September 2026 multi-service packages, and October 2026 automation packages.
 
-MAIN NAVIGATION
-Home | Land & Property | Workflow Studio | Portfolio | About | Social | Contact
+DESIGN / NAVIGATION
+Home | Land Intelligence | Workflow Studio | Portfolio | About | Social | Contact
+- Contour G used in all primary page headers, footer, and favicon.
+- Land/property work and custom workflow tools are separate, equal services.
+- Portfolio has clearly separate Property and Automation sections.
+- Research/published paper appears on About only, with DOI and author attribution.
+- Rowan & Pixel appear only on Social (plus a brief footer navigation link).
+- No brand explanation explaining the contour G to visitors.
+- Only standard short hyphens in visible prose. No generic G-logo replacements.
+- All primary pages share the same header, navigation, colors and footer.
+- All included files are FLAT. No assets subfolder is required.
 
-Portfolio has two clear sections: Land & Property Projects and Automation Demos.
-Research is a section within About, not a top-level tab.
-Rowan & Pixel are on Social, not a top-level tab.
-The home page leads equally to both business services.
+UPLOAD TO GITHUB PAGES REPOSITORY ROOT
+1. Download and extract this ZIP locally.
+2. Back up your repository before replacing files.
+3. Open the repository root containing the current index.html.
+4. Upload all files inside this ZIP, not the ZIP itself, and not a containing folder.
+5. Commit, then wait for GitHub Pages to deploy.
+6. Hard refresh using Ctrl+F5 (or an incognito window).
+7. Test Home, Land Intelligence, Workflow Studio, Portfolio, About, Social, Contact,
+   several case study pages, the 0 Mills Road PDF, and the Python sample ZIP.
+8. Keep any existing legacy assets or maps not included here. They may still have inbound links.
 
-SAFE GITHUB PAGES UPLOAD
-1. Back up your current repository first, or commit the current state before uploading.
-2. Unzip this package on your computer.
-3. Open GitHub, go to the repository root containing index.html.
-4. Select ALL contents of this ZIP, not the containing folder, for upload.
-5. Commit the changes. Any matching files will be replaced. Other files remain as they are.
-6. Do not delete work.html, examples.html, old GIS maps, PDFs, media, or other existing assets.
-7. Wait for GitHub Pages deployment, then use Ctrl+F5 to refresh.
-8. Test the six main navigation pages and both portfolio anchor tabs.
-9. Verify the G mark is visible on every new page and the favicon is updated.
+KEY FILES
+- geosite-contour-g.png, geosite-contour-logo.png and favicon.png: approved logo assets.
+- gsi.css / gsi.js: shared style and mobile menu behavior.
+- index.html / land.html / studio.html / portfolio.html / about.html / social.html / contact.html.
+- project detail pages and workflow-demo.html.
+- GeoSite_0_Mills_Rd_Property_Intelligence_Report.pdf (actual original report).
+- GSI_Python_Order_Validation_Sample.zip: working synthetic example with files + code.
+- work.html, research.html, services.html and other legacy filenames remain as redirects.
 
-UPLOAD FILES
-index.html, land.html, services.html, portfolio.html, about.html, social.html,
-data-access.html, rowan-and-pixel.html, research.html, gsi-site.css, gsi-site.js,
-geosite-contour-g.png, geosite-contour-logo.png, favicon.png,
-rowan-pixel.webp, workflow-studio.webp, sitemap.xml, robots.txt
+KNOWN FOLLOW-UPS
+- Add your confirmed GeoSite Facebook page URL to social.html. It is intentionally not guessed.
+- Your master's portfolio pieces, other GIS maps and dashboard screenshots were NOT
+  provided in this batch of website ZIPs. We can add them to the property/technical portfolio
+  after verifying authorship, data license, and suitability for public display.
+- Report preview graphics are actual pages from the included original PDF.
+- Other representative aerial/office visuals came from your uploaded older website packages.
+- This package does not change your live website until you upload it to GitHub.
 
-PRESERVATION NOTES
-- The old downloadable 0 Mills Rd PDF is linked and must stay in the repository.
-- Technical demo examples.html and project archive work.html are NOT overwritten. Their existing downloads and maps are preserved.
-- Old specialty pages including land-property-intelligence.html remain untouched and are discoverable from legacy links.
-- Updating all remaining legacy subpage headers to this brand is a later cleanup; the main six tabs are consistent now.
-- Existing historic links to research.html and rowan-and-pixel.html redirect to new About and Social sections.
-- Do not upload this ZIP itself to GitHub.
+COMPATIBILITY
+Static HTML, CSS and JS; no framework, build process, server functions, external fonts,
+or API keys. Synthetic Python sample runs with Python 3 standard library.
 
-SOCIAL LINKS
-The LinkedIn company address and YouTube playlist are live links.
-The Facebook company page address was not confidently verified, so it is labeled pending.
-Replace that placeholder with your exact Facebook business page URL when supplied.
-
-PUBLICATION RIGHTS
-The About page provides a scholarly citation, the publication DOI, and the author's
-credentials. It does NOT host a full manuscript or claim the coauthors endorse GSI.
-Full-text posting may require journal or coauthor authorization depending on terms.
-
-LANGUAGE RULE
-Use ordinary hyphens, not em dashes or en dashes, across brand copy and pages.
-
-SUGGESTED GITHUB COMMIT MESSAGE
-Restore contour G brand and balance land intelligence with Workflow Studio
+SUGGESTED COMMIT MESSAGE
+Unify GeoSite land intelligence and workflow studio with contour G branding
