@@ -1,0 +1,5 @@
+ADD THESE TWO URL ENTRIES inside your existing sitemap.xml <urlset>.
+Do not replace the existing sitemap!
+
+<url><loc>https://geositeintel.com/rowan-and-pixel.html</loc><lastmod>2026-10-19</lastmod></url>
+<url><loc>https://geositeintel.com/data-access.html</loc><lastmod>2026-10-19</lastmod></url>

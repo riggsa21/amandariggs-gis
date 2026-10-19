@@ -1,9 +1,73 @@
-GEOSITE INTEL - TASK AUTOMATION UPDATE
+GEOSITE INTEL WEBSITE REFRESH — October 19, 2026
+================================================
+STATUS: Ready for GitHub Pages upload. Tested as a static site.
 
-Back up the current website before uploading. Extract this archive and upload its contents into the folder containing the live index.html, replacing matching files. Keep existing images and PDFs, including GSI_Contour_G.jpg and GeoSite_0_Mills_Rd_Property_Intelligence_Report.pdf; these existing assets are not bundled here. Keep any manuscript files and other portfolio assets.
+WHAT THIS UPDATE DOES
+- Modernizes the HOMEPAGE around custom automation + GIS + research.
+- Introduces the creative program name “GSI Automation Studio” without claiming it is a registered trade name.
+- Adds a proper Rowan & Pixel original-series page with GeoSite Intel branding and YouTube links.
+- Adds a cautious, informational GIS data-accessibility page for a FUTURE checker idea.
+- Preserves existing services, business automation, workflow demo, GIS work, research, and about pages.
+- Includes locally hosted optimized artwork and responsive CSS. No external JavaScript dependencies.
 
-Changes: automation-focused Home, Services, About, and new Contact page; updated Research and Selected Work framing; legacy redirects retained. No hosting or domain changes are required.
+FILES TO UPLOAD TO THE ROOT OF THE EXISTING REPOSITORY
+REPLACE:
+  index.html             <-- IMPORTANT: backup your existing index.html first
+ADD:
+  rowan-and-pixel.html
+  data-access.html
+  gsi-refresh.css
+  gsi-refresh.js
+  assets/rowan-pixel.webp
+  assets/workflow-studio.webp
+  assets/topography.svg
 
-After upload: check mobile navigation, the logo, email links, research links, the Mills Road PDF, and legacy service redirects. Use a hard refresh if older styles remain.
+Do not upload the ZIP directly. EXTRACT IT FIRST. Upload the individual
+files, preserving the assets/ folder. The README and sitemap-additions.txt
+are for your reference and do not need to go on the live site.
 
-Suggested commit: Focus GSI website on custom scripts and task automation
+UNCHANGED — DO NOT DELETE THESE EXISTING FILES OR ASSETS
+  services.html
+  examples.html
+  business-automation.html
+  work.html
+  research.html
+  about.html
+  site.css and existing JS
+  existing project screenshots, PDF samples, script examples, portfolio assets,
+  existing logos/favicons, robots.txt, sitemap.xml and other webpages
+
+WHY ONLY ONE PAGE IS REPLACED
+The live site already has a polished automation service structure. This is
+an intentionally non-destructive refresh. New pages use gsi-refresh.css,
+so they don't alter styling or functionality on existing pages.
+
+UPLOAD STEPS
+1. Open the GitHub repository for geositeintel.com.
+2. Download/back up the current index.html first.
+3. Extract this ZIP locally.
+4. Upload index.html, rowan-and-pixel.html, data-access.html,
+   gsi-refresh.css, gsi-refresh.js and the ENTIRE assets/ folder into the
+   repo root. Preserve exact file names.
+5. Commit: "Refresh homepage; introduce Rowan & Pixel and GSI data access concept"
+6. After GitHub Pages updates, visit:
+   https://geositeintel.com/
+   https://geositeintel.com/rowan-and-pixel.html
+   https://geositeintel.com/data-access.html
+7. Test the navigation and YouTube links on desktop + mobile.
+8. Add the two URLs to existing sitemap.xml using sitemap-additions.txt.
+   Do not replace the whole sitemap with a two-page sitemap.
+
+BEFORE PUBLISHING
+- Check the Rowan & Pixel YouTube playlist link (provided in prior planning).
+  If its ID has changed, update the two occurrences in index.html and one
+  occurrence in rowan-and-pixel.html before deployment.
+- Confirm you want the future research concept visible publicly.
+  It is clearly labeled exploratory and not a launched product.
+- No client data or restricted GIS layers are included in this package.
+- All included art is sourced from your existing GeoSite/Rowan & Pixel artwork.
+- Email links use info@geositeintel.com.
+
+ROLLBACK
+Restore the backed-up index.html, and optionally remove the newly added
+pages/files. None of the site's existing services or other content is overwritten.
