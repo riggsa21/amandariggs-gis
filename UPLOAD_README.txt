@@ -38,7 +38,7 @@ KEY FILES
 - work.html, research.html, services.html and other legacy filenames remain as redirects.
 
 KNOWN FOLLOW-UPS
-- Add your confirmed GeoSite Facebook page URL to social.html. It is intentionally not guessed.
+- The Facebook page link supplied by GeoSite has been added to social.html. Check it in a private browser to verify the visitor view.
 - Your master's portfolio pieces, other GIS maps and dashboard screenshots were NOT
   provided in this batch of website ZIPs. We can add them to the property/technical portfolio
   after verifying authorship, data license, and suitability for public display.
